@@ -6,4 +6,4 @@ const NameCard = () => {
   )
 };
 
-export default NameCard;
+export default NameCard; 
