@@ -10,7 +10,7 @@ const NavBar = () => {
         <li class='option-three'> <a class='nav-option' href="#projects">Projects</a> </li>
         <li class='option-four'> <a class='nav-option' href="#skills">Skills</a> </li>
       </ul>
-</section>
+    </section>
   )
 };
 
