@@ -9,23 +9,26 @@ const Socials = () => {
         <SocialIcon
           url='https://www.linkedin.com/in/jonathannarine/'
           bgColor='white'
+          fgColor='rgb(130,216,255)'
         />
       </li>
       <li>
         <SocialIcon
           url='https://github.com/jonnicwolf'
           bgColor='white'
-          />
+          fgColor='rgb(130,216,255)'
+        />
       </li>
     </SocialsList>
   )
 };
 
+
 const SocialsList = styled.ul`
-  display: flex;  
-  column-gap: 10px;
-  list-style: none;
-  padding-inline-start: 0px;
+display: flex;
+column-gap: 10px;
+list-style: none;
+padding-inline-start: 0px;
 `;
 
 export default Socials;

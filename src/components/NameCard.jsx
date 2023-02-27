@@ -58,10 +58,6 @@ const NameCardItem = styled.li`
   height: 1.8em;
 `;
 
-const ClimateCrisisText = styled.p`
-  font-family: var(--font-family-climate-crisis);
-  font-weight: var(--font-weight-normal);
-`;
 const JuliusSansOneText = styled.p`
   font-family: var(--font-family-julius-sans-one);
   font-weight: var(--font-weight-normal);
