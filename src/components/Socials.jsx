@@ -1,18 +1,31 @@
 import React from 'react';
+import { SocialIcon } from 'react-social-icons';
 import styled from 'styled-components';
-import linkedIn from '../assets/icons/linkedin.png'
 
 const Socials = () => {
   return (
-    <ul>
+    <SocialsList>
       <li>
-        <img style={{height: '100px'}}src={linkedIn} alt="LinkedIn" />
+        <SocialIcon
+          url='https://www.linkedin.com/in/jonathannarine/'
+          bgColor='white'
+        />
       </li>
       <li>
-        <a>GitHub</a>
+        <SocialIcon
+          url='https://github.com/jonnicwolf'
+          bgColor='white'
+          />
       </li>
-    </ul>
+    </SocialsList>
   )
 };
+
+const SocialsList = styled.ul`
+  display: flex;  
+  column-gap: 10px;
+  list-style: none;
+  padding-inline-start: 0px;
+`;
 
 export default Socials;

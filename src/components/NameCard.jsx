@@ -2,10 +2,12 @@ import React from 'react';
 import '../assets/fonts/fonts.css';
 import styled from 'styled-components';
 
+import Socials from '../components/Socials.jsx'
+
 const NameCard = () => {
   return (
     <section>
-      <NameCardContainer>
+      <NameCardContainer style={{order: 0}}>
         <li style={{height: '105px'}}>
           <RampartOneText>FEZZ</RampartOneText>
         </li>
@@ -19,7 +21,7 @@ const NameCard = () => {
           </JuliusSansOneText>
         </NameCardItem>
 
-        <NameCardItem>
+        <NameCardItem style={{}}>
           <JuliusSansOneText>
             {'Freelancer, previously SeatGeek Commerce Marketplace Engineering'
               .toUpperCase()
@@ -36,6 +38,10 @@ const NameCard = () => {
             </span>
           </JuliusSansOneText>
         </NameCardItem>
+        <NameCardItem>
+
+        </NameCardItem>
+        <Socials />
       </NameCardContainer>
     </section>
   )

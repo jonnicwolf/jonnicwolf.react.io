@@ -9,7 +9,6 @@ const LandingPage = () => {
       <NameCard />
       <br /><br /><br /><br /><br />
       <span>Space for p5js project</span>
-      <Socials />
       <button>Enter</button>
     </Background>
   )
