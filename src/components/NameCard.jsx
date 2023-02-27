@@ -9,6 +9,7 @@ const NameCard = () => {
         <li style={{height: '130px'}}>
           <RampartOneText>FEZZ</RampartOneText>
         </li>
+
         <NameCardItem>
           <JuliusSansOneText>
             {'WEB DEV / MIXOLOGIST'
@@ -17,6 +18,7 @@ const NameCard = () => {
             )}
           </JuliusSansOneText>
         </NameCardItem>
+
         <NameCardItem>
           <JuliusSansOneText>
             {'Freelancer, previously SeatGeek Commerce Marketplace Engineering'
@@ -26,6 +28,7 @@ const NameCard = () => {
             )}
           </JuliusSansOneText>
         </NameCardItem>
+
         <NameCardItem>
           <JuliusSansOneText>
             <span style={{fontSize: '18px'}}>
@@ -43,24 +46,24 @@ const NameCardContainer = styled.ul`
   flex-direction: column;
   align-items: center;
   list-style: none;
-`
+`;
 
 const NameCardItem = styled.li`
   height: 1.8em;
-`
+`;
 
 const ClimateCrisisText = styled.p`
   font-family: var(--font-family-climate-crisis);
   font-weight: var(--font-weight-normal);
-`
+`;
 const JuliusSansOneText = styled.p`
   font-family: var(--font-family-julius-sans-one);
   font-weight: var(--font-weight-normal);
   font-size: 25px;
-`
+`;
 const RampartOneText = styled.p`
   font-family: var(--font-family-rampart-one);
   font-weight: var(--font-weight-normal);
   font-size: 50px;
-`
+`;
 export default NameCard;
