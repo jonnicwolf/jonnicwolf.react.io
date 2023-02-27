@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import NameCard from '../components/NameCard.jsx';
-import ProLinks from './ProLinks';
+import Socials from './Socials.jsx';
 
 const LandingPage = () => {
   return (
@@ -9,7 +9,7 @@ const LandingPage = () => {
       <NameCard />
       <br /><br /><br /><br /><br />
       <span>Space for p5js project</span>
-      <ProLinks />
+      <Socials />
       <button>Enter</button>
     </Background>
   )
