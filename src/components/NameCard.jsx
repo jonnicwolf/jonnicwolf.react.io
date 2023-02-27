@@ -5,28 +5,49 @@ import styled from 'styled-components';
 const NameCard = () => {
   return (
     <section>
-      <RampartOneText>FEZZ</RampartOneText>
-      <JuliusSansOneText>
-        {'FULL STACK DEV / MIXOLOGIST'
-          .split('')
-          .map(letter=> <span style={{letterSpacing: '0.20em'}}>{letter}</span>
-        )}
-      </JuliusSansOneText>
-      <JuliusSansOneText>
-        {'Freelancer, previously SeatGeek Commerce Marketplace Engineering'
-          .toUpperCase()
-          .split('')
-          .map(letter=> <span style={{letterSpacing: '0.0250em', fontSize: '18px'}}>{letter}</span>
-        )}
-      </JuliusSansOneText>
-      <JuliusSansOneText>
-        <span style={{fontSize: '18px'}}>
-          BASED IN NEW YORK CITY
-        </span>
-      </JuliusSansOneText>
+      <NameCardContainer>
+        <li style={{height: '130px'}}>
+          <RampartOneText>FEZZ</RampartOneText>
+        </li>
+        <NameCardItem>
+          <JuliusSansOneText>
+            {'WEB DEV / MIXOLOGIST'
+              .split('')
+              .map(letter=> <span style={{letterSpacing: '0.20em'}}>{letter}</span>
+            )}
+          </JuliusSansOneText>
+        </NameCardItem>
+        <NameCardItem>
+          <JuliusSansOneText>
+            {'Freelancer, previously SeatGeek Commerce Marketplace Engineering'
+              .toUpperCase()
+              .split('')
+              .map(letter=> <span style={{letterSpacing: '0.0250em', fontSize: '18px'}}>{letter}</span>
+            )}
+          </JuliusSansOneText>
+        </NameCardItem>
+        <NameCardItem>
+          <JuliusSansOneText>
+            <span style={{fontSize: '18px'}}>
+              BASED IN NEW YORK CITY
+            </span>
+          </JuliusSansOneText>
+        </NameCardItem>
+      </NameCardContainer>
     </section>
   )
 };
+
+const NameCardContainer = styled.ul`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+`
+
+const NameCardItem = styled.li`
+  height: 1.8em;
+`
 
 const ClimateCrisisText = styled.p`
   font-family: var(--font-family-climate-crisis);
