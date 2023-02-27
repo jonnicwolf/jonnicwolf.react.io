@@ -6,7 +6,7 @@ const NameCard = () => {
   return (
     <section>
       <NameCardContainer>
-        <li style={{height: '130px'}}>
+        <li style={{height: '105px'}}>
           <RampartOneText>FEZZ</RampartOneText>
         </li>
 
