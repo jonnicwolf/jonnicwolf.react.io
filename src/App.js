@@ -5,7 +5,7 @@ function App() {
   return (
     <Router>
       <Route path='/' component={<LandingPage />} />
-      <Route path='/' component={<ProjectPage />} />
+      <Route path='/projects' component={<ProjectPage />} />
     </Router>
   );
 }
