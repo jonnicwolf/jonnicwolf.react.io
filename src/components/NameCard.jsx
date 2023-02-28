@@ -14,7 +14,7 @@ const NameCard = () => {
 
         <NameCardItem>
           <JuliusSansOneText>
-            {'WEB DEV / MIXOLOGIST'
+            {'FULL STACK DEVELOPER'
               .split('')
               .map(letter=> <span style={{letterSpacing: '0.20em'}}>{letter}</span>
             )}

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import NameCard from '../components/NameCard.jsx';
 
 const LandingPage = () => {
@@ -9,7 +10,9 @@ const LandingPage = () => {
         <li><NameCard /></li>
         <li>Space for p5js project</li>
         <LandingPageItem>
-          <EntryButton>ENTER</EntryButton>
+          <Link to='/projects'>
+            <EntryButton>ENTER</EntryButton>
+          </Link>
         </LandingPageItem>
       </LandingPageContainer>
     </Background>

@@ -1,13 +1,14 @@
 import LandingPage from './pages/LandingPage';
-import { Router, Route } from 'react-router-dom';
+import ProjectPage from './pages/ProjectPage';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <Router>
-      <Route path='/' component={<LandingPage />} />
-      <Route path='/projects' component={<ProjectPage />} />
-    </Router>
+    <Routes>
+      <Route path='/' element={<LandingPage />} />
+      <Route path='/projects' element={<ProjectPage />} />
+    </Routes>
   );
-}
+};
 
 export default App;
