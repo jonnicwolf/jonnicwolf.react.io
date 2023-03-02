@@ -1,21 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { v4 as uuidv4 } from 'uuid';
 import NameCard from '../components/NameCard.jsx';
 
 const LandingPage = () => {
   return (
-    <Background>
-      <LandingPageContainer>
-        <li><NameCard /></li>
-        <li>Space for p5js project</li>
-        <LandingPageItem>
-          <Link to='/projects'>
-            <EntryButton>ENTER</EntryButton>
-          </Link>
-        </LandingPageItem>
-      </LandingPageContainer>
-    </Background>
+    <motion.div exit={{opacity: 2000}}>
+      <Background>
+        <LandingPageContainer>
+          <li key={uuidv4()}><NameCard /></li>
+          <li key={uuidv4()}>Space for p5js project</li>
+          <LandingPageItem key={uuidv4()}>
+            <Link to='/projects'>
+              <EntryButton>ENTER</EntryButton>
+            </Link>
+          </LandingPageItem>
+        </LandingPageContainer>
+      </Background>
+    </motion.div>
   )
 };
 
@@ -33,10 +37,12 @@ const LandingPageContainer = styled.ul`
   justify-content: space-between;
   align-items: center;
   list-style: none;
+  padding-left: 0px;
 `;
 
 const LandingPageItem = styled.li`
   padding-bottom: 2em;
+  padding-right: 40px;
 `
 
 const EntryButton = styled.button`
