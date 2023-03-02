@@ -1,6 +1,7 @@
 import React from 'react';
-import '../assets/fonts/fonts.css';
 import styled from 'styled-components';
+import { v4 as uuidv4 } from 'uuid';
+import '../assets/fonts/fonts.css';
 
 import Socials from '../components/Socials.jsx'
 
@@ -8,20 +9,20 @@ const NameCard = () => {
   return (
     <section>
       <NameCardContainer style={{order: 0}}>
-        <li style={{height: '105px'}}>
+        <li key={uuidv4()} style={{height: '105px'}}>
           <RampartOneText>FEZZ</RampartOneText>
         </li>
 
-        <NameCardItem>
+        <NameCardItem key={uuidv4()}>
           <JuliusSansOneText>
-            {'WEB DEV / MIXOLOGIST'
+            {'FULL STACK DEVELOPER'
               .split('')
               .map(letter=> <span style={{letterSpacing: '0.20em'}}>{letter}</span>
             )}
           </JuliusSansOneText>
         </NameCardItem>
 
-        <NameCardItem style={{}}>
+        <NameCardItem key={uuidv4()}>
           <JuliusSansOneText>
             {'Freelancer, previously SeatGeek Commerce Marketplace Engineering'
               .toUpperCase()
@@ -31,17 +32,18 @@ const NameCard = () => {
           </JuliusSansOneText>
         </NameCardItem>
 
-        <NameCardItem>
+        <NameCardItem key={uuidv4()}>
           <JuliusSansOneText>
             <span style={{fontSize: '18px'}}>
               BASED IN NEW YORK CITY
             </span>
           </JuliusSansOneText>
         </NameCardItem>
-        <NameCardItem>
-
-        </NameCardItem>
-        <Socials />
+        {/* idk why this works but fuck it ya know? */}
+        <br /><br />
+        <NameCardItem key={uuidv4()}>
+          <Socials />
+        </NameCardItem >
       </NameCardContainer>
     </section>
   )
@@ -52,6 +54,7 @@ const NameCardContainer = styled.ul`
   flex-direction: column;
   align-items: center;
   list-style: none;
+  padding-left: 0;
 `;
 
 const NameCardItem = styled.li`
