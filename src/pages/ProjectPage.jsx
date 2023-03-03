@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import DragonRend from '../assets/video/DragonRend-trim.mp4';
 import SnowMan from '../assets/video/SnowMan-trim.mp4';
 
-const ProjectPage = () => {  
+const ProjectPage = () => {
   return (
     <section id='projects'>
       <ProjectList>

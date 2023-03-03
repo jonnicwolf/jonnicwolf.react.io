@@ -39,7 +39,6 @@ const NameCard = () => {
             </span>
           </JuliusSansOneText>
         </NameCardItem>
-        {/* idk why this works but fuck it ya know? */}
         <br /><br />
         <NameCardItem key={uuidv4()}>
           <Socials />
@@ -66,6 +65,7 @@ const JuliusSansOneText = styled.p`
   font-weight: var(--font-weight-normal);
   font-size: 25px;
 `;
+
 const RampartOneText = styled.p`
   font-family: var(--font-family-rampart-one);
   font-weight: var(--font-weight-normal);
