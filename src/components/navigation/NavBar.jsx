@@ -11,7 +11,7 @@ const NavBar = () => {
   return (
     <NavbarContainer>
       <Fezz key={uuidv4()}>
-        <Link style={{textDecoration: 'none'}}>
+        <Link to='/' style={{textDecoration: 'none'}}>
           <RampartOneText>FEZZ</RampartOneText>
         </Link>
       </Fezz>
