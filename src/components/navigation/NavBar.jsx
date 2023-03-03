@@ -1,17 +1,60 @@
 import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
+import Me from '../../assets/photos/IMG_5542.jpeg';
+import Git from '../../assets/photos/git.png';
+import DarkMode from '../../assets/photos/day-and-night.png'
+import '../../assets/fonts/fonts.css';
 
 const NavBar = () => {
   return (
-    <section id='nav-btn'>
-      <div id='semi-circle-btn'></div>
-      <ul>
-        <li class='option-one'> <a class='nav-option' href="#aboutMe">About Me</a> </li>
-        <li class='option-two'> <a class='nav-option' href="#resume"> Resume</a> </li>
-        <li class='option-three'> <a class='nav-option' href="#projects">Projects</a> </li>
-        <li class='option-four'> <a class='nav-option' href="#skills">Skills</a> </li>
-      </ul>
-    </section>
+    <NavbarContainer>
+      <li key={uuidv4()}>
+        <Link>
+          <RampartOneText>
+            FEZZ
+          </RampartOneText>
+        </Link>
+      </li>
+      <li key={uuidv4()}>
+        <Link to='/about me'>
+          <img 
+            src={Me}
+            alt="about me"
+            style={{height: '40px', width: '40px'}}
+          />
+        </Link>
+      </li>
+      <li key={uuidv4()}>
+        <Link to='/contributions'>
+          <img 
+            src={Git}
+            alt="contributions"
+            style={{height: '40px', width: '40px'}}
+            />
+        </Link>
+      </li>
+      <li key={uuidv4()}>
+        <img
+          src={DarkMode}
+          alt="dark mode"
+          style={{height: '40px', width: '40px'}}
+        />
+      </li>
+    </NavbarContainer>
   )
 };
 
+const NavbarContainer = styled.ul`
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+`
+
+const RampartOneText = styled.p`
+  font-family: var (--font-family-julius-sans-one);
+  font-weight: var(--font-weight-normal);
+  font-size: 30px;
+`
 export default NavBar;

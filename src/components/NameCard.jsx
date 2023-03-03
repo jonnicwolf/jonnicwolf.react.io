@@ -39,7 +39,6 @@ const NameCard = () => {
             </span>
           </JuliusSansOneText>
         </NameCardItem>
-        {/* idk why this works but fuck it ya know? */}
         <br /><br />
         <NameCardItem key={uuidv4()}>
           <Socials />
