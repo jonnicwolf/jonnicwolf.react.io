@@ -3,11 +3,11 @@ import styled from 'styled-components';
 
 const BioBox = () => {
   return (
-    <BioBoxContainer>
+    <div>
+      <PermanentMarkerText>
+        Hi there! I'm Jon Narine,
+      </PermanentMarkerText>
       <NotoSansDisplay>
-        <PermanentMarkerText>
-          Hi there! I'm Jon Narine,
-        </PermanentMarkerText>
       a full-stack web developer and mixologist based in NYC. I specialize in front-end development and am proficient in coding with JavaScript and Python.
       <br></br><br></br>
       I have a passion for working in teams to create products that are important to end-users. I love the collaborative process of bringing ideas to life, and take pride in delivering products that are both user-friendly and aesthetically pleasing.
@@ -20,15 +20,10 @@ const BioBox = () => {
       <br></br><br></br>
       I'd love to hear from you!
       </NotoSansDisplay>
-    </BioBoxContainer>
+    </div>
   )
 };
 
-const BioBoxContainer = styled.p`
-  font-size: 15px;
-  max-width: 300px;
-  overflow: scroll;
-`;
 const NotoSansDisplay = styled.p`
   font-family: var(--font-family-noto-sans-display);
   font-weight: var(--font-weight-bold);

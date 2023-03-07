@@ -65,9 +65,8 @@ const Carousel = () => {
 };
 
 const Arrow = styled.img`
-  height: 100px;
-  width: 100px;
-  color: red;
+  height: 60px;
+  width: 60px;
 `;
 const BioBoxContainer = styled.li`
   width: 2500px;
