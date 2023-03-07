@@ -16,10 +16,10 @@ const NavBar = () => {
         </Link>
       </Fezz>
       <li key={uuidv4()}>
-        <Link to='/about me'>
+        <Link to='/fezz'>
           <img 
             src={Me}
-            alt="about me"
+            alt="About Me"
             style={{height: '40px', width: '40px', borderRadius: '50%'}}
           />
         </Link>
