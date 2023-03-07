@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
-import Me from '../../assets/photos/IMG_5542 2.jpeg';
-import DarkMode from '../../assets/photos/day-and-night.png'
+import Me from '../../assets/photos/icons/Headshot.jpeg';
+import DarkMode from '../../assets/photos/icons/DarkMode_Sun_Moon_Icon.png';
 import '../../assets/fonts/fonts.css';
 
 const NavBar = () => {
