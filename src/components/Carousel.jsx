@@ -77,9 +77,10 @@ const ButtonContainer = styled.li`
 `;
 const CarouselContainer = styled.ul`
   display: flex;
-  list-style: none;
   justify-content: space-evenly;
-  column-gap: 50px;
+  align-items: center;
+  column-gap: 60px;
+  list-style: none;
 `;
 const ChangePhotoButton = styled.button`
   border: none;

@@ -12,7 +12,9 @@ const BioBox = () => {
       <br></br><br></br>
       I'm constantly seeking to expand my knowledge and skills in these areas, and believe that staying up-to-date with the latest technologies and practices is key to delivering high-quality work.
       <br></br><br></br>
-      If you have a project in mind or just want to say hi, feel free to drop me a line below. I'd love to hear from you!
+      If you have a project in mind or just want to say hi, feel free to drop me a line below.
+      <br></br><br></br>
+      I'd love to hear from you!
     </BioBoxContainer>
   )
 };
