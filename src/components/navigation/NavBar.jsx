@@ -23,16 +23,7 @@ const NavBar = () => {
             style={{height: '40px', width: '40px', borderRadius: '50%'}}
           />
         </Link>
-      </li>
-      <li key={uuidv4()}>
-        <Link to='/contributions'>
-          <img 
-            src={Git}
-            alt="contributions"
-            style={{height: '40px', width: '40px'}}
-            />
-        </Link>
-      </li>
+      </li>      
       <li key={uuidv4()}>
         <img
           src={DarkMode}
