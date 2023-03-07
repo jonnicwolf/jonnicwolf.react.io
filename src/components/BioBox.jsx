@@ -33,7 +33,7 @@ const NotoSansDisplay = styled.p`
 const PermanentMarkerText = styled.p`
   font-family: var(--font-family-permanent-marker);
   font-weight: var(--font-weight-bold);
-  font-size: 20px;
+  font-size: 25px;
 `;
 
 export default BioBox;
