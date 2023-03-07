@@ -17,9 +17,8 @@ const Carousel = () => {
   const [slide, setSlide] = useState(0);
 
   const photoList = [
-    austinGP,
-    follyTeam,
     headshot,
+    follyTeam,
     natureHike,
     office,
     officeParty,
@@ -37,16 +36,14 @@ const Carousel = () => {
     else setSlide(currentSlide-1);
   };
 
-  console.log(slide)
-
   return (
     <div>
       <CarouselContainer>
-        <li>
-          <button onClick={()=>moveLeft(slide, photoList.length)}>
-            <img src={LeftArrow} alt='Previous Frame'/>
-          </button>
-        </li>
+        <ButtonContainer>
+          <ChangePhotoButton onClick={()=>moveLeft(slide, photoList.length)}>
+            <Arrow src={LeftArrow} alt='Previous Frame'/>
+          </ChangePhotoButton>
+        </ButtonContainer>
         <li>
           <img
             src={photoList[slide]}
@@ -54,22 +51,40 @@ const Carousel = () => {
             alt='Bio Pic'
             />
         </li>
-        <li>
+        <BioBoxContainer>
           <BioBox/>
-        </li>
-        <li>
-          <button onClick={()=>moveRight(slide, photoList.length)}>
-            <img src={RightArrow} alt='Next Frame'/>
-          </button>
-        </li>
+        </BioBoxContainer>
+        <ButtonContainer>
+          <ChangePhotoButton onClick={()=>moveRight(slide, photoList.length)}>
+            <Arrow src={RightArrow} alt='Next Frame' />
+          </ChangePhotoButton>
+        </ButtonContainer>
       </CarouselContainer>
     </div>
   )
 };
 
+const Arrow = styled.img`
+  height: 100px;
+  width: 100px;
+  color: red;
+`;
+const BioBoxContainer = styled.li`
+  width: 2500px;
+`;
+const ButtonContainer = styled.li`
+  width: 1250px;
+`;
 const CarouselContainer = styled.ul`
   display: flex;
-  flex-direction: row;
   list-style: none;
-`
+  justify-content: space-evenly;
+  column-gap: 50px;
+`;
+const ChangePhotoButton = styled.button`
+  border: none;
+  background: none;
+  cursor: pointer;
+`;
+
 export default Carousel;
