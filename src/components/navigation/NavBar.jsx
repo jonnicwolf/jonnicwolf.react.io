@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import Me from '../../assets/photos/icons/Headshot.jpeg';
 import DarkMode from '../../assets/photos/icons/DarkMode_Sun_Moon_Icon.png';
-import '../../assets/fonts/fonts.css';
 
 const NavBar = () => {
   return (
     <NavbarContainer>
       <Fezz key={uuidv4()}>
-        <Link to='/' style={{textDecoration: 'none'}}>
+        <Link to='/projects' style={{textDecoration: 'none'}}>
           <RampartOneText>FEZZ</RampartOneText>
         </Link>
       </Fezz>
