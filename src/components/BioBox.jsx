@@ -5,7 +5,12 @@ const BioBox = () => {
   return (
     <div>
       <PermanentMarkerText>
-        Hi there! I'm Jon Narine,
+        Hi there! <a 
+        href="https://docs.google.com/viewer?url=https://docs.google.com/document/d/1L--uuFkBDl2thpDIuyzyUWNqv5Q0BShsKrwGvy6DusU/export?format=pdf"
+        style={{textDecoration: 'none', color: 'red' }} rel='noopener noreferrer'
+        target='_blank'>
+          I'm Jon Narine
+        </a>,
       </PermanentMarkerText>
       <NotoSansDisplay>
       a full-stack web developer and mixologist based in NYC. I specialize in front-end development and am proficient in coding with JavaScript and Python.
