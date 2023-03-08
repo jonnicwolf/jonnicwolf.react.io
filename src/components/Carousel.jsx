@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import BioBox from './BioBox';
+// image/icon imports ↓↓↓↓
 import LeftArrow from '../assets/photos/icons/LeftArrow_Icon.png';
 import RightArrow from '../assets/photos/icons/RightArrow_Icon.png';
-// image/icon imports ↓↓↓↓
-import austinGP from '../assets/photos/carousel_photos/austinGP.jpeg';
 import follyTeam from '../assets/photos/carousel_photos/follyteam.jpg';
 import headshot from '../assets/photos/carousel_photos/headshot.jpeg';
 import natureHike from '../assets/photos/carousel_photos/naturehike.jpeg';
@@ -41,7 +40,7 @@ const Carousel = () => {
       <CarouselContainer>
         <ButtonContainer>
           <ChangePhotoButton onClick={()=>moveLeft(slide, photoList.length)}>
-            <Arrow src={LeftArrow} alt='Previous Frame'/>
+            <Arrow src={LeftArrow} alt='Previous Frame' style={{alignSelf: 'center'}}/>
           </ChangePhotoButton>
         </ButtonContainer>
         <li>
@@ -49,7 +48,7 @@ const Carousel = () => {
             src={photoList[slide]}
             style={{height: '690px', width: '550px'}}
             alt='Bio Pic'
-            />
+          />
         </li>
         <BioBoxContainer>
           <BioBox/>
@@ -72,14 +71,14 @@ const BioBoxContainer = styled.li`
   width: 2500px;
 `;
 const ButtonContainer = styled.li`
-  width: 1250px;
+  width: 150px;
 `;
 const CarouselContainer = styled.ul`
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
   column-gap: 60px;
   list-style: none;
+  width: 1300px;
 `;
 const ChangePhotoButton = styled.button`
   border: none;
