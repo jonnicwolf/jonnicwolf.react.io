@@ -20,10 +20,8 @@ const ContactMe = () => {
           </RowItem>
         </FirstRow>
         <SecondRow>
-          
             <label htmlFor="message">Message</label>
             <MessageInput type="text" id='message'/>
-          
         </SecondRow>
         <SubmitButton type='submit' onClick="location.href='mailto:jonnicwolf@gmail.com';">
           SUBMIT

@@ -55,4 +55,5 @@ const RampartOneText = styled.p`
   font-size: 40px;
   margin: 0;
 `;
+
 export default NavBar;
