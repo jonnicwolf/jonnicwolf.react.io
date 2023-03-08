@@ -2,9 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
-import Me from '../../assets/photos/IMG_5542 2.jpeg';
-import Git from '../../assets/photos/git.png';
-import DarkMode from '../../assets/photos/day-and-night.png'
+import Me from '../../assets/photos/icons/Headshot.jpeg';
+import DarkMode from '../../assets/photos/icons/DarkMode_Sun_Moon_Icon.png';
 import '../../assets/fonts/fonts.css';
 
 const NavBar = () => {
@@ -16,21 +15,12 @@ const NavBar = () => {
         </Link>
       </Fezz>
       <li key={uuidv4()}>
-        <Link to='/about me'>
+        <Link to='/fezz'>
           <img 
             src={Me}
-            alt="about me"
+            alt="About Me"
             style={{height: '40px', width: '40px', borderRadius: '50%'}}
           />
-        </Link>
-      </li>
-      <li key={uuidv4()}>
-        <Link to='/contributions'>
-          <img 
-            src={Git}
-            alt="contributions"
-            style={{height: '40px', width: '40px'}}
-            />
         </Link>
       </li>
       <li key={uuidv4()}>

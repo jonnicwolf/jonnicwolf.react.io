@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Rampart+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Climate+Crisis&family=Julius+Sans+One&family=Rampart+One&family=Rubik+Vinyl&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@100&display=swap');
 
 :root {
   --font-family-rampart-one: 'Rampart One', cursive;
   --font-family-climate-crisis: 'Climate Crisis', cursive;
-  --font-family-julius-sans-one: ' Julius Sans One', sans-serif;
+  --font-family-julius-sans-one: 'Julius Sans One', sans-serif;
+  --font-family-permanent-marker: 'Permanent Marker', cursive;
+  --font-family-noto-sans-display: 'Noto Sans Display', sans-serif;
   --font-weight-normal: 100;
   --font-weight-bold: 700;
 }
