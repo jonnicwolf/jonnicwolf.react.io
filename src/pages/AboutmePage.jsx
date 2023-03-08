@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Carousel from '../components/Carousel';
+import ContactMe from '../components/ContactMe';
 
 const AboutmePage = () => {
   return (
@@ -11,6 +12,9 @@ const AboutmePage = () => {
         </li>
         <li>
           <Carousel />
+        </li>
+        <li>
+          <ContactMe />
         </li>
       </ElementOrganizer>
     </div>

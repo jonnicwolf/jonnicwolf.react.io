@@ -25,7 +25,6 @@ const LandingPage = () => {
 
 const Background = styled.div`
   background-image: radial-gradient(circle 1550px, white, rgb(42, 191, 250));
-  // background-size: 1000px;
   opacity: 100%;
   margin: 20px 20px;
 `;
