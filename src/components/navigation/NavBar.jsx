@@ -9,7 +9,9 @@ const NavBar = () => {
   return (
     <NavbarContainer>
       <Fezz key={uuidv4()}>
-        <Link to='/projects' style={{textDecoration: 'none'}}>
+        <Link 
+          to='/projects'
+          style={{textDecoration: 'none', color: 'black'}}>
           <RampartOneText>FEZZ</RampartOneText>
         </Link>
       </Fezz>
@@ -40,6 +42,7 @@ const NavbarContainer = styled.ul`
   column-gap: 10px;
   justify-content: end;
   margin-right: 30px;
+  margin-bottom: 100px;
 `
 
 const Fezz = styled.li`
