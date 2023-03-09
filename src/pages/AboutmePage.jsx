@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Carousel from '../components/Carousel';
-import Socials from '../components/Socials';
 
 const AboutmePage = () => {
   return (
