@@ -11,7 +11,7 @@ const LandingPage = () => {
       <Background>
         <LandingPageContainer>
           <li key={uuidv4()}><NameCard /></li>
-          <li key={uuidv4()}>Space for p5js project</li>
+          <li key={uuidv4()}></li>
           <LandingPageItem key={uuidv4()}>
             <Link to='/projects'>
               <EntryButton>ENTER</EntryButton>
