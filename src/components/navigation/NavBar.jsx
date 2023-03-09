@@ -46,8 +46,7 @@ const NavbarContainer = styled.ul`
   margin-bottom: 100px;
   cursor: pointer;
   border-bottom: 2px solid rgb(0, 0, 0, 0.3);
-`
-
+`;
 const Fezz = styled.li`
   margin-right: auto;
 `;
