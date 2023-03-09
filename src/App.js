@@ -4,6 +4,7 @@ import NavBar from './components/navigation/NavBar';
 import LandingPage from './pages/LandingPage';
 import ProjectPage from './pages/ProjectPage';
 import AboutmePage from './pages/AboutmePage';
+import Footer from './components/sections/Footer.jsx'
 
 function App() {
   const location = useLocation();
@@ -16,6 +17,7 @@ function App() {
           <Route path='/projects' element={<ProjectPage />} />
           <Route path='/fezz' element={<AboutmePage />} />
         </Routes>
+        <Footer />
       </div>
     </AnimatePresence>
   );
