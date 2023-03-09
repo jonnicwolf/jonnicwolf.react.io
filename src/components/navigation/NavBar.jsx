@@ -24,7 +24,7 @@ const NavBar = () => {
           />
         </Link>
       </li>
-      <li key={uuidv4()}>
+      <li key={uuidv4()} onClick={()=> alert('This feature is currently under construction.')}>
         <img
           src={DarkMode}
           alt="dark mode"
@@ -43,6 +43,7 @@ const NavbarContainer = styled.ul`
   justify-content: end;
   margin-right: 30px;
   margin-bottom: 100px;
+  cursor: pointer;
 `
 
 const Fezz = styled.li`
