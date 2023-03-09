@@ -28,22 +28,6 @@ const Background = styled.div`
   opacity: 100%;
   margin: 20px 20px;
 `;
-
-const LandingPageContainer = styled.ul`
-  height: 95vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  list-style: none;
-  padding-left: 0px;
-`;
-
-const LandingPageItem = styled.li`
-  padding-bottom: 2em;
-  padding-right: 40px;
-`
-
 const EntryButton = styled.button`
   padding: 15px 80px;
   font-family: "Roboto", sans-serif;
@@ -84,5 +68,18 @@ const EntryButton = styled.button`
     width: 100%;
   }
 `;
+const LandingPageContainer = styled.ul`
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding-left: 0px;
+`;
+const LandingPageItem = styled.li`
+  padding-bottom: 2em;
+  padding-right: 40px;
+`
 
 export default LandingPage;
