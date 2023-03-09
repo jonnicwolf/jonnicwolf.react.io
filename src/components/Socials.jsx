@@ -21,6 +21,14 @@ const Socials = () => {
           style={{border: '1px solid black', borderRadius: '25px'}}
         />
       </li>
+      <li>
+        <SocialIcon
+          url='mailto:jonnciwolf@gmail.com'
+          bgColor='white'
+          fgColor='rgb(130,216,255)'
+          style={{border: '1px solid black', borderRadius: '25px'}}
+        />
+      </li>
     </SocialsList>
   )
 };

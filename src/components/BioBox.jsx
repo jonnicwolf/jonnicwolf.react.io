@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Socials from './Socials';
 
 const BioBox = () => {
   return (
@@ -25,6 +26,7 @@ const BioBox = () => {
       <br></br><br></br>
       I'd love to hear from you!
       </NotoSansDisplay>
+      <Socials/>
     </div>
   )
 };
@@ -40,5 +42,6 @@ const PermanentMarkerText = styled.p`
   font-weight: var(--font-weight-bold);
   font-size: 25px;
 `;
+
 
 export default BioBox;
