@@ -1,12 +1,20 @@
 // import React from 'react';
 import React, { useEffect, useRef } from 'react';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 import '../assets/fonts/fonts.css';
 
 import Socials from '../components/Socials.jsx'
 
 const NameCard = () => {
+  // const newsTickerStyle = (slideDirection) => keyframes`
+  //   0% {
+  //     transform: translateX(0px)
+  //   }
+  //   100% {
+  //     transform: translateX(${slideDirection})
+  //   }
+  // `
   return (
     <section>
       <NameCardContainer style={{order: 0}}>
@@ -21,7 +29,7 @@ const NameCard = () => {
         </NameCardItem>
 
         <NameCardItem key={uuidv4()}>
-          <JuliusSansOneText size={'16px'} letterSpacing={'0.0250em'}>
+          <JuliusSansOneText size={'16px'} letterSpacing={'0.025em'}>
             FREELANCE, PREVIOUSLY SEATGEEK COMMERCE MARKETPLACE ENGINEERING
           </JuliusSansOneText>
         </NameCardItem>
@@ -64,9 +72,10 @@ const JuliusSansOneText = styled.p`
   font-weight: var(--font-weight-normal);
   font-size: ${props => props.size};
   letter-spacing: ${props => props.letterSpacing};
-  // @media (max-width: 400px) {
-  //   font-size: 20px;
-  // }
+  @media (max-width: 400px) {
+    font-size: 18px;
+    
+  }
 `;
 
 const RampartOneText = styled.p`
