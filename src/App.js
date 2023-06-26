@@ -17,7 +17,7 @@ function App() {
           <Route path='/projects' element={<ProjectPage />} />
           <Route path='/fezz' element={<AboutmePage />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </AnimatePresence>
   );

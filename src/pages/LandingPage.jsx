@@ -27,6 +27,10 @@ const Background = styled.div`
   background-image: radial-gradient(circle 1550px, white, rgb(42, 191, 250));
   opacity: 100%;
   margin: 20px 20px;
+
+  @media (max-width: 400px) {
+    background-image: radial-gradient(circle 750px, white, rgb(42, 191, 250));
+  }
 `;
 const EntryButton = styled.button`
   padding: 15px 80px;
