@@ -9,7 +9,7 @@ import Footer from './components/sections/Footer.jsx'
 function App() {
   const location = useLocation();
   return (
-    <AnimatePresence mode='wait'>
+    <AnimatePresence mode='wait'> 
       <div>
         {location.pathname !== '/' && <NavBar/>}
         <Routes>
