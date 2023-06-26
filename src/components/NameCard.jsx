@@ -21,13 +21,13 @@ const NameCard = () => {
         </NameCardItem>
 
         <NameCardItem key={uuidv4()}>
-          <JuliusSansOneText size={'16px'} letterSpacing={'0.025em'} mobile={true}>
+          <JuliusSansOneText size={'12px'} letterSpacing={'0.025em'} mobile={true}>
             FREELANCE, PREVIOUSLY SEATGEEK COMMERCE MARKETPLACE ENGINEERING
           </JuliusSansOneText>
         </NameCardItem>
 
         <NameCardItem key={uuidv4()}>
-          <JuliusSansOneText size={'18px'}>
+          <JuliusSansOneText size={'15px'}>
               BASED IN NEW YORK CITY
           </JuliusSansOneText>
         </NameCardItem>
@@ -50,9 +50,9 @@ const NameCardContainer = styled.ul`
   padding-left: 0;
 `;
 const NameCardItem = styled.li`
-  height: 1.8em;
+  height: 3em;
   @media (max-width: 400px) {
-    height: 6em;
+    height: 3em;
   }
 `;
 const JuliusSansOneText = styled.p`
@@ -64,8 +64,6 @@ const JuliusSansOneText = styled.p`
   @media (max-width: 400px) {
     overflow: hidden;
     white-space: nowrap;
-    height: 30px;
-    font-size: 18px;
     animation: ${props => props.mobile ? 'newsTickerStyle 10s linear infinite' : 'none'};
   }
 
