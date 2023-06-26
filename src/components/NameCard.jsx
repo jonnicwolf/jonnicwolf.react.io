@@ -1,20 +1,12 @@
 // import React from 'react';
-import React, { useEffect, useRef } from 'react';
-import styled, {keyframes} from 'styled-components';
+import React from 'react';
+import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 import '../assets/fonts/fonts.css';
 
 import Socials from '../components/Socials.jsx'
 
 const NameCard = () => {
-  // const newsTickerStyle = (slideDirection) => keyframes`
-  //   0% {
-  //     transform: translateX(0px)
-  //   }
-  //   100% {
-  //     transform: translateX(${slideDirection})
-  //   }
-  // `
   return (
     <section>
       <NameCardContainer style={{order: 0}}>
@@ -29,7 +21,7 @@ const NameCard = () => {
         </NameCardItem>
 
         <NameCardItem key={uuidv4()}>
-          <JuliusSansOneText size={'16px'} letterSpacing={'0.025em'}>
+          <JuliusSansOneText size={'16px'} letterSpacing={'0.025em'} mobile={true}>
             FREELANCE, PREVIOUSLY SEATGEEK COMMERCE MARKETPLACE ENGINEERING
           </JuliusSansOneText>
         </NameCardItem>
@@ -39,7 +31,9 @@ const NameCard = () => {
               BASED IN NEW YORK CITY
           </JuliusSansOneText>
         </NameCardItem>
+
         <br /><br />
+
         <NameCardItem key={uuidv4()}>
           <Socials />
         </NameCardItem >
@@ -54,30 +48,40 @@ const NameCardContainer = styled.ul`
   align-items: center;
   list-style: none;
   padding-left: 0;
-
-  @media (max-width: 400px) {
-
-  }
 `;
-
 const NameCardItem = styled.li`
   height: 1.8em;
   @media (max-width: 400px) {
     height: 6em;
   }
 `;
-
 const JuliusSansOneText = styled.p`
   font-family: var(--font-family-julius-sans-one);
   font-weight: var(--font-weight-normal);
   font-size: ${props => props.size};
   letter-spacing: ${props => props.letterSpacing};
+
   @media (max-width: 400px) {
+    overflow: hidden;
+    white-space: nowrap;
+    height: 30px;
     font-size: 18px;
-    
+    animation: ${props => props.mobile ? 'newsTickerStyle 10s linear infinite' : 'none'};
+  }
+
+  @keyframes newsTickerStyle {
+    0% {
+      transform: translateX(75%);
+      opacity: 0;
+    }
+    10%, 90% { opacity: 0.5; }
+    30%, 70% { opacity: 1; }
+    100% {
+      transform: translateX(-75%);
+      opacity: 0;
+    }
   }
 `;
-
 const RampartOneText = styled.p`
   font-family: var(--font-family-rampart-one);
   font-weight: var(--font-weight-normal);
@@ -86,4 +90,5 @@ const RampartOneText = styled.p`
     font-size: 40px;
   }
 `;
+
 export default NameCard;
