@@ -4,19 +4,27 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { v4 as uuidv4 } from 'uuid';
 import NameCard from '../components/NameCard.jsx';
+import Test from '../Test.jsx';
 
 const LandingPage = () => {
+  const newsItems = 'Freelancer, previously SeatGeek Commerce Marketplace Engineering'.split(" ")
+  const interval = 3000
   return (
+  //   .toUpperCase()
+  //   .split('')
+  //   .map(letter=> <span style={{letterSpacing: '0.0250em', fontSize: '16px'}}>{letter}</span>
+  // )}
     <motion.div exit={{opacity: 2000}}>
       <Background>
         <LandingPageContainer>
           <li key={uuidv4()}><NameCard /></li>
-          <li key={uuidv4()}></li>
+          <li key={uuidv4()}></li> 
           <LandingPageItem key={uuidv4()}>
             <Link to='/projects'>
               <EntryButton>ENTER</EntryButton>
             </Link>
-          </LandingPageItem>
+        </LandingPageItem> 
+      {/* <Test newsItems={newsItems} interval={interval} /> */}
         </LandingPageContainer>
       </Background>
     </motion.div>
