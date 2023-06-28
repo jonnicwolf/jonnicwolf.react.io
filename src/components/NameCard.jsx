@@ -1,4 +1,3 @@
-// import React from 'react';
 import React from 'react';
 import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
@@ -61,7 +60,17 @@ const JuliusSansOneText = styled.p`
   font-size: ${props => props.size};
   letter-spacing: ${props => props.letterSpacing};
 
-  @media (max-width: 400px) {
+  @media screen and (max-width: 400px) {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: ${props => props.mobile ? 'newsTickerStyle 10s linear infinite' : 'none'};
+  }
+  @media screen and (max-width: 450px) {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: ${props => props.mobile ? 'newsTickerStyle 10s linear infinite' : 'none'};
+  }
+  @media screen and (max-width: 850px) {
     overflow: hidden;
     white-space: nowrap;
     animation: ${props => props.mobile ? 'newsTickerStyle 10s linear infinite' : 'none'};
