@@ -14,32 +14,25 @@ const NameCard = () => {
         </li>
 
         <NameCardItem key={uuidv4()}>
-          <JuliusSansOneText>
-            {'FULL STACK DEVELOPER'
-              .split('')
-              .map(letter=> <span style={{letterSpacing: '0.20em'}}>{letter}</span>
-            )}
+          <JuliusSansOneText size={'20px'} letterSpacing={'0.2em'}>
+            FULL STACK DEVELOPER
           </JuliusSansOneText>
         </NameCardItem>
 
         <NameCardItem key={uuidv4()}>
-          <JuliusSansOneText>
-            {'Freelancer, previously SeatGeek Commerce Marketplace Engineering'
-              .toUpperCase()
-              .split('')
-              .map(letter=> <span style={{letterSpacing: '0.0250em', fontSize: '18px'}}>{letter}</span>
-            )}
+          <JuliusSansOneText size={'12px'} letterSpacing={'0.025em'} mobile={true}>
+            FREELANCE, PREVIOUSLY SEATGEEK COMMERCE MARKETPLACE ENGINEERING
           </JuliusSansOneText>
         </NameCardItem>
 
         <NameCardItem key={uuidv4()}>
-          <JuliusSansOneText>
-            <span style={{fontSize: '18px'}}>
+          <JuliusSansOneText size={'15px'}>
               BASED IN NEW YORK CITY
-            </span>
           </JuliusSansOneText>
         </NameCardItem>
+
         <br /><br />
+
         <NameCardItem key={uuidv4()}>
           <Socials />
         </NameCardItem >
@@ -55,20 +48,54 @@ const NameCardContainer = styled.ul`
   list-style: none;
   padding-left: 0;
 `;
-
 const NameCardItem = styled.li`
-  height: 1.8em;
+  height: 3em;
+  @media (max-width: 400px) {
+    height: 3em;
+  }
 `;
-
 const JuliusSansOneText = styled.p`
   font-family: var(--font-family-julius-sans-one);
   font-weight: var(--font-weight-normal);
-  font-size: 25px;
-`;
+  font-size: ${props => props.size};
+  letter-spacing: ${props => props.letterSpacing};
 
+  @media screen and (max-width: 400px) {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: ${props => props.mobile ? 'newsTickerStyle 10s linear infinite' : 'none'};
+  }
+  @media screen and (max-width: 450px) {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: ${props => props.mobile ? 'newsTickerStyle 10s linear infinite' : 'none'};
+  }
+  @media screen and (max-width: 850px) {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: ${props => props.mobile ? 'newsTickerStyle 10s linear infinite' : 'none'};
+  }
+
+  @keyframes newsTickerStyle {
+    0% {
+      transform: translateX(75%);
+      opacity: 0;
+    }
+    10%, 90% { opacity: 0.5; }
+    30%, 70% { opacity: 1; }
+    100% {
+      transform: translateX(-75%);
+      opacity: 0;
+    }
+  }
+`;
 const RampartOneText = styled.p`
   font-family: var(--font-family-rampart-one);
   font-weight: var(--font-weight-normal);
   font-size: 50px;
+  @media (max-width: 400px) {
+    font-size: 40px;
+  }
 `;
+
 export default NameCard;

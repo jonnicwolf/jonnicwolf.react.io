@@ -9,9 +9,8 @@ const ProjectPage = () => {
     <section id='projects'>
       <ProjectList>
         <li key={uuidv4()}>
-          <video
+          <ProjectGIF
             src={DragonRend}
-            style={{height: '600px'}}
             muted
             onMouseEnter={(event)=>event.target.play()}
             onMouseLeave={event=>{
@@ -21,9 +20,8 @@ const ProjectPage = () => {
           />
         </li>
         <li key={uuidv4()}>
-          <video
+          <ProjectGIF
             src={SnowMan}
-            style={{height: '600px'}}
             muted
             onMouseOver={event=>event.target.play()}
             onMouseLeave={event=>{
@@ -43,6 +41,17 @@ const ProjectList = styled.ul`
   flex-direction: column;
   list-style: none;
   row-gap: 300px;
+  @media (max-width: 401px) {
+    row-gap:10px;
+  }
 `;
+const ProjectGIF = styled.video`
+  height: 600px;
+  @media (max-width: 400px) {
+    width: 390px;
+    height: 400px;
+    margin-right: 15px;
+  }
+`
 
 export default ProjectPage;

@@ -11,12 +11,12 @@ const LandingPage = () => {
       <Background>
         <LandingPageContainer>
           <li key={uuidv4()}><NameCard /></li>
-          <li key={uuidv4()}></li>
+          <li key={uuidv4()}></li> 
           <LandingPageItem key={uuidv4()}>
             <Link to='/projects'>
               <EntryButton>ENTER</EntryButton>
             </Link>
-          </LandingPageItem>
+        </LandingPageItem> 
         </LandingPageContainer>
       </Background>
     </motion.div>
@@ -27,6 +27,11 @@ const Background = styled.div`
   background-image: radial-gradient(circle 1550px, white, rgb(42, 191, 250));
   opacity: 100%;
   margin: 20px 20px;
+
+  @media (max-width: 400px) {
+    width: 475px;
+    background-image: radial-gradient(circle 750px, white, rgb(42, 191, 250));
+  }
 `;
 const EntryButton = styled.button`
   padding: 15px 80px;
