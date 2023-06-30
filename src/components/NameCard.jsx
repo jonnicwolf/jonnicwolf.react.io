@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { v4 as uuidv4 } from 'uuid';
 import '../assets/fonts/fonts.css';
 
 import Socials from '../components/Socials.jsx'
@@ -8,51 +7,32 @@ import Socials from '../components/Socials.jsx'
 const NameCard = () => {
   return (
     <section>
-      <NameCardContainer style={{order: 0}}>
-        <li key={uuidv4()} style={{height: '105px'}}>
+      <NameCardContainer>
           <RampartOneText>FEZZ</RampartOneText>
-        </li>
-
-        <NameCardItem key={uuidv4()}>
-          <JuliusSansOneText size={'20px'} letterSpacing={'0.2em'}>
+          <JuliusSansOneText size={'25px'} letterSpacing={'0.020em'}>
             FULL STACK DEVELOPER
           </JuliusSansOneText>
-        </NameCardItem>
-
-        <NameCardItem key={uuidv4()}>
-          <JuliusSansOneText size={'12px'} letterSpacing={'0.025em'} mobile={true}>
-            FREELANCE, PREVIOUSLY SEATGEEK COMMERCE MARKETPLACE ENGINEERING
+          <JuliusSansOneText size={'14px'} letterSpacing={'0.020em'}>
+            FREELANCER, PREVIOUSLY SEATGEEK COMMERCE MARKETPLACE ENGINEERING
           </JuliusSansOneText>
-        </NameCardItem>
-
-        <NameCardItem key={uuidv4()}>
-          <JuliusSansOneText size={'15px'}>
+          <JuliusSansOneText size={'18px'}>
               BASED IN NEW YORK CITY
           </JuliusSansOneText>
-        </NameCardItem>
-
         <br /><br />
 
-        <NameCardItem key={uuidv4()}>
           <Socials />
-        </NameCardItem >
       </NameCardContainer>
     </section>
   )
 };
 
-const NameCardContainer = styled.ul`
+const NameCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   list-style: none;
   padding-left: 0;
-`;
-const NameCardItem = styled.li`
-  height: 3em;
-  @media (max-width: 400px) {
-    height: 3em;
-  }
+  order: 0;
 `;
 const JuliusSansOneText = styled.p`
   font-family: var(--font-family-julius-sans-one);
@@ -93,6 +73,8 @@ const RampartOneText = styled.p`
   font-family: var(--font-family-rampart-one);
   font-weight: var(--font-weight-normal);
   font-size: 50px;
+  height: 50px;
+
   @media (max-width: 400px) {
     font-size: 40px;
   }

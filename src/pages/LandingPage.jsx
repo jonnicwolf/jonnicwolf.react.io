@@ -1,25 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { v4 as uuidv4 } from 'uuid';
 import NameCard from '../components/NameCard.jsx';
 
 const LandingPage = () => {
   return (
-    <motion.div exit={{opacity: 2000}}>
-      <Background>
-        <LandingPageContainer>
-          <li key={uuidv4()}><NameCard /></li>
-          <li key={uuidv4()}></li> 
-          <LandingPageItem key={uuidv4()}>
-            <Link to='/projects'>
-              <EntryButton>ENTER</EntryButton>
-            </Link>
-        </LandingPageItem> 
-        </LandingPageContainer>
-      </Background>
-    </motion.div>
+    <Background>
+      <LandingPageContainer>
+        <NameCard />
+        <LandingPageItem>
+          <Link to="/projects">
+            <EntryButton>ENTER</EntryButton>
+          </Link>
+        </LandingPageItem>
+      </LandingPageContainer>
+    </Background>
   )
 };
 
@@ -73,7 +68,7 @@ const EntryButton = styled.button`
     width: 100%;
   }
 `;
-const LandingPageContainer = styled.ul`
+const LandingPageContainer = styled.div`
   height: 95vh;
   display: flex;
   flex-direction: column;
@@ -82,7 +77,7 @@ const LandingPageContainer = styled.ul`
   list-style: none;
   padding-left: 0px;
 `;
-const LandingPageItem = styled.li`
+const LandingPageItem = styled.div`
   padding-bottom: 2em;
   padding-right: 40px;
 `
