@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import { v4 as uuidv4 } from 'uuid';
 import DragonRend from '../assets/video/DragonRend-trim.mp4';
 import SnowMan from '../assets/video/SnowMan-trim.mp4';
+import FollyInternal from '../assets/video/FollyInternal.mp4';
 
 const ProjectPage = () => {
   return (
     <section id='projects'>
       <ProjectList>
-        <li key={uuidv4()}>
+        <a href='https://follyinternal.com' target='_blank' rel="noopener">
           <ProjectGIF
-            src={DragonRend}
+            src={FollyInternal}
             muted
             onMouseEnter={(event)=>event.target.play()}
             onMouseLeave={event=>{
@@ -18,24 +18,31 @@ const ProjectPage = () => {
               event.target.pause()
             }}
           />
-        </li>
-        <li key={uuidv4()}>
-          <ProjectGIF
-            src={SnowMan}
-            muted
-            onMouseOver={event=>event.target.play()}
-            onMouseLeave={event=>{
-              event.target.currentTime=0
-              event.target.pause()
-            }}
-          />
-        </li>
+        </a>
+        <ProjectGIF
+          src={DragonRend}
+          muted
+          onMouseEnter={(event)=>event.target.play()}
+          onMouseLeave={event=>{
+            event.target.currentTime=0
+            event.target.pause()
+          }}
+        />
+        <ProjectGIF
+          src={SnowMan}
+          muted
+          onMouseOver={event=>event.target.play()}
+          onMouseLeave={event=>{
+            event.target.currentTime=0
+            event.target.pause()
+          }}
+        />
       </ProjectList>
     </section>
   )
 };
 
-const ProjectList = styled.ul`
+const ProjectList = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -52,6 +59,6 @@ const ProjectGIF = styled.video`
     height: 400px;
     margin-right: 15px;
   }
-`
+`;
 
 export default ProjectPage;
