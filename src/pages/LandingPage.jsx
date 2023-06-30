@@ -10,10 +10,9 @@ const LandingPage = () => {
     <motion.div exit={{opacity: 2000}}>
       <Background>
         <LandingPageContainer>
-          <li key={uuidv4()}><NameCard /></li>
-          <li key={uuidv4()}></li>
+          <NameCard />
           <LandingPageItem key={uuidv4()}>
-            <Link to='/projects'>
+            <Link to="/projects">
               <EntryButton>ENTER</EntryButton>
             </Link>
           </LandingPageItem>
@@ -68,7 +67,7 @@ const EntryButton = styled.button`
     width: 100%;
   }
 `;
-const LandingPageContainer = styled.ul`
+const LandingPageContainer = styled.div`
   height: 95vh;
   display: flex;
   flex-direction: column;
@@ -77,7 +76,7 @@ const LandingPageContainer = styled.ul`
   list-style: none;
   padding-left: 0px;
 `;
-const LandingPageItem = styled.li`
+const LandingPageItem = styled.div`
   padding-bottom: 2em;
   padding-right: 40px;
 `
