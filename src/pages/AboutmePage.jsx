@@ -4,29 +4,23 @@ import Carousel from '../components/Carousel';
 
 const AboutmePage = () => {
   return (
-    <div style={{marginTop: '50px'}}>
-      <ElementOrganizer>
-        <li>
-          <Contributions src="https://ghchart.rshah.org/jonnicwolf" alt="My Github Contributions" />
-        </li>
-        <li>
-          <Carousel />
-        </li>
-      </ElementOrganizer>
-    </div>
+    <AboutMeContainer>
+      <Contributions src="https://ghchart.rshah.org/jonnicwolf" alt="My Github Contributions" />
+      <Carousel />
+    </AboutMeContainer>
   )
 };
 
-const Contributions = styled.img`
-  height: 150px;
-`;
-const ElementOrganizer = styled.ul`
+const AboutMeContainer = styled.div`
   padding-inline-start: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 80px;
+  row-gap: 40px;
   list-style: none;
+`;
+const Contributions = styled.img`
+  height: 150px;
 `;
 
 export default AboutmePage;
