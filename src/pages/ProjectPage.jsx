@@ -38,14 +38,15 @@ const ProjectList = styled.div`
   align-items: center;
   flex-direction: column;
   list-style: none;
-  row-gap: 300px;
+  row-gap: 100px;
   @media (max-width: 401px) {
     row-gap:10px;
   }
 `;
 const ProjectGIF = styled.video`
   box-shadow: 1px 1px 15px 10px grey;
-  height: 600px;
+  height: 90vh;
+  width: 90vw;
   @media (max-width: 400px) {
     width: 390px;
     height: 400px;
