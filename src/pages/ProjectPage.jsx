@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import DragonRend from '../assets/video/DragonRend-trim.mp4';
-import SnowMan from '../assets/video/SnowMan-trim.mp4';
 import FollyInternal from '../assets/video/FollyInternal.mp4';
+import SCD from '../assets/video/Stoned_Cold_Dreamery.mp4'
 
 const ProjectPage = () => {
   return (
@@ -19,24 +18,16 @@ const ProjectPage = () => {
             }}
           />
         </a>
-        <ProjectGIF
-          src={DragonRend}
-          muted
-          onMouseEnter={(event)=>event.target.play()}
-          onMouseLeave={event=>{
-            event.target.currentTime=0
-            event.target.pause()
-          }}
-        />
-        <ProjectGIF
-          src={SnowMan}
-          muted
-          onMouseOver={event=>event.target.play()}
-          onMouseLeave={event=>{
-            event.target.currentTime=0
-            event.target.pause()
-          }}
-        />
+        <a href='https://thestonedcolddreamery.com'>
+          <ProjectGIF
+            src={SCD}
+            muted
+            onMouseEnter={(event)=>event.target.play()}
+            onMouseLeave={event=>{
+              event.target.currentTime=0
+              event.target.pause()
+            }}/>
+        </a>
       </ProjectList>
     </section>
   )
