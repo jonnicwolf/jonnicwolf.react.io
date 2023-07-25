@@ -18,7 +18,7 @@ const ProjectPage = () => {
             }}
           />
         </a>
-        <a href='https://thestonedcolddreamery.com'>
+        <a href='https://thestonedcolddreamery.com' target='_blank' rel="noopener">
           <ProjectGIF
             src={SCD}
             muted
