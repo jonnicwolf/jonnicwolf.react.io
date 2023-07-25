@@ -44,7 +44,7 @@ const ProjectList = styled.div`
   }
 `;
 const ProjectGIF = styled.video`
-  box-shadow: 1px 1px 15px 15px grey;
+  box-shadow: 1px 1px 15px 10px grey;
   height: 600px;
   @media (max-width: 400px) {
     width: 390px;
