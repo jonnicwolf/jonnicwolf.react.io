@@ -45,9 +45,10 @@ const ProjectVideo = ({bio, title, href, videoSrc}) => {
       <HoverCover>
         <Title>{title}</Title>
         <Bio>{bio}</Bio>
-        <LinkButton>
-          <Link href={href}>LIVE SITE</Link>
-        </LinkButton>
+        <Button
+          href={href}
+          textContent='LIVE SITE'
+        />
       </HoverCover>
     </Container>
   );
@@ -55,40 +56,35 @@ const ProjectVideo = ({bio, title, href, videoSrc}) => {
 
 const HoverCover = styled.div`
   opacity: 0;
-  transform: translate(-100px,-550px);
+  transform: translate(-80px,-400px);
   width: 420px;
+  transition: opacity 0.3s ease-in, transform 0.3s ease;
   z-index: 1;
 `;
 const Title = styled.h1`
-font-family: var(--font-family-modak);
+font-family: var(--font-family-rubik);
 font-weight: var(--font-weight-normal);
-  font-size: 40px;
+  font-size: 35px;
   margin: 0;
 `;
 const Bio = styled.p`
-  font-family: var(--font-family-rubik);
+  font-family: var(--font-family-noto-sans-display);
   font-size: 30px;
   letter-spacing: 2px;
-  margin-top: 5px;
+  margin-top: 10px;
   margin-bottom: 3px;
-`;
-const LinkButton = styled.button`
-  height: 45px;
-  width: 120px;
-`;
-const Link = styled.a`
-  font-family: var(--font-family-rubik);
-  color: black;
-  font-size: 15px;
-  text-decoration: none;
 `;
 const Project = styled.video`
   box-shadow: 1px 1px 15px 10px grey;
   height: 80vh;
   width: 80vw;
   opacity: 1;
+  transition: opacity 0.3s ease-in, transform 0.3s ease;
 `;
 const Container = styled.div`
+  height: 90vh;
+  padding-left: 7vw;
+  transform: translateX(-4vw);
   &:hover {
     & ${Project} {
       opacity: 0.35;
