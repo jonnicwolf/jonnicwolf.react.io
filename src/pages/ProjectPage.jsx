@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ProjectVideo from '../components/ProjectVideo';
 import FollyInternal from '../assets/video/FollyInternal.mp4';
 import SCD from '../assets/video/Stoned_Cold_Dreamery.mp4'
 
@@ -7,27 +8,18 @@ const ProjectPage = () => {
   return (
     <section id='projects'>
       <ProjectList>
-        <a href='https://follyinternal.com' target='_blank' rel="noopener">
-          <ProjectGIF
-            src={FollyInternal}
-            muted
-            onMouseEnter={(event)=>event.target.play()}
-            onMouseLeave={event=>{
-              event.target.currentTime=0
-              event.target.pause()
-            }}
-          />
-        </a>
-        <a href='https://thestonedcolddreamery.com' target='_blank' rel="noopener">
-          <ProjectGIF
-            src={SCD}
-            muted
-            onMouseEnter={(event)=>event.target.play()}
-            onMouseLeave={event=>{
-              event.target.currentTime=0
-              event.target.pause()
-            }}/>
-        </a>
+        <ProjectVideo
+          bio='Webstore / Ice Cream Shop'
+          title='Stoned Cold Dreamery'
+          href='https://thestonedcolddreamery.com'
+          videoSrc={SCD}
+        />
+        <ProjectVideo
+          bio='Internal Website'
+          title='The Folly'
+          href='https://follyinternal.com'
+          videoSrc={FollyInternal}
+        />
       </ProjectList>
     </section>
   )
@@ -41,16 +33,6 @@ const ProjectList = styled.div`
   row-gap: 100px;
   @media (max-width: 401px) {
     row-gap:10px;
-  }
-`;
-const ProjectGIF = styled.video`
-  box-shadow: 1px 1px 15px 10px grey;
-  height: 90vh;
-  width: 90vw;
-  @media (max-width: 400px) {
-    width: 390px;
-    height: 400px;
-    margin-right: 15px;
   }
 `;
 
