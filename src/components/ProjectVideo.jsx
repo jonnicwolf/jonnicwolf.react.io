@@ -35,7 +35,7 @@ const ProjectVideo = ({bio, title, href, videoSrc}) => {
   },[]);
 
   return (
-    <>
+    <Container>
       <Project
         ref={videoRef}
         muted
@@ -49,21 +49,15 @@ const ProjectVideo = ({bio, title, href, videoSrc}) => {
           <Link href={href}>LIVE SITE</Link>
         </LinkButton>
       </HoverCover>
-    </>
+    </Container>
   );
 };
 
 const HoverCover = styled.div`
-  border: 2px solid red;
-  display: block;
-  transform: translate(-450px,-550px);
-  // transform: translateY(-50px);
-  left: 200px;
+  opacity: 0;
+  transform: translate(-100px,-550px);
   width: 420px;
   z-index: 1;
-  &:hover {
-    display: block;
-  }
 `;
 const Title = styled.h1`
 font-family: var(--font-family-modak);
@@ -83,7 +77,6 @@ const LinkButton = styled.button`
   width: 120px;
 `;
 const Link = styled.a`
-  background-color: none;
   font-family: var(--font-family-rubik);
   color: black;
   font-size: 15px;
@@ -93,10 +86,16 @@ const Project = styled.video`
   box-shadow: 1px 1px 15px 10px grey;
   height: 80vh;
   width: 80vw;
-  opacity: 0.35;
-  z-index: 2;
+  opacity: 1;
+`;
+const Container = styled.div`
   &:hover {
-    opacity: 0.35;
+    & ${Project} {
+      opacity: 0.35;
+    }
+    & ${HoverCover} {
+      opacity: 1;
+    }
   }
 `;
 

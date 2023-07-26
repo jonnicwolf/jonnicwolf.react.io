@@ -11,19 +11,17 @@ const LinkButton = ({textContent}) => {
 
 const Button = styled.button`
   padding: 15px 80px;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-family-rubik);
   font-weight: 900;
-  font-size: 15px;
+  font-size: 12px;
   background: transparent;
   outline: none !important;
   cursor: pointer;
-  transition: all 0.3s ease;
   position: relative;
   display: inline-block;
   border: 1px solid rgb(0,0,0);
   z-index: 1;
   color: rgb(0,0,0);
-  // left: 20px;
 
   &:after {
     position: absolute;
@@ -35,7 +33,7 @@ const Button = styled.button`
     direction: rtl;
     z-index: -1;
     background: red;
-    transition: all 0.3s ease;
+    transition: all 0.1s ease;
   }
 
   &:hover {
