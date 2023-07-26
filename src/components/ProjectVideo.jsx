@@ -1,5 +1,6 @@
 import React, { useRef, useEffect }  from 'react';
 import styled from 'styled-components';
+import Button from '../components/Button';
 
 const ProjectVideo = ({bio, title, href, videoSrc}) => {
   const videoRef = useRef(null);
@@ -53,9 +54,12 @@ const ProjectVideo = ({bio, title, href, videoSrc}) => {
 };
 
 const HoverCover = styled.div`
-  // border: 2px solid red;
+  border: 2px solid red;
   display: block;
-  transform: translate(-450px,-500px);
+  transform: translate(-450px,-550px);
+  // transform: translateY(-50px);
+  left: 200px;
+  width: 420px;
   z-index: 1;
   &:hover {
     display: block;
@@ -75,7 +79,6 @@ const Bio = styled.p`
   margin-bottom: 3px;
 `;
 const LinkButton = styled.button`
-  // background-color: none;
   height: 45px;
   width: 120px;
 `;
