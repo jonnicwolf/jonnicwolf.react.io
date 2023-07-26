@@ -2,25 +2,17 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import BioBox from './BioBox';
 // image/icon imports ↓↓↓↓
-import LeftArrow from '../assets/photos/icons/LeftArrow_Icon.png';
-import RightArrow from '../assets/photos/icons/RightArrow_Icon.png';
-import follyTeam from '../assets/photos/carousel_photos/follyteam.jpg';
-import headshot from '../assets/photos/carousel_photos/headshot.jpeg';
-import natureHike from '../assets/photos/carousel_photos/naturehike.jpeg';
-import office from '../assets/photos/carousel_photos/office.jpeg';
-import officeParty from '../assets/photos/carousel_photos/officeParty.JPG';
-import team from '../assets/photos/carousel_photos/team.jpg';
-import tiffNfezz from '../assets/photos/carousel_photos/tiffNfezz.JPG';
+import LeftArrow from '../assets/icons/LeftArrow_Icon.png';
+import RightArrow from '../assets/icons/RightArrow_Icon.png';
+import headshot from '../assets/photos/headshot.jpeg';
+import team from '../assets/photos/team.jpg';
+import tiffNfezz from '../assets/photos/tiffNfezz.JPG';
 
 const Carousel = () => {
   const [slide, setSlide] = useState(0);
 
   const photoList = [
     headshot,
-    follyTeam,
-    natureHike,
-    office,
-    officeParty,
     team,
     tiffNfezz
   ];
@@ -43,6 +35,7 @@ const Carousel = () => {
             <Arrow src={LeftArrow} alt='Previous Frame' style={{alignSelf: 'center'}}/>
           </ChangePhotoButton>
         </ButtonContainer>
+
         <li>
           <img
             src={photoList[slide]}
@@ -50,9 +43,11 @@ const Carousel = () => {
             alt='Bio Pic'
           />
         </li>
+
         <BioBoxContainer>
           <BioBox/>
         </BioBoxContainer>
+
         <ButtonContainer>
           <ChangePhotoButton onClick={()=>moveRight(slide, photoList.length)}>
             <Arrow src={RightArrow} alt='Next Frame' />
