@@ -45,10 +45,9 @@ const ProjectVideo = ({bio, title, href, videoSrc}) => {
       <HoverCover>
         <Title>{title}</Title>
         <Bio>{bio}</Bio>
-        <Button
-          href={href}
-          textContent='LIVE SITE'
-        />
+        <a href={href} target='_blank' rel="noopener noreferrer">
+          <Button textContent='LIVE SITE' />
+        </a>
       </HoverCover>
     </Container>
   );
