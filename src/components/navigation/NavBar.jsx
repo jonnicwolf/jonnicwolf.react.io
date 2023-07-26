@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
-import Me from '../../assets/photos/icons/Headshot.jpeg';
-import DarkMode from '../../assets/photos/icons/DarkMode_Sun_Moon_Icon.png';
+import Icons8_about_me_50 from '../../assets/icons/Icons8_about_me_50.png'
+
 
 const NavBar = () => {
   return (
@@ -18,17 +18,10 @@ const NavBar = () => {
       <li key={uuidv4()}>
         <Link to='/fezz'>
           <NavImg 
-            src={Me}
+            src={Icons8_about_me_50}
             alt="About Me"
-            style={{borderRadius: '50%'}}
           />
         </Link>
-      </li>
-      <li key={uuidv4()} onClick={()=> alert('This feature is currently under construction.')}>
-        <NavImg
-          src={DarkMode}
-          alt="dark mode"
-        />
       </li>
     </NavbarContainer>
   )

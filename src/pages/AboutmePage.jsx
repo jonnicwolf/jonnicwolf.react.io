@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Carousel from '../components/Carousel';
+import Carousel from '../components/AboutMeCarousel';
 
 const AboutmePage = () => {
   return (

@@ -5,6 +5,7 @@ import styled from 'styled-components';
 const Socials = () => {
   return (
     <SocialsList>
+        {/* SocialIcons are from an external library, therefore inline styles are necessary. */}
         <SocialIcon
           url='https://www.linkedin.com/in/jonathannarine/'
           bgColor='white'
@@ -29,8 +30,9 @@ const Socials = () => {
 
 
 const SocialsList = styled.div`
-  display: flex;
+  border-radius: 25px;
   column-gap: 10px;
+  display: flex;
   list-style: none;
   padding-inline-start: 0px;
 `;
