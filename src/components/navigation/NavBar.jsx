@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
-import Icons8_about_me_50 from '../../assets/icons/Icons8_about_me_50.png'
+import Icons8_about_me_50 from '../../assets/icons/Icons8_about_me_50.png';
 
 
 const NavBar = () => {
@@ -27,7 +27,7 @@ const NavBar = () => {
   )
 };
 
-const NavbarContainer = styled.ul`
+const NavbarContainer = styled.div`
   display: flex;
   flex-direction: row;
   list-style: none;
@@ -40,7 +40,7 @@ const NavbarContainer = styled.ul`
   cursor: pointer;
   border-bottom: 2px solid rgb(0, 0, 0, 0.3);
 `;
-const Fezz = styled.li`
+const Fezz = styled.div`
   margin-right: auto;
 `;
 const NavImg = styled.img`
