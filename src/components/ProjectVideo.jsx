@@ -57,7 +57,7 @@ const HoverCover = styled.div`
   opacity: 0;
   transform: translate(-80px,-400px);
   width: 420px;
-  transition: opacity 0.3s ease-in, transform 0.3s ease;
+  transition: opacity 0.1s ease-in, transform 0.1s ease;
   z-index: 1;
 `;
 const Title = styled.h1`
@@ -78,7 +78,7 @@ const Project = styled.video`
   height: 80vh;
   width: 80vw;
   opacity: 1;
-  transition: opacity 0.3s ease-in, transform 0.3s ease;
+  transition: opacity 0.1s ease-in, transform 0.1s ease;
 `;
 const Container = styled.div`
   height: 90vh;
