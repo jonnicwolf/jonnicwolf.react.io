@@ -22,21 +22,19 @@ const LandingPage = () => {
 };
 
 const Background = styled.div`
-  background-image: radial-gradient(circle 1550px, white, rgb(42, 191, 250));
+  background-image: radial-gradient(circle 1150px, white, rgb(42, 191, 250));
   opacity: 100%;
   margin: 20px 20px;
-
   @media (max-width: 400px) {
     width: 475px;
   }
-    background-image: radial-gradient(circle 750px, white, rgb(42, 191, 250));
 `;
 const LandingPageContainer = styled.div`
-  height: 95vh;
+  align-items: center;
   display: flex;
+  height: 95vh;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   list-style: none;
   padding-left: 0px;
 `;
