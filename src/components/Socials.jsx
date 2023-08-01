@@ -24,16 +24,20 @@ const Socials = () => {
           fgColor='rgb(130,216,255)'
           style={{border: '1px solid black', borderRadius: '25px'}}
         />
+        <SocialIcon
+          url='https://docs.google.com/viewer?url=https://docs.google.com/document/d/1L--uuFkBDl2thpDIuyzyUWNqv5Q0BShsKrwGvy6DusU/export?format=pdf'
+          bgColor='white'
+          fgColor='rgb(130,216,255)'
+          style={{border: '1px solid black', borderRadius: '25px'}}
+        />
     </SocialsList>
   )
 };
 
 
-const SocialsList = styled.div`
-  border-radius: 25px;
+const SocialsList = styled.div`  
   column-gap: 10px;
   display: flex;
-  list-style: none;
   padding-inline-start: 0px;
 `;
 
