@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import BioBox from './BioBox';
 import Socials from './Socials';
+
 // image/icon imports ↓↓↓↓
 import LeftArrow from '../assets/icons/LeftArrow_Icon.png';
 import RightArrow from '../assets/icons/RightArrow_Icon.png';
@@ -98,6 +99,6 @@ const SocialsContainer = styled.div`
   @media (min-width: 385px) {
     display: none;
   }
-`
+`;
 
 export default Carousel;
