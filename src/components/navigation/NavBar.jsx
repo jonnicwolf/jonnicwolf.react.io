@@ -1,44 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { v4 as uuidv4 } from 'uuid';
 import Icons8_about_me_50 from '../../assets/icons/Icons8_about_me_50.png';
 
 
 const NavBar = () => {
   return (
     <NavbarContainer>
-      <Fezz key={uuidv4()}>
-        <Link 
-          to='/projects'
-          style={{textDecoration: 'none', color: 'black'}}>
+      <Fezz>
+        <Link to='/projects' style={{textDecoration: 'none', color: 'black'}} >
           <RampartOneText>FEZZ</RampartOneText>
         </Link>
       </Fezz>
-      <li key={uuidv4()}>
-        <Link to='/fezz'>
-          <NavImg 
-            src={Icons8_about_me_50}
-            alt="About Me"
-          />
-        </Link>
-      </li>
+      <Link to='/fezz'>
+        <NavImg src={Icons8_about_me_50} alt="About Me" />
+      </Link>
     </NavbarContainer>
-  )
+  );
 };
 
 const NavbarContainer = styled.div`
+  border-bottom: 2px solid rgb(0, 0, 0, 0.3);
+  cursor: pointer;
   display: flex;
   flex-direction: row;
   list-style: none;
   column-gap: 10px;
   justify-content: end;
-  margin-right: 30px;
-  margin-left: 30px;
+  margin-right: 5vw;
+  margin-left: 5vw;
   padding-inline-start: 0;
   margin-bottom: 100px;
-  cursor: pointer;
-  border-bottom: 2px solid rgb(0, 0, 0, 0.3);
 `;
 const Fezz = styled.div`
   margin-right: auto;

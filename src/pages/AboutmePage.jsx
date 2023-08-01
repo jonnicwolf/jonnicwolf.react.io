@@ -16,11 +16,21 @@ const AboutMeContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding-inline-start: 0px;
+  padding-bottom: 5vh;
 `;
 const Contributions = styled.img`
   height: 15vh;
-  transform: translateX(30px);
   margin-bottom: 2vh;
+  @media (max-width: 1000px) {
+    width: 70vw;
+  }
+  @media (max-width: 580px) {
+    width: 90vw;
+  }
+  @media (max-width: 385px) {
+    height: 20vh;
+    width: 98vw;
+  }
 `;
 
 export default AboutmePage;

@@ -26,7 +26,9 @@ const BioBox = () => {
         <br></br><br></br>
         I'd love to hear from you!
       </NotoSansDisplay>
-      <Socials/>
+      <SocialsContainer>
+        <Socials />
+      </SocialsContainer>
     </div>
   )
 };
@@ -43,5 +45,10 @@ const PermanentMarkerText = styled.p`
   font-size: 25px;
   letter-spacing: 0.0120em;
 `;
+const SocialsContainer = styled.div`
+  @media (max-width: 385px) {
+    display: none;
+  }
+`
 
 export default BioBox;
