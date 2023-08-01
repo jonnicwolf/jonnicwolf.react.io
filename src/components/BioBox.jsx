@@ -6,11 +6,13 @@ const BioBox = () => {
   return (
     <div>
       <PermanentMarkerText>
-        Hi there! <a 
-        href="https://docs.google.com/viewer?url=https://docs.google.com/document/d/1L--uuFkBDl2thpDIuyzyUWNqv5Q0BShsKrwGvy6DusU/export?format=pdf"
-        style={{textDecoration: 'none', color: 'red'}} rel='noopener noreferrer'
-        target='_blank'>
-          I'm Jon Narine
+        Hello!
+        <br/>
+        <a
+          href="https://docs.google.com/viewer?url=https://docs.google.com/document/d/1L--uuFkBDl2thpDIuyzyUWNqv5Q0BShsKrwGvy6DusU/export?format=pdf"
+          style={{textDecoration: 'none', color: 'red'}} rel='noopener noreferrer'
+          target='_blank'>
+            I'm Jon Narine
         </a>,
       </PermanentMarkerText>
       <NotoSansDisplay>
@@ -24,7 +26,9 @@ const BioBox = () => {
         <br></br><br></br>
         I'd love to hear from you!
       </NotoSansDisplay>
-      <Socials/>
+      <SocialsContainer>
+        <Socials />
+      </SocialsContainer>
     </div>
   )
 };
@@ -40,6 +44,11 @@ const PermanentMarkerText = styled.p`
   font-weight: var(--font-weight-bold);
   font-size: 25px;
   letter-spacing: 0.0120em;
+`;
+const SocialsContainer = styled.div`
+  @media (max-width: 385px) {
+    display: none;
+  }
 `;
 
 export default BioBox;

@@ -29,6 +29,7 @@ const Socials = () => {
           bgColor='white'
           fgColor='rgb(130,216,255)'
           style={{border: '1px solid black', borderRadius: '25px'}}
+          target='_blank'
         />
     </SocialsList>
   )

@@ -12,15 +12,25 @@ const AboutmePage = () => {
 };
 
 const AboutMeContainer = styled.div`
-  padding-inline-start: 0px;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  row-gap: 40px;
-  list-style: none;
+  padding-inline-start: 0px;
+  padding-bottom: 5vh;
 `;
 const Contributions = styled.img`
-  height: 150px;
+  height: 15vh;
+  margin-bottom: 2vh;
+  @media (max-width: 1000px) {
+    width: 70vw;
+  }
+  @media (max-width: 580px) {
+    width: 90vw;
+  }
+  @media (max-width: 385px) {
+    height: 20vh;
+    width: 98vw;
+  }
 `;
 
 export default AboutmePage;

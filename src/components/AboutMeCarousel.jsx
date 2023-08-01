@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import BioBox from './BioBox';
+import Socials from './Socials';
+
 // image/icon imports ↓↓↓↓
 import LeftArrow from '../assets/icons/LeftArrow_Icon.png';
 import RightArrow from '../assets/icons/RightArrow_Icon.png';
@@ -28,57 +30,75 @@ const Carousel = () => {
   };
 
   return (
-    <div>
-      <CarouselContainer>
-        <ButtonContainer>
-          <ChangePhotoButton onClick={()=>moveLeft(slide, photoList.length)}>
-            <Arrow src={LeftArrow} alt='Previous Frame' style={{alignSelf: 'center'}}/>
-          </ChangePhotoButton>
-        </ButtonContainer>
+    <CarouselContainer>
+      <ButtonContainer>
+        <ChangePhotoButton onClick={()=>moveLeft(slide, photoList.length)}>
+          <Arrow src={LeftArrow} alt='Previous Frame' style={{alignSelf: 'center'}}/>
+        </ChangePhotoButton>
+      </ButtonContainer>
 
-        <li>
-          <img
-            src={photoList[slide]}
-            style={{height: '690px', width: '550px'}}
-            alt='Bio Pic'
-          />
-        </li>
+      <Photo src={photoList[slide]} alt='Bio Pic' />
+      <BioBox/>
 
-        <BioBoxContainer>
-          <BioBox/>
-        </BioBoxContainer>
-
-        <ButtonContainer>
-          <ChangePhotoButton onClick={()=>moveRight(slide, photoList.length)}>
-            <Arrow src={RightArrow} alt='Next Frame' />
-          </ChangePhotoButton>
-        </ButtonContainer>
-      </CarouselContainer>
-    </div>
-  )
+      <ButtonContainer>
+        <ChangePhotoButton onClick={()=>moveRight(slide, photoList.length)}>
+          <Arrow src={RightArrow} alt='Next Frame' />
+        </ChangePhotoButton>
+      </ButtonContainer>
+      <SocialsContainer>
+        <Socials />
+      </SocialsContainer>
+    </CarouselContainer>
+  );
 };
 
 const Arrow = styled.img`
   height: 60px;
   width: 60px;
+  @media (max-width: 745px) {
+    display: none;
+  }
 `;
-const BioBoxContainer = styled.li`
-  width: 2500px;
+const ButtonContainer = styled.div`
+  width: 8vw;
 `;
-const ButtonContainer = styled.li`
-  width: 150px;
-`;
-const CarouselContainer = styled.ul`
-  display: flex;
+const CarouselContainer = styled.div`
   align-items: center;
-  column-gap: 60px;
-  list-style: none;
-  width: 1300px;
+  column-gap: 7vw;
+  display: flex;
+  width: 85vw;
+  @media (max-width: 745px) {
+    flex-direction: column;
+  }
 `;
 const ChangePhotoButton = styled.button`
   border: none;
   background: none;
   cursor: pointer;
+`;
+const Photo = styled.img`
+  height: 60vh;
+  width: 30vw;
+  @media (max-width: 1240px) {
+    height: 75vh;
+    width: 30vw;
+  }
+  @media (max-width: 1000px) {
+    height: 85vh;
+    width: 30vw;
+  }
+  @media (max-width: 745px) {
+    height: 60vh;
+    width: 50vw;
+  }
+  @media (max-width: 385px) {
+    width: 80vw;
+  }
+`;
+const SocialsContainer = styled.div`
+  @media (min-width: 385px) {
+    display: none;
+  }
 `;
 
 export default Carousel;
