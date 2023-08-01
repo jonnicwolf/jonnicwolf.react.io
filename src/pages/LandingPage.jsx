@@ -25,9 +25,6 @@ const Background = styled.div`
   background-image: radial-gradient(circle 1150px, white, rgb(42, 191, 250));
   opacity: 100%;
   margin: 20px 20px;
-  @media (max-width: 400px) {
-    width: 475px;
-  }
 `;
 const LandingPageContainer = styled.div`
   align-items: center;
