@@ -31,23 +31,36 @@ const CurrentRole = styled.p`
   font-size: 20px;
   letter-spacing: 0.020em;
   margin: 0;
-  @media (max-width: 500px) {
+  @media (max-width: 850px) {
+    font-size: 15px;
+  }
+  @media (max-width: 650px) {
+    font-size: 12px;
+  }
+  @media (max-width: 530px) {
     font-size: 10px;
+  }
+  @media (max-width: 450px) {
+    font-size: 12px;
+    text-align: center;
   }
 `;
 const FSD = styled.p`
   font-family: Julius Sans One;
   font-size: 25px;
   letter-spacing: 0.020em;
-  @media (max-width: 500px) {
+  @media (max-width: 530px) {
     font-size: 15px;
+  }
+  @media (max-width: 500px) {
+    font-size: 12px;
   }
 `;
 const Hometown = styled.p`
   font-family: Julius Sans One;
   font-size: 18px;
   @media (max-width: 500px) {
-    font-size: 15px;
+    font-size: 12px;
   }
 `;
 const NameCardContainer = styled.div`
