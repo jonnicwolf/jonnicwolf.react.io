@@ -9,6 +9,7 @@ const LandingPage = () => {
     <Background>
       <LandingPageContainer>
         <NameCard />
+
         <LandingPageItem>
           <LinkContainer>
             <Link to="/projects">
@@ -16,6 +17,7 @@ const LandingPage = () => {
             </Link>
           </LinkContainer>
         </LandingPageItem>
+
       </LandingPageContainer>
     </Background>
   )
@@ -38,7 +40,7 @@ const LandingPageContainer = styled.div`
 const LandingPageItem = styled.div`
   padding-bottom: 2em;
   padding-right: 40px;
-`;
+// `;
 const LinkContainer = styled.div`
   transform: translateX(15px);
 `;
