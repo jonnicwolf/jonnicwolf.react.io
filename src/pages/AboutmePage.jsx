@@ -12,15 +12,15 @@ const AboutmePage = () => {
 };
 
 const AboutMeContainer = styled.div`
-  padding-inline-start: 0px;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  row-gap: 40px;
-  list-style: none;
+  padding-inline-start: 0px;
 `;
 const Contributions = styled.img`
-  height: 150px;
+  height: 15vh;
+  transform: translateX(30px);
+  margin-bottom: 2vh;
 `;
 
 export default AboutmePage;

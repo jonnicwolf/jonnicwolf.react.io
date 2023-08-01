@@ -36,13 +36,10 @@ const Carousel = () => {
           </ChangePhotoButton>
         </ButtonContainer>
 
-        <li>
-          <img
-            src={photoList[slide]}
-            style={{height: '690px', width: '550px'}}
-            alt='Bio Pic'
-          />
-        </li>
+        <Photo
+          src={photoList[slide]}
+          alt='Bio Pic'
+        />
 
         <BioBoxContainer>
           <BioBox/>
@@ -55,30 +52,34 @@ const Carousel = () => {
         </ButtonContainer>
       </CarouselContainer>
     </div>
-  )
+  );
 };
 
 const Arrow = styled.img`
   height: 60px;
   width: 60px;
 `;
-const BioBoxContainer = styled.li`
-  width: 2500px;
+const BioBoxContainer = styled.div`
+  width: 30vw;
 `;
-const ButtonContainer = styled.li`
+const ButtonContainer = styled.div`
   width: 150px;
 `;
-const CarouselContainer = styled.ul`
-  display: flex;
+const CarouselContainer = styled.div`
   align-items: center;
-  column-gap: 60px;
-  list-style: none;
-  width: 1300px;
+  column-gap: 7vw;
+  display: flex;
+  width: 80vw;
 `;
 const ChangePhotoButton = styled.button`
   border: none;
   background: none;
   cursor: pointer;
 `;
+const Photo = styled.img`
+  height: 690px;
+  height: 64vh;
+  width: 550px;
+`
 
 export default Carousel;

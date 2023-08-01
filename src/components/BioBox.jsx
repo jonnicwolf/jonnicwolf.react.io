@@ -6,11 +6,13 @@ const BioBox = () => {
   return (
     <div>
       <PermanentMarkerText>
-        Hi there! <a 
-        href="https://docs.google.com/viewer?url=https://docs.google.com/document/d/1L--uuFkBDl2thpDIuyzyUWNqv5Q0BShsKrwGvy6DusU/export?format=pdf"
-        style={{textDecoration: 'none', color: 'red'}} rel='noopener noreferrer'
-        target='_blank'>
-          I'm Jon Narine
+        Hi there!
+        <br/>
+        <a
+          href="https://docs.google.com/viewer?url=https://docs.google.com/document/d/1L--uuFkBDl2thpDIuyzyUWNqv5Q0BShsKrwGvy6DusU/export?format=pdf"
+          style={{textDecoration: 'none', color: 'red'}} rel='noopener noreferrer'
+          target='_blank'>
+            I'm Jon Narine
         </a>,
       </PermanentMarkerText>
       <NotoSansDisplay>
