@@ -125,6 +125,7 @@ const Container = styled.div`
   }
   @media (max-width: 425px) {
     transform: translateX(-16px);
+    height: 28vh;
     &:hover {
       & ${Project} {
         opacity: 0.35;
