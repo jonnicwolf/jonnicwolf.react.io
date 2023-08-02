@@ -29,8 +29,9 @@ const NavbarContainer = styled.div`
   justify-content: end;
   margin-right: 5vw;
   margin-left: 5vw;
+  margin-bottom: 10vh;
   padding-inline-start: 0;
-  margin-bottom: 100px;
+  width: 90vw;
 `;
 const Fezz = styled.div`
   margin-right: auto;
