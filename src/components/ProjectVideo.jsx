@@ -56,15 +56,24 @@ const ProjectVideo = ({bio, title, href, videoSrc}) => {
 const HoverCover = styled.div`
   opacity: 0;
   transform: translate(-80px,-400px);
-  width: 420px;
   transition: opacity 0.1s ease-in, transform 0.1s ease;
+  width: 420px;
   z-index: 1;
+  @media (max-width: 800px) {
+    transform: translate(-40px, -200px);
+  }
+  @media (max-width: 510px) {
+    transform: translate(10px, -200px);
+  }
 `;
 const Title = styled.h1`
-font-family: var(--font-family-rubik);
-font-weight: var(--font-weight-normal);
+  font-family: var(--font-family-rubik);
+  font-weight: var(--font-weight-normal);
   font-size: 35px;
   margin: 0;
+  @media (max-width: 800px) {
+    font-size: 20px;
+  }
 `;
 const Bio = styled.p`
   font-family: var(--font-family-noto-sans-display);
@@ -72,24 +81,109 @@ const Bio = styled.p`
   letter-spacing: 2px;
   margin-top: 10px;
   margin-bottom: 3px;
+  @media (max-width: 800px) {
+    font-size: 20px;
+  }
 `;
 const Project = styled.video`
   box-shadow: 1px 1px 15px 10px grey;
-  height: 80vh;
-  width: 80vw;
+  height: 57.9vh;
+  width: 38.8vw;
   opacity: 1;
   transition: opacity 0.1s ease-in, transform 0.1s ease;
+  @media (max-width: 2140px) {
+    height: 88vh;
+    width: 71vw;
+  }
+  @media (max-width: 1940px) {
+    height: 78vh;
+    width: 69vw;
+  }
+  @media (max-width: 1740px) {
+    height: 68vh;
+    width: 67vw;
+  }
+  @media (max-width: 1540px) {
+    height: 62vh;
+    width: 70vw;
+  }
+  @media (max-width: 1340px) {
+    height: 57vh;
+    width: 100vh;
+  }
+  @media (max-width: 1240px) {
+    height: 54.8vh;
+    width: 75.5vw;
+  }
+  @media (max-width: 1100px){
+    height: 50.1vh;
+    width: 86vw;
+  }
+  @media (max-width: 950px) {
+    height: 44.2vh;
+    width: 86vw;
+  }
+  @media (max-width: 800px) {
+    height: 44vh;
+    width: 85vw;
+  }
+  @media (max-width: 510px) {
+    height: 33vh;
+    width: 100vw;
+  }
+  @media (max-width: 425px) {
+    height: 27vh;
+  }
+  @media (max-width: 375px) {
+    height: 24vh;
+  }
 `;
 const Container = styled.div`
-  height: 90vh;
+  border: ;
+  height: 100%;
   padding-left: 7vw;
-  transform: translateX(-4vw);
+  transform: translateX(-3vw);
   &:hover {
     & ${Project} {
       opacity: 0.35;
     }
     & ${HoverCover} {
       opacity: 1;
+    }
+  }
+  @media (max-width: 425px) {
+    transform: translateX(-16px);
+    height: 28vh;
+    &:hover {
+      & ${Project} {
+        opacity: 0.35;
+      }
+      & ${HoverCover} {
+        opacity: 1;
+      }
+    }
+  }
+  @media (max-width: 375px) {
+    transform: translateX(10px);
+    height: 25vh;
+    &:hover {
+      & ${Project} {
+        opacity: 0.35;
+      }
+      & ${HoverCover} {
+        opacity: 1;
+      }
+    }
+  }
+  @media (max-width: 320px) {
+    transform: translateX(40px);
+    &:hover {
+      & ${Project} {
+        opacity: 0.35;
+      }
+      & ${HoverCover} {
+        opacity: 1;
+      }
     }
   }
 `;

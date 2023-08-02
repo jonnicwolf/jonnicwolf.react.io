@@ -31,9 +31,6 @@ const ProjectList = styled.div`
   flex-direction: column;
   list-style: none;
   row-gap: 100px;
-  @media (max-width: 401px) {
-    row-gap:10px;
-  }
 `;
 
 export default ProjectPage;
