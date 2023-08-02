@@ -87,13 +87,41 @@ const Bio = styled.p`
 `;
 const Project = styled.video`
   box-shadow: 1px 1px 15px 10px grey;
-  height: 58vh;
-  width: 39.89vw;
+  height: 57.9vh;
+  width: 38.8vw;
   opacity: 1;
   transition: opacity 0.1s ease-in, transform 0.1s ease;
+  @media (max-width: 2140px) {
+    height: 88vh;
+    width: 71vw;
+  }
+  @media (max-width: 1940px) {
+    height: 78vh;
+    width: 69vw;
+  }
+  @media (max-width: 1740px) {
+    height: 68vh;
+    width: 67vw;
+  }
+  @media (max-width: 1540px) {
+    height: 62vh;
+    width: 70vw;
+  }
+  @media (max-width: 1340px) {
+    height: 57vh;
+    width: 100vh;
+  }
   @media (max-width: 1240px) {
-    height: 60vh;
+    height: 54.8vh;
     width: 75.5vw;
+  }
+  @media (max-width: 1100px){
+    height: 50.1vh;
+    width: 86vw;
+  }
+  @media (max-width: 950px) {
+    height: 44.2vh;
+    width: 86vw;
   }
   @media (max-width: 800px) {
     height: 44vh;
@@ -111,6 +139,7 @@ const Project = styled.video`
   }
 `;
 const Container = styled.div`
+  border: ;
   height: 100%;
   padding-left: 7vw;
   transform: translateX(-3vw);
