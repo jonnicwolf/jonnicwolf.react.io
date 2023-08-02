@@ -111,7 +111,6 @@ const Project = styled.video`
   }
 `;
 const Container = styled.div`
-  border: 1px solid red;
   height: 100%;
   padding-left: 7vw;
   transform: translateX(-3vw);
