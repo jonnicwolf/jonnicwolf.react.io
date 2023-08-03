@@ -26,11 +26,6 @@ const ProjectVideo = ({bio, title, href, videoSrc}) => {
     if (target) {
       observer.observe(target);
     }
-    return () =>{
-      if (target) {
-        observer.unobserve(target);
-      }
-    };
 
     const isMobile = window.innerWidth <= 768;
     if (isMobile) {
@@ -40,6 +35,12 @@ const ProjectVideo = ({bio, title, href, videoSrc}) => {
       videoRef.current.setAttribute('autoplay', 'true');
       videoRef.current.setAttribute('loop', 'true');
     }
+
+    return () =>{
+      if (target) {
+        observer.unobserve(target);
+      }
+    };
   },[]);
 
   return (
