@@ -21,7 +21,6 @@ const ProjectVideo = ({bio, title, href, videoSrc}) => {
       rootMargin: '0px',
       threshold: 0.5,
     };
-
     const observer = new IntersectionObserver(playVideoOnScroll, options);
     const target = videoRef.current;
     if (target) {
@@ -32,6 +31,15 @@ const ProjectVideo = ({bio, title, href, videoSrc}) => {
         observer.unobserve(target);
       }
     };
+
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile) {
+      videoRef.current.setAttribute('autoplay', 'false');
+      videoRef.current.removeAttribute('loop');
+    } else {
+      videoRef.current.setAttribute('autoplay', 'true');
+      videoRef.current.setAttribute('loop', 'true');
+    }
   },[]);
 
   return (
@@ -39,7 +47,6 @@ const ProjectVideo = ({bio, title, href, videoSrc}) => {
       <Project
         ref={videoRef}
         muted
-        loop={true}
         src={videoSrc}
       />
       <HoverCover>
@@ -126,6 +133,8 @@ const Project = styled.video`
   @media (max-width: 800px) {
     height: 44vh;
     width: 85vw;
+    autoplay: false;
+    loop: false;
   }
   @media (max-width: 510px) {
     height: 33vh;
