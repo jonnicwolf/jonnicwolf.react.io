@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import ProjectVideo from '../components/ProjectVideo';
 import FollyInternal from '../assets/video/FollyInternal.mp4';
-import SCD from '../assets/video/Stoned_Cold_Dreamery.mp4';
+import SCD from '../assets/video/SCD.mp4';
 
 const ProjectPage = () => {
   return (
