@@ -64,6 +64,8 @@ const P5_PLANE = () => {
         p.endShape();
       }
     };
+
+    p.windowResized = () => p.resizeCanvas(p.windowWidth, 320);
   };
 
   useEffect(() => {
