@@ -36,7 +36,7 @@ const ProjectVideo = ({bio, title, href, videoSrc}) => {
       videoRef.current.setAttribute('loop', 'true');
     }
 
-    return () =>{
+    return () => {
       if (target) {
         observer.unobserve(target);
       }
@@ -117,6 +117,7 @@ const Project = styled.video`
   }
   @media (max-width: 1340px) {
     height: 57vh;
+    height: 56vh;
     width: 100vh;
   }
   @media (max-width: 1240px) {

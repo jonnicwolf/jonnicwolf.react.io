@@ -1,28 +1,41 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import NameCard from '../components/NameCard.jsx';
-import Button from '../components/Button.jsx'
+// import { Link } from 'react-router-dom';
+// import NameCard from '../components/NameCard.jsx';
+// import Button from '../components/Button.jsx';
+import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 
 const LandingPage = () => {
   return (
-    <Background>
-      <LandingPageContainer>
-        <NameCard />
+    // <Background>
+    //   <LandingPageContainer>
+    //     <NameCard />
 
-        <LandingPageItem>
-          <LinkContainer>
-            <Link to="/projects">
-              <Button textContent='ENTER'/>
-            </Link>
-          </LinkContainer>
-        </LandingPageItem>
+    //     <LandingPageItem>
+    //       <LinkContainer>
+    //         <Link to="/projects">
+    //           <Button textContent='ENTER'/>
+    //         </Link>
+    //       </LinkContainer>
+    //     </LandingPageItem>
 
-      </LandingPageContainer>
-    </Background>
+    //     <LandingPageItem>
+    //       <P5_plane/>
+    //     </LandingPageItem>
+
+    //   </LandingPageContainer>
+    // </Background>
+    
+      <P5_PLANE />
+    
   )
 };
 
+const P_PLANE = styled.div`
+  background: black;
+  height: 100vh;
+  width: 100vh;
+`
 const Background = styled.div`
   background-image: radial-gradient(circle 1150px, white, rgb(42, 191, 250));
   opacity: 100%;
