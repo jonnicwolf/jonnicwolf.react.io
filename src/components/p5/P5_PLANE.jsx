@@ -28,10 +28,10 @@ const P5_PLANE = () => {
       for (let y = 9; y < rows; y++) {
         let xoff = 0;
         for (let x = 0; x < cols; x++) {
-          let dx = Math.abs(x * scl - p.mouseX);
-          let dy = Math.abs(y * scl - p.mouseY);
-          let d = Math.sqrt(dx * dx + dy * dy); // Distance from the mouse to the vertex
-    
+          let distance_x = Math.abs(x * scl - p.mouseX);
+          let distance_y = Math.abs(y * scl - p.mouseY);
+          let d = Math.sqrt(distance_x * distance_x + distance_y * distance_y); // Distance from the mouse to the vertex
+
           // Use distance to influence noise
           let adjustedNoise = p.map(d, 0, 500, 1, 0.1);
           terrain[x][y] = p.map(p.noise(xoff, yoff), 0, 1, -100, 100) * adjustedNoise;
@@ -41,12 +41,12 @@ const P5_PLANE = () => {
         yoff += 0.2;
       };
 
-      p.background(255, 255, 255,0); // sky blue background
-      p.stroke(0); // grid line color
+      p.background(0,0,0,0); // Invisible background
+      p.stroke(0); // White grid line color
       p.noFill();
     
       p.translate(w / 2 - w / 2, h / 2 - h / 2);
-      p.rotateX(p.PI / 2.5); // adjust the rotation
+      p.rotateX(p.PI / 2.5); // Adjust rotation here
       p.translate(-w / 2, -h / 2);
       for (let y = 0; y < rows - 1; y++) {
         p.beginShape(p.SQUARE_STRIP);
