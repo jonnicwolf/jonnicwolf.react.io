@@ -28,13 +28,20 @@ const P5_PLANE = () => {
       for (let y = 9; y < rows; y++) {
         let xoff = 0;
         for (let x = 0; x < cols; x++) {
-          terrain[x][y] =p.map(p.noise(xoff, yoff), 0, 1, -100, 100);
+          let dx = Math.abs(x * scl - p.mouseX);
+          let dy = Math.abs(y * scl - p.mouseY);
+          let d = Math.sqrt(dx * dx + dy * dy); // Distance from the mouse to the vertex
+    
+          // Use distance to influence noise
+          let adjustedNoise = p.map(d, 0, 500, 1, 0.1);
+          terrain[x][y] = p.map(p.noise(xoff, yoff), 0, 1, -100, 100) * adjustedNoise;
+
           xoff += 0.2;
         };
         yoff += 0.2;
       };
 
-      p.background(135, 206, 235); // sky blue background
+      p.background(255, 255, 255,0); // sky blue background
       p.stroke(0); // grid line color
       p.noFill();
     
