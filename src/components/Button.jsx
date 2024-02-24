@@ -10,7 +10,7 @@ const LinkButton = ({textContent}) => {
 };
 
 const Button = styled.button`
-  padding: 15px 80px;
+  padding: 25px 80px;
   font-family: var(--font-family-rubik);
   font-weight: 900;
   font-size: 12px;

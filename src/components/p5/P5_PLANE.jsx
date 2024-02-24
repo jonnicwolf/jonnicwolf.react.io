@@ -16,7 +16,7 @@ const P5_PLANE = () => {
     let terrain = [];
 
     p.setup = () => {
-      p.createCanvas(p.windowWidth, 320, p.WEBGL);
+      p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
       cols = w / scl;
       rows = h / scl;
       terrain = Array.from(Array(cols), () => new Array(rows));

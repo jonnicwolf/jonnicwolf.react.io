@@ -11,18 +11,16 @@ const LandingPage = () => {
       <LandingPageContainer>
         <NameCard />
 
-        <LandingPageItem>
-          <P5_PLANE/>
-        </LandingPageItem>
 
-        <LandingPageItem>
-          <LinkContainer>
+        <EnterButton>
             <Link to="/projects">
               <Button textContent='ENTER'/>
             </Link>
-          </LinkContainer>
-        </LandingPageItem>
+        </EnterButton>
 
+        <PProject>
+          <P5_PLANE/>
+        </PProject>
 
       </LandingPageContainer>
     </Background>
@@ -30,25 +28,27 @@ const LandingPage = () => {
 };
 
 const Background = styled.div`
-  background-image: radial-gradient(circle 1150px, white, rgb(42, 191, 250));
+  background-image: radial-gradient(circle 750px, white, rgb(42, 191, 250));
   opacity: 100%;
-  margin: 20px 20px;
 `;
 const LandingPageContainer = styled.div`
   align-items: center;
   display: flex;
-  height: 95vh;
+  height: 100vh;
   flex-direction: column;
   justify-content: space-between;
   list-style: none;
-  padding-left: 0px;
 `;
 const LandingPageItem = styled.div`
   padding-bottom: 2em;
-  padding-right: 40px;
 `;
-const LinkContainer = styled.div`
-  transform: translateX(15px);
+const PProject = styled(LandingPageItem)`
+  z-index: 1;
+`
+const EnterButton = styled(LandingPageItem)`
+  z-index: 99;
+  padding-top: 3vh;
 `;
+
 
 export default LandingPage;
