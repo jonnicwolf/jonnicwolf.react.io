@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ProjectVideo from '../components/ProjectVideo';
-import FollyInternal from '../assets/video/FollyInternal.mp4';
+import TipTallyPro from '../assets/video/TipTallyPro.mp4';
 import SCD from '../assets/video/SCD.mp4';
 
 const ProjectPage = () => {
@@ -18,7 +18,7 @@ const ProjectPage = () => {
           bio='Internal Website'
           title='The Folly'
           href='https://follyinternal.com'
-          videoSrc={FollyInternal}
+          videoSrc={TipTallyPro}
         />
       </ProjectList>
     </section>
