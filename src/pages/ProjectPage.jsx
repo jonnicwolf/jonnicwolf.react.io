@@ -15,9 +15,9 @@ const ProjectPage = () => {
           videoSrc={SCD}
         />
         <ProjectVideo
-          bio='Internal Website'
-          title='The Folly'
-          href='https://follyinternal.com'
+          bio='Closing Bartender Calculator'
+          title='Tip Tally Pro'
+          href='https://tiptallypro.netlify.app'
           videoSrc={TipTallyPro}
         />
       </ProjectList>
