@@ -3,6 +3,8 @@
 
 Welcome to my portfolio website! Here, you'll find a showcase of my projects, skills, and experience in software development and design. From web applications to mobile apps, I'm passionate about creating innovative solutions that make a difference.
 
+Live site: [jonnickwolf.dev]
+
 ## About Me
 I'm Jon "Fezz" Narine, a dedicated software developer with a flair for creativity and problem-solving. With years of experience in the industry, I've honed my skills in frontend and backend development, UI/UX design, and project management. I thrive in collaborative environments and enjoy tackling new challenges head-on.
 
