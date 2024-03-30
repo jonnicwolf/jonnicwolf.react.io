@@ -2,7 +2,7 @@ import React, { useRef, useEffect }  from 'react';
 import styled from 'styled-components';
 import Button from '../components/Button';
 
-const ProjectVideo = ({bio, title, href, videoSrc, buttonSize}) => {
+const ProjectVideo = ({bio, title, href, videoSrc, buttonSize, fontSize}) => {
   const videoRef = useRef(null);
 
   const playVideoOnScroll = (entries) => {
@@ -54,7 +54,7 @@ const ProjectVideo = ({bio, title, href, videoSrc, buttonSize}) => {
         <Title>{title}</Title>
         <Bio>{bio}</Bio>
         <a href={href} target='_blank' rel="noopener noreferrer">
-          <Button textContent='LIVE SITE' buttonSize={buttonSize}/>
+          <Button textContent='LIVE SITE' buttonSize={buttonSize} fontSize={fontSize}/>
         </a>
       </HoverCover>
     </Container>

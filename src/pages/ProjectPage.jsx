@@ -14,6 +14,7 @@ const ProjectPage = () => {
           href='https://thestonedcolddreamery.com'
           videoSrc={SCD}
           buttonSize={'large'}
+          fontSize={'15px'}
         />
         <ProjectVideo
           bio='Closing Bartender Calculator'
@@ -21,6 +22,7 @@ const ProjectPage = () => {
           href='https://tiptallypro.netlify.app'
           videoSrc={TipTallyPro}
           buttonSize={'large'}
+          fontSize={'15px'}
         />
       </ProjectList>
     </section>

@@ -14,7 +14,7 @@ const Button = styled.button`
   padding: ${props => props.buttonSize === 'large' ? '25px 80px' : '1em'};
   font-family: var(--font-family-rubik);
   font-weight: 900;
-  font-size: ${props => props.fontSize ? '15px' : '12px'};
+  font-size: ${props => props.fontSize};
   background: transparent;
   outline: none !important;
   cursor: pointer;
