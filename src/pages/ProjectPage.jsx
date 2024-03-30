@@ -10,7 +10,7 @@ const ProjectPage = () => {
       <ProjectList>
         <ProjectVideo
           bio='Webstore / Ice Cream Shop'
-          title='Stoned Cold Dreamery'
+          title='STONED COLD DREAMERY'
           href='https://thestonedcolddreamery.com'
           videoSrc={SCD}
           buttonSize={'large'}
@@ -18,7 +18,7 @@ const ProjectPage = () => {
         />
         <ProjectVideo
           bio='Closing Bartender Calculator'
-          title='Tip Tally Pro'
+          title='TIP TALLY PRO'
           href='https://tiptallypro.netlify.app'
           videoSrc={TipTallyPro}
           buttonSize={'large'}

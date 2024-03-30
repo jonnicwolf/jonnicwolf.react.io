@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import BioBox from '../components/BioBox';
-import TimeLine from '../components/TimeLine';
+import TimelineMobile from '../components/Timeline';
 
 const headshot = require('../assets/icons/Headshot.png');
 
@@ -13,9 +13,9 @@ const AboutmePage = () => {
         <BioBox />
       </BioContainer>
       <Contributions src="https://ghchart.rshah.org/jonnicwolf" alt="My Github Contributions" />
-      <TimeLine />
+      <TimelineMobile />
     </AboutMeContainer>
-  )
+  );
 };
 
 const AboutMeContainer = styled.div`
@@ -32,18 +32,22 @@ const BioContainer = styled.div`
   align-items: center;
   gap: 1rem;
   width: 90%;
+  max-width: 1124px;
+
+  @media only screen and (max-width: 767px) {
+    flex-direction: column;
+  }
 `;
 const Contributions = styled.img`
-  height: 15vh;
   margin-bottom: 2vh;
+  height: auto;
   @media only screen and (max-width: 767px) {
-    width: 70vw;
+    width: 95%;
   }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
     width: 90vw;
   }
   @media only screen and (min-width: 1024px) {
-    height: 20vh;
     width: 90vw;
   }
 `;
@@ -51,6 +55,10 @@ const Headshot = styled.img`
   height: 35rem;
   width: 35rem;
   border-radius: 50%;
+
+  @media only screen and (max-width: 767px) {
+    border-radius: unset;
+  }
 `;
 
 export default AboutmePage;
