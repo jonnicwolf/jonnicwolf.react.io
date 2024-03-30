@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import BioBox from '../components/BioBox';
-import TimelineMobile from '../components/Timeline';
+import Timeline from '../components/Timeline';
 
 const headshot = require('../assets/icons/Headshot.png');
 
@@ -13,7 +13,7 @@ const AboutmePage = () => {
         <BioBox />
       </BioContainer>
       <Contributions src="https://ghchart.rshah.org/jonnicwolf" alt="My Github Contributions" />
-      <TimelineMobile />
+      <Timeline />
     </AboutMeContainer>
   );
 };
