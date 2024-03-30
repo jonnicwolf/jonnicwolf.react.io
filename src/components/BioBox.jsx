@@ -16,15 +16,15 @@ const BioBox = () => {
         </a>,
       </PermanentMarkerText>
       <NotoSansDisplay>
-        a full-stack web developer based in NYC. I specialize in front-end development and am proficient in coding with JavaScript, Python, and Go.
+        I'm Jon Narine, a full-stack web developer based in the heart of NYC. My expertise lies in front-end development, with a proficiency in JavaScript, Python, and Swift.
         <br></br><br></br>
-        I have a passion for working in teams to create products that are important to end-users. I love the collaborative process of bringing ideas to life, and take pride in delivering products that are both user-friendly and aesthetically pleasing.
+        Collaboration is my cornerstone—I thrive on working with teams to bring user-centric products to fruition. I take pride in crafting interfaces that are both intuitive and visually appealing.
         <br></br><br></br>
-        In addition to my web development skills, I'm also interested in cybersecurity, platform architecture, and front-end development. 
+        In addition to web development, I have a keen interest in cloud architecture, game engines, and generative art.
         <br></br><br></br>
-        If you have a project in mind or just want to say hi, feel free to drop me a line below.
+        Whether you have a project in mind or simply want to connect, feel free to reach out below.
         <br></br><br></br>
-        I'd love to hear from you!
+        I look forward to collaborating with you!
       </NotoSansDisplay>
       <SocialsContainer>
         <Socials />

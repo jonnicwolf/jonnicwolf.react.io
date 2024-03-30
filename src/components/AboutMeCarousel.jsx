@@ -10,7 +10,7 @@ import headshot from '../assets/photos/headshot.jpeg';
 import team from '../assets/photos/team.jpg';
 import tiffNfezz from '../assets/photos/tiffNfezz.JPG';
 
-const Carousel = () => {
+const Carousel = ({ images }) => {
   const [slide, setSlide] = useState(0);
 
   const photoList = [
@@ -37,8 +37,8 @@ const Carousel = () => {
         </ChangePhotoButton>
       </ButtonContainer>
 
-      <Photo src={photoList[slide]} alt='Bio Pic' />
-      <BioBox/>
+      <Photo src={images[slide]} alt='Bio Pic' />
+      <BioBox />
 
       <ButtonContainer>
         <ChangePhotoButton onClick={()=>moveRight(slide, photoList.length)}>

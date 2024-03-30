@@ -1,12 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import Carousel from '../components/AboutMeCarousel';
+import BioBox from '../components/BioBox';
+import TimeLine from '../components/TimeLine';
+
+const headshot = require('../assets/icons/Headshot.png');
 
 const AboutmePage = () => {
   return (
     <AboutMeContainer>
+      <BioContainer>
+        <Headshot src={headshot}/>
+        <BioBox />
+      </BioContainer>
       <Contributions src="https://ghchart.rshah.org/jonnicwolf" alt="My Github Contributions" />
-      <Carousel />
+      <TimeLine />
     </AboutMeContainer>
   )
 };
@@ -14,23 +21,36 @@ const AboutmePage = () => {
 const AboutMeContainer = styled.div`
   align-items: center;
   display: flex;
+  gap: 5rem;
   flex-direction: column;
   padding-inline-start: 0px;
   padding-bottom: 5vh;
 `;
+const BioContainer = styled.div`
+  display: flex; 
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  width: 90%;
+`;
 const Contributions = styled.img`
   height: 15vh;
   margin-bottom: 2vh;
-  @media (max-width: 1000px) {
+  @media only screen and (max-width: 767px) {
     width: 70vw;
   }
-  @media (max-width: 580px) {
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
     width: 90vw;
   }
-  @media (max-width: 385px) {
+  @media only screen and (min-width: 1024px) {
     height: 20vh;
-    width: 98vw;
+    width: 90vw;
   }
+`;
+const Headshot = styled.img`
+  height: 35rem;
+  width: 35rem;
+  border-radius: 50%;
 `;
 
 export default AboutmePage;
