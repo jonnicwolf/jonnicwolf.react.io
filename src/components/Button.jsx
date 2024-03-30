@@ -1,19 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const LinkButton = ({textContent}) => {
+const LinkButton = ({textContent, buttonSize, fontSize}) => {
+  console.log(fontSize === true)
   return (
-    <Button>
+    <Button buttonSize={buttonSize} fontSize={fontSize}>
       {textContent}
     </Button>
   );
 };
 
 const Button = styled.button`
-  padding: 25px 80px;
+  padding: ${props => props.buttonSize === 'large' ? '25px 80px' : '1em'};
   font-family: var(--font-family-rubik);
   font-weight: 900;
-  font-size: 12px;
+  font-size: ${props => props.fontSize ? '15px' : '12px'};
   background: transparent;
   outline: none !important;
   cursor: pointer;

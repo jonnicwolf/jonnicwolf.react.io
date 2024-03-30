@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import LinkButton from '../Button';
 import Icons8_about_me_50 from '../../assets/icons/Icons8_about_me_50.png';
 
 
@@ -12,9 +13,9 @@ const NavBar = () => {
           <RampartOneText>FEZZ</RampartOneText>
         </Link>
       </Fezz>
-      <Link to='/fezz'>
-        <NavImg src={Icons8_about_me_50} alt="About Me" />
-      </Link>
+      <About to='/fezz'>
+        <LinkButton textContent={'ABOUT'} fontSize={true}/>
+      </About>
     </NavbarContainer>
   );
 };
@@ -36,9 +37,21 @@ const NavbarContainer = styled.div`
 const Fezz = styled.div`
   margin-right: auto;
 `;
-const NavImg = styled.img`
-  height: 50px;
-  width: 50px;
+const About = styled(Link)`
+  padding: 1vh;
+  font-size: 2rem;
+  // font-family: Permanent Marker;
+  // text-decoration: none;
+  // font-size: 2rem;
+  // color: black;
+  // &:hover {
+  //   transition: all .4s ease-in;
+  //   background-color: black;
+  //   color: white;
+  //   border-radius: 10px;
+  //   padding: 2px;
+  // }
+
 `;
 const RampartOneText = styled.p`
   font-family: var(--font-family-rampart-one);

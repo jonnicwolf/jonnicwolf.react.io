@@ -14,7 +14,7 @@ const LandingPage = () => {
 
         <EnterButton>
             <Link to="/projects">
-              <Button textContent='ENTER'/>
+              <Button textContent='ENTER' buttonSize={'large'}/>
             </Link>
         </EnterButton>
 
