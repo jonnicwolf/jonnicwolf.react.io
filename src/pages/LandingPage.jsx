@@ -11,7 +11,6 @@ const LandingPage = () => {
       <LandingPageContainer>
         <NameCard />
 
-
         <EnterButton>
             <Link to="/projects">
               <Button textContent='ENTER' buttonSize={'large'}/>

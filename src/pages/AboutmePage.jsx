@@ -21,15 +21,15 @@ const AboutMeContainer = styled.div`
 const Contributions = styled.img`
   height: 15vh;
   margin-bottom: 2vh;
-  @media (max-width: 1000px) {
+  @media only screen and (max-width: 767px) {
     width: 70vw;
   }
-  @media (max-width: 580px) {
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
     width: 90vw;
   }
-  @media (max-width: 385px) {
+  @media only screen and (min-width: 1024px) {
     height: 20vh;
-    width: 98vw;
+    width: 90vw;
   }
 `;
 
