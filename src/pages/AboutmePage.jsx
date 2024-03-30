@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import BioBox from '../components/BioBox';
-import TimelineResume from '../components/TimelineResume';
 import TimeLine from '../components/TimeLine';
 
 const headshot = require('../assets/icons/Headshot.png');
@@ -49,8 +48,8 @@ const Contributions = styled.img`
   }
 `;
 const Headshot = styled.img`
-  height: 45rem;
-  width: 45rem;
+  height: 35rem;
+  width: 35rem;
   border-radius: 50%;
 `;
 
