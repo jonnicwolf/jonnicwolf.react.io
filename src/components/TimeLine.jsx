@@ -16,7 +16,7 @@ const Timeline = () => {
         <Content>
           <h3>2021 | <a href="https://www.pursuit.org/fellowship?gclid=Cj0KCQjwrsGCBhD1ARIsALILBYoZZTe0XdzsD0GkFi90K4dVpBijEedjBi69BZTan0FS3X1s1DfZiOUaAh4PEALw_wcB" target='_blank' rel='noreferrer'><LinkButton textContent={'Pursuit'} fontSize={'20px'}/></a></h3>
           <h4>Full Stack Web Development Fellow</h4>
-          <p>A 12-month, Google-funded software engineering fellowship with a 9% acceptance rate (out of 1500+ applicants) whose graduates are prepared with both technical and professional skills and have been hired as developers at leading companies such as Pinterest, JP Morgan, and Spotify.</p>
+          <p>A 12-month, Google-funded software engineering fellowship with a 9% acceptance rate (out of 1500+ applicants) whose graduates are prepared with both technical and professional skills and have been hired as developers at leading companies such as Pinterest, JP Morgan, and Spotify. </p>
         </Content>
         <Content>
           <h3>2022 | <a href="https://seatgeek.com/about" target='_blank' rel='noreferrer'><LinkButton textContent={'SeatGeek'} fontSize={'20px'}/></a></h3>
