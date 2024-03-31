@@ -28,7 +28,7 @@ const ProjectPage = () => {
         />
       </ProjectList>
     </section>
-  )
+  );
 };
 
 const ProjectList = styled.div`
