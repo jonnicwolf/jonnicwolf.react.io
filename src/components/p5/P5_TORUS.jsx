@@ -26,6 +26,7 @@ const P5_TORUS = ({ background, strokeColor }) => {
   useEffect(() => {
     const p5Canvas = new p5(sketch, sketch_ref.current);
     return () => p5Canvas.remove();
+    // eslint-disable-next-line
   }, []);
 
   return (
