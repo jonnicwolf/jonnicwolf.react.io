@@ -8,14 +8,14 @@ import AboutmePage from './pages/AboutmePage';
 function App() {
   const location = useLocation();
   return (
-      <Container>
-        {location.pathname !== '/' && <NavBar/>}
-        <Routes>
-          <Route path='/' element={<LandingPage />} />
-          <Route path='/projects' element={<ProjectPage />} />
-          <Route path='/about' element={<AboutmePage />} />
-        </Routes>
-      </Container>
+    <Container>
+      {location.pathname !== '/' && <NavBar/>}
+      <Routes>
+        <Route path='/' element={<LandingPage />} />
+        <Route path='/projects' element={<ProjectPage />} />
+        <Route path='/about' element={<AboutmePage />} />
+      </Routes>
+    </Container>
   );
 };
 

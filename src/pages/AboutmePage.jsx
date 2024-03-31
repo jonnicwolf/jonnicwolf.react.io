@@ -2,12 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import BioBox from '../components/BioBox';
 import TimeLine from '../components/TimeLine';
+import P5_TORUS from '../components/p5/P5_TORUS';
 
 const headshot = require('../assets/icons/Headshot.png');
 
 const AboutmePage = () => {
   return (
     <AboutMeContainer>
+      <P5Project>
+        <P5_TORUS background={255} strokeColor={230}/>
+      </P5Project>
       <BioContainer>
         <Headshot src={headshot}/>
         <BioBox />
@@ -59,6 +63,11 @@ const Headshot = styled.img`
   @media only screen and (max-width: 767px) {
     border-radius: unset;
   }
+`;
+const P5Project = styled.div`
+  position: absolute;
+  transform: translate(20vw,35vh);
+  z-index: -1;
 `;
 
 export default AboutmePage;

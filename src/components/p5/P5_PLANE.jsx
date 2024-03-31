@@ -1,13 +1,10 @@
-
 import React, { useEffect, useRef } from 'react';
 import p5 from "p5";
 
-
 const P5_PLANE = () => {
   const sketch_ref = useRef();
-  
-  function sketch (p) {
 
+  function sketch (p) {
     let cols, rows;
     let scl = 20; // scale of each grid square
     let w = 2000;
