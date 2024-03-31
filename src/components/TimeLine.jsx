@@ -54,9 +54,13 @@ const TimeLine = () => {
 };
 
 const Container = styled.div`
+  width: 50vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  @media only screen and (max-width: 767px) {
+    width: auto;
+  }
 `;
 const Header = styled.div`
   font-family: var(--font-family-rubik);
