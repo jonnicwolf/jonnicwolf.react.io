@@ -11,7 +11,7 @@ const NavBar = () => {
           <RampartOneText>FEZZ</RampartOneText>
         </Link>
       </Fezz>
-      <About to='/fezz'>
+      <About to='/about'>
         <LinkButton textContent={'ABOUT'} fontSize={true}/>
       </About>
     </NavbarContainer>
