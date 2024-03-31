@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import LinkButton from './Button';
 
-const Timeline = () => {
+const TimeLine = () => {
   return (
     <Container>
       <Header>Corporate Experience</Header>
@@ -48,4 +48,4 @@ const Content = styled.div`
   border-radius: 15px;
 `;
 
-export default Timeline;
+export default TimeLine;
