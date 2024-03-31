@@ -2,7 +2,7 @@ import React, { useRef, useEffect }  from 'react';
 import styled from 'styled-components';
 import Button from '../components/Button';
 
-const ProjectVideo = ({bio, title, href, videoSrc, buttonSize, fontSize}) => {
+const ProjectVideo = ({bio, title, href1, href2, videoSrc, buttonSize, fontSize}) => {
   const videoRef = useRef(null);
 
   const playVideoOnScroll = (entries) => {
@@ -53,8 +53,12 @@ const ProjectVideo = ({bio, title, href, videoSrc, buttonSize, fontSize}) => {
       <HoverCover>
         <Title>{title}</Title>
         <Bio>{bio}</Bio>
-        <a href={href} target='_blank' rel="noopener noreferrer">
-          <Button textContent='LIVE SITE' buttonSize={buttonSize} fontSize={fontSize}/>
+        <a href={href1} target='_blank' rel="noopener noreferrer">
+          <Button textContent='LIVE SITE' fontSize={fontSize}/>
+        </a>
+        &#160;
+        <a href={href2} target='_blank' rel='noopener noreferrer'>
+          <Button textContent='GITHUB' fontSize={fontSize}/>
         </a>
       </HoverCover>
     </Container>
@@ -100,55 +104,6 @@ const Project = styled.video`
   object-fit: fill;
   opacity: 1;
   transition: opacity 0.1s ease-in, transform 0.1s ease;
-  // @media (max-width: 2140px) {
-  //   height: 88vh;
-  //   width: 71vw;
-  // }
-  // @media (max-width: 1940px) {
-  //   height: 78vh;
-  //   width: 69vw;
-  // }
-  // @media (max-width: 1740px) {
-  //   height: 68vh;
-  //   width: 67vw;
-  // }
-  // @media (max-width: 1540px) {
-  //   height: 62vh;
-  //   width: 70vw;
-  // }
-  // @media (max-width: 1340px) {
-  //   height: 57vh;
-  //   height: 56vh;
-  //   width: 100vh;
-  // }
-  // @media (max-width: 1240px) {
-  //   height: 54.8vh;
-  //   width: 75.5vw;
-  // }
-  // @media (max-width: 1100px){
-  //   height: 50.1vh;
-  //   width: 86vw;
-  // }
-  // @media (max-width: 950px) {
-  //   height: 44.2vh;
-  //   width: 86vw;
-  // }
-  // @media (max-width: 800px) {
-  //   height: 44vh;
-  //   width: 85vw;
-  //   autoplay: false;
-  //   loop: false;
-  // }
-  // @media (max-width: 510px) {
-  //   height: 33vh;
-  //   width: 100vw;
-  // }
-  // @media (max-width: 425px) {
-  //   height: 27vh;
-  // }
-  @media (max-width: 667px, min-width: 375) {
-    height: 24vh;
-  }
 `;
 const Container = styled.div`
   border: ;

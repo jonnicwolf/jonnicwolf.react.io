@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const Socials = () => {
   return (
     <SocialsList>
-        {/* SocialIcons are from an external library, therefore inline styles are necessary. */}
+        {/* SocialIcons are from an external library, therefore inline or stylesheet styles are necessary. */}
         <SocialIcon
           url='https://www.linkedin.com/in/jonathannarine/'
           bgColor='white'

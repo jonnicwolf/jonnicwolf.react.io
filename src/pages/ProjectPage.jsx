@@ -11,7 +11,8 @@ const ProjectPage = () => {
         <ProjectVideo
           bio='Webstore / Ice Cream Shop'
           title='STONED COLD DREAMERY'
-          href='https://thestonedcolddreamery.com'
+          href1='https://thestonedcolddreamery.com'
+          href2='https://github.com/jonnicwolf/stoned_cold_dreamery'
           videoSrc={SCD}
           buttonSize={'large'}
           fontSize={'15px'}
@@ -19,7 +20,8 @@ const ProjectPage = () => {
         <ProjectVideo
           bio='Closing Bartender Calculator'
           title='TIP TALLY PRO'
-          href='https://tiptallypro.netlify.app'
+          href1='https://tiptallypro.netlify.app'
+          href2='https://github.com/jonnicwolf/tiptallypro'
           videoSrc={TipTallyPro}
           buttonSize={'large'}
           fontSize={'15px'}

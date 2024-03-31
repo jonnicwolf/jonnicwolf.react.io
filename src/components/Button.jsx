@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const LinkButton = ({textContent, buttonSize, fontSize}) => {
-  console.log(fontSize === true)
   return (
     <Button buttonSize={buttonSize} fontSize={fontSize}>
       {textContent}
