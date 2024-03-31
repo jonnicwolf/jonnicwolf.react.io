@@ -1,27 +1,29 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import p5 from 'p5';
 
-const P5_TORUS = () => {
+const P5_TORUS = ({ background, strokeColor }) => {
   const sketch_ref = useRef();
 
   function sketch (p) {
     p.setup = () => {
       p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
-      p.camera(0, 0, 50*sqrt(5), 1, 0, 0, 0, 1, 0);
-      p.perspective(PI/3, 1, 5*sqrt(50), 500*sqrt(3));
-    }
+      p.camera(0, 0, 50 * p.sqrt(5), 1, 0, 0, 0, 1, 0);
+      p.perspective(p.PI/3, 1, 5 * p.sqrt(50), 500 * p.sqrt(3));
+    };
 
     p.draw = () => {
-      p.background({background});
-      p.stroke({strokeColor});
+      p.background(background);
+      p.stroke(strokeColor);
       p.noFill();
-      p.rotateZ(frameCount * 0.01);
-      p.rotateX(frameCount * 0.001);
+      p.rotateZ(p.frameCount * 0.001);
+      p.rotateX(p.frameCount * 0.001);
       p.torus(30, 25);
-    }
+    };
+
+    p.windowResized = () => p.resizeCanvas(p.windowWidth, 320);
   };
 
-  useEffect(()=> {
+  useEffect(() => {
     const p5Canvas = new p5(sketch, sketch_ref.current);
     return () => p5Canvas.remove();
   }, []);
