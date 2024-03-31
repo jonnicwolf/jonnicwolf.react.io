@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import LinkButton from './Button';
 
-const Timeline = () => {
+const TimeLine = () => {
   return (
     <Container>
       <Header>Corporate Experience</Header>
@@ -29,9 +29,13 @@ const Timeline = () => {
 };
 
 const Container = styled.div`
+  width: 50vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  @media only screen and (max-width: 767px) {
+    width: auto;
+  }
 `;
 const Header = styled.div`
   font-family: var(--font-family-rubik);
@@ -48,4 +52,4 @@ const Content = styled.div`
   border-radius: 15px;
 `;
 
-export default Timeline;
+export default TimeLine;
