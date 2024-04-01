@@ -9,9 +9,9 @@ const headshot = require('../assets/icons/Headshot.png');
 const AboutmePage = () => {
   return (
     <AboutMeContainer>
-      <P5Project>
+      <P5_1 position='absolute'>
         <P5_TORUS background={255} strokeColor={200}/>
-      </P5Project>
+      </P5_1>
       <BioContainer>
         <Headshot src={headshot}/>
         <BioBox />
@@ -29,6 +29,7 @@ const AboutMeContainer = styled.div`
   flex-direction: column;
   padding-inline-start: 0px;
   padding-bottom: 5vh;
+  over-flowX: hidden;
 `;
 const BioContainer = styled.div`
   display: flex; 
@@ -65,9 +66,13 @@ const Headshot = styled.img`
   }
 `;
 const P5Project = styled.div`
-  position: fixed;
-  transform: translate(20vw,25vh);
+  position: ${props => props.position} ;
+  transform: translate(40vw,100vh);
   z-index: -1;
 `;
+const P5_1 = styled(P5Project)`
+
+`
+
 
 export default AboutmePage;
