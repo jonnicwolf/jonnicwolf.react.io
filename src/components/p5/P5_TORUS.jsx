@@ -20,7 +20,7 @@ const P5_TORUS = ({ background, strokeColor }) => {
       p.torus(30, 25);
     };
 
-    p.windowResized = () => p.resizeCanvas(p.windowWidth, 320);
+    p.windowResized = () => p.resizeCanvas(p.windowWidth,p.windowHeight);
   };
 
   useEffect(() => {

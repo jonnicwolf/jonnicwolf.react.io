@@ -10,10 +10,10 @@ const BioBox = () => {
         <br/>
         <a
           href="https://docs.google.com/viewer?url=https://docs.google.com/document/d/1L--uuFkBDl2thpDIuyzyUWNqv5Q0BShsKrwGvy6DusU/export?format=pdf"
-          style={{textDecoration: 'none', color: 'red'}} rel='noopener noreferrer'
+          style={{textDecoration: 'none', color: 'red', cursor: 'pointer'}} rel='noopener noreferrer'
           target='_blank'>
             I'm Jon Narine
-        </a>,
+        </a>
       </PermanentMarkerText>
       <NotoSansDisplay>
         A full-stack web developer based in the heart of NYC. My expertise lies in front-end development, with a proficiency in JavaScript, Python, and Swift.
@@ -35,8 +35,7 @@ const BioBox = () => {
 
 const NotoSansDisplay = styled.p`
   color: dark brown;
-  font-family: Noto Sans Display;
-  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-rubik);
   font-size: 16px;
 `;
 const PermanentMarkerText = styled.p`

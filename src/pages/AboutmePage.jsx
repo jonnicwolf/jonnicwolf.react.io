@@ -10,7 +10,7 @@ const AboutmePage = () => {
   return (
     <AboutMeContainer>
       <P5Project>
-        <P5_TORUS background={255} strokeColor={230}/>
+        <P5_TORUS background={255} strokeColor={200}/>
       </P5Project>
       <BioContainer>
         <Headshot src={headshot}/>
@@ -38,12 +38,11 @@ const BioContainer = styled.div`
   width: 90%;
   max-width: 1124px;
 
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 857px) {
     flex-direction: column;
   }
 `;
 const Contributions = styled.img`
-  margin-bottom: 2vh;
   height: auto;
   @media only screen and (max-width: 767px) {
     width: 95%;
@@ -61,12 +60,13 @@ const Headshot = styled.img`
   border-radius: 50%;
 
   @media only screen and (max-width: 767px) {
-    border-radius: unset;
+   height: 20rem;
+   width: 20rem;
   }
 `;
 const P5Project = styled.div`
-  position: absolute;
-  transform: translate(20vw,35vh);
+  position: fixed;
+  transform: translate(20vw,25vh);
   z-index: -1;
 `;
 
