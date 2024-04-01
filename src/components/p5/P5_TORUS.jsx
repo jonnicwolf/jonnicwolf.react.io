@@ -6,21 +6,53 @@ const P5_TORUS = ({ background, strokeColor }) => {
 
   function sketch (p) {
     p.setup = () => {
-      p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
-      p.camera(0, 0, 50 * p.sqrt(5), 1, 0, 0, 0, 1, 0);
-      p.perspective(p.PI/3, 1, 5 * p.sqrt(50), 500 * p.sqrt(3));
+      p.createCanvas (
+        p.windowWidth,
+        p.windowHeight,
+        p.WEBGL );
+
+      p.camera (
+        0,
+        0,
+        50 * p.sqrt(5),
+        1,
+        0,
+        0,
+        0,
+        1,
+        0 );
+
+      p.perspective (
+        p.PI/3,
+        1,
+        5 * p.sqrt(50),
+        500 * p.sqrt(3) );
     };
 
     p.draw = () => {
       p.background(background);
       p.stroke(strokeColor);
       p.noFill();
-      p.rotateZ(p.frameCount * 0.001);
-      p.rotateX(p.frameCount * 0.001);
+
+      const rotationSpeed = 0.005;
+      const angleX = p.frameCount * rotationSpeed * 0.7;
+      const angleY = p.frameCount * rotationSpeed;
+      const angleZ = p.frameCount * rotationSpeed * 0.3;
+      const torusRotation = p.frameCount * rotationSpeed * 2;
+
+      p.rotateX(angleX);
+      p.rotateY(angleY);
+      p.rotateZ(angleZ);
       p.torus(30, 25);
+
+      const translateAmount = 100;
+      const torusX = translateAmount * p.cos(torusRotation);
+      const torusY = translateAmount * p.sin(torusRotation);
+      const torusZ = translateAmount * p.tan(torusRotation);
+      p.translate(torusX, torusY, torusZ);
     };
 
-    p.windowResized = () => p.resizeCanvas(p.windowWidth, 320);
+    p.windowResized = () => p.resizeCanvas(p.windowWidth,p.windowHeight);
   };
 
   useEffect(() => {

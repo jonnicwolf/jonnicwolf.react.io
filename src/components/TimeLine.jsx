@@ -55,26 +55,24 @@ const TimeLine = () => {
 
 const Container = styled.div`
   width: 50vw;
+  width: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  @media only screen and (max-width: 767px) {
-    width: auto;
+  @media only screen and (min-width: 767px) {
+    width: 52rem;
   }
 `;
 const Header = styled.div`
   font-family: var(--font-family-rubik);
-  padding-bottom: -100px;
   font-size: 2rem;
   font-weight: bold;
 `;
 const Content = styled.div`
   font-family: var(--font-family-rubik);
-  font-size: 25px;
+  font-size: 20px;
   padding: 20px 30px;
   color: black;
-  position: relative;
-  border-radius: 15px;
 `;
 
 export default TimeLine;
