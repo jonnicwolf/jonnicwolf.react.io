@@ -1,7 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { lazy } from 'react';
 import { Link } from 'react-router-dom';
-import LinkButton from '../Button';
+import styled from 'styled-components';
+
+const LinkButton = lazy(() => import( '../Button'));
 
 const NavBar = () => {
   return (
