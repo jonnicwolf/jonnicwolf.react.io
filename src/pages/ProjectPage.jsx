@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import styled from 'styled-components';
-import ProjectVideo from '../components/ProjectVideo';
-import TipTallyPro from '../assets/video/TipTallyPro.mp4';
-import SCD from '../assets/video/SCD.mp4';
+
+const ProjectVideo = lazy(() => import('../components/ProjectVideo'));
+const TipTallyPro  = lazy(() => import('../assets/video/TipTallyPro.mp4'));
+const SCD          = lazy(() => import('../assets/video/SCD.mp4'));
 
 const ProjectPage = () => {
   return (
