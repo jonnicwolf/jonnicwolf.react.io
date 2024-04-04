@@ -1,9 +1,11 @@
+import { lazy } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
-import NavBar from './components/navigation/NavBar';
-import LandingPage from './pages/LandingPage';
-import ProjectPage from './pages/ProjectPage';
-import AboutmePage from './pages/AboutmePage';
+
+const NavBar = lazy(() => import('./components/navigation/NavBar'));
+const LandingPage = lazy(() => import('./pages/LandingPage'));
+const ProjectPage = lazy(()=> import('./pages/ProjectPage'));
+const AboutmePage = lazy(() => import('./pages/AboutmePage'));
 
 function App() {
   const location = useLocation();
