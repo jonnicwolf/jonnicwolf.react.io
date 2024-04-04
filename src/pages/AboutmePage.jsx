@@ -2,16 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import BioBox from '../components/BioBox';
 import TimeLine from '../components/TimeLine';
-import P5_TORUS from '../components/p5/P5_TORUS';
 
 const headshot = require('../assets/icons/Headshot.png');
 
 const AboutmePage = () => {
   return (
     <AboutMeContainer>
-      <P5_1 position='absolute'>
-        <P5_TORUS background={255} strokeColor={200}/>
-      </P5_1>
       <BioContainer>
         <Headshot src={headshot}/>
         <BioBox />
@@ -27,9 +23,6 @@ const AboutMeContainer = styled.div`
   display: flex;
   gap: 5rem;
   flex-direction: column;
-  padding-inline-start: 0px;
-  padding-bottom: 5vh;
-  over-flowX: hidden;
 `;
 const BioContainer = styled.div`
   display: flex; 
@@ -38,7 +31,6 @@ const BioContainer = styled.div`
   gap: 1rem;
   width: 90%;
   max-width: 1124px;
-
   @media only screen and (max-width: 857px) {
     flex-direction: column;
   }
@@ -65,14 +57,5 @@ const Headshot = styled.img`
    width: 20rem;
   }
 `;
-const P5Project = styled.div`
-  position: ${props => props.position} ;
-  transform: translate(40vw,100vh);
-  z-index: -1;
-`;
-const P5_1 = styled(P5Project)`
-
-`
-
 
 export default AboutmePage;

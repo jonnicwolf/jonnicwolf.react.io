@@ -1,24 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
 import LinkButton from './Button';
+import P5_TORUS from './p5/P5_TORUS';
 
 const TimeLine = () => {
   return (
     <Container>
       <Header>Corporate Experience</Header>
-      <div>
+      <ContentContainer>
         <Content>
           <h3>2013 | <a href="https://www.jpmorgan.com/global" target='_blank' rel='noreferrer'><LinkButton textContent={'JPMorgan Chase & Co.'} fontSize={'20px'}/></a></h3>
           <h4>Project Management Intern</h4>
           <p>
             During my tenure as a Project Management Intern at JPMorgan Chase & Co., I meticulously verified the conditions and equipment used in all server rooms at the prestigious JPMC HQ located at 270 Park Ave. Additionally, I took charge of remediating server rooms at Chase Manhattan Tower, ensuring optimal functionality and efficiency.
           </p>
-
           <p>
             Moreover, I demonstrated exceptional coordination skills by effectively managing team meetings and meticulously recording meeting minutes for team members spanning across four different time zones. My proactive approach ensured seamless communication and collaboration, contributing to the success of our projects.
           </p>
         </Content>
-      
+
         <Content>
           <h3>2021 | <a href="https://www.pursuit.org/fellowship?gclid=Cj0KCQjwrsGCBhD1ARIsALILBYoZZTe0XdzsD0GkFi90K4dVpBijEedjBi69BZTan0FS3X1s1DfZiOUaAh4PEALw_wcB" target='_blank' rel='noreferrer'><LinkButton textContent={'Pursuit'} fontSize={'20px'}/></a></h3>
           <h4>Full Stack Web Development Fellow</h4>
@@ -32,6 +32,7 @@ const TimeLine = () => {
             As a testament to Pursuit's effectiveness, graduates like myself have been recruited by top-tier companies including Pinterest, JP Morgan, and Spotify, attesting to the program's reputation for producing exceptional talent poised for success in the tech industry.
           </p>
         </Content>
+
         <Content>
           <h3>2022 | <a href="https://seatgeek.com/about" target='_blank' rel='noreferrer'><LinkButton textContent={'SeatGeek'} fontSize={'20px'}/></a></h3>
           <h4>Apprentice Software Engineer</h4>
@@ -48,7 +49,11 @@ const TimeLine = () => {
             In addition, I played a pivotal role in enhancing the Integrated Inventory Card by providing crucial support to our CX team. Through the implementation of logic to display primary providers and relevant league information, I empowered our team to better serve our customers, ultimately driving improved user engagement and loyalty.
           </p>
         </Content>
-      </div>
+
+        <P5_1 position='relative'>
+          <P5_TORUS background={255} strokeColor={200} />
+        </P5_1>
+      </ContentContainer>
     </Container>
   );
 };
@@ -68,11 +73,27 @@ const Header = styled.div`
   font-size: 2rem;
   font-weight: bold;
 `;
+const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+`
 const Content = styled.div`
   font-family: var(--font-family-rubik);
   font-size: 20px;
   padding: 20px 30px;
   color: black;
+`;
+const P5Project = styled.div`
+  position: ${props => props.position};
+  z-index: -1;
+`;
+const P5_1 = styled(P5Project)`
+  left: 30%;
+  position: absolute;
+  transform: translateY(35%);
 `;
 
 export default TimeLine;
