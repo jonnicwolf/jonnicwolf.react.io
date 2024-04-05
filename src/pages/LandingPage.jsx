@@ -1,11 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
 import NameCard from '../components/NameCard.jsx';
 import Button from '../components/Button.jsx';
 import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 
-const LandingPage = () => {
+export default function LandingPage () {
   return (
     <Background>
       <LandingPageContainer>
@@ -20,10 +21,9 @@ const LandingPage = () => {
         <PProject>
           <P5_PLANE/>
         </PProject>
-
       </LandingPageContainer>
     </Background>
-  )
+  );
 };
 
 const Background = styled.div`
@@ -43,11 +43,8 @@ const LandingPageItem = styled.div`
 `;
 const PProject = styled(LandingPageItem)`
   z-index: 1;
-`
+`;
 const EnterButton = styled(LandingPageItem)`
   z-index: 99;
   padding-top: 3vh;
 `;
-
-
-export default LandingPage;
