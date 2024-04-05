@@ -5,7 +5,7 @@ import TimeLine from '../components/TimeLine';
 
 const headshot = require('../assets/icons/Headshot.png');
 
-const AboutmePage = () => {
+export default function AboutmePage () {
   return (
     <AboutMeContainer>
       <BioContainer>
@@ -57,5 +57,3 @@ const Headshot = styled.img`
    width: 20rem;
   }
 `;
-
-export default AboutmePage;

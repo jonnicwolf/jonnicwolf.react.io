@@ -1,22 +1,28 @@
-import { lazy } from 'react';
+import { lazy, Suspense } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
-const NavBar      = lazy(() => import('./components/navigation/NavBar'));
-const LandingPage = lazy(() => import('./pages/LandingPage'));
-const ProjectPage = lazy(() => import('./pages/ProjectPage'));
-const AboutmePage = lazy(() => import('./pages/AboutmePage'));
+import Loader from './components/navigation/Loader';
+import LandingPage from './pages/LandingPage';
+import NavBar from './components/navigation/NavBar';
+import Test from './pages/Test.jsx';
+
+const ProjectPage = lazy(() => import('./pages/ProjectPage.jsx'));
+const AboutmePage = lazy(() => import('./pages/AboutmePage.jsx'));
 
 function App() {
   const location = useLocation();
   return (
     <Container>
       {location.pathname !== '/' && <NavBar/>}
-      <Routes>
-        <Route path='/' element={<LandingPage />} />
-        <Route path='/projects' element={<ProjectPage />} />
-        <Route path='/about' element={<AboutmePage />} />
-      </Routes>
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path='/' element={<LandingPage />} />
+          <Route path='/projects' element={<ProjectPage />} />
+          <Route path='/about' element={<AboutmePage />} />
+          <Route path='/test' element={<Test />} />
+        </Routes>
+      </Suspense>
     </Container>
   );
 };

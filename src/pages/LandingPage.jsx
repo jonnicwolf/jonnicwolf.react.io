@@ -1,12 +1,12 @@
-import React, { lazy } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const NameCard = lazy(() => import('../components/NameCard.jsx'));
-const Button   = lazy(() => import('../components/Button.jsx'));
-const P5_PLANE = lazy(() => import('../components/p5/P5_PLANE.jsx'));
+import NameCard from '../components/NameCard.jsx';
+import Button from '../components/Button.jsx';
+import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 
-const LandingPage = () => {
+export default function LandingPage () {
   return (
     <Background>
       <LandingPageContainer>
@@ -23,7 +23,7 @@ const LandingPage = () => {
         </PProject>
       </LandingPageContainer>
     </Background>
-  )
+  );
 };
 
 const Background = styled.div`
@@ -48,5 +48,3 @@ const EnterButton = styled(LandingPageItem)`
   z-index: 99;
   padding-top: 3vh;
 `;
-
-export default LandingPage;

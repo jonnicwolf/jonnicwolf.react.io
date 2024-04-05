@@ -1,11 +1,11 @@
-import React, { lazy } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-const ProjectVideo = lazy(() => import('../components/ProjectVideo'));
-const TipTallyPro  = lazy(() => import('../assets/video/TipTallyPro.mp4'));
-const SCD          = lazy(() => import('../assets/video/SCD.mp4'));
+import ProjectVideo from '../components/ProjectVideo';
+import TipTallyPro from '../assets/video/TipTallyPro.mp4';
+import SCD from '../assets/video/SCD.mp4';
 
-const ProjectPage = () => {
+export default function ProjectPage () {
   return (
     <section id='projects'>
       <ProjectList>
@@ -39,5 +39,3 @@ const ProjectList = styled.div`
   list-style: none;
   row-gap: 100px;
 `;
-
-export default ProjectPage;
