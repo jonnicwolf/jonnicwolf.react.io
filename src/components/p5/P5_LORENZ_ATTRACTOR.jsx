@@ -15,7 +15,7 @@ const P5_LORENZ_ATTRACTOR = () => {
     let b = 28; // Rho
     let c = 8.0 / 3.0; //Beta
   
-    let points = new Array();
+    let points = [];
 
     p.setup = () => {
       p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
