@@ -1,5 +1,5 @@
 import React from 'react';
-import Loader from '../components/navigation/Loader';
+// import Loader from '../components/navigation/Loader';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
 
 const Test = () => {
