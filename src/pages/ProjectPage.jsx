@@ -4,10 +4,11 @@ import styled from 'styled-components';
 import ProjectVideo from '../components/ProjectVideo';
 import TipTallyPro from '../assets/video/TipTallyPro.mp4';
 import SCD from '../assets/video/SCD.mp4';
+import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
 
 export default function ProjectPage () {
   return (
-    <section id='projects'>
+    <>
       <ProjectList>
         <ProjectVideo
           bio='Webstore / Ice Cream Shop'
@@ -28,14 +29,21 @@ export default function ProjectPage () {
           fontSize={'15px'}
         />
       </ProjectList>
-    </section>
+      <Background />
+    </>
   );
 };
 
+const Background = styled(P5_LORENZ_ATTRACTOR)`
+  position: sticky;
+  z-index: 1;
+`;
 const ProjectList = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
   list-style: none;
   row-gap: 100px;
+  z-index: 99;
+  position: absolute;
 `;

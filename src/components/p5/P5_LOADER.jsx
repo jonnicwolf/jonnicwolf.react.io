@@ -6,7 +6,7 @@ const P5_LOADER = () => {
 
   function sketch (p) {
     p.setup = () => {
-      p.createCanvas(p.windowWidth/12, p.windowHeight/12, p.WEBGL);
+      p.createCanvas(p.windowWidth/2, p.windowHeight/4, p.WEBGL);
     };
 
     p.draw = () => {
