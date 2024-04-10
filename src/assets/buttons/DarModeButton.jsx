@@ -1,15 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const LinkButton = ({textContent, buttonSize, fontSize}) => {
+const DarkModeButton = ({ darkModeGetter, darkModeSetter, img}) => {
+
   return (
-    <Button buttonSize={buttonSize} fontSize={fontSize}>
-      {textContent}
-    </Button>
+    <Container>
+      <Button>
+        { darkModeGetter ? 'LIGHTMODE' : 'DARKMODE'}
+      </Button>
+    </Container>
   );
 };
 
+const Container = styled.div`
+  padding: 1vh;
+  font-size: 2rem;
+`;
 const Button = styled.button`
+  // Defines the normal appearance of the button
   padding: ${props => props.buttonSize === 'large' ? '25px 80px' : '1em'};
   font-family: var(--font-family-rubik);
   font-weight: 900;
@@ -32,12 +40,12 @@ const Button = styled.button`
     left: 0;
     direction: rtl;
     z-index: -1;
-    background: red;
+    background: black;
     transition: all 0.1s ease;
   }
 
   &:hover {
-    color: rgb(0,0,0);
+    color: rgb(255,255,255);
     border: 1px solid rgb(0,0,0);
   }
 
@@ -48,4 +56,5 @@ const Button = styled.button`
   }
 `;
 
-export default LinkButton;
+
+export default DarkModeButton;

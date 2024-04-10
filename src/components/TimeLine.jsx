@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import LinkButton from './Button';
+import LinkButton from '../assets/buttons/Button';
 import P5_TORUS from './p5/P5_TORUS';
 
 const TimeLine = () => {

@@ -32,7 +32,7 @@ function App() {
 const Container = styled.div`
   max-width: 100%;
   overflow-x: hidden;
-  background: black;
+  // background: black;
   height: 200vh;
 `;
 

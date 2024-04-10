@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Button from '../components/Button';
+import Button from '../assets/buttons/Button';
 
 const ProjectVideo = ({ bio, title, href1, href2, videoSrc, buttonSize, fontSize }) => {
   const videoRef = useRef(null);

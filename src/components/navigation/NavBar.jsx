@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import LinkButton from '../Button';
+import LinkButton from '../../assets/buttons/Button';
+import DarkModeButton from '../../assets/buttons/DarModeButton';
 
 const NavBar = ({ darkMode }) => {
   return (
@@ -14,9 +15,10 @@ const NavBar = ({ darkMode }) => {
           </RampartOneText>
         </Link>
       </Fezz>
-      <About to='/about'>
-        <LinkButton textContent={'ABOUT'} fontSize={true}/>
-      </About>
+
+      <DarkModeButton />
+      <LinkButton subDirectory={'/about'} textContent={'ABOUT'} fontSize={true}/>
+
     </NavbarContainer>
   );
 };
