@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import LinkButton from './Button';
+import LinkButton from '../assets/buttons/Button';
 import P5_TORUS from './p5/P5_TORUS';
 
-const TimeLine = () => {
+const TimeLine = ({ darkMode }) => {
   return (
     <Container>
-      <Header>Corporate Experience</Header>
+      <Header darkMode={darkMode}>Corporate Experience</Header>
       <ContentContainer>
-        <Content>
+        <Content darkMode={darkMode}>
           <h3>2013 | <a href="https://www.jpmorgan.com/global" target='_blank' rel='noreferrer'><LinkButton textContent={'JPMorgan Chase & Co.'} fontSize={'20px'}/></a></h3>
           <h4>Project Management Intern</h4>
           <p>
@@ -19,7 +19,7 @@ const TimeLine = () => {
           </p>
         </Content>
 
-        <Content>
+        <Content darkMode={darkMode}>
           <h3>2021 | <a href="https://www.pursuit.org/fellowship?gclid=Cj0KCQjwrsGCBhD1ARIsALILBYoZZTe0XdzsD0GkFi90K4dVpBijEedjBi69BZTan0FS3X1s1DfZiOUaAh4PEALw_wcB" target='_blank' rel='noreferrer'><LinkButton textContent={'Pursuit'} fontSize={'20px'}/></a></h3>
           <h4>Full Stack Web Development Fellow</h4>
           <p>
@@ -33,7 +33,7 @@ const TimeLine = () => {
           </p>
         </Content>
 
-        <Content>
+        <Content darkMode={darkMode}>
           <h3>2022 | <a href="https://seatgeek.com/about" target='_blank' rel='noreferrer'><LinkButton textContent={'SeatGeek'} fontSize={'20px'}/></a></h3>
           <h4>Apprentice Software Engineer</h4>
           <p>
@@ -51,7 +51,7 @@ const TimeLine = () => {
         </Content>
 
         <P5_1 position='relative'>
-          <P5_TORUS background={255} strokeColor={200} />
+          <P5_TORUS background={darkMode ?'white' : 92 } strokeColor={200} />
         </P5_1>
       </ContentContainer>
     </Container>
@@ -59,6 +59,7 @@ const TimeLine = () => {
 };
 
 const Container = styled.div`
+  color: ${props => props.darkMode ? 'white' : 'black'};
   width: 50vw;
   width: auto;
   display: flex;
@@ -72,6 +73,7 @@ const Header = styled.div`
   font-family: var(--font-family-rubik);
   font-size: 2rem;
   font-weight: bold;
+  color: ${props => props.darkMode ? 'white' : 'black'};
 `;
 const ContentContainer = styled.div`
   display: flex;
@@ -79,12 +81,12 @@ const ContentContainer = styled.div`
   position: relative;
   height: 100vh;
   width: 100vw;
-`
+`;
 const Content = styled.div`
   font-family: var(--font-family-rubik);
   font-size: 20px;
   padding: 20px 30px;
-  color: black;
+  color: ${props => props.darkMode ? 'white' : 'black'};
 `;
 const P5Project = styled.div`
   position: ${props => props.position};
@@ -94,6 +96,7 @@ const P5_1 = styled(P5Project)`
   left: 30%;
   position: absolute;
   transform: translateY(35%);
+  z-index: 2;
 `;
 
 export default TimeLine;

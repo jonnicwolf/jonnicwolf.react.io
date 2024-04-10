@@ -2,19 +2,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import LinkButton from '../Button';
+import LinkButton from '../../assets/buttons/Button';
+import DarkModeButton from '../../assets/buttons/DarModeButton';
 
-const NavBar = () => {
+const NavBar = ({ darkModeGetter, darkModeSetter }) => {
   return (
     <NavbarContainer>
       <Fezz>
         <Link to='/projects' style={{textDecoration: 'none', color: 'black'}} >
-          <RampartOneText>FEZZ</RampartOneText>
+          <RampartOneText darkMode={darkModeGetter}>
+            FEZZ
+          </RampartOneText>
         </Link>
       </Fezz>
-      <About to='/about'>
-        <LinkButton textContent={'ABOUT'} fontSize={true}/>
-      </About>
+
+      <DarkModeButton darkModeGetter={darkModeGetter} darkModeSetter={darkModeSetter} />
+
+      <LinkButton subDirectory={'/about'} textContent={'ABOUT'} fontSize={true} />
     </NavbarContainer>
   );
 };
@@ -36,15 +40,13 @@ const NavbarContainer = styled.div`
 const Fezz = styled.div`
   margin-right: auto;
 `;
-const About = styled(Link)`
-  padding: 1vh;
-  font-size: 2rem;
-`;
 const RampartOneText = styled.p`
   font-family: var(--font-family-rampart-one);
   font-weight: var(--font-weight-normal);
   font-size: 40px;
   margin: 0;
+  color: ${props => props.darkMode ? 'white' : 'black'};
+  
 `;
 
 export default NavBar;

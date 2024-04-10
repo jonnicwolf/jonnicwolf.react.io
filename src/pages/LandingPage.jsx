@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import NameCard from '../components/NameCard.jsx';
-import Button from '../components/Button.jsx';
+import Button from '../assets/buttons/Button.jsx';
 import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 
 export default function LandingPage () {

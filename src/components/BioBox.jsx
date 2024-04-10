@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import Socials from './Socials';
 
-const BioBox = () => {
+const BioBox = ({ darkMode }) => {
   return (
     <div>
-      <PermanentMarkerText>
+      <PermanentMarkerText darkMode={darkMode}>
         Hello!
         <br/>
         <a
@@ -15,7 +15,7 @@ const BioBox = () => {
             I'm Jon Narine
         </a>
       </PermanentMarkerText>
-      <NotoSansDisplay>
+      <NotoSansDisplay darkMode={darkMode}>
         A full-stack web developer based in the heart of NYC. My expertise lies in front-end development, with a proficiency in JavaScript, Python, and Swift.
         <br></br><br></br>
         Collaboration is my cornerstone—I thrive on working with teams to bring user-centric products to fruition. I take pride in crafting interfaces that are both intuitive and visually appealing.
@@ -26,7 +26,7 @@ const BioBox = () => {
         <br></br><br></br>
         I look forward to collaborating with you!
       </NotoSansDisplay>
-      <SocialsContainer>
+      <SocialsContainer darkMode={darkMode}>
         <Socials />
       </SocialsContainer>
     </div>
@@ -34,7 +34,7 @@ const BioBox = () => {
 };
 
 const NotoSansDisplay = styled.p`
-  color: dark brown;
+  color:  ${props => props.darkMode ? 'white' : 'black'};
   font-family: var(--font-family-rubik);
   font-size: 16px;
 `;
@@ -43,6 +43,7 @@ const PermanentMarkerText = styled.p`
   font-weight: var(--font-weight-bold);
   font-size: 25px;
   letter-spacing: 0.0120em;
+  color:  ${props => props.darkMode ? 'white' : 'black'};
 `;
 const SocialsContainer = styled.div`
   @media (max-width: 385px) {
