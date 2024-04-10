@@ -15,7 +15,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   return (
-    <Container>
+    <Container darkMode={darkMode}>
       { location.pathname !== '/' && <NavBar darkModeGetter={darkMode} darkModeSetter={setDarkMode} /> }
       <Suspense fallback={<Loader />}>
         <Routes>
@@ -32,7 +32,7 @@ function App() {
 const Container = styled.div`
   max-width: 100%;
   overflow-x: hidden;
-  // background: black;
+  background: ${props => props.darkMode ? '#5c5c5b' : '#fffcf5'};
   height: 200vh;
 `;
 

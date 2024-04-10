@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const LinkButton = ({textContent, buttonSize, fontSize, subDirectory}) => {
+const LinkButton = ({textContent, buttonSize, fontSize, subDirectory, darkMode}) => {
   return (
     <LinkStyle to={subDirectory}>
       <Button buttonSize={buttonSize} fontSize={fontSize}>
@@ -15,8 +15,7 @@ const LinkButton = ({textContent, buttonSize, fontSize, subDirectory}) => {
 const LinkStyle = styled(Link)`
   padding: 1vh;
   font-size: 2rem;
-`
-
+`;
 const Button = styled.button`
   padding: ${props => props.buttonSize === 'large' ? '25px 80px' : '1em'};
   font-family: var(--font-family-rubik);
@@ -27,7 +26,7 @@ const Button = styled.button`
   cursor: pointer;
   position: relative;
   display: inline-block;
-  border: 1px solid rgb(0,0,0);
+  border: 1px solid ${props => props.darkModeGetter ? 'black' : 'red'} ;
   z-index: 1;
   color: rgb(0,0,0);
 
@@ -40,13 +39,15 @@ const Button = styled.button`
     left: 0;
     direction: rtl;
     z-index: -1;
-    background: red;
+    background: ${props => props.darkModeGetter ? 'black' : 'red'};
+    // color:  ${props => props.darkModeGetter ? 'black' : 'white'};
+    color:  ${props => props.darkModeGetter ? 'white' : 'black'};
     transition: all 0.1s ease;
   }
 
   &:hover {
-    color: rgb(0,0,0);
-    border: 1px solid rgb(0,0,0);
+    color: ${props => props.darkModeGetter ? 'red' : 'black'};
+    border: 1px solid ${props => props.darkModeGetter ? 'red' : 'black'};;
   }
 
   &:hover:after {

@@ -5,7 +5,7 @@ const DarkModeButton = ({ darkModeGetter, darkModeSetter, img}) => {
 
   return (
     <Container>
-      <Button onClick={() => {darkModeSetter(!darkModeGetter); console.log('clicked', darkModeGetter)}}>
+      <Button onClick={() => {darkModeSetter(!darkModeGetter); console.log('clicked', darkModeGetter)}} darkModeGetter={darkModeGetter}>
         { darkModeGetter ? 'LIGHTMODE' : 'DARKMODE'}
       </Button>
     </Container>
@@ -27,7 +27,7 @@ const Button = styled.button`
   cursor: pointer;
   position: relative;
   display: inline-block;
-  border: 1px solid rgb(0,0,0);
+  border: 1px solid ${props => props.darkModeGetter ? 'white' : 'black'} ;
   z-index: 1;
   color: rgb(0,0,0);
 
@@ -40,19 +40,21 @@ const Button = styled.button`
     left: 0;
     direction: rtl;
     z-index: -1;
-    background: black;
+    background: ${props => props.darkModeGetter ? 'white' : 'black'};
+    color:  ${props => props.darkModeGetter ? 'white' : 'black'};
     transition: all 0.1s ease;
   }
 
   &:hover {
-    color: rgb(255,255,255);
-    border: 1px solid rgb(0,0,0);
+    color:  ${props => props.darkModeGetter ? 'black' : 'white'};
+    border: 1px solid ${props => props.darkModeGetter ? 'white' : 'black'};;
   }
 
   &:hover:after {
     left: auto;
     right: 0;
     width: 100%;
+    color: ${props => props.darkModeGetter ? 'black' : 'white'};
   }
 `;
 
