@@ -12,7 +12,7 @@ const AboutmePage = lazy(() => import('./pages/AboutmePage.jsx'));
 
 function App() {
   const location = useLocation();
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   return (
     <Container>
