@@ -24,7 +24,7 @@ const NavBar = ({ darkModeGetter, darkModeSetter }) => {
 };
 
 const NavbarContainer = styled.div`
-  border-bottom: 2px solid rgb(0, 0, 0, 0.3);
+  border-bottom: 2px solid ${props => props.darkMode ? 'black' : '#fffcf5'};
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -46,7 +46,6 @@ const RampartOneText = styled.p`
   font-size: 40px;
   margin: 0;
   color: ${props => props.darkMode ? 'white' : 'black'};
-  
 `;
 
 export default NavBar;
