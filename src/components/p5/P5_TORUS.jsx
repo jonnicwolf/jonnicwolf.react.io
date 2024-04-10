@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import p5 from 'p5';
 
-const P5_TORUS = ({ background, strokeColor }) => {
+const P5_TORUS = ({ strokeColor }) => {
   const sketch_ref = useRef();
 
   function sketch (p) {
