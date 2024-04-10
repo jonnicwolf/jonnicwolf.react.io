@@ -9,7 +9,7 @@ const NavBar = ({ darkModeGetter, darkModeSetter }) => {
   return (
     <NavbarContainer>
       <Fezz>
-        <Link to='/projects' style={{textDecoration: 'none', color: 'black'}} >
+        <Link to='/projects' style={{textDecoration: 'none', color: 'black'}}>
           <RampartOneText darkMode={darkModeGetter}>
             FEZZ
           </RampartOneText>
@@ -24,7 +24,7 @@ const NavBar = ({ darkModeGetter, darkModeSetter }) => {
 };
 
 const NavbarContainer = styled.div`
-  border-bottom: 2px solid rgb(0, 0, 0, 0.3);
+  border-bottom: 2px solid ${props => props.darkMode ? 'black' : '#fffcf5'};
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -33,7 +33,7 @@ const NavbarContainer = styled.div`
   justify-content: end;
   margin-right: 5vw;
   margin-left: 5vw;
-  margin-bottom: 10vh;
+  // margin-bottom: 10vh;
   padding-inline-start: 0;
   width: 90vw;
 `;
@@ -46,7 +46,6 @@ const RampartOneText = styled.p`
   font-size: 40px;
   margin: 0;
   color: ${props => props.darkMode ? 'white' : 'black'};
-  
 `;
 
 export default NavBar;

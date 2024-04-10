@@ -51,7 +51,7 @@ const TimeLine = ({ darkMode }) => {
         </Content>
 
         <P5_1 position='relative'>
-          <P5_TORUS background={darkMode ?'white' : 92 } strokeColor={200} />
+          <P5_TORUS strokeColor={200} />
         </P5_1>
       </ContentContainer>
     </Container>

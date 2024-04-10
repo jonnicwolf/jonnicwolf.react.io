@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import NameCard from '../components/NameCard.jsx';
-import Button from '../assets/buttons/Button.jsx';
+import LinkButton from '../assets/buttons/Button.jsx';
 import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 
 export default function LandingPage () {
@@ -13,9 +12,7 @@ export default function LandingPage () {
         <NameCard />
 
         <EnterButton>
-            <Link to="/projects">
-              <Button textContent='ENTER' buttonSize={'large'}/>
-            </Link>
+          <LinkButton subDirectory={'/projects'} textContent='ENTER' buttonSize={'large'}/>
         </EnterButton>
 
         <PProject>

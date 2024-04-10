@@ -40,6 +40,7 @@ const Background = styled(P5_LORENZ_ATTRACTOR)`
 `;
 const ProjectList = styled.div`
   display: flex;
+  padding-top: 10vh;
   justify-content: center;
   flex-direction: column;
   list-style: none;

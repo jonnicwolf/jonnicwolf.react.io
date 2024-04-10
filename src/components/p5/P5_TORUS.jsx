@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import p5 from 'p5';
 
-const P5_TORUS = ({ background, strokeColor }) => {
+const P5_TORUS = ({ strokeColor }) => {
   const sketch_ref = useRef();
 
   function sketch (p) {
@@ -27,10 +27,11 @@ const P5_TORUS = ({ background, strokeColor }) => {
         1,
         5 * p.sqrt(50),
         500 * p.sqrt(3) );
+      p.colorMode(p.RGBA)
     };
 
     p.draw = () => {
-      p.background(background,1);
+      p.background(0,0);
       p.stroke(strokeColor);
       p.noFill();
 
