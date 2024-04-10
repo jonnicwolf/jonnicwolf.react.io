@@ -4,12 +4,14 @@ import styled from 'styled-components';
 
 import LinkButton from '../Button';
 
-const NavBar = () => {
+const NavBar = ({ darkMode }) => {
   return (
     <NavbarContainer>
       <Fezz>
         <Link to='/projects' style={{textDecoration: 'none', color: 'black'}} >
-          <RampartOneText>FEZZ</RampartOneText>
+          <RampartOneText darkMode={darkMode}>
+            FEZZ
+          </RampartOneText>
         </Link>
       </Fezz>
       <About to='/about'>
@@ -45,6 +47,8 @@ const RampartOneText = styled.p`
   font-weight: var(--font-weight-normal);
   font-size: 40px;
   margin: 0;
+  color: ${props => props.darkMode ? 'white' : 'black'};
+  
 `;
 
 export default NavBar;

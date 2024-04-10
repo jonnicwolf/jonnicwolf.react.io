@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -12,9 +12,11 @@ const AboutmePage = lazy(() => import('./pages/AboutmePage.jsx'));
 
 function App() {
   const location = useLocation();
+  const [darkMode, setDarkMode] = useState(true);
+
   return (
     <Container>
-      {location.pathname !== '/' && <NavBar/>}
+      { location.pathname !== '/' && <NavBar darkMode={darkMode} /> }
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path='/' element={<LandingPage />} />
@@ -30,6 +32,8 @@ function App() {
 const Container = styled.div`
   max-width: 100%;
   overflow-x: hidden;
+  background: black;
+  height: 200vh;
 `;
 
 export default App;
