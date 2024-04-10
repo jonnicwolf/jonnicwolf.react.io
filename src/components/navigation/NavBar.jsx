@@ -17,8 +17,8 @@ const NavBar = ({ darkModeGetter, darkModeSetter }) => {
       </Fezz>
 
       <DarkModeButton darkModeGetter={darkModeGetter} darkModeSetter={darkModeSetter} />
-      <LinkButton subDirectory={'/about'} textContent={'ABOUT'} fontSize={true}/>
 
+      <LinkButton subDirectory={'/about'} textContent={'ABOUT'} fontSize={true} />
     </NavbarContainer>
   );
 };
@@ -39,10 +39,6 @@ const NavbarContainer = styled.div`
 `;
 const Fezz = styled.div`
   margin-right: auto;
-`;
-const About = styled(Link)`
-  padding: 1vh;
-  font-size: 2rem;
 `;
 const RampartOneText = styled.p`
   font-family: var(--font-family-rampart-one);
