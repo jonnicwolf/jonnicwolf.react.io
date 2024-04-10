@@ -5,15 +5,15 @@ import TimeLine from '../components/TimeLine';
 
 const headshot = require('../assets/icons/Headshot.png');
 
-export default function AboutmePage () {
+export default function AboutmePage ({ darkMode }) {
   return (
     <AboutMeContainer>
       <BioContainer>
         <Headshot src={headshot}/>
-        <BioBox />
+        <BioBox darkMode={darkMode} />
       </BioContainer>
       <Contributions src="https://ghchart.rshah.org/jonnicwolf" alt="My Github Contributions" />
-      <TimeLine />
+      <TimeLine darkMode={darkMode} />
     </AboutMeContainer>
   );
 };

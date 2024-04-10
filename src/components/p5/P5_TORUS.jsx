@@ -30,7 +30,7 @@ const P5_TORUS = ({ background, strokeColor }) => {
     };
 
     p.draw = () => {
-      p.background(background);
+      p.background(background,1);
       p.stroke(strokeColor);
       p.noFill();
 
