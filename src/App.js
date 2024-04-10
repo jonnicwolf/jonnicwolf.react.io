@@ -16,7 +16,7 @@ function App() {
 
   return (
     <Container>
-      { location.pathname !== '/' && <NavBar darkMode={darkMode} /> }
+      { location.pathname !== '/' && <NavBar darkModeGetter={darkMode} darkModeSetter={setDarkMode} /> }
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path='/' element={<LandingPage />} />

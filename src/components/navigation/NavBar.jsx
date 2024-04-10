@@ -5,18 +5,18 @@ import styled from 'styled-components';
 import LinkButton from '../../assets/buttons/Button';
 import DarkModeButton from '../../assets/buttons/DarModeButton';
 
-const NavBar = ({ darkMode }) => {
+const NavBar = ({ darkModeGetter, darkModeSetter }) => {
   return (
     <NavbarContainer>
       <Fezz>
         <Link to='/projects' style={{textDecoration: 'none', color: 'black'}} >
-          <RampartOneText darkMode={darkMode}>
+          <RampartOneText darkMode={darkModeGetter}>
             FEZZ
           </RampartOneText>
         </Link>
       </Fezz>
 
-      <DarkModeButton />
+      <DarkModeButton darkModeGetter={darkModeGetter} darkModeSetter={darkModeSetter} />
       <LinkButton subDirectory={'/about'} textContent={'ABOUT'} fontSize={true}/>
 
     </NavbarContainer>

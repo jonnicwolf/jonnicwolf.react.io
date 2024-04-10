@@ -5,7 +5,7 @@ const DarkModeButton = ({ darkModeGetter, darkModeSetter, img}) => {
 
   return (
     <Container>
-      <Button>
+      <Button onClick={darkModeSetter(!darkModeGetter)}>
         { darkModeGetter ? 'LIGHTMODE' : 'DARKMODE'}
       </Button>
     </Container>
