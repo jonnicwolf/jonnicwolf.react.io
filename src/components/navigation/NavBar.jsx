@@ -9,7 +9,7 @@ const NavBar = ({ darkModeGetter, darkModeSetter }) => {
   return (
     <NavbarContainer>
       <Fezz>
-        <Link to='/projects' style={{textDecoration: 'none', color: 'black'}} >
+        <Link to='/projects' style={{textDecoration: 'none', color: 'black'}}>
           <RampartOneText darkMode={darkModeGetter}>
             FEZZ
           </RampartOneText>
@@ -33,7 +33,7 @@ const NavbarContainer = styled.div`
   justify-content: end;
   margin-right: 5vw;
   margin-left: 5vw;
-  margin-bottom: 10vh;
+  // margin-bottom: 10vh;
   padding-inline-start: 0;
   width: 90vw;
 `;

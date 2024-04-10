@@ -36,7 +36,7 @@ const P5_LORENZ_ATTRACTOR = () => {
       // Plotted coordinates are stored as an array of objects
       points.push(new p5.Vector(x, y, z));
   
-      p.scale(15);
+      p.scale(12);
       p.strokeWeight(3);
       p.translate(0, 0)
       p.noFill();
