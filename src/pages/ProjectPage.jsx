@@ -40,10 +40,10 @@ const Background = styled(P5_LORENZ_ATTRACTOR)`
 `;
 const ProjectList = styled.div`
   display: flex;
-  align-items: center;
+  justify-content: center;
   flex-direction: column;
   list-style: none;
-  row-gap: 100px;
+  gap: 20vh;
   z-index: 99;
   position: absolute;
 `;

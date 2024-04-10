@@ -16,7 +16,7 @@ const ProjectVideo = ({ bio, title, href1, href2, videoSrc, buttonSize, fontSize
         setIsPlaying(false);
         videoRef.current.pause();
         videoRef.current.currentTime = 0;
-      }
+      };
     };
 
     const options = {
@@ -41,38 +41,40 @@ const ProjectVideo = ({ bio, title, href1, href2, videoSrc, buttonSize, fontSize
 
   return (
     <Container>
-      <Project
-        ref={videoRef}
-        muted
-        src={videoSrc}
-        isPlaying={isPlaying}
-      />
-      <HoverCover>
-        <Title>{title}</Title>
-        <Bio>{bio}</Bio>
-        <a href={href1} target='_blank' rel="noopener noreferrer">
-          <Button textContent='LIVE SITE' fontSize={fontSize}/>
-        </a>
-        &#160;
-        <a href={href2} target='_blank' rel='noopener noreferrer'>
-          <Button textContent='GITHUB' fontSize={fontSize}/>
-        </a>
+
+    <Project
+      ref={videoRef}
+      muted
+      src={videoSrc}
+      isPlaying={isPlaying}
+    />
+
+    <HoverCover>
+      <Title>{title}</Title>
+      <Bio>{bio}</Bio>
+      <a href={href1} target='_blank' rel="noopener noreferrer">
+        <Button textContent='LIVE SITE' fontSize={fontSize}/>
+      </a>
+      &#160;
+      <a href={href2} target='_blank' rel='noopener noreferrer'>
+        <Button textContent='GITHUB' fontSize={fontSize}/>
+      </a>
       </HoverCover>
+
     </Container>
   );
 };
 
 const HoverCover = styled.div`
-  // opacity: 0;
-  visibilities: hidden;
-  transform: translate(-80px, -400px);
-  //transition: visibility 0.1s ease-in, transform 0.1s ease;
-  transition: all 0.35s
+  opacity: 0;
+  transform: translate(-80px, -650px);
   width: 420px;
-  z-index: 1;
-  // &:hover {
-  //   visibility: visible;
-  // }
+  z-index: 99;
+  padding: 16% 50% 16% 0;
+  transition: opacity .5s ease-in-out;
+  &:hover {
+    opacity: 1;
+  }
   @media (max-width: 800px) {
     transform: translate(-40px, -200px);
   }
@@ -105,15 +107,15 @@ const Bio = styled.p`
 const Project = styled.video`
   box-shadow: 1px 1px 15px 10px grey;
   height: 100%;
-  width: 70%;
+  width: 100%;
   object-fit: fill;
   filter: blur(${({ isPlaying }) => (isPlaying ? '0' : '0.2rem')});
   transition: opacity 0.1s ease-in, transform 0.1s ease;
 `;
 
 const Container = styled.div`
-  border: ;
-  height: 100%;
+  height: 60vh;
+  width: 70vw;
   padding-left: 7vw;
   transform: translateX(10vw);
   &:hover {
