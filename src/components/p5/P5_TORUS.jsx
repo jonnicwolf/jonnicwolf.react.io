@@ -27,10 +27,11 @@ const P5_TORUS = ({ background, strokeColor }) => {
         1,
         5 * p.sqrt(50),
         500 * p.sqrt(3) );
+      p.colorMode(p.RGBA)
     };
 
     p.draw = () => {
-      p.background(background,1);
+      p.background(background,0);
       p.stroke(strokeColor);
       p.noFill();
 
