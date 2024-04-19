@@ -5,11 +5,12 @@ import Button from '../assets/buttons/Button';
 const ProjectVideo = ({ bio, title, href1, href2, videoSrc, buttonSize, fontSize }) => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const isMobile = window.innerWidth < 1024;
 
   useEffect(() => {
     const playVideoOnScroll = (entries) => {
       const [entry] = entries;
-      if (entry.isIntersecting) {
+      if (entry.isIntersecting && !isMobile) {
         setIsPlaying(true);
         videoRef.current.play();
       } else {
@@ -47,6 +48,7 @@ const ProjectVideo = ({ bio, title, href1, href2, videoSrc, buttonSize, fontSize
       muted
       src={videoSrc}
       isPlaying={isPlaying}
+      isMobile={isMobile}
     />
 
     <HoverCover>
@@ -109,7 +111,7 @@ const Project = styled.video`
   height: 100%;
   width: 100%;
   object-fit: fill;
-  filter: blur(${({ isPlaying }) => (isPlaying ? '0' : '0.2rem')});
+  filter: blur(${({ isPlaying, isMobile }) => (isPlaying && !isMobile ? '0' : '0.2rem')});
   transition: opacity 0.1s ease-in, transform 0.1s ease;
 `;
 
