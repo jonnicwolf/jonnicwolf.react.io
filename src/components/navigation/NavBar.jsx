@@ -19,6 +19,7 @@ const NavBar = ({ darkModeGetter, darkModeSetter }) => {
       <DarkModeButton darkModeGetter={darkModeGetter} darkModeSetter={darkModeSetter} />
 
       <LinkButton subDirectory={'/about'} textContent={'ABOUT'} fontSize={true} />
+      <LinkButton subDirectory={'/gallery'} textContent={'GALLERY'} fontSize={true} />
     </NavbarContainer>
   );
 };
