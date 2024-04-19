@@ -38,7 +38,7 @@ const ProjectVideo = ({ bio, title, href1, href2, videoSrc, buttonSize, fontSize
         observer.unobserve(target);
       }
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <Container>
