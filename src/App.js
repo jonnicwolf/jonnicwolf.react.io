@@ -9,6 +9,7 @@ import Test from './pages/Test.jsx';
 
 const ProjectPage = lazy(() => import('./pages/ProjectPage.jsx'));
 const AboutmePage = lazy(() => import('./pages/AboutmePage.jsx'));
+const GalleryPage = lazy(() => import('./pages/GalleryPage.jsx'));
 
 function App() {
   const location = useLocation();
@@ -19,10 +20,11 @@ function App() {
       { location.pathname !== '/' && <NavBar darkModeGetter={darkMode} darkModeSetter={setDarkMode} /> }
       <Suspense fallback={<Loader />}>
         <Routes>
-          <Route path='/' element={<LandingPage />} />
+          <Route path='/'         element={<LandingPage />} />
           <Route path='/projects' element={<ProjectPage />} />
-          <Route path='/about' element={<AboutmePage darkMode={darkMode}/>} />
-          <Route path='/test' element={<Test />} />
+          <Route path='/gallery'  element={<GalleryPage />} />
+          <Route path='/about'    element={<AboutmePage darkMode={darkMode}/>} />
+          <Route path='/test'     element={<Test />} />
         </Routes>
       </Suspense>
     </Container>
