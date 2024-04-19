@@ -13,20 +13,11 @@ const GalleryPage = ({ darkMode }) => {
   const titles = ['TORUS', 'PLANE', 'LORENZ ATTRACTOR'];
 
   useEffect(() => {
-    console.log(`we're in useEffect`)
     setTitle(titles[index]);
-
   }, [index, titles]);
 
-  const handleNext = (prevIndex) => {
-    console.log('handleNext', index, prevIndex)
-    setIndex(prevIndex >= p5_projs.length - 1 ? 0 : prevIndex + 1);
-  };
-
-  const handleLast = (prevIndex) => {
-    console.log('handleLast', index, prevIndex)
-    setIndex(prevIndex <= 0 ? p5_projs.length - 1 : prevIndex - 1);
-  };
+  const handleNext = (prevIndex) => setIndex(prevIndex >= p5_projs.length - 1 ? 0 : prevIndex + 1) ;
+  const handleLast = (prevIndex) => setIndex(prevIndex <= 0 ? p5_projs.length - 1 : prevIndex - 1) ;
 
   const ActiveProject = p5_projs[index];
 
@@ -34,10 +25,9 @@ const GalleryPage = ({ darkMode }) => {
     <Container>
       <DisplayBox>
         <ControlBox darkMode={darkMode}>
-          <Button text={'LAST'} onclick={() => handleLast(index) } darkModeGetter={darkMode} />
-          <Title>{title}</Title>
-          <Button text={'NEXT'} onclick={() => handleNext(index)} darkModeGetter={darkMode} />
-          
+          <Button text={'LAST'} onclick={ () => handleLast(index) } darkModeGetter={ darkMode } />
+          <Title>{ title }</Title>
+          <Button text={'NEXT'} onclick={ () => handleNext(index)} darkModeGetter={ darkMode } />
         </ControlBox>
         <ActiveProject strokeColor={darkMode ? 50 : 200}/>
       </DisplayBox>
@@ -57,11 +47,9 @@ const Title = styled.h3`
   font-weight: bold;
   font-family: 'Rubik', sans-serif;
 `;
-
 const DisplayBox = styled.div`
   height: 100vh;
 `;
-
 const ControlBox = styled.div`
   display: flex;
   justify-content: space-evenly;
@@ -71,7 +59,5 @@ const ControlBox = styled.div`
   width: 30%;
   color: ${ props => props.darkMode ? "rgb(50)" : "rgb(20)" };
 `;
-
-
 
 export default GalleryPage;
