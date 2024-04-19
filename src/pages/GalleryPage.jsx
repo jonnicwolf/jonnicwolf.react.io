@@ -9,11 +9,42 @@ import P5_TORUS from '../components/p5/P5_TORUS.jsx';
 
 const GalleryPage = ({ darkMode }) => {
   const [index, setIndex] = useState(0);
-  const [title, setTitle] = useState('TORUS');
+  const [title, setTitle] = useState(null);
   const p5_projs = [ Torus, Plane, Lorenz ];
   
-  const handleNext = () => setIndex( index >= p5_projs.length - 1 ? 0 : index++ );
-  const handleLast = () => setIndex( index <= 1 ? p5_projs.length - 1 : index--);
+  const handleNext = () => {
+    setIndex( index >= p5_projs.length - 1 ? 0 : index++ );
+    switch (index) {
+      case 0: 
+        setTitle('TORUS')
+        break;
+      case 1:
+          setTitle('PLANE')
+          break;
+      case 2:
+        setTitle('LORENZ ATTRACTOR')
+        break;
+      default:
+        null;
+    };
+  };
+
+  const handleLast = () => {
+    switch (index) {
+      case 0: 
+        setTitle('TORUS')
+        break;
+      case 1:
+          setTitle('PLANE')
+          break;
+      case 2:
+        setTitle('LORENZ ATTRACTOR')
+        break;
+      default: 
+        null;
+    };
+    setIndex( index <= 1 ? p5_projs.length - 1 : index--);
+  };
 
   const ActiveProject = p5_projs[index];
 
@@ -25,7 +56,7 @@ const GalleryPage = ({ darkMode }) => {
           <Title>{title}</Title>
           <Next text={'NEXT'}/>
         </ControlBox>
-        <ActiveProject />
+        <ActiveProject strokeColor={200}/>
       </DisplayBox>
     </Container>
   );
