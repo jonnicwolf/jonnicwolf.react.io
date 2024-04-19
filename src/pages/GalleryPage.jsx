@@ -57,7 +57,8 @@ const ControlBox = styled.div`
   margin: 20px;
   border: 1px solid grey;
   width: 30%;
-  color: ${ props => props.darkMode ? "rgb(50)" : "rgb(20)" };
+  color: ${props => props.darkModeGetter ? 'white' : 'black'};
+  background-color: ${props => props.darkModeGetter ? 'grey' : null};
 `;
 
 export default GalleryPage;
