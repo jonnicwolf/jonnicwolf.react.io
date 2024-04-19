@@ -59,6 +59,11 @@ const ControlBox = styled.div`
   width: 30%;
   color: ${props => props.darkModeGetter ? 'white' : 'black'};
   background-color: ${props => props.darkModeGetter ? 'grey' : null};
+  transition: all .3s linear;
+
+  &:hover {
+    box-shadow: 0 15px 15px grey;
+  }
 `;
 
 export default GalleryPage;
