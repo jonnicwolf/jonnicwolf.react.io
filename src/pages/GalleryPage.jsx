@@ -10,11 +10,11 @@ const GalleryPage = ({ darkMode }) => {
   const [index, setIndex] = useState(0);
   const [title, setTitle] = useState('');
   const p5_projs = [P5_TORUS, P5_PLANE, P5_LORENZ_ATTRACTOR];
-  const titles = ['TORUS', 'PLANE', 'LORENZ ATTRACTOR'];
-
+  
   useEffect(() => {
+    const titles = ['TORUS', 'PLANE', 'LORENZ ATTRACTOR'];
     setTitle(titles[index]);
-  }, [index, titles]);
+  }, [index]);
 
   const handleNext = (prevIndex) => setIndex(prevIndex >= p5_projs.length - 1 ? 0 : prevIndex + 1) ;
   const handleLast = (prevIndex) => setIndex(prevIndex <= 0 ? p5_projs.length - 1 : prevIndex - 1) ;
