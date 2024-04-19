@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import p5 from 'p5';
 
-const P5_LORENZ_ATTRACTOR = () => {
+const P5_LORENZ_ATTRACTOR = ({ strokeColor }) => {
   const sketch_ref = useRef();
 
   function sketch (p) {
@@ -44,7 +44,7 @@ const P5_LORENZ_ATTRACTOR = () => {
       p.beginShape();
   
       for (let v of points) {
-        p.stroke(115);
+        p.stroke(strokeColor);
         p.vertex(v.x, v.y, v.z);
         if (points.length > 3500) {
           points.shift()

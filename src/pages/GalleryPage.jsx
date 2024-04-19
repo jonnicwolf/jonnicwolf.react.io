@@ -29,7 +29,7 @@ const GalleryPage = ({ darkMode }) => {
           <Title>{ title }</Title>
           <Button text={'NEXT'} onclick={ () => handleNext(index)} darkModeGetter={ darkMode } />
         </ControlBox>
-        <ActiveProject strokeColor={darkMode ? 50 : 200}/>
+        <ActiveProject strokeColor={150}/>
       </DisplayBox>
     </Container>
   );

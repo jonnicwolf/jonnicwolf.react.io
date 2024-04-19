@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import p5 from "p5";
 
-const P5_PLANE = () => {
+const P5_PLANE = ({ strokeColor }) => {
   const sketch_ref = useRef();
 
   function sketch (p) {
@@ -39,7 +39,6 @@ const P5_PLANE = () => {
       };
 
       p.background(0,0,0,0); // Invisible background
-      p.stroke(0); // White grid line color
       p.noFill();
     
       p.translate(w / 2 - w / 2, h / 2 - h / 2);
@@ -53,7 +52,7 @@ const P5_PLANE = () => {
           let opacityBottom = p.map(y, rows - 1, rows * 3 / 4, 5, 255); // Fade from bottom
           let opacity = p.min(opacityTop, opacityBottom); // Use the lower opacity value
 
-          p.stroke(255, 255, 255, opacity);
+          p.stroke(strokeColor, strokeColor, strokeColor, opacity);
 
           p.vertex(x * scl, y * scl, terrain[x][y]);
           p.vertex(x * scl, (y + 1) * scl, terrain[x][y + 1]);
