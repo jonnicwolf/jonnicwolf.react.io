@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import Button from '../assets/buttons/Button.jsx';
@@ -6,44 +6,26 @@ import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR.jsx';
 import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 import P5_TORUS from '../components/p5/P5_TORUS.jsx';
 
-
 const GalleryPage = ({ darkMode }) => {
   const [index, setIndex] = useState(0);
-  const [title, setTitle] = useState(null);
-  const p5_projs = [ Torus, Plane, Lorenz ];
-  
-  const handleNext = () => {
-    setIndex( index >= p5_projs.length - 1 ? 0 : index++ );
-    switch (index) {
-      case 0: 
-        setTitle('TORUS')
-        break;
-      case 1:
-          setTitle('PLANE')
-          break;
-      case 2:
-        setTitle('LORENZ ATTRACTOR')
-        break;
-      default:
-        null;
-    };
+  const [title, setTitle] = useState('');
+  const p5_projs = [P5_TORUS, P5_PLANE, P5_LORENZ_ATTRACTOR];
+  const titles = ['TORUS', 'PLANE', 'LORENZ ATTRACTOR'];
+
+  useEffect(() => {
+    console.log(`we're in useEffect`)
+    setTitle(titles[index]);
+
+  }, [index, titles]);
+
+  const handleNext = (prevIndex) => {
+    console.log('handleNext', index, prevIndex)
+    setIndex(prevIndex >= p5_projs.length - 1 ? 0 : prevIndex + 1);
   };
 
-  const handleLast = () => {
-    switch (index) {
-      case 0: 
-        setTitle('TORUS')
-        break;
-      case 1:
-          setTitle('PLANE')
-          break;
-      case 2:
-        setTitle('LORENZ ATTRACTOR')
-        break;
-      default: 
-        null;
-    };
-    setIndex( index <= 1 ? p5_projs.length - 1 : index--);
+  const handleLast = (prevIndex) => {
+    console.log('handleLast', index, prevIndex)
+    setIndex(prevIndex <= 0 ? p5_projs.length - 1 : prevIndex - 1);
   };
 
   const ActiveProject = p5_projs[index];
@@ -51,46 +33,45 @@ const GalleryPage = ({ darkMode }) => {
   return (
     <Container>
       <DisplayBox>
-        <ControlBox>
-          <Last text={'LAST'}/>
+        <ControlBox darkMode={darkMode}>
+          <Button text={'LAST'} onclick={() => handleLast(index) } darkModeGetter={darkMode} />
           <Title>{title}</Title>
-          <Next text={'NEXT'}/>
+          <Button text={'NEXT'} onclick={() => handleNext(index)} darkModeGetter={darkMode} />
+          
         </ControlBox>
-        <ActiveProject strokeColor={200}/>
+        <ActiveProject strokeColor={darkMode ? 50 : 200}/>
       </DisplayBox>
     </Container>
   );
 };
 
 const Container = styled.div`
-  border: 1px solid red;
+  height: 100%;
 `;
+
 const Title = styled.h3`
   height: 100%;
   display: flex;
-  font-family: var(--font-family-rubik);
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  font-family: 'Rubik', sans-serif;
 `;
+
 const DisplayBox = styled.div`
-  height: 120vw;
+  height: 100vh;
 `;
+
 const ControlBox = styled.div`
   display: flex;
-  float: right;
   justify-content: space-evenly;
   align-items: center;
   margin: 20px;
   border: 1px solid grey;
   width: 30%;
+  color: ${ props => props.darkMode ? "rgb(50)" : "rgb(20)" };
 `;
 
-const Next   = styled(Button)``;
-const Last   = styled(Button)``;
 
-const Torus  = styled(P5_TORUS)``;
-const Lorenz = styled(P5_LORENZ_ATTRACTOR)``;
-const Plane  = styled(P5_PLANE)``;
 
 export default GalleryPage;

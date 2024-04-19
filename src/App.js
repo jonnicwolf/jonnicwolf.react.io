@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route path='/'         element={<LandingPage />} />
           <Route path='/projects' element={<ProjectPage />} />
-          <Route path='/gallery'  element={<GalleryPage />} />
+          <Route path='/gallery'  element={<GalleryPage darkMode={darkMode}/>} />
           <Route path='/about'    element={<AboutmePage darkMode={darkMode}/>} />
           <Route path='/test'     element={<Test />} />
         </Routes>

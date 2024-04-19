@@ -1,21 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Button = ({ darkModeGetter, text, img}) => {
-
+const Button = ({ darkModeGetter, text, onclick }) => {
   return (
-    <Container>
-      <StyledButton darkModeGetter={darkModeGetter}>
-        {text}
-      </StyledButton>
-    </Container>
+    <StyledButton darkModeGetter={darkModeGetter} onClick={onclick}>
+      {text}
+    </StyledButton>
   );
 };
 
-const Container = styled.div`
-  padding: 1vh;
-  font-size: 2rem;
-`;
 const StyledButton = styled.button`
   padding: ${props => props.buttonSize === 'large' ? '25px 80px' : '1em'};
   font-family: var(--font-family-rubik);
@@ -56,6 +49,5 @@ const StyledButton = styled.button`
     color: ${props => props.darkModeGetter ? 'black' : 'white'};
   }
 `;
-
 
 export default Button;
