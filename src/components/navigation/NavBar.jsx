@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import LinkButton from '../../assets/buttons/Button';
+import LinkButton from '../../assets/buttons/LinkButton';
 import DarkModeButton from '../../assets/buttons/DarModeButton';
 
 const NavBar = ({ darkModeGetter, darkModeSetter }) => {
@@ -33,7 +33,6 @@ const NavbarContainer = styled.div`
   justify-content: end;
   margin-right: 5vw;
   margin-left: 5vw;
-  // margin-bottom: 10vh;
   padding-inline-start: 0;
   width: 90vw;
 `;
