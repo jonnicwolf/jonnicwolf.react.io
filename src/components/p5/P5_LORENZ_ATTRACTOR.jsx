@@ -6,12 +6,12 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor }) => {
 
   function sketch (p) {
     // Initial coordinates where the attractor will start
-    let x = 10.0001;
-    let y = 10;
-    let z = 0;
+    let x = 10;
+    let y = 0;
+    let z = 1;
 
     // Params for the equations
-    let a = 10; // Sigma
+    let a = 21; // Sigma
     let b = 28; // Rho
     let c = 8.0 / 3.0; //Beta
   

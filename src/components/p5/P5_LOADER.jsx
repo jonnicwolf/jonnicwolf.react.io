@@ -6,14 +6,14 @@ const P5_LOADER = () => {
 
   function sketch (p) {
     p.setup = () => {
-      p.createCanvas(p.windowWidth/2, p.windowHeight/4, p.WEBGL);
+      p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
     };
 
     p.draw = () => {
       p.background(0,0,0,0); // Invisible background
-      const sideLength = 100; // Change size here
+      const sideLength =300; // Change size here
       const height = (Math.sqrt(3) / 2) * sideLength;
-      const halfBase = sideLength / 2;  
+      const halfBase = sideLength / 2;
 
       // Define the coordinates of the equilateral triangle
       const [ x1,y1,x2,y2,x3,y3 ] = [ 0, height, halfBase, 0, sideLength, height, ]

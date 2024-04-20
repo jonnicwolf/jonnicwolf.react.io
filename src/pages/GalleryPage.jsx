@@ -5,14 +5,15 @@ import Button from '../assets/buttons/Button.jsx';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR.jsx';
 import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 import P5_TORUS from '../components/p5/P5_TORUS.jsx';
+import P5_LOADER from '../components/p5/P5_LOADER.jsx';
 
 const GalleryPage = ({ darkMode }) => {
   const [index, setIndex] = useState(0);
   const [title, setTitle] = useState('');
-  const p5_projs = [P5_TORUS, P5_PLANE, P5_LORENZ_ATTRACTOR];
+  const p5_projs = [P5_TORUS, P5_PLANE, P5_LORENZ_ATTRACTOR, P5_LOADER];
   
   useEffect(() => {
-    const titles = ['TORUS', 'PLANE', 'LORENZ ATTRACTOR'];
+    const titles = ['TORUS', 'PLANE', 'LORENZ ATTRACTOR', 'TRILATERAL GHOSTS'];
     setTitle(titles[index]);
   }, [index]);
 
@@ -39,7 +40,7 @@ const Container = styled.div`
   height: 100%;
   max-height: 100vh;
 `;
-const Title = styled.h3`
+const Title = styled.h2`
   height: 100%;
   display: flex;
   justify-content: center;
@@ -60,16 +61,12 @@ const ControlBox = styled.div`
   justify-content: space-evenly;
   align-items: center;
   margin: 20px;
-  border: 1px solid grey;
+  // border: 1px solid grey;
   width: 30%;
   color: ${props => props.darkMode ? 'white' : 'black'};
   background-color: ${props => props.darkMode ? '150' : null};
   font-color: ${props => props.darkMode ? 'grey' : 'white'};
   transition: all .3s linear;
-
-  &:hover {
-    box-shadow: 0 15px 15px grey;
-  }
 `;
 
 export default GalleryPage;
