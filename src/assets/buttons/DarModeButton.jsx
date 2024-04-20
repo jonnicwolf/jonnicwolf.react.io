@@ -5,7 +5,7 @@ const DarkModeButton = ({ darkModeGetter, darkModeSetter, img}) => {
 
   return (
     <Container>
-      <Button onClick={() => {darkModeSetter(!darkModeGetter); console.log('clicked', darkModeGetter)}} darkModeGetter={darkModeGetter}>
+      <Button onClick={() => darkModeSetter(!darkModeGetter)} darkModeGetter={darkModeGetter}>
         { darkModeGetter ? 'LIGHTMODE' : 'DARKMODE'}
       </Button>
     </Container>
@@ -29,7 +29,7 @@ const Button = styled.button`
   display: inline-block;
   border: 1px solid ${props => props.darkModeGetter ? 'white' : 'black'} ;
   z-index: 1;
-  color: rgb(0,0,0);
+  color: ${props => props.darkModeGetter ? 'white' : 'black'};;
 
   &:after {
     position: absolute;

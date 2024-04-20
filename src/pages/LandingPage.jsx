@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import NameCard from '../components/NameCard.jsx';
-import LinkButton from '../assets/buttons/Button.jsx';
+import LinkButton from '../assets/buttons/LinkButton.jsx';
 import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 
 export default function LandingPage () {
@@ -16,7 +16,7 @@ export default function LandingPage () {
         </EnterButton>
 
         <PProject>
-          <P5_PLANE/>
+          <P5_PLANE strokeColor={255}/>
         </PProject>
       </LandingPageContainer>
     </Background>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import LinkButton from '../../assets/buttons/Button';
+import LinkButton from '../../assets/buttons/LinkButton';
 import DarkModeButton from '../../assets/buttons/DarModeButton';
 
 const NavBar = ({ darkModeGetter, darkModeSetter }) => {
@@ -18,7 +18,8 @@ const NavBar = ({ darkModeGetter, darkModeSetter }) => {
 
       <DarkModeButton darkModeGetter={darkModeGetter} darkModeSetter={darkModeSetter} />
 
-      <LinkButton subDirectory={'/about'} textContent={'ABOUT'} fontSize={true} />
+      <LinkButton subDirectory={'/about'} textContent={'ABOUT'} fontSize={true} darkMode={darkModeGetter}/>
+      <LinkButton subDirectory={'/gallery'} textContent={'GALLERY'} fontSize={true} darkMode={darkModeGetter}/>
     </NavbarContainer>
   );
 };
@@ -33,12 +34,14 @@ const NavbarContainer = styled.div`
   justify-content: end;
   margin-right: 5vw;
   margin-left: 5vw;
-  // margin-bottom: 10vh;
   padding-inline-start: 0;
   width: 90vw;
 `;
 const Fezz = styled.div`
   margin-right: auto;
+  padding-left: 15px;
+  padding-top: 15px;
+
 `;
 const RampartOneText = styled.p`
   font-family: var(--font-family-rampart-one);

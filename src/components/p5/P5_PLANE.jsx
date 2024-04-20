@@ -1,14 +1,14 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import p5 from "p5";
 
-const P5_PLANE = () => {
+const P5_PLANE = ({ strokeColor }) => {
   const sketch_ref = useRef();
 
-  function sketch (p) {
+  const sketch = useCallback((p) => {
     let cols, rows;
-    let scl = 20; // scale of each grid square
-    let w = 2000;
-    let h = 1600;
+    let w = 2400;
+    let h = 2400;
+    let scl = 48; // scale of each grid square
     let flying = 0;
     let terrain = [];
 
@@ -20,7 +20,7 @@ const P5_PLANE = () => {
     };
 
     p.draw = () => {
-      flying -= 0.03;
+      flying -= 0.008;
       let yoff = flying;
       for (let y = 9; y < rows; y++) {
         let xoff = 0;
@@ -39,7 +39,6 @@ const P5_PLANE = () => {
       };
 
       p.background(0,0,0,0); // Invisible background
-      p.stroke(0); // White grid line color
       p.noFill();
     
       p.translate(w / 2 - w / 2, h / 2 - h / 2);
@@ -53,7 +52,7 @@ const P5_PLANE = () => {
           let opacityBottom = p.map(y, rows - 1, rows * 3 / 4, 5, 255); // Fade from bottom
           let opacity = p.min(opacityTop, opacityBottom); // Use the lower opacity value
 
-          p.stroke(255, 255, 255, opacity);
+          p.stroke(strokeColor, strokeColor, strokeColor, opacity);
 
           p.vertex(x * scl, y * scl, terrain[x][y]);
           p.vertex(x * scl, (y + 1) * scl, terrain[x][y + 1]);
@@ -63,12 +62,12 @@ const P5_PLANE = () => {
     };
 
     p.windowResized = () => p.resizeCanvas(p.windowWidth, 320);
-  };
+  },[strokeColor])
 
   useEffect(() => {
     const p5Canvas = new p5(sketch, sketch_ref.current);
     return () => p5Canvas.remove();
-  }, []);
+  }, [sketch]);
 
   return (
     <div ref={sketch_ref} />
