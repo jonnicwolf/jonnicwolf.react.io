@@ -11,7 +11,7 @@ const GalleryPage = ({ darkMode }) => {
   const [index, setIndex] = useState(0);
   const [title, setTitle] = useState('');
   const p5_projs = [P5_TORUS, P5_PLANE, P5_LORENZ_ATTRACTOR, P5_LOADER];
-  
+
   useEffect(() => {
     const titles = ['TORUS', 'PLANE', 'LORENZ ATTRACTOR', 'TRILATERAL GHOSTS'];
     setTitle(titles[index]);
@@ -53,7 +53,6 @@ const DisplayBox = styled.div`
   display: flex;
   width: 100vw;
   flex-direction: column;
-  // justify-content: center;
   align-items: center;
 `;
 const ControlBox = styled.div`
@@ -61,13 +60,11 @@ const ControlBox = styled.div`
   justify-content: space-evenly;
   align-items: center;
   margin: 20px;
-  // border: 1px solid grey;
   width: 30%;
   text-wrap: wrap;
-  color: ${props => props.darkMode ? 'white' : 'black'};
-  background-color: ${props => props.darkMode ? '150' : null};
-  font-color: ${props => props.darkMode ? 'grey' : 'white'};
-  transition: all .3s linear;
+  color:            ${props => props.darkMode ? 'white' : 'black'};
+  background-color: ${props => props.darkMode ? '150'   : null};
+  font-color:       ${props => props.darkMode ? 'grey'  : 'white'};
 `;
 
 export default GalleryPage;
