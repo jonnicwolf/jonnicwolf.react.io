@@ -27,7 +27,7 @@ const GalleryPage = ({ darkMode }) => {
         <ControlBox darkMode={darkMode}>
           <Button text={'LAST'} onclick={ () => handleLast(index) } darkModeGetter={ darkMode } />
           <Title>{ title }</Title>
-          <Button text={'NEXT'} onclick={ () => handleNext(index)} darkModeGetter={ darkMode } />
+          <Button text={'NEXT'} onclick={ () => handleNext(index) } darkModeGetter={ darkMode } />
         </ControlBox>
         <ActiveProject strokeColor={150}/>
       </DisplayBox>
@@ -57,8 +57,9 @@ const ControlBox = styled.div`
   margin: 20px;
   border: 1px solid grey;
   width: 30%;
-  color: ${props => props.darkModeGetter ? 'white' : 'black'};
-  background-color: ${props => props.darkModeGetter ? 'grey' : null};
+  color: ${props => props.darkMode ? 'white' : 'black'};
+  background-color: ${props => props.darkMode ? '150' : null};
+  font-color: ${props => props.darkMode ? 'grey' : 'white'};
   transition: all .3s linear;
 
   &:hover {
