@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import p5 from "p5";
 
 const P5_PLANE = ({ strokeColor }) => {
   const sketch_ref = useRef();
 
-  const sketch = ((p) => {
+  const sketch = useCallback((p) => {
     let cols, rows;
     let scl = 20; // scale of each grid square
     let w = 2000;

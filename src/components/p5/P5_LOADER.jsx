@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import p5 from 'p5';
 
 const P5_LOADER = ({ strokeColor }) => {
   const sketch_ref = useRef();
 
-  const sketch = ((p) => {
+  const sketch = useCallback((p) => {
     p.setup = () => {
       p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
     };
@@ -31,7 +31,7 @@ const P5_LOADER = ({ strokeColor }) => {
   useEffect(() => {
     const p5Canvas = new p5(sketch, sketch_ref.current);
     return () => p5Canvas.remove();
-  }, []);
+  }, [sketch]);
 
   return (
     <div ref={sketch_ref} />
