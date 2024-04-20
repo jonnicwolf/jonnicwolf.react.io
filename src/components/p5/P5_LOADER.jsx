@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import p5 from 'p5';
 
-const P5_LOADER = () => {
+const P5_LOADER = ({ strokeColor }) => {
   const sketch_ref = useRef();
 
   function sketch (p) {
@@ -11,7 +11,7 @@ const P5_LOADER = () => {
 
     p.draw = () => {
       p.background(0,0,0,0); // Invisible background
-      const sideLength =300; // Change size here
+      const sideLength = 300; // Change size here
       const height = (Math.sqrt(3) / 2) * sideLength;
       const halfBase = sideLength / 2;
 
@@ -20,7 +20,7 @@ const P5_LOADER = () => {
       p.rotate(p.frameCount * 2.01);
       p.rotateY(p.frameCount * 0.05);
       p.triangle(x1,y1,x2,y2,x3,y3);
-      p.stroke(255); // Black grid line color
+      p.stroke(strokeColor); // Black grid line color
       p.strokeWeight(5);
       p.noFill();
     };

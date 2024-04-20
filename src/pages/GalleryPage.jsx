@@ -30,7 +30,7 @@ const GalleryPage = ({ darkMode }) => {
           <Title>{ title }</Title>
           <Button text={'NEXT'} onclick={ () => handleNext(index) } darkModeGetter={ darkMode } />
         </ControlBox>
-        <ActiveProject strokeColor={150}/>
+        <ActiveProject strokeColor={200}/>
       </DisplayBox>
     </Container>
   );
@@ -43,7 +43,7 @@ const Container = styled.div`
 const Title = styled.h2`
   height: 100%;
   display: flex;
-  justify-content: center;
+  text-align: center;
   align-items: center;
   font-weight: bold;
   font-family: 'Rubik', sans-serif;
@@ -63,6 +63,7 @@ const ControlBox = styled.div`
   margin: 20px;
   // border: 1px solid grey;
   width: 30%;
+  text-wrap: wrap;
   color: ${props => props.darkMode ? 'white' : 'black'};
   background-color: ${props => props.darkMode ? '150' : null};
   font-color: ${props => props.darkMode ? 'grey' : 'white'};
