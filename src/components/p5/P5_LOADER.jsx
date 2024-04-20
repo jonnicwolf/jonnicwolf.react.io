@@ -26,7 +26,7 @@ const P5_LOADER = ({ strokeColor }) => {
     };
 
     p.windowResized = () => p.resizeCanvas(p.windowWidth, p.windowHeight);
-  });
+  },[strokeColor]);
 
   useEffect(() => {
     const p5Canvas = new p5(sketch, sketch_ref.current);

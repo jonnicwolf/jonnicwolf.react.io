@@ -62,7 +62,7 @@ const P5_PLANE = ({ strokeColor }) => {
     };
 
     p.windowResized = () => p.resizeCanvas(p.windowWidth, 320);
-  })
+  },[strokeColor])
 
   useEffect(() => {
     const p5Canvas = new p5(sketch, sketch_ref.current);
