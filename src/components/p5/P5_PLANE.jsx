@@ -6,9 +6,9 @@ const P5_PLANE = ({ strokeColor }) => {
 
   const sketch = useCallback((p) => {
     let cols, rows;
-    let scl = 20; // scale of each grid square
-    let w = 2000;
-    let h = 1600;
+    let w = 2400;
+    let h = 2400;
+    let scl = 48; // scale of each grid square
     let flying = 0;
     let terrain = [];
 
@@ -20,7 +20,7 @@ const P5_PLANE = ({ strokeColor }) => {
     };
 
     p.draw = () => {
-      flying -= 0.03;
+      flying -= 0.008;
       let yoff = flying;
       for (let y = 9; y < rows; y++) {
         let xoff = 0;
