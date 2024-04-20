@@ -67,7 +67,7 @@ const P5_PLANE = ({ strokeColor }) => {
   useEffect(() => {
     const p5Canvas = new p5(sketch, sketch_ref.current);
     return () => p5Canvas.remove();
-  }, []);
+  }, [sketch]);
 
   return (
     <div ref={sketch_ref} />
