@@ -4,7 +4,7 @@ import p5 from 'p5';
 const P5_LOADER = ({ strokeColor }) => {
   const sketch_ref = useRef();
 
-  function sketch (p) {
+  const sketch = ((p) => {
     p.setup = () => {
       p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
     };
@@ -26,7 +26,7 @@ const P5_LOADER = ({ strokeColor }) => {
     };
 
     p.windowResized = () => p.resizeCanvas(p.windowWidth, p.windowHeight);
-  };
+  });
 
   useEffect(() => {
     const p5Canvas = new p5(sketch, sketch_ref.current);

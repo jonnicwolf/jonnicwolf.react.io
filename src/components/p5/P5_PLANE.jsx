@@ -4,7 +4,7 @@ import p5 from "p5";
 const P5_PLANE = ({ strokeColor }) => {
   const sketch_ref = useRef();
 
-  function sketch (p) {
+  const sketch = ((p) => {
     let cols, rows;
     let scl = 20; // scale of each grid square
     let w = 2000;
@@ -62,7 +62,7 @@ const P5_PLANE = ({ strokeColor }) => {
     };
 
     p.windowResized = () => p.resizeCanvas(p.windowWidth, 320);
-  };
+  })
 
   useEffect(() => {
     const p5Canvas = new p5(sketch, sketch_ref.current);
