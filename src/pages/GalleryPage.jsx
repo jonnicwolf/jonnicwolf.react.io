@@ -37,8 +37,8 @@ const GalleryPage = ({ darkMode }) => {
 
 const Container = styled.div`
   height: 100%;
+  max-height: 100vh;
 `;
-
 const Title = styled.h3`
   height: 100%;
   display: flex;
@@ -49,6 +49,11 @@ const Title = styled.h3`
 `;
 const DisplayBox = styled.div`
   height: 100vh;
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
 `;
 const ControlBox = styled.div`
   display: flex;
