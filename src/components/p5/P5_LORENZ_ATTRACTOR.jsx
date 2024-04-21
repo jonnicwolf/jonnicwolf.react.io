@@ -8,9 +8,9 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor }) => {
     let x = 10;
     let y = 0;
     let z = 1;
-    let a = 21; // Sigma
-    let b = 28; // Rho
-    let c = 8.0 / 3.0; // Beta
+    let sigma = 21;
+    let rho = 28;
+    let beta = 8.0 / 3.0;
     let points = [];
 
     p.setup = () => {
@@ -20,9 +20,9 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor }) => {
     p.draw = () => {
       p.background(0, 0, 0, 0);
       let dt = 0.005;
-      let dx = (a * (y - x)) * dt;
-      let dy = (x * (b - z) - y) * dt;
-      let dz = (x * y - c * z) * dt;
+      let dx = (sigma * (y - x)) * dt;
+      let dy = (x * (rho - z) - y) * dt;
+      let dz = (x * y - beta * z) * dt;
       x += dx;
       y += dy;
       z += dz;
@@ -53,7 +53,7 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor }) => {
   useEffect(() => {
     const p5Canvas = new p5(sketch, sketch_ref.current);
     return () => p5Canvas.remove();
-  }, [sketch]); // sketch is now properly memoized
+  }, [sketch]); // Memoize sketch
 
   return <div ref={sketch_ref} />;
 };
