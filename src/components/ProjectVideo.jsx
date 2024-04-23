@@ -45,17 +45,17 @@ const ProjectVideo = ({ bio, title, href1, href2, videoSrc, buttonSize, fontSize
 
     <Project
       ref={videoRef}
-      muted
       src={videoSrc}
       isPlaying={isPlaying}
       isMobile={isMobile}
       loop={true}
+      muted
     />
 
     <HoverCover>
       <Title>{title}</Title>
       <Bio>{bio}</Bio>
-      <a href={href1} target='_blank' rel="noopener noreferrer">
+      <a href='https://google.com/' target='_blank' rel="noopener noreferrer">
         <Button textContent='LIVE SITE' fontSize={fontSize}/>
       </a>
       &#160;
