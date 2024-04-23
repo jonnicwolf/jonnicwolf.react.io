@@ -111,7 +111,7 @@ const Project = styled.video`
   height: 100%;
   width: 100%;
   object-fit: fill;
-  filter: blur(${({ isPlaying, isMobile }) => (isPlaying && !isMobile ? '0' : '0.2rem')});
+  filter: blur(${({ isPlaying, isMobile }) => (isPlaying && !isMobile ? '0.2rem' : '0')});
   transition: opacity 0.1s ease-in, transform 0.1s ease;
 `;
 
