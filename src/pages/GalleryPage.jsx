@@ -59,12 +59,18 @@ const ControlBox = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin: 20px;
+  margin: 20px 10px 0 10px;
   width: 30%;
   text-wrap: wrap;
   color:            ${props => props.darkMode ? 'white' : 'black'};
   background-color: ${props => props.darkMode ? '150'   : null};
   font-color:       ${props => props.darkMode ? 'grey'  : 'white'};
+  @media screen and (max-width: 1024px) {
+    margin-top: 5vh;
+    gap: 5vw;
+    justify-content: center;
+    width: auto;
+  }
 `;
 
 export default GalleryPage;
