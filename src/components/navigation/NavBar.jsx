@@ -41,7 +41,6 @@ const Fezz = styled.div`
   margin-right: auto;
   padding-left: 15px;
   padding-top: 15px;
-
 `;
 const RampartOneText = styled.p`
   font-family: var(--font-family-rampart-one);
