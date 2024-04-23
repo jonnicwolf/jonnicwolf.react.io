@@ -5,7 +5,6 @@ const Hamburger = ({ darkMode, isOpen, isOpenSet }) => {
 
   function handleToggle () {
     isOpenSet(!isOpen);
-    console.log('Hamburger', isOpen)
   };
 
   return (

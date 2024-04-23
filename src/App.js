@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Loader from './components/navigation/Loader';
 import LandingPage from './pages/LandingPage';
 import NavBar from './components/navigation/NavBar';
+import MobileNav from './components/navigation/MobileNav.jsx';
 import Test from './pages/Test.jsx';
 
 const ProjectPage = lazy(() => import('./pages/ProjectPage.jsx'));
@@ -13,11 +14,18 @@ const GalleryPage = lazy(() => import('./pages/GalleryPage.jsx'));
 
 function App() {
   const location = useLocation();
+  const isMobile = window.innerWidth < 1025;
   const [darkMode, setDarkMode] = useState(false);
+
 
   return (
     <Container darkMode={darkMode}>
-      {/* { location.pathname !== '/' && <NavBar darkModeGetter={darkMode} darkModeSetter={setDarkMode} /> } */}
+      { location.pathname !== '/' && isMobile 
+        ? <MobileNav />
+        : location.pathname !== '/' && !isMobile 
+          ? <NavBar darkModeGetter={darkMode} darkModeSetter={setDarkMode}  />
+          : null
+      }
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path='/'         element={<LandingPage />} />

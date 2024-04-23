@@ -28,13 +28,16 @@ const MobileNav = ({ darkMode }) => {
 };
 
 const Container = styled.div`
+  position: fixed;
+  background-color: #fffcf5;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  border-top: 1px solid grey;
   height: ${props => props.isOpen ? '55vh' : '5vh'};
   overflow: hidden;
   transition: height .3s linear;
+  width: 100%;
+  z-index: 199;
 `;
 const Nav = styled.div`
   display: flex;
@@ -43,8 +46,10 @@ const Nav = styled.div`
   align-items: center;
   padding: 10px;
   height: 35%;
+  margin-bottom: 5px;
 `;
 const Item = styled(Link)`
+  border-top: 1px solid grey;
   border-bottom: 1px solid grey;
   color: black;
   font-family: Rubik;
