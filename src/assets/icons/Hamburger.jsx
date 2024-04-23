@@ -1,28 +1,27 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const Hamburger = ({ darkMode }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const Hamburger = ({ darkMode, isOpen, isOpenSet }) => {
 
   function handleToggle () {
-    setIsOpen(!isOpen);
-    console.log(isOpen);
+    isOpenSet(!isOpen);
+    console.log('Hamburger', isOpen)
   };
 
   return (
     <Wrapper>
       {
         isOpen ?
-          <Container onClick={()=>handleToggle()}>
-            <Bar />
-            <Bar />
-            <Bar />
-          </Container>
-        :
          <XContainer onClick={()=>handleToggle()}>
           <X_1/>
           <X_2/>
          </XContainer>
+         :
+        <Container onClick={()=>handleToggle()}>
+          <Bar />
+          <Bar />
+          <Bar />
+        </Container>
       }
     </Wrapper>
   );
@@ -34,6 +33,7 @@ const Wrapper = styled.div`
   align-items: center;
   width: 45px;
   height: 30px;
+  margin-top: 5px;
 `;
 const Container = styled.div`
   cursor: pointer;
