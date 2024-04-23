@@ -49,6 +49,7 @@ const ProjectVideo = ({ bio, title, href1, href2, videoSrc, buttonSize, fontSize
       src={videoSrc}
       isPlaying={isPlaying}
       isMobile={isMobile}
+      loop={true}
     />
 
     <HoverCover>
@@ -111,7 +112,7 @@ const Project = styled.video`
   height: 100%;
   width: 100%;
   object-fit: fill;
-  filter: blur(${({ isPlaying, isMobile }) => (isPlaying && !isMobile ? '0.2rem' : '0')});
+  filter: blur(${({ isPlaying, isMobile }) => (!isPlaying && !isMobile ? '0.2rem' : '0')});
   transition: opacity 0.1s ease-in, transform 0.1s ease;
 `;
 
