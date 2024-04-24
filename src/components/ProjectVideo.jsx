@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Button from '../assets/buttons/LinkButton';
+import ExternalButton from '../assets/buttons/ExternalButton';
 
 const ProjectVideo = ({ bio, title, href1, href2, videoSrc, buttonSize, fontSize }) => {
   const videoRef = useRef(null);
@@ -42,28 +43,21 @@ const ProjectVideo = ({ bio, title, href1, href2, videoSrc, buttonSize, fontSize
 
   return (
     <Container>
-
-    <Project
-      ref={videoRef}
-      src={videoSrc}
-      isPlaying={isPlaying}
-      isMobile={isMobile}
-      loop={true}
-      muted
-    />
-
-    <HoverCover>
-      <Title>{title}</Title>
-      <Bio>{bio}</Bio>
-      <a href='https://google.com/' target='_blank' rel="noopener noreferrer">
-        <Button textContent='LIVE SITE' fontSize={fontSize}/>
-      </a>
-      &#160;
-      <a href={href2} target='_blank' rel='noopener noreferrer'>
-        <Button textContent='GITHUB' fontSize={fontSize}/>
-      </a>
+      <Project
+        ref={videoRef}
+        src={videoSrc}
+        isPlaying={isPlaying}
+        isMobile={isMobile}
+        loop={true}
+        muted
+      />
+      <HoverCover>
+        <Title>{title}</Title>
+        <Bio>{bio}</Bio>
+        <ExternalButton link={href1} text={'LIVE SITE'} buttonSize={'large'} />
+        &#160;
+        <ExternalButton link={href2} text={'GITHUB'} buttonSize={'large'} buffer={true} />
       </HoverCover>
-
     </Container>
   );
 };

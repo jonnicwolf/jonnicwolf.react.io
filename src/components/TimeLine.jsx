@@ -14,7 +14,8 @@ const TimeLine = ({ darkMode }) => {
             <ExternalButton
               link={"https://seatgeek.com/about"}
               text={'SeatGeek'}
-              fontSize={'20px'} 
+              buffer={true}
+              fontSize={'20px'}
               darkModeGetter={darkMode} />
           </h3>
           <h4>Apprentice Software Engineer</h4>
@@ -36,7 +37,8 @@ const TimeLine = ({ darkMode }) => {
           <h3>2021 | 
             <ExternalButton
               link={"https://www.pursuit.org/fellowship?gclid=Cj0KCQjwrsGCBhD1ARIsALILBYoZZTe0XdzsD0GkFi90K4dVpBijEedjBi69BZTan0FS3X1s1DfZiOUaAh4PEALw_wcB"}text={'Pursuit'}
-              fontSize={'20px'} 
+              buffer={true}
+              fontSize={'20px'}
               darkModeGetter={darkMode} />
           </h3>
           <h4>Full Stack Web Development Fellow</h4>
@@ -56,6 +58,7 @@ const TimeLine = ({ darkMode }) => {
             <ExternalButton
               link={"https://www.jpmorgan.com/global"}
               text={'JPMorgan Chase'}
+              buffer={true}
               fontSize={'20px'}
               darkModeGetter={darkMode} />
           </h3>
