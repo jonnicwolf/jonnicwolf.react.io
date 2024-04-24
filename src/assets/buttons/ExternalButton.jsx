@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ExternalButton = ({ link, text, darkModeGetter, callback }) => {
+const ExternalButton = ({ link, text, buttonSize, darkModeGetter, callback }) => {
   return (
     <StyledButton
       href={link}
+      buttonSize={buttonSize}
       darkModeGetter={darkModeGetter}
       onClick={callback}
       target='_blank'
@@ -15,6 +16,7 @@ const ExternalButton = ({ link, text, darkModeGetter, callback }) => {
 };
 
 const StyledButton = styled.a`
+  margin-left: 1vw;
   padding: ${props => props.buttonSize === 'large' ? '25px 80px' : '1em'};
   font-family: var(--font-family-rubik);
   font-weight: 900;
@@ -31,6 +33,7 @@ const StyledButton = styled.a`
 
   &:after {
     position: absolute;
+    content: "";
     width: 0;
     height: 100%;
     top: 0;
