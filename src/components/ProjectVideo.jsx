@@ -1,9 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Button from '../assets/buttons/LinkButton';
 import ExternalButton from '../assets/buttons/ExternalButton';
 
-const ProjectVideo = ({ bio, title, href1, href2, videoSrc, buttonSize, fontSize }) => {
+const ProjectVideo = ({ bio, title, href1, href2, videoSrc }) => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const isMobile = window.innerWidth < 1024;
