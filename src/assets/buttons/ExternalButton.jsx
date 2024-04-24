@@ -8,8 +8,7 @@ const ExternalButton = ({ link, text, darkModeGetter, callback }) => {
       darkModeGetter={darkModeGetter}
       onClick={callback}
       target='_blank'
-      rel='noreferrer'
-    >
+      rel='noreferrer' >
       {text}
     </StyledButton>
   );
@@ -26,6 +25,7 @@ const StyledButton = styled.a`
   position: relative;
   display: inline-block;
   border: 1px solid ${props => props.darkModeGetter ? 'white' : 'black'} ;
+  text-decoration: none;
   z-index: 1;
   color: ${props => props.darkModeGetter ? 'white' : 'black'};
 
@@ -45,7 +45,8 @@ const StyledButton = styled.a`
 
   &:hover {
     color:  ${props => props.darkModeGetter ? 'black' : 'white'};
-    border: 1px solid ${props => props.darkModeGetter ? 'white' : 'black'};;
+    border: 1px solid ${props => props.darkModeGetter ? 'white' : 'black'};
+    text-decoration: underline;
   }
 
   &:hover:after {
