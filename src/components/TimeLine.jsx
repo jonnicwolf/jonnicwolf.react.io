@@ -14,7 +14,8 @@ const TimeLine = ({ darkMode }) => {
             <ExternalButton
               link={"https://seatgeek.com/about"}
               text={'SeatGeek'}
-              fontSize={'20px'}/>
+              fontSize={'20px'} 
+              darkModeGetter={darkMode} />
           </h3>
           <h4>Apprentice Software Engineer</h4>
           <p>
@@ -35,7 +36,8 @@ const TimeLine = ({ darkMode }) => {
           <h3>2021 | 
             <ExternalButton
               link={"https://www.pursuit.org/fellowship?gclid=Cj0KCQjwrsGCBhD1ARIsALILBYoZZTe0XdzsD0GkFi90K4dVpBijEedjBi69BZTan0FS3X1s1DfZiOUaAh4PEALw_wcB"}text={'Pursuit'}
-              fontSize={'20px'} />
+              fontSize={'20px'} 
+              darkModeGetter={darkMode} />
           </h3>
           <h4>Full Stack Web Development Fellow</h4>
           <p>
@@ -54,7 +56,9 @@ const TimeLine = ({ darkMode }) => {
             <ExternalButton
               link={"https://www.jpmorgan.com/global"}
               text={'JPMorgan Chase'}
-              fontSize={'20px'}/></h3>
+              fontSize={'20px'}
+              darkModeGetter={darkMode} />
+          </h3>
           <h4>Project Management Intern</h4>
           <p>
             During my tenure as a Project Management Intern at JPMorgan Chase & Co., I meticulously verified the conditions and equipment used in all server rooms at the prestigious JPMC HQ located at 270 Park Ave. Additionally, I took charge of remediating server rooms at Chase Manhattan Tower, ensuring optimal functionality and efficiency.

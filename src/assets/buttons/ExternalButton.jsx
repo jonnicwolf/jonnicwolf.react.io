@@ -17,7 +17,7 @@ const ExternalButton = ({ link, text, buttonSize, darkModeGetter, callback }) =>
 
 const StyledButton = styled.a`
   margin-left: 1vw;
-  padding: ${props => props.buttonSize === 'large' ? '25px 80px' : '1em'};
+  padding: ${props => props.buttonSize === 'large' ? '10px 60px' : '0.5em'};
   font-family: var(--font-family-rubik);
   font-weight: 900;
   font-size: ${props => props.fontSize};
