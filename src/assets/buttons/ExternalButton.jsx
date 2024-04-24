@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ExternalButton = ({ link, darkModeGetter, callback }) => {
+const ExternalButton = ({ link, text, darkModeGetter, callback }) => {
   return (
     <StyledButton
       href={link}
       darkModeGetter={darkModeGetter}
       onClick={callback}
+      target='_blank'
+      rel='noreferrer'
     >
       {text}
     </StyledButton>

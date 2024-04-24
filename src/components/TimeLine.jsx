@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ExternalButton from '../assets/buttons/ExternalButton';
 import LinkButton from '../assets/buttons/LinkButton';
 import P5_TORUS from './p5/P5_TORUS';
 
@@ -9,7 +10,8 @@ const TimeLine = ({ darkMode }) => {
       <Header darkMode={darkMode}>Corporate Experience</Header>
       <ContentContainer>
         <Content darkMode={darkMode}>
-          <h3>2013 | <a href="https://www.jpmorgan.com/global" target='_blank' rel='noreferrer'><LinkButton textContent={'JPMorgan Chase'} fontSize={'20px'}/></a></h3>
+          <h3>2013 | <ExternalButton link={"https://www.jpmorgan.com/global"} text={'JPMorgan Chase'} fontSize={'20px'}/>
+            <a href="https://www.jpmorgan.com/global" target='_blank' rel='noreferrer'><LinkButton textContent={'JPMorgan Chase'} fontSize={'20px'}/></a></h3>
           <h4>Project Management Intern</h4>
           <p>
             During my tenure as a Project Management Intern at JPMorgan Chase & Co., I meticulously verified the conditions and equipment used in all server rooms at the prestigious JPMC HQ located at 270 Park Ave. Additionally, I took charge of remediating server rooms at Chase Manhattan Tower, ensuring optimal functionality and efficiency.
