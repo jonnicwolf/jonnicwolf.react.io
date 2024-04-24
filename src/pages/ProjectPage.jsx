@@ -16,8 +16,6 @@ export default function ProjectPage () {
           href1='https://thestonedcolddreamery.com'
           href2='https://github.com/jonnicwolf/stoned_cold_dreamery'
           videoSrc={SCD}
-          buttonSize={'large'}
-          fontSize={'15px'}
         />
         <ProjectVideo
           bio='Closing Bartender Calculator'
@@ -25,8 +23,6 @@ export default function ProjectPage () {
           href1='https://tiptallypro.netlify.app'
           href2='https://github.com/jonnicwolf/tiptallypro'
           videoSrc={TipTallyPro}
-          buttonSize={'large'}
-          fontSize={'15px'}
         />
       </ProjectList>
       <Background />
