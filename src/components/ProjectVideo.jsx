@@ -31,7 +31,7 @@ const ProjectVideo = ({ bio, title, href1, href2, videoSrc }) => {
 
     if (target) {
       observer.observe(target);
-    }
+    };
 
     return () => {
       if (target) {
