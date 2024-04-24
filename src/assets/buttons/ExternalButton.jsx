@@ -31,7 +31,6 @@ const StyledButton = styled.a`
 
   &:after {
     position: absolute;
-    content: "";
     width: 0;
     height: 100%;
     top: 0;
