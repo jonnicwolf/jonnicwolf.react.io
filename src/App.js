@@ -39,10 +39,9 @@ function App() {
 };
 
 const Container = styled.div`
-  max-width: 100%;
   overflow-x: hidden;
   background: ${props => props.darkMode ? '#5c5c5b' : '#fffcf5'};
-  height: 160vh;
+  height: 200vh;
 `;
 
 export default App;
