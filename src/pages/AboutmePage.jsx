@@ -23,7 +23,7 @@ const AboutMeContainer = styled.div`
   display: flex;
   gap: 5rem;
   flex-direction: column;
-  padding-top: 10vh;
+  padding-top: 5vh;
 `;
 const BioContainer = styled.div`
   display: flex; 
