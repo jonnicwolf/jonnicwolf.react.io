@@ -25,7 +25,7 @@ function App() {
           ? <NavBar darkModeGetter={darkMode} darkModeSetter={setDarkMode}  />
           : null
       }
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={<Loader strokeColor={150}/>}>
         <Routes>
           <Route path='/'         element={<LandingPage />} />
           <Route path='/projects' element={<ProjectPage />} />

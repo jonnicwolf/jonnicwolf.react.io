@@ -21,7 +21,6 @@ const Socials = () => {
   );
 };
 
-
 const SocialsList = styled.div`
   column-gap: 10px;
   display: flex;
