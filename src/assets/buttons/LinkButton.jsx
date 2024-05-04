@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const LinkButton = ({textContent, buttonSize, fontSize, subDirectory, darkMode}) => {
+const LinkButton = ({textContent, buttonSize, subDirectory, darkMode}) => {
   return (
     <LinkStyle to={subDirectory}>
-      <Button buttonSize={buttonSize} fontSize={fontSize} darkMode={darkMode}>
+      <Button buttonSize={buttonSize} darkMode={darkMode}>
         {textContent}
       </Button>
     </LinkStyle>
@@ -20,7 +20,6 @@ const Button = styled.button`
   padding: ${props => props.buttonSize === 'large' ? '25px 80px' : '1em'};
   font-family: var(--font-family-rubik);
   font-weight: 900;
-  font-size: ${props => props.fontSize};
   background: transparent;
   outline: none !important;
   cursor: pointer;

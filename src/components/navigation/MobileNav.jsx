@@ -6,7 +6,6 @@ import Hamburger from '../../assets/icons/Hamburger';
 
 const MobileNav = ({ darkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
-  console.log('MobileNav', isOpen)
 
   return (
     <Container isOpen={isOpen}>
