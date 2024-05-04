@@ -44,7 +44,7 @@ export default function ProjectPage () {
                   buttonSize='large'
                   />
                 <ExternalButton 
-                  link='https://thestonedcolddreamery.com'
+                  link='https://github.com/jonnicwolf/stoned_cold_dreamery'
                   text='GITHUB'
                   buttonSize='large'
                 />
@@ -75,12 +75,12 @@ export default function ProjectPage () {
               </TechContainer>
               <AContainer>
                 <ExternalButton 
-                  link='https://thestonedcolddreamery.com'
+                  link='https://tiptallypro.netlify.app'
                   text='LIVESITE'
                   buttonSize='large'
                   />
                 <ExternalButton 
-                  link='https://thestonedcolddreamery.com'
+                  link='https://github.com/jonnicwolf/stoned_cold_dreamery'
                   text='GITHUB'
                   buttonSize='large'
                 />
