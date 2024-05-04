@@ -10,31 +10,32 @@ import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
 import ExternalButton from '../assets/buttons/ExternalButton';
 
 export default function ProjectPage () {
-  const [blurToggle, setBlurToggle] = useState(false);
+  const [blurToggle1, setBlurToggle1] = useState(false);
+  const [blurToggle2, setBlurToggle2] = useState(false);
   const isMobile = window.innerWidth < 1024;
 
-  function handleToggle () {
-    setBlurToggle(!blurToggle);
+  function handleToggle (setBlur, getBlur) {
+    setBlur(!getBlur);
   }
 
   return (
     <Container isMobile={isMobile}>
       { isMobile ?
         <ProjectList>
-          {/* <A href='https://thestonedcolddreamery.com' target='_blank' rel='noopener noreferrer'> */}
+          <ProjectContainer>
             <MobileProject
               src={SCD_photo}
-              onClick={handleToggle}
-              blur={blurToggle} />
-            <Info blur={blurToggle} onClick={handleToggle}>
+              onClick={() =>handleToggle(setBlurToggle1, blurToggle1)}
+              blur={blurToggle1} />
+            <Info blur={blurToggle1} onClick={() =>handleToggle(setBlurToggle1, blurToggle1)}>
               <P>
-                Savor the extraordinary at <br /> <AllCaps>STONED COLD DREAMERY</AllCaps>, <br /> where each scoop is a tantalizing delight. Taste the difference today!
+                Savor the extraordinary at <br /> <AllCaps>STONED COLD DREAMERY</AllCaps> <br /> where each scoop is a tantalizing delight. Taste the difference today!
               </P>
               <TechContainer>
-                <i class="devicon-javascript-plain" style={{fontSize: '46px', color: 'black'}} />
-                <i class="devicon-react-original" style={{fontSize: '46px', color: 'black'}} />
-                <i class="devicon-p5js-original" style={{fontSize: '56px', color: 'black'}} />
-                <i class="devicon-postgresql-plain" style={{fontSize: '46px', color: 'black'}} />
+                <i className="devicon-javascript-plain" style={{fontSize: '46px', color: 'black'}} />
+                <i className="devicon-react-original" style={{fontSize: '46px', color: 'black'}} />
+                <i className="devicon-p5js-original" style={{fontSize: '56px', color: 'black'}} />
+                <i className="devicon-postgresql-plain" style={{fontSize: '46px', color: 'black'}} />
               </TechContainer>
               <AContainer>
                 <ExternalButton 
@@ -49,11 +50,43 @@ export default function ProjectPage () {
                 />
               </AContainer>
             </Info>
-          
-          {/* </A> */}
-          {/* <A href='https://tiptallypro.netlify.app' target='_blank' rel='noopener noreferrer'> */}
-            <MobileProject src={tpr_logo} />
-          {/* </A> */}
+          </ProjectContainer>
+
+          <ProjectContainer>
+            <MobileProject
+              src={tpr_logo}
+              onClick={() =>handleToggle(setBlurToggle2, blurToggle2)}
+              blur={blurToggle2}
+              />
+            <Info blur={blurToggle2} onClick={() =>handleToggle(setBlurToggle2, blurToggle2)}>
+              <P>
+                Your ultimate tool for effortless tip counting and bank balancing
+                <br />
+                <AllCaps>
+                  TipTallyPro
+                </AllCaps>
+                <br />
+                Utilized daily by 6 NYC bars
+              </P>
+              <TechContainer>
+                <i className="devicon-javascript-plain" style={{fontSize: '46px', color: 'black'}} />
+                <i className="devicon-react-original" style={{fontSize: '46px', color: 'black'}} />
+                <i className="devicon-css3-plain-wordmark" style={{fontSize: '46px', color: 'black'}} />
+              </TechContainer>
+              <AContainer>
+                <ExternalButton 
+                  link='https://thestonedcolddreamery.com'
+                  text='LIVESITE'
+                  buttonSize='large'
+                  />
+                <ExternalButton 
+                  link='https://thestonedcolddreamery.com'
+                  text='GITHUB'
+                  buttonSize='large'
+                />
+              </AContainer>
+            </Info>
+          </ProjectContainer>
         </ProjectList>
         :
         <ProjectList>
@@ -127,19 +160,19 @@ const P = styled.p`
 `
 const AllCaps = styled.span`
   font-size: 26px;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
 `
 const AContainer = styled.div`
   display: flex;
   gap: 2vw;
 `;
-const I = styled.i`
-  display: flex;
-  font-size: 56px;
-  color: white;
+const ProjectContainer = styled.div`
+  height: 60vh;
 `;
 const TechContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 5vw;
   margin-bottom: 2vh;
-`
+`;
