@@ -37,8 +37,10 @@ const GalleryPage = ({ darkMode }) => {
 };
 
 const Container = styled.div`
-  height: 100%;
+  height: 80%;
   max-height: 100vh;
+  overflow: hidden;
+
 `;
 const Title = styled.h2`
   height: 100%;
@@ -49,11 +51,13 @@ const Title = styled.h2`
   font-family: 'Rubik', sans-serif;
 `;
 const DisplayBox = styled.div`
+  position: fixed;
   height: 100vh;
   display: flex;
   width: 100vw;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 `;
 const ControlBox = styled.div`
   display: flex;
