@@ -11,17 +11,22 @@ const MobileNav = ({ darkMode }) => {
     <Container isOpen={isOpen}>
       <Nav>
         <Fezz>FEZZ</Fezz>
-        <Hamburger
+      <Hamburger
           darkMode={darkMode}
           isOpen={isOpen}
           isOpenSet={setIsOpen}
         />
       </Nav>
-      <Item to='/projects'>HOME</Item>
-      <Item to='/about'   >ABOUT</Item>
-      <Item to='/gallery' >GALLERY</Item>
-      <ExternalItem href='https://www.linkedin.com/in/jonathannarine/' >LINKEDIN</ExternalItem>
-      <ExternalItem href='https://github.com/jonnicwolf' style={{borderBottom: '1px solid grey'}}>GITHUB</ExternalItem>
+      <Item to='/projects' onClick={() =>setIsOpen(!isOpen)}>HOME</Item>
+      <Item to='/about'    onClick={() =>setIsOpen(!isOpen)}>ABOUT</Item>
+      <Item to='/gallery'  onClick={() =>setIsOpen(!isOpen)}>GALLERY</Item>
+      <ExternalItem
+        onClick={() =>setIsOpen(!isOpen)}
+        href='https://www.linkedin.com/in/jonathannarine/' >LINKEDIN</ExternalItem>
+      <ExternalItem
+        onClick={() =>setIsOpen(!isOpen)}
+        href='https://github.com/jonnicwolf'
+        style={{borderBottom: '1px solid grey'}}>GITHUB</ExternalItem>
     </Container>
   );
 };

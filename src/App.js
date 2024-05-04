@@ -1,6 +1,7 @@
 import { lazy, Suspense, useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
+import ScrollToTop from './components/ScrollToTop.jsx';
 
 import Loader from './components/navigation/Loader';
 import LandingPage from './pages/LandingPage';
@@ -25,6 +26,7 @@ function App() {
           ? <NavBar darkModeGetter={darkMode} darkModeSetter={setDarkMode}  />
           : null
       }
+      <ScrollToTop />
       <Suspense fallback={<Loader strokeColor={150}/>}>
         <Routes>
           <Route path='/'         element={<LandingPage />} />
