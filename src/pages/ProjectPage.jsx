@@ -60,6 +60,7 @@ const ProjectList = styled.div`
   gap: 20vh;
   z-index: 99;
   position: absolute;
+  max-height: 150%;
 `;
 const MobileProject = styled.img`
   height: 100vw;

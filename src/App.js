@@ -17,12 +17,11 @@ function App() {
   const isMobile = window.innerWidth < 1025;
   const [darkMode, setDarkMode] = useState(false);
 
-
   return (
     <Container darkMode={darkMode}>
-      { location.pathname !== '/' && isMobile 
+      { location.pathname !== '/' && isMobile
         ? <MobileNav />
-        : location.pathname !== '/' && !isMobile 
+        : location.pathname !== '/' && !isMobile
           ? <NavBar darkModeGetter={darkMode} darkModeSetter={setDarkMode}  />
           : null
       }
@@ -43,7 +42,7 @@ const Container = styled.div`
   max-width: 100%;
   overflow-x: hidden;
   background: ${props => props.darkMode ? '#5c5c5b' : '#fffcf5'};
-  height: 200vh;
+  height: 160vh;
 `;
 
 export default App;
