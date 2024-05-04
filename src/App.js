@@ -1,6 +1,7 @@
 import { lazy, Suspense, useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
+import ScrollToTop from './components/ScrollToTop.jsx';
 
 import Loader from './components/navigation/Loader';
 import LandingPage from './pages/LandingPage';
@@ -17,16 +18,16 @@ function App() {
   const isMobile = window.innerWidth < 1025;
   const [darkMode, setDarkMode] = useState(false);
 
-
   return (
-    <Container darkMode={darkMode}>
-      { location.pathname !== '/' && isMobile 
+    <Container darkMode={darkMode} isMobile={isMobile}>
+      { location.pathname !== '/' && isMobile
         ? <MobileNav />
-        : location.pathname !== '/' && !isMobile 
+        : location.pathname !== '/' && !isMobile
           ? <NavBar darkModeGetter={darkMode} darkModeSetter={setDarkMode}  />
           : null
       }
-      <Suspense fallback={<Loader />}>
+      <ScrollToTop />
+      <Suspense fallback={<Loader strokeColor={150}/>}>
         <Routes>
           <Route path='/'         element={<LandingPage />} />
           <Route path='/projects' element={<ProjectPage />} />
@@ -40,10 +41,9 @@ function App() {
 };
 
 const Container = styled.div`
-  max-width: 100%;
   overflow-x: hidden;
   background: ${props => props.darkMode ? '#5c5c5b' : '#fffcf5'};
-  height: 200vh;
+  height: ${props => props.isMobile ? '150vh' : '200vh'};
 `;
 
 export default App;

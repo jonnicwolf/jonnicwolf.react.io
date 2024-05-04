@@ -115,7 +115,8 @@ const P5Project = styled.div`
 const P5_1 = styled(P5Project)`
   left: 30%;
   position: absolute;
-  transform: translateY(35%);
+  position: fixed;
+  transform: translateY(-35%);
   z-index: 2;
 `;
 

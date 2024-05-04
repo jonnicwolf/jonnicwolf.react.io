@@ -3,11 +3,11 @@ import styled from 'styled-components';
 
 import P5_LOADER from '../p5/P5_LOADER';
 
-const Loader = () => {
+const Loader = ({ strokeColor }) => {
   return (
     <Container>
       <P5Container>
-        <P5_LOADER />
+        <P5_LOADER strokeColor={strokeColor}/>
       </P5Container>
       <Loading>LOADING</Loading>
     </Container>

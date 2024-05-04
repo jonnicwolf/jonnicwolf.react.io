@@ -9,7 +9,8 @@ import tpr_logo from '../assets/photos/tpr_logo.jpg';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
 
 export default function ProjectPage () {
-  const isMobile = window.innerWidth < 1024
+  const isMobile = window.innerWidth < 1024;
+
   return (
     <Container isMobile={isMobile}>
       { isMobile ?
@@ -60,6 +61,7 @@ const ProjectList = styled.div`
   gap: 20vh;
   z-index: 99;
   position: absolute;
+  max-height: 150%;
 `;
 const MobileProject = styled.img`
   height: 100vw;
