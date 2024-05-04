@@ -7,6 +7,7 @@ import SCD from '../assets/video/SCD.mp4';
 import SCD_photo from '../assets/photos/SCD.jpg';
 import tpr_logo from '../assets/photos/tpr_logo.jpg';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
+import ExternalButton from '../assets/buttons/ExternalButton';
 
 export default function ProjectPage () {
   const [blurToggle, setBlurToggle] = useState(false);
@@ -25,8 +26,28 @@ export default function ProjectPage () {
               src={SCD_photo}
               onClick={handleToggle}
               blur={blurToggle} />
-            <Info blur={blurToggle}>
-              <P>Savor the extraordinary at <br /> <AllCaps>STONED COLD DREAMERY</AllCaps>, <br /> where each scoop is a tantalizing delight. Taste the difference today!</P>
+            <Info blur={blurToggle} onClick={handleToggle}>
+              <P>
+                Savor the extraordinary at <br /> <AllCaps>STONED COLD DREAMERY</AllCaps>, <br /> where each scoop is a tantalizing delight. Taste the difference today!
+              </P>
+              <TechContainer>
+                <i class="devicon-javascript-plain" style={{fontSize: '46px', color: 'black'}} />
+                <i class="devicon-react-original" style={{fontSize: '46px', color: 'black'}} />
+                <i class="devicon-p5js-original" style={{fontSize: '56px', color: 'black'}} />
+                <i class="devicon-postgresql-plain" style={{fontSize: '46px', color: 'black'}} />
+              </TechContainer>
+              <AContainer>
+                <ExternalButton 
+                  link='https://thestonedcolddreamery.com'
+                  text='LIVESITE'
+                  buttonSize='large'
+                  />
+                <ExternalButton 
+                  link='https://thestonedcolddreamery.com'
+                  text='GITHUB'
+                  buttonSize='large'
+                />
+              </AContainer>
             </Info>
           
           {/* </A> */}
@@ -77,6 +98,10 @@ const ProjectList = styled.div`
 `;
 
 const Info = styled.div`
+  padding: 15px;
+  display: ${props => props.blur ? 'flex' : 'none'};
+  flex-direction: column;
+  align-items: center;
   opacity: ${props => props.blur ? '1' : '0'};
   transform: translate(0px, -360px);
   width: 80vw;
@@ -103,7 +128,18 @@ const P = styled.p`
 const AllCaps = styled.span`
   font-size: 26px;
 `
-const A = styled.a`
-  text-decoration: none;
-  color: grey;
+const AContainer = styled.div`
+  display: flex;
+  gap: 2vw;
 `;
+const I = styled.i`
+  display: flex;
+  font-size: 56px;
+  color: white;
+`;
+const TechContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5vw;
+  margin-bottom: 2vh;
+`
