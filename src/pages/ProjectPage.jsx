@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import ProjectVideo from '../components/ProjectVideo';
@@ -9,18 +9,30 @@ import tpr_logo from '../assets/photos/tpr_logo.jpg';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
 
 export default function ProjectPage () {
+  const [blurToggle, setBlurToggle] = useState(false);
   const isMobile = window.innerWidth < 1024;
+
+  function handleToggle () {
+    setBlurToggle(!blurToggle);
+  }
 
   return (
     <Container isMobile={isMobile}>
       { isMobile ?
         <ProjectList>
-          <A href='https://thestonedcolddreamery.com' target='_blank' rel='noopener noreferrer'>
-            <MobileProject src={SCD_photo} />
-          </A>
-          <A href='https://tiptallypro.netlify.app' target='_blank' rel='noopener noreferrer'>
+          {/* <A href='https://thestonedcolddreamery.com' target='_blank' rel='noopener noreferrer'> */}
+            <MobileProject
+              src={SCD_photo}
+              onClick={handleToggle}
+              blur={blurToggle} />
+            <Info blur={blurToggle}>
+              <P>Savor the extraordinary at <br /> <AllCaps>STONED COLD DREAMERY</AllCaps>, <br /> where each scoop is a tantalizing delight. Taste the difference today!</P>
+            </Info>
+          
+          {/* </A> */}
+          {/* <A href='https://tiptallypro.netlify.app' target='_blank' rel='noopener noreferrer'> */}
             <MobileProject src={tpr_logo} />
-          </A>
+          {/* </A> */}
         </ProjectList>
         :
         <ProjectList>
@@ -63,12 +75,34 @@ const ProjectList = styled.div`
   position: absolute;
   max-height: 150%;
 `;
+
+const Info = styled.div`
+  opacity: ${props => props.blur ? '1' : '0'};
+  transform: translate(0px, -360px);
+  width: 80vw;
+  z-index: 99;
+  color: white;
+  font-family: Rubik;
+  font-weight: bold;
+  transition: opacity 1.5s ease-in-out;
+`
 const MobileProject = styled.img`
   height: 100vw;
   width: 80vw;
   border: 1px solid grey;
   box-shadow: 10px 15px 20px;
+  filter: blur(${props => props.blur ? '5.5rem' : 0});
+  transition: filter 0.3s linear;
 `;
+const P = styled.p`
+  text-align: center;
+  font-weight: bolder;
+  font-size: 18px;
+  color: rgb(15,15,15);
+`
+const AllCaps = styled.span`
+  font-size: 26px;
+`
 const A = styled.a`
   text-decoration: none;
   color: grey;
