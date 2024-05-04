@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import BioBox from '../components/BioBox';
 import TimeLine from '../components/TimeLine';
 
-const headshot = require('../assets/icons/Headshot.png');
+import headshot from '../assets/icons/Headshot.png';
 
 export default function AboutmePage ({ darkMode }) {
   return (
@@ -12,7 +12,7 @@ export default function AboutmePage ({ darkMode }) {
         <Headshot src={headshot}/>
         <BioBox darkMode={darkMode} />
       </BioContainer>
-      <Contributions src="https://ghchart.rshah.org/jonnicwolf" alt="My Github Contributions" />
+      
       <TimeLine darkMode={darkMode} />
     </AboutMeContainer>
   );
@@ -36,21 +36,9 @@ const BioContainer = styled.div`
     flex-direction: column;
   }
 `;
-const Contributions = styled.img`
-  height: auto;
-  @media only screen and (max-width: 767px) {
-    width: 95%;
-  }
-  @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    width: 90vw;
-  }
-  @media only screen and (min-width: 1024px) {
-    width: 90vw;
-  }
-`;
 const Headshot = styled.img`
-  height: 35rem;
-  width: 35rem;
+  height: 20rem;
+  width: 20rem;
   border-radius: 50%;
 
   @media only screen and (max-width: 767px) {
