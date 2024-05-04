@@ -53,7 +53,6 @@ const Nav = styled.div`
   margin-bottom: 5px;
 `;
 const Item = styled(Link)`
-  border-top: 1px solid grey;
   border-bottom: 1px solid grey;
   color: black;
   font-family: Rubik;
