@@ -80,7 +80,7 @@ export default function ProjectPage () {
                   buttonSize='large'
                   />
                 <ExternalButton 
-                  link='https://github.com/jonnicwolf/stoned_cold_dreamery'
+                  link='https://github.com/jonnicwolf/tiptallypro'
                   text='GITHUB'
                   buttonSize='large'
                 />
