@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes} from 'styled-components';
 
 import ProjectVideo from '../components/ProjectVideo';
 import TipTallyPro from '../assets/video/TipTallyPro.mp4';
@@ -69,9 +69,9 @@ export default function ProjectPage () {
                 Utilized daily by 6 NYC bars
               </P>
               <TechContainer>
-                <i className="devicon-javascript-plain" style={{fontSize: '46px', color: 'black'}} />
-                <i className="devicon-react-original" style={{fontSize: '46px', color: 'black'}} />
-                <i className="devicon-css3-plain-wordmark" style={{fontSize: '46px', color: 'black'}} />
+                <i className="devicon-javascript-plain"    style={{fontSize: '46px', color: 'black', opacity: 0}} />
+                <i className="devicon-react-original"      style={{fontSize: '46px', color: 'black', opacity: 0}} />
+                <i className="devicon-css3-plain-wordmark" style={{fontSize: '46px', color: 'black', opacity: 0}} />
               </TechContainer>
               <AContainer>
                 <ExternalButton 
@@ -170,9 +170,36 @@ const AContainer = styled.div`
 const ProjectContainer = styled.div`
   height: 60vh;
 `;
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 const TechContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 5vw;
   margin-bottom: 2vh;
+
+  & > i {
+    opacity: 0;
+    animation: ${fadeIn} 1s forwards;
+  }
+
+  & > i:nth-child(1) {
+    animation-delay: 0.3s;
+  }
+  & > i:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+  & > i:nth-child(3) {
+    animation-delay: 0.8s;
+  }
+  & > i:nth-child(4) {
+    animation-delay: 1.1s;
+  }
 `;
+
