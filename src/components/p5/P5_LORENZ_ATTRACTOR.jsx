@@ -53,7 +53,7 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor }) => {
   useEffect(() => {
     const p5Canvas = new p5(sketch, sketch_ref.current);
     return () => p5Canvas.remove();
-  }, [sketch]); // Memoize sketch
+  }, [sketch]);
 
   return <div ref={sketch_ref} />;
 };
