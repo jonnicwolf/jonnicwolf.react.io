@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import styled, { keyframes} from 'styled-components';
 
 import ProjectVideo from '../components/ProjectVideo';
-import TipTallyPro from '../assets/video/TipTallyPro.mp4';
-import SCD from '../assets/video/SCD.mp4';
-import SCD_photo from '../assets/photos/SCD.jpg';
-import tpr_logo from '../assets/photos/tpr_logo.jpg';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
 import ExternalButton from '../assets/buttons/ExternalButton';
+
+import TipTallyPro from '../assets/video/TipTallyPro.mp4';
+import SCD from '../assets/video/SCD.mp4';
+import Hotc from '../assets/video/Hotc.mp4';
+
+import SCD_photo from '../assets/photos/SCD.jpg';
+import tpr_logo from '../assets/photos/tpr_logo.jpg';
+import Hotc_photo from '../assets/photos/Hotc.jpg'
 
 export default function ProjectPage () {
   const [blurToggle1, setBlurToggle1] = useState(false);
@@ -22,6 +26,35 @@ export default function ProjectPage () {
     <Container isMobile={isMobile}>
       { isMobile ?
         <ProjectList>
+          <ProjectContainer>
+            <MobileProject
+              src={Hotc_photo}
+              onClick={() =>handleToggle(setBlurToggle1, blurToggle1)}
+              blur={blurToggle1} />
+            <Info blur={blurToggle1} onClick={() =>handleToggle(setBlurToggle1, blurToggle1)}>
+              <P>Discover your destiny with <br />Secrets of the Cartomancer <br /> Receive three random cards and personalized readings that reveal insights and guidance. Uncover the mysteries today!
+              </P>
+              <TechContainer>
+                <i className="devicon-javascript-plain" style={{fontSize: '46px', color: 'black'}} />
+                <i className="devicon-react-original" style={{fontSize: '46px', color: 'black'}} />
+                <i className="devicon-p5js-original" style={{fontSize: '56px', color: 'black'}} />
+                <i class="devicon-firebase-plain-wordmark" style={{fontSize: '56px', color: 'black'}} />
+              </TechContainer>
+              <AContainer>
+                <ExternalButton 
+                  link='https://cartomancerssecrets.netlify.app'
+                  text='LIVESITE'
+                  buttonSize='large'
+                  />
+                <ExternalButton
+                  link='https://github.com/jonnicwolf/heart_of_the_cards'
+                  text='GITHUB'
+                  buttonSize='large'
+                />
+              </AContainer>
+            </Info>
+          </ProjectContainer>
+
           <ProjectContainer>
             <MobileProject
               src={SCD_photo}
@@ -91,6 +124,12 @@ export default function ProjectPage () {
         :
         <ProjectList>
           <ProjectVideo
+            bio='Tarot Card Divinator'
+            title='Secrets of the Cartomancer'
+            href1='https://cartomancerssecrets.netlify.app'
+            href2='https://github.com/jonnicwolf/heart_of_the_cards'
+            videoSrc={Hotc} />
+          <ProjectVideo
             bio='Webstore / Ice Cream Shop'
             title='STONED COLD DREAMERY'
             href1='https://thestonedcolddreamery.com'
@@ -127,7 +166,7 @@ const ProjectList = styled.div`
   gap: 20vh;
   z-index: 99;
   position: absolute;
-  max-height: 150%;
+  padding-bottom: 10vh;
 `;
 
 const Info = styled.div`

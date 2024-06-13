@@ -13,7 +13,7 @@ const GalleryPage = ({ darkMode }) => {
   const p5_projs = [P5_TORUS, P5_PLANE, P5_LORENZ_ATTRACTOR, P5_LOADER];
 
   useEffect(() => {
-    const titles = ['TORUS', 'PLANE', 'LORENZ ATTRACTOR', 'TRILATERAL GHOSTS'];
+    const titles = ['TORUS', 'HORIZON', 'CHAOS THEORY', 'TRILATERAL GHOSTS'];
     setTitle(titles[index]);
   }, [index]);
 

@@ -67,6 +67,7 @@ const HoverCover = styled.div`
   width: 420px;
   z-index: 99;
   padding: 16% 50% 16% 0;
+  color: grey;
   transition: opacity .5s ease-in-out;
   &:hover {
     opacity: 1;
