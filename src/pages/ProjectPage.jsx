@@ -38,7 +38,7 @@ export default function ProjectPage () {
                 <i className="devicon-javascript-plain" style={{fontSize: '46px', color: 'black'}} />
                 <i className="devicon-react-original" style={{fontSize: '46px', color: 'black'}} />
                 <i className="devicon-p5js-original" style={{fontSize: '56px', color: 'black'}} />
-                <i class="devicon-firebase-plain-wordmark" style={{fontSize: '56px', color: 'black'}} />
+                <i className="devicon-firebase-plain-wordmark" style={{fontSize: '56px', color: 'black'}} />
               </TechContainer>
               <AContainer>
                 <ExternalButton 
