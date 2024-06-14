@@ -66,10 +66,7 @@ const ProjectVideo = ({
             Discover your destiny with <strong>Secrets of the Cartomancer</strong>! Receive three random cards and personalized readings that reveal insights and guidance. Uncover the mysteries today!
           </P>
           <TechContainer>
-            <i className="devicon-javascript-plain" style={{fontSize: '46px', color: 'black'}} />
-            <i className="devicon-react-original" style={{fontSize: '46px', color: 'black'}} />
-            <i className="devicon-p5js-original" style={{fontSize: '56px', color: 'black'}} />
-            <i className="devicon-firebase-plain-wordmark" style={{fontSize: '56px', color: 'black'}} />
+            {description.map(icon => ( <i className={icon} />)) }
           </TechContainer>
           <ExternalButton link={href1} text={'LIVE SITE'} buttonSize={'large'} />
           &#160;
@@ -116,6 +113,7 @@ const TechContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 5vw;
+  font-size: 5vh;
   margin-bottom: 2vh;
 
   & > i {
