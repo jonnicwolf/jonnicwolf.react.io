@@ -113,7 +113,7 @@ const fadeIn = keyframes`
 const TechContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 5vw;
+  gap: 2vw;
   font-size: 5vh;
   margin-bottom: 2vh;
 
