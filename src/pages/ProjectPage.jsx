@@ -142,6 +142,7 @@ export default function ProjectPage () {
             href1='https://cartomancerssecrets.netlify.app'
             href2='https://github.com/jonnicwolf/heart_of_the_cards'
             videoSrc={Hotc}
+            description={'Discover your destiny with Secrets of the Cartomancer. Receive three random cards and personalized readings that reveal insights and guidance. Uncover the mysteries today!'}
             devicons={hotc_devi}
           />
           <ProjectVideo
@@ -149,7 +150,8 @@ export default function ProjectPage () {
             title='STONED COLD DREAMERY'
             href1='https://thestonedcolddreamery.com'
             href2='https://github.com/jonnicwolf/stoned_cold_dreamery'
-            videoSrc={SCD} 
+            videoSrc={SCD}
+            description={'Savor the extraordinary at Stoned Cold Dreamery! Where each scoop is a tantalizing delight. Taste the difference today!'}
             devicons={scd_devi}
           />
           <ProjectVideo
@@ -158,6 +160,7 @@ export default function ProjectPage () {
             href1='https://tiptallypro.netlify.app'
             href2='https://github.com/jonnicwolf/tiptallypro'
             videoSrc={TipTallyPro}
+            description={'Your ultimate tool for effortless tip counting and bank balancing Tip Tally Pro! Utilized daily by 6 NYC bars'}
             devicons={ttp_devi}
           />
         </ProjectList>

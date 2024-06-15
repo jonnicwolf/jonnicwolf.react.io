@@ -63,7 +63,7 @@ const ProjectVideo = ({
           <Title>{title}</Title>
           <Bio>{bio}</Bio>
           <P>
-            Discover your destiny with <strong>Secrets of the Cartomancer</strong>! Receive three random cards and personalized readings that reveal insights and guidance. Uncover the mysteries today!
+           {description}
           </P>
           <TechContainer>
             {devicons.map(icon => ( <i className={icon} />)) }
