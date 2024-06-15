@@ -173,8 +173,8 @@ const Project = styled.video`
 
 const Container = styled.div`
   height: 60vh;
-  width: 70vw;
-  padding-left: 7vw;
+  width: 60vw;
+  padding-left: 10vw;
   transform: translateX(10vw);
   &:hover {
     & ${Project} {
