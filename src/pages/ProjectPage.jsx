@@ -20,7 +20,20 @@ export default function ProjectPage () {
 
   function handleToggle (setBlur, getBlur) {
     setBlur(!getBlur);
-  }
+  };
+
+  const [
+    javascript,
+    react,
+    p5,
+    firebase,
+    postgresql,
+    css3,
+  ] = [ 'devicon-javascript-plain', "devicon-react-original", "devicon-p5js-original", "devicon-firebase-plain-wordmark", "devicon-postgresql-plain", "devicon-css3-plain-wordmark" ];
+
+  const hotc_devi = [javascript, react, p5, firebase];
+  const scd_devi= [javascript, react, postgresql, firebase];
+  const ttp_devi = [javascript, react, css3];
 
   return (
     <Container isMobile={isMobile}>
@@ -37,8 +50,8 @@ export default function ProjectPage () {
               <TechContainer>
                 <i className="devicon-javascript-plain" style={{fontSize: '46px', color: 'black'}} />
                 <i className="devicon-react-original" style={{fontSize: '46px', color: 'black'}} />
-                <i className="devicon-p5js-original" style={{fontSize: '56px', color: 'black'}} />
-                <i class="devicon-firebase-plain-wordmark" style={{fontSize: '56px', color: 'black'}} />
+                <i className="devicon-p5js-original" style={{fontSize: '46px', color: 'black'}} />
+                <i className="devicon-firebase-plain-wordmark" style={{fontSize: '46px', color: 'black'}} />
               </TechContainer>
               <AContainer>
                 <ExternalButton 
@@ -125,22 +138,31 @@ export default function ProjectPage () {
         <ProjectList>
           <ProjectVideo
             bio='Tarot Card Divinator'
-            title='Secrets of the Cartomancer'
+            title='SECRETS of the CARTOMANCER'
             href1='https://cartomancerssecrets.netlify.app'
             href2='https://github.com/jonnicwolf/heart_of_the_cards'
-            videoSrc={Hotc} />
+            videoSrc={Hotc}
+            description={'Discover your destiny with Secrets of the Cartomancer. Receive three random cards and personalized readings that reveal insights and guidance. Uncover the mysteries today!'}
+            devicons={hotc_devi}
+          />
           <ProjectVideo
             bio='Webstore / Ice Cream Shop'
             title='STONED COLD DREAMERY'
             href1='https://thestonedcolddreamery.com'
             href2='https://github.com/jonnicwolf/stoned_cold_dreamery'
-            videoSrc={SCD} />
+            videoSrc={SCD}
+            description={'Savor the extraordinary at Stoned Cold Dreamery! Where each scoop is a tantalizing delight. Taste the difference today!'}
+            devicons={scd_devi}
+          />
           <ProjectVideo
             bio='Closing Bartender Calculator'
             title='TIP TALLY PRO'
             href1='https://tiptallypro.netlify.app'
             href2='https://github.com/jonnicwolf/tiptallypro'
-            videoSrc={TipTallyPro} />
+            videoSrc={TipTallyPro}
+            description={'Your ultimate tool for effortless tip counting and bank balancing Tip Tally Pro! Utilized daily by 6 NYC bars'}
+            devicons={ttp_devi}
+          />
         </ProjectList>
       }
       <Background strokeColor={105}/>

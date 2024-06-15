@@ -1,8 +1,16 @@
 import React, { useRef, useEffect, useState } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import ExternalButton from '../assets/buttons/ExternalButton';
 
-const ProjectVideo = ({ bio, title, href1, href2, videoSrc }) => {
+const ProjectVideo = ({
+  bio,
+  title,
+  href1,
+  href2,
+  videoSrc,
+  description,
+  devicons,
+}) => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const isMobile = window.innerWidth < 1024;
@@ -51,11 +59,19 @@ const ProjectVideo = ({ bio, title, href1, href2, videoSrc }) => {
         muted
       />
       <HoverCover>
-        <Title>{title}</Title>
-        <Bio>{bio}</Bio>
-        <ExternalButton link={href1} text={'LIVE SITE'} buttonSize={'large'} />
-        &#160;
-        <ExternalButton link={href2} text={'GITHUB'} buttonSize={'large'} buffer={true} />
+        <BlurMask>
+          <Title>{title}</Title>
+          <Bio>{bio}</Bio>
+          <P>
+           {description}
+          </P>
+          <TechContainer>
+            {devicons.map(icon => ( <i className={icon} />)) }
+          </TechContainer>
+          <ExternalButton link={href1} text={'LIVE SITE'} buttonSize={'large'} />
+          &#160;
+          <ExternalButton link={href2} text={'GITHUB'} buttonSize={'large'} buffer={true} />
+        </BlurMask>
       </HoverCover>
     </Container>
   );
@@ -67,7 +83,6 @@ const HoverCover = styled.div`
   width: 420px;
   z-index: 99;
   padding: 16% 50% 16% 0;
-  color: grey;
   transition: opacity .5s ease-in-out;
   &:hover {
     opacity: 1;
@@ -79,7 +94,53 @@ const HoverCover = styled.div`
     transform: translate(10px, -200px);
   }
 `;
+const BlurMask = styled.div`
+  height: 80%;
+  width: 130%;
+  background-color: rgba(191, 189, 189,0.4);
+  filter: blur(0.1);
+  padding: 30px;
+  padding-right: 100px;
+`;
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+const TechContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5vw;
+  font-size: 5vh;
+  margin-bottom: 2vh;
 
+  & > i {
+    opacity: 0;
+    animation: ${fadeIn} 1s forwards;
+  }
+
+  & > i:nth-child(1) {
+    animation-delay: 0.3s;
+  }
+  & > i:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+  & > i:nth-child(3) {
+    animation-delay: 0.8s;
+  }
+  & > i:nth-child(4) {
+    animation-delay: 1.1s;
+  }
+`;
+const P = styled.p`
+  font-weight: bolder;
+  font-family: var(--font-family-noto-sans-display);
+  font-size: 18px;
+  text-wrap: wrap;
+`
 const Title = styled.h1`
   font-family: var(--font-family-rubik);
   font-weight: var(--font-weight-normal);
@@ -89,10 +150,10 @@ const Title = styled.h1`
     font-size: 20px;
   }
 `;
-
 const Bio = styled.p`
   font-family: var(--font-family-noto-sans-display);
   font-size: 30px;
+  font-weight: bolder;
   letter-spacing: 2px;
   margin-top: 10px;
   margin-bottom: 3px;
