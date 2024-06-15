@@ -142,7 +142,7 @@ export default function ProjectPage () {
             href1='https://cartomancerssecrets.netlify.app'
             href2='https://github.com/jonnicwolf/heart_of_the_cards'
             videoSrc={Hotc}
-            description={hotc_devi}
+            devicons={hotc_devi}
           />
           <ProjectVideo
             bio='Webstore / Ice Cream Shop'
@@ -150,7 +150,7 @@ export default function ProjectPage () {
             href1='https://thestonedcolddreamery.com'
             href2='https://github.com/jonnicwolf/stoned_cold_dreamery'
             videoSrc={SCD} 
-            description={scd_devi}
+            devicons={scd_devi}
           />
           <ProjectVideo
             bio='Closing Bartender Calculator'
@@ -158,7 +158,7 @@ export default function ProjectPage () {
             href1='https://tiptallypro.netlify.app'
             href2='https://github.com/jonnicwolf/tiptallypro'
             videoSrc={TipTallyPro}
-            description={ttp_devi}
+            devicons={ttp_devi}
           />
         </ProjectList>
       }

@@ -66,7 +66,7 @@ const ProjectVideo = ({
             Discover your destiny with <strong>Secrets of the Cartomancer</strong>! Receive three random cards and personalized readings that reveal insights and guidance. Uncover the mysteries today!
           </P>
           <TechContainer>
-            {description.map(icon => ( <i className={icon} />)) }
+            {devicons.map(icon => ( <i className={icon} />)) }
           </TechContainer>
           <ExternalButton link={href1} text={'LIVE SITE'} buttonSize={'large'} />
           &#160;
