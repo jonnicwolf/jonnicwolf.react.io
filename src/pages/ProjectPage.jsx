@@ -138,7 +138,7 @@ export default function ProjectPage () {
         <ProjectList>
           <ProjectVideo
             bio='Tarot Card Divinator'
-            title='Secrets of the Cartomancer'
+            title='SECRETS of the CARTOMANCER'
             href1='https://cartomancerssecrets.netlify.app'
             href2='https://github.com/jonnicwolf/heart_of_the_cards'
             videoSrc={Hotc}

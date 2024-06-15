@@ -96,10 +96,11 @@ const HoverCover = styled.div`
 `;
 const BlurMask = styled.div`
   height: 80%;
-  width: 150%;
+  width: 130%;
   background-color: rgba(191, 189, 189,0.4);
   filter: blur(0.1);
   padding: 30px;
+  padding-right: 100px;
 `;
 const fadeIn = keyframes`
   from {
