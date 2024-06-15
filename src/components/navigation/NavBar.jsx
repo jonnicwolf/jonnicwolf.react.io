@@ -25,7 +25,7 @@ const NavBar = ({ darkModeGetter, darkModeSetter }) => {
 };
 
 const NavbarContainer = styled.div`
-  border-bottom: 2px solid ${props => props.darkMode ? 'black' : '#fffcf5'};
+  border-bottom: 2px solid grey;
   cursor: pointer;
   display: flex;
   flex-direction: row;
