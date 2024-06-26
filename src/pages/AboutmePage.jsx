@@ -40,7 +40,7 @@ const BioContainer = styled.div`
   gap: 1rem;
   width: 90%;
   padding: 15px;
-  background: linear-gradient(0.25turn, #434352 30%, #c7c8c9 100%, #f7f7f7);
+  background: linear-gradient(0.25turn, #434352 30%, #c7c8c9 100%, #f7f7f7 3%);
   max-width: 1124px;
   @media only screen and (max-width: 857px) {
     flex-direction: column;
@@ -50,6 +50,8 @@ const HeadshotWrapper = styled.div`
   box-shadow: -16px 13px 26px 0px rgba(0,0,0,0.75);
   padding: 0;
   margin: 0;
+  height: 18rem;
+  width: 18rem;
 `;
 const Headshot = styled.img`
   height: 20rem;

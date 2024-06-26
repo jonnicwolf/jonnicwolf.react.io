@@ -26,7 +26,7 @@ const BioBox = ({ darkMode }) => {
 };
 
 const NotoSansDisplay = styled.p`
-  color:  ${props => props.darkMode ? 'white' : 'black'};
+  color: #f7f7f7;
   font-family: var(--font-family-rubik);
   font-size: 16px;
 `;
@@ -37,7 +37,7 @@ const PermanentMarkerText = styled.p`
   margin: 0;
   font-size: 25px;
   letter-spacing: 0.0120em;
-  color:  ${props => props.darkMode ? 'white' : 'black'};
+  color:  #f7f7f7 ;
 `;
 const SocialsContainer = styled.div`
   @media (max-width: 385px) {

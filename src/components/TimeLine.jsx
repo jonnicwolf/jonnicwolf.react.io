@@ -71,7 +71,7 @@ const TimeLine = ({ darkMode }) => {
         </Content>
 
         <P5_1 position='relative'>
-          <P5_TORUS strokeColor={200} />
+          <P5_TORUS strokeColor={180} />
         </P5_1>
       </ContentContainer>
     </Container>
@@ -119,6 +119,7 @@ const P5_1 = styled(P5Project)`
   position: fixed;
   transform: translateY(-35%);
   z-index: 2;
+  opacity: 0.5;
 `;
 
 export default TimeLine;
