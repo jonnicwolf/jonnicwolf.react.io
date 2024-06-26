@@ -87,6 +87,7 @@ const Container = styled.div`
   justify-content: center;
   @media only screen and (min-width: 767px) {
     width: 52rem;
+    width: 70vw;
   }
 `;
 const Header = styled.div`
