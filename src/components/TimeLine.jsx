@@ -6,7 +6,6 @@ import P5_TORUS from './p5/P5_TORUS';
 const TimeLine = ({ darkMode }) => {
   return (
     <Container>
-      <Header darkMode={darkMode}>Corporate Experience</Header>
       <ContentContainer>
         <Content darkMode={darkMode}>
           <h3>2022 |

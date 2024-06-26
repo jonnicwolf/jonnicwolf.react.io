@@ -38,7 +38,7 @@ const BioContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   gap: 1rem;
-  width: 90%;
+  width: 80%;
   padding: 15px;
   background: linear-gradient(0.25turn, #434352 30%, #c7c8c9 100%, #f7f7f7 3%);
   max-width: 1124px;
@@ -47,20 +47,21 @@ const BioContainer = styled.div`
   }
 `;
 const HeadshotWrapper = styled.div`
-  box-shadow: -16px 13px 26px 0px rgba(0,0,0,0.75);
+  box-shadow: -26px 50px 26px 0px rgba(0,0,0,0.75);
   padding: 0;
   margin: 0;
   height: 18rem;
   width: 18rem;
+  transform: translate(0, -1.5vw);
+  border-radius: 50%;
+  
 `;
 const Headshot = styled.img`
   height: 20rem;
   width: 20rem;
-  clip-path: 
-  transform: translateX(-5px);
-  clip-path: polygon(1% 1%, 99% 0%, 100% 99%, 1% 99%);
+  clip-path: circle(49% at 49% 49%);
   @media only screen and (max-width: 767px) {
-   height: 20rem;
+   height: 20rem;cli
    width: 20rem;
   }
 `;
