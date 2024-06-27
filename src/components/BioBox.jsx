@@ -4,24 +4,27 @@ import Socials from './Socials';
 
 const BioBox = ({ darkMode }) => {
   return (
-    <div>
+    <>
       <PermanentMarkerText darkMode={darkMode}>
         Jon Fezz Narine
       </PermanentMarkerText>
+
       <NotoSansDisplay darkMode={darkMode}>
         <strong>
           Web Developer | NYC
         </strong>
       </NotoSansDisplay>
+
       <NotoSansDisplay darkMode={darkMode}>
         <p>Fezz is a full-stack web developer based in the heart of NYC. He has worked with teams to create user-centric products that are both intuitive and visually appealing. His expertise lies in front-end development, with proficiency in JavaScript, Python, and Swift.</p>
-        <p>His passion for collaboration has driven his success in crafting seamless interfaces. He also has a keen interest in cloud architecture, game engines, and generative art. His diverse interests and experiences continuously inform and elevate his work.</p>
+        <p>Passionate about collaboration, Fezz has successfully crafted seamless interfaces. Additionally, Fezz holds a keen interest in cloud architecture, game engines, and generative art. These diverse interests and experiences continuously inform and elevate his work.</p>
         <p>Whether you have a project in mind or simply want to connect, feel free to reach out!</p>
       </NotoSansDisplay>
+
       <SocialsContainer darkMode={darkMode}>
         <Socials />
       </SocialsContainer>
-    </div>
+    </>
   );
 };
 
