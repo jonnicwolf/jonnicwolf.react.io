@@ -41,7 +41,7 @@ const PermanentMarkerText = styled.p`
   margin: 0;
   font-size: 25px;
   letter-spacing: 0.0120em;
-  color:  #f7f7f7 ;
+  color:  #f7f7f7;
 `;
 const SocialsContainer = styled.div`
   @media (max-width: 385px) {
