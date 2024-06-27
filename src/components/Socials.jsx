@@ -8,7 +8,6 @@ const Socials = () => {
     <SocialsList>
       <SocialIcon url='https://www.linkedin.com/in/jonathannarine/' target='_blank' />
       <SocialIcon url='https://github.com/jonnicwolf' target='_blank' />
-      <SocialIcon url='mailto:jonnciwolf@gmail.com' target='_blank' />
       <SocialIcon url='https://docs.google.com/document/d/1L--uuFkBDl2thpDIuyzyUWNqv5Q0BShsKrwGvy6DusU/edit?usp=sharing' target='_blank' />
     </SocialsList>
   );

@@ -54,7 +54,6 @@ const HeadshotWrapper = styled.div`
   width: 18rem;
   transform: translate(0, -1.5vw);
   border-radius: 50%;
-  
 `;
 const Headshot = styled.img`
   height: 20rem;
