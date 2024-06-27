@@ -39,8 +39,8 @@ const TimeLine = ({ darkMode }) => {
   return (
     <Container>
       <ContentContainer>
-        {timeline.map((item, i) => 
-          <ExperienceCard 
+        {timeline.map((item, i) =>
+          <ExperienceCard
             key={i}
             company_name={item.company_name}
             position={item.position}
