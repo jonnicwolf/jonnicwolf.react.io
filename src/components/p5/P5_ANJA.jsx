@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import styled from 'styled-components';
 import p5 from 'p5';
 
 const P5_ANJA = ({ strokeColor }) => {
   const sketch_ref = useRef();
   const width = 150;
   const height = 400;
-  const [irisX, seIrisX] = useState(0);
-  const [irisY, seIrisY] = useState(0);
+  const [irisX, setIrisX] = useState(0);
+  const [irisY, setIrisY] = useState(0);
 
   const sketch = useCallback((p) => {
     let angleA = 0;
@@ -18,9 +19,9 @@ const P5_ANJA = ({ strokeColor }) => {
     p.setup = () => {
       p.createCanvas(width, height, p.WEBGL);
       setInterval(() => {
-        setIrisX(p.random((p.width / 60) * -1, p.width / 60));
-        setIrisY(p.random((p.width / 24)*-1, p.height / 36));
-      })
+        setIrisX(p.random((p.width / 60) * -1, p.width / 12));
+        setIrisY(p.random((p.width / 24)*-1, p.height / 24));
+      },7000)
     };
 
     p.draw = () => {
@@ -91,7 +92,15 @@ const P5_ANJA = ({ strokeColor }) => {
     return () => p5Canvas.remove();
   }, [sketch]);
 
-  return <div ref={sketch_ref} />;
+  return(
+    <Container>
+      <div ref={sketch_ref} />
+    </Container>
+  );
 };
+
+const Container = styled.div`
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+`
 
 export default P5_ANJA;
