@@ -35,4 +35,7 @@ const Container = styled.div`
   font-size: 20px;
   padding: 20px 30px;
   color: ${props => props.darkMode ? 'white' : 'black'};
+  @media only screen and (max-width: 767px) {
+    font-size: 3vw
+  }
 `;

@@ -94,6 +94,7 @@ const ExperienceContainer = styled.div`
   z-index: 2;
   @media only screen and (max-width: 767px) {
     flex-direction: column;
+    height: 50vh;
   }
 `;
 const ExperienceCardWrap = styled.div`
