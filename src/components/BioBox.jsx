@@ -5,7 +5,7 @@ import Socials from './Socials';
 
 const BioBox = ({ darkMode }) => {
   return (
-    <>
+    <Container>
       <PermanentMarkerText darkMode={darkMode}>
         Jon Fezz Narine
       </PermanentMarkerText>
@@ -25,10 +25,14 @@ const BioBox = ({ darkMode }) => {
       <SocialsContainer darkMode={darkMode}>
         <Socials />
       </SocialsContainer>
-    </>
+    </Container>
   );
 };
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 const NotoSansDisplay = styled.p`
   color: #f7f7f7;
   font-family: var(--font-family-rubik);
@@ -46,6 +50,10 @@ const PermanentMarkerText = styled.p`
 const SocialsContainer = styled.div`
   @media (max-width: 385px) {
     display: none;
+  }
+  @media only screen and (max-width: 768px) {
+    border: 1px solid yellow;
+    align-self: center;
   }
 `;
 

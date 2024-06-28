@@ -14,7 +14,7 @@ const Socials = () => {
 };
 
 const SocialsList = styled.div`
-  column-gap: 10px;
+  column-gap: 5vw;
   display: flex;
   position: relative;
   z-index: 9;
