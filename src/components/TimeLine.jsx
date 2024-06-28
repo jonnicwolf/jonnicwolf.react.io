@@ -80,6 +80,9 @@ const ContentContainer = styled.div`
 `;
 const Video = styled(Youtube)`
   width: 50%;
+  @media only screen and (max-width: 767px) {
+    width: 100%;
+  }
 `
 const ExperienceContainer = styled.div`
   display: flex;
@@ -89,10 +92,16 @@ const ExperienceContainer = styled.div`
   border: 1px solid transparent;
   box-shadow: 0 0 110px rgba(0,0,0,1);
   z-index: 2;
+  @media only screen and (max-width: 767px) {
+    flex-direction: column;
+  }
 `;
 const ExperienceCardWrap = styled.div`
   width: 55%;
   overflow: auto;
+  @media only screen and (max-width: 767px) {
+    width: 100%;
+  }
 `;
 const P5Project = styled.div`
   position: ${props => props.position};

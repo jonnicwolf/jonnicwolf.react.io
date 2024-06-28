@@ -18,7 +18,7 @@ export default function ExperienceCard({ darkMode, company_name, link, position,
     <Container darkMode={ darkMode }>
       <h3>2022 |
         <ExternalButton
-          link={link}//seatgeek.com/about"}
+          link={link}
           text={company_name}
           buffer={true}
           fontSize={'20px'}
