@@ -1,4 +1,5 @@
 import React from 'react';
+import Youtube from 'react-youtube';
 import styled from 'styled-components';
 
 import ExperienceCard from './ExperienceCard';
@@ -17,21 +18,21 @@ const TimeLine = ({ darkMode }) => {
       company_name: 'SeatGeek',
       position: 'Apprentice Software Engineer',
       link: 'https://seatgeek.com/about',
-      video_link: 'https://www.youtube.com/watch?v=QnWS61EMljU',
+      video_link: 'QnWS61EMljU',
       content: content_SG
     },
     {
       company_name: 'Pursuit',
       position: 'Full Stack Web Development Fellow',
       link: 'https://www.pursuit.org/fellowship?gclid=Cj0KCQjwrsGCBhD1ARIsALILBYoZZTe0XdzsD0GkFi90K4dVpBijEedjBi69BZTan0FS3X1s1DfZiOUaAh4PEALw_wcB',
-      video_link: 'https://www.youtube.com/watch?v=LYnWuKGKNrg',
+      video_link: 'LYnWuKGKNrg',
       content: content_pursuit
     },
     {
       company_name: 'JPMorgan Chase & Co.',
       position: 'Project Management Intern',
       link: 'https://www.jpmorgan.com/global',
-      video_link: 'https://www.youtube.com/watch?v=VF74MZ0yELA',
+      video_link: 'VF74MZ0yELA',
       content: content_JPMC
     },
   ];
@@ -41,17 +42,16 @@ const TimeLine = ({ darkMode }) => {
       <ContentContainer>
         {timeline.map((item, i) =>
           <ExperienceContainer>
-            <CompanyVideo autoPlay controls>
-              <source src={item.video_link} type="video/mp4" />
-              Your browser does not support the video tag
-            </CompanyVideo>
-            <ExperienceCard
-              key={i}
-              company_name={item.company_name}
-              position={item.position}
-              link={item.link}
-              content={item.content}
-              darkMode={darkMode} />
+            <Video videoId={item.video_link} opts={{width: "100%", height: '100%'}} />
+            <ExperienceCardWrap>
+              <ExperienceCard
+                key={i}
+                company_name={item.company_name}
+                position={item.position}
+                link={item.link}
+                content={item.content}
+                darkMode={darkMode} />
+            </ExperienceCardWrap>
           </ExperienceContainer>
         )}
 
@@ -69,35 +69,41 @@ const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 70vw;
+  width: 100vw;
 `;
 const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
   gap: 20vw;
-  width: 70vw;
-  border: 1px solid red;
+  width: 80vw;
 `;
+const Video = styled(Youtube)`
+  width: 50%;
+`
 const ExperienceContainer = styled.div`
   display: flex;
   overflow: hidden;
-  height: 50vh;
+  justify-content: space-between;
+  width: 100%;
+  height: 30vh;
+  border: 1px solid transparent;
+  box-shadow: 0 0 110px rgba(0,0,0,1);
+  z-index: 2;
 `;
-const CompanyVideo = styled.video`
-  width: 50%;
-  height: 100%;
+const ExperienceCardWrap = styled.div`
+  width: 55%;
 `;
 const P5Project = styled.div`
   position: ${props => props.position};
-  z-index: -1;
+  z-index: 1;
 `;
 const P5_1 = styled(P5Project)`
   left: 30%;
   position: absolute;
   position: fixed;
   transform: translateY(-35%);
-  z-index: 2;
+  z-index: 1;
   opacity: 0.5;
 `;
 
