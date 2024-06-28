@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 import { SocialIcon } from 'react-social-icons';
 
-const Socials = () => {
+const Socials = ({ gap }) => {
   return (
-    <SocialsList>
+    <SocialsList gap={gap}>
       <SocialIcon url='https://www.linkedin.com/in/jonathannarine/' target='_blank' />
       <SocialIcon url='https://github.com/jonnicwolf' target='_blank' />
       <SocialIcon url='https://docs.google.com/document/d/1L--uuFkBDl2thpDIuyzyUWNqv5Q0BShsKrwGvy6DusU/edit?usp=sharing' target='_blank' />
@@ -14,7 +14,7 @@ const Socials = () => {
 };
 
 const SocialsList = styled.div`
-  column-gap: 5vw;
+  column-gap: ${props => props.gap};
   display: flex;
   position: relative;
   z-index: 9;

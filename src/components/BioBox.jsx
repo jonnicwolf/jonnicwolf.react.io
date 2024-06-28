@@ -23,7 +23,7 @@ const BioBox = ({ darkMode }) => {
       </NotoSansDisplay>
 
       <SocialsContainer darkMode={darkMode}>
-        <Socials />
+        <Socials gap={'5vw'} />
       </SocialsContainer>
     </Container>
   );
