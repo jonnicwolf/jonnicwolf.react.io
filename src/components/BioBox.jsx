@@ -1,53 +1,55 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import Socials from './Socials';
 
 const BioBox = ({ darkMode }) => {
   return (
-    <div>
+    <Container>
       <PermanentMarkerText darkMode={darkMode}>
-        Hello!
-        <br/>
-        <a
-          href="https://docs.google.com/viewer?url=https://docs.google.com/document/d/1L--uuFkBDl2thpDIuyzyUWNqv5Q0BShsKrwGvy6DusU/export?format=pdf"
-          style={{textDecoration: 'none', color: 'red', cursor: 'pointer'}} rel='noopener noreferrer'
-          target='_blank'>
-            I'm Jon Narine
-        </a>
+        Jon Fezz Narine
       </PermanentMarkerText>
+
       <NotoSansDisplay darkMode={darkMode}>
-        A full-stack web developer based in the heart of NYC. My expertise lies in front-end development, with a proficiency in JavaScript, Python, and Swift.
-        <br></br><br></br>
-        Collaboration is my cornerstone—I thrive on working with teams to bring user-centric products to fruition. I take pride in crafting interfaces that are both intuitive and visually appealing.
-        <br></br><br></br>
-        In addition to web development, I have a keen interest in cloud architecture, game engines, and generative art.
-        <br></br><br></br>
-        Whether you have a project in mind or simply want to connect, feel free to reach out below.
-        <br></br><br></br>
-        I look forward to collaborating with you!
+        <strong>
+          Web Developer | NYC
+        </strong>
       </NotoSansDisplay>
+
+      <NotoSansDisplay darkMode={darkMode}>
+        <p>Fezz is a full-stack web developer based in the heart of NYC. He has worked with teams to create user-centric products that are both intuitive and visually appealing. His expertise lies in front-end development, with proficiency in JavaScript, Python, and Swift.</p>
+        <p>Passionate about collaboration, Fezz has successfully crafted seamless interfaces. Additionally, Fezz holds a keen interest in cloud architecture, game engines, and generative art. These diverse interests and experiences continuously inform and elevate his work.</p>
+        <p>Whether you have a project in mind or simply want to connect, feel free to reach out!</p>
+      </NotoSansDisplay>
+
       <SocialsContainer darkMode={darkMode}>
         <Socials />
       </SocialsContainer>
-    </div>
-  )
+    </Container>
+  );
 };
 
-const NotoSansDisplay = styled.p`
-  color:  ${props => props.darkMode ? 'white' : 'black'};
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const NotoSansDisplay = styled.div`
+  color: #f7f7f7;
   font-family: var(--font-family-rubik);
   font-size: 16px;
 `;
-const PermanentMarkerText = styled.p`
+const PermanentMarkerText = styled.div`
   font-family: Permanent Marker;
   font-weight: var(--font-weight-bold);
+  padding: 0;
+  margin: 0;
   font-size: 25px;
   letter-spacing: 0.0120em;
-  color:  ${props => props.darkMode ? 'white' : 'black'};
+  color:  #f7f7f7;
 `;
 const SocialsContainer = styled.div`
-  @media (max-width: 385px) {
-    display: none;
+  @media only screen and (max-width: 768px) {
+    align-self: center;
   }
 `;
 

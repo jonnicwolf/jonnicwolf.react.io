@@ -37,9 +37,7 @@ const ProjectVideo = ({
     const observer = new IntersectionObserver(playVideoOnScroll, options);
     const target = videoRef.current;
 
-    if (target) {
-      observer.observe(target);
-    };
+    if (target) observer.observe(target);
 
     return () => {
       if (target) {
