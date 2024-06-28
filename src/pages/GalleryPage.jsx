@@ -6,14 +6,15 @@ import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR.jsx';
 import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 import P5_TORUS from '../components/p5/P5_TORUS.jsx';
 import P5_LOADER from '../components/p5/P5_LOADER.jsx';
+import P5_ANJA from '../components/p5/P5_ANJA.jsx';
 
 const GalleryPage = ({ darkMode }) => {
   const [index, setIndex] = useState(0);
   const [title, setTitle] = useState('');
-  const p5_projs = [P5_TORUS, P5_PLANE, P5_LORENZ_ATTRACTOR, P5_LOADER];
+  const p5_projs = [P5_TORUS, P5_PLANE, P5_LORENZ_ATTRACTOR, P5_LOADER, P5_ANJA];
 
   useEffect(() => {
-    const titles = ['TORUS', 'HORIZON', 'CHAOS THEORY', 'TRILATERAL GHOSTS'];
+    const titles = ['TORUS', 'HORIZON', 'CHAOS THEORY', 'TRILATERAL GHOSTS','ANJA'];
     setTitle(titles[index]);
   }, [index]);
 
