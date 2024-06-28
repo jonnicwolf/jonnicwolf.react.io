@@ -1,20 +1,22 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import styled, { keyframes } from 'styled-components';
 import p5 from 'p5';
 
 const P5_ANJA = ({ strokeColor }) => {
   const sketch_ref = useRef();
-  const width = 150;
-  const height = 800;
-  const irisX = 0;
-  const irisY = 0;
 
   const sketch = useCallback((p) => {
+    const width = 150;
+    const height = 800;
+
+    const irisX = 0;
+    const irisY = 0;
+    const lid_w = width / 12;
+
     let angleA = 0;
     let angleB = 0;
     let angleC= 0;
     let reverse = 0;
-    const lid_w = width / 12;
 
     p.setup = () => {
       p.createCanvas(width, height, p.WEBGL);
@@ -24,8 +26,10 @@ const P5_ANJA = ({ strokeColor }) => {
       p.background(0, 0.9);
 
       p.push();
-      p.noStroke();
-      p.fill('black')
+      // p.noStroke();
+      p.stroke(strokeColor);
+      p.strokeWeight(3);
+      p.fill(209,209,209,1);
       p.ellipse(0, 0, lid_w * 8, height, 4);
       p.pop();
 
@@ -98,7 +102,7 @@ const P5_ANJA = ({ strokeColor }) => {
 const blink = keyframes`
   0% { width: 100px; }
   1% { width: 0; }
-  4% { width: 100px; }
+  4% { width: 95px; }
   100% { width: 100px; }
 `;
 const Wrapper = styled.div`
