@@ -83,7 +83,7 @@ const P5_ANJA = ({ strokeColor }) => {
 
       p.strokeWeight(1);
     };
-  }, []);
+  }, [strokeColor]);
 
   useEffect(() => {
     const p5Canvas = new p5(sketch, sketch_ref.current);
