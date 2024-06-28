@@ -20,7 +20,7 @@ const NameCard = () => {
           </Hometown>
         <br /><br />
 
-          <Socials />
+          <Socials gap={'1.5vw'}/>
       </NameCardContainer>
     </section>
   )
