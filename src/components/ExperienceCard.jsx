@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import ExternalButton from '../assets/buttons/ExternalButton';
 
-export default function ExperienceCard({ darkMode, company_name, link, position, content }) {
+export default function ExperienceCard({ darkMode, company_name, link, position, content, year }) {
   function renderContent (content) {
     const result = content
       .split('  ')
@@ -16,7 +16,7 @@ export default function ExperienceCard({ darkMode, company_name, link, position,
 
   return (
     <Container darkMode={ darkMode }>
-      <h3>2022 |
+      <h3>{year} |
         <ExternalButton
           link={link}
           text={company_name}

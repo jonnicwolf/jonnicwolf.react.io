@@ -19,21 +19,24 @@ const TimeLine = ({ darkMode }) => {
       position: 'Apprentice Software Engineer',
       link: 'https://seatgeek.com/about',
       video_link: 'QnWS61EMljU',
-      content: content_SG
+      content: content_SG,
+      year: 2023,
     },
     {
       company_name: 'Pursuit',
       position: 'Full Stack Web Development Fellow',
       link: 'https://www.pursuit.org/fellowship?gclid=Cj0KCQjwrsGCBhD1ARIsALILBYoZZTe0XdzsD0GkFi90K4dVpBijEedjBi69BZTan0FS3X1s1DfZiOUaAh4PEALw_wcB',
       video_link: 'LYnWuKGKNrg',
-      content: content_pursuit
+      content: content_pursuit,
+      year: 2020,
     },
     {
       company_name: 'JPMorgan Chase & Co.',
       position: 'Project Management Intern',
       link: 'https://www.jpmorgan.com/global',
       video_link: 'VF74MZ0yELA',
-      content: content_JPMC
+      content: content_JPMC,
+      year: 2013,
     },
   ];
 
@@ -50,6 +53,7 @@ const TimeLine = ({ darkMode }) => {
                 position={item.position}
                 link={item.link}
                 content={item.content}
+                year={item.year}
                 darkMode={darkMode} />
             </ExperienceCardWrap>
           </ExperienceContainer>
