@@ -86,7 +86,7 @@ const ExperienceContainer = styled.div`
   overflow: hidden;
   justify-content: space-between;
   width: 100%;
-  height: 30vh;
+  height: 40vh;
   border: 1px solid transparent;
   box-shadow: 0 0 110px rgba(0,0,0,1);
   z-index: 2;
