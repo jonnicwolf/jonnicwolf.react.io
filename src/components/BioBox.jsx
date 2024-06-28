@@ -17,13 +17,14 @@ const BioBox = ({ darkMode }) => {
       </NotoSansDisplay>
 
       <NotoSansDisplay darkMode={darkMode}>
-        <p>Fezz is a full-stack web developer based in the heart of NYC. He has worked with teams to create user-centric products that are both intuitive and visually appealing. His expertise lies in front-end development, with proficiency in JavaScript, Python, and Swift.</p>
+        <p>Fezz is a full-stack web developer based in the heart of NYC. He has worked with elite teams to create user-centric products that are both intuitive and visually appealing.<br/>
+          His expertise lies in front-end development, with proficiency in JavaScript, Python, and Swift.</p>
         <p>Passionate about collaboration, Fezz has successfully crafted seamless interfaces. Additionally, Fezz holds a keen interest in cloud architecture, game engines, and generative art. These diverse interests and experiences continuously inform and elevate his work.</p>
         <p>Whether you have a project in mind or simply want to connect, feel free to reach out!</p>
       </NotoSansDisplay>
 
       <SocialsContainer darkMode={darkMode}>
-        <Socials gap={'5vw'} />
+        <Socials gap={'2vw'} />
       </SocialsContainer>
     </Container>
   );

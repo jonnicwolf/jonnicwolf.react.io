@@ -86,6 +86,7 @@ const Video = styled(Youtube)`
   width: 50%;
   @media only screen and (max-width: 767px) {
     width: 100%;
+    height: 50%;
   }
 `;
 const ExperienceContainer = styled.div`
