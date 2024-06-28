@@ -11,12 +11,13 @@ const MobileNav = ({ darkMode }) => {
     <Container isOpen={isOpen}>
       <Nav>
         <Fezz>FEZZ</Fezz>
-      <Hamburger
+        <Hamburger
           darkMode={darkMode}
           isOpen={isOpen}
           isOpenSet={setIsOpen}
         />
       </Nav>
+
       <Item to='/projects' onClick={() =>setIsOpen(!isOpen)}>HOME</Item>
       <Item to='/about'    onClick={() =>setIsOpen(!isOpen)}>ABOUT</Item>
       <Item to='/gallery'  onClick={() =>setIsOpen(!isOpen)}>GALLERY</Item>
@@ -37,7 +38,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  height: ${props => props.isOpen ? '55vh' : '5vh'};
+  height: ${props => props.isOpen ? 'auto' : '7vh'};
   overflow: hidden;
   transition: height .3s linear;
   width: 100%;
@@ -47,13 +48,10 @@ const Nav = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  height: 35%;
-  margin-bottom: 5px;
+  padding: 15px;
 `;
 const Item = styled(Link)`
-  border-bottom: 1px solid grey;
+  border-bottom: 2px solid grey;
   color: black;
   font-family: Rubik;
   font-weight: bold;
@@ -62,7 +60,7 @@ const Item = styled(Link)`
   text-decoration: none;
 `;
 const ExternalItem = styled.a`
-  border-bottom: 1px solid grey;
+  border-bottom: 2px solid grey;
   color: black;
   font-family: Rubik;
   font-weight: bold;
