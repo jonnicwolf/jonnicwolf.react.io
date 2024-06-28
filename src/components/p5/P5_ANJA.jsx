@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import p5 from 'p5';
 
 const P5_ANJA = ({ strokeColor }) => {
   const sketch_ref = useRef();
   const width = 150;
-  const height = 400;
-  const irisX = width / 2;
-  const irisY = height / 2;
+  const height = 800;
+  const irisX = 0;
+  const irisY = 0;
 
   const sketch = useCallback((p) => {
     let angleA = 0;
@@ -18,14 +18,9 @@ const P5_ANJA = ({ strokeColor }) => {
 
     p.setup = () => {
       p.createCanvas(width, height, p.WEBGL);
-      setInterval(() => {
-        setIrisX(p.random((p.width / 60) * -1, p.width / 12));
-        setIrisY(p.random((p.width / 24)*-1, p.height / 24));
-      },7000)
     };
 
     p.draw = () => {
-      
       p.background(0, 0.9);
 
       p.push();
@@ -35,16 +30,17 @@ const P5_ANJA = ({ strokeColor }) => {
       p.pop();
 
       p.push();
-      p.fill('#b25385');
-      p.ellipse(irisX, irisY, (p.width/12)*8, (p.width/12)*8, 6); // Hexagon
-      p.fill('#699897');
+      p.fill('white');
+      p.rotateZ(reverse);
+      p.ellipse(irisX, irisY, (p.width/12)*7.2, (p.width/12)*7.2, 6); // Hexagon
+      p.fill('black');
       p.circle(irisX, irisY, (p.width/12)*6);
-      p.fill('gold');
+      p.fill('white');
       p.circle(irisX, irisY, (p.width/12)*2);
       p.pop();
 
       p.push();
-      p.translate(irisX, irisY);
+      
 
       // Moving Triangle 1
       p.push();
@@ -60,7 +56,7 @@ const P5_ANJA = ({ strokeColor }) => {
       p.noFill();
       p.rotateZ(angleB);
       p.rotateY(angleB);
-      p.stroke('#db8aae');
+      p.stroke('red');
       p.strokeWeight(2);
       p.triangle(15, -10, 0, 15, -15, -10);
       p.pop();
@@ -70,7 +66,7 @@ const P5_ANJA = ({ strokeColor }) => {
       p.noFill();
       p.rotateZ(angleC);
       p.rotateX(angleC);
-      p.stroke('#db8aae');
+      p.stroke('grey');
       p.strokeWeight(2);
       p.triangle(15, -10, 0, 15, -15, -10);
       p.strokeWeight(2);
@@ -93,14 +89,31 @@ const P5_ANJA = ({ strokeColor }) => {
   }, [sketch]);
 
   return(
-    <Container>
-      <div ref={sketch_ref} />
-    </Container>
+    <Wrapper>
+      <Container ref={sketch_ref} />
+    </Wrapper>
   );
 };
 
-const Container = styled.div`
+const blink = keyframes`
+  0% { width: 100px; }
+  1% { width: 0; }
+  4% { width: 100px; }
+  100% { width: 100px; }
+`;
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-`
+  animation: ${blink} 7s infinite;
+  background-color: #000;
+`;
+const Container = styled.div`
+  width: 150px;
+  height: 800px;
+`;
 
 export default P5_ANJA;
