@@ -26,7 +26,6 @@ const P5_ANJA = ({ strokeColor }) => {
       p.background(0, 0.9);
 
       p.push();
-      // p.noStroke();
       p.stroke(strokeColor);
       p.strokeWeight(3);
       p.fill(209,209,209,1);
@@ -44,7 +43,6 @@ const P5_ANJA = ({ strokeColor }) => {
       p.pop();
 
       p.push();
-      
 
       // Moving Triangle 1
       p.push();
@@ -85,14 +83,14 @@ const P5_ANJA = ({ strokeColor }) => {
 
       p.strokeWeight(1);
     };
-  });
+  }, []);
 
   useEffect(() => {
     const p5Canvas = new p5(sketch, sketch_ref.current);
     return () => p5Canvas.remove();
   }, [sketch]);
 
-  return(
+  return (
     <Wrapper>
       <Container ref={sketch_ref} />
     </Wrapper>
