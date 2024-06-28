@@ -100,7 +100,7 @@ const P5_ANJA = ({ strokeColor }) => {
 };
 
 const blink = keyframes`
-  0% { width: 100px; }
+  0% { width: 90px; }
   1% { width: 0; }
   4% { width: 95px; }
   100% { width: 100px; }
