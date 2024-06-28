@@ -83,7 +83,6 @@ const Video = styled(Youtube)`
 `
 const ExperienceContainer = styled.div`
   display: flex;
-  overflow: hidden;
   justify-content: space-between;
   width: 100%;
   height: 40vh;
@@ -93,6 +92,7 @@ const ExperienceContainer = styled.div`
 `;
 const ExperienceCardWrap = styled.div`
   width: 55%;
+  overflow: auto;
 `;
 const P5Project = styled.div`
   position: ${props => props.position};
