@@ -6,8 +6,8 @@ const P5_ANJA = ({ strokeColor }) => {
   const sketch_ref = useRef();
   const width = 150;
   const height = 400;
-  const [irisX, setIrisX] = useState(0);
-  const [irisY, setIrisY] = useState(0);
+  const irisX = width / 2;
+  const irisY = height / 2;
 
   const sketch = useCallback((p) => {
     let angleA = 0;
