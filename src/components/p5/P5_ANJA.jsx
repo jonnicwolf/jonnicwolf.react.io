@@ -1,8 +1,12 @@
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import p5 from 'p5';
 
-const Eye = ({ width, height }) => {
+const P5_ANJA = ({ strokeColor }) => {
   const sketch_ref = useRef();
+  const width = 150;
+  const height = 400;
+  const [irisX, seIrisX] = useState(0);
+  const [irisY, seIrisY] = useState(0);
 
   const sketch = useCallback((p) => {
     let angleA = 0;
@@ -13,11 +17,14 @@ const Eye = ({ width, height }) => {
 
     p.setup = () => {
       p.createCanvas(width, height, p.WEBGL);
+      setInterval(() => {
+        setIrisX(p.random((p.width / 60) * -1, p.width / 60));
+        setIrisY(p.random((p.width / 24)*-1, p.height / 36));
+      })
     };
 
     p.draw = () => {
-      const irisX = p.map(p.mouseX, 0, p.width, (p.width / 60)*-1, p.width / 60);
-      const irisY = p.map(p.mouseY, 0, p.height, (p.width / 24)*-1, p.height / 36);
+      
       p.background(0, 0.9);
 
       p.push();
@@ -87,4 +94,4 @@ const Eye = ({ width, height }) => {
   return <div ref={sketch_ref} />;
 };
 
-export default Eye;
+export default P5_ANJA;
