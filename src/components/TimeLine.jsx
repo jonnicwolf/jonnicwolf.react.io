@@ -83,7 +83,7 @@ const Video = styled(Youtube)`
   @media only screen and (max-width: 767px) {
     width: 100%;
   }
-`
+`;
 const ExperienceContainer = styled.div`
   display: flex;
   justify-content: space-between;
