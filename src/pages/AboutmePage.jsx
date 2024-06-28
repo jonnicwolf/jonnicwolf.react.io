@@ -34,7 +34,7 @@ const BioBoxWrapper = styled.div`
   padding-left: 60px;
   @media only screen and (max-width: 768px) {
     padding-left: 5px;
-    padding-top: 3vh;
+    // padding-top: 3vh;
   }
 `;
 const BioContainer = styled.div`
@@ -51,23 +51,18 @@ const BioContainer = styled.div`
   }
 `;
 const HeadshotWrapper = styled.div`
-  box-shadow: -16px 50px 16px 0px rgba(0,0,0,0.75);
   padding: 0;
   margin: 0;
-  height: 18rem;
-  width: 18rem;
-  transform: translate(0, -1.5vw);
+  height: 280px;
+  width: 280px;
+  margin-top: 2vw;
   border-radius: 50%;
-  @media only screen and (max-width: 768px) {
-    transform: translateX(-10px);
-  }
+  box-shadow: -16px 10px 26px rgba(0,0,0,0.75);
 `;
 const Headshot = styled.img`
-  height: 20rem;
-  width: 20rem;
-  clip-path: circle(49% at 49% 49%);
-  @media only screen and (max-width: 767px) {
-   height: 20rem;
-   width: 20rem;
-  }
+  height: 400px;
+  width: 300px;
+  clip-path: circle(40% at 50% 40%);
+  transform: translate(-10px,-20px);
+  border-radius: 50%;
 `;
