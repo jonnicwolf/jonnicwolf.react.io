@@ -33,12 +33,12 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
 `;
-const NotoSansDisplay = styled.p`
+const NotoSansDisplay = styled.div`
   color: #f7f7f7;
   font-family: var(--font-family-rubik);
   font-size: 16px;
 `;
-const PermanentMarkerText = styled.p`
+const PermanentMarkerText = styled.div`
   font-family: Permanent Marker;
   font-weight: var(--font-weight-bold);
   padding: 0;
@@ -48,11 +48,7 @@ const PermanentMarkerText = styled.p`
   color:  #f7f7f7;
 `;
 const SocialsContainer = styled.div`
-  @media (max-width: 385px) {
-    display: none;
-  }
   @media only screen and (max-width: 768px) {
-    border: 1px solid yellow;
     align-self: center;
   }
 `;

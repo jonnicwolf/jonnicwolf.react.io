@@ -32,6 +32,10 @@ const AboutMeContainer = styled.div`
 const BioBoxWrapper = styled.div`
   padding: 5px;
   padding-left: 60px;
+  @media only screen and (max-width: 768px) {
+    padding-left: 5px;
+    padding-top: 3vh;
+  }
 `;
 const BioContainer = styled.div`
   display: flex; 
