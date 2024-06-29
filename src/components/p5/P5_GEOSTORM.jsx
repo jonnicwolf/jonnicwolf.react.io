@@ -9,7 +9,7 @@ const P5_GEOSTORM = ({ strokeColor, darkMode }) => {
     function drawMountains() {
       // Draw mountain bases
       p.fill(100, 100, 150, 150); // Add opacity to the mountains
-      p. noStroke();
+      p.noStroke();
   
       // Mountain 1
       p.beginShape();
