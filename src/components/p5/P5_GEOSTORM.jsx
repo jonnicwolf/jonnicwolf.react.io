@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useCallback } from 'react';
 import styled from 'styled-components';
 import p5 from 'p5';
 
-const P5_GEOSTORM = ({ strokeColor }) => {
+const P5_GEOSTORM = ({ strokeColor, darkMode }) => {
   const sketch_ref = useRef();
 
   const sketch = useCallback((p) => {
@@ -93,9 +93,10 @@ const P5_GEOSTORM = ({ strokeColor }) => {
     let triangles = [];
     let lightningForks = [];
     let bolts = [];
+    const background = darkMode ? '#5c5c5b' : '#fffcf5'
 
     p.setup = () => {
-      p.createCanvas(p.windowWidth, p.windowHeight,);
+      p.createCanvas(p.windowWidth/12 * 6, p.windowHeight/12 * 4);
       p.frameRate(30);
 
       triangles = [];
@@ -120,7 +121,7 @@ const P5_GEOSTORM = ({ strokeColor }) => {
     };
 
     p.draw = () => {
-      p.background('#fffcf5');
+      p.background(background);
       drawMountains();
 
       // Draw and update all bolts
@@ -161,7 +162,7 @@ const P5_GEOSTORM = ({ strokeColor }) => {
         bolts.push(bolt);
       };
     };
-  }, [strokeColor]);
+  }, [strokeColor, darkMode]);
 
   useEffect(() => {
     const p5Canvas = new p5(sketch, sketch_ref.current);
@@ -169,9 +170,9 @@ const P5_GEOSTORM = ({ strokeColor }) => {
   }, [sketch]);
 
   return (
-    
+    <Container>
       <div ref={sketch_ref} />
-    
+    </Container>
   );
 };
 
