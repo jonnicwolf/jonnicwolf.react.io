@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useCallback } from 'react';
+import styled from 'styled-components';
 import p5 from 'p5';
 
 const P5_GEOSTORM = ({ strokeColor }) => {
@@ -68,56 +69,58 @@ const P5_GEOSTORM = ({ strokeColor }) => {
       update() {
         let last = this.segments[this.segments.length - 1];
         let next = last.copy();
-        next.x += random(-30, 30);
-        next.y += random(10, 30);
+        next.x += p.random(-30, 30);
+        next.y += p.random(10, 30);
         this.segments.push(next);
       };
     
       show() {
-        strokeWeight(this.thickness);
-        stroke(this.color);
+        p.strokeWeight(this.thickness);
+        p.stroke(this.color);
         for (let i = 0; i < this.segments.length - 1; i++) {
           let start = this.segments[i];
           let end = this.segments[i + 1];
-          line(start.x, start.y, end.x, end.y);
+          p.line(start.x, start.y, end.x, end.y);
         };
       };
   
       offscreen() {
         let last = this.segments[this.segments.length - 1];
-        return (last.y > height);
+        return (last.y > p.height);
       };
     };
 
-    let bolts = [];
     let triangles = [];
     let lightningForks = [];
+    let bolts = [];
 
     p.setup = () => {
-      p.createCanvas(width, height, p.WEBGL);
+      p.createCanvas(800, 400,);
       p.frameRate(30);
 
+      triangles = [];
       for (let i = 0; i < 100; i++) {
         let triangle = {
-          x: random(width, width + 100),
-          y: random(-600, 600),
-          speed: random(8, 20) // Random speed
+          x: p.random(p.width, p.width + 100),
+          y: p.random(-800, 800),
+          speed: p.random(8, 20) // Random speed
         };
         triangles.push(triangle);
       };
 
+      lightningForks = [];
       for (let i = 0; i < 3; i++) {
         let fork = {
-          x: random(width),
-          y: -height / 2,
-          length: random(20, 80)
+          x: p.random(p.width),
+          y: -p.height / 2,
+          length: p.random(20, 80)
         };
         lightningForks.push(fork);
       };
     };
 
     p.draw = () => {
-      p.background(0, 0.9);
+      p.background('#fffcf5');
       drawMountains();
 
       // Draw and update all bolts
@@ -136,24 +139,24 @@ const P5_GEOSTORM = ({ strokeColor }) => {
         t.y += t.speed;
 
         // Reset position when the triangle moves off the canvas
-        if (t.x < -200 || t.y > height + 200) {
-          t.x = random(width, width + 100);
-          t.y = random(-600, 600);
+        if (t.x < -200 || t.y > p.height + 200) {
+          t.x = p.random(p.width, p.width + 100);
+          t.y = p.random(-600, 600);
         };
 
-        fill(150, 100, 250, 150);
-        noStroke();
-        beginShape();
-        
-        vertex(t.x, t.y);
-        vertex(t.x - 2, t.y + 10);
-        vertex(t.x + 5, t.y + 10);
-        endShape(CLOSE);
+        p.fill(150, 100, 250, 150);
+        p.noStroke();
+        p.beginShape();
+
+        p.vertex(t.x, t.y);
+        p.vertex(t.x - 2, t.y + 10);
+        p.vertex(t.x + 5, t.y + 10);
+        p.endShape(p.CLOSE);
       };
 
       // Add a new bolt randomly
-      if (random(1) < 0.05) {
-        let bolt = new ForkedBolt(random(width), 0, random(2, 5), color(255, 255, 255));
+      if (p.random(1) < 0.05) {
+        let bolt = new ForkedBolt(p.random(p.width), 0, p.random(2, 5), p.color(209, 209, 209));
         bolts.push(bolt);
       };
     };
@@ -165,8 +168,14 @@ const P5_GEOSTORM = ({ strokeColor }) => {
   }, [sketch]);
 
   return (
-    <div ref={sketch_ref} />
+    <Container>
+      <div ref={sketch_ref} />
+    </Container>
   );
 };
+
+const Container = styled.div`
+  margin-top: 10vh;
+`;
 
 export default P5_GEOSTORM;
