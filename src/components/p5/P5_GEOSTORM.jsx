@@ -7,58 +7,58 @@ const P5_GEOSTORM = ({ strokeColor }) => {
   const sketch = useCallback((p) => {
     function drawMountains() {
       // Draw mountain bases
-      p. fill(100, 100, 150, 150); // Add opacity to the mountains
+      p.fill(100, 100, 150, 150); // Add opacity to the mountains
       p. noStroke();
   
       // Mountain 1
-      p. beginShape();
-      p. vertex(0, height);
-      p. vertex(100, 150);
-      p. vertex(200, height);
-      p. endShape(CLOSE);
+      p.beginShape();
+      p.vertex(0, p.height);
+      p.vertex(100, 150);
+      p.vertex(200, p.height);
+      p.endShape(p.CLOSE);
   
       // Mountain 2
-      p. beginShape();
-      p. vertex(150, height);
-      p. vertex(300, 100);
-      p. vertex(450, height);
-      p. endShape(CLOSE);
+      p.beginShape();
+      p.vertex(150, p.height);
+      p.vertex(300, 100);
+      p.vertex(450, p.height);
+      p.endShape(p.CLOSE);
   
       // Mountain 3
-      p. beginShape();
-      p. vertex(300, height);
-      p. vertex(400, 200);
-      p. vertex(500, height);
-      p. endShape(CLOSE);
+      p.beginShape();
+      p.vertex(300, p.height);
+      p.vertex(400, 200);
+      p.vertex(500, p.height);
+      p.endShape(p.CLOSE);
   
       // Draw mountain tops
-      p. fill(255, 255, 255, 200); // White color with some opacity
+      p.fill(255, 255, 255, 200); // White color with some opacity
   
       // Top of Mountain 1
-      p. beginShape();
-      p. vertex(90, 175);
-      p. vertex(100, 150);
-      p. vertex(110, 175);
-      p. endShape(CLOSE);
+      p.beginShape();
+      p.vertex(90, 175);
+      p.vertex(100, 150);
+      p.vertex(110, 175);
+      p.endShape(p.CLOSE);
   
       // Top of Mountain 2
-      p. beginShape();
-      p. vertex(287, 125);
-      p. vertex(300, 100);
-      p. vertex(313, 125);
-      p. endShape(CLOSE);
+      p.beginShape();
+      p.vertex(287, 125);
+      p.vertex(300, 100);
+      p.vertex(313, 125);
+      p.endShape(p.CLOSE);
   
       // Top of Mountain 3
-      p. beginShape();
-      p. vertex(387, 225);
-      p. vertex(400, 200);
-      p. vertex(413, 225);
-      p. endShape(CLOSE);
+      p.beginShape();
+      p.vertex(387, 225);
+      p.vertex(400, 200);
+      p.vertex(413, 225);
+      p.endShape(p.CLOSE);
     };
   
     class ForkedBolt {
       constructor(x, y, thickness, color) {
-        this.start = createVector(x, y);
+        this.start = p.createVector(x, y);
         this.thickness = thickness;
         this.color = color;
         this.segments = [];
