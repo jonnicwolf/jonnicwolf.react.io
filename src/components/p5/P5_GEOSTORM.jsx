@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useCallback } from 'react';
-import styled, { keyframes } from 'styled-components';
 import p5 from 'p5';
 
 const P5_GEOSTORM = ({ strokeColor }) => {
