@@ -95,7 +95,7 @@ const P5_GEOSTORM = ({ strokeColor }) => {
     let bolts = [];
 
     p.setup = () => {
-      p.createCanvas(800, 400,);
+      p.createCanvas(p.windowWidth, p.windowHeight,);
       p.frameRate(30);
 
       triangles = [];
@@ -144,7 +144,8 @@ const P5_GEOSTORM = ({ strokeColor }) => {
           t.y = p.random(-600, 600);
         };
 
-        p.fill(150, 100, 250, 150);
+        // p.fill(150, 100, 250, 150);
+        p.fill(209, 209, 209, 150);
         p.noStroke();
         p.beginShape();
 
@@ -168,9 +169,9 @@ const P5_GEOSTORM = ({ strokeColor }) => {
   }, [sketch]);
 
   return (
-    <Container>
+    
       <div ref={sketch_ref} />
-    </Container>
+    
   );
 };
 
