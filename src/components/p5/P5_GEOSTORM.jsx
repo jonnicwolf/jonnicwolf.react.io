@@ -96,7 +96,7 @@ const P5_GEOSTORM = ({ strokeColor, darkMode }) => {
     const background = darkMode ? '#5c5c5b' : '#fffcf5'
 
     p.setup = () => {
-      p.createCanvas(p.windowWidth/12 * 11, p.windowHeight/12 * 6);
+      p.createCanvas(p.windowWidth/12 * 8, p.windowHeight/12 * 6);
       p.frameRate(30);
 
       triangles = [];
@@ -104,7 +104,7 @@ const P5_GEOSTORM = ({ strokeColor, darkMode }) => {
         let triangle = {
           x: p.random(p.width, p.width + 100),
           y: p.random(-p.windowWidth, p.windowWidth),
-          speed: p.random(8, 20) // Random speed
+          speed: p.random(8, 20) 
         };
         triangles.push(triangle);
       };
@@ -113,8 +113,8 @@ const P5_GEOSTORM = ({ strokeColor, darkMode }) => {
       for (let i = 0; i < 3; i++) {
         let fork = {
           x: p.random(p.width),
-          y: -p.height / 2,
-          length: p.random(20, 80)
+          y: p.random(p.height, 0),
+          length: p.random(5, 15)
         };
         lightningForks.push(fork);
       };
@@ -145,8 +145,7 @@ const P5_GEOSTORM = ({ strokeColor, darkMode }) => {
           t.y = p.random(-600, 600);
         };
 
-        // p.fill(150, 100, 250, 150);
-        p.fill(209, 209, 209, 150);
+        p.fill(150, 150, 150, 150);
         p.noStroke();
         p.beginShape();
 
