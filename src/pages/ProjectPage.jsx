@@ -16,6 +16,7 @@ import Hotc_photo from '../assets/photos/Hotc.jpg'
 export default function ProjectPage () {
   const [blurToggle1, setBlurToggle1] = useState(false);
   const [blurToggle2, setBlurToggle2] = useState(false);
+  const [blurToggle3, setBlurToggle3] = useState(false);
   const isMobile = window.innerWidth < 1024;
 
   function handleToggle (setBlur, getBlur) {
@@ -42,9 +43,9 @@ export default function ProjectPage () {
           <ProjectContainer>
             <MobileProject
               src={Hotc_photo}
-              onClick={() =>handleToggle(setBlurToggle1, blurToggle1)}
-              blur={blurToggle1} />
-            <Info blur={blurToggle1} onClick={() =>handleToggle(setBlurToggle1, blurToggle1)}>
+              onClick={() =>handleToggle(setBlurToggle3, blurToggle3)}
+              blur={blurToggle3} />
+            <Info blur={blurToggle3} onClick={() =>handleToggle(setBlurToggle3, blurToggle3)}>
               <P>Discover your destiny with <br />Secrets of the Cartomancer <br /> Receive three random cards and personalized readings that reveal insights and guidance. Uncover the mysteries today!
               </P>
               <TechContainer>

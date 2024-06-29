@@ -96,7 +96,7 @@ const P5_GEOSTORM = ({ strokeColor, darkMode }) => {
     const background = darkMode ? '#5c5c5b' : '#fffcf5'
 
     p.setup = () => {
-      p.createCanvas(p.windowWidth/12 * 8, p.windowHeight/12 * 6);
+      p.createCanvas(p.windowWidth/12 * 10, p.windowHeight/12 * 6);
       p.frameRate(30);
 
       triangles = [];
@@ -177,6 +177,7 @@ const P5_GEOSTORM = ({ strokeColor, darkMode }) => {
 
 const Container = styled.div`
   margin-top: 10vh;
+  border: 1px solid black;
 `;
 
 export default P5_GEOSTORM;

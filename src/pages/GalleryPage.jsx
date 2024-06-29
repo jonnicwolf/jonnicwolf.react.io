@@ -86,7 +86,7 @@ const ControlBox = styled.div`
   background-color: ${props => props.darkMode ? '150'   : null};
   font-color:       ${props => props.darkMode ? 'grey'  : 'white'};
   @media screen and (max-width: 1024px) {
-    margin-top: 5vh;
+    margin-top: 6vh;
     gap: 5vw;
     justify-content: center;
     width: auto;
