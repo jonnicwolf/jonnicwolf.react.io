@@ -4,91 +4,91 @@ import p5 from 'p5';
 const P5_GEOSTORM = ({ strokeColor }) => {
   const sketch_ref = useRef();
 
-  function drawMountains() {
-    // Draw mountain bases
-    p. fill(100, 100, 150, 150); // Add opacity to the mountains
-    p. noStroke();
-
-    // Mountain 1
-    p. beginShape();
-    p. vertex(0, height);
-    p. vertex(100, 150);
-    p. vertex(200, height);
-    p. endShape(CLOSE);
-
-    // Mountain 2
-    p. beginShape();
-    p. vertex(150, height);
-    p. vertex(300, 100);
-    p. vertex(450, height);
-    p. endShape(CLOSE);
-
-    // Mountain 3
-    p. beginShape();
-    p. vertex(300, height);
-    p. vertex(400, 200);
-    p. vertex(500, height);
-    p. endShape(CLOSE);
-
-    // Draw mountain tops
-    p. fill(255, 255, 255, 200); // White color with some opacity
-
-    // Top of Mountain 1
-    p. beginShape();
-    p. vertex(90, 175);
-    p. vertex(100, 150);
-    p. vertex(110, 175);
-    p. endShape(CLOSE);
-
-    // Top of Mountain 2
-    p. beginShape();
-    p. vertex(287, 125);
-    p. vertex(300, 100);
-    p. vertex(313, 125);
-    p. endShape(CLOSE);
-
-    // Top of Mountain 3
-    p. beginShape();
-    p. vertex(387, 225);
-    p. vertex(400, 200);
-    p. vertex(413, 225);
-    p. endShape(CLOSE);
-  };
-
-  class ForkedBolt {
-    constructor(x, y, thickness, color) {
-      this.start = createVector(x, y);
-      this.thickness = thickness;
-      this.color = color;
-      this.segments = [];
-      this.segments.push(this.start.copy());
-    };
-
-    update() {
-      let last = this.segments[this.segments.length - 1];
-      let next = last.copy();
-      next.x += random(-30, 30);
-      next.y += random(10, 30);
-      this.segments.push(next);
+  const sketch = useCallback((p) => {
+    function drawMountains() {
+      // Draw mountain bases
+      p. fill(100, 100, 150, 150); // Add opacity to the mountains
+      p. noStroke();
+  
+      // Mountain 1
+      p. beginShape();
+      p. vertex(0, height);
+      p. vertex(100, 150);
+      p. vertex(200, height);
+      p. endShape(CLOSE);
+  
+      // Mountain 2
+      p. beginShape();
+      p. vertex(150, height);
+      p. vertex(300, 100);
+      p. vertex(450, height);
+      p. endShape(CLOSE);
+  
+      // Mountain 3
+      p. beginShape();
+      p. vertex(300, height);
+      p. vertex(400, 200);
+      p. vertex(500, height);
+      p. endShape(CLOSE);
+  
+      // Draw mountain tops
+      p. fill(255, 255, 255, 200); // White color with some opacity
+  
+      // Top of Mountain 1
+      p. beginShape();
+      p. vertex(90, 175);
+      p. vertex(100, 150);
+      p. vertex(110, 175);
+      p. endShape(CLOSE);
+  
+      // Top of Mountain 2
+      p. beginShape();
+      p. vertex(287, 125);
+      p. vertex(300, 100);
+      p. vertex(313, 125);
+      p. endShape(CLOSE);
+  
+      // Top of Mountain 3
+      p. beginShape();
+      p. vertex(387, 225);
+      p. vertex(400, 200);
+      p. vertex(413, 225);
+      p. endShape(CLOSE);
     };
   
-    show() {
-      strokeWeight(this.thickness);
-      stroke(this.color);
-      for (let i = 0; i < this.segments.length - 1; i++) {
-        let start = this.segments[i];
-        let end = this.segments[i + 1];
-        line(start.x, start.y, end.x, end.y);
+    class ForkedBolt {
+      constructor(x, y, thickness, color) {
+        this.start = createVector(x, y);
+        this.thickness = thickness;
+        this.color = color;
+        this.segments = [];
+        this.segments.push(this.start.copy());
+      };
+  
+      update() {
+        let last = this.segments[this.segments.length - 1];
+        let next = last.copy();
+        next.x += random(-30, 30);
+        next.y += random(10, 30);
+        this.segments.push(next);
+      };
+    
+      show() {
+        strokeWeight(this.thickness);
+        stroke(this.color);
+        for (let i = 0; i < this.segments.length - 1; i++) {
+          let start = this.segments[i];
+          let end = this.segments[i + 1];
+          line(start.x, start.y, end.x, end.y);
+        };
+      };
+  
+      offscreen() {
+        let last = this.segments[this.segments.length - 1];
+        return (last.y > height);
       };
     };
 
-    offscreen() {
-      let last = this.segments[this.segments.length - 1];
-      return (last.y > height);
-    };
-  };
-
-  const sketch = useCallback((p) => {
     let bolts = [];
     let triangles = [];
     let lightningForks = [];
