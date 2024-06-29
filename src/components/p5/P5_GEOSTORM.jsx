@@ -37,23 +37,23 @@ const P5_GEOSTORM = ({ strokeColor, darkMode }) => {
   
       // Top of Mountain 1
       p.beginShape();
-      p.vertex(90, 175);
+      p.vertex(95, 175);
       p.vertex(100, 150);
-      p.vertex(110, 175);
+      p.vertex(105, 175);
       p.endShape(p.CLOSE);
   
       // Top of Mountain 2
       p.beginShape();
-      p.vertex(287, 125);
+      p.vertex(293, 125);
       p.vertex(300, 100);
-      p.vertex(313, 125);
+      p.vertex(307, 125);
       p.endShape(p.CLOSE);
   
       // Top of Mountain 3
       p.beginShape();
-      p.vertex(387, 225);
+      p.vertex(395, 225);
       p.vertex(400, 200);
-      p.vertex(413, 225);
+      p.vertex(405, 225);
       p.endShape(p.CLOSE);
     };
   
@@ -96,14 +96,14 @@ const P5_GEOSTORM = ({ strokeColor, darkMode }) => {
     const background = darkMode ? '#5c5c5b' : '#fffcf5'
 
     p.setup = () => {
-      p.createCanvas(p.windowWidth/12 * 6, p.windowHeight/12 * 4);
+      p.createCanvas(p.windowWidth/12 * 11, p.windowHeight/12 * 6);
       p.frameRate(30);
 
       triangles = [];
       for (let i = 0; i < 100; i++) {
         let triangle = {
           x: p.random(p.width, p.width + 100),
-          y: p.random(-800, 800),
+          y: p.random(-p.windowWidth, p.windowWidth),
           speed: p.random(8, 20) // Random speed
         };
         triangles.push(triangle);
