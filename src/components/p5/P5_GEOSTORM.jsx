@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useCallback } from 'react';
 import styled, { keyframes } from 'styled-components';
 import p5 from 'p5';
 
-const P5_ANJA = ({ strokeColor }) => {
+const P5_GEOSTORM = ({ strokeColor }) => {
   const sketch_ref = useRef();
 
   function drawMountains() {
@@ -56,6 +56,39 @@ const P5_ANJA = ({ strokeColor }) => {
     p. endShape(CLOSE);
   };
 
+  class ForkedBolt {
+    constructor(x, y, thickness, color) {
+      this.start = createVector(x, y);
+      this.thickness = thickness;
+      this.color = color;
+      this.segments = [];
+      this.segments.push(this.start.copy());
+    };
+
+    update() {
+      let last = this.segments[this.segments.length - 1];
+      let next = last.copy();
+      next.x += random(-30, 30);
+      next.y += random(10, 30);
+      this.segments.push(next);
+    };
+  
+    show() {
+      strokeWeight(this.thickness);
+      stroke(this.color);
+      for (let i = 0; i < this.segments.length - 1; i++) {
+        let start = this.segments[i];
+        let end = this.segments[i + 1];
+        line(start.x, start.y, end.x, end.y);
+      };
+    };
+
+    offscreen() {
+      let last = this.segments[this.segments.length - 1];
+      return (last.y > height);
+    };
+  };
+
   const sketch = useCallback((p) => {
     let bolts = [];
     let triangles = [];
@@ -87,8 +120,43 @@ const P5_ANJA = ({ strokeColor }) => {
     p.draw = () => {
       p.background(0, 0.9);
       drawMountains();
-      
 
+      // Draw and update all bolts
+      for (let i = bolts.length - 1; i >= 0; i--) {
+        bolts[i].update();
+        bolts[i].show();
+        if (bolts[i].offscreen()) bolts.splice(i, 1);
+      };
+
+      // Draw the falling triangles
+      for (let i = 0; i < triangles.length; i++) {
+        let t = triangles[i];
+
+        // Update positions
+        t.x -= t.speed;
+        t.y += t.speed;
+
+        // Reset position when the triangle moves off the canvas
+        if (t.x < -200 || t.y > height + 200) {
+          t.x = random(width, width + 100);
+          t.y = random(-600, 600);
+        };
+
+        fill(150, 100, 250, 150);
+        noStroke();
+        beginShape();
+        
+        vertex(t.x, t.y);
+        vertex(t.x - 2, t.y + 10);
+        vertex(t.x + 5, t.y + 10);
+        endShape(CLOSE);
+      };
+
+      // Add a new bolt randomly
+      if (random(1) < 0.05) {
+        let bolt = new ForkedBolt(random(width), 0, random(2, 5), color(255, 255, 255));
+        bolts.push(bolt);
+      };
     };
   }, [strokeColor]);
 
@@ -98,31 +166,8 @@ const P5_ANJA = ({ strokeColor }) => {
   }, [sketch]);
 
   return (
-    <Wrapper>
-      <Container ref={sketch_ref} />
-    </Wrapper>
+    <div ref={sketch_ref} />
   );
 };
 
-const blink = keyframes`
-  0% { width: 90px; }
-  1% { width: 0; }
-  4% { width: 95px; }
-  100% { width: 100px; }
-`;
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  animation: ${blink} 7s infinite;
-  background-color: #000;
-`;
-const Container = styled.div`
-  width: 150px;
-  height: 800px;
-`;
-
-export default P5_ANJA;
+export default P5_GEOSTORM;
