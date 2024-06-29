@@ -161,7 +161,7 @@ const P5_GEOSTORM = ({ strokeColor, darkMode }) => {
         bolts.push(bolt);
       };
     };
-  }, [strokeColor, darkMode]);
+  }, [darkMode]);
 
   useEffect(() => {
     const p5Canvas = new p5(sketch, sketch_ref.current);
