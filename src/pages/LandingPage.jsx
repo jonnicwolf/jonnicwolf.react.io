@@ -13,10 +13,10 @@ export default function LandingPage () {
       initial="hidden"
       animate="show" >
       <LandingPageContainer>
-        <NameCard />
+        <NameCard variants={items}/>
 
         <ExtendEnterButton
-          variants={buttonAnimation}
+          variants={items}
           initial="hidden"
           animate="show" >
           <LinkButton subDirectory={'/projects'} textContent='ENTER' buttonSize={'large'}/>
@@ -37,12 +37,19 @@ const backgroundAnimation = {
     transition: { duration: 5 },
   },
 };
-const buttonAnimation = {
-  hidden: { opacity: 0 },
-  show: { 
+const items = {
+  hidden: {
+    opacity: 0,
+    transition: { when: 'afterChildren' }
+  },
+  show: (i) => ({
     opacity: 1,
-    transition: { duration: 5 },
-  }
+    y: 0,
+    transition: {
+      delay: i * 1,
+      duration: 2,
+    }
+  })
 };
 
 const Background = styled(motion.div)`
