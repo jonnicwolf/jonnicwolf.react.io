@@ -69,6 +69,6 @@ const PProject = styled(LandingPageItem)`
 `;
 const EnterButton = styled(LandingPageItem)`
   z-index: 99;
-  transform: translateY(35vh)
+  transform: translateY(35vh);
 `;
 
