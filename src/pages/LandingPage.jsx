@@ -34,10 +34,10 @@ const Background = styled.div`
   opacity: 100%;
 `;
 const background_animation = {
-  hidden: { scale: 0 },
+  hidden: { opacity: 0 },
   show: {
-    scale: 1,
-    transition: { duration: 2 },
+    opacity: 1,
+    transition: { duration: 5 },
   },
 };
 const LandingPageContainer = styled.div`
