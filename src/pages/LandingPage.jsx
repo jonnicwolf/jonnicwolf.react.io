@@ -52,7 +52,6 @@ const items = {
 
 const Background = styled(motion.div)`
   background-image: radial-gradient(circle 750px, white, rgb(42, 191, 250));
-  // opacity: 100%;
 `;
 const LandingPageContainer = styled.div`
   align-items: center;
@@ -70,6 +69,6 @@ const PProject = styled(LandingPageItem)`
 `;
 const EnterButton = styled(LandingPageItem)`
   z-index: 99;
-  padding-top: 3vh;
+  transform: translateY(35vh)
 `;
 
