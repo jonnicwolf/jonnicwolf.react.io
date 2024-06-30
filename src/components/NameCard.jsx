@@ -33,7 +33,6 @@ const items = {
   })
 };
 
-
 const CurrentRole = styled(motion.p)`
   font-family: Julius Sans One;
   font-size: 20px;
