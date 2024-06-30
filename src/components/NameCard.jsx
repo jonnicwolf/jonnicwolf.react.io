@@ -27,8 +27,8 @@ const items = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: i * 1,
-      duration: 2,
+      delay: i * 1.5,
+      duration: 1,
     }
   })
 };
@@ -78,7 +78,7 @@ const Container = styled.div`
 `;
 const RampartOneText = styled(motion.p)`
   font-family: var(--font-family-rampart-one);
-  font-size: 50px;
+  font-size: 6vh;
   height: 10vh;
   margin: 0;
   margin-top: 5vh;
