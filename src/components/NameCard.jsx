@@ -27,8 +27,8 @@ const items = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: i * 1.5,
-      duration: 1,
+      delay: i * 0.5,
+      duration: 3,
     }
   })
 };

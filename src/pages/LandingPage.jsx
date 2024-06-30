@@ -15,12 +15,9 @@ export default function LandingPage () {
       <LandingPageContainer>
         <NameCard variants={items}/>
 
-        <ExtendEnterButton
-          variants={items}
-          initial="hidden"
-          animate="show" >
+        <EnterButton>
           <LinkButton subDirectory={'/projects'} textContent='ENTER' buttonSize={'large'}/>
-        </ExtendEnterButton>
+        </EnterButton>
 
         <PProject>
           <P5_PLANE strokeColor={255}/>
@@ -45,6 +42,7 @@ const items = {
   show: (i) => ({
     opacity: 1,
     y: 0,
+    delay: 2,
     transition: {
       delay: i * 1,
       duration: 2,
@@ -74,4 +72,4 @@ const EnterButton = styled(LandingPageItem)`
   z-index: 99;
   padding-top: 3vh;
 `;
-const ExtendEnterButton = styled(motion(EnterButton))``;
+
