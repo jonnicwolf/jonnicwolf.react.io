@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 import NameCard from '../components/NameCard.jsx';
 import LinkButton from '../assets/buttons/LinkButton.jsx';
@@ -7,19 +8,24 @@ import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 
 export default function LandingPage () {
   return (
-    <Background>
-      <LandingPageContainer>
-        <NameCard />
+    <motion.div
+      variants={background_animation}
+      initial="hidden"
+      animate="show" >
+      <Background>
+        <LandingPageContainer>
+          <NameCard />
 
-        <EnterButton>
-          <LinkButton subDirectory={'/projects'} textContent='ENTER' buttonSize={'large'}/>
-        </EnterButton>
+          <EnterButton>
+            <LinkButton subDirectory={'/projects'} textContent='ENTER' buttonSize={'large'}/>
+          </EnterButton>
 
-        <PProject>
-          <P5_PLANE strokeColor={255}/>
-        </PProject>
-      </LandingPageContainer>
-    </Background>
+          <PProject>
+            <P5_PLANE strokeColor={255}/>
+          </PProject>
+        </LandingPageContainer>
+      </Background>
+    </motion.div>
   );
 };
 
@@ -27,6 +33,13 @@ const Background = styled.div`
   background-image: radial-gradient(circle 750px, white, rgb(42, 191, 250));
   opacity: 100%;
 `;
+const background_animation = {
+  hidden: { scale: 0 },
+  show: {
+    scale: 1,
+    transition: { duration: 2 },
+  },
+};
 const LandingPageContainer = styled.div`
   align-items: center;
   display: flex;
