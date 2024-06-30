@@ -1,32 +1,40 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import '../assets/fonts/fonts.css';
 
 import Socials from '../components/Socials.jsx'
 
 const NameCard = () => {
   return (
-    <section>
-      <NameCardContainer>
-          <RampartOneText>FEZZ</RampartOneText>
-          <FSD>
-            FULL STACK DEVELOPER
-          </FSD>
-          <CurrentRole>
-            FREELANCER, PREVIOUSLY SEATGEEK COMMERCE MARKETPLACE ENGINEERING
-          </CurrentRole>
-          <Hometown>
-              BASED IN NEW YORK CITY
-          </Hometown>
+    <Container>
+        <RampartOneText variants={items} custom={0} >FEZZ</RampartOneText>
+        <FSD            variants={items} custom={1} > FULL STACK DEVELOPER  </FSD>
+        <CurrentRole    variants={items} custom={2} > FREELANCER, PREVIOUSLY SEATGEEK COMMERCE MARKETPLACE ENGINEERING </CurrentRole>
+        <Hometown       variants={items} custom={3} > BASED IN NEW YORK CITY </Hometown>
         <br /><br />
-
-          <Socials gap={'1.5vw'}/>
-      </NameCardContainer>
-    </section>
+        <Socials        variants={items} custom={4} gap={'1.5vw'}/>
+    </Container>
   )
 };
 
-const CurrentRole = styled.p`
+const items = {
+  hidden: {
+    opacity: 0,
+    transition: { when: 'afterChildren' }
+  },
+  show: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 1,
+      duration: 2,
+    }
+  })
+};
+
+
+const CurrentRole = styled(motion.p)`
   font-family: Julius Sans One;
   font-size: 20px;
   letter-spacing: 0.020em;
@@ -45,7 +53,7 @@ const CurrentRole = styled.p`
     text-align: center;
   }
 `;
-const FSD = styled.p`
+const FSD = styled(motion.p)`
   font-family: Julius Sans One;
   font-size: 25px;
   letter-spacing: 0.020em;
@@ -56,19 +64,19 @@ const FSD = styled.p`
     font-size: 12px;
   }
 `;
-const Hometown = styled.p`
+const Hometown = styled(motion.p)`
   font-family: Julius Sans One;
   font-size: 18px;
   @media (max-width: 500px) {
     font-size: 12px;
   }
 `;
-const NameCardContainer = styled.div`
+const Container = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
 `;
-const RampartOneText = styled.p`
+const RampartOneText = styled(motion.p)`
   font-family: var(--font-family-rampart-one);
   font-size: 50px;
   height: 10vh;

@@ -8,38 +8,47 @@ import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 
 export default function LandingPage () {
   return (
-    <motion.div
-      variants={background_animation}
+    <Background
+      variants={backgroundAnimation}
       initial="hidden"
       animate="show" >
-      <Background>
-        <LandingPageContainer>
-          <NameCard />
+      <LandingPageContainer>
+        <NameCard />
 
-          <EnterButton>
-            <LinkButton subDirectory={'/projects'} textContent='ENTER' buttonSize={'large'}/>
-          </EnterButton>
+        <ExtendEnterButton
+          variants={buttonAnimation}
+          initial="hidden"
+          animate="show" >
+          <LinkButton subDirectory={'/projects'} textContent='ENTER' buttonSize={'large'}/>
+        </ExtendEnterButton>
 
-          <PProject>
-            <P5_PLANE strokeColor={255}/>
-          </PProject>
-        </LandingPageContainer>
-      </Background>
-    </motion.div>
+        <PProject>
+          <P5_PLANE strokeColor={255}/>
+        </PProject>
+      </LandingPageContainer>
+    </Background>
   );
 };
 
-const Background = styled.div`
-  background-image: radial-gradient(circle 750px, white, rgb(42, 191, 250));
-  opacity: 100%;
-`;
-const background_animation = {
+const backgroundAnimation = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: { duration: 5 },
   },
 };
+const buttonAnimation = {
+  hidden: { opacity: 0 },
+  show: { 
+    opacity: 1,
+    transition: { duration: 5 },
+  }
+};
+
+const Background = styled(motion.div)`
+  background-image: radial-gradient(circle 750px, white, rgb(42, 191, 250));
+  // opacity: 100%;
+`;
 const LandingPageContainer = styled.div`
   align-items: center;
   display: flex;
@@ -58,3 +67,4 @@ const EnterButton = styled(LandingPageItem)`
   z-index: 99;
   padding-top: 3vh;
 `;
+const ExtendEnterButton = styled(motion(EnterButton))``;
