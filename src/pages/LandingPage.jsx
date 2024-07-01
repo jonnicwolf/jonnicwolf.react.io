@@ -1,33 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion, useAnimation } from 'framer-motion';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import NameCard from '../components/NameCard.jsx';
 import LinkButton from '../assets/buttons/LinkButton.jsx';
 import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 
 export default function LandingPage () {
+  const [exit, setExit] = useState(false);
+
   const controls = useAnimation();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleClick = async () => {
     await controls.start({
       backgroundImage: 'radial-gradient(circle 2000px, white, rgb(42, 191, 250))',
-      transition: { duration: 2 }
+      transition: { duration: 4 }
     });
-    history.push('/projects');
+    navigate('/projects');
   };
 
   return (
     <Background
       variants={backgroundAnimation}
       initial="hidden"
-      animate="show" >
+      animate='show'
+      >
       <LandingPageContainer>
         <NameCard variants={items}/>
 
-        <EnterButton>
+        <EnterButton onClick={handleClick}>
           <LinkButton subDirectory={'/projects'} textContent='ENTER' buttonSize={'large'} isScaleAnimation={true}/>
         </EnterButton>
 
@@ -45,6 +48,10 @@ const backgroundAnimation = {
     opacity: 1,
     transition: { duration: 5 },
   },
+  exit: {
+    backgroundImage: 'radial-gradient(circle 2000px, white, rgb(42, 191, 250))',
+    transition: { duration: 2 },
+  }
 };
 const items = {
   hidden: {
