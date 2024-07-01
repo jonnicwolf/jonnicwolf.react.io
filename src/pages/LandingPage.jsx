@@ -16,7 +16,7 @@ export default function LandingPage () {
         <NameCard variants={items}/>
 
         <EnterButton>
-          <LinkButton subDirectory={'/projects'} textContent='ENTER' buttonSize={'large'}/>
+          <LinkButton subDirectory={'/projects'} textContent='ENTER' buttonSize={'large'} isScaleAnimation={true}/>
         </EnterButton>
 
         <PProject>

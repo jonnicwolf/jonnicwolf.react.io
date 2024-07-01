@@ -3,25 +3,23 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-const LinkButton = ({textContent, buttonSize, subDirectory, darkMode}) => {
+const LinkButton = ({textContent, buttonSize, subDirectory, darkMode, isScaleAnimation}) => {
   return (
     <LinkStyle to={subDirectory}>
-      <Button
-        as={motion.button}
-        initial={{
-          scaleX: 0,
-          opacity: 0,
-        }}
-        animate={{
-          scaleX: 1,
-          opacity: 1,
-        }}
-        transition={{ delay: 5, duration: 1 }}
-        buttonSize={buttonSize}
-        darkMode={darkMode} 
-      >
-        {textContent}
-      </Button>
+      { isScaleAnimation
+        ?<Button
+          as={motion.button}
+          initial={{ scaleX: 0, opacity: 0, }}
+          animate={{ scaleX: 1, opacity: 1, }}
+          transition={{ delay: 5, duration: 1 }}
+          buttonSize={buttonSize}
+          darkMode={darkMode}
+        >{textContent}</Button>
+        :<Button
+          buttonSize={buttonSize}
+          darkMode={darkMode}
+        >{textContent}</Button>
+      }
     </LinkStyle>
   );
 };
