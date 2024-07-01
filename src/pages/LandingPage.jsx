@@ -1,12 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
+import { useHistory } from 'react-router-dom';
 
 import NameCard from '../components/NameCard.jsx';
 import LinkButton from '../assets/buttons/LinkButton.jsx';
 import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 
 export default function LandingPage () {
+  const controls = useAnimation();
+  const history = useHistory();
+
+  const handleClick = async () => {
+    await controls.start({
+      backgroundImage: 'radial-gradient(circle 2000px, white, rgb(42, 191, 250))',
+      transition: { duration: 2 }
+    });
+    history.push('/projects');
+  };
+
   return (
     <Background
       variants={backgroundAnimation}
