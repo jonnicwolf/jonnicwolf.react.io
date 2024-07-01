@@ -1,18 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 const LinkButton = ({textContent, buttonSize, subDirectory, darkMode}) => {
   return (
     <LinkStyle to={subDirectory}>
-      <Button buttonSize={buttonSize} darkMode={darkMode}>
+      <Button
+        as={motion.button}
+        initial={{
+          scaleX: 0,
+          opacity: 0,
+        }}
+        animate={{
+          scaleX: 1,
+          opacity: 1,
+        }}
+        transition={{ delay: 5, duration: 1 }}
+        buttonSize={buttonSize}
+        darkMode={darkMode} 
+      >
         {textContent}
       </Button>
     </LinkStyle>
   );
 };
 
-const LinkStyle = styled(Link)`
+const LinkStyle = styled(motion(Link))`
   padding: 1vh;
   font-size: 2rem;
 `;
@@ -40,7 +54,7 @@ const Button = styled.button`
     z-index: -1;
     background: ${props => props.darkMode ? 'black' : 'red'};
     color:  ${props => props.darkMode ? 'white' : 'black'};
-    transition: all 0.1s ease;
+    transition: all 0.15s ease;
   }
 
   &:hover {
