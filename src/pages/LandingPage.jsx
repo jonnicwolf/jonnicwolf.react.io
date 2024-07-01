@@ -47,10 +47,6 @@ const backgroundAnimation = {
   show: {
     opacity: 1,
     transition: { duration: 5 },
-  },
-  exit: {
-    backgroundImage: 'radial-gradient(circle 2000px, white, rgb(42, 191, 250))',
-    transition: { duration: 2 },
   }
 };
 const items = {
