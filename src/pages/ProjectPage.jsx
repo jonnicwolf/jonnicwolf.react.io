@@ -30,9 +30,10 @@ export default function ProjectPage () {
     firebase,
     postgresql,
     css3,
-  ] = [ 'devicon-javascript-plain', "devicon-react-original", "devicon-p5js-original", "devicon-firebase-plain-wordmark", "devicon-postgresql-plain", "devicon-css3-plain-wordmark" ];
+    framer
+  ] = [ 'devicon-javascript-plain', "devicon-react-original", "devicon-p5js-original", "devicon-firebase-plain-wordmark", "devicon-postgresql-plain", "devicon-css3-plain-wordmark", "devicon-framermotion-original-wordmark colored"];
 
-  const hotc_devi = [javascript, react, p5, firebase];
+  const hotc_devi = [javascript, react, p5, firebase, framer];
   const scd_devi= [javascript, react, postgresql, firebase];
   const ttp_devi = [javascript, react, css3];
 
@@ -49,10 +50,11 @@ export default function ProjectPage () {
               <P>Discover your destiny with <br />Secrets of the Cartomancer <br /> Receive three random cards and personalized readings that reveal insights and guidance. Uncover the mysteries today!
               </P>
               <TechContainer>
-                <i className="devicon-javascript-plain" style={{fontSize: '46px', color: 'black'}} />
-                <i className="devicon-react-original" style={{fontSize: '46px', color: 'black'}} />
-                <i className="devicon-p5js-original" style={{fontSize: '46px', color: 'black'}} />
-                <i className="devicon-firebase-plain-wordmark" style={{fontSize: '46px', color: 'black'}} />
+                <i className="devicon-javascript-plain" />
+                <i className="devicon-react-original" />
+                <i className="devicon-p5js-original" />
+                <i className="devicon-firebase-plain-wordmark" />
+                <i className="devicon-framermotion-original-wordmark colored" />
               </TechContainer>
               <AContainer>
                 <ExternalButton 
@@ -245,6 +247,8 @@ const TechContainer = styled.div`
   align-items: center;
   gap: 5vw;
   margin-bottom: 2vh;
+  font-size: 46px;
+  color: black;
 
   & > i {
     opacity: 0;

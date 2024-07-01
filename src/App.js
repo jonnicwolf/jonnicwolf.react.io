@@ -23,7 +23,7 @@ function App() {
       { location.pathname !== '/' && isMobile
         ? <MobileNav />
         : location.pathname !== '/' && !isMobile
-          ? <NavBar darkModeGetter={darkMode} darkModeSetter={setDarkMode}  />
+          ? <NavBar darkModeGetter={darkMode} darkModeSetter={setDarkMode} />
           : null
       }
       <ScrollToTop />
