@@ -1,18 +1,35 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion, useAnimation } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 import NameCard from '../components/NameCard.jsx';
 import LinkButton from '../assets/buttons/LinkButton.jsx';
 import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 
 export default function LandingPage () {
-  return (
-    <Background>
-      <LandingPageContainer>
-        <NameCard />
+  const controls = useAnimation();
+  const navigate = useNavigate();
 
-        <EnterButton>
-          <LinkButton subDirectory={'/projects'} textContent='ENTER' buttonSize={'large'}/>
+  const handleClick = async () => {
+    await controls.start({
+      backgroundImage: 'radial-gradient(circle 2000px, white, rgb(42, 191, 250))',
+      transition: { duration: 4 }
+    });
+    navigate('/projects');
+  };
+
+  return (
+    <Background
+      variants={backgroundAnimation}
+      initial="hidden"
+      animate='show'
+      >
+      <LandingPageContainer>
+        <NameCard variants={items}/>
+
+        <EnterButton onClick={handleClick}>
+          <LinkButton subDirectory={'/projects'} textContent='ENTER' buttonSize={'large'} isScaleAnimation={true}/>
         </EnterButton>
 
         <PProject>
@@ -23,9 +40,31 @@ export default function LandingPage () {
   );
 };
 
-const Background = styled.div`
+const backgroundAnimation = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { duration: 5 },
+  }
+};
+const items = {
+  hidden: {
+    opacity: 0,
+    transition: { when: 'afterChildren' }
+  },
+  show: (i) => ({
+    opacity: 1,
+    y: 0,
+    delay: 2,
+    transition: {
+      delay: i * 1,
+      duration: 2,
+    }
+  })
+};
+
+const Background = styled(motion.div)`
   background-image: radial-gradient(circle 750px, white, rgb(42, 191, 250));
-  opacity: 100%;
 `;
 const LandingPageContainer = styled.div`
   align-items: center;
@@ -43,5 +82,6 @@ const PProject = styled(LandingPageItem)`
 `;
 const EnterButton = styled(LandingPageItem)`
   z-index: 99;
-  padding-top: 3vh;
+  transform: translateY(35vh);
 `;
+

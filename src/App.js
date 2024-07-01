@@ -23,7 +23,7 @@ function App() {
       { location.pathname !== '/' && isMobile
         ? <MobileNav />
         : location.pathname !== '/' && !isMobile
-          ? <NavBar darkModeGetter={darkMode} darkModeSetter={setDarkMode}  />
+          ? <NavBar darkModeGetter={darkMode} darkModeSetter={setDarkMode} />
           : null
       }
       <ScrollToTop />
@@ -44,6 +44,7 @@ const Container = styled.div`
   overflow-x: hidden;
   background: ${props => props.darkMode ? '#5c5c5b' : '#fffcf5'};
   height: ${props => props.isMobile ? '150vh' : '250vh'};
+  height: 100%;
 `;
 
 export default App;
