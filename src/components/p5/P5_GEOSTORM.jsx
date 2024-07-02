@@ -69,8 +69,8 @@ const P5_GEOSTORM = ({ strokeColor, darkMode }) => {
       update() {
         let last = this.segments[this.segments.length - 1];
         let next = last.copy();
-        next.x += p.random(-30, 30);
-        next.y += p.random(10, 30);
+        next.x += p.random(-50, 30);
+        next.y += p.random(1, 100);
         this.segments.push(next);
       };
     
@@ -86,23 +86,23 @@ const P5_GEOSTORM = ({ strokeColor, darkMode }) => {
   
       offscreen() {
         let last = this.segments[this.segments.length - 1];
-        return (last.y > p.height);
+        return (last.y > p.random((p.height/12)*4, (p.height/12)*8));
       };
     };
 
     let triangles = [];
     let lightningForks = [];
     let bolts = [];
-    const background = darkMode ? '#5c5c5b' : '#fffcf5'
+    const background = !darkMode ? '#5c5c5b' : '#fffcf5'
 
     p.setup = () => {
       p.createCanvas(p.windowWidth/12 * 10, p.windowHeight/12 * 6);
-      p.frameRate(30);
+      p.frameRate(60);
 
       triangles = [];
       for (let i = 0; i < 100; i++) {
         let triangle = {
-          x: p.random(p.width, p.width + 100),
+          x: p.random(-p.width, p.width),
           y: p.random(-p.windowWidth, p.windowWidth),
           speed: p.random(8, 20) 
         };
@@ -110,11 +110,11 @@ const P5_GEOSTORM = ({ strokeColor, darkMode }) => {
       };
 
       lightningForks = [];
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 2; i++) {
         let fork = {
           x: p.random(p.width),
           y: p.random(p.height, 0),
-          length: p.random(5, 15)
+          length: p.random(1, 10)
         };
         lightningForks.push(fork);
       };
@@ -140,9 +140,9 @@ const P5_GEOSTORM = ({ strokeColor, darkMode }) => {
         t.y += t.speed;
 
         // Reset position when the triangle moves off the canvas
-        if (t.x < -200 || t.y > p.height + 200) {
-          t.x = p.random(p.width, p.width + 100);
-          t.y = p.random(-600, 600);
+        if (t.x < -200 || t.y > p.height + 2) {
+          t.x = p.random(p.width, p.width + 1);
+          t.y = p.random(-1600, 600);
         };
 
         p.fill(150, 150, 150, 150);
@@ -156,12 +156,13 @@ const P5_GEOSTORM = ({ strokeColor, darkMode }) => {
       };
 
       // Add a new bolt randomly
-      if (p.random(1) < 0.05) {
-        let bolt = new ForkedBolt(p.random(p.width), 0, p.random(2, 5), p.color(209, 209, 209));
+      if (p.random(1) < 0.005) {
+        let bolt = new ForkedBolt(p.random(p.width), 0, p.random(2, 5), p.color(strokeColor));
+        p.background(!darkMode ? '#5c5c5b' : '#fffcf5');
         bolts.push(bolt);
       };
     };
-  }, [darkMode]);
+  }, [strokeColor, darkMode]);
 
   useEffect(() => {
     const p5Canvas = new p5(sketch, sketch_ref.current);
@@ -169,7 +170,7 @@ const P5_GEOSTORM = ({ strokeColor, darkMode }) => {
   }, [sketch]);
 
   return (
-    <Container>
+    <Container darkMode={darkMode}>
       <div ref={sketch_ref} />
     </Container>
   );
@@ -177,7 +178,6 @@ const P5_GEOSTORM = ({ strokeColor, darkMode }) => {
 
 const Container = styled.div`
   margin-top: 10vh;
-  border: 1px solid black;
 `;
 
 export default P5_GEOSTORM;
