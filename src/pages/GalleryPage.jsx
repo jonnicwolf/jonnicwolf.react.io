@@ -53,10 +53,9 @@ const GalleryPage = ({ darkMode }) => {
 };
 
 const Container = styled.div`
-  height: 80%;
   max-height: 100vh;
   overflow: hidden;
-
+  height: 100vh;
 `;
 const Title = styled.h2`
   height: 100%;
