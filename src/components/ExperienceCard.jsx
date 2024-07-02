@@ -11,7 +11,7 @@ export default function ExperienceCard({ darkMode, company_name, link, position,
         <p>{item}</p>
       );
 
-      return result;
+    return result;
   };
 
   return (
@@ -32,10 +32,10 @@ export default function ExperienceCard({ darkMode, company_name, link, position,
 
 const Container = styled.div`
   font-family: var(--font-family-rubik);
-  font-size: 20px;
+  font-size: 1rem;
   padding: 20px 30px;
   color: ${props => props.darkMode ? 'white' : 'black'};
   @media only screen and (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 `;
