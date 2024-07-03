@@ -43,8 +43,7 @@ function App() {
 const Container = styled.div`
   overflow-x: hidden;
   background: ${props => props.darkMode ? '#5c5c5b' : '#fffcf5'};
-  height: ${props => props.isMobile ? '150vh' : '250vh'};
-  height: 100%;
+  height: ${props => props.isMobile ? '250vh' : '250vh'};
 `;
 
 export default App;
