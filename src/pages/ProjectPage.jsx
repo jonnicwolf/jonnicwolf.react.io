@@ -30,8 +30,7 @@ export default function ProjectPage () {
     firebase,
     postgresql,
     css3,
-    framer
-  ] = [ 'devicon-javascript-plain', "devicon-react-original", "devicon-p5js-original", "devicon-firebase-plain-wordmark", "devicon-postgresql-plain", "devicon-css3-plain-wordmark", "devicon-framermotion-original-wordmark colored"];
+  ] = [ 'devicon-javascript-plain', "devicon-react-original", "devicon-p5js-original", "devicon-firebase-plain-wordmark", "devicon-postgresql-plain", "devicon-css3-plain-wordmark", ];
 
   const hotc_devi = [javascript, react, p5, firebase];
   const scd_devi= [javascript, react, postgresql, firebase];
