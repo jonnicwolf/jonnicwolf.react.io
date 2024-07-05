@@ -53,7 +53,6 @@ export default function ProjectPage () {
                 <i className="devicon-react-original" />
                 <i className="devicon-p5js-original" />
                 <i className="devicon-firebase-plain-wordmark" />
-                <i className="devicon-framermotion-original-wordmark colored" />
               </TechContainer>
               <AContainer>
                 <ExternalButton 
