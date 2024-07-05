@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Button from '../assets/buttons/Button.jsx';
@@ -10,33 +11,39 @@ import P5_ANJA from '../components/p5/P5_ANJA.jsx';
 import P5_GEOSTORM from '../components/p5/P5_GEOSTORM.jsx';
 
 const GalleryPage = ({ darkMode }) => {
+  const { project } = useParams();
+  const navigate = useNavigate();
   const [index, setIndex] = useState(0);
   const [title, setTitle] = useState('');
   const p5_projs = [
-    P5_TORUS,
-    P5_PLANE,
-    P5_LORENZ_ATTRACTOR,
-    P5_LOADER,
-    P5_ANJA,
-    P5_GEOSTORM,
+    // { component: P5_ , title: '', name: '' },
+    { component: P5_TORUS, title: 'TORUS', name: 'torus' },
+    { component: P5_PLANE, title: 'HORIZON', name: 'horizon' },
+    { component: P5_LORENZ_ATTRACTOR, title: 'CHAOS THEORY', name: 'chaos-theory' },
+    { component: P5_ANJA, title: 'ANJA', name: 'anja' },
+    { component: P5_GEOSTORM, title: 'TRIGON SQUALL', name: 'trigon-squall' },
   ];
 
   useEffect(() => {
-    const titles = [
-      'TORUS',
-      'HORIZON',
-      'CHAOS THEORY',
-      'TRILATERAL GHOSTS',
-      'ANJA',
-      'GEOSTORM',
-    ];
-    setTitle(titles[index]);
+    const index = p5_projs.findIndex( proj => proj.name === project);
+    if (index >= 0) {
+      setIndex(index);
+      setTitle(p5_projs[index].title);
+    } else {
+      navigate('/gallery/torus');
+    };
   }, [index]);
 
-  const handleNext = (prevIndex) => setIndex(prevIndex >= p5_projs.length - 1 ? 0 : prevIndex + 1) ;
-  const handleLast = (prevIndex) => setIndex(prevIndex <= 0 ? p5_projs.length - 1 : prevIndex - 1) ;
+  const handleNext = (index) => {
+    setIndex(index >= p5_projs.length - 1 ? 0 : index + 1);
+    navigate(`/gallery/${p5_projs[index].name}`);
+  };
+  const handleLast = (index) => {
+    setIndex(index <= 0 ? p5_projs.length - 1 : index - 1);
+    navigate(`/gallery/${p5_projs[index].name}`);
+  };
 
-  const ActiveProject = p5_projs[index];
+  const ActiveProject = p5_projs[index].component;
 
   return (
     <Container>
