@@ -42,8 +42,8 @@ const GalleryPage = ({ darkMode }) => {
   };
 
   const handleSwipes = useSwipeable({
-    onSwipedLeft: handleLast,
-    onSwipedRight: handleNext,
+    onSwipedLeft: handleNext,
+    onSwipedRight: handleLast,
   });
 
   const ActiveProject = p5_projs[index].component;
