@@ -44,7 +44,7 @@ const backgroundAnimation = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { duration: 5 },
+    transition: { duration: 2 },
   }
 };
 const items = {
@@ -57,7 +57,7 @@ const items = {
     y: 0,
     delay: 2,
     transition: {
-      delay: i * 1,
+      delay: i * 0.3,
       duration: 2,
     }
   })
@@ -83,6 +83,6 @@ const PProject = styled(LandingPageItem)`
 `;
 const EnterButton = styled(LandingPageItem)`
   z-index: 99;
-  transform: translateY(35vh);
+  transform: translateY(5vh);
 `;
 
