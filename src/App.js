@@ -32,6 +32,7 @@ function App() {
           <Route path='/'         element={<LandingPage />} />
           <Route path='/projects' element={<ProjectPage />} />
           <Route path='/gallery'  element={<GalleryPage darkMode={darkMode}/>} />
+          <Route path='/gallery/:projectName'  element={<GalleryPage darkMode={darkMode}/>} />
           <Route path='/about'    element={<AboutmePage darkMode={darkMode}/>} />
           <Route path='/test'     element={<Test />} />
         </Routes>
