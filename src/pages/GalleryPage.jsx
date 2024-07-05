@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useSwipeable } from 'react-swipeable';
 import styled from 'styled-components';
 
 import Button from '../assets/buttons/Button.jsx';
@@ -11,9 +12,10 @@ import P5_ANJA from '../components/p5/P5_ANJA.jsx';
 import P5_GEOSTORM from '../components/p5/P5_GEOSTORM.jsx';
 
 const GalleryPage = ({ darkMode }) => {
+  const [index, setIndex] = useState(0);
   const { projectName } = useParams();
   const navigate = useNavigate();
-  const [index, setIndex] = useState(0);
+
   const p5_projs = useMemo(() => [
     { component: P5_TORUS, title: 'TORUS', name: 'torus' },
     { component: P5_PLANE, title: 'HORIZON', name: 'horizon' },
@@ -25,11 +27,8 @@ const GalleryPage = ({ darkMode }) => {
 
   useEffect(() => {
     const param_index = p5_projs.findIndex(item => item.name === projectName);
-    if (param_index >= 0) {
-      setIndex(param_index);
-    } else {
-      navigate(`/gallery/${p5_projs[0].name}`);
-    }
+    if (param_index >= 0) setIndex(param_index);
+    else navigate(`/gallery/${p5_projs[0].name}`);
   }, [projectName, p5_projs, navigate]);
 
   const handleNext = () => {
@@ -42,11 +41,16 @@ const GalleryPage = ({ darkMode }) => {
     navigate(`/gallery/${p5_projs[prevIndex].name}`);
   };
 
+  const handleSwipes = useSwipeable({
+    onSwipedLeft: handleLast,
+    onSwipedRight: handleNext,
+  });
+
   const ActiveProject = p5_projs[index].component;
   const projectTitle = p5_projs[index].title;
 
   return (
-    <Container>
+    <Container {...handleSwipes}>
       <DisplayBox>
         <ControlBox darkMode={darkMode}>
           <Button text={'LAST'} onclick={handleLast} darkModeGetter={darkMode} />
@@ -64,7 +68,6 @@ const Container = styled.div`
   overflow: hidden;
   height: 100vh;
 `;
-
 const Title = styled.h2`
   height: 100%;
   display: flex;
@@ -73,7 +76,6 @@ const Title = styled.h2`
   font-weight: bold;
   font-family: 'Rubik', sans-serif;
 `;
-
 const DisplayBox = styled.div`
   position: fixed;
   height: 100vh;
@@ -83,7 +85,6 @@ const DisplayBox = styled.div`
   align-items: center;
   overflow: hidden;
 `;
-
 const ControlBox = styled.div`
   display: flex;
   justify-content: space-evenly;
