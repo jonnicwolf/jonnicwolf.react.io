@@ -4,11 +4,11 @@ import styled from 'styled-components';
 import ScrollToTop from './components/ScrollToTop.jsx';
 
 import Loader from './components/navigation/Loader';
-import LandingPage from './pages/LandingPage';
 import NavBar from './components/navigation/NavBar';
 import MobileNav from './components/navigation/MobileNav.jsx';
 import Test from './pages/Test.jsx';
 
+import LandingPage from './pages/LandingPage';
 const ProjectPage = lazy(() => import('./pages/ProjectPage.jsx'));
 const AboutmePage = lazy(() => import('./pages/AboutmePage.jsx'));
 const GalleryPage = lazy(() => import('./pages/GalleryPage.jsx'));
@@ -44,7 +44,7 @@ function App() {
 const Container = styled.div`
   overflow-x: hidden;
   background: ${props => props.darkMode ? '#5c5c5b' : '#fffcf5'};
-  height: ${props => props.isMobile ? '250vh' : '250vh'};
+  height: 100%;
 `;
 
 export default App;

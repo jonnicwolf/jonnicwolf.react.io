@@ -69,10 +69,11 @@ const Background = styled(motion.div)`
 const LandingPageContainer = styled.div`
   align-items: center;
   display: flex;
-  height: 100vh;
+  height: 100%;
   flex-direction: column;
   justify-content: space-between;
   list-style: none;
+
 `;
 const LandingPageItem = styled.div`
   padding-bottom: 2em;
