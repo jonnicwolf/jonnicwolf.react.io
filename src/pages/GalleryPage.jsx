@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useSwipeable } from 'react-swipeable';
 import styled from 'styled-components';
 
 import Button from '../assets/buttons/Button.jsx';
@@ -11,40 +13,49 @@ import P5_GEOSTORM from '../components/p5/P5_GEOSTORM.jsx';
 
 const GalleryPage = ({ darkMode }) => {
   const [index, setIndex] = useState(0);
-  const [title, setTitle] = useState('');
-  const p5_projs = [
-    P5_TORUS,
-    P5_PLANE,
-    P5_LORENZ_ATTRACTOR,
-    P5_LOADER,
-    P5_ANJA,
-    P5_GEOSTORM,
-  ];
+  const { projectName } = useParams();
+  const navigate = useNavigate();
+
+  const p5_projs = useMemo(() => [
+    { component: P5_TORUS, title: 'TORUS', name: 'torus' },
+    { component: P5_PLANE, title: 'HORIZON', name: 'horizon' },
+    { component: P5_LORENZ_ATTRACTOR, title: 'CHAOS THEORY', name: 'chaos-theory' },
+    { component: P5_LOADER, title: 'AFTERIMAGE', name: 'afterimage' },
+    { component: P5_ANJA, title: 'ANJA', name: 'anja' },
+    { component: P5_GEOSTORM, title: 'TRIGON SQUALL', name: 'trigon-squall' },
+  ], []);
 
   useEffect(() => {
-    const titles = [
-      'TORUS',
-      'HORIZON',
-      'CHAOS THEORY',
-      'TRILATERAL GHOSTS',
-      'ANJA',
-      'GEOSTORM',
-    ];
-    setTitle(titles[index]);
-  }, [index]);
+    const param_index = p5_projs.findIndex(item => item.name === projectName);
+    if (param_index >= 0) setIndex(param_index);
+    else navigate(`/gallery/${p5_projs[0].name}`);
+  }, [projectName, p5_projs, navigate]);
 
-  const handleNext = (prevIndex) => setIndex(prevIndex >= p5_projs.length - 1 ? 0 : prevIndex + 1) ;
-  const handleLast = (prevIndex) => setIndex(prevIndex <= 0 ? p5_projs.length - 1 : prevIndex - 1) ;
+  const handleNext = () => {
+    const nextIndex = (index + 1) % p5_projs.length;
+    navigate(`/gallery/${p5_projs[nextIndex].name}`);
+  };
 
-  const ActiveProject = p5_projs[index];
+  const handleLast = () => {
+    const prevIndex = (index - 1 + p5_projs.length) % p5_projs.length;
+    navigate(`/gallery/${p5_projs[prevIndex].name}`);
+  };
+
+  const handleSwipes = useSwipeable({
+    onSwipedLeft: handleLast,
+    onSwipedRight: handleNext,
+  });
+
+  const ActiveProject = p5_projs[index].component;
+  const projectTitle = p5_projs[index].title;
 
   return (
-    <Container>
+    <Container {...handleSwipes}>
       <DisplayBox>
         <ControlBox darkMode={darkMode}>
-          <Button text={'LAST'} onclick={ () => handleLast(index) } darkModeGetter={ darkMode } />
-          <Title>{ title }</Title>
-          <Button text={'NEXT'} onclick={ () => handleNext(index) } darkModeGetter={ darkMode } />
+          <Button text={'LAST'} onclick={handleLast} darkModeGetter={darkMode} />
+          <Title>{projectTitle}</Title>
+          <Button text={'NEXT'} onclick={handleNext} darkModeGetter={darkMode} />
         </ControlBox>
         <ActiveProject strokeColor={200} darkMode={darkMode} />
       </DisplayBox>
@@ -81,9 +92,9 @@ const ControlBox = styled.div`
   margin: 20px 10px 0 10px;
   width: 30%;
   text-wrap: wrap;
-  color:            ${props => props.darkMode ? 'white' : 'black'};
-  background-color: ${props => props.darkMode ? '150'   : null};
-  font-color:       ${props => props.darkMode ? 'grey'  : 'white'};
+  color: ${props => (props.darkMode ? 'white' : 'black')};
+  background-color: ${props => (props.darkMode ? '150' : null)};
+  font-color: ${props => (props.darkMode ? 'grey' : 'white')};
   @media screen and (max-width: 1024px) {
     margin-top: 6vh;
     gap: 5vw;
