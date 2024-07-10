@@ -174,6 +174,7 @@ export default function ProjectPage () {
 const Container = styled.div`
   display: ${props => props.isMobile ? 'flex' : ''};
   justify-content: center;
+  height: 250vh;
 `;
 const Background = styled(P5_LORENZ_ATTRACTOR)`
   position: sticky;

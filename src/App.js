@@ -44,7 +44,6 @@ function App() {
 const Container = styled.div`
   overflow-x: hidden;
   background: ${props => props.darkMode ? '#5c5c5b' : '#fffcf5'};
-  height: 100%;
 `;
 
 export default App;
