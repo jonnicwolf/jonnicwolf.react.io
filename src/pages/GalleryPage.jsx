@@ -27,8 +27,9 @@ const GalleryPage = ({ darkMode }) => {
 
   useEffect(() => {
     const param_index = p5_projs.findIndex(item => item.name === projectName);
-    if (param_index >= 0) setIndex(param_index);
-    else navigate(`/gallery/${p5_projs[0].name}`);
+    param_index >= 0
+      ? setIndex(param_index)
+      : navigate(`/gallery/${p5_projs[0].name}`);
   }, [projectName, p5_projs, navigate]);
 
   const handleNext = () => {
