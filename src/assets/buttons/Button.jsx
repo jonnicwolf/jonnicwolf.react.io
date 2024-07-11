@@ -21,7 +21,7 @@ const StyledButton = styled.button`
   display: inline-block;
   border: 1px solid ${props => props.darkModeGetter ? 'white' : 'black'} ;
   z-index: 1;
-  color: ${props => props.darkModeGetter ? 'white' : 'black'};);
+  color: ${props => props.darkModeGetter ? 'white' : 'black'};
 
   &:after {
     position: absolute;

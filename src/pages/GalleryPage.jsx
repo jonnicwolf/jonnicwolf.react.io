@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSwipeable } from 'react-swipeable';
 import styled from 'styled-components';
+import { motion, useAnimation } from 'framer-motion';
 
 import Button from '../assets/buttons/Button.jsx';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR.jsx';
@@ -15,12 +16,13 @@ const GalleryPage = ({ darkMode }) => {
   const [index, setIndex] = useState(0);
   const { projectName } = useParams();
   const navigate = useNavigate();
+  const controls = useAnimation();
 
   const sw = window.innerWidth > 1200 || true;
 
   const p5_projs = useMemo(() => [
     { component: P5_TORUS, title: 'TORUS', name: 'torus', info: '' },
-    { component: P5_PLANE, title: 'HORIZON', name: 'horizon', info: sw ? 'WAVE YOUR CURSOR' : 'Tilt your device'},
+    { component: P5_PLANE, title: 'HORIZON', name: 'horizon', info: sw ? 'MOVE YOUR CURSOR' : 'Tilt your device'},
     { component: P5_LORENZ_ATTRACTOR, title: 'CHAOS THEORY', name: 'chaos-theory' },
     { component: P5_LOADER, title: 'AFTERIMAGE', name: 'afterimage' },
     { component: P5_ANJA, title: 'ANJA', name: 'anja' },
@@ -28,11 +30,17 @@ const GalleryPage = ({ darkMode }) => {
   ], [sw]);
 
   useEffect(() => {
+    const animationSequence = async () => {
+      await controls.start('hidden');
+      await controls.start('show');
+    };
+    animationSequence();
+
     const param_index = p5_projs.findIndex(item => item.name === projectName);
     param_index >= 0
       ? setIndex(param_index)
       : navigate(`/gallery/${p5_projs[0].name}`);
-  }, [projectName, p5_projs, navigate]);
+  }, [projectName, p5_projs, navigate, controls]);
 
   const handleNext = () => {
     const nextIndex = (index + 1) % p5_projs.length;
@@ -49,7 +57,7 @@ const GalleryPage = ({ darkMode }) => {
     onSwipedRight: handleLast,
   });
 
-  const {component, title, info }= p5_projs[index];
+  const { component, title, info } = p5_projs[index];
   const ActiveProject = component;
 
   return (
@@ -60,8 +68,12 @@ const GalleryPage = ({ darkMode }) => {
           <Title>{title}</Title>
           <Button text={'NEXT'} onclick={handleNext} darkModeGetter={darkMode} />
         </ControlBox>
-        <Info darkMode={darkMode}>{info}</Info>
-        
+        {info && <Info
+          darkMode={darkMode}
+          variants={infoAnimation}
+          initial='hidden'
+          animate='show'
+          >{info}</Info>}
         <ActiveProject strokeColor={200} darkMode={darkMode} />
       </DisplayBox>
     </Container>
@@ -107,7 +119,7 @@ const ControlBox = styled.div`
     width: auto;
   }
 `;
-const Info = styled.div`
+const Info = styled(motion.div)`
   font-family: Rubik;
   font-weight: bold;
   color: ${props => (props.darkMode ? 'white' : 'black')};
@@ -116,5 +128,19 @@ const Info = styled.div`
   border: 1px solid ${props => props.darkMode ? 'white' : 'grey'};
   padding: 25px 80px;
 `;
+const infoAnimation = {
+  hidden: { scale: 0, opacity: 0, borderWidth: '2px' },
+  show: {
+    scale: 1,
+    opacity: 1,
+    borderWidth: '0px',
+    transition: {
+      delay: 2,
+      scale: { duration: 0.5 },
+      opacity: { duration: 3 },
+      borderWidth: { duration: 4, ease: 'linear' },
+    },
+  },
+};
 
 export default GalleryPage;
