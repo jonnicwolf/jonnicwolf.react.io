@@ -16,14 +16,16 @@ const GalleryPage = ({ darkMode }) => {
   const { projectName } = useParams();
   const navigate = useNavigate();
 
+  const sw = window.innerWidth > 1200 || true;
+
   const p5_projs = useMemo(() => [
-    { component: P5_TORUS, title: 'TORUS', name: 'torus' },
-    { component: P5_PLANE, title: 'HORIZON', name: 'horizon' },
+    { component: P5_TORUS, title: 'TORUS', name: 'torus', info: '' },
+    { component: P5_PLANE, title: 'HORIZON', name: 'horizon', info: sw ? 'Wave your cursor' : 'Tilt your device'},
     { component: P5_LORENZ_ATTRACTOR, title: 'CHAOS THEORY', name: 'chaos-theory' },
     { component: P5_LOADER, title: 'AFTERIMAGE', name: 'afterimage' },
     { component: P5_ANJA, title: 'ANJA', name: 'anja' },
     { component: P5_GEOSTORM, title: 'TRIGON SQUALL', name: 'trigon-squall' },
-  ], []);
+  ], [sw]);
 
   useEffect(() => {
     const param_index = p5_projs.findIndex(item => item.name === projectName);
@@ -47,17 +49,19 @@ const GalleryPage = ({ darkMode }) => {
     onSwipedRight: handleLast,
   });
 
-  const ActiveProject = p5_projs[index].component;
-  const projectTitle = p5_projs[index].title;
+  const {component, title }= p5_projs[index];
+  const ActiveProject = component;
 
   return (
     <Container {...handleSwipes}>
       <DisplayBox>
         <ControlBox darkMode={darkMode}>
           <Button text={'LAST'} onclick={handleLast} darkModeGetter={darkMode} />
-          <Title>{projectTitle}</Title>
+          <Title>{title}</Title>
           <Button text={'NEXT'} onclick={handleNext} darkModeGetter={darkMode} />
         </ControlBox>
+        <div darkModeGetter={darkMode}>hello</div>
+        
         <ActiveProject strokeColor={200} darkMode={darkMode} />
       </DisplayBox>
     </Container>
