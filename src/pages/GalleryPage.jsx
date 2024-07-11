@@ -18,11 +18,11 @@ const GalleryPage = ({ darkMode }) => {
   const navigate = useNavigate();
   const controls = useAnimation();
 
-  const sw = window.innerWidth > 1200 || true;
+  const sw = window.innerWidth > 720;
 
   const p5_projs = useMemo(() => [
     { component: P5_TORUS, title: 'TORUS', name: 'torus', info: '' },
-    { component: P5_PLANE, title: 'HORIZON', name: 'horizon', info: sw ? 'MOVE YOUR CURSOR' : 'Tilt your device'},
+    { component: P5_PLANE, title: 'HORIZON', name: 'horizon', info: sw ? 'MOVE YOUR CURSOR' : 'TILT YOUR DEVICE'},
     { component: P5_LORENZ_ATTRACTOR, title: 'CHAOS THEORY', name: 'chaos-theory' },
     { component: P5_LOADER, title: 'AFTERIMAGE', name: 'afterimage' },
     { component: P5_ANJA, title: 'ANJA', name: 'anja' },
