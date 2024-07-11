@@ -14,7 +14,7 @@ export default function LandingPage () {
   const handleClick = async () => {
     await controls.start({
       backgroundImage: 'radial-gradient(circle 2000px, white, rgb(42, 191, 250))',
-      transition: { duration: 4 }
+      transition: { duration: 2 }
     });
     navigate('/projects');
   };
@@ -23,13 +23,16 @@ export default function LandingPage () {
     <Background
       variants={backgroundAnimation}
       initial="hidden"
-      animate='show'
-      >
+      animate='show'>
       <LandingPageContainer>
         <NameCard variants={items}/>
 
         <EnterButton onClick={handleClick}>
-          <LinkButton subDirectory={'/projects'} textContent='ENTER' buttonSize={'large'} isScaleAnimation={true}/>
+          <LinkButton
+            subDirectory={'/projects'}
+            textContent='ENTER'
+            buttonSize={'large'}
+            isScaleAnimation={true} />
         </EnterButton>
 
         <PProject>
@@ -44,7 +47,7 @@ const backgroundAnimation = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { duration: 2 },
+    transition: { duration: 1 },
   }
 };
 const items = {
@@ -58,7 +61,7 @@ const items = {
     delay: 2,
     transition: {
       delay: i * 0.3,
-      duration: 2,
+      duration: 1.5,
     }
   })
 };
@@ -73,7 +76,6 @@ const LandingPageContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   list-style: none;
-
 `;
 const LandingPageItem = styled.div`
   padding-bottom: 2em;
@@ -85,4 +87,3 @@ const EnterButton = styled(LandingPageItem)`
   z-index: 99;
   transform: translateY(5vh);
 `;
-
