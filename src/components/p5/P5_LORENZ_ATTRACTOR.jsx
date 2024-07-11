@@ -8,21 +8,30 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor }) => {
     let x = 10;
     let y = 0;
     let z = 1;
-    let sigma = 21;
-    let rho = 28;
-    let beta = 8.0 / 3.0;
     let points = [];
+    let sliderSigma;
+    let sliderRho;
+    let sliderBeta;
 
     p.setup = () => {
       p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
+      sliderSigma = p.createSlider(0, 20, 10, 0);
+      sliderRho =   p.createSlider(0, 100, 28, 0);
+      sliderBeta =  p.createSlider(0, 10, 8/3, 0);
+      sliderSigma.position (30, 100);
+      sliderRho.position   (30, 150);
+      sliderBeta.position  (30, 200);
+      sliderSigma.size (300);
+      sliderRho.size   (300);
+      sliderBeta.size  (300);
     };
 
     p.draw = () => {
       p.background(0, 0, 0, 0);
       let dt = 0.005;
-      let dx = (sigma * (y - x)) * dt;
-      let dy = (x * (rho - z) - y) * dt;
-      let dz = (x * y - beta * z) * dt;
+      let dx = (sliderSigma.value() * (y - x)) * dt;
+      let dy = (x * (sliderRho.value() - z) - y) * dt;
+      let dz = (x * y - sliderBeta.value() * z) * dt;
 
       x += dx;
       y += dy;
