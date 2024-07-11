@@ -20,7 +20,7 @@ const GalleryPage = ({ darkMode }) => {
 
   const p5_projs = useMemo(() => [
     { component: P5_TORUS, title: 'TORUS', name: 'torus', info: '' },
-    { component: P5_PLANE, title: 'HORIZON', name: 'horizon', info: sw ? 'Wave your cursor' : 'Tilt your device'},
+    { component: P5_PLANE, title: 'HORIZON', name: 'horizon', info: sw ? 'WAVE YOUR CURSOR' : 'Tilt your device'},
     { component: P5_LORENZ_ATTRACTOR, title: 'CHAOS THEORY', name: 'chaos-theory' },
     { component: P5_LOADER, title: 'AFTERIMAGE', name: 'afterimage' },
     { component: P5_ANJA, title: 'ANJA', name: 'anja' },
@@ -49,7 +49,7 @@ const GalleryPage = ({ darkMode }) => {
     onSwipedRight: handleLast,
   });
 
-  const {component, title }= p5_projs[index];
+  const {component, title, info }= p5_projs[index];
   const ActiveProject = component;
 
   return (
@@ -60,7 +60,7 @@ const GalleryPage = ({ darkMode }) => {
           <Title>{title}</Title>
           <Button text={'NEXT'} onclick={handleNext} darkModeGetter={darkMode} />
         </ControlBox>
-        <div darkModeGetter={darkMode}>hello</div>
+        <Info darkMode={darkMode}>{info}</Info>
         
         <ActiveProject strokeColor={200} darkMode={darkMode} />
       </DisplayBox>
@@ -106,6 +106,15 @@ const ControlBox = styled.div`
     justify-content: center;
     width: auto;
   }
+`;
+const Info = styled.div`
+  font-family: Rubik;
+  font-weight: bold;
+  color: ${props => (props.darkMode ? 'white' : 'black')};
+  background-color: ${props => (props.darkMode ? '150' : null)};
+  font-color: ${props => (props.darkMode ? 'grey' : 'white')};
+  border: 1px solid ${props => props.darkMode ? 'white' : 'grey'};
+  padding: 25px 80px;
 `;
 
 export default GalleryPage;
