@@ -18,12 +18,12 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor }) => {
       sliderSigma = p.createSlider(0, 20, 10, 0);
       sliderRho =   p.createSlider(0, 100, 28, 0);
       sliderBeta =  p.createSlider(0, 10, 8/3, 0);
-      sliderSigma.position (30, 100);
-      sliderRho.position   (30, 150);
-      sliderBeta.position  (30, 200);
-      sliderSigma.size (300);
-      sliderRho.size   (300);
-      sliderBeta.size  (300);
+
+      sliderSigma.position(30, 100);
+      sliderRho.position(30, 150);
+      sliderBeta.position(30, 200);
+
+      
     };
 
     p.draw = () => {
@@ -68,7 +68,9 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor }) => {
     return () => p5Canvas.remove();
   }, [sketch]);
 
-  return <div ref={sketch_ref} />;
+  return (
+    <div ref={sketch_ref} />
+  );
 };
 
 export default P5_LORENZ_ATTRACTOR;
