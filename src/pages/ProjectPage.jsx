@@ -166,7 +166,7 @@ export default function ProjectPage () {
           />
         </ProjectList>
       }
-      <Background strokeColor={105}/>
+      <Background strokeColor={105} vars={{sigma: 10, rho: 28, beta: 8/3} }/>
     </Container>
   );
 };
