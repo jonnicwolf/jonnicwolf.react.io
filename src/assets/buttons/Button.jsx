@@ -19,7 +19,7 @@ const StyledButton = styled.button`
   cursor: pointer;
   position: relative;
   display: inline-block;
-  border: 1px solid ${props => props.darkModeGetter ? 'white' : 'black'} ;
+  border: 1px solid ${props => props.darkModeGetter ? 'white' : 'black'};
   z-index: 1;
   color: ${props => props.darkModeGetter ? 'white' : 'black'};
 

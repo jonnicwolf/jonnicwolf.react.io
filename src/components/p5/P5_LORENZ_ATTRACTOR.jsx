@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import ChaosTheoryForm from '../ChaosTheoryForm';
 
-const P5_LORENZ_ATTRACTOR = ({ strokeColor }) => {
+const P5_LORENZ_ATTRACTOR = ({ strokeColor, darkMode }) => {
   const [sigma, setSigma] = useState(10);
   const [rho, setRho] = useState(28);
   const [beta, setBeta] = useState(8/3);
@@ -71,7 +71,7 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor }) => {
 
   return (
     <CT ref={sketch_ref}>
-      <ChaosTheoryForm vars={vars} setters={setters} />
+      <ChaosTheoryForm vars={vars} setters={setters} darkMode={darkMode}/>
     </CT>
   );
 };
