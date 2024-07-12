@@ -10,7 +10,7 @@ const P5_LOADER = ({ strokeColor }) => {
     };
 
     p.draw = () => {
-      p.background(0,0,0,0); // Invisible background
+      p.background(0,0,0,0);
       const sideLength = 300; // Change size here
       const height = (Math.sqrt(3) / 2) * sideLength;
       const halfBase = sideLength / 2;
