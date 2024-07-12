@@ -31,7 +31,7 @@ export default function ChaosTheoryForm({ vars, setters, darkMode }) {
 
   return (
     <Container>
-      <Info>Each configuration is a unique infinite loop that eventually converges to the same butterfly shape</Info>
+      <Info>Each configuration is a unique infinite loop</Info>
 
       <VarContainer>
         <VarWrap>
