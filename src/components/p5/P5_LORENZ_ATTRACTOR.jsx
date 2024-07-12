@@ -5,11 +5,12 @@ import styled from 'styled-components';
 import ChaosTheoryForm from '../ChaosTheoryForm';
 
 const P5_LORENZ_ATTRACTOR = ({ strokeColor }) => {
-  const [vars, setVars] = useState({
-    sigma: 10,
-    rho: 28,
-    beta: 8/3,
-  });
+  const [sigma, setSigma] = useState(10);
+  const [rho, setRho] = useState(28);
+  const [beta, setBeta] = useState(8/3);
+
+  const vars = { sigma, rho, beta };
+  const setters = { setSigma, setRho, setBeta };
 
   const sketch_ref = useRef();
 
@@ -18,37 +19,20 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor }) => {
     let y = 0;
     let z = 1;
     let points = [];
-    let sliderSigma;
-    let sliderRho;
-    let sliderBeta;
 
     p.setup = () => {
       p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
-      // sliderSigma = p.createSlider(0, 20, 10, 0);
-      // sliderRho =   p.createSlider(0, 100, 28, 0);
-      // sliderBeta =  p.createSlider(0, 10, 8/3, 0);
     };
 
     p.draw = () => {
       p.background(0, 0, 0, 0);
 
-      // sliderSigma.position(30, 100);
-      // sliderRho.position(30, 150);
-      // sliderBeta.position(30, 200);
-
-      // p.push();
-      // p.fill(100);
-      // p.noStroke();
-      // p.textSize(16);
-      // p.text('Sigma', 30, 90);
-      // p.text('Rho', 30, 140);
-      // p.text('Beta', 30, 190);
-      // p.pop();
+      console.log(rho)
 
       let dt = 0.005;
-      let dx = (sliderSigma.value() * (y - x)) * dt;
-      let dy = (x * (sliderRho.value() - z) - y) * dt;
-      let dz = (x * y - sliderBeta.value() * z) * dt;
+      let dx = (sigma * (y - x)) * dt;
+      let dy = (x * (rho - z) - y) * dt;
+      let dz = (x * y - beta * z) * dt;
 
       x += dx;
       y += dy;
@@ -77,7 +61,7 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor }) => {
     };
 
     p.windowResized = () => p.resizeCanvas(p.windowWidth, p.windowHeight);
-  }, [strokeColor]
+  }, [strokeColor, vars]
 ); 
 
   useEffect(() => {
@@ -86,26 +70,16 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor }) => {
   }, [sketch]);
 
   return (
-    <div ref={sketch_ref}>
-      <ChaosTheoryForm vars={vars} varsSetter={setVars} />
-    </div>
+    <CT ref={sketch_ref}>
+      <ChaosTheoryForm vars={vars} setters={setters} />
+    </CT>
   );
 };
 
-const Slider = styled.input`
-  -webkit-appearance: none;
-  width: 30%;
-  height: 10px;
-  color: black;
-  background: black;
-
-  &::-moz-range-thumb {
-      background: blue;
-      width: 20px;
-      height: 20px;
-      border-radius: 10px;
-      cursor: pointer;
-    }
+const CT = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export default P5_LORENZ_ATTRACTOR;
