@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { motion, useAnimation } from 'framer-motion';
 
 import Button from '../assets/buttons/Button.jsx';
+import ChaosTheoryForm from '../components/ChaosTheoryForm.jsx';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR.jsx';
 import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 import P5_TORUS from '../components/p5/P5_TORUS.jsx';
@@ -14,6 +15,13 @@ import P5_GEOSTORM from '../components/p5/P5_GEOSTORM.jsx';
 
 const GalleryPage = ({ darkMode }) => {
   const [index, setIndex] = useState(0);
+  const [sigma, setSigma] = useState(10);
+  const [rho, setRho] = useState(28);
+  const [beta, setBeta] = useState(8/3);
+
+  const vars = { sigma, rho, beta };
+  const setters = { setSigma, setRho, setBeta };
+
   const { projectName } = useParams();
   const navigate = useNavigate();
   const controls = useAnimation();
@@ -59,6 +67,7 @@ const GalleryPage = ({ darkMode }) => {
 
   const { component, title, info } = p5_projs[index];
   const ActiveProject = component;
+  console.log(component)
 
   return (
     <Container {...handleSwipes}>
@@ -74,7 +83,15 @@ const GalleryPage = ({ darkMode }) => {
           initial='hidden'
           animate='show'
           >{info}</Info>}
-        <ActiveProject strokeColor={200} darkMode={darkMode} />
+          {title === 'CHAOS THEORY' &&
+          <ChaosTheoryForm
+            vars={vars}
+            setters={setters}
+            darkMode={darkMode}
+            variants={infoAnimation}
+            initial='hidden'
+            animate='show' />}
+        <ActiveProject strokeColor={200} darkMode={darkMode} vars={vars} setters={setters} />
       </DisplayBox>
     </Container>
   );

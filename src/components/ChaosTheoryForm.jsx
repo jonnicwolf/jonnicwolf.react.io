@@ -35,19 +35,19 @@ export default function ChaosTheoryForm({ vars, setters, darkMode }) {
 
       <VarContainer>
         <VarWrap>
-          <Button onClick={handleSigmaUp} onMouseDown={handleSigmaUp} darkMode={darkMode}>⬆</Button>
+          <Button onMouseDown={handleSigmaUp} darkMode={darkMode}>⬆</Button>
           <Var>𝛴 {sigma}</Var>
-          <Button onClick={handleSigmaDown} onMouseDown={handleSigmaDown} darkMode={darkMode}>⬇</Button>
+          <Button onMouseDown={handleSigmaDown} darkMode={darkMode}>⬇</Button>
         </VarWrap>
         <VarWrap>
-          <Button onClick={handleRhoUp} onMouseDown={handleRhoUp} darkMode={darkMode}>⬆</Button>
+          <Button onMouseDown={handleRhoUp} darkMode={darkMode}>⬆</Button>
           <Var>⍴ {rho}</Var>
-          <Button onClick={handleRhoDown} onMouseDown={handleRhoDown} darkMode={darkMode}>⬇</Button>
+          <Button onMouseDown={handleRhoDown} darkMode={darkMode}>⬇</Button>
         </VarWrap>
         <VarWrap>
-          <Button onClick={handleBetaUp} onMouseDown={handleBetaUp} darkMode={darkMode}>⬆</Button>
+          <Button onMouseDown={handleBetaUp} darkMode={darkMode}>⬆</Button>
           <Var>β {Math.floor(beta)}</Var>
-          <Button onClick={handleBetaDown} onMouseDown={handleBetaDown} darkMode={darkMode}>⬇</Button>
+          <Button onMouseDown={handleBetaDown} darkMode={darkMode}>⬇</Button>
         </VarWrap>
       </VarContainer>
     </Container>
