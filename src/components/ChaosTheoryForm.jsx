@@ -3,23 +3,36 @@ import styled from 'styled-components';
 
 export default function ChaosTheoryForm({ vars, varsSetter }) {
   const { sigma, rho, beta } = vars;
+
+  const handleSigmaUp = () => varsSetter(vars.sigma++);
+  const handleSigmaDown = () => varsSetter(vars.sigma--);
+  const handleRhoUp = () => varsSetter(vars.rho++);
+  const handleRhoDown = () => varsSetter(vars.rho--);
+  const handleBetaUp = () => varsSetter(vars.beta++);
+  const handleBetaDown = () => varsSetter(vars.beta--);
+
   return (
-    <div>
+    <Container>
       <div>
-        <button>⬆</button>
+        <button onClick={handleSigmaUp}>⬆</button>
         <div>{sigma}</div>
-        <button>⬇</button>
+        <button onClick={handleSigmaDown}>⬇</button>
       </div>
       <div>
-      <button>⬆</button>
+        <button onClick={handleRhoUp}>⬆</button>
         <div>{rho}</div>
-        <button>⬇</button>
+        <button onClick={handleRhoDown}>⬇</button>
       </div>
       <div>
-      <button>⬆</button>
+        <button onClick={handleBetaUp}>⬆</button>
         <div>{beta}</div>
-        <button>⬇</button>
+        <button onClick={handleBetaDown}>⬇</button>
       </div>
-    </div>
+    </Container>
   );
 };
+
+const Container = styled.div`
+  display: flex;
+  gap: 5vw;
+`;
