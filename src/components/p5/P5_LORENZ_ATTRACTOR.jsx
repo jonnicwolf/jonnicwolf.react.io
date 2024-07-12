@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useCallback, useState } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import p5 from 'p5';
 import styled from 'styled-components';
 
-const P5_LORENZ_ATTRACTOR = ({ strokeColor, darkMode, vars }) => {
+const P5_LORENZ_ATTRACTOR = ({ strokeColor, vars }) => {
   const { sigma, rho, beta } = vars;
   const sketch_ref = useRef();
   const sketch = useCallback((p) => {
@@ -50,7 +50,7 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor, darkMode, vars }) => {
     };
 
     p.windowResized = () => p.resizeCanvas(p.windowWidth, p.windowHeight);
-  }, [strokeColor, vars]
+  }, [strokeColor, sigma, rho, beta]
 ); 
 
   useEffect(() => {
