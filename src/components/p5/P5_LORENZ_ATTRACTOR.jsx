@@ -18,16 +18,24 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor }) => {
       sliderSigma = p.createSlider(0, 20, 10, 0);
       sliderRho =   p.createSlider(0, 100, 28, 0);
       sliderBeta =  p.createSlider(0, 10, 8/3, 0);
+    };
+
+    p.draw = () => {
+      p.background(0, 0, 0, 0);
 
       sliderSigma.position(30, 100);
       sliderRho.position(30, 150);
       sliderBeta.position(30, 200);
 
-      
-    };
+      p.push();
+      p.fill(100);
+      p.noStroke();
+      p.textSize(16);
+      p.text('Sigma', 30, 90);
+      p.text('Rho', 30, 140);
+      p.text('Beta', 30, 190);
+      p.pop();
 
-    p.draw = () => {
-      p.background(0, 0, 0, 0);
       let dt = 0.005;
       let dx = (sliderSigma.value() * (y - x)) * dt;
       let dy = (x * (sliderRho.value() - z) - y) * dt;
