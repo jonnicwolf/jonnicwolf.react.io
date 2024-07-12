@@ -20,13 +20,16 @@ const P5_PLANE = ({ strokeColor }) => {
     };
 
     p.draw = () => {
+      const { screenX,screenY } = window.innerWidth > 720
+      ? {screenX: p.mouseX, screenY: p.mouseY}
+      : {screenX: p.accelerationX, screenY: p.accelerationY}
       flying -= 0.008;
       let yoff = flying;
       for (let y = 9; y < rows; y++) {
         let xoff = 0;
         for (let x = 0; x < cols; x++) {
-          let distance_x = Math.abs(x * scl - p.mouseX);
-          let distance_y = Math.abs(y * scl - p.mouseY);
+          let distance_x = Math.abs(x * scl - screenX);
+          let distance_y = Math.abs(y * scl - screenY);
           let d = Math.sqrt(distance_x * distance_x + distance_y * distance_y); // Distance from the mouse to the vertex
 
           // Use distance to influence noise

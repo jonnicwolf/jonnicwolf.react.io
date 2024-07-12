@@ -2,8 +2,10 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSwipeable } from 'react-swipeable';
 import styled from 'styled-components';
+import { motion, useAnimation } from 'framer-motion';
 
 import Button from '../assets/buttons/Button.jsx';
+import ChaosTheoryForm from '../components/ChaosTheoryForm.jsx';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR.jsx';
 import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 import P5_TORUS from '../components/p5/P5_TORUS.jsx';
@@ -13,23 +15,40 @@ import P5_GEOSTORM from '../components/p5/P5_GEOSTORM.jsx';
 
 const GalleryPage = ({ darkMode }) => {
   const [index, setIndex] = useState(0);
+  const [sigma, setSigma] = useState(10);
+  const [rho, setRho] = useState(28);
+  const [beta, setBeta] = useState(8/3);
+
+  const vars = { sigma, rho, beta };
+  const setters = { setSigma, setRho, setBeta };
+
   const { projectName } = useParams();
   const navigate = useNavigate();
+  const controls = useAnimation();
+
+  const sw = window.innerWidth > 720;
 
   const p5_projs = useMemo(() => [
-    { component: P5_TORUS, title: 'TORUS', name: 'torus' },
-    { component: P5_PLANE, title: 'HORIZON', name: 'horizon' },
+    { component: P5_TORUS, title: 'TORUS', name: 'torus', info: '' },
+    { component: P5_PLANE, title: 'HORIZON', name: 'horizon', info: sw ? 'MOVE YOUR CURSOR' : 'TILT YOUR DEVICE'},
     { component: P5_LORENZ_ATTRACTOR, title: 'CHAOS THEORY', name: 'chaos-theory' },
     { component: P5_LOADER, title: 'AFTERIMAGE', name: 'afterimage' },
     { component: P5_ANJA, title: 'ANJA', name: 'anja' },
     { component: P5_GEOSTORM, title: 'TRIGON SQUALL', name: 'trigon-squall' },
-  ], []);
+  ], [sw]);
 
   useEffect(() => {
+    const animationSequence = async () => {
+      await controls.start('hidden');
+      await controls.start('show');
+    };
+    animationSequence();
+
     const param_index = p5_projs.findIndex(item => item.name === projectName);
-    if (param_index >= 0) setIndex(param_index);
-    else navigate(`/gallery/${p5_projs[0].name}`);
-  }, [projectName, p5_projs, navigate]);
+    param_index >= 0
+      ? setIndex(param_index)
+      : navigate(`/gallery/${p5_projs[0].name}`);
+  }, [projectName, p5_projs, navigate, controls]);
 
   const handleNext = () => {
     const nextIndex = (index + 1) % p5_projs.length;
@@ -46,18 +65,33 @@ const GalleryPage = ({ darkMode }) => {
     onSwipedRight: handleLast,
   });
 
-  const ActiveProject = p5_projs[index].component;
-  const projectTitle = p5_projs[index].title;
+  const { component, title, info } = p5_projs[index];
+  const ActiveProject = component;
+  console.log(component)
 
   return (
     <Container {...handleSwipes}>
       <DisplayBox>
         <ControlBox darkMode={darkMode}>
           <Button text={'LAST'} onclick={handleLast} darkModeGetter={darkMode} />
-          <Title>{projectTitle}</Title>
+          <Title>{title}</Title>
           <Button text={'NEXT'} onclick={handleNext} darkModeGetter={darkMode} />
         </ControlBox>
-        <ActiveProject strokeColor={200} darkMode={darkMode} />
+        {info && <Info
+          darkMode={darkMode}
+          variants={infoAnimation}
+          initial='hidden'
+          animate='show'
+          >{info}</Info>}
+          {title === 'CHAOS THEORY' &&
+          <ChaosTheoryForm
+            vars={vars}
+            setters={setters}
+            darkMode={darkMode}
+            variants={infoAnimation}
+            initial='hidden'
+            animate='show' />}
+        <ActiveProject strokeColor={200} darkMode={darkMode} vars={vars} setters={setters} />
       </DisplayBox>
     </Container>
   );
@@ -102,5 +136,28 @@ const ControlBox = styled.div`
     width: auto;
   }
 `;
+const Info = styled(motion.div)`
+  font-family: Rubik;
+  font-weight: bold;
+  color: ${props => (props.darkMode ? 'white' : 'black')};
+  background-color: ${props => (props.darkMode ? '150' : null)};
+  font-color: ${props => (props.darkMode ? 'grey' : 'white')};
+  border: 1px solid ${props => props.darkMode ? 'white' : 'grey'};
+  padding: 25px 80px;
+`;
+const infoAnimation = {
+  hidden: { scale: 0, opacity: 0, borderWidth: '2px' },
+  show: {
+    scale: 1,
+    opacity: 1,
+    borderWidth: '0px',
+    transition: {
+      delay: 2,
+      scale: { duration: 0.5 },
+      opacity: { duration: 3 },
+      borderWidth: { duration: 4, ease: 'linear' },
+    },
+  },
+};
 
 export default GalleryPage;

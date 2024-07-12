@@ -1,16 +1,14 @@
 import React, { useEffect, useRef, useCallback } from 'react';
 import p5 from 'p5';
+import styled from 'styled-components';
 
-const P5_LORENZ_ATTRACTOR = ({ strokeColor }) => {
+const P5_LORENZ_ATTRACTOR = ({ strokeColor, vars }) => {
+  const { sigma, rho, beta } = vars;
   const sketch_ref = useRef();
-
   const sketch = useCallback((p) => {
     let x = 10;
     let y = 0;
     let z = 1;
-    let sigma = 21;
-    let rho = 28;
-    let beta = 8.0 / 3.0;
     let points = [];
 
     p.setup = () => {
@@ -19,6 +17,7 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor }) => {
 
     p.draw = () => {
       p.background(0, 0, 0, 0);
+
       let dt = 0.005;
       let dx = (sigma * (y - x)) * dt;
       let dy = (x * (rho - z) - y) * dt;
@@ -51,7 +50,7 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor }) => {
     };
 
     p.windowResized = () => p.resizeCanvas(p.windowWidth, p.windowHeight);
-  }, [strokeColor]
+  }, [strokeColor, sigma, rho, beta]
 ); 
 
   useEffect(() => {
@@ -59,7 +58,15 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor }) => {
     return () => p5Canvas.remove();
   }, [sketch]);
 
-  return <div ref={sketch_ref} />;
+  return (
+    <CT ref={sketch_ref}/>
+  );
 };
+
+const CT = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 export default P5_LORENZ_ATTRACTOR;
