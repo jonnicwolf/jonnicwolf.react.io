@@ -9,8 +9,6 @@ const P5_ANJA = ({ strokeColor }) => {
     const width = 150;
     const height = 800;
 
-    const irisX = 0;
-    const irisY = 0;
     const lid_w = width / 12;
 
     let angleA = 0;
@@ -23,26 +21,31 @@ const P5_ANJA = ({ strokeColor }) => {
     };
 
     p.draw = () => {
+      const irisX = p.map(p.mouseX, 0, p.width, (p.width / 60) * -1, p.width / 60);
+      const irisY = p.map(p.mouseY, 0, p.height, (p.width / 24) * -1, p.height / 36);
       p.background(0, 0.9);
 
       p.push();
       p.stroke(strokeColor);
       p.strokeWeight(3);
-      p.fill(209,209,209,1);
+      p.fill(209, 209, 209, 1);
       p.ellipse(0, 0, lid_w * 8, height, 4);
       p.pop();
 
+      // Hexagon
       p.push();
+      p.translate(irisX, irisY); // Translate to iris position
+      p.rotateZ(reverse); // Rotate around the center of the hexagon
       p.fill('white');
-      p.rotateZ(reverse);
-      p.ellipse(irisX, irisY, (p.width/12)*7.2, (p.width/12)*7.2, 6); // Hexagon
+      p.ellipse(0, 0, (p.width / 12) * 7.2, (p.width / 12) * 7.2, 6); // Hexagon
       p.fill('black');
-      p.circle(irisX, irisY, (p.width/12)*6);
+      p.circle(0, 0, (p.width / 12) * 6);
       p.fill('white');
-      p.circle(irisX, irisY, (p.width/12)*2);
+      p.circle(0, 0, (p.width / 12) * 2);
       p.pop();
-
+    
       p.push();
+      p.translate(irisX, irisY);
 
       // Moving Triangle 1
       p.push();
@@ -57,7 +60,7 @@ const P5_ANJA = ({ strokeColor }) => {
       p.push();
       p.noFill();
       p.rotateZ(angleB);
-      p.rotateY(angleB);
+      p.rotateY(angleB); // Optionally rotate around Y axis
       p.stroke('red');
       p.strokeWeight(2);
       p.triangle(15, -10, 0, 15, -15, -10);
@@ -71,7 +74,6 @@ const P5_ANJA = ({ strokeColor }) => {
       p.stroke('grey');
       p.strokeWeight(2);
       p.triangle(15, -10, 0, 15, -15, -10);
-      p.strokeWeight(2);
       p.pop();
 
       p.pop();
@@ -79,8 +81,8 @@ const P5_ANJA = ({ strokeColor }) => {
       angleA += 0.1;
       angleB -= 0.1;
       angleC += 0.1;
-      reverse -= 0.01;
-
+      reverse -= 0.06;
+    
       p.strokeWeight(1);
     };
   }, [strokeColor]);
