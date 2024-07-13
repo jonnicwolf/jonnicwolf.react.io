@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useCallback, useState } from 'react';
+import styled from 'styled-components';
 import p5 from 'p5';
 
 import AfterImageControls from '../AfterImageControls';
@@ -14,7 +15,7 @@ const P5_LOADER = ({ strokeColor, darkMode }) => {
 
     p.draw = () => {
       p.background(0,0,0,0);
-      const sideLength = 300; // Change size here
+      const sideLength = 200; // Change size here
       const height = (Math.sqrt(3) / 2) * sideLength;
       const halfBase = sideLength / 2;
 
@@ -38,10 +39,16 @@ const P5_LOADER = ({ strokeColor, darkMode }) => {
   }, [sketch]);
 
   return (
-    <div ref={sketch_ref}>
+    <Container ref={sketch_ref}>
       <AfterImageControls darkMode={darkMode} getter={mod} setter={setMod} />
-    </div>  
+    </Container>
   );
 };
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
 
 export default P5_LOADER;

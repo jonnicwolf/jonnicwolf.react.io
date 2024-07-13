@@ -2,13 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 export default function AfterImageControls({ darkMode, getter, setter }) {
-  const [step, setStep] = useState(0.1);
-
   const handleChange = (e) => {
-    const value = parseFloat(e.target.value);
-    setStep(getter >= 1 ? 10 : 0.1);
-    setter(value);
-    console.log(getter, step)
+    setter(parseFloat(e.target.value));
   };
 
   return (
@@ -17,9 +12,9 @@ export default function AfterImageControls({ darkMode, getter, setter }) {
       <Slider
         type='range'
         min='0.1'
-        max='1'
+        max='5'
         value={getter}
-        step={step}
+        step='0.01'
         onChange={handleChange} />
     </Container>
   );
