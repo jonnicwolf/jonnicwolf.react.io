@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
-export default function AfterImageControls({ darkMode }) {
+export default function AfterImageControls({ darkMode, getter, setter }) {
+  const handleChange = (e) => {
+    const { value } = parseFloat(e.target);
+    setter(
+      value >= 1
+      ? value + 10
+      : value + 0.1
+    );
+  };
+
   return (
     <Container darkMode={darkMode}>
-      REMEMBER, THERE IS ONLY ONE TRIANGLE
+      <Info>REMEMBER, THERE IS ONLY ONE TRIANGLE</Info>
+      <Slider type='range' min={0.1} max={100} value={getter} onChange={handleChange}/>
     </Container>
   );
 };
@@ -14,6 +24,7 @@ const Container = styled.div`
   color: ${props => props.darkMode ? 'white' : 'black'};
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 15px;
   margin-top: 15px;
   width: 40vw;
@@ -23,19 +34,8 @@ const Container = styled.div`
     width: 60vw;
   }
 `;
-const Button = styled.button`
-  border: none;
-  background: none;
-  font-size: 1rem;
-  color: ${props => props.darkMode ? 'white' : 'black'};
-  @media only screen and (max-width: 720px) {
-    font-size: 0.7rem;
-  }
-`;
-const VarWrap = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+const Slider = styled.input`
+  width: 80%;
 `;
 const Info = styled.div`
   font-family: Rubik;
@@ -48,8 +48,4 @@ const Info = styled.div`
     font-size: 0.7rem;
   }
 `;
-const VarContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 7vw;
-`;
+

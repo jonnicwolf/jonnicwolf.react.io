@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useCallback } from 'react';
 import p5 from 'p5';
 
+import AfterImageControls from '../AfterImageControls';
+
 const P5_LOADER = ({ strokeColor }) => {
   const sketch_ref = useRef();
 
@@ -35,7 +37,9 @@ const P5_LOADER = ({ strokeColor }) => {
   }, [sketch]);
 
   return (
-    <div ref={sketch_ref} />
+    <div ref={sketch_ref}>
+      <AfterImageControls />
+    </div>
   );
 };
 
