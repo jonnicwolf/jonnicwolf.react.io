@@ -29,6 +29,14 @@ export default function ChaosTheoryForm({ vars, setters, darkMode }) {
     beta <= 1
     ? setBeta(1)
     : setBeta(beta-1);
+  const handleDeltaUp = () => 
+    delta >= 3
+    ? setDelta(3)
+    : setDelta(delta+1);
+  const handleDeltaDown = () =>
+    delta <= 1
+    ? setDelta(1)
+    : setDelta(delta-1);
 
   return (
     <Container darkMode={darkMode}>
