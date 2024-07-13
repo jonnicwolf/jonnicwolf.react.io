@@ -16,8 +16,9 @@ const P5_LOADER = ({ strokeColor }) => {
       const halfBase = sideLength / 2;
 
       // Define the coordinates of the equilateral triangle
-      const [ x1,y1,x2,y2,x3,y3 ] = [ 0, height, halfBase, 0, sideLength, height, ]
-      p.rotate(p.frameCount * 5.01);
+      const [ x1,y1,x2,y2,x3,y3 ] = [ 0, height, halfBase, 0, sideLength, height, ];
+      p.frameRate(120);
+      p.rotate(p.frameCount / 0.1);
       p.rotateY(p.frameCount * 0.05);
       p.triangle(x1,y1,x2,y2,x3,y3);
       p.stroke(strokeColor); // Black grid line color
