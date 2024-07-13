@@ -75,7 +75,7 @@ const GalleryPage = ({ darkMode }) => {
           initial='hidden'
           animate='show'
           >{info}</Info>}
-        <ActiveProject strokeColor={200} darkMode={darkMode} />
+        <ActiveProject strokeColor={200} darkMode={darkMode} showControls={true}/>
       </DisplayBox>
     </Container>
   );
