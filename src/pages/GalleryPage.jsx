@@ -26,7 +26,7 @@ const GalleryPage = ({ darkMode }) => {
     { component: P5_PLANE, title: 'HORIZON', name: 'horizon', info: sw ? 'MOVE YOUR CURSOR' : 'TILT YOUR DEVICE'},
     { component: P5_LORENZ_ATTRACTOR, title: 'CHAOS THEORY', name: 'chaos-theory' },
     { component: P5_LOADER, title: 'AFTERIMAGE', name: 'afterimage' },
-    { component: P5_ANJA, title: 'ANJA', name: 'anja' },
+    { component: P5_ANJA, title: 'ANJA', name: 'anja', info: 'MOVE YOUR CURSOR' },
     { component: P5_GEOSTORM, title: 'TRIGON SQUALL', name: 'trigon-squall' },
   ], [sw]);
 
