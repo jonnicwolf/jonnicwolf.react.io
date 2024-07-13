@@ -3,31 +3,32 @@ import styled from 'styled-components';
 
 export default function ChaosTheoryForm({ vars, setters, darkMode }) {
   const { sigma, rho, beta } = vars;
+  const { setSigma, setRho, setBeta } = setters;
 
   const handleSigmaUp = () =>
     sigma > 20
-    ? setters.setSigma(20)
-    : setters.setSigma(sigma+1);
+    ? setSigma(20)
+    : setSigma(sigma+1);
   const handleSigmaDown = () =>
     sigma <= 1
-    ? setters.setSigma(1)
-    : setters.setSigma(sigma-1);
+    ? setSigma(1)
+    : setSigma(sigma-1);
   const handleRhoUp = () =>
     rho >= 100
-    ? setters.setRho(100)
-    : setters.setRho(rho+1);
+    ? setRho(100)
+    : setRho(rho+1);
   const handleRhoDown = () =>
     rho <= 1
-    ? setters.setRho(1)
-    : setters.setRho(rho-1);
+    ? setRho(1)
+    : setRho(rho-1);
   const handleBetaUp = () =>
     beta >= 10
-    ? setters.setBeta(10)
-    : setters.setBeta(beta+1);
+    ? setBeta(10)
+    : setBeta(beta+1);
   const handleBetaDown = () =>
     beta <= 1
-    ? setters.setBeta(1)
-    : setters.setBeta(beta-1);
+    ? setBeta(1)
+    : setBeta(beta-1);
 
   return (
     <Container darkMode={darkMode}>

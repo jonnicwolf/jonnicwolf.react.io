@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import { motion, useAnimation } from 'framer-motion';
 
 import Button from '../assets/buttons/Button.jsx';
-import ChaosTheoryForm from '../components/ChaosTheoryForm.jsx';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR.jsx';
 import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 import P5_TORUS from '../components/p5/P5_TORUS.jsx';
@@ -61,7 +60,6 @@ const GalleryPage = ({ darkMode }) => {
 
   const { component, title, info } = p5_projs[index];
   const ActiveProject = component;
-  console.log(component)
 
   return (
     <Container {...handleSwipes}>

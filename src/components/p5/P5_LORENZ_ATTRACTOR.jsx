@@ -2,11 +2,16 @@ import React, { useEffect, useRef, useCallback, useState } from 'react';
 import p5 from 'p5';
 import styled from 'styled-components';
 
-const P5_LORENZ_ATTRACTOR = ({ strokeColor, vars }) => {  
+import ChaosTheoryForm from '../ChaosTheoryForm';
+
+const P5_LORENZ_ATTRACTOR = ({ strokeColor, darkMode }) => {
   const [sigma, setSigma] = useState(10);
   const [rho, setRho] = useState(28);
   const [beta, setBeta] = useState(8/3);
-  
+
+  const vars = {sigma, rho, beta};
+  const setters = {setSigma, setRho, setBeta};
+
   const sketch_ref = useRef();
   const sketch = useCallback((p) => {
     let x = 10;
@@ -62,7 +67,10 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor, vars }) => {
   }, [sketch]);
 
   return (
-    <CT ref={sketch_ref}/>
+    <>
+      <CT ref={sketch_ref}/>
+      <ChaosTheoryForm vars={vars} setters={setters} darkMode={darkMode} />
+    </>
   );
 };
 
