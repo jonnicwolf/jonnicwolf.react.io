@@ -1,9 +1,10 @@
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useRef, useCallback, useState } from 'react';
 import p5 from 'p5';
 
 import AfterImageControls from '../AfterImageControls';
 
-const P5_LOADER = ({ strokeColor }) => {
+const P5_LOADER = ({ strokeColor, darkMode }) => {
+  const [mod, setMod] = useState(0.1);
   const sketch_ref = useRef();
 
   const sketch = useCallback((p) => {
@@ -20,7 +21,7 @@ const P5_LOADER = ({ strokeColor }) => {
       // Define the coordinates of the equilateral triangle
       const [ x1,y1,x2,y2,x3,y3 ] = [ 0, height, halfBase, 0, sideLength, height, ];
       p.frameRate(120);
-      p.rotate(p.frameCount / 0.1);
+      p.rotate(p.frameCount / mod);
       p.rotateY(p.frameCount * 0.05);
       p.triangle(x1,y1,x2,y2,x3,y3);
       p.stroke(strokeColor); // Black grid line color
@@ -29,7 +30,7 @@ const P5_LOADER = ({ strokeColor }) => {
     };
 
     p.windowResized = () => p.resizeCanvas(p.windowWidth, p.windowHeight);
-  },[strokeColor]);
+  },[strokeColor, mod]);
 
   useEffect(() => {
     const p5Canvas = new p5(sketch, sketch_ref.current);
@@ -38,8 +39,8 @@ const P5_LOADER = ({ strokeColor }) => {
 
   return (
     <div ref={sketch_ref}>
-      <AfterImageControls />
-    </div>
+      <AfterImageControls darkMode={darkMode} getter={mod} setter={setMod} />
+    </div>  
   );
 };
 

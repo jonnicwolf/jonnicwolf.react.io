@@ -2,19 +2,25 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 export default function AfterImageControls({ darkMode, getter, setter }) {
+  const [step, setStep] = useState(0.1);
+
   const handleChange = (e) => {
-    const { value } = parseFloat(e.target);
-    setter(
-      value >= 1
-      ? value + 10
-      : value + 0.1
-    );
+    const value = parseFloat(e.target.value);
+    setStep(getter >= 1 ? 10 : 0.1);
+    setter(value);
+    console.log(getter, step)
   };
 
   return (
     <Container darkMode={darkMode}>
       <Info>REMEMBER, THERE IS ONLY ONE TRIANGLE</Info>
-      <Slider type='range' min={0.1} max={100} value={getter} onChange={handleChange}/>
+      <Slider
+        type='range'
+        min='0.1'
+        max='1'
+        value={getter}
+        step={step}
+        onChange={handleChange} />
     </Container>
   );
 };
