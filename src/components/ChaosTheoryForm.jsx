@@ -22,14 +22,14 @@ export default function ChaosTheoryForm({ vars, setters, darkMode }) {
     ? setRho(1)
     : setRho(rho-1);
   const handleBetaUp = () =>
-    beta >= 10
-    ? setBeta(10)
+    beta >= 9
+    ? setBeta(9)
     : setBeta(beta+1);
   const handleBetaDown = () =>
     beta <= 1
     ? setBeta(1)
     : setBeta(beta-1);
-  const handleDeltaUp = () => 
+  const handleDeltaUp = () =>
     delta >= 3
     ? setDelta(3)
     : setDelta(delta+1);
@@ -59,9 +59,9 @@ export default function ChaosTheoryForm({ vars, setters, darkMode }) {
           <Button onMouseDown={handleBetaDown} darkMode={darkMode}>⬇</Button>
         </VarWrap>
         <VarWrap>
-          <Button onMouseDown={handleBetaUp} darkMode={darkMode}>⬆</Button>
+          <Button onMouseDown={handleDeltaUp} darkMode={darkMode}>⬆</Button>
           <Var>𝚫{delta}</Var>
-          <Button onMouseDown={handleBetaDown} darkMode={darkMode}>⬇</Button>
+          <Button onMouseDown={handleDeltaDown} darkMode={darkMode}>⬇</Button>
         </VarWrap>
       </VarContainer>
     </Container>

@@ -27,7 +27,7 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor, darkMode }) => {
     p.draw = () => {
       p.background(0, 0, 0, 0);
 
-      let dt = 0.005;
+      let dt = 0.005 * delta;
       let dx = (sigma * (y - x)) * dt;
       let dy = (x * (rho - z) - y) * dt;
       let dz = (x * y - beta * z) * dt;
@@ -59,7 +59,7 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor, darkMode }) => {
     };
 
     p.windowResized = () => p.resizeCanvas(p.windowWidth, p.windowHeight);
-  }, [strokeColor, sigma, rho, beta]
+  }, [strokeColor, sigma, rho, beta, delta]
 ); 
 
   useEffect(() => {
