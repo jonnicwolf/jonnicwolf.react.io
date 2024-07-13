@@ -10,6 +10,7 @@ export default function AfterImageControls({ darkMode, getter, setter }) {
     <Container darkMode={darkMode}>
       <Info>REMEMBER, THERE IS ONLY ONE TRIANGLE</Info>
       <Slider
+        darkMode={darkMode}
         type='range'
         min='0.1'
         max='5'
@@ -36,7 +37,36 @@ const Container = styled.div`
   }
 `;
 const Slider = styled.input`
+  -webkit-appearance: none;
   width: 80%;
+  border: 1px solid ${props => props.darkMode ? 'white' : 'black'};
+  background: none;
+  border-radius: 30px;
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    background: ${props => props.darkMode ? 'white' : 'black'};
+    cursor: pointer;
+    border-radius: 50%;
+  }
+
+  // &::-moz-range-thumb {
+  //   width: 25px;
+  //   height: 25px;
+  //   background: #4CAF50;
+  //   cursor: pointer;
+  //   border-radius: 50%;
+  // }
+
+  // &::-ms-thumb {
+  //   width: 25px;
+  //   height: 25px;
+  //   background: #4CAF50;
+  //   cursor: pointer;
+  //   border-radius: 50%;
+  }
 `;
 const Info = styled.div`
   font-family: Rubik;
