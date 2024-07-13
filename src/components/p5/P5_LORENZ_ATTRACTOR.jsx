@@ -8,9 +8,10 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor, darkMode }) => {
   const [sigma, setSigma] = useState(10);
   const [rho, setRho] = useState(28);
   const [beta, setBeta] = useState(8/3);
+  const [delta, setDelta] = useState(1);
 
-  const vars = {sigma, rho, beta};
-  const setters = {setSigma, setRho, setBeta};
+  const vars = {sigma, rho, beta, delta};
+  const setters = {setSigma, setRho, setBeta, setDelta};
 
   const sketch_ref = useRef();
   const sketch = useCallback((p) => {
@@ -67,10 +68,9 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor, darkMode }) => {
   }, [sketch]);
 
   return (
-    <>
-      <CT ref={sketch_ref}/>
+    <CT ref={sketch_ref}>
       <ChaosTheoryForm vars={vars} setters={setters} darkMode={darkMode} />
-    </>
+    </CT>
   );
 };
 

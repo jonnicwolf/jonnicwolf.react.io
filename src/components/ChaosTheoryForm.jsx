@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 export default function ChaosTheoryForm({ vars, setters, darkMode }) {
-  const { sigma, rho, beta } = vars;
-  const { setSigma, setRho, setBeta } = setters;
+  const { sigma, rho, beta, delta } = vars;
+  const { setSigma, setRho, setBeta, setDelta } = setters;
 
   const handleSigmaUp = () =>
     sigma > 20
@@ -37,17 +37,22 @@ export default function ChaosTheoryForm({ vars, setters, darkMode }) {
       <VarContainer>
         <VarWrap>
           <Button onMouseDown={handleSigmaUp} darkMode={darkMode}>⬆</Button>
-          <Var>𝛴 {sigma}</Var>
+          <Var>𝛴{sigma}</Var>
           <Button onMouseDown={handleSigmaDown} darkMode={darkMode}>⬇</Button>
         </VarWrap>
         <VarWrap>
           <Button onMouseDown={handleRhoUp} darkMode={darkMode}>⬆</Button>
-          <Var>⍴ {rho}</Var>
+          <Var>⍴{rho}</Var>
           <Button onMouseDown={handleRhoDown} darkMode={darkMode}>⬇</Button>
         </VarWrap>
         <VarWrap>
           <Button onMouseDown={handleBetaUp} darkMode={darkMode}>⬆</Button>
-          <Var>β {Math.floor(beta)}</Var>
+          <Var>β{Math.floor(beta)}</Var>
+          <Button onMouseDown={handleBetaDown} darkMode={darkMode}>⬇</Button>
+        </VarWrap>
+        <VarWrap>
+          <Button onMouseDown={handleBetaUp} darkMode={darkMode}>⬆</Button>
+          <Var>𝚫{delta}</Var>
           <Button onMouseDown={handleBetaDown} darkMode={darkMode}>⬇</Button>
         </VarWrap>
       </VarContainer>
@@ -60,7 +65,7 @@ const Container = styled.div`
   color: ${props => props.darkMode ? 'white' : 'black'};
   display: flex;
   flex-direction: column;
-  gap: 0.5vh;
+  gap: 15px;
   margin-top: 15px;
   width: 40vw;
   padding: 10px 40px;
@@ -104,5 +109,5 @@ const Info = styled.div`
 const VarContainer = styled.div`
   display: flex;
   justify-content: center;
-  gap: 10vw;
+  gap: 7vw;
 `;
