@@ -16,9 +16,6 @@ import P5_GEOSTORM from '../components/p5/P5_GEOSTORM.jsx';
 const GalleryPage = ({ darkMode }) => {
   const [index, setIndex] = useState(0);
 
-  const vars = { sigma, rho, beta };
-  const setters = { setSigma, setRho, setBeta };
-
   const { projectName } = useParams();
   const navigate = useNavigate();
   const controls = useAnimation();
@@ -80,15 +77,7 @@ const GalleryPage = ({ darkMode }) => {
           initial='hidden'
           animate='show'
           >{info}</Info>}
-          {title === 'CHAOS THEORY' &&
-          <ChaosTheoryForm
-            vars={vars}
-            setters={setters}
-            darkMode={darkMode}
-            variants={infoAnimation}
-            initial='hidden'
-            animate='show' />}
-        <ActiveProject strokeColor={200} darkMode={darkMode} vars={vars} setters={setters} />
+        <ActiveProject strokeColor={200} darkMode={darkMode} />
       </DisplayBox>
     </Container>
   );
