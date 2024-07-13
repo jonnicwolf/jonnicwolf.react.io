@@ -1,9 +1,18 @@
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useRef, useCallback, useState } from 'react';
 import p5 from 'p5';
 import styled from 'styled-components';
 
-const P5_LORENZ_ATTRACTOR = ({ strokeColor, vars }) => {
-  const { sigma, rho, beta } = vars;
+import ChaosTheoryForm from '../ChaosTheoryForm';
+
+const P5_LORENZ_ATTRACTOR = ({ strokeColor, darkMode }) => {
+  const [sigma, setSigma] = useState(10);
+  const [rho, setRho] = useState(28);
+  const [beta, setBeta] = useState(8/3);
+  const [delta, setDelta] = useState(1);
+
+  const vars = {sigma, rho, beta, delta};
+  const setters = {setSigma, setRho, setBeta, setDelta};
+
   const sketch_ref = useRef();
   const sketch = useCallback((p) => {
     let x = 10;
@@ -18,7 +27,7 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor, vars }) => {
     p.draw = () => {
       p.background(0, 0, 0, 0);
 
-      let dt = 0.005;
+      let dt = 0.005 * delta;
       let dx = (sigma * (y - x)) * dt;
       let dy = (x * (rho - z) - y) * dt;
       let dz = (x * y - beta * z) * dt;
@@ -50,7 +59,7 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor, vars }) => {
     };
 
     p.windowResized = () => p.resizeCanvas(p.windowWidth, p.windowHeight);
-  }, [strokeColor, sigma, rho, beta]
+  }, [strokeColor, sigma, rho, beta, delta]
 ); 
 
   useEffect(() => {
@@ -59,7 +68,9 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor, vars }) => {
   }, [sketch]);
 
   return (
-    <CT ref={sketch_ref}/>
+    <CT ref={sketch_ref}>
+      <ChaosTheoryForm vars={vars} setters={setters} darkMode={darkMode} />
+    </CT>
   );
 };
 

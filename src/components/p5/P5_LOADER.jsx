@@ -1,7 +1,11 @@
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useRef, useCallback, useState } from 'react';
+import styled from 'styled-components';
 import p5 from 'p5';
 
-const P5_LOADER = ({ strokeColor }) => {
+import AfterImageControls from '../AfterImageControls';
+
+const P5_LOADER = ({ strokeColor, darkMode }) => {
+  const [mod, setMod] = useState(0.1);
   const sketch_ref = useRef();
 
   const sketch = useCallback((p) => {
@@ -11,13 +15,14 @@ const P5_LOADER = ({ strokeColor }) => {
 
     p.draw = () => {
       p.background(0,0,0,0);
-      const sideLength = 300; // Change size here
+      const sideLength = 200; // Change size here
       const height = (Math.sqrt(3) / 2) * sideLength;
       const halfBase = sideLength / 2;
 
       // Define the coordinates of the equilateral triangle
-      const [ x1,y1,x2,y2,x3,y3 ] = [ 0, height, halfBase, 0, sideLength, height, ]
-      p.rotate(p.frameCount * 5.01);
+      const [ x1,y1,x2,y2,x3,y3 ] = [ 0, height, halfBase, 0, sideLength, height, ];
+      p.frameRate(120);
+      p.rotate(p.frameCount / mod);
       p.rotateY(p.frameCount * 0.05);
       p.triangle(x1,y1,x2,y2,x3,y3);
       p.stroke(strokeColor); // Black grid line color
@@ -26,7 +31,7 @@ const P5_LOADER = ({ strokeColor }) => {
     };
 
     p.windowResized = () => p.resizeCanvas(p.windowWidth, p.windowHeight);
-  },[strokeColor]);
+  },[strokeColor, mod]);
 
   useEffect(() => {
     const p5Canvas = new p5(sketch, sketch_ref.current);
@@ -34,8 +39,16 @@ const P5_LOADER = ({ strokeColor }) => {
   }, [sketch]);
 
   return (
-    <div ref={sketch_ref} />
+    <Container ref={sketch_ref}>
+      <AfterImageControls darkMode={darkMode} getter={mod} setter={setMod} />
+    </Container>
   );
 };
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
 
 export default P5_LOADER;

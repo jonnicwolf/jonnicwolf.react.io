@@ -138,12 +138,12 @@ export default function ProjectPage () {
         :
         <ProjectList>
           <ProjectVideo
-            bio='Tarot Card Divinator'
-            title='SECRETS of the CARTOMANCER'
-            href1='https://cartomancerssecrets.netlify.app'
+            bio='Tarot Card Reader'
+            title='ESPERI'
+            href1='https://esperi.netlify.app'
             href2='https://github.com/jonnicwolf/heart_of_the_cards'
             videoSrc={Hotc}
-            description={'Discover your destiny with Secrets of the Cartomancer. Receive three random cards and personalized readings that reveal insights and guidance. Uncover the mysteries today!'}
+            description={'Discover your destiny with Esperi. Receive three random cards and personalized readings that reveal insights and guidance. Uncover the mysteries today!'}
             devicons={hotc_devi}
           />
           <ProjectVideo
