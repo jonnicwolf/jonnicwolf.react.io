@@ -1,9 +1,12 @@
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useRef, useCallback, useState } from 'react';
 import p5 from 'p5';
 import styled from 'styled-components';
 
-const P5_LORENZ_ATTRACTOR = ({ strokeColor, vars }) => {
-  const { sigma, rho, beta } = vars;
+const P5_LORENZ_ATTRACTOR = ({ strokeColor, vars }) => {  
+  const [sigma, setSigma] = useState(10);
+  const [rho, setRho] = useState(28);
+  const [beta, setBeta] = useState(8/3);
+  
   const sketch_ref = useRef();
   const sketch = useCallback((p) => {
     let x = 10;

@@ -15,9 +15,6 @@ import P5_GEOSTORM from '../components/p5/P5_GEOSTORM.jsx';
 
 const GalleryPage = ({ darkMode }) => {
   const [index, setIndex] = useState(0);
-  const [sigma, setSigma] = useState(10);
-  const [rho, setRho] = useState(28);
-  const [beta, setBeta] = useState(8/3);
 
   const vars = { sigma, rho, beta };
   const setters = { setSigma, setRho, setBeta };
