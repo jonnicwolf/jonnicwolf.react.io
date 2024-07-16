@@ -184,7 +184,7 @@ const Container = styled.div`
   height: 250vh;
 `;
 const Background = styled(P5_LORENZ_ATTRACTOR)`
-  position: sticky;
+  height: 100vh;
   z-index: 1;
 `;
 const ProjectList = styled.div`
@@ -199,7 +199,6 @@ const ProjectList = styled.div`
   position: absolute;
   padding-bottom: 10vh;
 `;
-
 const Info = styled.div`
   padding: 15px;
   display: ${props => props.blur ? 'flex' : 'none'};

@@ -75,6 +75,7 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor, darkMode, showControls }) => {
 };
 
 const CT = styled.div`
+  position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
