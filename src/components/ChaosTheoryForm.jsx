@@ -77,6 +77,7 @@ const Container = styled.div`
   margin-top: 15px;
   width: 40vw;
   padding: 10px 40px;
+  z-index: 2;
   @media only screen and (max-width: 720px) {
     font-size: 1rem;
     width: 60vw;

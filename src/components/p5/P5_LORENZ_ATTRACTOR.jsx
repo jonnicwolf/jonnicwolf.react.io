@@ -68,17 +68,20 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor, darkMode, showControls }) => {
   }, [sketch]);
 
   return (
-    <CT ref={sketch_ref}>
+    <>
       {showControls && <ChaosTheoryForm vars={vars} setters={setters} darkMode={darkMode} />}
-    </CT>
+      <CT ref={sketch_ref} />
+    </>
   );
 };
 
 const CT = styled.div`
+  transform: translateY(${props => props.showControls ? '20px' : 'none' });
   position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 1;
 `;
 
 export default P5_LORENZ_ATTRACTOR;

@@ -173,7 +173,7 @@ export default function ProjectPage () {
           />
         </ProjectList>
       }
-      <Background strokeColor={105} showControls={false}/>
+      <Background strokeColor={150} showControls={false}/>
     </Container>
   );
 };
