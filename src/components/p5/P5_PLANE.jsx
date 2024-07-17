@@ -7,10 +7,10 @@ const P5_PLANE = ({ strokeColor, showSun }) => {
 
   const sketch = useCallback((p) => {
     let cols, rows;
-    let w = 2400;
+    let w = 4800;
     let h = 2400;
-    let scl = 50; // scale of each grid square
-    let flying = 1;
+    let scl = 60; // scale of each grid square
+    let flying = 0;
     let terrain = [];
 
     p.setup = () => {
@@ -37,7 +37,7 @@ const P5_PLANE = ({ strokeColor, showSun }) => {
 
           // Use distance to influence noise
           let adjustedNoise = p.map(d, 0, 550, 0.5, 1);
-          terrain[x][y] = p.map(p.noise(xoff, yoff), 0, 1, -100, 100) * adjustedNoise;
+          terrain[x][y] = p.map(p.noise(xoff+10, yoff-1), 0, 1, -100, 100) * adjustedNoise;
 
           xoff += 0.2;
         };
@@ -46,7 +46,8 @@ const P5_PLANE = ({ strokeColor, showSun }) => {
 
       p.background(0,0,0,0); // Invisible background
       p.blendMode(p.ADD);
-      p.noFill();
+      showSun ? p.fill('rgba(0, 0, 0, 0.4)') :p.noFill();
+      
       p.translate(w / 2 - w / 2, h / 2 - h / 2);
       p.rotateX(p.PI / 2.5); // Adjust rotation here
       p.translate(-w / 2, -h / 2);
@@ -61,7 +62,7 @@ const P5_PLANE = ({ strokeColor, showSun }) => {
           p.stroke(strokeColor, strokeColor, strokeColor, opacity);
 
           p.vertex(x * scl, y * scl, terrain[x][y]);
-          p.vertex(x * scl, (y + 1) * scl, terrain[x][y + 1]);
+          p.vertex(x * scl, (y) * scl, terrain[x][y]);
         }
         p.endShape();
       }
@@ -76,9 +77,10 @@ const P5_PLANE = ({ strokeColor, showSun }) => {
   }, [sketch]);
 
   return (
-      <Container ref={sketch_ref} >
-        {showSun && <Sun />}
-      </Container>
+    <>
+      {showSun && <Sun />}
+      <Container ref={sketch_ref} />
+    </>
   );
 };
 
@@ -87,12 +89,14 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: absolute;
 `;
 const Sun = styled.div`
-  background-image: radial-gradient(circle at 195px, orange 1%, rgba(0, 0, 0, 0) 30%);
-  height: 250px;
-  width: 200px;
-  transform: rotate(90deg) translateX(525px);
+  background-image: radial-gradient(circle at 220px, orange 30%, rgba(0, 0, 0, 0) 60%);
+  height: 390px;
+  width: 300px;
+  transform: rotate(90deg) translateX(65px);
+  
 `;
 
 export default P5_PLANE;
