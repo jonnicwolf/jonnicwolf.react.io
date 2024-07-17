@@ -36,7 +36,7 @@ export default function LandingPage () {
         </EnterButton>
 
         <PProject>
-          <P5_PLANE strokeColor={255} />
+          <P5_PLANE strokeColor={255} showSun={false}/>
         </PProject>
       </LandingPageContainer>
     </Background>
@@ -81,6 +81,8 @@ const LandingPageItem = styled.div`
   padding-bottom: 2em;
 `;
 const PProject = styled(LandingPageItem)`
+  height: 100vh;
+  width: 100vw;
   z-index: 1;
 `;
 const EnterButton = styled(LandingPageItem)`
