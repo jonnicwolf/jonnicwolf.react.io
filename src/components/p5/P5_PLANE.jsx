@@ -45,9 +45,8 @@ const P5_PLANE = ({ strokeColor, showSun }) => {
       };
 
       p.background(0,0,0,0); // Invisible background
-      p.blendMode(p.ADD);
+      p.blendMode(p.ADD); // Adds shimmer
       showSun ? p.fill('rgba(0, 0, 0, 0.4)') :p.noFill();
-      
       p.translate(w / 2 - w / 2, h / 2 - h / 2);
       p.rotateX(p.PI / 2.5); // Adjust rotation here
       p.translate(-w / 2, -h / 2);
@@ -69,7 +68,7 @@ const P5_PLANE = ({ strokeColor, showSun }) => {
     };
 
     p.windowResized = () => p.resizeCanvas(p.windowWidth, 320);
-  },[strokeColor])
+  },[strokeColor, showSun])
 
   useEffect(() => {
     const p5Canvas = new p5(sketch, sketch_ref.current);
