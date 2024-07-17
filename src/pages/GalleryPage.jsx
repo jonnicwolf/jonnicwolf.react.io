@@ -28,7 +28,7 @@ const GalleryPage = ({ darkMode }) => {
     { component: P5_LOADER, title: 'AFTERIMAGE', name: 'afterimage' },
     { component: P5_ANJA, title: 'ANJA', name: 'anja', info: 'MOVE YOUR CURSOR' },
     { component: P5_GEOSTORM, title: 'TRIGON SQUALL', name: 'trigon-squall' },
-  ], [sw]);
+  ], []);
 
   useEffect(() => {
     const animationSequence = async () => {
