@@ -73,9 +73,14 @@ const GalleryPage = ({ darkMode }) => {
           darkMode={darkMode}
           variants={infoAnimation}
           initial='hidden'
-          animate='show'
-          >{info}</Info>}
-        <ActiveProject strokeColor={200} darkMode={darkMode} showControls={true} />
+          animate='show'>
+            {info}
+        </Info>}
+        <ActiveProject
+          strokeColor={200}
+          darkMode={darkMode}
+          showControls={true}
+          isMobile={sw} />
       </DisplayBox>
     </Container>
   );

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useCallback } from 'react';
 import styled, { keyframes } from 'styled-components';
 import p5 from 'p5';
 
-const P5_ANJA = ({ strokeColor }) => {
+const P5_ANJA = ({ strokeColor, isMobile }) => {
   const sketch_ref = useRef();
 
   const sketch = useCallback((p) => {
@@ -21,8 +21,12 @@ const P5_ANJA = ({ strokeColor }) => {
     };
 
     p.draw = () => {
-      const irisX = p.map(p.mouseX, 0, p.width, (p.width / 60) * -1, p.width / 60);
-      const irisY = p.map(p.mouseY, 0, p.height, (p.width / 24) * -1, p.height / 36);
+      const irisMode = isMobile
+        ? {x: p.mouseX, y: p.mouseY, mode: 'mouse'}
+        : {x: p.accelerationX, y: p.accelerationY, mode: 'tilt'};
+      const {x,y} = irisMode;
+      const irisX = p.map(x, 0, p.width, (p.width / 60) * -1, p.width / 60);
+      const irisY = p.map(y, 0, p.height, (p.width / 24) * -1, p.height / 36);
       p.background(0, 0.9);
 
       p.push();
