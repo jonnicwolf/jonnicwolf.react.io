@@ -23,7 +23,7 @@ const GalleryPage = ({ darkMode }) => {
 
   const p5_projs = useMemo(() => [
     { component: P5_TORUS, title: 'TORUS', name: 'torus', info: '' },
-    { component: P5_PLANE, title: 'HORIZON', name: 'horizon', info: sw ? 'MOVE YOUR CURSOR' : 'TILT YOUR DEVICE'},
+    { component: P5_PLANE, title: 'HORIZON', name: 'horizon', info: 'MOVE YOUR CURSOR'},
     { component: P5_LORENZ_ATTRACTOR, title: 'CHAOS THEORY', name: 'chaos-theory' },
     { component: P5_LOADER, title: 'AFTERIMAGE', name: 'afterimage' },
     { component: P5_ANJA, title: 'ANJA', name: 'anja', info: 'MOVE YOUR CURSOR' },
