@@ -80,6 +80,7 @@ const GalleryPage = ({ darkMode }) => {
           strokeColor={200}
           darkMode={darkMode}
           showControls={true}
+          showSun={true}
           isMobile={sw} />
       </DisplayBox>
     </Container>

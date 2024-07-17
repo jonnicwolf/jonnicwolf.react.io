@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import p5 from "p5";
 
-const P5_PLANE = ({ strokeColor }) => {
+const P5_PLANE = ({ strokeColor, showSun }) => {
   const sketch_ref = useRef();
 
   const sketch = useCallback((p) => {
@@ -76,10 +76,9 @@ const P5_PLANE = ({ strokeColor }) => {
   }, [sketch]);
 
   return (
-      <Container ref={sketch_ref} color={strokeColor}>
-        <Sun />
+      <Container ref={sketch_ref} >
+        {showSun && <Sun />}
       </Container>
-    
   );
 };
 
@@ -90,7 +89,7 @@ const Container = styled.div`
   align-items: center;
 `;
 const Sun = styled.div`
-  background-image: radial-gradient(circle at 195px, black 1%, rgba(0, 0, 0, 0) 30%);
+  background-image: radial-gradient(circle at 195px, orange 1%, rgba(0, 0, 0, 0) 30%);
   height: 250px;
   width: 200px;
   transform: rotate(90deg) translateX(525px);

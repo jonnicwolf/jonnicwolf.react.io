@@ -36,7 +36,7 @@ export default function LandingPage () {
         </EnterButton>
 
         <PProject>
-          <P5_PLANE strokeColor={255}/>
+          <P5_PLANE strokeColor={255} />
         </PProject>
       </LandingPageContainer>
     </Background>
