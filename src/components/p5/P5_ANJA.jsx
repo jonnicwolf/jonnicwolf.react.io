@@ -89,7 +89,7 @@ const P5_ANJA = ({ strokeColor, isMobile }) => {
     
       p.strokeWeight(1);
     };
-  }, [strokeColor]);
+  }, [strokeColor, isMobile]);
 
   useEffect(() => {
     const p5Canvas = new p5(sketch, sketch_ref.current);

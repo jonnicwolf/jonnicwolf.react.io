@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useRef } from 'react';
+import styled from 'styled-components';
 import p5 from "p5";
 
 const P5_PLANE = ({ strokeColor }) => {
@@ -8,8 +9,8 @@ const P5_PLANE = ({ strokeColor }) => {
     let cols, rows;
     let w = 2400;
     let h = 2400;
-    let scl = 48; // scale of each grid square
-    let flying = 0;
+    let scl = 50; // scale of each grid square
+    let flying = 1;
     let terrain = [];
 
     p.setup = () => {
@@ -20,20 +21,22 @@ const P5_PLANE = ({ strokeColor }) => {
     };
 
     p.draw = () => {
+      p.frameRate(240);
+      
       const { screenX,screenY } = window.innerWidth > 720
       ? {screenX: p.mouseX, screenY: p.mouseY}
-      : {screenX: p.accelerationX, screenY: p.accelerationY}
+      : {screenX: p.accelerationX, screenY: p.accelerationY};
       flying -= 0.008;
       let yoff = flying;
-      for (let y = 9; y < rows; y++) {
-        let xoff = 0;
-        for (let x = 0; x < cols; x++) {
+      for (let y = 1; y < rows; y++) {
+        let xoff = 1;
+        for (let x = 1; x < cols; x++) {
           let distance_x = Math.abs(x * scl - screenX);
           let distance_y = Math.abs(y * scl - screenY);
           let d = Math.sqrt(distance_x * distance_x + distance_y * distance_y); // Distance from the mouse to the vertex
 
           // Use distance to influence noise
-          let adjustedNoise = p.map(d, 0, 500, 1, 0.1);
+          let adjustedNoise = p.map(d, 0, 550, 0.5, 1);
           terrain[x][y] = p.map(p.noise(xoff, yoff), 0, 1, -100, 100) * adjustedNoise;
 
           xoff += 0.2;
@@ -42,8 +45,8 @@ const P5_PLANE = ({ strokeColor }) => {
       };
 
       p.background(0,0,0,0); // Invisible background
+      p.blendMode(p.ADD);
       p.noFill();
-    
       p.translate(w / 2 - w / 2, h / 2 - h / 2);
       p.rotateX(p.PI / 2.5); // Adjust rotation here
       p.translate(-w / 2, -h / 2);
@@ -73,8 +76,24 @@ const P5_PLANE = ({ strokeColor }) => {
   }, [sketch]);
 
   return (
-    <div ref={sketch_ref} />
+      <Container ref={sketch_ref} color={strokeColor}>
+        <Sun />
+      </Container>
+    
   );
 };
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+const Sun = styled.div`
+  background-image: radial-gradient(circle at 195px, black 1%, rgba(0, 0, 0, 0) 30%);
+  height: 250px;
+  width: 200px;
+  transform: rotate(90deg) translateX(525px);
+`;
 
 export default P5_PLANE;
