@@ -75,12 +75,12 @@ const P5_PLANE = ({ strokeColor, showSun }) => {
   return (
     <>
       {showSun && <Sun />}
-      <Container ref={sketch_ref} />
+      <Sketch ref={sketch_ref} />
     </>
   );
 };
 
-const Container = styled.div`
+const Sketch = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,6 +88,9 @@ const Container = styled.div`
   position: absolute;
   @media only screen and (max-width: 720px) {
     transform: translateY(300px);
+  }
+  @media only screen and (max-height: 900px) {
+    transform: translateY(270px);
   }
 `;
 const Sun = styled.div`
