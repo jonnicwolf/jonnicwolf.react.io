@@ -22,10 +22,11 @@ const P5_PLANE = ({ strokeColor, showSun }) => {
 
     p.draw = () => {
       p.frameRate(240);
-      
+
       const { screenX,screenY } = window.innerWidth > 720
-      ? {screenX: p.mouseX, screenY: p.mouseY}
-      : {screenX: p.accelerationX, screenY: p.accelerationY};
+        ? {screenX: p.mouseX, screenY: p.mouseY}
+        : {screenX: p.accelerationX, screenY: p.accelerationY};
+
       flying -= 0.008;
       let yoff = flying;
       for (let y = 1; y < rows; y++) {
