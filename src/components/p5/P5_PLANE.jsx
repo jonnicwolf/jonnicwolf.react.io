@@ -6,10 +6,11 @@ const P5_PLANE = ({ strokeColor, showSun }) => {
   const sketch_ref = useRef();
 
   const sketch = useCallback((p) => {
+    const isMobile = window.windowWidth > 1200;
     let cols, rows;
-    let w = 4800;
+    let w = isMobile ? 2400 : 4800;
     let h = 2400;
-    let scl = 60; // scale of each grid square
+    let scl = isMobile ? 60 : 80; // scale of each grid square
     let flying = 0;
     let terrain = [];
 
@@ -22,18 +23,13 @@ const P5_PLANE = ({ strokeColor, showSun }) => {
 
     p.draw = () => {
       p.frameRate(240);
-
-      const { screenX,screenY } = window.innerWidth > 720
-        ? {screenX: p.mouseX, screenY: p.mouseY}
-        : {screenX: p.accelerationX, screenY: p.accelerationY};
-
       flying -= 0.008;
       let yoff = flying;
       for (let y = 1; y < rows; y++) {
         let xoff = 1;
         for (let x = 1; x < cols; x++) {
-          let distance_x = Math.abs(x * scl - screenX);
-          let distance_y = Math.abs(y * scl - screenY);
+          let distance_x = Math.abs(x * scl - p.mouseX);
+          let distance_y = Math.abs(y * scl - p.mouseY);
           let d = Math.sqrt(distance_x * distance_x + distance_y * distance_y); // Distance from the mouse to the vertex
 
           // Use distance to influence noise
@@ -47,7 +43,7 @@ const P5_PLANE = ({ strokeColor, showSun }) => {
 
       p.background(0,0,0,0); // Invisible background
       p.blendMode(p.ADD); // Adds shimmer
-      showSun ? p.fill('rgba(0, 0, 0, 0.4)') :p.noFill();
+      showSun ? p.fill('rgba(0, 0, 0, 0.4)') : p.noFill();
       p.translate(w / 2 - w / 2, h / 2 - h / 2);
       p.rotateX(p.PI / 2.5); // Adjust rotation here
       p.translate(-w / 2, -h / 2);
@@ -90,13 +86,18 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   position: absolute;
+  @media only screen and (max-width: 720px) {
+    transform: translateY(300px);
+  }
 `;
 const Sun = styled.div`
   background-image: radial-gradient(circle at 220px, orange 30%, rgba(0, 0, 0, 0) 60%);
   height: 390px;
   width: 300px;
   transform: rotate(90deg) translateX(65px);
-  
+  @media only screen and (max-width: 720px) {
+    transform: rotate(90deg);
+  }
 `;
 
 export default P5_PLANE;
