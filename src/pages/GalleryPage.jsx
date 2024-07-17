@@ -113,6 +113,7 @@ const ControlBox = styled.div`
   color: ${props => (props.darkMode ? 'white' : 'black')};
   background-color: ${props => (props.darkMode ? '150' : null)};
   font-color: ${props => (props.darkMode ? 'grey' : 'white')};
+  z-index: 3;
   @media screen and (max-width: 1024px) {
     margin-top: 6vh;
     gap: 5vw;
