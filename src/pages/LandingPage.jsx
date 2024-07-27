@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
 import NameCard from '../components/NameCard.jsx';
@@ -8,14 +8,9 @@ import LinkButton from '../assets/buttons/LinkButton.jsx';
 import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 
 export default function LandingPage () {
-  const controls = useAnimation();
   const navigate = useNavigate();
 
-  const handleClick = async () => {
-    await controls.start({
-      backgroundImage: 'radial-gradient(circle 2000px, white, rgb(42, 191, 250))',
-      transition: { duration: 2 }
-    });
+  const handleClick = () => {
     navigate('/projects');
   };
 
@@ -25,9 +20,14 @@ export default function LandingPage () {
       initial="hidden"
       animate='show'>
       <LandingPageContainer>
-        <NameCard variants={items}/>
+        <NameCard />
 
-        <EnterButton onClick={handleClick}>
+        <EnterButton 
+          onClick={handleClick}
+          variants={backgroundAnimation}
+          initial="hidden"
+          animate="show"
+          >
           <LinkButton
             subDirectory={'/projects'}
             textContent='ENTER'
@@ -47,23 +47,8 @@ const backgroundAnimation = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { duration: 1 },
+    transition: { duration: 0.5 },
   }
-};
-const items = {
-  hidden: {
-    opacity: 0,
-    transition: { when: 'afterChildren' }
-  },
-  show: (i) => ({
-    opacity: 1,
-    y: 0,
-    delay: 2,
-    transition: {
-      delay: i * 0.3,
-      duration: 1.5,
-    }
-  })
 };
 
 const Background = styled(motion.div)`
