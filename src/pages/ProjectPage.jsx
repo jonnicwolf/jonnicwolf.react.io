@@ -5,13 +5,12 @@ import ProjectVideo from '../components/ProjectVideo';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
 import ExternalButton from '../assets/buttons/ExternalButton';
 
-import TipTallyPro from '../assets/video/TipTallyPro.mp4';
-import SCD from '../assets/video/SCD.mp4';
-import Hotc from '../assets/video/Hotc.mp4';
+import SCD from 'https://res.cloudinary.com/dhah4xjvr/video/upload/v1722178613/fezz.dev/videos/fw46sp7q0mlfjngljwxa.mov';
+import Hotc from 'https://res.cloudinary.com/dhah4xjvr/video/upload/v1722178613/fezz.dev/videos/fw46sp7q0mlfjngljwxa.mov';
 
-import SCD_photo from '../assets/photos/SCD.jpg';
-import tpr_logo from 'https://res.cloudinary.com/dhah4xjvr/image/upload/v1722178672/fezz.dev/photos/photos/z265st6zxzzcvahg9sca.jpg';
-import Hotc_photo from '../assets/photos/Hotc.jpg'
+import SCD_photo from 'https://res.cloudinary.com/dhah4xjvr/image/upload/v1722178672/fezz.dev/photos/photos/z265st6zxzzcvahg9sca.jpg';
+import tpr_logo from 'https://res.cloudinary.com/dhah4xjvr/image/upload/v1722178670/fezz.dev/photos/photos/b78dtd45ccc9edyg9dad.png';
+import Hotc_photo from 'https://res.cloudinary.com/dhah4xjvr/image/upload/v1722178671/fezz.dev/photos/photos/roqapvvi16ddsfoeqmfp.png'
 
 export default function ProjectPage () {
   const [blurToggle1, setBlurToggle1] = useState(false);
@@ -273,4 +272,3 @@ const TechContainer = styled.div`
     animation-delay: 1.1s;
   }
 `;
-
