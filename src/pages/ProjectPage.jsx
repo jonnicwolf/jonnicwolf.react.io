@@ -10,7 +10,7 @@ import SCD from '../assets/video/SCD.mp4';
 import Hotc from '../assets/video/Hotc.mp4';
 
 import SCD_photo from '../assets/photos/SCD.jpg';
-import tpr_logo from '../assets/photos/tpr_logo.jpg';
+import tpr_logo from 'https://res.cloudinary.com/dhah4xjvr/image/upload/v1722178672/fezz.dev/photos/photos/z265st6zxzzcvahg9sca.jpg';
 import Hotc_photo from '../assets/photos/Hotc.jpg'
 
 export default function ProjectPage () {
