@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import BioBox from '../components/BioBox';
 import TimeLine from '../components/TimeLine';
 
-const headshot = 'https://drive.google.com/drive/u/0/folders/15r683lXyKLQDWaENvfg6bGsLzQaNAlC3'
+const headshot = 'https://res.cloudinary.com/dhah4xjvr/image/upload/v1722178934/fezz.dev/photos/photos/kzdwwh2b4yepik7c5amm.png'
 
 export default function AboutmePage ({ darkMode }) {
   return (
@@ -60,7 +60,6 @@ const HeadshotWrapper = styled.div`
 const Headshot = styled.img`
   height: 400px;
   width: 300px;
-  clip-path: circle(40% at 50% 40%);
-  transform: translate(-10px,-20px);
-  
+  // clip-path: circle(40% at 50% 40%);
+  // transform: translate(-10px,-20px);
 `;
