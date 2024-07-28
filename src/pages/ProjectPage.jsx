@@ -5,12 +5,12 @@ import ProjectVideo from '../components/ProjectVideo';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
 import ExternalButton from '../assets/buttons/ExternalButton';
 
-import SCD from 'https://res.cloudinary.com/dhah4xjvr/video/upload/v1722178613/fezz.dev/videos/fw46sp7q0mlfjngljwxa.mov';
-import Hotc from 'https://res.cloudinary.com/dhah4xjvr/video/upload/v1722178613/fezz.dev/videos/fw46sp7q0mlfjngljwxa.mov';
+import SCD from 'https://res.cloudinary.com/dhah4xjvr/video/upload/f_auto:video,q_auto/v1/fezz.dev/videos/jqn95ml2kmuxqbryazsb';
+import Hotc from 'https://res.cloudinary.com/dhah4xjvr/video/upload/f_auto:video,q_auto/v1/fezz.dev/videos/fw46sp7q0mlfjngljwxa';
 
-import SCD_photo from 'https://res.cloudinary.com/dhah4xjvr/image/upload/v1722178672/fezz.dev/photos/photos/z265st6zxzzcvahg9sca.jpg';
-import tpr_logo from 'https://res.cloudinary.com/dhah4xjvr/image/upload/v1722178670/fezz.dev/photos/photos/b78dtd45ccc9edyg9dad.png';
-import Hotc_photo from 'https://res.cloudinary.com/dhah4xjvr/image/upload/v1722178671/fezz.dev/photos/photos/roqapvvi16ddsfoeqmfp.png'
+import SCD_photo from 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/z265st6zxzzcvahg9sca';
+import tpr_logo from 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/roqapvvi16ddsfoeqmfp';
+import Hotc_photo from 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/b78dtd45ccc9edyg9dad'
 
 export default function ProjectPage () {
   const [blurToggle1, setBlurToggle1] = useState(false);
@@ -160,15 +160,6 @@ export default function ProjectPage () {
             videoSrc={SCD}
             description={'Savor the extraordinary at Stoned Cold Dreamery! Where each scoop is a tantalizing delight. Taste the difference today!'}
             devicons={scd_devi}
-          />
-          <ProjectVideo
-            bio='Closing Bartender Calculator'
-            title='TIP TALLY PRO'
-            href1='https://tiptallypro.netlify.app'
-            href2='https://github.com/jonnicwolf/tiptallypro'
-            videoSrc={TipTallyPro}
-            description={'Your ultimate tool for effortless tip counting and bank balancing Tip Tally Pro! Utilized daily by 6 NYC bars'}
-            devicons={ttp_devi}
           />
         </ProjectList>
       }
