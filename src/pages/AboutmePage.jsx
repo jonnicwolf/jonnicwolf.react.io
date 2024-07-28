@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import BioBox from '../components/BioBox';
 import TimeLine from '../components/TimeLine';
 
-import headshot from '../assets/icons/Headshot.png';
+const headshot = 'https://drive.google.com/drive/u/0/folders/15r683lXyKLQDWaENvfg6bGsLzQaNAlC3'
 
 export default function AboutmePage ({ darkMode }) {
   return (
