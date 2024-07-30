@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const cover = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/z265st6zxzzcvahg9sca'
@@ -12,6 +12,7 @@ export default function ProjectCard ({
   description,
   devicons,
 }) {
+  const [showMore, setShowMore] = useState(false);
   return (
     <Container>
       ProjectCard
@@ -24,5 +25,16 @@ const Container = styled.div`
   width: 50vw;
   border: 1px solid red;
 `;
+const Cover = styled.img`
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+`;
+const Gif = styled.img`
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+`;
+const HoverInfo = styled.div`
 
-
+`;
