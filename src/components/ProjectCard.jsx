@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import ExternalButton from '../assets/buttons/ExternalButton';
 
 const cover = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/z265st6zxzzcvahg9sca'
 export default function ProjectCard ({
@@ -7,7 +8,7 @@ export default function ProjectCard ({
   title,
   href1,
   href2,
-  cover,
+  // cover,
   gifPath,
   description,
   devicons,
@@ -15,7 +16,11 @@ export default function ProjectCard ({
   const [showMore, setShowMore] = useState(false);
   return (
     <Container>
-      ProjectCard
+      {
+        showMore 
+        ? <Gif src={cover}/>
+        : <Cover src={cover}/>
+      }
     </Container>
   );
 };
