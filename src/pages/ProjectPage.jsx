@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import styled, { keyframes} from 'styled-components';
+import { useQuery } from '@tanstack/react-query';
 
 import ProjectVideo from '../components/ProjectVideo';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
 import ExternalButton from '../assets/buttons/ExternalButton';
 
-import SCD from 'https://res.cloudinary.com/dhah4xjvr/video/upload/f_auto:video,q_auto/v1/fezz.dev/videos/jqn95ml2kmuxqbryazsb';
-import Hotc from 'https://res.cloudinary.com/dhah4xjvr/video/upload/f_auto:video,q_auto/v1/fezz.dev/videos/fw46sp7q0mlfjngljwxa';
-
-import SCD_photo from 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/z265st6zxzzcvahg9sca';
-import tpr_logo from 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/roqapvvi16ddsfoeqmfp';
-import Hotc_photo from 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/b78dtd45ccc9edyg9dad'
+const SCD_photo   = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/z265st6zxzzcvahg9sca';
+const tpr_logo    = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/roqapvvi16ddsfoeqmfp';
+const Hotc_photo  = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/b78dtd45ccc9edyg9dad';
 
 export default function ProjectPage () {
+  //const cld = new Cloudinary({ cloud: { cloudName: 'dhah4xjvr' }})
   const [blurToggle1, setBlurToggle1] = useState(false);
   const [blurToggle2, setBlurToggle2] = useState(false);
   const [blurToggle3, setBlurToggle3] = useState(false);
@@ -22,6 +21,21 @@ export default function ProjectPage () {
     setBlur(!getBlur);
   };
 
+  async function fetchVideos () {
+    const SCDResponse = await fetch('https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/videos/gifs/cpt2t8zchjfh72am0jx7');
+    const HotcResponse = await fetch('https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/videos/gifs/ytnuuof8yl55dm4tpzsr');
+
+    return {
+      SCD: SCDResponse,
+      Hotc: HotcResponse,
+    }.json();
+  };
+
+  const { data } = useQuery({
+    queryKey: ['videos'],
+    queryFn: fetchVideos
+  });
+  const { SCD, Hotc } = data || {};
   const [
     javascript,
     react,
@@ -40,7 +54,6 @@ export default function ProjectPage () {
 
   const hotc_devi = [javascript, react, p5, firebase];
   const scd_devi= [javascript, react, postgresql, firebase];
-  const ttp_devi = [javascript, react, css3];
 
   return (
     <Container isMobile={isMobile}>

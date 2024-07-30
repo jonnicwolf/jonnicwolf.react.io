@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import BioBox from '../components/BioBox';
 import TimeLine from '../components/TimeLine';
 
-const headshot = 'https://res.cloudinary.com/dhah4xjvr/image/upload/v1722178934/fezz.dev/photos/photos/kzdwwh2b4yepik7c5amm.png'
+const headshot = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/kzdwwh2b4yepik7c5amm'
 
 export default function AboutmePage ({ darkMode }) {
   return (
