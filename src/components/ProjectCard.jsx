@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+
 import ExternalButton from '../assets/buttons/ExternalButton';
+import EsperiCover from './EsperiCover';
 
 const cover2 = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/vnetkkhro2uaglzi3ffp'
 const cover1 = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/xqczgmsedksvyqf0d4vu'
@@ -23,7 +25,7 @@ export default function ProjectCard ({
   return (
     <Container>
       {showMore
-      ? <Cover src={cover2} onMouseEnter={handleChange} />
+      ? <EsperiCover />
       : <Gif src={cover1} onMouseLeave={handleChange} />
     }
     </Container>
