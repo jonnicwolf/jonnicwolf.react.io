@@ -30,7 +30,6 @@ const NavBar = ({ darkModeGetter, darkModeSetter }) => {
 };
 
 const NavbarContainer = styled.div`
-  border-bottom: 2px solid grey;
   cursor: pointer;
   display: flex;
   flex-direction: row;
