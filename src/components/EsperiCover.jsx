@@ -3,9 +3,12 @@ import styled from 'styled-components';
 
 import Eye from './Eye.jsx';
 
-export default function EsperiCover() {
+export default function EsperiCover ({ setter }) {
+  function onMouseEnter () {
+    setter(true);
+  };
   return (
-    <Container>
+    <Container onMouseEnter={onMouseEnter}>
       <EyeWrap>
         <Eye width={100} height={280} />
       </EyeWrap>
@@ -35,7 +38,7 @@ const Container = styled.div`
 const EyeWrap = styled.div`
   padding: 50px;
   transform: translateX(-20px);
-`
+`;
 const Title = styled.h1`
   font-size: 8rem;
   font-family: Bagnard;

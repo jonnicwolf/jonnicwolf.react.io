@@ -1,21 +1,21 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-import P5_Eye from './p5/P5_EYE';
+import P5_EYE from './p5/P5_EYE';
 
 export default function Eye({ width, height }) {
   return (
     <EyeWrapper>
         <EyeLashContainer>
-          <EyeLash_4 />
-          <EyeLash_2 />
-          <EyeLash_1 />
-          <EyeLash_3 />
-          <EyeLash_5 />
+          <EyeLash4 />
+          <EyeLash2 />
+          <EyeLash1 />
+          <EyeLash3 />
+          <EyeLash5 />
         </EyeLashContainer>
 
         <EyeContainer>
-          <P5_Eye width={width} height={height}/>
+          <P5_EYE width={width} height={height}/>
         </EyeContainer>
       </EyeWrapper>
   );
@@ -56,20 +56,20 @@ const EyeLash = styled.div`
   padding: 4px;
   border-radius: 5px;
 `;
-const EyeLash_1 = styled(EyeLash)`
+const EyeLash1 = styled(EyeLash)`
   transform: rotate(90deg);
 `;
-const EyeLash_2 = styled(EyeLash)`
+const EyeLash2 = styled(EyeLash)`
   transform: rotate(70deg);
 `;
-const EyeLash_3 = styled(EyeLash)`
+const EyeLash3 = styled(EyeLash)`
   transform: rotate(-70deg);
 `;
-const EyeLash_4 = styled(EyeLash)`
+const EyeLash4 = styled(EyeLash)`
   transform: rotate(50deg) translateX(7px);
   width: 18px;
 `;
-const EyeLash_5 = styled(EyeLash)`
+const EyeLash5 = styled(EyeLash)`
   transform: rotate(-50deg) translateX(-7px);
   width: 18px;
 `;

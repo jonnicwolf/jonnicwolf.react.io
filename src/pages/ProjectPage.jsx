@@ -42,7 +42,7 @@ export default function ProjectPage () {
     p5,
     firebase,
     postgresql,
-    css3,
+    //css3,
   ] = [
     'devicon-javascript-plain',
     "devicon-react-original",
