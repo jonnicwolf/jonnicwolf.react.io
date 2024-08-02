@@ -24,8 +24,7 @@ export default function ProjectCard ({
 
   return (
     <Container onMouseLeave={onMouseLeave}>
-       {showMore ? (
-        <>
+       {showMore && <>
           <Gif src={cover1} />
           <HoverInfo>
             <PaddingWrap>
@@ -40,25 +39,20 @@ export default function ProjectCard ({
             </PaddingWrap>
           </HoverInfo>
         </>
-      ) : (
-          <EsperiCover setter={setShowMore} />
-      )}
+       || <EsperiCover setter={setShowMore} />
+      }
     </Container>
   );
 };
 
 const fadeIn = keyframes`
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  `;
+  from { opacity: 0; }
+  to { opacity: 1; }
+`;
 
 const Container = styled.div`
   height: 60vh;
-  width: 50vw;
+  width: 60vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,15 +60,15 @@ const Container = styled.div`
   animation: ${fadeIn} 1s forwards;
 `;
 
-const HoverInfo = styled.div`
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(225,225,225,0.7);
-  animation: ${fadeIn} 1s forwards;
-`;
+  const HoverInfo = styled.div`
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(225,225,225,0.7);
+    animation: ${fadeIn} 1s forwards;
+  `;
   const PaddingWrap = styled.div`
     margin-left: -1rem;
     margin-top: 8rem;
