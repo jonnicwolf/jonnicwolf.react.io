@@ -23,27 +23,38 @@ export default function ProjectCard ({
   };
 
   return (
-    <Container>
-       {/* {showMore ? ( */}
-        <Gif src={cover1} onMouseLeave={onMouseLeave} />
-        <HoverInfo>
-          <PaddingWrap>
-            <Title>{title}</Title>
-            <Bio>{bio}</Bio>
-            <TechContainer>
-              {devicons.map(icon => ( <i className={icon} /> ))}
-            </TechContainer>
-            <P>[ENTERTAINMENT & LIFESTYLE / WEBSITE / OPENAI]</P>
-            <ExternalButton link={href1} text={'LIVE SITE'} fontSize='1rem' />
-            <ExternalButton link={href2} text={'GITHUB'}  buffer={true}fontSize='1rem' />
-          </PaddingWrap>
-        </HoverInfo>
-      {/* ) : (
+    <Container onMouseLeave={onMouseLeave}>
+       {showMore ? (
+        <>
+          <Gif src={cover1} />
+          <HoverInfo>
+            <PaddingWrap>
+              <Title>{title}</Title>
+              <Bio>{bio}</Bio>
+              <TechContainer>
+                {devicons.map(icon => ( <i className={icon} /> ))}
+              </TechContainer>
+              <P>[ ENTERTAINMENT & LIFESTYLE / WEBSITE / OPENAI ]</P>
+              <ExternalButton link={href1} text={'LIVE SITE'} fontSize='1rem' />
+              <ExternalButton link={href2} text={'GITHUB'}  buffer={true}fontSize='1rem' />
+            </PaddingWrap>
+          </HoverInfo>
+        </>
+      ) : (
           <EsperiCover setter={setShowMore} />
-      )} */}
+      )}
     </Container>
   );
 };
+
+const fadeIn = keyframes`
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  `;
 
 const Container = styled.div`
   height: 60vh;
@@ -52,6 +63,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  animation: ${fadeIn} 1s forwards;
 `;
 
 const HoverInfo = styled.div`
@@ -60,11 +72,12 @@ const HoverInfo = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
-  background-color: rgba(225,225,225,0.4);
+  background-color: rgba(225,225,225,0.7);
+  animation: ${fadeIn} 1s forwards;
 `;
   const PaddingWrap = styled.div`
-    margin-left: -3rem;
-    margin-top: 10rem;
+    margin-left: -1rem;
+    margin-top: 8rem;
   `;
   const Gif = styled.img`
     height: 100%;
@@ -95,14 +108,6 @@ const HoverInfo = styled.div`
 
     @media (max-width: 800px) {
       font-size: 20px;
-    }
-  `;
-  const fadeIn = keyframes`
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
     }
   `;
   const TechContainer = styled.div`

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import Eye from './Eye.jsx';
 
@@ -17,6 +17,15 @@ export default function EsperiCover ({ setter }) {
   );
 };
 
+const fadeIn = keyframes`
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  `;
+
 const Container = styled.div`
   background-color: rgb(252, 230, 197);
   display: flex;
@@ -25,6 +34,7 @@ const Container = styled.div`
   justify-content: space-evenly;
   height: 700px;
   width: 800px;
+  animation: ${fadeIn} 2s forwards;
 
   --s: 5px;
   padding: var(--s);
@@ -36,7 +46,7 @@ const Container = styled.div`
 `;
 
 const EyeWrap = styled.div`
-  padding: 50px;
+  // padding: 50px;
   transform: translateX(-20px);
 `;
 const Title = styled.h1`
