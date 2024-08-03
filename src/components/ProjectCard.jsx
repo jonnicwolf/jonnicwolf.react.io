@@ -42,8 +42,7 @@ const fadeIn = keyframes`
 
 const Container = styled.div`
   height: 800px;
-  width: 700px;
-  border: 1px solid red;
+  width: 800px;
   display: flex;
   justify-content: center;
   align-items: center;

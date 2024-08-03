@@ -50,7 +50,7 @@ const ContentWrap = styled.div`
   outline-offset: calc(-3*var(--s));
   background: conic-gradient(from 90deg at 1px 1px,#0000 25%,#000 0);
   background-color: #fce6c5;
-`
+`;
 const EyeWrap = styled.div`
   transform: translateX(-20px);
 `;
