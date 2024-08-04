@@ -24,8 +24,10 @@ export default function HoverCover({
           <TechContainer>
             {devicons.map( icon => ( <i className={icon} /> ))}
           </TechContainer>
-          <P>[ {apis.map( item => ` ${item} /`)} ]</P>
-          <P>[ {descriptions.map( item => ` ${item} /`)} ]</P>
+          <PContainer>
+            <P>[ {apis.map( item => ` ${item} /`)} ]</P>
+            <P>[ {descriptions.map( item => ` ${item} /`)} ]</P>
+          </PContainer>
           <ExternalButton link={href1} text={'LIVE SITE'} fontSize='1rem' />
           <ExternalButton link={href2} text={'GITHUB'} buffer={true} fontSize='1rem' />
         </PaddingWrap>
@@ -89,6 +91,12 @@ const Container = styled.div`
   const Gif = styled.img`
     height: 100%;
     width: 100%;
+  `;
+
+  const PContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
   `;
   const P = styled.p`
     font-weight: bold;
