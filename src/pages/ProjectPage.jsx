@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
 import styled, { keyframes} from 'styled-components';
 
-import ProjectVideo from '../components/ProjectVideo';
+import ProjectCard from '../components/ProjectCard';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
+
+import EsperiCover from '../components/EsperiCover';
+import SCDCover from '../components/SCDCover';
 import ExternalButton from '../assets/buttons/ExternalButton';
 
-import TipTallyPro from '../assets/video/TipTallyPro.mp4';
-import SCD from '../assets/video/SCD.mp4';
-import Hotc from '../assets/video/Hotc.mp4';
-
-import SCD_photo from '../assets/photos/SCD.jpg';
-import tpr_logo from '../assets/photos/tpr_logo.jpg';
-import Hotc_photo from '../assets/photos/Hotc.jpg'
+const SCD_photo   = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/z265st6zxzzcvahg9sca';
+const tpr_logo    = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/roqapvvi16ddsfoeqmfp';
+const Hotc_photo  = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/b78dtd45ccc9edyg9dad';
 
 export default function ProjectPage () {
   const [blurToggle1, setBlurToggle1] = useState(false);
   const [blurToggle2, setBlurToggle2] = useState(false);
   const [blurToggle3, setBlurToggle3] = useState(false);
-  const isMobile = window.innerWidth < 1024;
+  const isMobile = window.innerWidth < 720;
 
   function handleToggle (setBlur, getBlur) {
     setBlur(!getBlur);
@@ -29,19 +28,18 @@ export default function ProjectPage () {
     p5,
     firebase,
     postgresql,
-    css3,
+    //css3,
   ] = [
     'devicon-javascript-plain',
     "devicon-react-original",
     "devicon-p5js-original",
-    "devicon-firebase-plain-wordmark",
+    "devicon-firebase-plain",
     "devicon-postgresql-plain",
     "devicon-css3-plain-wordmark",
   ];
 
   const hotc_devi = [javascript, react, p5, firebase];
   const scd_devi= [javascript, react, postgresql, firebase];
-  const ttp_devi = [javascript, react, css3];
 
   return (
     <Container isMobile={isMobile}>
@@ -144,32 +142,28 @@ export default function ProjectPage () {
         </ProjectList>
         :
         <ProjectList>
-          <ProjectVideo
-            bio='Tarot Card Reader'
-            title='ESPERI'
-            href1='https://esperi.netlify.app'
-            href2='https://github.com/jonnicwolf/heart_of_the_cards'
-            videoSrc={Hotc}
-            description={'Discover your destiny with Esperi. Receive three random cards and personalized readings that reveal insights and guidance. Uncover the mysteries today!'}
+          <ProjectCard
+            title='Esperi'
+            bio='Tarot Interpreter'
+            liveLink='https://esperi.netlify.app'
+            githubLink='https://github.com/jonnicwolf/heart_of_the_cards'
+            cover={EsperiCover}
+            gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/heicbedxhzwocfzxqzky'
+            apis={['TAROTAPI', 'OPENAI API']}
+            descriptions={['LIFESTYLE & ENTERTAINMENT', 'FULL STACK']}
             devicons={hotc_devi}
           />
-          <ProjectVideo
-            bio='Webstore / Ice Cream Shop'
-            title='STONED COLD DREAMERY'
-            href1='https://thestonedcolddreamery.com'
-            href2='https://github.com/jonnicwolf/stoned_cold_dreamery'
-            videoSrc={SCD}
-            description={'Savor the extraordinary at Stoned Cold Dreamery! Where each scoop is a tantalizing delight. Taste the difference today!'}
+
+          <ProjectCard
+            title='Stoned Cold Dreamery'
+            bio='Webstore'
+            liveLink='https://thestonedcolddreamery.com'
+            githubLink='https://github.com/jonnicwolf/stoned_cold_dreamery'
+            cover={SCDCover}
+            gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/r46imtohg1igqqknoqgp'
+            apis={[]}
+            descriptions={['E-COMMERCE', 'FULL STACK']}
             devicons={scd_devi}
-          />
-          <ProjectVideo
-            bio='Closing Bartender Calculator'
-            title='TIP TALLY PRO'
-            href1='https://tiptallypro.netlify.app'
-            href2='https://github.com/jonnicwolf/tiptallypro'
-            videoSrc={TipTallyPro}
-            description={'Your ultimate tool for effortless tip counting and bank balancing Tip Tally Pro! Utilized daily by 6 NYC bars'}
-            devicons={ttp_devi}
           />
         </ProjectList>
       }
@@ -180,8 +174,9 @@ export default function ProjectPage () {
 
 const Container = styled.div`
   display: ${props => props.isMobile ? 'flex' : ''};
+  display: flex;
   justify-content: center;
-  height: 250vh;
+  height: 160vh;
 `;
 const Background = styled(P5_LORENZ_ATTRACTOR)`
   height: 100vh;
@@ -189,15 +184,13 @@ const Background = styled(P5_LORENZ_ATTRACTOR)`
 `;
 const ProjectList = styled.div`
   display: flex;
-  padding-top: 10vh;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  list-style: none;
   gap: 20vh;
-  z-index: 99;
   position: absolute;
-  padding-bottom: 10vh;
+  padding-top: 10vh;
+  z-index: 99;
 `;
 const Info = styled.div`
   padding: 15px;
@@ -273,4 +266,3 @@ const TechContainer = styled.div`
     animation-delay: 1.1s;
   }
 `;
-

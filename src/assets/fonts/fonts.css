@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Modak&family=Rubik:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Michroma&display=swap');
 
 :root {
   --font-family-rampart-one: 'Rampart One', cursive;
@@ -14,6 +15,7 @@
   --font-family-noto-sans-display: 'Noto Sans Display', sans-serif;
   --font-family-modak: 'Modak', cursive;
   --font-family-rubik: 'Rubik', sans-serif;
+  --font-family-lora: 'Lora', serif;
   --font-weight-normal: 100;
   --font-weight-bold: 700;
 }
