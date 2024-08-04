@@ -49,5 +49,5 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  animation: ${fadeIn} 1s forwards;
+  animation: ${fadeIn} 0.3s forwards;
 `;
