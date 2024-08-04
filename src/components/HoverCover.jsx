@@ -8,7 +8,6 @@ export default function HoverCover({
   title,
   href1,
   href2,
-  // cover,
   gifPath,
   apis,
   descriptions,
@@ -96,6 +95,8 @@ const Container = styled.div`
     font-family: Noto Sans Display;
     font-size: 0.8rem;
     text-wrap: wrap;
+    padding: 0;
+    margin: 0;
   `;
   const Title = styled.h1`
     font-family: Michroma;

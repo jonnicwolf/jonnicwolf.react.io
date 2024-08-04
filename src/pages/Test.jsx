@@ -25,14 +25,14 @@ const Test = () => {
   return (
     <Container>
       {/* WELL HELLO MOTHERFUCKER, NOTHING TO SEE HERE */}
-      <ProjectCard 
+      <ProjectCard
         bio='Tarot Interpreter'
         title='Esperi'
         href1='https://esperi.netlify.app'
         href2='https://github.com/jonnicwolf/heart_of_the_cards'
         gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/heicbedxhzwocfzxqzky'
         apis={['TAROTAPI', 'OPENAI API']}
-        description={['LIFESTYLE & ENTERTAINMENT', 'FULL STACK']}
+        descriptions={['LIFESTYLE & ENTERTAINMENT', 'FULL STACK']}
         devicons={hotc_devi}
         cover={EsperiCover}
       />

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 
-import EsperiCover from './EsperiCover';
 import HoverCover from './HoverCover';
 
 export default function ProjectCard ({
@@ -11,7 +10,8 @@ export default function ProjectCard ({
   href2,
   cover: Cover,
   gifPath,
-  description,
+  apis,
+  descriptions,
   devicons,
 }) {
   const [showMore, setShowMore] = useState(false);
@@ -29,7 +29,8 @@ export default function ProjectCard ({
             href1={href1}
             href2={href2}
             gifPath={gifPath}
-            description={description}
+            apis={apis}
+            descriptions={descriptions}
             devicons={devicons}/> : <Cover setter={setShowMore}/> }
     </Container>
   ); 
