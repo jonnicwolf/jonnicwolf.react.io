@@ -5,6 +5,8 @@ import { useQuery } from '@tanstack/react-query';
 import ProjectVideo from '../components/ProjectVideo';
 import ProjectCard from '../components/ProjectCard';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
+
+import EsperiCover from '../components/EsperiCover';
 import ExternalButton from '../assets/buttons/ExternalButton';
 
 const SCD_photo   = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/z265st6zxzzcvahg9sca';
@@ -158,7 +160,15 @@ export default function ProjectPage () {
         :
         <ProjectList>
           <ProjectCard
-
+            title='Esperi'
+            bio='Tarot Interpreter'
+            liveLink='https://esperi.netlify.app'
+            githubLink='https://github.com/jonnicwolf/heart_of_the_cards'
+            cover={EsperiCover}
+            gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/heicbedxhzwocfzxqzky'
+            apis={['TAROTAPI', 'OPENAI API']}
+            descriptions={['LIFESTYLE & ENTERTAINMENT', 'FULL STACK']}
+            devicons={hotc_devi}
           />
           {/* <ProjectVideo
             bio='Tarot Card Reader'
