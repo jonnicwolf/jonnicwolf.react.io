@@ -24,9 +24,9 @@ export default function HoverCover({
           <TechContainer>
             {devicons.map(icon => ( <i className={icon} /> ))}
           </TechContainer>
-          <P>[ ENTERTAINMENT & LIFESTYLE / WEBSITE / OPENAI ]</P>
+          <P>[ ENTERTAINMENT & LIFESTYLE / FULL STACK / OPENAI API ]</P>
           <ExternalButton link={href1} text={'LIVE SITE'} fontSize='1rem' />
-          <ExternalButton link={href2} text={'GITHUB'}  buffer={true}fontSize='1rem' />
+          <ExternalButton link={href2} text={'GITHUB'} buffer={true} fontSize='1rem' />
         </PaddingWrap>
       </HoverInfo>
     </Container>
@@ -54,12 +54,36 @@ const Container = styled.div`
     position: absolute;
     display: flex;
     flex-direction: column;
-    background-color: rgba(225,225,225,0.7);
+    background-color: rgba(225,225,225,0.8);
     animation: ${fadeIn} 1s forwards;
   `;
   const PaddingWrap = styled.div`
-    margin-left: -1rem;
+    margin-left: -3rem;
     margin-top: 8rem;
+
+    & > * {
+      opacity: 0;
+      animation: ${fadeIn} 1s forwards;
+    }
+
+    & > *:nth-child(1) {
+      animation-delay: 0.3s;
+    }
+    & > *:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+    & > *:nth-child(3) {
+      animation-delay: 0.8s;
+    }
+    & > *:nth-child(4) {
+      animation-delay: 1.1s;
+    }
+    & > *:nth-child(5) {
+      animation-delay: 1.4s;
+    }
+    & > *:nth-child(6) {
+      animation-delay: 1.7s;
+    }
   `;
   const Gif = styled.img`
     height: 100%;
@@ -87,7 +111,6 @@ const Container = styled.div`
     font-weight: bolder;
     letter-spacing: 2px;
     margin: 0;
-
     @media (max-width: 800px) {
       font-size: 20px;
     }
