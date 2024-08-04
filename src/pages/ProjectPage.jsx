@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import styled, { keyframes} from 'styled-components';
-import { useQuery } from '@tanstack/react-query';
 
-import ProjectVideo from '../components/ProjectVideo';
 import ProjectCard from '../components/ProjectCard';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
 
@@ -15,7 +13,6 @@ const tpr_logo    = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_
 const Hotc_photo  = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/b78dtd45ccc9edyg9dad';
 
 export default function ProjectPage () {
-  //const cld = new Cloudinary({ cloud: { cloudName: 'dhah4xjvr' }})
   const [blurToggle1, setBlurToggle1] = useState(false);
   const [blurToggle2, setBlurToggle2] = useState(false);
   const [blurToggle3, setBlurToggle3] = useState(false);
@@ -25,21 +22,6 @@ export default function ProjectPage () {
     setBlur(!getBlur);
   };
 
-  async function fetchVideos () {
-    const SCDResponse = await fetch('https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/videos/gifs/cpt2t8zchjfh72am0jx7');
-    const HotcResponse = await fetch('https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/videos/gifs/ytnuuof8yl55dm4tpzsr');
-
-    return {
-      SCD: SCDResponse,
-      Hotc: HotcResponse,
-    }.json();
-  };
-
-  const { data } = useQuery({
-    queryKey: ['videos'],
-    queryFn: fetchVideos
-  });
-  const { SCD, Hotc } = data || {};
   const [
     javascript,
     react,
