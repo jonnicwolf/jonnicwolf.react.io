@@ -7,6 +7,7 @@ export default function EsperiCover ({ setter }) {
   function onMouseEnter () {
     setter(true);
   };
+
   return (
     <Container onMouseEnter={onMouseEnter}>
       <ContentWrap>
