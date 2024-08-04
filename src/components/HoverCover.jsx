@@ -13,7 +13,6 @@ export default function HoverCover({
   descriptions,
   devicons
 ,}) {
-  const cover1 = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/heicbedxhzwocfzxqzky'
   return (
     <Container>
       <Gif src={gifPath} />
@@ -22,11 +21,11 @@ export default function HoverCover({
           <Title>{title}</Title>
           <Bio>{bio}</Bio>
           <TechContainer>
-            {devicons.map( icon => ( <i className={icon} /> ))}
+            {devicons.map( (icon, index) => ( <i className={icon} key={index} /> ))}
           </TechContainer>
           <PContainer>
-            <P>[ {apis.map( item => ` ${item} /`)} ]</P>
-            <P>[ {descriptions.map( item => ` ${item} /`)} ]</P>
+          <P>[ {apis.map((item, index) => <span key={index}>{` ${item} /`}</span>)} ]</P>
+          <P>[ {descriptions.map((item, index) => <span key={index}>{` ${item} /`}</span>)} ]</P>
           </PContainer>
           <ExternalButton link={href1} text={'LIVE SITE'} fontSize='1rem' />
           <ExternalButton link={href2} text={'GITHUB'} buffer={true} fontSize='1rem' />
@@ -98,14 +97,15 @@ const Container = styled.div`
     flex-direction: column;
     margin-top: 15px;
   `;
-  const P = styled.p`
-    font-weight: bold;
-    font-family: Noto Sans Display;
-    font-size: 0.8rem;
-    text-wrap: wrap;
-    padding: 0;
-    margin: 0;
-  `;
+    const P = styled.p`
+      font-weight: bold;
+      font-family: Noto Sans Display;
+      font-size: 0.8rem;
+      text-wrap: wrap;
+      padding: 0;
+      margin: 0;
+    `;
+
   const Title = styled.h1`
     font-family: Michroma;
     font-weight: normal;
