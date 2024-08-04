@@ -40,6 +40,7 @@ const NavbarContainer = styled.div`
   margin-left: 5vw;
   padding-inline-start: 0;
   width: 90vw;
+  border-bottom: 2px solid #a3a3a3;
 `;
 const Fezz = styled.div`
   margin-right: auto;
