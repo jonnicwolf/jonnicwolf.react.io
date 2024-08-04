@@ -162,7 +162,7 @@ export default function ProjectPage () {
             cover={SCDCover}
             gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/r46imtohg1igqqknoqgp'
             apis={[]}
-            descriptions={['E-COMMERCE', 'FRONT END']}
+            descriptions={['E-COMMERCE', 'FULL STACK']}
             devicons={scd_devi}
           />
         </ProjectList>

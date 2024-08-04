@@ -105,6 +105,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: 15px;
+    margin-bottom: 15px;
   `;
     const P = styled.p`
       font-weight: bold;
@@ -118,7 +119,7 @@ const Container = styled.div`
   const Title = styled.h1`
     font-family: Michroma;
     font-weight: normal;
-    font-size: 3rem;
+    font-size: 2rem;
     margin: 0;
     padding: 0;
     @media (max-width: 800px) {
