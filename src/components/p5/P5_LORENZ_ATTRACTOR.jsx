@@ -48,7 +48,7 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor, darkMode, showControls }) => {
         p.vertex(v.x, v.y, v.z);
       });
 
-      if (points.length > 3500) points.shift();
+      if (points.length > 1500) points.shift();
 
       const rotationSpeed = 0.0019;
       p.rotateX(p.frameCount * rotationSpeed * 0.7);
