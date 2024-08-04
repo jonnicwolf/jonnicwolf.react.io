@@ -22,16 +22,17 @@ export default function ProjectCard ({
 
   return (
     <Container onMouseLeave={onMouseLeave}>
-       {showMore
+      {showMore
         ? <HoverCover
-            bio={bio}
-            title={title}
-            liveLink={liveLink}
-            githubLink={githubLink}
-            gifPath={gifPath}
-            apis={apis}
-            descriptions={descriptions}
-            devicons={devicons}/> : <Cover setter={setShowMore}/> }
+          bio={bio}
+          title={title}
+          liveLink={liveLink}
+          githubLink={githubLink}
+          gifPath={gifPath}
+          apis={apis}
+          descriptions={descriptions}
+          devicons={devicons}/>
+        : <Cover setter={setShowMore} /> }
     </Container>
   ); 
 };

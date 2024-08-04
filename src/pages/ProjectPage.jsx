@@ -7,6 +7,7 @@ import ProjectCard from '../components/ProjectCard';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
 
 import EsperiCover from '../components/EsperiCover';
+import SCDCover from '../components/SCDCover';
 import ExternalButton from '../assets/buttons/ExternalButton';
 
 const SCD_photo   = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/z265st6zxzzcvahg9sca';
@@ -175,7 +176,7 @@ export default function ProjectPage () {
             bio='Webstore'
             liveLink='https://thestonedcolddreamery.com'
             githubLink='https://github.com/jonnicwolf/stoned_cold_dreamery'
-            cover={EsperiCover}
+            cover={SCDCover}
             gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/r46imtohg1igqqknoqgp'
             apis={[]}
             descriptions={['E-COMMERCE', 'FRONT END']}
