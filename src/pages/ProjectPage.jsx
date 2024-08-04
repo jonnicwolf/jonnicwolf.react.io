@@ -3,6 +3,7 @@ import styled, { keyframes} from 'styled-components';
 import { useQuery } from '@tanstack/react-query';
 
 import ProjectVideo from '../components/ProjectVideo';
+import ProjectCard from '../components/ProjectCard';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
 import ExternalButton from '../assets/buttons/ExternalButton';
 
@@ -156,7 +157,10 @@ export default function ProjectPage () {
         </ProjectList>
         :
         <ProjectList>
-          <ProjectVideo
+          <ProjectCard
+
+          />
+          {/* <ProjectVideo
             bio='Tarot Card Reader'
             title='ESPERI'
             href1='https://esperi.netlify.app'
@@ -173,7 +177,7 @@ export default function ProjectPage () {
             videoSrc={SCD}
             description={'Savor the extraordinary at Stoned Cold Dreamery! Where each scoop is a tantalizing delight. Taste the difference today!'}
             devicons={scd_devi}
-          />
+          /> */}
         </ProjectList>
       }
       <Background strokeColor={150} showControls={false}/>

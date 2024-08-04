@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ProjectCard from '../components/ProjectCard';
-// import EsperiCover from '../components/EsperiCover';
+import EsperiCover from '../components/EsperiCover';
 
 const Test = () => {
   const [
@@ -28,7 +28,13 @@ const Test = () => {
       <ProjectCard 
         bio='Tarot Interpreter'
         title='Esperi'
+        href1='https://esperi.netlify.app'
+        href2='https://github.com/jonnicwolf/heart_of_the_cards'
+        gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/heicbedxhzwocfzxqzky'
+        apis={['TAROTAPI', 'OPENAI API']}
+        description={['LIFESTYLE & ENTERTAINMENT', 'FULL STACK']}
         devicons={hotc_devi}
+        cover={EsperiCover}
       />
     </Container>
   );

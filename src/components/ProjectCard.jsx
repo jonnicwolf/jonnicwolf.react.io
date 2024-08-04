@@ -9,7 +9,7 @@ export default function ProjectCard ({
   title,
   href1,
   href2,
-  // cover,
+  cover: Cover,
   gifPath,
   description,
   devicons,
@@ -22,7 +22,7 @@ export default function ProjectCard ({
 
   return (
     <Container onMouseLeave={onMouseLeave}>
-       {showMore 
+       {showMore
         ? <HoverCover
             bio={bio}
             title={title}
@@ -30,7 +30,7 @@ export default function ProjectCard ({
             href2={href2}
             gifPath={gifPath}
             description={description}
-            devicons={devicons}/> : <EsperiCover setter={setShowMore} />}
+            devicons={devicons}/> : <Cover setter={setShowMore}/> }
     </Container>
   ); 
 };

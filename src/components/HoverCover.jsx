@@ -10,21 +10,23 @@ export default function HoverCover({
   href2,
   // cover,
   gifPath,
-  description,
+  apis,
+  descriptions,
   devicons
 ,}) {
   const cover1 = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/heicbedxhzwocfzxqzky'
   return (
     <Container>
-      <Gif src={cover1} />
+      <Gif src={gifPath} />
       <HoverInfo>
         <PaddingWrap>
           <Title>{title}</Title>
           <Bio>{bio}</Bio>
           <TechContainer>
-            {devicons.map(icon => ( <i className={icon} /> ))}
+            {devicons.map( icon => ( <i className={icon} /> ))}
           </TechContainer>
-          <P>[ ENTERTAINMENT & LIFESTYLE / FULL STACK / OPENAI API ]</P>
+          <P>[ {apis.map( item => ` ${item} /`)} ]</P>
+          <P>[ {descriptions.map( item => ` ${item} /`)} ]</P>
           <ExternalButton link={href1} text={'LIVE SITE'} fontSize='1rem' />
           <ExternalButton link={href2} text={'GITHUB'} buffer={true} fontSize='1rem' />
         </PaddingWrap>
