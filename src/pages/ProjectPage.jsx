@@ -170,6 +170,17 @@ export default function ProjectPage () {
             descriptions={['LIFESTYLE & ENTERTAINMENT', 'FULL STACK']}
             devicons={hotc_devi}
           />
+          <ProjectCard
+            title='Stoned Cold Dreamery'
+            bio='Webstore'
+            liveLink='https://thestonedcolddreamery.com'
+            githubLink='https://github.com/jonnicwolf/stoned_cold_dreamery'
+            cover={EsperiCover}
+            gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/r46imtohg1igqqknoqgp'
+            apis={[]}
+            descriptions={['E-COMMERCE', 'FRONT END']}
+            devicons={scd_devi}
+          />
           {/* <ProjectVideo
             bio='Tarot Card Reader'
             title='ESPERI'
