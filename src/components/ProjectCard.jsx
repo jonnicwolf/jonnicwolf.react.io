@@ -6,8 +6,8 @@ import HoverCover from './HoverCover';
 export default function ProjectCard ({
   bio,
   title,
-  href1,
-  href2,
+  liveLink,
+  githubLink,
   cover: Cover,
   gifPath,
   apis,
@@ -26,8 +26,8 @@ export default function ProjectCard ({
         ? <HoverCover
             bio={bio}
             title={title}
-            href1={href1}
-            href2={href2}
+            liveLink={liveLink}
+            githubLink={githubLink}
             gifPath={gifPath}
             apis={apis}
             descriptions={descriptions}

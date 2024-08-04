@@ -6,8 +6,8 @@ import ExternalButton from '../assets/buttons/ExternalButton';
 export default function HoverCover({
   bio,
   title,
-  href1,
-  href2,
+  liveLink,
+  githubLink,
   gifPath,
   apis,
   descriptions,
@@ -24,11 +24,11 @@ export default function HoverCover({
             {devicons.map( (icon, index) => ( <i className={icon} key={index} /> ))}
           </TechContainer>
           <PContainer>
-          <P>[ {apis.map((item, index) => <span key={index}>{` ${item} /`}</span>)} ]</P>
-          <P>[ {descriptions.map((item, index) => <span key={index}>{` ${item} /`}</span>)} ]</P>
+            <P>[ {apis.map((item, index) => <span key={index}>{` ${item} /`}</span>)} ]</P>
+            <P>[ {descriptions.map((item, index) => <span key={index}>{` ${item} /`}</span>)} ]</P>
           </PContainer>
-          <ExternalButton link={href1} text={'LIVE SITE'} fontSize='1rem' />
-          <ExternalButton link={href2} text={'GITHUB'} buffer={true} fontSize='1rem' />
+          <ExternalButton link={liveLink} text={'LIVE SITE'} fontSize='1rem' />
+          <ExternalButton link={githubLink} text={'GITHUB'} buffer={true} fontSize='1rem' />
         </PaddingWrap>
       </HoverInfo>
     </Container>
