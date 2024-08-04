@@ -24,7 +24,7 @@ export default function HoverCover({
             {devicons.map( (icon, index) => ( <i className={icon} key={index} /> ))}
           </TechContainer>
           <PContainer>
-            <P>[ {apis.map((item, index) => <span key={index}>{` ${item} /`}</span>)} ]</P>
+            {apis.length >= 1 && <P>[ {apis.map((item, index) => <span key={index}>{` ${item} /`}</span>)} ]</P>}
             <P>[ {descriptions.map((item, index) => <span key={index}>{` ${item} /`}</span>)} ]</P>
           </PContainer>
           <ExternalButton link={liveLink} text={'LIVE SITE'} fontSize='1rem' />
