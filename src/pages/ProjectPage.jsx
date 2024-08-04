@@ -19,7 +19,7 @@ export default function ProjectPage () {
   const [blurToggle1, setBlurToggle1] = useState(false);
   const [blurToggle2, setBlurToggle2] = useState(false);
   const [blurToggle3, setBlurToggle3] = useState(false);
-  const isMobile = window.innerWidth < 1024;
+  const isMobile = window.innerWidth < 720;
 
   function handleToggle (setBlur, getBlur) {
     setBlur(!getBlur);
@@ -51,7 +51,7 @@ export default function ProjectPage () {
     'devicon-javascript-plain',
     "devicon-react-original",
     "devicon-p5js-original",
-    "devicon-firebase-plain colored",
+    "devicon-firebase-plain",
     "devicon-postgresql-plain",
     "devicon-css3-plain-wordmark",
   ];
@@ -171,6 +171,7 @@ export default function ProjectPage () {
             descriptions={['LIFESTYLE & ENTERTAINMENT', 'FULL STACK']}
             devicons={hotc_devi}
           />
+
           <ProjectCard
             title='Stoned Cold Dreamery'
             bio='Webstore'
@@ -182,24 +183,6 @@ export default function ProjectPage () {
             descriptions={['E-COMMERCE', 'FRONT END']}
             devicons={scd_devi}
           />
-          {/* <ProjectVideo
-            bio='Tarot Card Reader'
-            title='ESPERI'
-            href1='https://esperi.netlify.app'
-            href2='https://github.com/jonnicwolf/heart_of_the_cards'
-            videoSrc={Hotc}
-            description={'Discover your destiny with Esperi. Receive three random cards and personalized readings that reveal insights and guidance. Uncover the mysteries today!'}
-            devicons={hotc_devi}
-          />
-          <ProjectVideo
-            bio='Webstore / Ice Cream Shop'
-            title='STONED COLD DREAMERY'
-            href1='https://thestonedcolddreamery.com'
-            href2='https://github.com/jonnicwolf/stoned_cold_dreamery'
-            videoSrc={SCD}
-            description={'Savor the extraordinary at Stoned Cold Dreamery! Where each scoop is a tantalizing delight. Taste the difference today!'}
-            devicons={scd_devi}
-          /> */}
         </ProjectList>
       }
       <Background strokeColor={150} showControls={false}/>
@@ -209,8 +192,9 @@ export default function ProjectPage () {
 
 const Container = styled.div`
   display: ${props => props.isMobile ? 'flex' : ''};
+  display: flex;
   justify-content: center;
-  height: 250vh;
+  height: 180vh;
 `;
 const Background = styled(P5_LORENZ_ATTRACTOR)`
   height: 100vh;
@@ -218,15 +202,13 @@ const Background = styled(P5_LORENZ_ATTRACTOR)`
 `;
 const ProjectList = styled.div`
   display: flex;
-  padding-top: 10vh;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  list-style: none;
   gap: 20vh;
-  z-index: 99;
   position: absolute;
-  padding-bottom: 10vh;
+  padding-top: 10vh;
+  z-index: 99;
 `;
 const Info = styled.div`
   padding: 15px;
