@@ -24,8 +24,17 @@ export default function HoverCover({
             {devicons.map( (icon, index) => ( <i className={icon} key={index} /> ))}
           </TechContainer>
           <PContainer>
-            {apis.length >= 1 && <P>[ {apis.map((item, index) => <span key={index}>{` ${item} /`}</span>)} ]</P>}
-            <P>[ {descriptions.map((item, index) => <span key={index}>{` ${item} /`}</span>)} ]</P>
+            {apis.length >= 1 && 
+            <P> [ {apis.map(
+              (item, index) => index !== apis.length-1
+              ? <span key={index}>{` ${item} /`}</span>
+              : <span key={index}>{` ${item} `}</span> )} ] </P>}
+            {descriptions.length >= 1 && 
+            <P> [ {descriptions.map(
+              (item, index) => index !== descriptions.length-1
+              ? <span key={index}>{` ${item} /`}</span>
+              : <span key={index}>{` ${item} `}</span> )} ] </P>}
+            {/* <P>[ {descriptions.map((item, index) => <span key={index}>{` ${item} /`}</span>)} ]</P> */}
           </PContainer>
           <ExternalButton link={liveLink} text={'LIVE SITE'} fontSize='1rem' />
           <ExternalButton link={githubLink} text={'GITHUB'} buffer={true} fontSize='1rem' />
