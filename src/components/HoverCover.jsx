@@ -11,7 +11,8 @@ export default function HoverCover({
   gifPath,
   apis,
   descriptions,
-  devicons
+  devicons,
+  darkMode
 ,}) {
   return (
     <Container>
@@ -34,10 +35,18 @@ export default function HoverCover({
               (item, index) => index !== descriptions.length-1
               ? <span key={index}>{` ${item} /`}</span>
               : <span key={index}>{` ${item} `}</span> )} ] </P>}
-            {/* <P>[ {descriptions.map((item, index) => <span key={index}>{` ${item} /`}</span>)} ]</P> */}
           </PContainer>
-          <ExternalButton link={liveLink} text={'LIVE SITE'} fontSize='1rem' />
-          <ExternalButton link={githubLink} text={'GITHUB'} buffer={true} fontSize='1rem' />
+          <ExternalButton
+            link={liveLink}
+            text={'LIVE SITE'}
+            darkModeGetter={darkMode}
+            fontSize='1rem' />
+          <ExternalButton
+            link={githubLink}
+            text={'GITHUB'}
+            darkModeGetter={darkMode}
+            buffer={true}
+            fontSize='1rem' />
         </PaddingWrap>
       </HoverInfo>
     </Container>
@@ -56,7 +65,6 @@ const Container = styled.div`
   justify-content: space-evenly;
   height: 100%;
   width: 100%;
-  animation: ${fadeIn} 2s forwards;
 `;
 
   const HoverInfo = styled.div`
@@ -71,7 +79,7 @@ const Container = styled.div`
   const PaddingWrap = styled.div`
     margin-left: -3rem;
     margin-top: 8rem;
-
+    
     & > * {
       opacity: 0;
       animation: ${fadeIn} 1s forwards;

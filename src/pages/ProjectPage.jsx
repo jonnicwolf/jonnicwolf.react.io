@@ -12,7 +12,7 @@ const SCD_photo   = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_
 const tpr_logo    = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/roqapvvi16ddsfoeqmfp';
 const Hotc_photo  = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/b78dtd45ccc9edyg9dad';
 
-export default function ProjectPage () {
+export default function ProjectPage ({ darkMode }) {
   const [blurToggle1, setBlurToggle1] = useState(false);
   const [blurToggle2, setBlurToggle2] = useState(false);
   const [blurToggle3, setBlurToggle3] = useState(false);
@@ -152,6 +152,7 @@ export default function ProjectPage () {
             apis={['TAROTAPI', 'OPENAI API']}
             descriptions={['LIFESTYLE & ENTERTAINMENT', 'FULL STACK']}
             devicons={hotc_devi}
+            darkMode={darkMode}
           />
 
           <ProjectCard
@@ -164,6 +165,7 @@ export default function ProjectPage () {
             apis={[]}
             descriptions={['E-COMMERCE', 'FULL STACK']}
             devicons={scd_devi}
+            darkMode={darkMode}
           />
         </ProjectList>
       }

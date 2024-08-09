@@ -13,6 +13,7 @@ export default function ProjectCard ({
   apis,
   descriptions,
   devicons,
+  darkMode
 }) {
   const [showMore, setShowMore] = useState(false);
 
@@ -31,7 +32,9 @@ export default function ProjectCard ({
           gifPath={gifPath}
           apis={apis}
           descriptions={descriptions}
-          devicons={devicons}/>
+          devicons={devicons}
+          // darkMode={darkMode}
+          />
         : <Cover setter={setShowMore} /> }
     </Container>
   ); 

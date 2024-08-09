@@ -30,7 +30,7 @@ function App() {
       <Suspense fallback={<Loader strokeColor={150}/>}>
         <Routes>
           <Route path='/'         element={<LandingPage />} />
-          <Route path='/projects' element={<ProjectPage />} />
+          <Route path='/projects' element={<ProjectPage darkMode={darkMode}/>} />
           <Route path='/gallery'  element={<GalleryPage darkMode={darkMode}/>} />
           <Route path='/gallery/:projectName'  element={<GalleryPage darkMode={darkMode}/>} />
           <Route path='/about'    element={<AboutmePage darkMode={darkMode}/>} />
