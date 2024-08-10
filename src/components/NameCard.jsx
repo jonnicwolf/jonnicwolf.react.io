@@ -7,26 +7,49 @@ import Socials from '../components/Socials.jsx'
 
 const NameCard = () => {
   return (
-    <Container>
-        <RampartOneText variants={items} custom={0} >FEZZ</RampartOneText>
-        <FSD            variants={items} custom={1} > FULL STACK DEVELOPER  </FSD>
-        <CurrentRole    variants={items} custom={2} > FREELANCER, PREVIOUSLY SEATGEEK COMMERCE MARKETPLACE ENGINEERING </CurrentRole>
-        <Hometown       variants={items} custom={3} > BASED IN NEW YORK CITY </Hometown>
+    <Container
+      variants={fadeIn}
+      initial="hidden"
+      animate="show"
+      >
+        <RampartOneText variants={items} custom={0} >
+          FEZZ
+        </RampartOneText>
+        <FSD variants={items} custom={1}>
+          FULL STACK DEVELOPER
+        </FSD>
+        <CurrentRole variants={items} custom={2} >
+          FREELANCER, PREVIOUSLY SEATGEEK COMMERCE MARKETPLACE ENGINEERING
+        </CurrentRole>
+        <Hometown variants={items} custom={3} >
+          BASED IN NEW YORK CITY
+        </Hometown>
         <br /><br />
-        <Socials        variants={items} custom={4} gap={'1.5vw'}/>
+        <Socials gap={'1.5vw'}/>
     </Container>
   )
 };
 
+const fadeIn = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
+};
+
 const items = {
   hidden: {
-    opacity: 1,
     y: -50,
-    
-    transition: { when: 'afterChildren' }
   },
   show: (i) => ({
-    opacity: 1,
     y: 0,
     transition: {
       delay: i * 0.2,
@@ -72,7 +95,7 @@ const Hometown = styled(motion.p)`
     font-size: 12px;
   }
 `;
-const Container = styled.div`
+const Container = styled(motion.div)`
   align-items: center;
   display: flex;
   flex-direction: column;

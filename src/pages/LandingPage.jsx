@@ -18,10 +18,9 @@ export default function LandingPage () {
       variants={backgroundAnimation}
       initial="hidden"
       animate={isClicked ? 'show': 'hidden'}
-      // animate='show'
       >
       <LandingPageContainer>
-        <NameCard/>
+        <NameCard />
 
         <EnterButton onClick={handleClick}>
           <LinkButton
@@ -49,10 +48,19 @@ const backgroundAnimation = {
     transition: { duration: 2 },
   }
 };
+const fadeIn = {
+  hidden: {
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
+    transition: {duration: 1}
+  }
+}
 
 const Background = styled(motion.div)`
-  background-image: radial-gradient(circle 750px, white, rgb(42, 191, 250));
-  // background-image: radial-gradient(circle 350px, white, rgb(42, 191, 250));
+background-image: radial-gradient(circle 350px, white, rgb(42, 191, 250));
+background-image: radial-gradient(circle 750px, white, rgb(42, 191, 250));
 `;
 const LandingPageContainer = styled.div`
   align-items: center;

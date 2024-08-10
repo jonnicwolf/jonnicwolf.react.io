@@ -24,11 +24,11 @@ const Socials = ({ gap }) => {
 
 const items = {
   hidden: {
-    opacity: 0,
+    
     transition: { when: 'afterChildren' }
   },
   show: (i) => ({
-    opacity: 1,
+    
     y: 0,
     transition: {
       delay: i * 1.1,
