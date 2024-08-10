@@ -9,9 +9,13 @@ import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 
 export default function LandingPage () {
   const [isClicked, setIsClicked] = useState(false);
+  const [showAbout, setShowAbout] = useState(false);
 
   const handleClick = () => {
     setIsClicked(!isClicked);
+    setTimeout(() => {
+      setShowAbout(true);
+    }, 2500);
   };
 
   return (
@@ -19,9 +23,9 @@ export default function LandingPage () {
       variants={backgroundAnimation}
       initial="hidden"
       animate={isClicked ? 'show': 'hidden'}
-      isclicked={isClicked}
+      showAbout={showAbout}
       >
-        {isClicked
+        {showAbout
           ? <AboutCard />
           : <LandingPageContainer>
               <NameCard />
@@ -57,7 +61,7 @@ const backgroundAnimation = {
 };
 
 const Background = styled(motion.div)`
-  background-image: radial-gradient(circle 750px, white, ${props => props.isclicked ? `rgb(255,255,255)`: `rgb(42, 191, 250)`  });
+  background-image: radial-gradient(circle 750px, white, ${props => props.showAbout ? `rgb(255,255,255)`: `rgb(42, 191, 250)`  });
   
   transform: translateY(${props => props.isclicked ? '100px': '-100px'});
 `;
