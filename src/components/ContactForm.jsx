@@ -1,40 +1,49 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import LinkButton from '../assets/buttons/LinkButton';
+
 export default function ContactForm() {
   return (
     <Form action="https://formspree.io/f/your-endpoint" method="POST">
-      
       <Wrap>
         <Img src="https://img.icons8.com/?size=100&id=61005&format=png&color=000000" alt="" />
-        <Input placeholder=''required />
+        <Input placeholder='Full Name'required />
       </Wrap>
 
-      
-      <input type="email" id="email" name="email" required />
+      <Wrap>
+        <Img src="https://img.icons8.com/?size=100&id=85500&format=png&color=000000"/>
+        <Input placeholder='Email' required />
+      </Wrap>
 
-      
-      <textarea id="message" name="message" required></textarea>
-
-      <button type="submit">Send</button>
+      <Message placeholder='Message...' required></Message>
+      <LinkButton textContent='Submit' />
     </Form>
   );
 };
 
-const Wrap = styled.div`
-  border: 1px solid black;
-  padding: 0;
-  margin: 0;
-`
-const Img = styled.img`
-  // scale: 0.2;
-  margin: 0;
-  padding: 0;
-`
-const Input = styled.input`
-  border: none;
-`
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-`
+  align-items: center;
+  gap: 15px;
+`;
+const Wrap = styled.div`
+  display: flex;
+  border: 1px solid black;
+  height: 2rem;
+  padding: 10px;
+`;
+const Img = styled.img`
+  height: 50%;
+  align-self: center;
+`;
+const Input = styled.input`
+  border: none;
+  width: 100%;
+  font-size: 1.5rem;
+`;
+const Message = styled.textarea`
+  height: 200px;
+  width: 100%;
+`;
