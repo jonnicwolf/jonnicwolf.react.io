@@ -44,15 +44,25 @@ export default function LandingPage () {
 };
 
 const backgroundAnimation = {
-  hidden: { opacity: 0 },
+  hidden: { 
+    opacity: 0,
+    height: '100%',
+    width: '100%'
+  },
   show: {
+    height: '800px',
+    width: '800px',
     opacity: 1,
-    transition: { duration: 0.5 },
+    transition: { duration: 2 },
   }
 };
 
 const Background = styled(motion.div)`
   background-image: radial-gradient(circle 750px, white, rgb(42, 191, 250));
+  background-image: radial-gradient(circle 350px, white, rgb(42, 191, 250));
+  // height: 800px;
+  // width: 800px;
+  // scale: 2.5;
 `;
 const LandingPageContainer = styled.div`
   align-items: center;
@@ -61,6 +71,7 @@ const LandingPageContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   list-style: none;
+  // scale: 0.4;
 `;
 const LandingPageItem = styled.div`
   padding-bottom: 2em;

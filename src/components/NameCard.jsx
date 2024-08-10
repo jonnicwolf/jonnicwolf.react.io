@@ -34,7 +34,7 @@ const items = {
 
 const CurrentRole = styled(motion.p)`
   font-family: Julius Sans One;
-  font-size: 20px;
+  font-size: 1rem;
   letter-spacing: 0.020em;
   margin: 0;
   @media (max-width: 850px) {
