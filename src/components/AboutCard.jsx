@@ -12,13 +12,14 @@ export default function AboutCard() {
 
   function handleClick () {
     setShowContactMe(!showContactMe);
-    console.log('clicked')
+    console.log('clicked');
   };
 
   return (
     <Container>
       {showContactMe
-        ? <ContactMe />
+        ?
+         <ContactMe />
         : <>
             <Headshot src={headshot}/>
 
