@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import emailjs from 'emailjs-com'
+import emailjs from '@emailjs/browser';
 
 import LinkButton from '../assets/buttons/LinkButton';
 
@@ -24,7 +24,7 @@ export default function ContactForm() {
     emailjs.init('p1Pm1Q0_4BJ-G3HYU')
 
     emailjs
-      .send('service_dna0xvk', 'template_twr9wfe', formData, 'YOUR_USER_ID')
+      .send('service_dna0xvk', 'template_twr9wfe', formData)
       .then((response) => {
           console.log('Email sent successfully!', response);
           alert('Email sent successfully!');
@@ -65,7 +65,7 @@ export default function ContactForm() {
         onChange={handleChange}
         required />
 
-      <LinkButton textContent='Submit' />
+      <LinkButton textContent='SUBMIT' onSubmit={handleSubmit} />
     </Form>
   );
 };
