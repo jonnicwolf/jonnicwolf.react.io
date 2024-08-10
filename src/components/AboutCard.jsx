@@ -12,15 +12,15 @@ export default function AboutCard() {
 
   function handleClick () {
     setShowContactMe(!showContactMe);
-    console.log('clicked');
+    console.log('click!')
+    console.log(showContactMe)
   };
 
   return (
     <Container>
-      {/* {showContactMe
-        ? */}
-         <ContactMe />
-        {/* : <>
+      {showContactMe
+        ? <ContactMe clickFn={handleClick} />
+        : <>
             <Headshot src={headshot}/>
 
             <BioContainer>
@@ -42,7 +42,7 @@ export default function AboutCard() {
               <LinkButton onClick={handleClick} textContent='GET IN TOUCH' isScaleAnimation={true} />
             </BioContainer>
           </>
-      } */}
+      }
     </Container>
   );
 };

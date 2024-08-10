@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 
 import LinkButton from '../assets/buttons/LinkButton';
 
-export default function ContactForm() {
+export default function ContactForm({ clickFn }) {
   const [formData, setFormData] = useState({
     to_name: '',
     from_name: '',
@@ -64,7 +64,10 @@ export default function ContactForm() {
         onChange={handleChange}
         required />
 
-      <LinkButton textContent='SUBMIT' buttonSize='large' onClick={handleSubmit} />
+      <ButtonWrap>
+        <LinkButton textContent='SUBMIT' isScaleAnimation={true} onClick={handleSubmit} />
+        <LinkButton textContent='BACK'   isScaleAnimation={true} onClick={clickFn} />
+      </ButtonWrap>
     </Form>
   );
 };
@@ -74,12 +77,16 @@ const Form = styled.form`
   flex-direction: column;
   align-items: center;
   gap: 15px;
+  margin-bottom: 15px;
 `;
 const Wrap = styled.div`
   display: flex;
   border: 1px solid black;
   height: 2rem;
   padding: 10px;
+`;
+const ButtonWrap = styled(Wrap)`
+  border: none;
 `;
 const Img = styled.img`
   height: 50%;

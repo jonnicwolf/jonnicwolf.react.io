@@ -4,17 +4,14 @@ import styled from 'styled-components';
 import Socials from './Socials';
 import ContactForm from './ContactForm';
 
-export default function ContactMe() {
+export default function ContactMe({ clickFn }) {
   return (
     <Container>
       <Background/>
       <FormWrap>
         <Title>Contact Me</Title>
-        <ContactForm />
-        <span> 
-          or
-        </span>
-        <br />
+        <ContactForm clickFn={clickFn} />
+        <span> or </span>
         <Socials gap={'10px'}/>
       </FormWrap>
     </Container>
@@ -38,7 +35,8 @@ const FormWrap = styled.div`
   justify-content: center;
   align-items: center;
   padding: 10px;
-`
+  gap: 15px;
+`;
 const Title = styled.h1`
   font-family: Michroma;
 `;
