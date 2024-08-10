@@ -1,10 +1,18 @@
 import React from 'react';
-//import styled from 'styled-components';
+import styled from 'styled-components';
+
+import { SocialIcon } from 'react-social-icons';
 
 export default function ContactMe() {
   return (
-    <div>ContactMe</div>
+    <Container>
+      <>
+        <SocialIcon url='' />
+      </>
+    </Container>
   );
 };
 
+const Container = styled.div`
 
+`;
