@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled, { keyframes} from 'styled-components';
 
+import LandingPage from './LandingPage';
 import ProjectCard from '../components/ProjectCard';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
 
@@ -142,6 +143,7 @@ export default function ProjectPage ({ darkMode }) {
         </ProjectList>
         :
         <ProjectList>
+          <LandingPage />
           <ProjectCard
             title='Esperi'
             bio='Tarot Interpreter'
@@ -178,7 +180,7 @@ const Container = styled.div`
   display: ${props => props.isMobile ? 'flex' : ''};
   display: flex;
   justify-content: center;
-  height: 160vh;
+  height: 300vh;
 `;
 const Background = styled(P5_LORENZ_ATTRACTOR)`
   height: 100vh;
@@ -191,7 +193,7 @@ const ProjectList = styled.div`
   flex-direction: column;
   gap: 20vh;
   position: absolute;
-  padding-top: 10vh;
+  // padding-top: 10vh;
   z-index: 99;
 `;
 const Info = styled.div`
