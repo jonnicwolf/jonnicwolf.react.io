@@ -18,7 +18,7 @@ export default function LandingPage () {
       variants={backgroundAnimation}
       initial="hidden"
       animate={isClicked ? 'show': 'hidden'}
-      isClicked={isClicked}
+      isclicked={isClicked}
       >
       <LandingPageContainer>
         <NameCard />
@@ -30,7 +30,7 @@ export default function LandingPage () {
             isScaleAnimation={true} />
         </EnterButton>
 
-        <PProject isClicked={isClicked}>
+        <PProject isclicked={isClicked}>
           <P5_PLANE strokeColor={255} showSun={false}/>
         </PProject>
       </LandingPageContainer>
@@ -54,7 +54,7 @@ const backgroundAnimation = {
 
 const Background = styled(motion.div)`
   background-image: radial-gradient(circle 750px, white, rgb(42, 191, 250));
-  transform: translateY(${props => props.isClicked ? '100px': '-100px'});
+  transform: translateY(${props => props.isclicked ? '100px': '-100px'});
 `;
 const LandingPageContainer = styled.div`
   align-items: center;
@@ -72,7 +72,7 @@ const PProject = styled(LandingPageItem)`
   height: 100vh;
   width: 100vw;
   z-index: 1;
-  opacity: ${props => props.isClicked ? 0 : 1}
+  opacity: ${props => props.isclicked ? 0 : 1}
 `;
 const EnterButton = styled(LandingPageItem)`
   z-index: 99;

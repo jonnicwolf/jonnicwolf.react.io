@@ -193,6 +193,10 @@ const ProjectList = styled.div`
   gap: 20vh;
   position: absolute;
   z-index: 2;
+
+  @media screen and (max-width: 720px) {
+    padding-top: 100px;
+  }
 `;
 const Info = styled.div`
   padding: 15px;
