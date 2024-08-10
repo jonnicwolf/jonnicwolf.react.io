@@ -2,15 +2,20 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
+import AboutCard from '../components/AboutCard.jsx';
 import NameCard from '../components/NameCard.jsx';
 import LinkButton from '../assets/buttons/LinkButton.jsx';
 import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 
 export default function LandingPage () {
   const [isClicked, setIsClicked] = useState(false);
+  const [showAbout, setShowAbout] = useState(false);
 
   const handleClick = () => {
     setIsClicked(!isClicked);
+    setTimeout(() => {
+      setShowAbout(true);
+    }, 2500);
   };
 
   return (
@@ -18,22 +23,25 @@ export default function LandingPage () {
       variants={backgroundAnimation}
       initial="hidden"
       animate={isClicked ? 'show': 'hidden'}
-      isclicked={isClicked}
+      showAbout={showAbout}
       >
-      <LandingPageContainer>
-        <NameCard />
+        {showAbout
+          ? <AboutCard />
+          : <LandingPageContainer>
+              <NameCard />
 
-        <EnterButton onClick={handleClick}>
-          <LinkButton
-            textContent='ENTER'
-            buttonSize={'large'}
-            isScaleAnimation={true} />
-        </EnterButton>
+              <EnterButton onClick={handleClick}>
+                <LinkButton
+                  textContent='ENTER'
+                  buttonSize={'large'}
+                  isScaleAnimation={true} />
+              </EnterButton>
 
-        <PProject isclicked={isClicked}>
-          <P5_PLANE strokeColor={255} showSun={false}/>
-        </PProject>
-      </LandingPageContainer>
+              <PProject isclicked={isClicked}>
+                <P5_PLANE strokeColor={255} showSun={false}/>
+              </PProject>
+            </LandingPageContainer>
+        }
     </Background>
   );
 };
@@ -53,7 +61,8 @@ const backgroundAnimation = {
 };
 
 const Background = styled(motion.div)`
-  background-image: radial-gradient(circle 750px, white, rgb(42, 191, 250));
+  background-image: radial-gradient(circle 750px, white, ${props => props.showAbout ? `rgb(255,255,255)`: `rgb(42, 191, 250)`  });
+  
   transform: translateY(${props => props.isclicked ? '100px': '-100px'});
 `;
 const LandingPageContainer = styled.div`
