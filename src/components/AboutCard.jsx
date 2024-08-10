@@ -2,9 +2,15 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 
+import LinkButton from '../assets/buttons/LinkButton';
+
 export default function AboutCard() {
 
-  const headshot = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/kzdwwh2b4yepik7c5amm'
+  const headshot = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/kzdwwh2b4yepik7c5amm';
+
+  function handleClick () {
+
+  }
   return (
     <Container>
       <Headshot src={headshot}/>
@@ -24,7 +30,11 @@ export default function AboutCard() {
         <P>
           Outside of coding, you'll find me exploring new tech, diving into creative projects, and always on the lookout for inspiring collaborations.
         </P>
+
+        
+        <LinkButton textContent='GET IN TOUCH'/>
       </BioContainer>
+
     </Container>
   );
 };
