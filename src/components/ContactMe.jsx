@@ -11,7 +11,9 @@ export default function ContactMe() {
       <FormWrap>
         <Title>Contact Me</Title>
         <ContactForm />
-        or
+        <span> 
+          or
+        </span>
         <br />
         <Socials gap={'10px'}/>
       </FormWrap>

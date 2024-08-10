@@ -16,7 +16,7 @@ const Socials = ({ gap }) => {
       </SocialItem>
 
       <SocialItem variants={items} custom={2}>
-        <SocialIcon url='https://docs.google.com/document/d/1L--uuFkBDl2thpDIuyzyUWNqv5Q0BShsKrwGvy6DusU/edit?usp=sharing' target='_blank' />
+        <SocialIcon url='https://www.instagram.com/fezz_xiii/' target='_blank' />
       </SocialItem>
     </SocialsList>
   );
