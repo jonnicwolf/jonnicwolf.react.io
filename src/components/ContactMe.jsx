@@ -19,9 +19,7 @@ export default function ContactMe() {
 
 const Container = styled.div`
   display: flex;
-  border: 1px solid red;
   width: 100%;
-  
   gap: 20px;
 `;
 const Background = styled.div`

@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import LinkButton from '../assets/buttons/LinkButton';
 
 export default function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+      setFormData({
+          ...formData,
+          [e.target.name]: e.target.value
+      });
+  };
+  const handleSubmit = (e) => {
+    
+  }
   return (
     <Form action="https://formspree.io/f/your-endpoint" method="POST">
       <Wrap>
