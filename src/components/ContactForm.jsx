@@ -6,8 +6,8 @@ import LinkButton from '../assets/buttons/LinkButton';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
+    to_name: '',
+    from_name: '',
     message: ''
   });
 
@@ -20,16 +20,14 @@ export default function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(`formData: `, formData)
 
-    emailjs.init('p1Pm1Q0_4BJ-G3HYU')
-
+    emailjs.init('p1Pm1Q0_4BJ-G3HYU');
     emailjs
       .send('service_dna0xvk', 'template_9zxn0jo', formData)
       .then((response) => {
           console.log('Email sent successfully!', response);
           alert('Email sent successfully!');
-          setFormData({ name: '', email: '', message: '' });
+          setFormData({ to_name: '', from_name: '', message: '' });
       })
       .catch((error) => {
           console.error('Error sending email:', error);
@@ -43,8 +41,8 @@ export default function ContactForm() {
         <Img src="https://img.icons8.com/?size=100&id=61005&format=png&color=000000" alt="" />
         <Input
           placeholder='Full Name'
-          name='name'
-          value={formData.name}
+          name='to_name'
+          value={formData.to_name}
           onChange={handleChange}
           required />
       </Wrap>
@@ -53,8 +51,8 @@ export default function ContactForm() {
         <Img src="https://img.icons8.com/?size=100&id=85500&format=png&color=000000"/>
         <Input
           placeholder='Email'
-          name='email'
-          value={formData.email}
+          name='from_name'
+          value={formData.from_name}
           onChange={handleChange}
           required />
       </Wrap>
