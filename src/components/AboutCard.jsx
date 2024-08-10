@@ -1,40 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 
+import ContactMe from './ContactMe';
 import LinkButton from '../assets/buttons/LinkButton';
 
 export default function AboutCard() {
+  const [showContactMe, setShowContactMe] = useState(false);
 
   const headshot = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/kzdwwh2b4yepik7c5amm';
 
   function handleClick () {
+    setShowContactMe(!showContactMe);
+    console.log('clicked')
+  };
 
-  }
   return (
     <Container>
-      <Headshot src={headshot}/>
+      {showContactMe
+        ? <ContactMe />
+        : <>
+            <Headshot src={headshot}/>
 
-      <BioContainer>
-        <IntroText>
-          I'm Fezz, a Full-Stack Developer based in the heart of NYC.
-        </IntroText>
-        <P>
-          I've spent the past years working with elite teams to create user-centric products that are both intuitive and visually appealing. My expertise lies in front-end development, with proficiency in JavaScript, Python, and Swift.
-        </P>
-        
-        <P>
-        These days, my time is spent collaborating with talented teams to craft seamless interfaces. I also delve into cloud architecture, game engines, and generative art, which continuously inform and elevate my work.
-        </P>
+            <BioContainer>
+              <IntroText>
+                I'm Fezz, a Full-Stack Developer based in the heart of NYC.
+              </IntroText>
+              <P>
+                I've spent the past years working with elite teams to create user-centric products that are both intuitive and visually appealing. My expertise lies in front-end development, with proficiency in JavaScript, Python, and Swift.
+              </P>
+              
+              <P>
+              These days, my time is spent collaborating with talented teams to craft seamless interfaces. I also delve into cloud architecture, game engines, and generative art, which continuously inform and elevate my work.
+              </P>
 
-        <P>
-          Outside of coding, you'll find me exploring new tech, diving into creative projects, and always on the lookout for inspiring collaborations.
-        </P>
+              <P>
+                Outside of coding, you'll find me exploring new tech, diving into creative projects, and always on the lookout for inspiring collaborations.
+              </P>
 
-        
-        <LinkButton textContent='GET IN TOUCH'/>
-      </BioContainer>
-
+              <LinkButton onClick={handleClick} textContent='GET IN TOUCH' isScaleAnimation={true} />
+            </BioContainer>
+          </>
+      }
     </Container>
   );
 };
