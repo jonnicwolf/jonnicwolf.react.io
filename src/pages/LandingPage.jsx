@@ -1,35 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
 
 import NameCard from '../components/NameCard.jsx';
 import LinkButton from '../assets/buttons/LinkButton.jsx';
 import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 
 export default function LandingPage () {
-  const navigate = useNavigate();
+  const [isClicked, setIsClicked] = useState(false);
 
   const handleClick = () => {
-    navigate('/projects');
+    setIsClicked(!isClicked);
   };
 
   return (
     <Background
       variants={backgroundAnimation}
       initial="hidden"
-      animate='show'>
+      animate={isClicked ? 'show': 'hidden'}
+      >
       <LandingPageContainer>
-        <NameCard />
+        <NameCard
+          variants={backgroundAnimation}
+          initial="hidden"
+          animate={isClicked ? 'show': 'hidden'}
+        />
 
-        <EnterButton 
+        <EnterButton
           onClick={handleClick}
           variants={backgroundAnimation}
           initial="hidden"
-          animate="show"
+          animate={isClicked ? 'show': 'hidden'}
           >
           <LinkButton
-            subDirectory={'/projects'}
             textContent='ENTER'
             buttonSize={'large'}
             isScaleAnimation={true} />
@@ -44,15 +47,13 @@ export default function LandingPage () {
 };
 
 const backgroundAnimation = {
-  hidden: { 
-    opacity: 0,
+  hidden: {
     height: '100%',
     width: '100%'
   },
   show: {
     height: '800px',
     width: '800px',
-    opacity: 1,
     transition: { duration: 2 },
   }
 };
