@@ -6,12 +6,12 @@ import LinkButton from '../../assets/buttons/LinkButton';
 import DarkModeButton from '../../assets/buttons/DarModeButton';
 
 const NavBar = ({ darkModeGetter, darkModeSetter }) => {
-  const location = useLocation().pathname.split('/')[1];
+  const location = useLocation().pathname.split('/')[1] || 'HOME';
 
   return (
     <NavbarContainer>
       <Fezz>
-        <Link to='/projects' style={{textDecoration: 'none', color: 'black'}}>
+        <Link to='/' style={{textDecoration: 'none', color: 'black'}}>
           <RampartOneText darkMode={darkModeGetter}>
             FEZZ
           </RampartOneText>

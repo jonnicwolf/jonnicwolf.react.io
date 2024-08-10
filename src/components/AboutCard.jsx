@@ -12,8 +12,6 @@ export default function AboutCard() {
 
   function handleClick () {
     setShowContactMe(!showContactMe);
-    console.log('click!')
-    console.log(showContactMe)
   };
 
   return (
