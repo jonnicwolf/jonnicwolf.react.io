@@ -16,14 +16,35 @@ export default function ContactForm() {
           [e.target.name]: e.target.value
       });
   };
+
   const handleSubmit = (e) => {
-    
-  }
+    e.preventDefault();
+
+    emailjs.init('p1Pm1Q0_4BJ-G3HYU')
+
+    emailjs
+      .send('service_dna0xvk', 'template_twr9wfe', formData, 'YOUR_USER_ID')
+      .then((response) => {
+          console.log('Email sent successfully!', response);
+          alert('Email sent successfully!');
+          setFormData({ name: '', email: '', message: '' });
+      })
+      .catch((error) => {
+          console.error('Error sending email:', error);
+          alert('Failed to send email.');
+      });
+  };
+
   return (
-    <Form action="https://formspree.io/f/your-endpoint" method="POST">
+    <Form onSubmit>
       <Wrap>
         <Img src="https://img.icons8.com/?size=100&id=61005&format=png&color=000000" alt="" />
-        <Input placeholder='Full Name'required />
+        <Input
+          placeholder='Full Name'
+          name='name'
+          value={formData.name}
+          onChange={handleChange}
+          required />
       </Wrap>
 
       <Wrap>
