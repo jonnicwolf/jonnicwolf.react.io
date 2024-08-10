@@ -7,24 +7,50 @@ import Socials from '../components/Socials.jsx'
 
 const NameCard = () => {
   return (
-    <Container>
-        <RampartOneText variants={items} custom={0} >FEZZ</RampartOneText>
-        <FSD            variants={items} custom={1} > FULL STACK DEVELOPER  </FSD>
-        <CurrentRole    variants={items} custom={2} > FREELANCER, PREVIOUSLY SEATGEEK COMMERCE MARKETPLACE ENGINEERING </CurrentRole>
-        <Hometown       variants={items} custom={3} > BASED IN NEW YORK CITY </Hometown>
+    <Container
+      variants={fadeIn}
+      initial="hidden"
+      animate="show"
+      >
+        <RampartOneText variants={items} custom={0} >
+          FEZZ
+        </RampartOneText>
+        <FSD variants={items} custom={1}>
+          FULL STACK DEVELOPER
+        </FSD>
+        <CurrentRole variants={items} custom={2} >
+          FREELANCER, PREVIOUSLY SEATGEEK COMMERCE MARKETPLACE ENGINEERING
+        </CurrentRole>
+        <Hometown variants={items} custom={3} >
+          BASED IN NEW YORK CITY
+        </Hometown>
         <br /><br />
-        <Socials        variants={items} custom={4} gap={'1.5vw'}/>
+        <Socials gap={'1.5vw'}/>
     </Container>
   )
 };
 
-const items = {
+const fadeIn = {
   hidden: {
     opacity: 0,
-    transition: { when: 'afterChildren' }
+    y: 20,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
+};
+
+const items = {
+  hidden: {
+    y: -50,
   },
   show: (i) => ({
-    opacity: 1,
+    y: 0,
     transition: {
       delay: i * 0.2,
       duration: 1,
@@ -34,7 +60,7 @@ const items = {
 
 const CurrentRole = styled(motion.p)`
   font-family: Julius Sans One;
-  font-size: 20px;
+  font-size: 1rem;
   letter-spacing: 0.020em;
   margin: 0;
   @media (max-width: 850px) {
@@ -69,7 +95,7 @@ const Hometown = styled(motion.p)`
     font-size: 12px;
   }
 `;
-const Container = styled.div`
+const Container = styled(motion.div)`
   align-items: center;
   display: flex;
   flex-direction: column;

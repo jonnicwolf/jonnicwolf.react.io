@@ -11,14 +11,14 @@ const LinkButton = ({textContent, buttonSize, subDirectory, darkMode, isScaleAni
           as={motion.button}
           initial={{ scaleX: 0, opacity: 0, }}
           animate={{ scaleX: 1, opacity: 1, }}
-          transition={{ delay: 1, duration: 1 }}
+          transition={{ delay: 1, duration: 0.3 }}
           buttonSize={buttonSize}
           darkMode={darkMode}
-        >{textContent}</Button>
+          >{textContent}</Button>
         :<Button
           buttonSize={buttonSize}
           darkMode={darkMode}
-        >{textContent}</Button>
+          >{textContent}</Button>
       }
     </LinkStyle>
   );
