@@ -194,7 +194,7 @@ const ProjectList = styled.div`
   gap: 20vh;
   position: absolute;
   // padding-top: 10vh;
-  z-index: 99;
+  z-index: 2;
 `;
 const Info = styled.div`
   padding: 15px;

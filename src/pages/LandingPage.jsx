@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -8,6 +8,12 @@ import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 
 export default function LandingPage () {
   const [isClicked, setIsClicked] = useState(false);
+
+  // useEffect(() => {
+  //   if (isClicked) {
+  //     window.location.reload();
+  //   }
+  // }, [isClicked]);
 
   const handleClick = () => {
     setIsClicked(!isClicked);
@@ -29,7 +35,7 @@ export default function LandingPage () {
             isScaleAnimation={true} />
         </EnterButton>
 
-        <PProject>
+        <PProject isClicked={isClicked}>
           <P5_PLANE strokeColor={255} showSun={false}/>
         </PProject>
       </LandingPageContainer>
@@ -51,6 +57,7 @@ const backgroundAnimation = {
 
 const Background = styled(motion.div)`
   background-image: radial-gradient(circle 750px, white, rgb(42, 191, 250));
+  
 `;
 const LandingPageContainer = styled.div`
   align-items: center;
@@ -59,6 +66,7 @@ const LandingPageContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   list-style: none;
+  overflow: hidden;
 `;
 const LandingPageItem = styled.div`
   padding-bottom: 2em;
@@ -67,6 +75,7 @@ const PProject = styled(LandingPageItem)`
   height: 100vh;
   width: 100vw;
   z-index: 1;
+  opacity: ${props => props.isClicked ? 0 : 1}
 `;
 const EnterButton = styled(LandingPageItem)`
   z-index: 99;
