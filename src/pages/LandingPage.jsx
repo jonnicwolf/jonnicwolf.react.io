@@ -18,20 +18,12 @@ export default function LandingPage () {
       variants={backgroundAnimation}
       initial="hidden"
       animate={isClicked ? 'show': 'hidden'}
+      // animate='show'
       >
       <LandingPageContainer>
-        <NameCard
-          variants={backgroundAnimation}
-          initial="hidden"
-          animate={isClicked ? 'show': 'hidden'}
-        />
+        <NameCard/>
 
-        <EnterButton
-          onClick={handleClick}
-          variants={backgroundAnimation}
-          initial="hidden"
-          animate={isClicked ? 'show': 'hidden'}
-          >
+        <EnterButton onClick={handleClick}>
           <LinkButton
             textContent='ENTER'
             buttonSize={'large'}
@@ -60,10 +52,7 @@ const backgroundAnimation = {
 
 const Background = styled(motion.div)`
   background-image: radial-gradient(circle 750px, white, rgb(42, 191, 250));
-  background-image: radial-gradient(circle 350px, white, rgb(42, 191, 250));
-  // height: 800px;
-  // width: 800px;
-  // scale: 2.5;
+  // background-image: radial-gradient(circle 350px, white, rgb(42, 191, 250));
 `;
 const LandingPageContainer = styled.div`
   align-items: center;
