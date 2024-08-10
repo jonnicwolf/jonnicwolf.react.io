@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { motion } from 'framer-motion';
 
 export default function AboutCard() {
 
@@ -28,7 +29,12 @@ export default function AboutCard() {
   );
 };
 
-const Container = styled.div`
+const fadeIn = keyframes`
+  from { opacity: 0; }
+  to { opacity: 1; }
+`;
+
+const Container = styled(motion.div)`
   align-items: center;
   display: flex;
   height: 100%;
@@ -38,6 +44,7 @@ const Container = styled.div`
   height: 800px;
   width: 800px;
   border: 1px solid grey;
+  animation: ${fadeIn} 1.5s forwards;
 `;
 const Headshot = styled.img`
   height: 100%;
