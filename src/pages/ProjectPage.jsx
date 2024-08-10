@@ -29,7 +29,6 @@ export default function ProjectPage ({ darkMode }) {
     p5,
     firebase,
     postgresql,
-    //css3,
   ] = [
     'devicon-javascript-plain',
     "devicon-react-original",

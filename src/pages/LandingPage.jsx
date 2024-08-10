@@ -9,12 +9,6 @@ import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 export default function LandingPage () {
   const [isClicked, setIsClicked] = useState(false);
 
-  // useEffect(() => {
-  //   if (isClicked) {
-  //     window.location.reload();
-  //   }
-  // }, [isClicked]);
-
   const handleClick = () => {
     setIsClicked(!isClicked);
   };
