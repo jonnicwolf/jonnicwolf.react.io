@@ -17,10 +17,10 @@ export default function AboutCard() {
 
   return (
     <Container>
-      {showContactMe
-        ?
+      {/* {showContactMe
+        ? */}
          <ContactMe />
-        : <>
+        {/* : <>
             <Headshot src={headshot}/>
 
             <BioContainer>
@@ -42,7 +42,7 @@ export default function AboutCard() {
               <LinkButton onClick={handleClick} textContent='GET IN TOUCH' isScaleAnimation={true} />
             </BioContainer>
           </>
-      }
+      } */}
     </Container>
   );
 };

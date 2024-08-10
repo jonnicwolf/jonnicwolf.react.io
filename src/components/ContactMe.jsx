@@ -2,15 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Socials from './Socials';
+import ContactForm from './ContactForm';
 
 export default function ContactMe() {
   return (
     <Container>
       <Background/>
-      
-      <Title>Contact Me</Title>
-      
-      <Socials gap={'10px'}/>
+      <FormWrap>
+        <Title>Contact Me</Title>
+        <ContactForm />
+        <Socials gap={'10px'}/>
+      </FormWrap>
     </Container>
   );
 };
@@ -25,6 +27,10 @@ const Background = styled.div`
   width: 400px;
   opacity: 0.2
 `;
+const FormWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+`
 const Title = styled.h1`
   font-family: Michroma;
 `;
