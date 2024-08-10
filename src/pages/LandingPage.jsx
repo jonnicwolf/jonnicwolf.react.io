@@ -24,6 +24,7 @@ export default function LandingPage () {
       variants={backgroundAnimation}
       initial="hidden"
       animate={isClicked ? 'show': 'hidden'}
+      isClicked={isClicked}
       >
       <LandingPageContainer>
         <NameCard />
@@ -46,18 +47,20 @@ export default function LandingPage () {
 const backgroundAnimation = {
   hidden: {
     height: '100%',
-    width: '100%'
+    width: '100%',
+    y: -80
   },
   show: {
     height: '800px',
     width: '800px',
+    y: 70,
     transition: { duration: 2 },
   }
 };
 
 const Background = styled(motion.div)`
   background-image: radial-gradient(circle 750px, white, rgb(42, 191, 250));
-  
+  transform: translateY(${props => props.isClicked ? '100px': '-100px'});
 `;
 const LandingPageContainer = styled.div`
   align-items: center;

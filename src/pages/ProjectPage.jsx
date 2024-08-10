@@ -193,7 +193,6 @@ const ProjectList = styled.div`
   flex-direction: column;
   gap: 20vh;
   position: absolute;
-  // padding-top: 10vh;
   z-index: 2;
 `;
 const Info = styled.div`
