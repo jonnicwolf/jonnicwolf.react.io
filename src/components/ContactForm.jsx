@@ -20,11 +20,12 @@ export default function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(`formData: `, formData)
 
     emailjs.init('p1Pm1Q0_4BJ-G3HYU')
 
     emailjs
-      .send('service_dna0xvk', 'template_twr9wfe', formData)
+      .send('service_dna0xvk', 'template_9zxn0jo', formData)
       .then((response) => {
           console.log('Email sent successfully!', response);
           alert('Email sent successfully!');
@@ -37,7 +38,7 @@ export default function ContactForm() {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form>
       <Wrap>
         <Img src="https://img.icons8.com/?size=100&id=61005&format=png&color=000000" alt="" />
         <Input
@@ -65,7 +66,7 @@ export default function ContactForm() {
         onChange={handleChange}
         required />
 
-      <LinkButton textContent='SUBMIT' onSubmit={handleSubmit} />
+      <LinkButton textContent='SUBMIT' onClick={handleSubmit} />
     </Form>
   );
 };
