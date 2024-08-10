@@ -64,7 +64,7 @@ export default function ContactForm() {
         onChange={handleChange}
         required />
 
-      <LinkButton textContent='SUBMIT' onClick={handleSubmit} />
+      <LinkButton textContent='SUBMIT' buttonSize='large' onClick={handleSubmit} />
     </Form>
   );
 };
