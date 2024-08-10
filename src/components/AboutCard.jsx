@@ -19,12 +19,13 @@ export default function AboutCard() {
       {showContactMe
         ? <ContactMe clickFn={handleClick} />
         : <>
-            <Headshot src={headshot}/>
+            <Headshot src={headshot} />
 
             <BioContainer>
               <IntroText>
                 I'm Fezz, a Full-Stack Developer based in the heart of NYC.
               </IntroText>
+
               <P>
                 I've spent the past years working with elite teams to create user-centric products that are both intuitive and visually appealing. My expertise lies in front-end development, with proficiency in JavaScript, Python, and Swift.
               </P>
@@ -37,7 +38,10 @@ export default function AboutCard() {
                 Outside of coding, you'll find me exploring new tech, diving into creative projects, and always on the lookout for inspiring collaborations.
               </P>
 
-              <LinkButton onClick={handleClick} textContent='GET IN TOUCH' isScaleAnimation={true} />
+              <Buttons>
+                <LinkButton onClick={handleClick} textContent='GET IN TOUCH' isScaleAnimation={true} />
+                <LinkButton onClick={handleClick} textContent='MORE' isScaleAnimation={true} subDirectory={'/about'} />
+              </Buttons>
             </BioContainer>
           </>
       }
@@ -87,3 +91,7 @@ const P = styled.p`
   font-size: 1rem;
   margin: 0;
 `;
+const Buttons = styled.div`
+  display: flex;
+
+`
