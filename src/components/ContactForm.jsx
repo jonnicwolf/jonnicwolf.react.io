@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import emailjs from 'emailjs-com'
 
 import LinkButton from '../assets/buttons/LinkButton';
 
@@ -36,7 +37,7 @@ export default function ContactForm() {
   };
 
   return (
-    <Form onSubmit>
+    <Form onSubmit={handleSubmit}>
       <Wrap>
         <Img src="https://img.icons8.com/?size=100&id=61005&format=png&color=000000" alt="" />
         <Input
@@ -49,10 +50,21 @@ export default function ContactForm() {
 
       <Wrap>
         <Img src="https://img.icons8.com/?size=100&id=85500&format=png&color=000000"/>
-        <Input placeholder='Email' required />
+        <Input
+          placeholder='Email'
+          name='email'
+          value={formData.email}
+          onChange={handleChange}
+          required />
       </Wrap>
 
-      <Message placeholder='Message...' required></Message>
+      <Message
+        placeholder='Message...'
+        name='message'
+        value={formData.message}
+        onChange={handleChange}
+        required />
+
       <LinkButton textContent='Submit' />
     </Form>
   );
