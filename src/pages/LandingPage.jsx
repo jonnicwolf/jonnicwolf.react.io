@@ -48,15 +48,6 @@ const backgroundAnimation = {
     transition: { duration: 2 },
   }
 };
-const fadeIn = {
-  hidden: {
-    opacity: 0,
-  },
-  show: {
-    opacity: 1,
-    transition: {duration: 1}
-  }
-}
 
 const Background = styled(motion.div)`
   background-image: radial-gradient(circle 750px, white, rgb(42, 191, 250));
