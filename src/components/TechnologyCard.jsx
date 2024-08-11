@@ -2,14 +2,35 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 
+import LinkButton from '../assets/buttons/LinkButton';
+
 export default function TechnologyCard () {
   return (
     <Container>
-      <IntroText fontSize='2.5rem'>TECHS & TOOLS</IntroText>
+      <IntroText fontSize='2rem'>TECHS & TOOLS</IntroText>
+
+      <Buttons>
+        <LinkButton
+          // onClick={handleClick_getInTouch}
+          textContent='GET IN TOUCH'
+          isScaleAnimation={true} />
+        <LinkButton
+          // onClick={handleClick_more}
+          textContent='TECH'
+          isScaleAnimation={true} />
+        <LinkButton
+          // onClick={handleClick_more}
+          textContent='OFFLINE'
+          isScaleAnimation={true} />
+        <LinkButton
+          // onClick={handleClick_more}
+          textContent='WORK HISTORY'
+          isScaleAnimation={true} />
+      </Buttons>
 
       <Content>
         <TechGroup>
-          <IntroText fontSize='1.5rem'>LANGUAGES</IntroText>
+          <IntroText fontSize='1.3rem'>LANGUAGES</IntroText>
           <TechContent>
             <img style={{height: '5rem'}} src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
             <img style={{height: '5rem'}} src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" />
@@ -19,7 +40,7 @@ export default function TechnologyCard () {
         </TechGroup>
 
         <TechGroup>
-          <IntroText fontSize='1.5rem'>STYLING</IntroText>
+          <IntroText fontSize='1.3rem'>STYLING</IntroText>
           <TechContent>
             <StyledComponents>
               <StyledIcon>{'<💅>'}</StyledIcon>
@@ -33,7 +54,7 @@ export default function TechnologyCard () {
         </TechGroup>
 
         <TechGroup>
-          <IntroText fontSize='1.5rem'>LIBRARIES</IntroText>
+          <IntroText fontSize='1.3rem'>LIBRARIES</IntroText>
           <TechContent>
             <i className='devicon-react-original-wordmark colored' />
             <i className='devicon-redux-original colored' />
@@ -50,7 +71,7 @@ export default function TechnologyCard () {
         </TechGroup>
 
         <TechGroup>
-          <IntroText fontSize='1.5rem'>TOOLS</IntroText>
+          <IntroText fontSize='1.3rem'>TOOLS</IntroText>
           <TechContent>
             <i className='devicon-docker-plain colored' />
             <i className='devicon-rabbitmq-plain colored' />
@@ -71,6 +92,8 @@ export default function TechnologyCard () {
           </TechContent>
         </TechGroup>
       </Content>
+      
+      
     </Container>
   );
 };
@@ -81,14 +104,13 @@ const fadeIn = keyframes`
 `;
 
 const Container = styled(motion.div)`
-  align-items: center;
   display: flex;
+  align-items: center;
   flex-direction: column;
-  justify-content: center;
-  height: 800px;
+  height: 900px;
   width: 800px;
-  border: 1px solid grey;
   animation: ${fadeIn} 1.5s forwards;
+  gap: 8px;
 `;
 
   const IntroText = styled.h3`
@@ -100,18 +122,15 @@ const Container = styled(motion.div)`
   const Content = styled.div`
     display: flex;
     gap: 10px;
-    width: 100%;
-    height: 90%;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 15px;
   `;
     const StyledComponents = styled.div`
       height: 5rem;
       width: 5rem;
       display: flex;
       flex-direction: column;
-      justify-content: center;;
+      justify-content: center;
       border: 1px solid black;
       `;
       const StyledIcon = styled.div`
@@ -142,5 +161,11 @@ const Container = styled(motion.div)`
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      gap: 10px;
+      gap: 5px;
     `;
+  const Buttons = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  `;
