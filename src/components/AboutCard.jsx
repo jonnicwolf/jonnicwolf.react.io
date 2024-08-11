@@ -7,18 +7,23 @@ import LinkButton from '../assets/buttons/LinkButton';
 
 export default function AboutCard() {
   const [showContactMe, setShowContactMe] = useState(false);
+  const [showMore, setShowMore] = useState(false);
 
   const headshot = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/kzdwwh2b4yepik7c5amm';
 
-  function handleClick () {
+  function handleClick_getInTouch () {
     setShowContactMe(!showContactMe);
+  };
+  function handleClick_more (bool) {
+    setShowContactMe(false);
+    setShowMore(!showMore);
   };
 
   return (
     <Container>
       {showContactMe
-        ? <ContactMe clickFn={handleClick} />
-        : <>
+        ? <ContactMe clickFn={handleClick_getInTouch} />
+        : <Wrap>
             <Headshot src={headshot} />
 
             <BioContainer>
@@ -29,7 +34,7 @@ export default function AboutCard() {
               <P>
                 I've spent the past years working with elite teams to create user-centric products that are both intuitive and visually appealing. My expertise lies in front-end development, with proficiency in JavaScript, Python, and Swift.
               </P>
-              
+
               <P>
               These days, my time is spent collaborating with talented teams to craft seamless interfaces. I also delve into cloud architecture, game engines, and generative art, which continuously inform and elevate my work.
               </P>
@@ -39,11 +44,25 @@ export default function AboutCard() {
               </P>
 
               <Buttons>
-                <LinkButton onClick={handleClick} textContent='GET IN TOUCH' isScaleAnimation={true} />
-                <LinkButton onClick={handleClick} textContent='MORE' isScaleAnimation={true} subDirectory={'/about'} />
+                <LinkButton
+                  onClick={handleClick_getInTouch}
+                  textContent='GET IN TOUCH'
+                  isScaleAnimation={true} />
+                <LinkButton
+                  onClick={handleClick_more}
+                  textContent='TECH'
+                  isScaleAnimation={true} />
+                <LinkButton
+                  onClick={handleClick_more}
+                  textContent='OFFLINE'
+                  isScaleAnimation={true} />
+                <LinkButton
+                  onClick={handleClick_more}
+                  textContent='WORK HISTORY'
+                  isScaleAnimation={true} />
               </Buttons>
-            </BioContainer>
-          </>
+          </BioContainer>
+        </Wrap>
       }
     </Container>
   );
@@ -57,7 +76,7 @@ const fadeIn = keyframes`
 const Container = styled(motion.div)`
   align-items: center;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   list-style: none;
   overflow: scroll;
   height: 800px;
@@ -65,11 +84,15 @@ const Container = styled(motion.div)`
   border: 1px solid grey;
   animation: ${fadeIn} 1.5s forwards;
 `;
+const Wrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+`;
 const Headshot = styled.img`
   height: 100%;
   width: 60%;
   margin: 0;
-  filter: greyScale(100%);
   box-shadow: -2rem 2rem 20rem;
 `;
 const BioContainer = styled.div`
@@ -92,5 +115,6 @@ const P = styled.p`
 `;
 const Buttons = styled.div`
   display: flex;
-
-`
+  justify-content: center;;
+  flex-wrap: wrap;
+`;
