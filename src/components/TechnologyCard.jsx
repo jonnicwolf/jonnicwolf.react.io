@@ -56,7 +56,7 @@ export default function TechnologyCard ({ viewSetter }) {
         <TechGroup>
           <IntroText fontSize='1.3rem'>LIBRARIES</IntroText>
           <TechContent gap='10px'>
-            <Icon className='devicon-react-original-wordmark colored' title='React' />
+            <Icon className='devicon-react-original colored' title='React' />
             <Icon className='devicon-redux-original colored' title='Redux' />
             <Icon className='devicon-axios-plain colored' title='Axios' />
             <Icon className='devicon-nodejs-plain colored' title='Node.js' />
