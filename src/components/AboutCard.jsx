@@ -20,10 +20,15 @@ export default function AboutCard() {
     setShowMore(!showMore);
   };
 
+  const views = {
+    contact: <ContactMe clickFn={handleClick_getInTouch} />,
+    tech: <TechnologyCard />
+  }
+
   return (
     <Container>
-      <TechnologyCard />
-      {/* {showContactMe
+      {/* <TechnologyCard /> */}
+      {showContactMe
         ? <ContactMe clickFn={handleClick_getInTouch} />
         : <Wrap>
             <Headshot src={headshot} />
@@ -65,7 +70,7 @@ export default function AboutCard() {
               </Buttons>
           </BioContainer>
         </Wrap>
-      } */}
+      }
     </Container>
   );
 };
