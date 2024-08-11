@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import ContactMe from './ContactMe';
+import TechnologyCard from './TechnologyCard';
 import LinkButton from '../assets/buttons/LinkButton';
 
 export default function AboutCard() {
@@ -21,7 +22,8 @@ export default function AboutCard() {
 
   return (
     <Container>
-      {showContactMe
+      <TechnologyCard />
+      {/* {showContactMe
         ? <ContactMe clickFn={handleClick_getInTouch} />
         : <Wrap>
             <Headshot src={headshot} />
@@ -63,7 +65,7 @@ export default function AboutCard() {
               </Buttons>
           </BioContainer>
         </Wrap>
-      }
+      } */}
     </Container>
   );
 };
