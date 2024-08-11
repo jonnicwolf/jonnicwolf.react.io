@@ -57,7 +57,6 @@ const fadeIn = keyframes`
 const Container = styled(motion.div)`
   align-items: center;
   display: flex;
-  height: 100%;
   justify-content: space-between;
   list-style: none;
   overflow: scroll;
