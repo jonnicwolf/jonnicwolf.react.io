@@ -27,7 +27,7 @@ export default function TechnologyCard () {
       <Content>
         <TechGroup>
           <IntroText fontSize='1.3rem'>LANGUAGES</IntroText>
-          <TechContent>
+          <TechContent gap='10px' width='50%'>
             <SVG style={{height: '5rem'}} src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" title='JavaScript'/>
             <Icon className='devicon-typescript-plain colored' title='TypeScript' />
             <SVG style={{height: '5rem'}} src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" title='Python' />
@@ -37,7 +37,7 @@ export default function TechnologyCard () {
 
         <TechGroup>
           <IntroText fontSize='1.3rem'>STYLING</IntroText>
-          <TechContent>
+          <TechContent gap='10px' width='80%'>
             <StyledComponents title='Styled-Components'>
               <StyledIcon>{'<💅>'}</StyledIcon>
               <StyledName>STYLED COMPONENTS</StyledName>
@@ -51,7 +51,7 @@ export default function TechnologyCard () {
 
         <TechGroup>
           <IntroText fontSize='1.3rem'>LIBRARIES</IntroText>
-          <TechContent>
+          <TechContent gap='10px'>
             <Icon className='devicon-react-original-wordmark colored' title='React' />
             <Icon className='devicon-redux-original colored' title='Redux' />
             <Icon className='devicon-axios-plain colored' title='Axios' />
@@ -68,7 +68,7 @@ export default function TechnologyCard () {
 
         <TechGroup>
           <IntroText fontSize='1.3rem'>TOOLS</IntroText>
-          <TechContent>
+          <TechContent gap='9px'>
             <Icon className='devicon-docker-plain colored' title='Docker' />
             <Icon className='devicon-rabbitmq-plain colored' title='RabbitMQ' />
             <Icon className='devicon-terraform-plain colored' title='Terraform' />
@@ -150,14 +150,15 @@ const Container = styled(motion.div)`
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 30px;
+      gap: 20px;
     `;
     const TechContent = styled.div`
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      gap: 5px;
+      gap: ${props => props.gap};
+      width: ${props => props.width};
     `;
       const Icon = styled.i`
         transition: scale 0.3s linear;
