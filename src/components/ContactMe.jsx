@@ -11,7 +11,6 @@ export default function ContactMe({ viewSetter }) {
       <FormWrap>
         <Title>Contact Me</Title>
         <ContactForm viewSetter={viewSetter} />
-        <span> or </span>
         <Socials gap={'10px'}/>
       </FormWrap>
     </Container>
@@ -33,10 +32,9 @@ const Background = styled.div`
 const FormWrap = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  gap: 15px;
+  padding: 50px;
 `;
 const Title = styled.h1`
   font-family: Michroma;
