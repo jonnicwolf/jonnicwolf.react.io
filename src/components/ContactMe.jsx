@@ -34,7 +34,7 @@ const FormWrap = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 50px;
+  padding: 25px;
 `;
 const Title = styled.h1`
   font-family: Michroma;
