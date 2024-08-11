@@ -66,11 +66,11 @@ export default function ContactForm({ viewSetter }) {
 
       <ButtonWrap>
         <LinkButton textContent='SUBMIT' isScaleAnimation={true} onClick={handleSubmit} />
-        <LinkButton textContent='BACK'   isScaleAnimation={true} onClick={viewSetter('bio')} />
-        <LinkButton textContent='TECH'   isScaleAnimation={true} onClick={viewSetter('tech')} />
-        <LinkButton textContent='OFFLINE'   isScaleAnimation={true} onClick={viewSetter('offline')} />
-        <LinkButton textContent='OFFLINE'   isScaleAnimation={true} onClick={viewSetter('contact')} />
-        <LinkButton textContent='EXPERIENCE'   isScaleAnimation={true} onClick={viewSetter('exp')} />
+        <LinkButton textContent='ABOUT'   isScaleAnimation={true}       onClick={()=> viewSetter('bio')} />
+        <LinkButton textContent='TECH'   isScaleAnimation={true}       onClick={()=> viewSetter('tech')} />
+        <LinkButton textContent='OFFLINE'   isScaleAnimation={true}    onClick={()=> viewSetter('offline')} />
+        <LinkButton textContent='OFFLINE'   isScaleAnimation={true}    onClick={()=> viewSetter('contact')} />
+        <LinkButton textContent='EXPERIENCE'   isScaleAnimation={true} onClick={()=> viewSetter('exp')} />
       </ButtonWrap>
     </Form>
   );

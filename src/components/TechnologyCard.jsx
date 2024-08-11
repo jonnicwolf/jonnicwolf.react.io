@@ -4,23 +4,27 @@ import { motion } from 'framer-motion';
 
 import LinkButton from '../assets/buttons/LinkButton';
 
-export default function TechnologyCard () {
+export default function TechnologyCard ({ viewSetter }) {
   return (
     <Container>
       <IntroText fontSize='2rem'>TECHS & TOOLS</IntroText>
 
       <Buttons>
         <LinkButton
-          // onClick={handleClick_getInTouch}
+          onClick={()=> viewSetter('contact')}
           textContent='GET IN TOUCH'
           isScaleAnimation={true} />
         <LinkButton
-          // onClick={handleClick_more}
+          onClick={()=> viewSetter('offline')}
           textContent='OFFLINE'
           isScaleAnimation={true} />
         <LinkButton
-          // onClick={handleClick_more}
+          onClick={()=> viewSetter('exp')}
           textContent='WORK HISTORY'
+          isScaleAnimation={true} />
+        <LinkButton
+          onClick={()=> viewSetter('bio')}
+          textContent='ABOUT'
           isScaleAnimation={true} />
       </Buttons>
 
