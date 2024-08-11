@@ -28,19 +28,19 @@ export default function BioCard ({ viewSetter }) {
 
         <Buttons>
           <LinkButton
-            onClick={viewSetter('contact')}
+            onClick={()=> viewSetter('contact')}
             textContent='GET IN TOUCH'
             isScaleAnimation={true} />
           <LinkButton
-            onClick={viewSetter('tech')}
+            onClick={()=> viewSetter('tech')}
             textContent='TECH'
             isScaleAnimation={true} />
           <LinkButton
-            onClick={viewSetter('offline')}
+            onClick={()=> viewSetter('offline')}
             textContent='OFFLINE'
             isScaleAnimation={true} />
           <LinkButton
-            onClick={viewSetter('exp')}
+            onClick={()=> viewSetter('exp')}
             textContent='WORK HISTORY'
             isScaleAnimation={true} />
         </Buttons>

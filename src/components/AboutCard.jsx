@@ -4,26 +4,26 @@ import { motion } from 'framer-motion';
 
 import ContactMe from './ContactMe';
 import TechnologyCard from './TechnologyCard';
-import LinkButton from '../assets/buttons/LinkButton';
 import BioCard from './BioCard';
 
 export default function AboutCard() {
   const [view, setView] = useState(null);
 
   function renderView (view) {
+    console.log(view)
     switch (view) {
       case 'bio':
-        return <BioCard />
+        return <BioCard viewSetter={setView} />
       case 'contact':
-        return <ContactMe />
+        return <ContactMe viewSetter={setView} />
       case 'tech':
-        return <TechnologyCard />
+        return <TechnologyCard viewSetter={setView} />
       // case 'offline':
       //   return <OfflineCard />
       // case 'exp':
       //   return <ExperienceCard />
       default:
-        return <BioCard />
+        return <BioCard viewSetter={setView} />
     };
   };
 
