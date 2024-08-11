@@ -14,7 +14,7 @@ export default function AboutCard() {
   function handleClick_getInTouch () {
     setShowContactMe(!showContactMe);
   };
-  function handleClick_more (bool) {
+  function handleClick_more () {
     setShowContactMe(false);
     setShowMore(!showMore);
   };
@@ -115,6 +115,8 @@ const P = styled.p`
 `;
 const Buttons = styled.div`
   display: flex;
-  justify-content: center;;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 10px;
 `;

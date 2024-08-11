@@ -4,7 +4,9 @@ import { motion } from 'framer-motion';
 
 export default function TechnologyCard() {
   return (
-    <Container>TechnologyCard</Container>
+    <Container>
+      TechnologyCard
+    </Container>
   );
 };
 
