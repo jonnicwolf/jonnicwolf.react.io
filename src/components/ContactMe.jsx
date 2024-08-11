@@ -4,13 +4,13 @@ import styled from 'styled-components';
 import Socials from './Socials';
 import ContactForm from './ContactForm';
 
-export default function ContactMe({ clickFn }) {
+export default function ContactMe({ viewSetter, clickFn }) {
   return (
     <Container>
       <Background />
       <FormWrap>
         <Title>Contact Me</Title>
-        <ContactForm clickFn={clickFn} />
+        <ContactForm clickFn={clickFn} viewSetter={viewSetter} />
         <span> or </span>
         <Socials gap={'10px'}/>
       </FormWrap>

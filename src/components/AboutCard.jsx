@@ -12,6 +12,8 @@ export default function AboutCard() {
 
   function renderView (view) {
     switch (view) {
+      case 'bio':
+        return <BioCard />
       case 'contact':
         return <ContactMe />
       case 'tech':
