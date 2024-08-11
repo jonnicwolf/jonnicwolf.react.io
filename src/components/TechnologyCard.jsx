@@ -5,11 +5,11 @@ import { motion } from 'framer-motion';
 export default function TechnologyCard () {
   return (
     <Container>
-      <IntroText fontSize='3rem'>TECHS & TOOLS</IntroText>
+      <IntroText fontSize='2.5rem'>TECHS & TOOLS</IntroText>
 
       <Content>
         <TechGroup>
-          <IntroText fontSize='1rem'>LANGUAGES</IntroText>
+          <IntroText fontSize='1.5rem'>LANGUAGES</IntroText>
           <TechContent>
             <img style={{height: '5rem'}} src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
             <img style={{height: '5rem'}} src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" />
@@ -19,7 +19,7 @@ export default function TechnologyCard () {
         </TechGroup>
 
         <TechGroup>
-          <IntroText fontSize='1rem'>STYLING</IntroText>
+          <IntroText fontSize='1.5rem'>STYLING</IntroText>
           <TechContent>
             <StyledComponents>
               <StyledIcon>{'<💅>'}</StyledIcon>
@@ -33,7 +33,7 @@ export default function TechnologyCard () {
         </TechGroup>
 
         <TechGroup>
-          <IntroText fontSize='1rem'>LIBRARIES</IntroText>
+          <IntroText fontSize='1.5rem'>LIBRARIES</IntroText>
           <TechContent>
             <i className='devicon-react-original-wordmark colored' />
             <i className='devicon-redux-original colored' />
@@ -50,7 +50,7 @@ export default function TechnologyCard () {
         </TechGroup>
 
         <TechGroup>
-          <IntroText fontSize='1rem'>TOOLS</IntroText>
+          <IntroText fontSize='1.5rem'>TOOLS</IntroText>
           <TechContent>
             <i className='devicon-docker-plain colored' />
             <i className='devicon-rabbitmq-plain colored' />
@@ -104,6 +104,7 @@ const Container = styled(motion.div)`
     height: 90%;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 15px;
   `;
     const StyledComponents = styled.div`
       height: 5rem;
@@ -130,16 +131,16 @@ const Container = styled(motion.div)`
       font-size: 5rem;
       padding: 10px;
       width: 45%;
-      border: 1px solid red;
+      border: 1px solid grey;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      gap: 40px;
+      gap: 30px;
     `;
     const TechContent = styled.div`
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      align-items: center;
+      gap: 10px;
     `;
-
