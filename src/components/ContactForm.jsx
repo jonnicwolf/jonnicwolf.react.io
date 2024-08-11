@@ -91,6 +91,10 @@ const Wrap = styled.div`
 `;
 const ButtonWrap = styled(Wrap)`
   border: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 `;
 const Img = styled.img`
   height: 50%;
