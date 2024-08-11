@@ -29,21 +29,19 @@ export default function TechnologyCard () {
           <IntroText fontSize='1.3rem'>LANGUAGES</IntroText>
           <TechContent>
             <SVG style={{height: '5rem'}} src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" title='JavaScript'/>
+            <Icon className='devicon-typescript-plain colored' title='TypeScript' />
             <SVG style={{height: '5rem'}} src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" title='Python' />
             <Icon className='devicon-swift-plain colored' title='Swift' />
-            <Icon className='devicon-typescript-plain colored' title='TypeScript' />
           </TechContent>
         </TechGroup>
 
         <TechGroup>
           <IntroText fontSize='1.3rem'>STYLING</IntroText>
           <TechContent>
-            
-              <StyledComponents title='Styled-Components'>
-                <StyledIcon>{'<💅>'}</StyledIcon>
-                <StyledName>STYLED COMPONENTS</StyledName>
-              </StyledComponents>
-            
+            <StyledComponents title='Styled-Components'>
+              <StyledIcon>{'<💅>'}</StyledIcon>
+              <StyledName>STYLED COMPONENTS</StyledName>
+            </StyledComponents>
             <Icon className='devicon-p5js-original colored' title='p5.js' />
             <Icon className='devicon-css3-plain colored' title='CSS3' />
             <Icon className='devicon-bootstrap-plain colored' title='Bootstrap' />
@@ -128,6 +126,8 @@ const Container = styled(motion.div)`
       flex-direction: column;
       justify-content: center;
       border: 1px solid black;
+      transition: scale 0.3s linear;
+      &: hover { scale: 1.1 };
       `;
       const StyledIcon = styled.div`
       font-size: 2rem;
@@ -160,9 +160,11 @@ const Container = styled(motion.div)`
       gap: 5px;
     `;
       const Icon = styled.i`
+        transition: scale 0.3s linear;
         &: hover { scale: 1.1 };
       `;
       const SVG = styled.img`
+        transition: scale 0.2s linear;
         &: hover { scale: 1.1 };
       `;
   const Buttons = styled.div`
