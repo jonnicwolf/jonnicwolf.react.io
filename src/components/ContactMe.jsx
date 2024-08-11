@@ -7,7 +7,7 @@ import ContactForm from './ContactForm';
 export default function ContactMe({ clickFn }) {
   return (
     <Container>
-      <Background/>
+      <Background />
       <FormWrap>
         <Title>Contact Me</Title>
         <ContactForm clickFn={clickFn} />
@@ -24,7 +24,8 @@ const Container = styled.div`
   gap: 20px;
 `;
 const Background = styled.div`
-  background: repeat url('https://img.icons8.com/?size=100&id=iZfvYzdS1M3T&format=png&color=000000');
+  background: repeat 120px url('https://img.icons8.com/?size=100&id=iZfvYzdS1M3T&format=png&color=000000');
+  background-size: 200px;
   height: 800px;
   width: 56%;
   opacity: 0.2;
