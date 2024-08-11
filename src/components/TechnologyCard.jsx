@@ -9,7 +9,7 @@ export default function TechnologyCard () {
 
       <Content>
         <TechGroup>
-          <IntroText fontSize='2rem'>LANGUAGES</IntroText>
+          <IntroText fontSize='1rem'>LANGUAGES</IntroText>
           <TechContent>
             <img style={{height: '5rem'}} src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
             <img style={{height: '5rem'}} src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" />
@@ -19,7 +19,7 @@ export default function TechnologyCard () {
         </TechGroup>
 
         <TechGroup>
-          <IntroText fontSize='2rem'>STYLING</IntroText>
+          <IntroText fontSize='1rem'>STYLING</IntroText>
           <TechContent>
             <StyledComponents>
               <StyledIcon>{'<💅>'}</StyledIcon>
@@ -33,7 +33,7 @@ export default function TechnologyCard () {
         </TechGroup>
 
         <TechGroup>
-          <IntroText fontSize='2rem'>LIBRARIES</IntroText>
+          <IntroText fontSize='1rem'>LIBRARIES</IntroText>
           <TechContent>
             <i className='devicon-react-original-wordmark colored' />
             <i className='devicon-redux-original colored' />
@@ -50,7 +50,7 @@ export default function TechnologyCard () {
         </TechGroup>
 
         <TechGroup>
-          <IntroText fontSize='2rem'>TOOLS</IntroText>
+          <IntroText fontSize='1rem'>TOOLS</IntroText>
           <TechContent>
             <i className='devicon-docker-plain colored' />
             <i className='devicon-rabbitmq-plain colored' />
@@ -99,12 +99,11 @@ const Container = styled(motion.div)`
 
   const Content = styled.div`
     display: flex;
-    // flex-wrap: wrap;
     gap: 10px;
     width: 100%;
     height: 90%;
-    border: 3px solid green;
-    // background: black;
+    flex-wrap: wrap;
+    justify-content: center;
   `;
     const StyledComponents = styled.div`
       height: 5rem;
@@ -130,13 +129,13 @@ const Container = styled(motion.div)`
     const TechGroup = styled.div`
       font-size: 5rem;
       padding: 10px;
-      width: 50%;
+      width: 45%;
       border: 1px solid red;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      gap: 10px;
+      justify-content: flex-start;
+      gap: 40px;
     `;
     const TechContent = styled.div`
       display: flex;
