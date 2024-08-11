@@ -32,68 +32,66 @@ export default function TechnologyCard () {
         <TechGroup>
           <IntroText fontSize='1.3rem'>LANGUAGES</IntroText>
           <TechContent>
-            <img style={{height: '5rem'}} src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
-            <img style={{height: '5rem'}} src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" />
-            <i className='devicon-swift-plain colored' />
-            <i className='devicon-typescript-plain colored' />
+            <img style={{height: '5rem'}} src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" title='JavaScript'/>
+            <img style={{height: '5rem'}} src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" title='Python' />
+            <i className='devicon-swift-plain colored' title='Swift' />
+            <i className='devicon-typescript-plain colored' title='TypeScript' />
           </TechContent>
         </TechGroup>
 
         <TechGroup>
           <IntroText fontSize='1.3rem'>STYLING</IntroText>
           <TechContent>
-            <StyledComponents>
+            <StyledComponents title='Styled-Components'>
               <StyledIcon>{'<💅>'}</StyledIcon>
               <StyledName>STYLED COMPONENTS</StyledName>
             </StyledComponents>
-            <i className='devicon-p5js-original colored' />
-            <i className='devicon-css3-plain colored' />
-            <i className='devicon-bootstrap-plain colored' />
-            <i className='devicon-sass-plain colored' />
+            <i className='devicon-p5js-original colored' title='p5.js' />
+            <i className='devicon-css3-plain colored' title='CSS3' />
+            <i className='devicon-bootstrap-plain colored' title='Bootstrap' />
+            <i className='devicon-sass-plain colored' title='Sass' />
           </TechContent>
         </TechGroup>
 
         <TechGroup>
           <IntroText fontSize='1.3rem'>LIBRARIES</IntroText>
           <TechContent>
-            <i className='devicon-react-original-wordmark colored' />
-            <i className='devicon-redux-original colored' />
-            <i className='devicon-axios-plain colored' />
-            <i className='devicon-nodejs-plain colored' />
-            <i className='devicon-express-original colored' />
-            <i className='devicon-firebase-plain colored' />
-            <i className='devicon-sentry-plain colored' />
-            <i className='devicon-cypressio-plain colored' />
-            <i className='devicon-jest-plain colored' />
-            <i className='devicon-git-plain colored' />
-            <i className='devicon-npm-original-wordmark colored' />
+            <i className='devicon-react-original-wordmark colored' title='React' />
+            <i className='devicon-redux-original colored' title='Redux' />
+            <i className='devicon-axios-plain colored' title='Axios' />
+            <i className='devicon-nodejs-plain colored' title='Node.js' />
+            <i className='devicon-express-original colored' title='Express.js' />
+            <i className='devicon-firebase-plain colored' title='Firebase' />
+            <i className='devicon-sentry-plain colored' title='Sentry' />
+            <i className='devicon-cypressio-plain colored' title='Cypress.io' />
+            <i className='devicon-jest-plain colored' title='Jest' />
+            <i className='devicon-git-plain colored' title='Git' />
+            <i className='devicon-npm-original-wordmark colored' title='NPM Package Manager' />
           </TechContent>
         </TechGroup>
 
         <TechGroup>
           <IntroText fontSize='1.3rem'>TOOLS</IntroText>
           <TechContent>
-            <i className='devicon-docker-plain colored' />
-            <i className='devicon-rabbitmq-plain colored' />
-            <i className='devicon-terraform-plain colored' />
-            <i className='devicon-kubernetes-plain  colored' />
-            <i className='devicon-jenkins-plain  colored' />
-            <i className='devicon-postgresql-plain  colored' />
-            <i className='devicon-datagrip-plain  colored' />
-            <i className='devicon-postman-plain  colored' />
-            <i className='devicon-github-plain  colored' />
-            <i className='devicon-gitlab-plain  colored' />
-            <i className='devicon-vscode-plain  colored' />
-            <i className='devicon-jira-plain  colored' />
-            <i className='devicon-curl-plain  colored' />
-            <img style={{ height: '5rem'}} src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/slack/slack-original.svg" />
-            <img style={{ height: '5rem'}} src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" />
-            <i className='devicon-trello-plain colored' />
+            <i className='devicon-docker-plain colored' title='Docker' />
+            <i className='devicon-rabbitmq-plain colored' title='RabbitMQ' />
+            <i className='devicon-terraform-plain colored' title='Terraform' />
+            <i className='devicon-kubernetes-plain colored' title='Kubernetes' />
+            <i className='devicon-jenkins-plain colored' title='Jenkins' />
+            <i className='devicon-postgresql-plain colored' title='PostgreSQL' />
+            <i className='devicon-datagrip-plain colored' title='DataGrip' />
+            <i className='devicon-postman-plain colored' title='Postman' />
+            <i className='devicon-github-plain colored' title='GitHub' />
+            <i className='devicon-gitlab-plain colored' title='Gitlab' />
+            <i className='devicon-vscode-plain colored' title='Visual Studio Code' />
+            <i className='devicon-jira-plain  colored' title='Jira' />
+            <i className='devicon-curl-plain  colored' title='cURL' />
+            <img style={{ height: '5rem'}} src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/slack/slack-original.svg" title='Slack' />
+            <img style={{ height: '5rem'}} src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" title='Figma' />
+            <i className='devicon-trello-plain colored' title='Trello' />
           </TechContent>
         </TechGroup>
       </Content>
-      
-      
     </Container>
   );
 };
