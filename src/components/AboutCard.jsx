@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import ContactMe from './ContactMe';
 import TechnologyCard from './TechnologyCard';
 import BioCard from './BioCard';
+import ExpCard from './ExpCard';
 
 export default function AboutCard() {
   const [view, setView] = useState(null);
@@ -20,8 +21,8 @@ export default function AboutCard() {
         return <TechnologyCard viewSetter={setView} />
       // case 'offline':
       //   return <OfflineCard />
-      // case 'exp':
-      //   return <ExperienceCard />
+      case 'exp':
+        return <ExpCard />
       default:
         return <BioCard viewSetter={setView} />
     };
