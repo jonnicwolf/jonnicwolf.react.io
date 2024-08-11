@@ -70,7 +70,6 @@ export default function ContactForm({ viewSetter }) {
         <LinkButton textContent='ABOUT'   isScaleAnimation={true}       onClick={()=> viewSetter('bio')} />
         <LinkButton textContent='TECH'   isScaleAnimation={true}       onClick={()=> viewSetter('tech')} />
         <LinkButton textContent='OFFLINE'   isScaleAnimation={true}    onClick={()=> viewSetter('offline')} />
-        <LinkButton textContent='OFFLINE'   isScaleAnimation={true}    onClick={()=> viewSetter('contact')} />
         <LinkButton textContent='EXPERIENCE'   isScaleAnimation={true} onClick={()=> viewSetter('exp')} />
       </ButtonWrap>
     </Form>
@@ -93,7 +92,6 @@ const Wrap = styled.div`
 const ButtonWrap = styled(Wrap)`
   border: none;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
 `;

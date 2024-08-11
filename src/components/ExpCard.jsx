@@ -11,15 +11,19 @@ export default function ExpCard({ viewSetter }) {
         <LinkButton
           onClick={()=> viewSetter('tech')}
           textContent='TECH'
-          isScaleAnimation={true} />
+          isScaleAnimation />
         <LinkButton
           onClick={()=> viewSetter('contact')}
           textContent='GET IN TOUCH'
-          isScaleAnimation={true} />
+          isScaleAnimation />
         <LinkButton
           onClick={()=> viewSetter('offline')}
           textContent='OFFLINE'
-          isScaleAnimation={true} />
+          isScaleAnimation />
+        <LinkButton
+          onClick={()=> viewSetter('bio')}
+          textContent='ABOUT'
+          isScaleAnimation />
         </Buttons>
     </>
   );
