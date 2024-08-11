@@ -14,10 +14,10 @@ export default function TechnologyCard ({ viewSetter }) {
           onClick={()=> viewSetter('contact')}
           textContent='GET IN TOUCH'
           isScaleAnimation={true} />
-        <LinkButton
+        {/* <LinkButton
           onClick={()=> viewSetter('offline')}
           textContent='OFFLINE'
-          isScaleAnimation={true} />
+          isScaleAnimation={true} /> */}
         <LinkButton
           onClick={()=> viewSetter('exp')}
           textContent='WORK HISTORY'

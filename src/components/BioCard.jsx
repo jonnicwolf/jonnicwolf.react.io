@@ -35,10 +35,10 @@ export default function BioCard ({ viewSetter }) {
             onClick={()=> viewSetter('tech')}
             textContent='TECH'
             isScaleAnimation={true} />
-          <LinkButton
+          {/* <LinkButton
             onClick={()=> viewSetter('offline')}
             textContent='OFFLINE'
-            isScaleAnimation={true} />
+            isScaleAnimation={true} /> */}
           <LinkButton
             onClick={()=> viewSetter('exp')}
             textContent='WORK HISTORY'

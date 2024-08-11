@@ -10,8 +10,8 @@ export default function ContactMe({ viewSetter }) {
       <Background />
       <FormWrap>
         <Title>Contact Me</Title>
+        <Socials gap={'40px'} />
         <ContactForm viewSetter={viewSetter} />
-        <Socials gap={'10px'}/>
       </FormWrap>
     </Container>
   );
