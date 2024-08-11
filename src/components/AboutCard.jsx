@@ -5,72 +5,29 @@ import { motion } from 'framer-motion';
 import ContactMe from './ContactMe';
 import TechnologyCard from './TechnologyCard';
 import LinkButton from '../assets/buttons/LinkButton';
+import BioCard from './BioCard';
 
 export default function AboutCard() {
-  const [showContactMe, setShowContactMe] = useState(false);
-  const [showMore, setShowMore] = useState(false);
+  const [view, setView] = useState(null);
 
-  const headshot = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/kzdwwh2b4yepik7c5amm';
-
-  function handleClick_getInTouch () {
-    setShowContactMe(!showContactMe);
+  function renderView (view) {
+    switch (view) {
+      case 'contact':
+        return <ContactMe />
+      case 'tech':
+        return <TechnologyCard />
+      // case 'offline':
+      //   return <OfflineCard />
+      // case 'exp':
+      //   return <ExperienceCard />
+      default:
+        return <BioCard />
+    };
   };
-  function handleClick_more () {
-    setShowContactMe(false);
-    setShowMore(!showMore);
-  };
-
-  const views = {
-    contact: <ContactMe clickFn={handleClick_getInTouch} />,
-    tech: <TechnologyCard />
-  }
 
   return (
     <Container>
-      {/* <TechnologyCard /> */}
-      {showContactMe
-        ? <ContactMe clickFn={handleClick_getInTouch} />
-        : <Wrap>
-            <Headshot src={headshot} />
-
-            <BioContainer>
-              <IntroText>
-                I'm Fezz, a Full-Stack Developer based in the heart of NYC.
-              </IntroText>
-
-              <P>
-                I've spent the past years working with elite teams to create user-centric products that are both intuitive and visually appealing. My expertise lies in front-end development, with proficiency in JavaScript, Python, and Swift.
-              </P>
-
-              <P>
-              These days, my time is spent collaborating with talented teams to craft seamless interfaces. I also delve into cloud architecture, game engines, and generative art, which continuously inform and elevate my work.
-              </P>
-
-              <P>
-                Outside of coding, you'll find me exploring new tech, diving into creative projects, and always on the lookout for inspiring collaborations.
-              </P>
-
-              <Buttons>
-                <LinkButton
-                  onClick={handleClick_getInTouch}
-                  textContent='GET IN TOUCH'
-                  isScaleAnimation={true} />
-                <LinkButton
-                  onClick={handleClick_more}
-                  textContent='TECH'
-                  isScaleAnimation={true} />
-                <LinkButton
-                  onClick={handleClick_more}
-                  textContent='OFFLINE'
-                  isScaleAnimation={true} />
-                <LinkButton
-                  onClick={handleClick_more}
-                  textContent='WORK HISTORY'
-                  isScaleAnimation={true} />
-              </Buttons>
-          </BioContainer>
-        </Wrap>
-      }
+      {renderView(view)}
     </Container>
   );
 };
