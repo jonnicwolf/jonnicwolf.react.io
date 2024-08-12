@@ -180,7 +180,7 @@ const Container = styled.div`
   display: ${props => props.isMobile ? 'flex' : ''};
   display: flex;
   justify-content: center;
-  height: 300vh;
+  height: 250vh;
 `;
 const Background = styled(P5_LORENZ_ATTRACTOR)`
   height: 100vh;

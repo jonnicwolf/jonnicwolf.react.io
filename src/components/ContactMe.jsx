@@ -33,8 +33,10 @@ const FormWrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  justify-content: center;
+  gap: 20px;
   align-items: center;
-  padding: 25px;
+  padding: 60px;
 `;
 const Title = styled.h1`
   font-family: Michroma;
