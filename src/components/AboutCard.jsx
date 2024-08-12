@@ -17,7 +17,7 @@ export default function AboutCard({ darkmode }) {
       case 'contact':
         return <ContactMe viewSetter={setView} darkmode={darkmode} />
       case 'tech':
-        return <TechnologyCard viewSetter={setView} />
+        return <TechnologyCard viewSetter={setView} darkmode={darkmode} />
       case 'exp':
         return <ExpCard viewSetter={setView} />
       default:

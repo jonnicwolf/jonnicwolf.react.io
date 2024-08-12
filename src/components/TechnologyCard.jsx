@@ -4,28 +4,13 @@ import { motion } from 'framer-motion';
 
 import LinkButton from '../assets/buttons/LinkButton';
 
-export default function TechnologyCard ({ viewSetter }) {
+export default function TechnologyCard ({ viewSetter, darkmode }) {
   return (
     <Container>
       <IntroText fontSize='2rem'>TECHS & TOOLS</IntroText>
 
-      {/* <Buttons>
-        <LinkButton
-          onClick={()=> viewSetter('contact')}
-          textContent='GET IN TOUCH'
-          isScaleAnimation />
-        <LinkButton
-          onClick={()=> viewSetter('bio')}
-          textContent='ABOUT'
-          isScaleAnimation />
-        <LinkButton
-          onClick={()=> viewSetter('exp')}
-          textContent='WORK HISTORY'
-          isScaleAnimation />
-      </Buttons> */}
-
       <Content>
-        <TechGroup>
+        <TechGroup darkmode={darkmode} >
           <IntroText fontSize='1.3rem'>LANGUAGES</IntroText>
           <TechContent gap='10px' width='50%'>
             <SVG style={{height: '5rem'}} src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" title='JavaScript'/>
@@ -35,7 +20,7 @@ export default function TechnologyCard ({ viewSetter }) {
           </TechContent>
         </TechGroup>
 
-        <TechGroup>
+        <TechGroup darkmode={darkmode} >
           <IntroText fontSize='1.3rem'>STYLING</IntroText>
           <TechContent gap='10px' width='80%'>
             <StyledComponents title='Styled-Components'>
@@ -50,7 +35,7 @@ export default function TechnologyCard ({ viewSetter }) {
           </TechContent>
         </TechGroup>
 
-        <TechGroup>
+        <TechGroup darkmode={darkmode} >
           <IntroText fontSize='1.3rem'>LIBRARIES</IntroText>
           <TechContent gap='10px'>
             <Icon className='devicon-react-original colored' title='React' />
@@ -67,7 +52,7 @@ export default function TechnologyCard ({ viewSetter }) {
           </TechContent>
         </TechGroup>
 
-        <TechGroup>
+        <TechGroup darkmode={darkmode} >
           <IntroText fontSize='1.3rem'>TOOLS</IntroText>
           <TechContent gap='9px'>
             <Icon className='devicon-docker-plain colored' title='Docker' />
@@ -89,16 +74,20 @@ export default function TechnologyCard ({ viewSetter }) {
           </TechContent>
         </TechGroup>
       </Content>
+
       <Buttons>
         <LinkButton
+          darkMode={darkmode}
           onClick={()=> viewSetter('contact')}
           textContent='GET IN TOUCH'
           isScaleAnimation />
         <LinkButton
+          darkMode={darkmode}
           onClick={()=> viewSetter('bio')}
           textContent='ABOUT'
           isScaleAnimation />
         <LinkButton
+          darkMode={darkmode}
           onClick={()=> viewSetter('exp')}
           textContent='WORK HISTORY'
           isScaleAnimation />
@@ -161,7 +150,7 @@ const Container = styled(motion.div)`
       font-size: 5rem;
       padding: 10px;
       width: 45%;
-      border: 1px solid grey;
+      border: 1px solid ${props => (props.darkmode ? 'white' : 'black')};
       display: flex;
       flex-direction: column;
       align-items: center;
