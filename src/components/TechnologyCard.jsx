@@ -46,7 +46,7 @@ export default function TechnologyCard ({ viewSetter }) {
             <Icon className='devicon-css3-plain colored' title='CSS3' />
             <Icon className='devicon-bootstrap-plain colored' title='Bootstrap' />
             <Icon className='devicon-sass-plain colored' title='Sass' />
-            <Icon className='devicon-framermotion-original colored' title='Sass' />
+            <Icon className='devicon-framermotion-original colored' title='Framer Motion' />
           </TechContent>
         </TechGroup>
 
