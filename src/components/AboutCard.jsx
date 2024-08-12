@@ -19,8 +19,6 @@ export default function AboutCard() {
         return <ContactMe viewSetter={setView} />
       case 'tech':
         return <TechnologyCard viewSetter={setView} />
-      // case 'offline':
-      //   return <OfflineCard />
       case 'exp':
         return <ExpCard viewSetter={setView}/>
       default:

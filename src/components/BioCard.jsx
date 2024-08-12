@@ -39,11 +39,6 @@ export default function BioCard ({ viewSetter }) {
             onClick={()=> viewSetter('tech')}
             textContent='TECH'
             isScaleAnimation />
-          {/* <LinkButton
-            onClick={()=> viewSetter('offline')}
-            textContent='OFFLINE'
-            isScaleAnimation={true} /> */}
-          
         </Buttons>
       </BioContainer>
     </Wrap>

@@ -9,7 +9,6 @@ import MobileNav from './components/navigation/MobileNav.jsx';
 import Test from './pages/Test.jsx';
 
 const ProjectPage = lazy(() => import('./pages/ProjectPage.jsx'));
-const AboutmePage = lazy(() => import('./pages/AboutmePage.jsx'));
 const GalleryPage = lazy(() => import('./pages/GalleryPage.jsx'));
 
 function App() {

@@ -1,14 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import AboutCard from '../components/AboutCard';
-
 const Test = () => {
 
   return (
     <Container>
-      {/* WELL HELLO MOTHERFUCKER, NOTHING TO SEE HERE */}
-      <AboutCard />
+      WELL HELLO MOTHERFUCKER, NOTHING TO SEE HERE
     </Container>
   );
 };

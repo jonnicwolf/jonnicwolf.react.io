@@ -17,10 +17,6 @@ export default function ExpCard({ viewSetter }) {
           onClick={()=> viewSetter('contact')}
           textContent='GET IN TOUCH'
           isScaleAnimation />
-        {/* <LinkButton
-          onClick={()=> viewSetter('offline')}
-          textContent='OFFLINE'
-          isScaleAnimation /> */}
         <LinkButton
           onClick={()=> viewSetter('bio')}
           textContent='ABOUT'
