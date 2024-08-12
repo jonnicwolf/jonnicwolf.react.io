@@ -29,6 +29,7 @@ export default function ExpCard({ viewSetter }) {
 const Iframe = styled.iframe`
   width: 840px;
   height: 740px;
+  border-bottom: none;
 `;
 const Buttons = styled.div`
   display: flex;

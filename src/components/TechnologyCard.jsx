@@ -9,7 +9,7 @@ export default function TechnologyCard ({ viewSetter }) {
     <Container>
       <IntroText fontSize='2rem'>TECHS & TOOLS</IntroText>
 
-      <Buttons>
+      {/* <Buttons>
         <LinkButton
           onClick={()=> viewSetter('contact')}
           textContent='GET IN TOUCH'
@@ -22,7 +22,7 @@ export default function TechnologyCard ({ viewSetter }) {
           onClick={()=> viewSetter('exp')}
           textContent='WORK HISTORY'
           isScaleAnimation />
-      </Buttons>
+      </Buttons> */}
 
       <Content>
         <TechGroup>
@@ -89,6 +89,20 @@ export default function TechnologyCard ({ viewSetter }) {
           </TechContent>
         </TechGroup>
       </Content>
+      <Buttons>
+        <LinkButton
+          onClick={()=> viewSetter('contact')}
+          textContent='GET IN TOUCH'
+          isScaleAnimation />
+        <LinkButton
+          onClick={()=> viewSetter('bio')}
+          textContent='ABOUT'
+          isScaleAnimation />
+        <LinkButton
+          onClick={()=> viewSetter('exp')}
+          textContent='WORK HISTORY'
+          isScaleAnimation />
+      </Buttons>
     </Container>
   );
 };

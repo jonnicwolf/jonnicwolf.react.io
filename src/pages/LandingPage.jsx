@@ -33,8 +33,7 @@ export default function LandingPage () {
       variants={backgroundAnimation}
       initial="hidden"
       animate={isClicked ? 'show': 'hidden'}
-      showAbout={showAbout}
-      >
+      showAbout={showAbout} >
         {showAbout
           ? <AboutCard />
           : <LandingPageContainer>

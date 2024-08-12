@@ -16,7 +16,7 @@ const NameCard = () => {
           FEZZ
         </RampartOneText>
         <FSD variants={items} custom={1}>
-          FULL STACK DEVELOPER
+          FULL STACK SWE & CREATIVE DEV
         </FSD>
         <CurrentRole variants={items} custom={2} >
           FREELANCER, PREVIOUSLY SEATGEEK COMMERCE MARKETPLACE ENGINEERING
@@ -25,7 +25,6 @@ const NameCard = () => {
           BASED IN NEW YORK CITY
         </Hometown>
         <br /><br />
-        <Socials gap={'1.5vw'}/>
     </Container>
   )
 };
@@ -60,7 +59,7 @@ const items = {
 
 const CurrentRole = styled(motion.p)`
   font-family: Julius Sans One;
-  font-size: 1rem;
+  font-size: 0.8rem;
   letter-spacing: 0.020em;
   margin: 0;
   @media (max-width: 850px) {
@@ -79,8 +78,10 @@ const CurrentRole = styled(motion.p)`
 `;
 const FSD = styled(motion.p)`
   font-family: Julius Sans One;
-  font-size: 25px;
-  letter-spacing: 0.020em;
+  font-family: Michroma;
+  font-size: 1.5rem;
+  font-weight: bold;
+  // letter-spacing: 0.10rem;
   @media (max-width: 530px) {
     font-size: 15px;
   }
@@ -90,7 +91,7 @@ const FSD = styled(motion.p)`
 `;
 const Hometown = styled(motion.p)`
   font-family: Julius Sans One;
-  font-size: 18px;
+  font-size: 1rem;
   @media (max-width: 500px) {
     font-size: 12px;
   }
@@ -105,7 +106,7 @@ const RampartOneText = styled(motion.p)`
   font-size: 6vh;
   height: 10vh;
   margin: 0;
-  margin-top: 5vh;
+  margin-top: 10vh;
   @media (max-width: 400px) {
     font-size: 40px;
   }
