@@ -7,7 +7,7 @@ import NameCard from '../components/NameCard.jsx';
 import LinkButton from '../assets/buttons/LinkButton.jsx';
 import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 
-export default function LandingPage () {
+export default function LandingPage ({ darkmode }) {
   const [isClicked, setIsClicked] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
 
@@ -35,7 +35,7 @@ export default function LandingPage () {
       animate={isClicked ? 'show': 'hidden'}
       showAbout={showAbout} >
         {showAbout
-          ? <AboutCard />
+          ? <AboutCard darkmode={darkmode} />
           : <LandingPageContainer>
               <NameCard />
 

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import LinkButton from '../assets/buttons/LinkButton';
 
-export default function BioCard ({ viewSetter }) {
+export default function BioCard ({ viewSetter, darkmode }) {
   const headshot = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/kzdwwh2b4yepik7c5amm';
 
   return (
@@ -28,14 +28,17 @@ export default function BioCard ({ viewSetter }) {
 
         <Buttons>
           <LinkButton
+            darkMode={darkmode}
             onClick={()=> viewSetter('contact')}
             textContent='GET IN TOUCH'
             isScaleAnimation />
           <LinkButton
+            darkMode={darkmode}
             onClick={()=> viewSetter('exp')}
             textContent='WORK HISTORY'
             isScaleAnimation />
           <LinkButton
+            darkMode={darkmode}
             onClick={()=> viewSetter('tech')}
             textContent='TECH'
             isScaleAnimation />

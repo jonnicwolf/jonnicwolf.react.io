@@ -37,7 +37,7 @@ const Button = styled.button`
   cursor: pointer;
   position: relative;
   display: inline-block;
-  border: 1px solid ${props => props.darkMode ? 'red' : 'black'};
+  border: 1px solid ${props => props.darkMode ? 'white' : 'black'};
   z-index: 1;
   color: ${props => props.darkMode ? 'white' : 'black'};
 
@@ -56,8 +56,8 @@ const Button = styled.button`
   }
 
   &:hover {
-    color: ${props => props.darkMode ? 'red' : 'black'};
-    border: 1px solid ${props => props.darkMode ? 'red' : 'black'};;
+    color: ${props => props.darkMode ? 'white' : 'black'};
+    border: 1px solid ${props => props.darkMode ? 'white' : 'black'};;
   }
 
   &:hover:after {
