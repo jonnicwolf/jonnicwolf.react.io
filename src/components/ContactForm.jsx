@@ -64,7 +64,7 @@ export default function ContactForm({ viewSetter }) {
         onChange={handleChange}
         required />
 
-      <LinkButton textContent='SUBMIT' isScaleAnimation={true} onClick={handleSubmit} />
+      {formData.message && <LinkButton textContent='SUBMIT' isScaleAnimation={true} onClick={handleSubmit} />}
 
       <ButtonWrap>
         <LinkButton

@@ -22,8 +22,6 @@ const NavBar = ({ darkModeGetter, darkModeSetter }) => {
       </Fezz>
 
       <DarkModeButton darkModeGetter={darkModeGetter} darkModeSetter={darkModeSetter} />
-
-      <LinkButton subDirectory={'/about'} textContent={'ABOUT'}  darkMode={darkModeGetter} fontSize padding />
       <LinkButton subDirectory={'/gallery'} textContent={'GALLERY'}  darkMode={darkModeGetter} fontSize padding />
     </NavbarContainer>
   );
