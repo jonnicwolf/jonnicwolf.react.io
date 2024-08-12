@@ -146,7 +146,7 @@ export default function ProjectPage ({ darkMode }) {
           <ProjectCard
             title='Esperi'
             bio='Tarot Interpreter'
-            liveLink='https://esperi.netlify.app'
+            liveLink='https://esperi.vercel.app'
             githubLink='https://github.com/jonnicwolf/heart_of_the_cards'
             cover={EsperiCover}
             gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/heicbedxhzwocfzxqzky'
