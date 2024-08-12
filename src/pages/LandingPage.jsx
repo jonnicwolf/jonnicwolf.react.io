@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -10,6 +10,16 @@ import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 export default function LandingPage () {
   const [isClicked, setIsClicked] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
+
+  useEffect(() => {
+    !isClicked
+      ? document.body.style.overflow = 'hidden'
+      : document.body.style.overflow = 'auto'
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isClicked]);
 
   const handleClick = () => {
     setIsClicked(!isClicked);
@@ -48,8 +58,8 @@ export default function LandingPage () {
 
 const backgroundAnimation = {
   hidden: {
-    height: '100%',
-    width: '100%',
+    height: '100vh',
+    width: '100vw',
     y: -80
   },
   show: {

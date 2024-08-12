@@ -143,6 +143,7 @@ export default function ProjectPage ({ darkMode }) {
         :
         <ProjectList>
           <LandingPage />
+
           <ProjectCard
             title='Esperi'
             bio='Tarot Interpreter'
