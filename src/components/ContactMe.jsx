@@ -4,14 +4,14 @@ import styled from 'styled-components';
 import Socials from './Socials';
 import ContactForm from './ContactForm';
 
-export default function ContactMe({ viewSetter }) {
+export default function ContactMe({ viewSetter, darkmode }) {
   return (
     <Container>
       <Background />
       <FormWrap>
         <Title>Contact Me</Title>
         <Socials gap={'40px'} />
-        <ContactForm viewSetter={viewSetter} />
+        <ContactForm viewSetter={viewSetter} darkmode={darkmode} />
       </FormWrap>
     </Container>
   );

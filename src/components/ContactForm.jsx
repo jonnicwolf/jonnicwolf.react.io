@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 
 import LinkButton from '../assets/buttons/LinkButton';
 
-export default function ContactForm({ viewSetter }) {
+export default function ContactForm({ viewSetter, darkmode }) {
   const [formData, setFormData] = useState({
     to_name: '',
     from_name: '',
@@ -37,8 +37,8 @@ export default function ContactForm({ viewSetter }) {
 
   return (
     <Form>
-      <Wrap>
-        <Img src="https://img.icons8.com/?size=100&id=61005&format=png&color=000000" alt="" />
+      <Wrap darkmode={darkmode} >
+        <Img src={`https://img.icons8.com/?size=100&id=61005&format=png&color=${darkmode ? 'ffffff' : '000000'}`} alt="" />
         <Input
           placeholder='Full Name'
           name='to_name'
@@ -47,8 +47,8 @@ export default function ContactForm({ viewSetter }) {
           required />
       </Wrap>
 
-      <Wrap>
-        <Img src="https://img.icons8.com/?size=100&id=85500&format=png&color=000000"/>
+      <Wrap darkmode={darkmode} >
+        <Img src={`https://img.icons8.com/?size=100&id=85500&format=png&color=${darkmode ? 'ffffff' : '000000'}`}/>
         <Input
           placeholder='Email'
           name='from_name'
@@ -58,28 +58,31 @@ export default function ContactForm({ viewSetter }) {
       </Wrap>
 
       <Message
+        darkmode={darkmode}
         placeholder='Message...'
         name='message'
         value={formData.message}
         onChange={handleChange}
         required />
 
-      {formData.message && <LinkButton textContent='SUBMIT' isScaleAnimation={true} onClick={handleSubmit} />}
+      {formData.message && <LinkButton darkMode={darkmode} textContent='SUBMIT' isScaleAnimation={true} onClick={handleSubmit} />}
 
       <ButtonWrap>
         <LinkButton
+          darkMode={darkmode}
           onClick={()=> viewSetter('bio')} 
           textContent='ABOUT'
           isScaleAnimation />
         <LinkButton
+          darkMode={darkmode}
           onClick={()=> viewSetter('exp')}
           textContent='EXPERIENCE'
           isScaleAnimation />
         <LinkButton
+          darkMode={darkmode}
           onClick={()=> viewSetter('tech')}
           textContent='TECH'
           isScaleAnimation />
-        {/* <LinkButton textContent='OFFLINE'   isScaleAnimation={true}    onClick={()=> viewSetter('offline')} /> */}
       </ButtonWrap>
     </Form>
   );
@@ -97,6 +100,8 @@ const Wrap = styled.div`
   border: 1px solid black;
   height: 2rem;
   padding: 10px;
+  color: ${props => (props.darkmode ? 'white' : 'black')};
+  border: 1px solid ${props => (props.darkmode ? 'white' : 'black')};
 `;
 const ButtonWrap = styled(Wrap)`
   border: none;
@@ -107,13 +112,21 @@ const ButtonWrap = styled(Wrap)`
 const Img = styled.img`
   height: 50%;
   align-self: center;
+  color: inherit;
 `;
 const Input = styled.input`
   border: none;
   width: 100%;
   font-size: 1.5rem;
+  background: none;
+  color: inherit;
+  outline: none;
 `;
 const Message = styled.textarea`
   height: 200px;
   width: 100%;
+  background: none;
+  outline: none;
+  border: 1px solid ${props => (props.darkmode ? 'white' : 'black')};
+  color: ${props => (props.darkmode ? 'white' : 'black')};
 `;
