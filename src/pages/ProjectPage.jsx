@@ -160,7 +160,7 @@ export default function ProjectPage ({ darkMode }) {
           <ProjectCard
             title='Stoned Cold Dreamery'
             bio='Webstore'
-            liveLink='https://thestonedcolddreamery.com'
+            liveLink='https://stoned-cold-dreamery.vercel.app'
             githubLink='https://github.com/jonnicwolf/stoned_cold_dreamery'
             cover={SCDCover}
             gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/r46imtohg1igqqknoqgp'
@@ -180,7 +180,7 @@ const Container = styled.div`
   display: ${props => props.isMobile ? 'flex' : ''};
   display: flex;
   justify-content: center;
-  height: 250vh;
+  height: 230vh;
 `;
 const Background = styled(P5_LORENZ_ATTRACTOR)`
   height: 100vh;
