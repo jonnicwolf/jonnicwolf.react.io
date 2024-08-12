@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 
 import LinkButton from '../assets/buttons/LinkButton';
 
-export default function ContactForm({ clickFn }) {
+export default function ContactForm({ viewSetter }) {
   const [formData, setFormData] = useState({
     to_name: '',
     from_name: '',
@@ -12,10 +12,10 @@ export default function ContactForm({ clickFn }) {
   });
 
   const handleChange = (e) => {
-      setFormData({
-          ...formData,
-          [e.target.name]: e.target.value
-      });
+    setFormData({
+        ...formData,
+        [e.target.name]: e.target.value
+    });
   };
 
   const handleSubmit = (e) => {
@@ -64,9 +64,22 @@ export default function ContactForm({ clickFn }) {
         onChange={handleChange}
         required />
 
+      {formData.message && <LinkButton textContent='SUBMIT' isScaleAnimation={true} onClick={handleSubmit} />}
+
       <ButtonWrap>
-        <LinkButton textContent='SUBMIT' isScaleAnimation={true} onClick={handleSubmit} />
-        <LinkButton textContent='BACK'   isScaleAnimation={true} onClick={clickFn} />
+        <LinkButton
+          onClick={()=> viewSetter('bio')} 
+          textContent='ABOUT'
+          isScaleAnimation />
+        <LinkButton
+          onClick={()=> viewSetter('exp')}
+          textContent='EXPERIENCE'
+          isScaleAnimation />
+        <LinkButton
+          onClick={()=> viewSetter('tech')}
+          textContent='TECH'
+          isScaleAnimation />
+        {/* <LinkButton textContent='OFFLINE'   isScaleAnimation={true}    onClick={()=> viewSetter('offline')} /> */}
       </ButtonWrap>
     </Form>
   );
@@ -87,6 +100,9 @@ const Wrap = styled.div`
 `;
 const ButtonWrap = styled(Wrap)`
   border: none;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 `;
 const Img = styled.img`
   height: 50%;

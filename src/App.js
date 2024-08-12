@@ -9,7 +9,6 @@ import MobileNav from './components/navigation/MobileNav.jsx';
 import Test from './pages/Test.jsx';
 
 const ProjectPage = lazy(() => import('./pages/ProjectPage.jsx'));
-const AboutmePage = lazy(() => import('./pages/AboutmePage.jsx'));
 const GalleryPage = lazy(() => import('./pages/GalleryPage.jsx'));
 
 function App() {
@@ -27,7 +26,6 @@ function App() {
           <Route path='/' element={<ProjectPage darkMode={darkMode}/>} />
           <Route path='/gallery'  element={<GalleryPage darkMode={darkMode}/>} />
           <Route path='/gallery/:projectName'  element={<GalleryPage darkMode={darkMode}/>} />
-          <Route path='/about'    element={<AboutmePage darkMode={darkMode}/>} />
           <Route path='/test'     element={<Test />} />
         </Routes>
       </Suspense>

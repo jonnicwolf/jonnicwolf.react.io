@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-const LinkButton = ({ onClick, textContent, buttonSize, subDirectory, darkMode, isScaleAnimation}) => {
+const LinkButton = ({ padding, onClick, textContent, buttonSize, subDirectory, darkMode, isScaleAnimation}) => {
   return (
-    <LinkStyle to={subDirectory} onClick={onClick}>
+    <LinkStyle to={subDirectory} onClick={onClick} padding={padding}>
       { isScaleAnimation
         ?<Button
           as={motion.button}
@@ -25,7 +25,7 @@ const LinkButton = ({ onClick, textContent, buttonSize, subDirectory, darkMode, 
 };
 
 const LinkStyle = styled(motion(Link))`
-  padding: 1vh;
+  padding: ${props => props.padding ? '1vh' : '0'} ;
   font-size: 2rem;
 `;
 const Button = styled.button`
