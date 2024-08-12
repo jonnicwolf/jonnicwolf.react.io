@@ -7,6 +7,7 @@ export default function ExpCard({ viewSetter }) {
   return (
     <>
       <Iframe src="https://docs.google.com/document/d/1L--uuFkBDl2thpDIuyzyUWNqv5Q0BShsKrwGvy6DusU/pub?embedded=true" />
+      
       <Buttons>
         <LinkButton
           onClick={()=> viewSetter('tech')}

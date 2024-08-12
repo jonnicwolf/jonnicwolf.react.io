@@ -22,7 +22,7 @@ export default function AboutCard() {
       // case 'offline':
       //   return <OfflineCard />
       case 'exp':
-        return <ExpCard />
+        return <ExpCard viewSetter={setView}/>
       default:
         return <BioCard viewSetter={setView} />
     };
