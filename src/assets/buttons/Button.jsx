@@ -38,8 +38,7 @@ const StyledButton = styled.button`
   }
 
   &:hover {
-    background: ${props => props.darkModeGetter ? 'white': 'black'}
-    color:  ${props => props.darkModeGetter ? 'white' : 'black'};
+    background: ${props => props.darkModeGetter ? 'white': 'black'};
     color:  ${props => props.darkModeGetter ? 'white' : 'white'};
     border: 1px solid ${props => props.darkModeGetter ? 'white' : 'black'};
   }
