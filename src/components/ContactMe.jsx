@@ -10,7 +10,7 @@ export default function ContactMe({ viewSetter, darkmode }) {
       <Background darkmode={darkmode} />
       <FormWrap>
         <Title>Contact Me</Title>
-        <Socials gap={'40px'} />
+        <Socials gap={'40px'} darkmode={darkmode} />
         <ContactForm viewSetter={viewSetter} darkmode={darkmode} />
       </FormWrap>
     </Container>
