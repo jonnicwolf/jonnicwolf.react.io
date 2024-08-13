@@ -7,7 +7,7 @@ export default function ExpCard({ viewSetter }) {
   return (
     <Container>
       <Iframe src="https://docs.google.com/document/d/1L--uuFkBDl2thpDIuyzyUWNqv5Q0BShsKrwGvy6DusU/pub?embedded=true" />
-      
+
       <Buttons>
         <LinkButton
           onClick={()=> viewSetter('tech')}
@@ -28,11 +28,12 @@ export default function ExpCard({ viewSetter }) {
 
 const Container = styled.div`
   background-color: white;
+  height: 800px;
 `;
 
 const Iframe = styled.iframe`
   width: 840px;
-  height: 745px;
+  height: 740px;
   border-bottom: none;
 `;
 const Buttons = styled.div`
