@@ -31,6 +31,7 @@ const LinkStyle = styled(motion(Link))`
 const Button = styled.button`
   padding: ${props => props.buttonSize === 'large' ? '25px 80px' : '1em'};
   font-family: var(--font-family-rubik);
+  font-size: ${props => props.buttonSize === 'large' ? '1.5rem' : '0.8rem'};
   font-weight: 900;
   background: transparent;
   outline: none !important;
@@ -50,20 +51,22 @@ const Button = styled.button`
     left: 0;
     direction: rtl;
     z-index: -1;
-    background: ${props => props.darkMode ? 'black' : 'red'};
-    color:  ${props => props.darkMode ? 'white' : 'black'};
+    background: black;
+    color:  ${props => props.darkMode ? 'black' : 'white'};
     transition: all 0.15s ease;
   }
 
   &:hover {
-    color: ${props => props.darkMode ? 'white' : 'black'};
-    border: 1px solid ${props => props.darkMode ? 'white' : 'black'};;
+    background: ${props => props.darkMode ? 'white': 'black'};
+    color:  ${props => props.darkMode ? 'white' : 'white'};
+    border: 1px solid ${props => props.darkMode ? 'white' : 'black'};
   }
 
   &:hover:after {
     left: auto;
     right: 0;
     width: 100%;
+    color: ${props => props.darkModeGetter ? 'black' : 'white'};
   }
 `;
 

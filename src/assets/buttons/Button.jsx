@@ -32,14 +32,14 @@ const StyledButton = styled.button`
     left: 0;
     direction: rtl;
     z-index: -1;
-    background: ${props => props.darkModeGetter ? 'black' : 'black'};
+    background: black;
     color:  ${props => props.darkModeGetter ? 'black' : 'white'};
     transition: all 0.1s ease;
   }
 
   &:hover {
     background: ${props => props.darkModeGetter ? 'white': 'black'};
-    color:  ${props => props.darkModeGetter ? 'white' : 'white'};
+    color: white;
     border: 1px solid ${props => props.darkModeGetter ? 'white' : 'black'};
   }
 
