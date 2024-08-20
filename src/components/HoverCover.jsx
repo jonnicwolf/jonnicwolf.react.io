@@ -75,21 +75,24 @@ const Container = styled.div`
     flex-direction: column;
     background-color: rgba(225,225,225,0.8);
     animation: ${fadeIn} 1s forwards;
+
+    @media screen and (max-width: 600px) {
+
+    }
   `;
   const PaddingWrap = styled.div`
     margin-left: -3rem;
     margin-top: 8rem;
 
-    @media screen only and (max-width: 600px) {
-      margin-left: -1rem;
-      margin-top: 8rem;
+    @media screen  and (max-width: 600px) {
+      margin-left: 1rem;
+      margin-top: 15rem;
     }
-    
+
     & > * {
       opacity: 0;
       animation: ${fadeIn} 1s forwards;
     }
-
     & > *:nth-child(1) {
       animation-delay: 0.3s;
     }
