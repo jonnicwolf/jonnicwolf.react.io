@@ -10,7 +10,9 @@ import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 export default function LandingPage ({ darkmode }) {
   const [isClicked, setIsClicked] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
+  const isMobile = window.innerWidth < 720;
 
+  // Lock scroll when landing page is at full size
   useEffect(() => {
     !isClicked
       ? document.body.style.overflow = 'hidden'
@@ -26,6 +28,20 @@ export default function LandingPage ({ darkmode }) {
     setTimeout(() => {
       setShowAbout(true);
     }, 2500);
+  };
+
+  const backgroundAnimation = {
+    hidden: {
+      height: '100vh',
+      width: '100vw',
+      y: -80,
+    },
+    show: {
+      height: isMobile ? '60vh' :'800px',
+      width: isMobile ? '80vw' :'800px',
+      y: 70,
+      transition: { duration: 2 },
+    }
   };
 
   return (
@@ -55,22 +71,8 @@ export default function LandingPage ({ darkmode }) {
   );
 };
 
-const backgroundAnimation = {
-  hidden: {
-    height: '100vh',
-    width: '100vw',
-    y: -80
-  },
-  show: {
-    height: '800px',
-    width: '800px',
-    y: 70,
-    transition: { duration: 2 },
-  }
-};
-
 const Background = styled(motion.div)`
-  background-image: radial-gradient(circle 750px, white, ${props => props.showAbout ? `rgb(255,255,255)`: `rgb(42, 191, 250)`  });
+  background-image: radial-gradient(circle 750px, white, ${props => props.showAbout ? `rgb(255,255,255)`: `rgb(42, 191, 250)` });
   
   transform: translateY(${props => props.isclicked ? '100px': '-100px'});
 `;
