@@ -35,6 +35,11 @@ const Iframe = styled.iframe`
   width: 840px;
   height: 740px;
   border-bottom: none;
+  @media screen and (max-width: 600px) {
+    height: 60vh;
+    width: 95vw;
+    overflow: hidden;
+  }
 `;
 const Buttons = styled.div`
   display: flex;
