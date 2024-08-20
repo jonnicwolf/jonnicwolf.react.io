@@ -18,7 +18,7 @@ const MobileNav = ({ darkMode }) => {
         />
       </Nav>
 
-      <Item to='/projects' onClick={() =>setIsOpen(!isOpen)}>HOME</Item>
+      <Item to='/' onClick={() =>setIsOpen(!isOpen)}>HOME</Item>
       <Item to='/about'    onClick={() =>setIsOpen(!isOpen)}>ABOUT</Item>
       <Item to='/gallery'  onClick={() =>setIsOpen(!isOpen)}>GALLERY</Item>
       <ExternalItem
@@ -42,7 +42,7 @@ const Container = styled.div`
   overflow: hidden;
   transition: height .3s linear;
   width: 100%;
-  z-index: 199;
+  z-index: 2;
 `;
 const Nav = styled.div`
   display: flex;

@@ -46,6 +46,7 @@ export default function LandingPage ({ darkmode }) {
 
   return (
     <Background
+      isclicked={isClicked}
       variants={backgroundAnimation}
       initial="hidden"
       animate={isClicked ? 'show': 'hidden'}
@@ -94,6 +95,6 @@ const PProject = styled(LandingPageItem)`
   opacity: ${props => props.isclicked ? 0 : 1};
 `;
 const EnterButton = styled(LandingPageItem)`
-  z-index: 99;
+  z-index: 3;
   transform: translateY(5vh);
 `;
