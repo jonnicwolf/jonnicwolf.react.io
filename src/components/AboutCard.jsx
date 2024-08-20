@@ -50,4 +50,9 @@ const Container = styled(motion.div)`
   color: ${props => (props.darkmode ? 'white' : 'black')};
   background-color: ${props => (props.darkmode ? '#969696' : null)};
   font-color: ${props => (props.darkmode ? 'grey' : 'white')};
+
+  @media screen and (max-width: 600px) {
+    height: 60vh;
+    width: 80vw;
+  };
 `;

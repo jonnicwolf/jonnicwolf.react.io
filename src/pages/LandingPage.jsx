@@ -73,7 +73,6 @@ export default function LandingPage ({ darkmode }) {
 
 const Background = styled(motion.div)`
   background-image: radial-gradient(circle 750px, white, ${props => props.showAbout ? `rgb(255,255,255)`: `rgb(42, 191, 250)` });
-  
   transform: translateY(${props => props.isclicked ? '100px': '-100px'});
 `;
 const LandingPageContainer = styled.div`
@@ -92,7 +91,7 @@ const PProject = styled(LandingPageItem)`
   height: 100vh;
   width: 100vw;
   z-index: 1;
-  opacity: ${props => props.isclicked ? 0 : 1}
+  opacity: ${props => props.isclicked ? 0 : 1};
 `;
 const EnterButton = styled(LandingPageItem)`
   z-index: 99;
