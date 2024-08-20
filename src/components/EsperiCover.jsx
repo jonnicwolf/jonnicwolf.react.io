@@ -21,13 +21,13 @@ export default function EsperiCover ({ setter }) {
 };
 
 const fadeIn = keyframes`
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  `;
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 const Container = styled.div`
   height: 100%;
@@ -44,6 +44,11 @@ const ContentWrap = styled.div`
   height: 92.4%;
   width: 91.4%;
 
+  @media screen and (max-width: 600px) {
+    height: 86.5%;
+    width: 80.7%;
+  };
+
   --s: 5px;
   padding: var(--s);
   border: calc(5*var(--s)) solid #0000;
@@ -54,8 +59,16 @@ const ContentWrap = styled.div`
 `;
 const EyeWrap = styled.div`
   transform: translateX(-20px);
+  @media screen and (max-width: 600px) {
+    transform: translate(-20px, -20px);
+    scale: 0.5;
+  }
 `;
 const Title = styled.h1`
   font-size: 8rem;
   font-family: Bagnard;
+  @media screen and (max-width: 600px) {
+    transform: translateY(-50px);
+    font-size: 4rem;
+  }
 `;

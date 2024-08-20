@@ -30,7 +30,7 @@ export default function ProjectPage ({ darkMode }) {
   return (
     <Container>
       <ProjectList>
-        <LandingPage darkmode={darkMode}/>
+        <LandingPage darkmode={darkMode} />
 
         <ProjectCard
           title='Esperi'
