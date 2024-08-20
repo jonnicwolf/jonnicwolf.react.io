@@ -21,6 +21,10 @@ const Container = styled.div`
   display: flex;
   width: 100%;
   gap: 20px;
+  
+  @media screen and (max-width: 600px) {
+    justify-content: center;
+  }
 `;
 const Background = styled.div`
   background: repeat 120px url('https://img.icons8.com/?size=100&id=iZfvYzdS1M3T&format=png&color=${props => props.darkmode ? 'ffffff': '000000'} ');
@@ -28,6 +32,10 @@ const Background = styled.div`
   height: 800px;
   width: 50%;
   opacity: 0.2;
+
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
 `;
 const FormWrap = styled.div`
   display: flex;

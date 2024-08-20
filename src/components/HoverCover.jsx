@@ -12,8 +12,8 @@ export default function HoverCover({
   apis,
   descriptions,
   devicons,
-  darkMode
-,}) {
+  darkMode,
+}) {
   return (
     <Container>
       <Gif src={gifPath} />
@@ -79,6 +79,11 @@ const Container = styled.div`
   const PaddingWrap = styled.div`
     margin-left: -3rem;
     margin-top: 8rem;
+
+    @media screen only and (max-width: 600px) {
+      margin-left: -1rem;
+      margin-top: 8rem;
+    }
     
     & > * {
       opacity: 0;

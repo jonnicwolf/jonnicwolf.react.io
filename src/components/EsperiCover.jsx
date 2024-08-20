@@ -67,6 +67,7 @@ const EyeWrap = styled.div`
 const Title = styled.h1`
   font-size: 8rem;
   font-family: Bagnard;
+
   @media screen and (max-width: 600px) {
     transform: translateY(-50px);
     font-size: 4rem;
