@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import '../assets/fonts/fonts.css';
 
-import Socials from '../components/Socials.jsx'
-
 const NameCard = () => {
   return (
     <Container
