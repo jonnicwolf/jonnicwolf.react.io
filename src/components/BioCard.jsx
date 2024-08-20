@@ -50,14 +50,25 @@ export default function BioCard ({ viewSetter, darkmode }) {
 
 const Wrap = styled.div`
   display: flex;
-  flex-direction: row;
   height: 100%;
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
 `;
 const Headshot = styled.img`
   height: 100%;
   width: 60%;
   margin: 0;
   box-shadow: -2rem 2rem 20rem;
+
+  @media screen and (max-width: 600px) {
+
+    height: 60%;
+    width: 70%;
+    border-radius: 50%;
+  }
 `;
 const BioContainer = styled.div`
   display: flex;
