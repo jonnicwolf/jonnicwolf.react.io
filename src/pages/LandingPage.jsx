@@ -34,7 +34,7 @@ export default function LandingPage ({ darkmode }) {
     hidden: {
       height: '100vh',
       width: '100vw',
-      y: -80,
+      y: -100,
     },
     show: {
       height: isMobile ? '60vh' :'800px',
