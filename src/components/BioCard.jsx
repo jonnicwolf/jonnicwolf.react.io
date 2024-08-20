@@ -94,4 +94,8 @@ const Buttons = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
+
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
 `;
