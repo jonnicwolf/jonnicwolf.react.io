@@ -66,7 +66,7 @@ const Headshot = styled.img`
   @media screen and (max-width: 600px) {
 
     height: 60%;
-    width: 70%;
+    width: 60%;
     border-radius: 50%;
   }
 `;
