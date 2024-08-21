@@ -4,7 +4,7 @@ import p5 from 'p5';
 
 import AfterImageControls from '../AfterImageControls';
 
-const P5_LOADER = ({ strokeColor, darkMode }) => {
+const P5_LOADER = ({ strokeColor, controls, darkMode }) => {
   const [mod, setMod] = useState(0.1);
   const sketch_ref = useRef();
 
@@ -40,7 +40,7 @@ const P5_LOADER = ({ strokeColor, darkMode }) => {
 
   return (
     <Container ref={sketch_ref}>
-      <AfterImageControls darkMode={darkMode} getter={mod} setter={setMod} />
+      {controls && <AfterImageControls darkMode={darkMode} getter={mod} setter={setMod} />}
     </Container>
   );
 };

@@ -51,22 +51,6 @@ const Slider = styled.input`
     cursor: pointer;
     border-radius: 50%;
   }
-
-  // &::-moz-range-thumb {
-  //   width: 25px;
-  //   height: 25px;
-  //   background: #4CAF50;
-  //   cursor: pointer;
-  //   border-radius: 50%;
-  // }
-
-  // &::-ms-thumb {
-  //   width: 25px;
-  //   height: 25px;
-  //   background: #4CAF50;
-  //   cursor: pointer;
-  //   border-radius: 50%;
-  }
 `;
 const Info = styled.div`
   font-family: Rubik;
