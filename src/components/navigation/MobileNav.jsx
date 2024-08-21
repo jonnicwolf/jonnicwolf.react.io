@@ -19,10 +19,8 @@ const MobileNav = ({ darkMode, enterClicked }) => {
       </Nav>
 
       <Item to='/' onClick={() =>setIsOpen(!isOpen)}>HOME</Item>
-      <Item to='/gallery'  onClick={() =>setIsOpen(!isOpen)}>GALLERY</Item>
-      <ExternalItem
-        onClick={() =>setIsOpen(!isOpen)}
-        href='https://www.linkedin.com/in/jonathannarine/' >LINKEDIN</ExternalItem>
+      <Item to='/gallery' onClick={() =>setIsOpen(!isOpen)}>GALLERY</Item>
+      <ExternalItem onClick={() =>setIsOpen(!isOpen)} href='https://www.linkedin.com/in/jonathannarine/' >LINKEDIN</ExternalItem>
       <ExternalItem
         onClick={() =>setIsOpen(!isOpen)}
         href='https://github.com/jonnicwolf'
@@ -71,7 +69,7 @@ const Fezz = styled.p`
   padding: 0;
   margin: 0;
   font-family: var(--font-family-rampart-one);
-  font-size: 25px;
+  font-size: 1.5rem;
 `;
 
 export default MobileNav;
