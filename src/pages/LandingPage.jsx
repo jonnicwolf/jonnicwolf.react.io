@@ -7,7 +7,7 @@ import NameCard from '../components/NameCard.jsx';
 import LinkButton from '../assets/buttons/LinkButton.jsx';
 import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 
-export default function LandingPage ({ darkmode }) {
+export default function LandingPage ({ darkmode, setEnterClicked }) {
   const [isClicked, setIsClicked] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
   const isMobile = window.innerWidth < 720;
@@ -25,6 +25,7 @@ export default function LandingPage ({ darkmode }) {
 
   const handleClick = () => {
     setIsClicked(!isClicked);
+    setEnterClicked(true);
     setTimeout(() => {
       setShowAbout(true);
     }, 2500);

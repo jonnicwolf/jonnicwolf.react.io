@@ -4,11 +4,11 @@ import styled from 'styled-components';
 
 import Hamburger from '../../assets/icons/Hamburger';
 
-const MobileNav = ({ darkMode }) => {
+const MobileNav = ({ darkMode, enterClicked }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Container isOpen={isOpen}>
+    <Container isOpen={isOpen} enterClicked={enterClicked}>
       <Nav>
         <Fezz>FEZZ</Fezz>
         <Hamburger
@@ -42,7 +42,7 @@ const Container = styled.div`
   overflow: hidden;
   transition: height .3s linear;
   width: 100%;
-  z-index: 2;
+  z-index: ${props => props.enterClicked ? '3' : '2'};
 `;
 const Nav = styled.div`
   display: flex;
