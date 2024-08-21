@@ -50,7 +50,7 @@ const Fezz = styled.div`
 const RampartOneText = styled.p`
   font-family: var(--font-family-rampart-one);
   font-weight: var(--font-weight-normal);
-  font-size: 40px;
+  font-size: 2.5rem;
   margin: 0;
   color: ${props => props.darkMode ? 'white' : 'black'};
 `;
