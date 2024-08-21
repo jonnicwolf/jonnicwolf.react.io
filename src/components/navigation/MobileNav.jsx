@@ -38,7 +38,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  height: ${props => props.isOpen ? 'auto' : '7vh'};
+  height: ${props => props.isOpen ? 'auto' : '8vh'};
   overflow: hidden;
   transition: height .3s linear;
   width: 100%;
