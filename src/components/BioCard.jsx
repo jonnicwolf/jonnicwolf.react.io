@@ -83,6 +83,9 @@ const IntroText = styled.p`
   font-size: 1.2rem;
   margin: 0;
   font-family: Michroma;
+  @media screen and (max-width: 600px) {
+    font-size: 1rem;
+  }
 `;
 const P = styled.p`
   font-size: 1rem;
