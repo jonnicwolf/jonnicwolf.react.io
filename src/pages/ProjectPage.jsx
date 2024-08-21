@@ -67,7 +67,7 @@ export default function ProjectPage ({ darkMode, setEnterClicked }) {
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  height: 230vh;
+  height: 240vh;
 `;
 const Background = styled(P5_LORENZ_ATTRACTOR)`
   height: 100vh;

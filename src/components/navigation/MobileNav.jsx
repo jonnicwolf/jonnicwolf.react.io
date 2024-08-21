@@ -19,7 +19,6 @@ const MobileNav = ({ darkMode, enterClicked }) => {
       </Nav>
 
       <Item to='/' onClick={() =>setIsOpen(!isOpen)}>HOME</Item>
-      <Item to='/about'    onClick={() =>setIsOpen(!isOpen)}>ABOUT</Item>
       <Item to='/gallery'  onClick={() =>setIsOpen(!isOpen)}>GALLERY</Item>
       <ExternalItem
         onClick={() =>setIsOpen(!isOpen)}
