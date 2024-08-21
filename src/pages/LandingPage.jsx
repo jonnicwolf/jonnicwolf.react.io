@@ -33,7 +33,7 @@ export default function LandingPage ({ darkmode, setEnterClicked }) {
 
   const backgroundAnimation = {
     hidden: {
-      height: '100vh',
+      height: '102vh',
       width: '100vw',
       y: -100,
     },
