@@ -7,7 +7,7 @@ const Loader = ({ strokeColor }) => {
   return (
     <Container>
       <P5Container>
-        <P5_LOADER strokeColor={strokeColor}/>
+        <P5_LOADER strokeColor={strokeColor} />
       </P5Container>
       <Loading>LOADING</Loading>
     </Container>

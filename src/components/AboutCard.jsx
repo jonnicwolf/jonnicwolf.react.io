@@ -45,9 +45,14 @@ const Container = styled(motion.div)`
   overflow: scroll;
   height: 800px;
   width: 800px;
-  border: 1px solid ${props => (props.darkmode ? 'white' : 'black')};
+  border: 1px solid ${props => (props.darkmode ? 'white' : 'none')};
   animation: ${fadeIn} 1.5s forwards;
   color: ${props => (props.darkmode ? 'white' : 'black')};
   background-color: ${props => (props.darkmode ? '#969696' : null)};
   font-color: ${props => (props.darkmode ? 'grey' : 'white')};
+
+  @media screen and (max-width: 600px) {
+    height: 60vh;
+    width: 80vw;
+  };
 `;

@@ -13,7 +13,6 @@ export default function ProjectCard ({
   apis,
   descriptions,
   devicons,
-  darkMode
 }) {
   const [showMore, setShowMore] = useState(false);
 
@@ -33,7 +32,6 @@ export default function ProjectCard ({
           apis={apis}
           descriptions={descriptions}
           devicons={devicons}
-          // darkMode={darkMode}
           />
         : <Cover setter={setShowMore} /> }
     </Container>
@@ -53,4 +51,9 @@ const Container = styled.div`
   align-items: center;
   position: relative;
   animation: ${fadeIn} 0.3s forwards;
+
+  @media screen and (max-width: 600px) {
+    height: 60vh;
+    width: 90vw;
+  }
 `;

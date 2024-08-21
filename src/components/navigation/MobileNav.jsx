@@ -4,11 +4,11 @@ import styled from 'styled-components';
 
 import Hamburger from '../../assets/icons/Hamburger';
 
-const MobileNav = ({ darkMode }) => {
+const MobileNav = ({ darkMode, enterClicked }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Container isOpen={isOpen}>
+    <Container isOpen={isOpen} enterClicked={enterClicked}>
       <Nav>
         <Fezz>FEZZ</Fezz>
         <Hamburger
@@ -18,12 +18,9 @@ const MobileNav = ({ darkMode }) => {
         />
       </Nav>
 
-      <Item to='/projects' onClick={() =>setIsOpen(!isOpen)}>HOME</Item>
-      <Item to='/about'    onClick={() =>setIsOpen(!isOpen)}>ABOUT</Item>
-      <Item to='/gallery'  onClick={() =>setIsOpen(!isOpen)}>GALLERY</Item>
-      <ExternalItem
-        onClick={() =>setIsOpen(!isOpen)}
-        href='https://www.linkedin.com/in/jonathannarine/' >LINKEDIN</ExternalItem>
+      <Item to='/' onClick={() =>setIsOpen(!isOpen)}>HOME</Item>
+      <Item to='/gallery' onClick={() =>setIsOpen(!isOpen)}>GALLERY</Item>
+      <ExternalItem onClick={() =>setIsOpen(!isOpen)} href='https://www.linkedin.com/in/jonathannarine/' >LINKEDIN</ExternalItem>
       <ExternalItem
         onClick={() =>setIsOpen(!isOpen)}
         href='https://github.com/jonnicwolf'
@@ -38,11 +35,11 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  height: ${props => props.isOpen ? 'auto' : '7vh'};
+  height: ${props => props.isOpen ? 'auto' : '8vh'};
   overflow: hidden;
   transition: height .3s linear;
   width: 100%;
-  z-index: 199;
+  z-index: ${props => props.enterClicked ? '3' : '2'};
 `;
 const Nav = styled.div`
   display: flex;
@@ -72,7 +69,7 @@ const Fezz = styled.p`
   padding: 0;
   margin: 0;
   font-family: var(--font-family-rampart-one);
-  font-size: 25px;
+  font-size: 1.5rem;
 `;
 
 export default MobileNav;

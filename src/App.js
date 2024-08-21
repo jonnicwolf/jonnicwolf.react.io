@@ -14,19 +14,20 @@ const GalleryPage = lazy(() => import('./pages/GalleryPage.jsx'));
 function App() {
   const isMobile = window.innerWidth < 1025;
   const [darkMode, setDarkMode] = useState(false);
+  const [enterClicked, setEnterClicked] = useState(false);
 
   return (
     <Container darkMode={darkMode} isMobile={isMobile}>
-      { isMobile &&  <MobileNav />}
+      { isMobile && <MobileNav enterClicked={enterClicked} />}
       {!isMobile && <NavBar darkModeGetter={darkMode} darkModeSetter={setDarkMode} />}
       
       <ScrollToTop />
       <Suspense fallback={<Loader strokeColor={150}/>}>
         <Routes>
-          <Route path='/' element={<ProjectPage darkMode={darkMode}/>} />
-          <Route path='/gallery'  element={<GalleryPage darkMode={darkMode}/>} />
+          <Route path='/' element={<ProjectPage darkMode={darkMode} setEnterClicked={setEnterClicked} />} />
+          <Route path='/gallery' element={<GalleryPage darkMode={darkMode}/>} />
           <Route path='/gallery/:projectName'  element={<GalleryPage darkMode={darkMode}/>} />
-          <Route path='/test'     element={<Test />} />
+          <Route path='/test' element={<Test />} />
         </Routes>
       </Suspense>
     </Container>
