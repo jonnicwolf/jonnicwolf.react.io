@@ -76,7 +76,6 @@ const GalleryPage = ({ darkMode }) => {
         </Info>}
         <ActiveProject
           strokeColor={200}
-          darkMode={darkMode}
           showControls={true}
           showSun={true}
           isMobile={sw} />

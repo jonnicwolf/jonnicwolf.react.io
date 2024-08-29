@@ -11,11 +11,7 @@ const MobileNav = ({ enterClicked }) => {
     <Container isOpen={isOpen} enterClicked={enterClicked}>
       <Nav>
         <Fezz>FEZZ</Fezz>
-        <Hamburger
-          // darkMode={darkMode}
-          isOpen={isOpen}
-          isOpenSet={setIsOpen}
-        />
+        <Hamburger isOpen={isOpen} isOpenSet={setIsOpen} />
       </Nav>
 
       <Item to='/' onClick={() =>setIsOpen(!isOpen)}>HOME</Item>

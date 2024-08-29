@@ -1,8 +1,10 @@
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useRef, useCallback, useContext } from 'react';
+import { DarkModeContext } from '../contexts/Darkmode';
 import styled from 'styled-components';
 import p5 from 'p5';
 
-const P5_GEOSTORM = ({ strokeColor, darkMode }) => {
+const P5_GEOSTORM = ({ strokeColor }) => {
+  const { darkmode } = useContext(DarkModeContext)
   const sketch_ref = useRef();
 
   const sketch = useCallback((p) => {
@@ -93,7 +95,7 @@ const P5_GEOSTORM = ({ strokeColor, darkMode }) => {
     let triangles = [];
     let lightningForks = [];
     let bolts = [];
-    const background = !darkMode ? '#5c5c5b' : '#fffcf5'
+    const background = !darkmode ? '#5c5c5b' : '#fffcf5'
 
     p.setup = () => {
       p.createCanvas(p.windowWidth/12 * 10, p.windowHeight/12 * 6);
