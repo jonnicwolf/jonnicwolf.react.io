@@ -9,12 +9,10 @@ function DarkModeProvider (props) {
   };
 
   return (
-    <div>
-      <DarkmodeContext.Provider value={{darkmode, toggleDarkmode}}>
-        {props.children}
-      </DarkmodeContext.Provider>
-    </div>
+    <DarkmodeContext.Provider value={{darkmode, toggleDarkmode}}>
+      {props.children}
+    </DarkmodeContext.Provider>
   );
 };
 
-export { DarkmodeContext, DarkModeProvider};
+export { DarkmodeContext, DarkModeProvider };

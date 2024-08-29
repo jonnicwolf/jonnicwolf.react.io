@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import Hamburger from '../../assets/icons/Hamburger';
 
-const MobileNav = ({ darkMode, enterClicked }) => {
+const MobileNav = ({ enterClicked }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -12,7 +12,7 @@ const MobileNav = ({ darkMode, enterClicked }) => {
       <Nav>
         <Fezz>FEZZ</Fezz>
         <Hamburger
-          darkMode={darkMode}
+          // darkMode={darkMode}
           isOpen={isOpen}
           isOpenSet={setIsOpen}
         />
@@ -20,7 +20,7 @@ const MobileNav = ({ darkMode, enterClicked }) => {
 
       <Item to='/' onClick={() =>setIsOpen(!isOpen)}>HOME</Item>
       <Item to='/gallery' onClick={() =>setIsOpen(!isOpen)}>GALLERY</Item>
-      <ExternalItem onClick={() =>setIsOpen(!isOpen)} href='https://www.linkedin.com/in/jonathannarine/' >LINKEDIN</ExternalItem>
+      <ExternalItem onClick={() =>setIsOpen(!isOpen)} href='https://www.linkedin.com/in/jonathannarine/'>LINKEDIN</ExternalItem>
       <ExternalItem
         onClick={() =>setIsOpen(!isOpen)}
         href='https://github.com/jonnicwolf'

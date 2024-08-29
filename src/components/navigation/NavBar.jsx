@@ -1,28 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { DarkmodeContext } from '../contexts/Darkmode';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
 import LinkButton from '../../assets/buttons/LinkButton';
 import DarkModeButton from '../../assets/buttons/DarModeButton';
 
-const NavBar = ({ darkModeGetter, darkModeSetter }) => {
+const NavBar = () => {
   const location = useLocation().pathname.split('/')[1] || 'HOME';
+  const { darkmode, toggleDarkmode } = useContext(DarkmodeContext);
 
   return (
     <NavbarContainer>
       <Fezz>
         <Link to='/' style={{textDecoration: 'none', color: 'black'}}>
-          <RampartOneText darkMode={darkModeGetter}>
+          <RampartOneText darkMode={darkmode}>
             FEZZ
           </RampartOneText>
         </Link>
-        <PageMarker darkMode={darkModeGetter}>
+        <PageMarker darkMode={darkmode}>
           | {location.toUpperCase()}
         </PageMarker>
       </Fezz>
 
-      <DarkModeButton darkModeGetter={darkModeGetter} darkModeSetter={darkModeSetter} />
-      <LinkButton subDirectory={'/gallery'} textContent={'GALLERY'}  darkMode={darkModeGetter} fontSize padding />
+      <DarkModeButton darkModeGetter={darkmode} darkModeSetter={toggleDarkmode} />
+      <LinkButton subDirectory={'/gallery'} textContent={'GALLERY'}  darkMode={darkmode} fontSize padding />
     </NavbarContainer>
   );
 };
