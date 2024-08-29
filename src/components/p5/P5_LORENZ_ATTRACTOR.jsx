@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import ChaosTheoryForm from '../ChaosTheoryForm';
 
-const P5_LORENZ_ATTRACTOR = ({ strokeColor, darkMode, showControls }) => {
+const P5_LORENZ_ATTRACTOR = ({ strokeColor, showControls }) => {
   const [sigma, setSigma] = useState(17);
   const [rho, setRho] = useState(63);
   const [beta, setBeta] = useState(9);

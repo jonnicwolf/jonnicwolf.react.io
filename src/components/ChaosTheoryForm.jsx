@@ -1,67 +1,79 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { DarkModeContext } from './contexts/Darkmode';
 import styled from 'styled-components';
 
-export default function ChaosTheoryForm({ vars, setters, darkMode }) {
+export default function ChaosTheoryForm({ vars, setters }) {
+  const { darkmode } = useContext(DarkModeContext);
   const { sigma, rho, beta, delta } = vars;
   const { setSigma, setRho, setBeta, setDelta } = setters;
 
   const handleSigmaUp = () =>
     sigma > 20
     ? setSigma(20)
-    : setSigma(sigma+1);
+    : setSigma(sigma + 1);
+
   const handleSigmaDown = () =>
     sigma <= 1
     ? setSigma(1)
-    : setSigma(sigma-1);
+    : setSigma(sigma - 1);
+
   const handleRhoUp = () =>
     rho >= 100
     ? setRho(100)
-    : setRho(rho+1);
+    : setRho(rho + 1);
+
   const handleRhoDown = () =>
     rho <= 1
     ? setRho(1)
-    : setRho(rho-1);
+    : setRho(rho - 1);
+
   const handleBetaUp = () =>
     beta >= 9
     ? setBeta(9)
-    : setBeta(beta+1);
+    : setBeta(beta + 1);
+
   const handleBetaDown = () =>
     beta <= 1
     ? setBeta(1)
-    : setBeta(beta-1);
+    : setBeta(beta - 1);
+
   const handleDeltaUp = () =>
     delta >= 3
     ? setDelta(3)
-    : setDelta(delta+1);
+    : setDelta(delta + 1);
+
   const handleDeltaDown = () =>
     delta <= 1
     ? setDelta(1)
-    : setDelta(delta-1);
+    : setDelta(delta - 1);
 
   return (
-    <Container darkMode={darkMode}>
+    <Container darkMode={darkmode}>
       <Info>Each configuration is a unique infinite loop</Info>
 
       <VarContainer>
         <VarWrap>
-          <Button onMouseDown={handleSigmaUp} darkMode={darkMode}>⬆</Button>
+          <Button onMouseDown={handleSigmaUp} darkMode={darkmode}>⬆</Button>
           <Var>𝛴{sigma}</Var>
-          <Button onMouseDown={handleSigmaDown} darkMode={darkMode}>⬇</Button>
+          <Button onMouseDown={handleSigmaDown} darkMode={darkmode}>⬇</Button>
         </VarWrap>
+
         <VarWrap>
-          <Button onMouseDown={handleRhoUp} darkMode={darkMode}>⬆</Button>
+          <Button onMouseDown={handleRhoUp} darkMode={darkmode}>⬆</Button>
           <Var>⍴{rho}</Var>
-          <Button onMouseDown={handleRhoDown} darkMode={darkMode}>⬇</Button>
+          <Button onMouseDown={handleRhoDown} darkMode={darkmode}>⬇</Button>
         </VarWrap>
+
         <VarWrap>
-          <Button onMouseDown={handleBetaUp} darkMode={darkMode}>⬆</Button>
+          <Button onMouseDown={handleBetaUp} darkMode={darkmode}>⬆</Button>
           <Var>β{Math.floor(beta)}</Var>
-          <Button onMouseDown={handleBetaDown} darkMode={darkMode}>⬇</Button>
+          <Button onMouseDown={handleBetaDown} darkMode={darkmode}>⬇</Button>
         </VarWrap>
+
         <VarWrap>
-          <Button onMouseDown={handleDeltaUp} darkMode={darkMode}>⬆</Button>
+          <Button onMouseDown={handleDeltaUp} darkMode={darkmode}>⬆</Button>
           <Var>𝚫{delta}</Var>
-          <Button onMouseDown={handleDeltaDown} darkMode={darkMode}>⬇</Button>
+          <Button onMouseDown={handleDeltaDown} darkMode={darkmode}>⬇</Button>
         </VarWrap>
       </VarContainer>
     </Container>
