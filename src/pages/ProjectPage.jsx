@@ -8,7 +8,7 @@ import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
 import EsperiCover from '../components/EsperiCover';
 import SCDCover from '../components/SCDCover';
 
-export default function ProjectPage ({ darkMode, setEnterClicked }) {
+export default function ProjectPage ({ setEnterClicked }) {
   const [
     javascript,
     react,
@@ -30,7 +30,7 @@ export default function ProjectPage ({ darkMode, setEnterClicked }) {
   return (
     <Container>
       <ProjectList>
-        <LandingPage darkmode={darkMode} setEnterClicked={setEnterClicked}/>
+        <LandingPage setEnterClicked={setEnterClicked}/>
 
         <ProjectCard
           title='Esperi'
@@ -42,7 +42,6 @@ export default function ProjectPage ({ darkMode, setEnterClicked }) {
           apis={['TAROTAPI', 'OPENAI API']}
           descriptions={['LIFESTYLE & ENTERTAINMENT', 'FULL STACK']}
           devicons={hotc_devi}
-          darkMode={darkMode}
         />
 
         <ProjectCard
@@ -55,7 +54,6 @@ export default function ProjectPage ({ darkMode, setEnterClicked }) {
           apis={[]}
           descriptions={['E-COMMERCE', 'FULL STACK']}
           devicons={scd_devi}
-          darkMode={darkMode}
         />
       </ProjectList>
 
