@@ -69,7 +69,7 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor, showControls }) => {
 
   return (
     <>
-      {showControls && <ChaosTheoryForm vars={vars} setters={setters} darkMode={darkMode} />}
+      {showControls && <ChaosTheoryForm vars={vars} setters={setters} />}
       <CT ref={sketch_ref} />
     </>
   );
