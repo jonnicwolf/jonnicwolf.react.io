@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { DarkmodeContext } from './contexts/Darkmode';
 import styled from 'styled-components';
 import emailjs from '@emailjs/browser';
 
 import LinkButton from '../assets/buttons/LinkButton';
 
-export default function ContactForm({ viewSetter, darkmode }) {
+export default function ContactForm({ viewSetter }) {
+  const { darkmode } = useContext(DarkmodeContext);
   const [formData, setFormData] = useState({
     to_name: '',
     from_name: '',
