@@ -160,7 +160,7 @@ const P5_GEOSTORM = ({ strokeColor }) => {
       // Add a new bolt randomly
       if (p.random(1) < 0.005) {
         let bolt = new ForkedBolt(p.random(p.width), 0, p.random(2, 5), p.color(strokeColor));
-        p.background(!darkMode ? '#5c5c5b' : '#fffcf5');
+        p.background(!darkmode ? '#5c5c5b' : '#fffcf5');
         bolts.push(bolt);
       };
     };
@@ -172,7 +172,7 @@ const P5_GEOSTORM = ({ strokeColor }) => {
   }, [sketch]);
 
   return (
-    <Container darkMode={darkMode}>
+    <Container>
       <div ref={sketch_ref} />
     </Container>
   );

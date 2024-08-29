@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { DarkModeContext } from './contexts/Darkmode';
+import { DarkmodeContext } from './contexts/Darkmode';
 import styled from 'styled-components';
 
 export default function ChaosTheoryForm({ vars, setters }) {
-  const { darkmode } = useContext(DarkModeContext);
+  const { darkmode } = useContext(DarkmodeContext);
   const { sigma, rho, beta, delta } = vars;
   const { setSigma, setRho, setBeta, setDelta } = setters;
 
