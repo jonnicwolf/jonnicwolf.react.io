@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useContext } from 'react';
+import { DarkmodeContext } from '../components/contexts/Darkmode.jsx';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSwipeable } from 'react-swipeable';
 import styled from 'styled-components';
@@ -11,9 +12,9 @@ import P5_LOADER from '../components/p5/P5_LOADER.jsx';
 import P5_ANJA from '../components/p5/P5_ANJA.jsx';
 import P5_GEOSTORM from '../components/p5/P5_GEOSTORM.jsx';
 
-const GalleryPage = ({ darkMode }) => {
+const GalleryPage = () => {
   const [index, setIndex] = useState(0);
-
+  const { darkmode } = useContext(DarkmodeContext);
   const { projectName } = useParams();
   const navigate = useNavigate();
   const controls = useAnimation();
@@ -62,13 +63,13 @@ const GalleryPage = ({ darkMode }) => {
   return (
     <Container {...handleSwipes}>
       <DisplayBox>
-        <ControlBox darkMode={darkMode}>
-          <Button text={'LAST'} onclick={handleLast} darkModeGetter={darkMode} />
+        <ControlBox darkMode={darkmode}>
+          <Button text={'LAST'} onclick={handleLast} />
           <Title>{title}</Title>
-          <Button text={'NEXT'} onclick={handleNext} darkModeGetter={darkMode} />
+          <Button text={'NEXT'} onclick={handleNext} />
         </ControlBox>
         {info && <Info
-          darkMode={darkMode}
+          darkMode={darkmode}
           variants={infoAnimation}
           initial='hidden'
           animate='show'>

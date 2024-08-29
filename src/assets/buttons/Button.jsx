@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { DarkmodeContext } from '../../components/contexts/Darkmode';
 import styled from 'styled-components';
 
-const Button = ({ darkModeGetter, text, onclick }) => {
+const Button = ({ text, onclick }) => {
+  const { darkmode } = useContext(DarkmodeContext);
+
   return (
-    <StyledButton darkModeGetter={darkModeGetter} onClick={onclick}>
+    <StyledButton darkMode={darkmode} onClick={onclick}>
       {text}
     </StyledButton>
   );
@@ -19,9 +22,9 @@ const StyledButton = styled.button`
   cursor: pointer;
   position: relative;
   display: inline-block;
-  border: 1px solid ${props => props.darkModeGetter ? 'white' : 'black'};
+  border: 1px solid ${props => props.darkMode ? 'white' : 'black'};
   z-index: 1;
-  color: ${props => props.darkModeGetter ? 'white' : 'black'};
+  color: ${props => props.darkMode ? 'white' : 'black'};
 
   &:after {
     position: absolute;
@@ -33,21 +36,21 @@ const StyledButton = styled.button`
     direction: rtl;
     z-index: -1;
     background: black;
-    color:  ${props => props.darkModeGetter ? 'black' : 'white'};
+    color:  ${props => props.darkMode ? 'black' : 'white'};
     transition: all 0.1s ease;
   }
 
   &:hover {
-    background: ${props => props.darkModeGetter ? 'white': 'black'};
+    background: ${props => props.darkMode ? 'white': 'black'};
     color: white;
-    border: 1px solid ${props => props.darkModeGetter ? 'white' : 'black'};
+    border: 1px solid ${props => props.darkMode ? 'white' : 'black'};
   }
 
   &:hover:after {
     left: auto;
     right: 0;
     width: 100%;
-    color: ${props => props.darkModeGetter ? 'black' : 'white'};
+    color: ${props => props.darkMode ? 'black' : 'white'};
   }
 `;
 
