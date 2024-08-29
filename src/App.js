@@ -16,7 +16,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [enterClicked, setEnterClicked] = useState(false);
   const isMobile = window.innerWidth < 1025;
-  const {darkmode} = useContext(DarkmodeContext);
+  const { darkmode } = useContext(DarkmodeContext);
 
   return (
     <DarkModeProvider>
