@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { DarkmodeContext } from './contexts/Darkmode';
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -7,26 +8,27 @@ import TechnologyCard from './TechnologyCard';
 import BioCard from './BioCard';
 import ExpCard from './ExpCard';
 
-export default function AboutCard({ darkmode }) {
+export default function AboutCard () {
   const [view, setView] = useState(null);
+  const { darkmode } = useContext(DarkmodeContext);
 
   function renderView (view) {
     switch (view) {
       case 'bio':
-        return <BioCard viewSetter={setView} darkmode={darkmode} />
+        return <BioCard viewSetter={setView} />
       case 'contact':
-        return <ContactMe viewSetter={setView} darkmode={darkmode} />
+        return <ContactMe viewSetter={setView} />
       case 'tech':
-        return <TechnologyCard viewSetter={setView} darkmode={darkmode} />
+        return <TechnologyCard viewSetter={setView} />
       case 'exp':
         return <ExpCard viewSetter={setView} />
       default:
-        return <BioCard viewSetter={setView} darkmode={darkmode} />
+        return <BioCard viewSetter={setView} />
     };
   };
 
   return (
-    <Container darkmode={darkmode} >
+    <Container darkmode={darkmode}>
       {renderView(view)}
     </Container>
   );
