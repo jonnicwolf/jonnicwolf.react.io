@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { DarkModeContext } from './context/Darkmode';
+import { DarkmodeContext } from '../../components/contexts/Darkmode';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
@@ -12,7 +12,7 @@ const LinkButton = ({
   subDirectory,
   isScaleAnimation,
 }) => {
-  const { darkmode } = useContext(DarkModeContext);
+  const { darkmode } = useContext(DarkmodeContext);
 
   return (
     <LinkStyle

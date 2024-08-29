@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useCallback, useContext } from 'react';
-import { DarkModeContext } from '../contexts/Darkmode';
+import { DarkmodeContext } from '../contexts/Darkmode';
 import styled from 'styled-components';
 import p5 from 'p5';
 
 const P5_GEOSTORM = ({ strokeColor }) => {
-  const { darkmode } = useContext(DarkModeContext)
+  const { darkmode } = useContext(DarkmodeContext);
   const sketch_ref = useRef();
 
   const sketch = useCallback((p) => {
@@ -164,7 +164,7 @@ const P5_GEOSTORM = ({ strokeColor }) => {
         bolts.push(bolt);
       };
     };
-  }, [strokeColor, darkMode]);
+  }, [strokeColor, darkmode]);
 
   useEffect(() => {
     const p5Canvas = new p5(sketch, sketch_ref.current);
