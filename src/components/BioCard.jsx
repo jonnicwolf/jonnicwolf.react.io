@@ -28,17 +28,14 @@ export default function BioCard ({ viewSetter, darkmode }) {
 
         <Buttons>
           <LinkButton
-            darkMode={darkmode}
             onClick={()=> viewSetter('contact')}
             textContent='GET IN TOUCH'
             isScaleAnimation />
           <LinkButton
-            darkMode={darkmode}
             onClick={()=> viewSetter('exp')}
             textContent='WORK HISTORY'
             isScaleAnimation />
           <LinkButton
-            darkMode={darkmode}
             onClick={()=> viewSetter('tech')}
             textContent='TECH'
             isScaleAnimation />
