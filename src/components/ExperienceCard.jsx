@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { DarkmodeContext } from '../components/contexts/Darkmode';
 import styled from 'styled-components';
 
 import ExternalButton from '../assets/buttons/ExternalButton';
 
-export default function ExperienceCard({ darkMode, company_name, link, position, content, year }) {
+export default function ExperienceCard({
+  company_name,
+  link,
+  position,
+  content,
+  year,
+}) {
+  const { darkmode } = useContext(DarkmodeContext);
+
   function renderContent (content) {
     const result = content
       .split('  ')
@@ -15,7 +24,7 @@ export default function ExperienceCard({ darkMode, company_name, link, position,
   };
 
   return (
-    <Container darkMode={ darkMode }>
+    <Container darkMode={ darkmode }>
       <h3>{year} |
         <ExternalButton
           link={link}

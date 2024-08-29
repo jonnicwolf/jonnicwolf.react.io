@@ -14,7 +14,7 @@ export default function ContactMe({ viewSetter }) {
       <FormWrap>
         <Title>Contact Me</Title>
         <Socials gap={'40px'} />
-        <ContactForm viewSetter={viewSetter} darkmode={darkmode} />
+        <ContactForm viewSetter={viewSetter} />
       </FormWrap>
     </Container>
   );
