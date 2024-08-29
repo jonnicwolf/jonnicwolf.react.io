@@ -31,8 +31,7 @@ export default function ProjectCard ({
           gifPath={gifPath}
           apis={apis}
           descriptions={descriptions}
-          devicons={devicons}
-          />
+          devicons={devicons} />
         : <Cover setter={setShowMore} /> }
     </Container>
   ); 
