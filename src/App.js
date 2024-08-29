@@ -20,7 +20,7 @@ function App() {
     <Container darkMode={darkMode} isMobile={isMobile}>
       { isMobile && <MobileNav enterClicked={enterClicked} />}
       {!isMobile && <NavBar darkModeGetter={darkMode} darkModeSetter={setDarkMode} />}
-      
+
       <ScrollToTop />
       <Suspense fallback={<Loader strokeColor={150}/>}>
         <Routes>
