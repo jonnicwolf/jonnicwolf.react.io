@@ -1,6 +1,6 @@
-import { lazy, Suspense, useState } from 'react';
+import { lazy, Suspense, useState, useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { DarkModeProvider } from './components/contexts/Darkmode.jsx';
+import { DarkmodeContext, DarkModeProvider } from './components/contexts/Darkmode.jsx';
 import styled from 'styled-components';
 
 import ScrollToTop from './components/ScrollToTop.jsx';
@@ -13,15 +13,16 @@ const ProjectPage = lazy(() => import('./pages/ProjectPage.jsx'));
 const GalleryPage = lazy(() => import('./pages/GalleryPage.jsx'));
 
 function App() {
-  const isMobile = window.innerWidth < 1025;
   const [darkMode, setDarkMode] = useState(false);
   const [enterClicked, setEnterClicked] = useState(false);
+  const isMobile = window.innerWidth < 1025;
+  const {darkmode} = useContext(DarkmodeContext);
 
   return (
-    <DarkModeProvider value={{ darkMode, setDarkMode }}>
-      <Container darkMode={darkMode} isMobile={isMobile}>
+    <DarkModeProvider>
+      <Container darkmode={darkmode} isMobile={isMobile}>
         { isMobile && <MobileNav enterClicked={enterClicked} />}
-        {!isMobile && <NavBar darkModeGetter={darkMode} darkModeSetter={setDarkMode} />}
+        {!isMobile && <NavBar darkModeGetter={darkmode} darkModeSetter={setDarkMode} />}
 
         <ScrollToTop />
         <Suspense fallback={<Loader strokeColor={150}/>}>
@@ -39,7 +40,7 @@ function App() {
 
 const Container = styled.div`
   overflow-x: hidden;
-  background: ${props => props.darkMode ? '#5c5c5b' : '#fffcf5'};
+  background: ${props => props.darkmode ? '#5c5c5b' : '#fffcf5'};
 `;
 
 export default App;
