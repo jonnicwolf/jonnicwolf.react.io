@@ -18,22 +18,20 @@ function App () {
   const { darkmode } = useContext(DarkmodeContext);
 
   return (
-    <div>
-      <Container darkmode={darkmode} isMobile={isMobile}>
-        { isMobile && <MobileNav enterClicked={enterClicked} />}
-        {!isMobile && <NavBar />}
+    <Container darkmode={darkmode} isMobile={isMobile}>
+      { isMobile && <MobileNav enterClicked={enterClicked} />}
+      {!isMobile && <NavBar />}
 
-      <ScrollToTop />
-        <Suspense fallback={<Loader strokeColor={150}/>} >
-          <Routes>
-            <Route path='/' element={<ProjectPage setEnterClicked={setEnterClicked} />} />
-            <Route path='/gallery' element={<GalleryPage/>} />
-            <Route path='/gallery/:projectName' element={<GalleryPage />} />
-            <Route path='/test' element={<Test />} />
-          </Routes>
-        </Suspense>
-      </Container>
-    </div>
+    <ScrollToTop />
+      <Suspense fallback={<Loader strokeColor={150}/>} >
+        <Routes>
+          <Route path='/' element={<ProjectPage setEnterClicked={setEnterClicked} />} />
+          <Route path='/gallery' element={<GalleryPage/>} />
+          <Route path='/gallery/:projectName' element={<GalleryPage />} />
+          <Route path='/test' element={<Test />} />
+        </Routes>
+      </Suspense>
+    </Container>
   );
 };
 

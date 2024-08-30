@@ -11,12 +11,14 @@ import SCDCover from '../components/SCDCover';
 export default function ProjectPage ({ setEnterClicked }) {
   const [
     javascript,
+    typescript,
     react,
     p5,
     firebase,
     postgresql,
   ] = [
     'devicon-javascript-plain',
+    'devicon-typescript-plain',
     'devicon-react-original',
     'devicon-p5js-original',
     'devicon-firebase-plain',
@@ -24,7 +26,7 @@ export default function ProjectPage ({ setEnterClicked }) {
     'devicon-css3-plain-wordmark',
   ];
 
-  const hotc_devi = [javascript, react, p5, firebase];
+  const hotc_devi = [typescript, react, p5, firebase];
   const scd_devi= [javascript, react, postgresql, firebase];
 
   return (
