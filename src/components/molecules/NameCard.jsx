@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import '../assets/fonts/fonts.css';
+import '../../assets/fonts/fonts.css';
 
 const NameCard = () => {
   return (

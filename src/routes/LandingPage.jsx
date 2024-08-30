@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-import AboutCard from '../components/AboutCard.jsx';
-import NameCard from '../components/NameCard.jsx';
+import AboutCard from '../components/molecules/AboutCard.jsx';
+import NameCard from '../components/molecules/NameCard.jsx';
 import LinkButton from '../assets/buttons/LinkButton.jsx';
 import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 

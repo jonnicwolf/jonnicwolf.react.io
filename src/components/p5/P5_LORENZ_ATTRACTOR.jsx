@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useCallback, useState } from 'react';
 import p5 from 'p5';
 import styled from 'styled-components';
 
-import ChaosTheoryForm from '../ChaosTheoryForm';
+import ChaosTheoryForm from '../atoms/ChaosTheoryForm';
 
 const P5_LORENZ_ATTRACTOR = ({ strokeColor, showControls }) => {
   const [sigma, setSigma] = useState(17);

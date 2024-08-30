@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 import LandingPage from './LandingPage';
-import ProjectCard from '../components/ProjectCard';
+import ProjectCard from '../components/molecules/ProjectCard';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
 
-import EsperiCover from '../components/EsperiCover';
-import SCDCover from '../components/SCDCover';
+import EsperiCover from '../components/molecules/EsperiCover';
+import SCDCover from '../components/molecules/SCDCover';
 
 export default function ProjectPage ({ setEnterClicked }) {
   const [

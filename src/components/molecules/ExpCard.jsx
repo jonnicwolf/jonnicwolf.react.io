@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import LinkButton from '../assets/buttons/LinkButton';
+import LinkButton from '../../assets/buttons/LinkButton';
 
 export default function ExpCard({ viewSetter }) {
   return (

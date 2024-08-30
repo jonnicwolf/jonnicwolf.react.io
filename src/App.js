@@ -1,16 +1,16 @@
 import { lazy, Suspense, useState, useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { DarkmodeContext, DarkmodeProvider } from './contexts/Darkmode.jsx';
+import { DarkmodeContext, DarkmodeProvider } from './Darkmode.jsx';
 import styled from 'styled-components';
 
-import ScrollToTop from './components/ScrollToTop.jsx';
+import ScrollToTop from './components/utils/ScrollToTop.jsx';
 import Loader from './components/navigation/Loader';
 import NavBar from './components/navigation/NavBar';
 import MobileNav from './components/navigation/MobileNav.jsx';
-import Test from './pages/Test.jsx';
 
-const ProjectPage = lazy(() => import('./pages/ProjectPage.jsx'));
-const GalleryPage = lazy(() => import('./pages/GalleryPage.jsx'));
+import Test from './routes/Test.jsx';
+const ProjectPage = lazy(() => import('./routes/ProjectPage.jsx'));
+const GalleryPage = lazy(() => import('./routes/GalleryPage.jsx'));
 
 function App () {
   const [enterClicked, setEnterClicked] = useState(false);

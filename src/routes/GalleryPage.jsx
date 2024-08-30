@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useContext } from 'react';
-import { DarkmodeContext } from '../contexts/Darkmode.jsx';
+import { DarkmodeContext } from '../Darkmode.jsx';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSwipeable } from 'react-swipeable';
 import styled from 'styled-components';

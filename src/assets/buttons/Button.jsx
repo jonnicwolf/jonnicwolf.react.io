@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { DarkmodeContext } from '../../contexts/Darkmode';
+import { DarkmodeContext } from '../../Darkmode';
 import styled from 'styled-components';
 
 const Button = ({ text, onclick }) => {

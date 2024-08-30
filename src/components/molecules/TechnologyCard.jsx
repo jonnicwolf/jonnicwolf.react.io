@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { DarkmodeContext } from '../contexts/Darkmode';
+import { DarkmodeContext } from '../../Darkmode';
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import LinkButton from '../assets/buttons/LinkButton';
+import LinkButton from '../../assets/buttons/LinkButton';
 
 export default function TechnologyCard ({ viewSetter }) {
   const { darkmode } = useContext(DarkmodeContext);
