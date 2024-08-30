@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
-import ExternalButton from '../assets/buttons/ExternalButton';
+import ExternalButton from '../../assets/buttons/ExternalButton';
 
 const ProjectVideo = ({
   bio,

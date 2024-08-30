@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { DarkmodeContext } from '../components/contexts/Darkmode';
 import styled from 'styled-components';
 
-import ExternalButton from '../assets/buttons/ExternalButton';
+import ExternalButton from '../../assets/buttons/ExternalButton';
 
 export default function ExperienceCard({
   company_name,

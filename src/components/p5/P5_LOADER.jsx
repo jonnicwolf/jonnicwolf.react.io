@@ -3,7 +3,7 @@ import { DarkmodeContext } from '../../Darkmode';
 import styled from 'styled-components';
 import p5 from 'p5';
 
-import AfterImageControls from '../AfterImageControls';
+import AfterImageControls from '../atoms/AfterImageControls';
 
 const P5_LOADER = ({ strokeColor, controls }) => {
   const [mod, setMod] = useState(0.1);

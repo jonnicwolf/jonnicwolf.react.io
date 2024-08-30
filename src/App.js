@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { DarkmodeContext, DarkmodeProvider } from './Darkmode.jsx';
 import styled from 'styled-components';
 
-import ScrollToTop from './components/ScrollToTop.jsx';
+import ScrollToTop from './components/utils/ScrollToTop.jsx';
 import Loader from './components/navigation/Loader';
 import NavBar from './components/navigation/NavBar';
 import MobileNav from './components/navigation/MobileNav.jsx';

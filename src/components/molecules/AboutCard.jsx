@@ -1,12 +1,12 @@
 import React, { useState, useContext } from 'react';
-import { DarkmodeContext } from '../Darkmode';
+import { DarkmodeContext } from '../../Darkmode';
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import ContactMe from './ContactMe';
-import TechnologyCard from './TechnologyCard';
-import BioCard from './BioCard';
-import ExpCard from './ExpCard';
+import ContactMe from '../molecules/ContactMe';
+import TechnologyCard from '../molecules/TechnologyCard';
+import BioCard from '../molecules/BioCard';
+import ExpCard from '../molecules/ExpCard';
 
 export default function AboutCard () {
   const [view, setView] = useState(null);

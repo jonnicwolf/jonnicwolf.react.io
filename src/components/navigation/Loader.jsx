@@ -23,7 +23,6 @@ const Container = styled.div`
   align-items: center;
   background-color: rgb(112, 110, 110);
   height: 100vh;
-
 `;
 const P5Container = styled.div`
   z-index: 1;
@@ -34,4 +33,5 @@ const Loading = styled.h1`
   color: white;
   z-index: 2;
 `;
+
 export default Loader;

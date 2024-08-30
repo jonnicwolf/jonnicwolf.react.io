@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-import P5_EYE from './p5/P5_EYE';
+import P5_EYE from '../p5/P5_EYE';
 
 export default function Eye({ width, height }) {
   return (

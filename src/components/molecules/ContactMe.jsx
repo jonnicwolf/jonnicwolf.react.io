@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { DarkmodeContext } from '../Darkmode';
+import { DarkmodeContext } from '../../Darkmode';
 import styled from 'styled-components';
 
-import Socials from './Socials';
+import Socials from '../atoms/Socials';
 import ContactForm from './ContactForm';
 
 export default function ContactMe({ viewSetter }) {

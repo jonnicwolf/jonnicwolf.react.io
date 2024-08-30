@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import LinkButton from '../assets/buttons/LinkButton';
+import LinkButton from '../../assets/buttons/LinkButton';
 
 export default function BioCard ({ viewSetter, darkmode }) {
   const headshot = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/kzdwwh2b4yepik7c5amm';
