@@ -5,7 +5,7 @@ import TimeLine from '../components/TimeLine';
 
 const headshot = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/kzdwwh2b4yepik7c5amm'
 
-export default function AboutmePage ({ darkMode }) {
+export default function AboutmePage () {
   return (
     <AboutMeContainer>
       <BioContainer>
@@ -14,11 +14,11 @@ export default function AboutmePage ({ darkMode }) {
         </HeadshotWrapper>
 
         <BioBoxWrapper>
-          <BioBox darkMode={darkMode} />
+          <BioBox />
         </BioBoxWrapper>
       </BioContainer>
       
-      <TimeLine darkMode={darkMode} />
+      <TimeLine />
     </AboutMeContainer>
   );
 };

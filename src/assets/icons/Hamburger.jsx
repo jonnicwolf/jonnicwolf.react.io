@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Hamburger = ({ darkMode, isOpen, isOpenSet }) => {
+const Hamburger = ({ isOpen, isOpenSet }) => {
 
   function handleToggle () {
     isOpenSet(!isOpen);

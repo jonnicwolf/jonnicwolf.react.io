@@ -1,8 +1,10 @@
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useRef, useCallback, useContext } from 'react';
+import { DarkmodeContext } from '../../contexts/Darkmode';
 import styled from 'styled-components';
 import p5 from 'p5';
 
-const P5_GEOSTORM = ({ strokeColor, darkMode }) => {
+const P5_GEOSTORM = ({ strokeColor }) => {
+  const { darkmode } = useContext(DarkmodeContext);
   const sketch_ref = useRef();
 
   const sketch = useCallback((p) => {
@@ -93,7 +95,7 @@ const P5_GEOSTORM = ({ strokeColor, darkMode }) => {
     let triangles = [];
     let lightningForks = [];
     let bolts = [];
-    const background = !darkMode ? '#5c5c5b' : '#fffcf5'
+    const background = !darkmode ? '#5c5c5b' : '#fffcf5'
 
     p.setup = () => {
       p.createCanvas(p.windowWidth/12 * 10, p.windowHeight/12 * 6);
@@ -158,11 +160,11 @@ const P5_GEOSTORM = ({ strokeColor, darkMode }) => {
       // Add a new bolt randomly
       if (p.random(1) < 0.005) {
         let bolt = new ForkedBolt(p.random(p.width), 0, p.random(2, 5), p.color(strokeColor));
-        p.background(!darkMode ? '#5c5c5b' : '#fffcf5');
+        p.background(!darkmode ? '#5c5c5b' : '#fffcf5');
         bolts.push(bolt);
       };
     };
-  }, [strokeColor, darkMode]);
+  }, [strokeColor, darkmode]);
 
   useEffect(() => {
     const p5Canvas = new p5(sketch, sketch_ref.current);
@@ -170,7 +172,7 @@ const P5_GEOSTORM = ({ strokeColor, darkMode }) => {
   }, [sketch]);
 
   return (
-    <Container darkMode={darkMode}>
+    <Container>
       <div ref={sketch_ref} />
     </Container>
   );

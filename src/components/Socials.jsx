@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { DarkmodeContext } from '../contexts/Darkmode';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { SocialIcon } from 'react-social-icons';
 
-const Socials = ({ gap, darkmode }) => {
+const Socials = ({ gap }) => {
+  const { darkmode } = useContext(DarkmodeContext);
+
   return (
     <SocialsList gap={gap}>
       <SocialItem

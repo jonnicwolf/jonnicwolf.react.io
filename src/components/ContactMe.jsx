@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { DarkmodeContext } from '../contexts/Darkmode';
 import styled from 'styled-components';
 
 import Socials from './Socials';
 import ContactForm from './ContactForm';
 
-export default function ContactMe({ viewSetter, darkmode }) {
+export default function ContactMe({ viewSetter }) {
+  const { darkmode } = useContext(DarkmodeContext);
+
   return (
     <Container>
       <Background darkmode={darkmode} />
       <FormWrap>
         <Title>Contact Me</Title>
-        <Socials gap={'40px'} darkmode={darkmode} />
-        <ContactForm viewSetter={viewSetter} darkmode={darkmode} />
+        <Socials gap={'40px'} />
+        <ContactForm viewSetter={viewSetter} />
       </FormWrap>
     </Container>
   );

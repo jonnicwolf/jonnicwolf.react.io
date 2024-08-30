@@ -1,12 +1,14 @@
-import React, { useEffect, useRef, useCallback, useState } from 'react';
+import React, { useEffect, useRef, useCallback, useState, useContext } from 'react';
+import { DarkmodeContext } from '../../contexts/Darkmode';
 import styled from 'styled-components';
 import p5 from 'p5';
 
 import AfterImageControls from '../AfterImageControls';
 
-const P5_LOADER = ({ strokeColor, controls, darkMode }) => {
+const P5_LOADER = ({ strokeColor, controls }) => {
   const [mod, setMod] = useState(0.1);
   const sketch_ref = useRef();
+  const { darkmode } = useContext(DarkmodeContext);
 
   const sketch = useCallback((p) => {
     p.setup = () => {
@@ -40,7 +42,7 @@ const P5_LOADER = ({ strokeColor, controls, darkMode }) => {
 
   return (
     <Container ref={sketch_ref}>
-      {controls && <AfterImageControls darkMode={darkMode} getter={mod} setter={setMod} />}
+      {controls && <AfterImageControls darkMode={darkmode} getter={mod} setter={setMod} />}
     </Container>
   );
 };
@@ -49,6 +51,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;
 
 export default P5_LOADER;

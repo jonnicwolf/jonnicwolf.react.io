@@ -1,24 +1,37 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { DarkmodeContext } from '../../contexts/Darkmode';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-const LinkButton = ({ padding, onClick, textContent, buttonSize, subDirectory, darkMode, isScaleAnimation}) => {
+const LinkButton = ({
+  padding,
+  onClick,
+  textContent,
+  buttonSize,
+  subDirectory,
+  isScaleAnimation,
+}) => {
+  const { darkmode } = useContext(DarkmodeContext);
+
   return (
-    <LinkStyle to={subDirectory} onClick={onClick} padding={padding}>
+    <LinkStyle
+      to={subDirectory}
+      onClick={onClick}
+      padding={padding} >
       { isScaleAnimation
-        ?<Button
+        ? <Button
           as={motion.button}
           initial={{ scaleX: 0, opacity: 0, }}
           animate={{ scaleX: 1, opacity: 1, }}
           transition={{ delay: 1, duration: 0.3 }}
           buttonSize={buttonSize}
-          darkMode={darkMode}
-          >{textContent}</Button>
-        :<Button
+          darkMode={darkmode} >
+            {textContent}</Button>
+        : <Button
           buttonSize={buttonSize}
-          darkMode={darkMode}
-          >{textContent}</Button>
+          darkMode={darkmode} >
+            {textContent}</Button>
       }
     </LinkStyle>
   );
@@ -66,7 +79,7 @@ const Button = styled.button`
     left: auto;
     right: 0;
     width: 100%;
-    color: ${props => props.darkModeGetter ? 'black' : 'white'};
+    color: ${props => props.darkMode ? 'black' : 'white'};
   }
 `;
 

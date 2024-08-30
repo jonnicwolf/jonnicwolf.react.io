@@ -8,8 +8,7 @@ const NameCard = () => {
     <Container
       variants={fadeIn}
       initial="hidden"
-      animate="show"
-      >
+      animate="show" >
         <RampartOneText variants={items} custom={0} >
           FEZZ
         </RampartOneText>

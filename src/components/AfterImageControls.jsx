@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { DarkmodeContext } from '../contexts/Darkmode';
 import styled from 'styled-components';
 
-export default function AfterImageControls({ darkMode, getter, setter }) {
+export default function AfterImageControls({ getter, setter }) {
+  const { darkmode } = useContext(DarkmodeContext);
   const handleChange = (e) => {
     setter(parseFloat(e.target.value));
   };
 
   return (
-    <Container darkMode={darkMode}>
+    <Container darkMode={darkmode}>
       <Info>REMEMBER, THERE IS ONLY ONE TRIANGLE</Info>
       <Slider
-        darkMode={darkMode}
+        darkMode={darkmode}
         type='range'
         min='0.1'
         max='5'

@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { DarkmodeContext } from './contexts/Darkmode';
 import Youtube from 'react-youtube';
 import styled from 'styled-components';
 
 import ExperienceCard from './ExperienceCard';
 import P5_TORUS from './p5/P5_TORUS';
 
-const TimeLine = ({ darkMode }) => {
+const TimeLine = () => {
+  const { darkmode } = useContext(DarkmodeContext);
+
   const [ content_SG, content_pursuit, content_JPMC ] = 
     [`Here at SeatGeek, I spearheaded the development of crucial monitoring systems using Datadog, ensuring swift detection and resolution of client file upload errors. Leveraging Terraform, I seamlessly deployed these monitors and alarms, enhancing our operational efficiency.  Furthermore, I championed the creation of the Matching Tool Search & Match modal feature, a game-changer that significantly boosted the visibility of ticket items without specific event associations. This innovative addition not only improved user experience but also contributed to increased ticket sales.  During high-pressure moments like Taylor Swift's Eras tour ticket sales frenzy, I proudly stepped up to the plate, participating in rotational on-call duties and command center operations. My dedication ensured seamless operations during peak demand periods, maintaining SeatGeek's reputation for reliability and customer satisfaction.  In addition, I played a pivotal role in enhancing the Integrated Inventory Card by providing crucial support to our CX team. Through the implementation of logic to display primary providers and relevant league information, I empowered our team to better serve our customers, ultimately driving improved user engagement and loyalty.`,
       `Embarking on a transformative journey as a Full Stack Web Development Fellow at Pursuit, I embraced a rigorous 12-month Google-funded software engineering fellowship. This program boasted a remarkable acceptance rate of just 9% out of over 1500 applicants, underscoring the competitive nature of the selection process.  Throughout the fellowship, I honed not only my technical prowess but also crucial professional skills, equipping myself with a well-rounded skill set essential for success in the industry. Pursuit's comprehensive curriculum prepared me to tackle real-world challenges, enabling me to emerge as a proficient developer ready to make meaningful contributions.  As a testament to Pursuit's effectiveness, graduates like myself have been recruited by top-tier companies including Pinterest, JP Morgan, and Spotify, attesting to the program's reputation for producing exceptional talent poised for success in the tech industry.
@@ -41,7 +44,7 @@ const TimeLine = ({ darkMode }) => {
   ];
 
   return (
-    <Container>
+    <Container darkMode={darkmode}>
       <ContentContainer>
         {timeline.map((item, i) =>
           <ExperienceContainer>
@@ -54,7 +57,7 @@ const TimeLine = ({ darkMode }) => {
                 link={item.link}
                 content={item.content}
                 year={item.year}
-                darkMode={darkMode} />
+                darkMode={darkmode} />
             </ExperienceCardWrap>
           </ExperienceContainer>
         )}
