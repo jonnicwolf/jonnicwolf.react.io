@@ -1,6 +1,6 @@
 import { lazy, Suspense, useState, useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { DarkmodeContext, DarkmodeProvider } from './contexts/Darkmode.jsx';
+import { DarkmodeContext, DarkmodeProvider } from './Darkmode.jsx';
 import styled from 'styled-components';
 
 import ScrollToTop from './components/ScrollToTop.jsx';

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useCallback, useState, useContext } from 'react';
-import { DarkmodeContext } from '../../contexts/Darkmode';
+import { DarkmodeContext } from '../../Darkmode';
 import styled from 'styled-components';
 import p5 from 'p5';
 

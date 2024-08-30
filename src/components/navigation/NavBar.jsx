@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { DarkmodeContext } from '../../contexts/Darkmode';
+import { DarkmodeContext } from '../../Darkmode';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
