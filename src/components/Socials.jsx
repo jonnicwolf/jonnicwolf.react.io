@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { DarkmodeContext } from './contexts/Darkmode';
+import { DarkmodeContext } from '../contexts/Darkmode';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
