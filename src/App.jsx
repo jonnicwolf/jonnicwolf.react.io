@@ -4,8 +4,8 @@ import { DarkmodeContext, DarkmodeProvider } from './Darkmode.jsx';
 import styled from 'styled-components';
 
 import ScrollToTop from './components/utils/ScrollToTop.jsx';
-import Loader from './components/navigation/Loader';
-import NavBar from './components/navigation/NavBar';
+import Loader from './components/navigation/Loader.jsx';
+import NavBar from './components/navigation/NavBar.jsx';
 import MobileNav from './components/navigation/MobileNav.jsx';
 
 import Test from './routes/Test.jsx';
