@@ -1,21 +1,26 @@
-import { lazy, Suspense, useState, useContext } from 'react';
+import React, { FC, lazy, Suspense, useState, useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { DarkmodeContext, DarkmodeProvider } from './Darkmode.jsx';
+import { DarkmodeContext, DarkmodeProvider } from './Darkmode';
 import styled from 'styled-components';
 
-import ScrollToTop from './components/utils/ScrollToTop.jsx';
-import Loader from './components/navigation/Loader.jsx';
-import NavBar from './components/navigation/NavBar.jsx';
-import MobileNav from './components/navigation/MobileNav.jsx';
+import ScrollToTop from './components/utils/ScrollToTop';
+import Loader from './components/navigation/Loader';
+import NavBar from './components/navigation/NavBar';
+import MobileNav from './components/navigation/MobileNav';
 
 import Test from './routes/Test.jsx';
-const ProjectPage = lazy(() => import('./routes/ProjectPage.jsx'));
-const GalleryPage = lazy(() => import('./routes/GalleryPage.jsx'));
+const ProjectPage = lazy(() => import('./routes/ProjectPage'));
+const GalleryPage = lazy(() => import('./routes/GalleryPage'));
 
-function App () {
-  const [enterClicked, setEnterClicked] = useState(false);
-  const isMobile = window.innerWidth < 1025;
+interface StyleProps {
+  darkmode: boolean,
+  isMobile: boolean,
+}
+
+const App: FC = () => {
+  const [enterClicked, setEnterClicked] = useState<boolean>(false);
   const { darkmode } = useContext(DarkmodeContext);
+  const isMobile: boolean = window.innerWidth < 1025;
 
   return (
     <Container darkmode={darkmode} isMobile={isMobile}>
@@ -35,12 +40,12 @@ function App () {
   );
 };
 
-const Container = styled.div`
+const Container = styled.div<StyleProps>`
   overflow-x: hidden;
   background: ${props => props.darkmode ? '#5c5c5b' : '#fffcf5'};
 `;
 
-export default function ContextApp () {
+export default function ContextApp (): JSX.Element | null {
   return (
     <DarkmodeProvider>
       <App />
