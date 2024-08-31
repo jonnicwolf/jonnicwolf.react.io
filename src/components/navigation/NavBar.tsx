@@ -1,14 +1,14 @@
-import React, { useContext } from 'react';
+import React, { FC, useContext } from 'react';
 import { DarkmodeContext } from '../../Darkmode';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
 import LinkButton from '../../assets/buttons/LinkButton';
-import DarkModeButton from '../../assets/buttons/DarModeButton';
+import DarkModeButton from '../../assets/buttons/DarkModeButton';
 
-const NavBar = () => {
+const NavBar: FC = () => {
   const location = useLocation().pathname.split('/')[1] || 'HOME';
-  const { darkmode, toggleDarkmode } = useContext(DarkmodeContext);
+  const { darkmode } = useContext(DarkmodeContext);
 
   return (
     <NavbarContainer>
@@ -23,8 +23,8 @@ const NavBar = () => {
         </PageMarker>
       </Fezz>
 
-      <DarkModeButton darkModeGetter={darkmode} darkModeSetter={toggleDarkmode} />
-      <LinkButton subDirectory={'/gallery'} textContent={'GALLERY'}  darkMode={darkmode} fontSize padding />
+      <DarkModeButton />
+      <LinkButton subDirectory={'/gallery'} textContent={'GALLERY'} fontSize padding />
     </NavbarContainer>
   );
 };

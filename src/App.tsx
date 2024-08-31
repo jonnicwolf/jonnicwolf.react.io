@@ -1,21 +1,22 @@
-import React, { FC, lazy, Suspense, useState, useContext } from 'react';
+import React, { FC, LazyExoticComponent, lazy, Suspense, useState, useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { DarkmodeContext, DarkmodeProvider } from './Darkmode';
 import styled from 'styled-components';
 
-import ScrollToTop from './components/utils/ScrollToTop';
+// import ScrollToTop from './components/utils/ScrollToTop';
 import Loader from './components/navigation/Loader';
-import NavBar from './components/navigation/NavBar';
+import NavBar from './components/navigation/NavBar.tsx';
 import MobileNav from './components/navigation/MobileNav';
 
 import Test from './routes/Test.jsx';
-const ProjectPage = lazy(() => import('./routes/ProjectPage'));
+const ProjectPage: <LazyExoticComponent> = lazy(() => import('./routes/ProjectPage'))
+;
 const GalleryPage = lazy(() => import('./routes/GalleryPage'));
 
 interface StyleProps {
   darkmode: boolean,
   isMobile: boolean,
-}
+};
 
 const App: FC = () => {
   const [enterClicked, setEnterClicked] = useState<boolean>(false);
@@ -27,7 +28,7 @@ const App: FC = () => {
       { isMobile && <MobileNav enterClicked={enterClicked} />}
       {!isMobile && <NavBar />}
 
-    <ScrollToTop />
+    {/* <ScrollToTop /> */}
       <Suspense fallback={<Loader strokeColor={150}/>} >
         <Routes>
           <Route path='/' element={<ProjectPage setEnterClicked={setEnterClicked} />} />
@@ -45,7 +46,7 @@ const Container = styled.div<StyleProps>`
   background: ${props => props.darkmode ? '#5c5c5b' : '#fffcf5'};
 `;
 
-export default function ContextApp (): JSX.Element | null {
+export default function ContextApp () {
   return (
     <DarkmodeProvider>
       <App />

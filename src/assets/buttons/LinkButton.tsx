@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React, { FC, useContext } from 'react';
 import { DarkmodeContext } from '../../Darkmode';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-const LinkButton = ({
+const LinkButton: FC = ({
   padding,
   onClick,
   textContent,
