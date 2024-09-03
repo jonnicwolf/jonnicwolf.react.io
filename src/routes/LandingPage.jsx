@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 import AboutCard from '../components/molecules/AboutCard.jsx';
 import NameCard from '../components/molecules/NameCard.jsx';
-import LinkButton from '../assets/buttons/LinkButton.jsx';
+import LinkButton from '../assets/buttons/LinkButton.tsx';
 import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 
 export default function LandingPage ({ setEnterClicked }) {

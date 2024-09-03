@@ -1,10 +1,21 @@
 import React, { FC, useContext } from 'react';
 import { DarkmodeContext } from '../../Darkmode';
+
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-const LinkButton: FC = ({
+interface Props {
+  padding: boolean,
+  onClick: () => void | null,
+  buttonSize: string,
+  textContent: string,
+  subDirectory: string,
+  isScaleAnimation: boolean | null,
+};
+
+
+const LinkButton: FC<Props> = ({
   padding,
   onClick,
   textContent,

@@ -17,6 +17,7 @@ const MobileNav = ({ enterClicked }) => {
       <Item to='/' onClick={() =>setIsOpen(!isOpen)}>HOME</Item>
       <Item to='/gallery' onClick={() =>setIsOpen(!isOpen)}>GALLERY</Item>
       <ExternalItem onClick={() =>setIsOpen(!isOpen)} href='https://www.linkedin.com/in/jonathannarine/'>LINKEDIN</ExternalItem>
+      {/* borderBottom is 1px solid grey here to better define the menu bottom */}
       <ExternalItem
         onClick={() =>setIsOpen(!isOpen)}
         href='https://github.com/jonnicwolf'
