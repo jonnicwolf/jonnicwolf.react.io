@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 
-const Hamburger = ({ isOpen, isOpenSet }) => {
+interface Props {
+  isOpen: boolean,
+  isOpenSet: (open: boolean) => void,
+};
+
+const Hamburger: FC<Props> = ({ isOpen, isOpenSet }) => {
 
   function handleToggle () {
     isOpenSet(!isOpen);
