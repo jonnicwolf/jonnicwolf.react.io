@@ -1,14 +1,13 @@
-import { FC } from 'react';
+import { Dispatch, FC, SetStateAction } from 'react';
 // @ts-ignore
 import styled from 'styled-components';
 import LinkButton from '../../assets/buttons/LinkButton';
 
 interface Props {
-  viewSetter: (value: string) => void,
-  darkmode: boolean,
+  viewSetter: Dispatch<SetStateAction<string>>,
 }
 
-const BioCard: FC<Props> = ({ viewSetter, darkmode }) => {
+const BioCard: FC<Props> = ({ viewSetter }) => {
   const headshot = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/kzdwwh2b4yepik7c5amm';
 
   return (

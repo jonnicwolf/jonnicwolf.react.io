@@ -1,5 +1,6 @@
 import { FC, useState, useContext } from 'react';
 import { DarkmodeContext } from '../../Darkmode';
+// @ts-ignore
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 
