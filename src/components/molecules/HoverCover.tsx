@@ -10,7 +10,6 @@ interface Props {
   liveLink: string,
   githubLink: string,
   image: string,
-  cover: JSX.Element,
   gifPath: string,
   apis: string[],
   descriptions: string[],

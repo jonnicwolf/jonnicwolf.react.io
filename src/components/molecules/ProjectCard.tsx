@@ -45,7 +45,7 @@ const ProjectCard: FC<Props> = ({
           gifPath={gifPath}
           apis={apis}
           descriptions={descriptions}
-          devicons={devicons} />
+          devicons={devicons} image={''} />
         : <Cover setter={setShowMore} /> }
     </Container>
   ); 
