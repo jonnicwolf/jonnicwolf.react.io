@@ -1,11 +1,19 @@
-import React, { useContext } from 'react';
+import { FC, useContext } from 'react';
 import { DarkmodeContext } from '../../Darkmode';
 import styled from 'styled-components';
 
 import Socials from '../atoms/Socials';
 import ContactForm from './ContactForm';
 
-export default function ContactMe({ viewSetter }) {
+interface Props {
+  viewSetter: (value: boolean) => void,
+};
+
+interface BackgroundProps{
+  darkmode: boolean;
+};
+
+const ContactMe: FC<Props> = ({ viewSetter }) => {
   const { darkmode } = useContext(DarkmodeContext);
 
   return (
@@ -29,7 +37,7 @@ const Container = styled.div`
     justify-content: center;
   }
 `;
-const Background = styled.div`
+const Background = styled.div<BackgroundProps>`
   background: repeat 120px url('https://img.icons8.com/?size=100&id=iZfvYzdS1M3T&format=png&color=${props => props.darkmode ? 'ffffff': '000000'} ');
   background-size: 150px;
   height: 800px;
@@ -52,3 +60,5 @@ const FormWrap = styled.div`
 const Title = styled.h1`
   font-family: Michroma;
 `;
+
+export default ContactMe;
