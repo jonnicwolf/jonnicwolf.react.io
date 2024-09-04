@@ -83,7 +83,9 @@ const ContactForm: FC<Props> = ({ viewSetter }) => {
         onChange={handleChange}
         required />
 
-      {formData.message && <LinkButton darkMode={darkmode} textContent='SUBMIT' isScaleAnimation={true} onClick={handleSubmit} />}
+      {formData.message && <LinkButton darkMode={darkmode} textContent='SUBMIT' isScaleAnimation={true} 
+      // @ts-ignore
+      onClick={handleSubmit} />}
 
       <ButtonWrap>
         <LinkButton
@@ -110,13 +112,13 @@ const Form = styled.form`
   gap: 15px;
   margin-bottom: 15px;
 `;
-const Wrap = styled.div<StyleProps>`
+const Wrap = styled.div`
   display: flex;
   border: 1px solid black;
   height: 2rem;
   padding: 10px;
-  color: ${props => (props.darkmode ? 'white' : 'black')};
-  border: 1px solid ${props => (props.darkmode ? 'white' : 'black')};
+  color: ${(props: {darkmode: boolean}) => (props.darkmode ? 'white' : 'black')};
+  border: 1px solid ${(props: {darkmode: boolean}) => (props.darkmode ? 'white' : 'black')};
 `;
 const ButtonWrap = styled(Wrap)`
   border: none;
@@ -142,8 +144,8 @@ const Message = styled.textarea`
   width: 100%;
   background: none;
   outline: none;
-  border: 1px solid ${props => props.darkmode ? 'white' : 'black'};
-  color: ${props => props.darkmode ? 'white' : 'black'};
+  border: 1px solid ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
+  color: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
 `;
 
 export default ContactForm;
