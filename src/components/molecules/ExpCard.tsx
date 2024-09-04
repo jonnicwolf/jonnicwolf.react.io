@@ -1,26 +1,31 @@
-import React from 'react';
+import { FC } from 'react';
+// @ts-ignore'
 import styled from 'styled-components';
 
 import LinkButton from '../../assets/buttons/LinkButton';
 
-export default function ExpCard({ viewSetter }) {
+interface Props {
+  viewSetter: (value: string) => void,
+}
+
+const ExpCard: FC<Props> = ({ viewSetter }) => {
   return (
     <Container>
       <Iframe src="https://docs.google.com/document/d/1L--uuFkBDl2thpDIuyzyUWNqv5Q0BShsKrwGvy6DusU/pub?embedded=true" />
 
       <Buttons>
         <LinkButton
-          onClick={()=> viewSetter('tech')}
+          onClick={() => viewSetter('tech')}
           textContent='TECH'
-          isScaleAnimation />
+          isScaleAnimation padding={false} buttonSize={''} subDirectory={''} />
         <LinkButton
-          onClick={()=> viewSetter('contact')}
+          onClick={() => viewSetter('contact')}
           textContent='GET IN TOUCH'
-          isScaleAnimation />
+          isScaleAnimation padding={false} buttonSize={''} subDirectory={''} />
         <LinkButton
-          onClick={()=> viewSetter('bio')}
+          onClick={() => viewSetter('bio')}
           textContent='ABOUT'
-          isScaleAnimation />
+          isScaleAnimation padding={false} buttonSize={''} subDirectory={''} />
         </Buttons>
     </Container>
   );
@@ -48,3 +53,5 @@ const Buttons = styled.div`
   flex-wrap: wrap;
   gap: 10px;
 `;
+
+export default ExpCard;
