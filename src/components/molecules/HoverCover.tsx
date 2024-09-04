@@ -52,12 +52,16 @@ const HoverCover: FC<Props> = ({
           <ExternalButton
             link={liveLink}
             text={'LIVE SITE'}
-            fontSize='1rem' />
+            fontSize='1rem' buttonSize={''} buffer={false} callback={function (): void {
+              throw new Error('Function not implemented.');
+            } } />
           <ExternalButton
             link={githubLink}
             text={'GITHUB'}
             buffer={true}
-            fontSize='1rem' />
+            fontSize='1rem' buttonSize={''} callback={function (): void {
+              throw new Error('Function not implemented.');
+            } } />
         </PaddingWrap>
       </HoverInfo>
     </Container>
