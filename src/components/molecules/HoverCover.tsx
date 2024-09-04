@@ -2,7 +2,7 @@ import { FC } from 'react';
 // @ts-ignore
 import styled, { keyframes } from 'styled-components';
 
-import ExternalButton from '../../assets/buttons/ExternalButton.tsx';
+import ExternalButton from '../../assets/buttons/ExternalButton';
 
 interface Props {
   bio: string,
