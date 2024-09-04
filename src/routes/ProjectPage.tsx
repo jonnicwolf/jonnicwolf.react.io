@@ -44,6 +44,7 @@ const ProjectPage: FC<Props> = ({ setEnterClicked }) => {
           bio='Tarot Interpreter'
           liveLink='https://esperi.vercel.app'
           githubLink='https://github.com/jonnicwolf/heart_of_the_cards'
+          // @ts-ignore
           cover={EsperiCover}
           gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/heicbedxhzwocfzxqzky'
           apis={['TAROTAPI', 'OPENAI API']}
@@ -56,6 +57,7 @@ const ProjectPage: FC<Props> = ({ setEnterClicked }) => {
           bio='Webstore'
           liveLink='https://stoned-cold-dreamery.vercel.app'
           githubLink='https://github.com/jonnicwolf/stoned_cold_dreamery'
+          // @ts-ignore
           cover={SCDCover}
           gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/r46imtohg1igqqknoqgp'
           apis={[]}

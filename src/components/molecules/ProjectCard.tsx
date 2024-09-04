@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, ReactElement, cloneElement, useState } from 'react';
 // @ts-ignore
 import styled, { keyframes } from 'styled-components';
 
@@ -10,12 +10,12 @@ interface Props {
   liveLink: string,
   githubLink: string,
   image: string,
-  cover: JSX.Element,
+  cover: ReactElement,
   gifPath: string,
   apis: string[],
   descriptions: string[],
   devicons: string[],
-}
+};
 
 const ProjectCard: FC<Props> = ({
   bio,
@@ -46,10 +46,9 @@ const ProjectCard: FC<Props> = ({
           apis={apis}
           descriptions={descriptions}
           devicons={devicons} image={''} />
-          //@ts-ignore
-        : <Cover setter={setShowMore} /> }
+        : cloneElement(Cover, { setter: setShowMore })}
     </Container>
-  ); 
+  );
 };
 
 const fadeIn = keyframes`
