@@ -1,5 +1,6 @@
 import React, { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
+// @ts-ignore
 import styled from 'styled-components';
 
 import Hamburger from '../../assets/icons/Hamburger';
@@ -7,11 +8,6 @@ import Hamburger from '../../assets/icons/Hamburger';
 interface Props {
   enterClicked: boolean
 };
-
-interface StyleProps {
-  isOpen: boolean,
-  isOpenSet: boolean
-}
 
 const MobileNav: FC<Props> = ({ enterClicked }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -35,17 +31,17 @@ const MobileNav: FC<Props> = ({ enterClicked }) => {
   );
 };
 
-const Container = styled.div<StyleProps>`
+const Container = styled.div`
   position: fixed;
   background-color: #fffcf5;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  height: ${props => props.isOpen ? 'auto' : '8vh'};
+  height: ${(props: {isOpen: boolean}) => props.isOpen ? 'auto' : '8vh'};
   overflow: hidden;
   transition: height .3s linear;
   width: 100%;
-  z-index: ${props => props.enterClicked ? '3' : '2'};
+  z-index: ${(props: {enterClicked: boolean}) => props.enterClicked ? '3' : '2'};
 `;
 const Nav = styled.div`
   display: flex;
