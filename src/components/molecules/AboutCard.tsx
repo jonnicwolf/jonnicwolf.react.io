@@ -51,11 +51,11 @@ const Container = styled(motion.div)<ContainerProps>`
   overflow: scroll;
   height: 800px;
   width: 800px;
-  border: 1px solid ${props => (props.darkmode ? 'white' : 'none')};
+  border: 1px solid ${(props: {darkmode: boolean}) => (props.darkmode ? 'white' : 'none')};
   animation: ${fadeIn} 1.5s forwards;
-  color: ${props => (props.darkmode ? 'white' : 'black')};
-  background-color: ${props => (props.darkmode ? '#969696' : null)};
-  font-color: ${props => (props.darkmode ? 'grey' : 'white')};
+  color: ${(props: {darkmode: boolean}) => (props.darkmode ? 'white' : 'black')};
+  background-color: ${(props: {darkmode: boolean}) => (props.darkmode ? '#969696' : null)};
+  font-color: ${(props: {darkmode: boolean}) => (props.darkmode ? 'grey' : 'white')};
 
   @media screen and (max-width: 600px) {
     height: 60vh;

@@ -8,7 +8,7 @@ import LinkButton from '../../assets/buttons/LinkButton';
 
 interface Props {
   viewSetter: (value: string) => void,
-}
+};
 
 interface FormData {
   to_name: string,

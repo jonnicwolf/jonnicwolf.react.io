@@ -15,7 +15,6 @@ interface Props {
   isScaleAnimation: boolean | null,
 };
 
-
 const LinkButton: FC<Props> = ({
   padding,
   onClick,

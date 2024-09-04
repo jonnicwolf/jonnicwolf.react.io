@@ -1,15 +1,16 @@
 import { FC, useContext } from 'react';
 import { DarkmodeContext } from '../../Darkmode';
+// @ts-ignore
 import styled from 'styled-components';
 
 import Socials from '../atoms/Socials';
 import ContactForm from './ContactForm';
 
 interface Props {
-  viewSetter: (value: boolean) => void,
+  viewSetter: (value: string) => void,
 };
 
-interface BackgroundProps{
+interface BackgroundProps {
   darkmode: boolean;
 };
 

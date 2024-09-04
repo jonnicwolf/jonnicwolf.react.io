@@ -65,7 +65,7 @@ const SocialItem = styled(motion(SocialIcon))`
 `;
 
 const SocialsList = styled.div<SocialsListProps>`
-  column-gap: ${props => props.gap};
+  column-gap: ${(props: { gap: string; }) => props.gap};
   display: flex;
   position: relative;
   z-index: 9;
