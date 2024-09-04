@@ -1,11 +1,20 @@
-import React, { useContext } from 'react';
+import { FC, useContext } from 'react';
 import { DarkmodeContext } from '../../Darkmode';
+// @ts-ignore
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { SocialIcon } from 'react-social-icons';
 
-const Socials = ({ gap }) => {
+interface Props {
+  gap: string,
+};
+
+interface SocialsListProps {
+  gap: string,
+};
+
+const Socials: FC<Props> = ({ gap }) => {
   const { darkmode } = useContext(DarkmodeContext);
 
   return (
@@ -38,7 +47,7 @@ const items = {
   hidden: {
     transition: { when: 'afterChildren' }
   },
-  show: (i) => ({
+  show: (i: number) => ({
     
     y: 0,
     transition: {
@@ -55,7 +64,7 @@ const SocialItem = styled(motion(SocialIcon))`
   transition: all 0.3s linear;
 `;
 
-const SocialsList = styled.div`
+const SocialsList = styled.div<SocialsListProps>`
   column-gap: ${props => props.gap};
   display: flex;
   position: relative;
