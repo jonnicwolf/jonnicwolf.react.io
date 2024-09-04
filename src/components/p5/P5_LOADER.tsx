@@ -1,15 +1,22 @@
-import React, { useEffect, useRef, useCallback, useState, useContext } from 'react';
+import { FC, useEffect, useRef, useCallback, useState, useContext } from 'react';
 import { DarkmodeContext } from '../../Darkmode';
+// @ts-ignore
 import styled from 'styled-components';
 import p5 from 'p5';
 
 import AfterImageControls from '../atoms/AfterImageControls';
 
-const P5_LOADER = ({ strokeColor, controls }) => {
-  const [mod, setMod] = useState(0.1);
+interface Props {
+  strokeColor: number,
+  controls: boolean,
+}
+
+const P5_LOADER: FC<Props> = ({ strokeColor, controls }) => {
+  const [mod, setMod] = useState<number>(0.1);
   const sketch_ref = useRef();
   const { darkmode } = useContext(DarkmodeContext);
 
+  // @ts-ignore
   const sketch = useCallback((p) => {
     p.setup = () => {
       p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
@@ -17,9 +24,9 @@ const P5_LOADER = ({ strokeColor, controls }) => {
 
     p.draw = () => {
       p.background(0,0,0,0);
-      const sideLength = 200; // Change size here
-      const height = (Math.sqrt(3) / 2) * sideLength;
-      const halfBase = sideLength / 2;
+      const sideLength: number = 200; // Change size here
+      const height: number = (Math.sqrt(3) / 2) * sideLength;
+      const halfBase: number = sideLength / 2;
 
       // Define the coordinates of the equilateral triangle
       const [ x1,y1,x2,y2,x3,y3 ] = [ 0, height, halfBase, 0, sideLength, height, ];
@@ -42,7 +49,7 @@ const P5_LOADER = ({ strokeColor, controls }) => {
 
   return (
     <Container ref={sketch_ref}>
-      {controls && <AfterImageControls darkMode={darkmode} getter={mod} setter={setMod} />}
+      {controls && <AfterImageControls darkMode={darkmode} mod={mod} modSetter={setMod} />}
     </Container>
   );
 };

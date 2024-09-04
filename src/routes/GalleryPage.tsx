@@ -1,25 +1,26 @@
-import React, { useState, useEffect, useMemo, useContext } from 'react';
+import { FC, useState, useEffect, useMemo, useContext } from 'react';
 import { DarkmodeContext } from '../Darkmode.tsx';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSwipeable } from 'react-swipeable';
+// @ts-ignore
 import styled from 'styled-components';
 import { motion, useAnimation } from 'framer-motion';
 
-import Button from '../assets/buttons/Button.jsx';
+import Button from '../assets/buttons/Button.tsx';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
 import P5_PLANE from '../components/p5/P5_PLANE';
-import P5_LOADER from '../components/p5/P5_LOADER.jsx';
-import P5_ANJA from '../components/p5/P5_ANJA.jsx';
-import P5_GEOSTORM from '../components/p5/P5_GEOSTORM.jsx';
+import P5_LOADER from '../components/p5/P5_LOADER.tsx';
+import P5_ANJA from '../components/p5/P5_ANJA';
+import P5_GEOSTORM from '../components/p5/P5_GEOSTORM';
 
-const GalleryPage = () => {
-  const [index, setIndex] = useState(0);
+const GalleryPage: FC = () => {
+  const [index, setIndex] = useState<boolean>(0);
   const { darkmode } = useContext(DarkmodeContext);
   const { projectName } = useParams();
   const navigate = useNavigate();
   const controls = useAnimation();
 
-  const sw = window.innerWidth > 720;
+  const sw: boolean = window.innerWidth > 720;
 
   const p5_projs = useMemo(() => [
     { component: P5_PLANE, title: 'HORIZON', name: 'horizon', info: 'MOVE YOUR CURSOR'},
@@ -36,7 +37,7 @@ const GalleryPage = () => {
     };
     animationSequence();
 
-    const param_index = p5_projs.findIndex(item => item.name === projectName);
+    const param_index: number = p5_projs.findIndex(item => item.name === projectName);
     param_index >= 0
       ? setIndex(param_index)
       : navigate(`/gallery/${p5_projs[0].name}`);

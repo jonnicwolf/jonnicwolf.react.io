@@ -1,11 +1,19 @@
-import React, { useContext } from 'react';
+import { FC, useContext } from 'react';
 import { DarkmodeContext } from '../../Darkmode';
+// @ts-ignore
 import styled from 'styled-components';
 
-export default function AfterImageControls({ getter, setter }) {
+interface Props {
+  mod: number,
+  modSetter: (value: number) => void,
+};
+
+const AfterImageControls: FC<Props> = ({ mod, modSetter }) => {
   const { darkmode } = useContext(DarkmodeContext);
+
+  // @ts-ignore
   const handleChange = (e) => {
-    setter(parseFloat(e.target.value));
+    modSetter(parseFloat(e.target.value));
   };
 
   return (
@@ -16,7 +24,7 @@ export default function AfterImageControls({ getter, setter }) {
         type='range'
         min='0.1'
         max='5'
-        value={getter}
+        value={mod}
         step='0.01'
         onChange={handleChange} />
     </Container>
@@ -24,8 +32,8 @@ export default function AfterImageControls({ getter, setter }) {
 };
 
 const Container = styled.div`
-  border: 1px solid ${props => props.darkMode ? 'white' : 'black'};
-  color: ${props => props.darkMode ? 'white' : 'black'};
+  border: 1px solid ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
+  color: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,7 +49,7 @@ const Container = styled.div`
 const Slider = styled.input`
   -webkit-appearance: none;
   width: 80%;
-  border: 1px solid ${props => props.darkMode ? 'white' : 'black'};
+  border: 1px solid ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
   background: none;
   border-radius: 30px;
   &::-webkit-slider-thumb {
@@ -49,7 +57,7 @@ const Slider = styled.input`
     appearance: none;
     width: 30px;
     height: 30px;
-    background: ${props => props.darkMode ? 'white' : 'black'};
+    background: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
     cursor: pointer;
     border-radius: 50%;
   }
@@ -66,3 +74,4 @@ const Info = styled.div`
   }
 `;
 
+export default AfterImageControls;
