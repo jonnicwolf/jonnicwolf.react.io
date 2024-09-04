@@ -2,6 +2,7 @@ import React, { FC, useContext } from 'react';
 import { DarkmodeContext } from '../../Darkmode';
 
 import { Link } from 'react-router-dom';
+// @ts-ignore
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -48,11 +49,18 @@ const LinkButton: FC<Props> = ({
   );
 };
 
-const LinkStyle = styled(motion(Link))`
+interface LinkButtonProps {
+  padding: boolean,
+};
+const LinkStyle = styled(motion(Link))<LinkButtonProps>`
   padding: ${props => props.padding ? '1vh' : '0'} ;
   font-size: 2rem;
 `;
-const Button = styled.button`
+interface ButtonProps {
+  buttonSize: boolean,
+  darkMode: boolean,
+};
+const Button = styled.button<ButtonProps>`
   padding: ${props => props.buttonSize === 'large' ? '25px 80px' : '1em'};
   font-family: var(--font-family-rubik);
   font-size: ${props => props.buttonSize === 'large' ? '1.5rem' : '0.8rem'};

@@ -1,30 +1,46 @@
-import React, { useState, useContext } from 'react';
+import { FC, useState, useContext } from 'react';
 import { DarkmodeContext } from '../../Darkmode';
+// @ts-ignore
 import styled from 'styled-components';
 import emailjs from '@emailjs/browser';
 
 import LinkButton from '../../assets/buttons/LinkButton';
 
-export default function ContactForm({ viewSetter }) {
+interface Props {
+  viewSetter: (value: string) => void,
+}
+
+interface FormData {
+  to_name: string,
+  from_name: string,
+  message: string,
+};
+
+interface StyleProps {
+  darkmode: boolean,
+};
+
+const ContactForm: FC<Props> = ({ viewSetter }) => {
   const { darkmode } = useContext(DarkmodeContext);
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     to_name: '',
     from_name: '',
     message: ''
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
         ...formData,
         [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     emailjs.init('p1Pm1Q0_4BJ-G3HYU');
     emailjs
+      // @ts-ignore
       .send('service_dna0xvk', 'template_9zxn0jo', formData)
       .then((response) => {
           console.log('Email sent successfully!', response);
@@ -71,20 +87,17 @@ export default function ContactForm({ viewSetter }) {
 
       <ButtonWrap>
         <LinkButton
-          darkMode={darkmode}
-          onClick={()=> viewSetter('bio')} 
+          onClick={() => viewSetter('bio')}
           textContent='ABOUT'
-          isScaleAnimation />
+          isScaleAnimation padding={false} buttonSize={''} subDirectory={''} />
         <LinkButton
-          darkMode={darkmode}
-          onClick={()=> viewSetter('exp')}
+          onClick={() => viewSetter('exp')}
           textContent='EXPERIENCE'
-          isScaleAnimation />
+          isScaleAnimation padding={false} buttonSize={''} subDirectory={''} />
         <LinkButton
-          darkMode={darkmode}
-          onClick={()=> viewSetter('tech')}
+          onClick={() => viewSetter('tech')}
           textContent='TECH'
-          isScaleAnimation />
+          isScaleAnimation padding={false} buttonSize={''} subDirectory={''} />
       </ButtonWrap>
     </Form>
   );
@@ -97,7 +110,7 @@ const Form = styled.form`
   gap: 15px;
   margin-bottom: 15px;
 `;
-const Wrap = styled.div`
+const Wrap = styled.div<StyleProps>`
   display: flex;
   border: 1px solid black;
   height: 2rem;
@@ -129,6 +142,8 @@ const Message = styled.textarea`
   width: 100%;
   background: none;
   outline: none;
-  border: 1px solid ${props => (props.darkmode ? 'white' : 'black')};
-  color: ${props => (props.darkmode ? 'white' : 'black')};
+  border: 1px solid ${props => props.darkmode ? 'white' : 'black'};
+  color: ${props => props.darkmode ? 'white' : 'black'};
 `;
+
+export default ContactForm;

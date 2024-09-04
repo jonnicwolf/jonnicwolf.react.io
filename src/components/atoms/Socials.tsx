@@ -58,7 +58,7 @@ const items = {
 };
 
 const SocialItem = styled(motion(SocialIcon))`
-  &: hover {
+  &: hover { 
     transform: scale(1.2);
   }
   transition: all 0.3s linear;
