@@ -1,9 +1,23 @@
-import React, { useState } from 'react';
+import { FC, useState } from 'react';
+// @ts-ignore
 import styled, { keyframes } from 'styled-components';
 
 import HoverCover from './HoverCover';
 
-export default function ProjectCard ({
+interface Props {
+  bio: string,
+  title: string,
+  liveLink: string,
+  githubLink: string,
+  image: string,
+  cover: JSX.Element,
+  gifPath: string,
+  apis: string[],
+  descriptions: string[],
+  devicons: string[],
+}
+
+const ProjectCard: FC<Props> = ({
   bio,
   title,
   liveLink,
@@ -13,8 +27,8 @@ export default function ProjectCard ({
   apis,
   descriptions,
   devicons,
-}) {
-  const [showMore, setShowMore] = useState(false);
+}) => {
+  const [showMore, setShowMore] = useState<boolean>(false);
 
   function onMouseLeave () {
     setShowMore(false);
@@ -56,3 +70,5 @@ const Container = styled.div`
     width: 90vw;
   }
 `;
+
+export default ProjectCard;

@@ -1,9 +1,23 @@
-import React from 'react';
+import { FC } from 'react';
+// @ts-ignore
 import styled, { keyframes } from 'styled-components';
 
-import ExternalButton from '../../assets/buttons/ExternalButton';
+import ExternalButton from '../../assets/buttons/ExternalButton.tsx';
 
-export default function HoverCover({
+interface Props {
+  bio: string,
+  title: string,
+  liveLink: string,
+  githubLink: string,
+  image: string,
+  cover: JSX.Element,
+  gifPath: string,
+  apis: string[],
+  descriptions: string[],
+  devicons: string[],
+};
+
+const HoverCover: FC<Props> = ({
   bio,
   title,
   liveLink,
@@ -12,8 +26,7 @@ export default function HoverCover({
   apis,
   descriptions,
   devicons,
-  darkMode,
-}) {
+}) => {
   return (
     <Container>
       <Gif src={gifPath} />
@@ -39,12 +52,10 @@ export default function HoverCover({
           <ExternalButton
             link={liveLink}
             text={'LIVE SITE'}
-            darkModeGetter={darkMode}
             fontSize='1rem' />
           <ExternalButton
             link={githubLink}
             text={'GITHUB'}
-            darkModeGetter={darkMode}
             buffer={true}
             fontSize='1rem' />
         </PaddingWrap>
@@ -178,3 +189,5 @@ const Container = styled.div`
       animation-delay: 1.1s;
     }
   `;
+
+export default HoverCover;

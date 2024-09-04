@@ -1,4 +1,5 @@
 import { FC } from 'react';
+// @ts-ignore
 import styled from 'styled-components';
 
 import LandingPage from './LandingPage';
