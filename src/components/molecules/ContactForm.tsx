@@ -16,10 +16,6 @@ interface FormData {
   message: string,
 };
 
-interface StyleProps {
-  darkmode: boolean,
-};
-
 const ContactForm: FC<Props> = ({ viewSetter }) => {
   const { darkmode } = useContext(DarkmodeContext);
   const [formData, setFormData] = useState<FormData>({
