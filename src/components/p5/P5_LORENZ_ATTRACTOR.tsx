@@ -1,5 +1,6 @@
 import { FC, useEffect, useRef, useCallback, useState } from 'react';
 import p5 from 'p5';
+// @ts-ignore
 import styled from 'styled-components';
 
 import ChaosTheoryForm from '../atoms/ChaosTheoryForm';

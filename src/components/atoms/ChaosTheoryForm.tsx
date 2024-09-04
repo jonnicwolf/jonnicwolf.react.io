@@ -1,8 +1,24 @@
-import React, { useContext } from 'react';
+import { FC, useContext } from 'react';
 import { DarkmodeContext } from '../../Darkmode';
+// @ts-ignore
 import styled from 'styled-components';
 
-export default function ChaosTheoryForm({ vars, setters }) {
+interface Props {
+  vars: {
+    sigma: number,
+    rho: number,
+    beta: number,
+    delta: number,
+  },
+  setters: {
+    setSigma: (sigma: number) => void,
+    setRho: (rho: number) => void,
+    setBeta: (beta: number) => void,
+    setDelta: (delta: number) => void,
+  },
+};
+
+const ChaosTheoryForm: FC<Props> = ({ vars, setters }) => {
   const { darkmode } = useContext(DarkmodeContext);
   const { sigma, rho, beta, delta } = vars;
   const { setSigma, setRho, setBeta, setDelta } = setters;
@@ -48,7 +64,7 @@ export default function ChaosTheoryForm({ vars, setters }) {
     : setDelta(delta - 1);
 
   return (
-    <Container darkMode={darkmode}>
+    <Container darkmode={darkmode}>
       <Info>Each configuration is a unique infinite loop</Info>
 
       <VarContainer>
@@ -81,8 +97,8 @@ export default function ChaosTheoryForm({ vars, setters }) {
 };
 
 const Container = styled.div`
-  border: 1px solid ${props => props.darkMode ? 'white' : 'black'};
-  color: ${props => props.darkMode ? 'white' : 'black'};
+  border: 1px solid ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
+  color: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -99,7 +115,7 @@ const Button = styled.button`
   border: none;
   background: none;
   font-size: 1rem;
-  color: ${props => props.darkMode ? 'white' : 'black'};
+  color: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
   @media only screen and (max-width: 720px) {
     font-size: 0.7rem;
   }
@@ -132,3 +148,5 @@ const VarContainer = styled.div`
   justify-content: center;
   gap: 7vw;
 `;
+
+export default ChaosTheoryForm;
