@@ -1,11 +1,16 @@
-import React, { useContext } from 'react';
+import { FC, useContext } from 'react';
 import { DarkmodeContext } from '../../Darkmode';
+// @ts-ignore
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import LinkButton from '../../assets/buttons/LinkButton';
 
-export default function TechnologyCard ({ viewSetter }) {
+interface Props {
+  viewSetter: (value: string) => void,
+};
+
+const TechnologyCard: FC<Props> = ({ viewSetter }) => {
   const { darkmode } = useContext(DarkmodeContext);
 
   return (
@@ -80,20 +85,17 @@ export default function TechnologyCard ({ viewSetter }) {
 
       <Buttons>
         <LinkButton
-          darkMode={darkmode}
-          onClick={()=> viewSetter('contact')}
+          onClick={() => viewSetter('contact')}
           textContent='GET IN TOUCH'
-          isScaleAnimation />
+          isScaleAnimation padding={false} buttonSize={''} subDirectory={''} />
         <LinkButton
-          darkMode={darkmode}
-          onClick={()=> viewSetter('bio')}
+          onClick={() => viewSetter('bio')}
           textContent='ABOUT'
-          isScaleAnimation />
+          isScaleAnimation padding={false} buttonSize={''} subDirectory={''} />
         <LinkButton
-          darkMode={darkmode}
-          onClick={()=> viewSetter('exp')}
+          onClick={() => viewSetter('exp')}
           textContent='WORK HISTORY'
-          isScaleAnimation />
+          isScaleAnimation padding={false} buttonSize={''} subDirectory={''} />
       </Buttons>
     </Container>
   );
@@ -113,9 +115,9 @@ const Container = styled(motion.div)`
   animation: ${fadeIn} 1.5s forwards;
   gap: 8px;
 `;
-
+  
   const IntroText = styled.h3`
-    font-size: ${props => props.fontSize};
+    font-size: ${(props: {fontSize: string}) => props.fontSize};
     margin: 0;
     font-family: Michroma;
   `;
@@ -153,7 +155,7 @@ const Container = styled(motion.div)`
       font-size: 5rem;
       padding: 10px;
       width: 45%;
-      border: 1px solid ${props => (props.darkmode ? 'white' : 'black')};
+      border: 1px solid ${(props: {darkmode: boolean}) => (props.darkmode ? 'white' : 'black')};
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -164,8 +166,8 @@ const Container = styled(motion.div)`
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      gap: ${props => props.gap};
-      width: ${props => props.width};
+      gap: ${(props: {gap: string}) => props.gap};
+      width: ${(props: {width: string}) => props.width};
     `;
       const Icon = styled.i`
         transition: scale 0.3s linear;
@@ -181,3 +183,5 @@ const Container = styled(motion.div)`
     justify-content: center;
     gap: 10px;
   `;
+
+export default TechnologyCard;
