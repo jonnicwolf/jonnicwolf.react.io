@@ -1,18 +1,25 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+import { FC, useCallback, useEffect, useRef } from 'react';
+// @ts-ignore
 import styled from 'styled-components';
 import p5 from "p5";
 
-const P5_PLANE = ({ strokeColor, showSun }) => {
+interface Props {
+  strokeColor: number,
+  showSun: boolean,
+}
+
+const P5_PLANE: FC<Props> = ({ strokeColor, showSun }) => {
   const sketch_ref = useRef();
 
+  // @ts-ignore
   const sketch = useCallback((p) => {
-    const isMobile = window.windowWidth > 1200;
-    let cols, rows;
-    let w = isMobile ? 2400 : 4800;
-    let h = 2400;
-    let scl = isMobile ? 60 : 80; // scale of each grid square
-    let flying = 0;
-    let terrain = [];
+    const isMobile: boolean = window.innerWidth > 1200;
+    let cols: number, rows: number;
+    let w: number = isMobile ? 2400 : 4800;
+    let h: number = 2400;
+    let scl: number = isMobile ? 60 : 80; // scale of each grid square
+    let flying: number = 0;
+    let terrain: number[][] = [];
 
     p.setup = () => {
       p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);

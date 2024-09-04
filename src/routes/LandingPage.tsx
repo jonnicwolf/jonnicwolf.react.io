@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import AboutCard from '../components/molecules/AboutCard.js';
 import NameCard from '../components/molecules/NameCard.js';
 import LinkButton from '../assets/buttons/LinkButton.tsx';
-import P5_PLANE from '../components/p5/P5_PLANE.jsx';
+import P5_PLANE from '../components/p5/P5_PLANE.js';
 
 interface Props {
   setEnterClicked: (open: boolean) => void,
