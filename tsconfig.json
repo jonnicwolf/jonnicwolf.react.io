@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "jsx": "react-jsx",  // or "react" for older React versions
-    "allowImportingTsExtensions": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,

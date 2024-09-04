@@ -1,8 +1,8 @@
-import React from 'react';
+import { FC } from 'react';
+// @ts-ignore
 import styled from 'styled-components';
 
-const Test = () => {
-
+const Test: FC = () => {
   return (
     <Container>
       WELL HELLO MOTHERFUCKER, NOTHING TO SEE HERE
