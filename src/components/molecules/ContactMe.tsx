@@ -10,10 +10,6 @@ interface Props {
   viewSetter: (value: string) => void,
 };
 
-interface BackgroundProps {
-  darkmode: boolean;
-};
-
 const ContactMe: FC<Props> = ({ viewSetter }) => {
   const { darkmode } = useContext(DarkmodeContext);
 
@@ -38,8 +34,8 @@ const Container = styled.div`
     justify-content: center;
   }
 `;
-const Background = styled.div<BackgroundProps>`
-  background: repeat 120px url('https://img.icons8.com/?size=100&id=iZfvYzdS1M3T&format=png&color=${props => props.darkmode ? 'ffffff': '000000'} ');
+const Background = styled.div`
+  background: repeat 120px url('https://img.icons8.com/?size=100&id=iZfvYzdS1M3T&format=png&color=${(props: {darkmode: boolean}) => props.darkmode ? 'ffffff': '000000'} ');
   background-size: 150px;
   height: 800px;
   width: 50%;
