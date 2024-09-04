@@ -13,6 +13,15 @@ import P5_LOADER from '../components/p5/P5_LOADER';
 import P5_ANJA from '../components/p5/P5_ANJA';
 import P5_GEOSTORM from '../components/p5/P5_GEOSTORM.tsx';
 
+interface P5Props {
+  strokeColor: number,
+  showControls: boolean,
+  showSun: boolean,
+  isMobile: boolean,
+};
+
+type P5Type = FC<P5Props>;
+
 const GalleryPage: FC = () => {
   const [index, setIndex] = useState<number>(0);
   const { darkmode } = useContext(DarkmodeContext);
@@ -21,8 +30,8 @@ const GalleryPage: FC = () => {
   const controls = useAnimation();
 
   const sw: boolean = window.innerWidth > 720;
-
-  const p5_projs = useMemo(() => [
+  // @ts-ignore !!!! FIX !!!!
+  const p5_projs: { component: P5Type, title: string, name: string, info?: string }[] = useMemo(() => [
     { component: P5_PLANE, title: 'HORIZON', name: 'horizon', info: 'MOVE YOUR CURSOR'},
     { component: P5_LORENZ_ATTRACTOR, title: 'CHAOS THEORY', name: 'chaos-theory' },
     { component: P5_LOADER, title: 'AFTERIMAGE', name: 'afterimage' },
@@ -58,8 +67,9 @@ const GalleryPage: FC = () => {
     onSwipedRight: handleLast,
   });
 
-  const { component, title, info } = p5_projs[index];
-  const ActiveProject = component;
+  const { component: ActiveProject, title, info } = p5_projs[index];
+  const RenderedProject = ActiveProject as React.ComponentType<P5Props>;
+
 
   return (
     <Container {...handleSwipes}>
@@ -76,7 +86,7 @@ const GalleryPage: FC = () => {
           animate='show'>
             {info}
         </Info>}
-        <ActiveProject
+        <RenderedProject
           strokeColor={200}
           showControls={true}
           showSun={true}
@@ -115,9 +125,9 @@ const ControlBox = styled.div`
   margin: 20px 10px 0 10px;
   width: 30%;
   text-wrap: wrap;
-  color: ${props => (props.darkMode ? 'white' : 'black')};
-  background-color: ${props => (props.darkMode ? '150' : null)};
-  font-color: ${props => (props.darkMode ? 'grey' : 'white')};
+  color: ${(props: {darkmode: boolean}) => (props.darkmode ? 'white' : 'black')};
+  background-color: ${(props: {darkmode: boolean}) => (props.darkmode ? '150' : null)};
+  font-color: ${(props: {darkmode: boolean}) => (props.darkmode ? 'grey' : 'white')};
   z-index: 3;
   @media screen and (max-width: 1024px) {
     margin-top: 6vh;
@@ -129,10 +139,10 @@ const ControlBox = styled.div`
 const Info = styled(motion.div)`
   font-family: Rubik;
   font-weight: bold;
-  color: ${props => (props.darkMode ? 'white' : 'black')};
-  background-color: ${props => (props.darkMode ? '150' : null)};
-  font-color: ${props => (props.darkMode ? 'grey' : 'white')};
-  border: 1px solid ${props => props.darkMode ? 'white' : 'grey'};
+  color: ${(props: {darkmode: boolean}) => (props.darkmode ? 'white' : 'black')};
+  background-color: ${(props: {darkmode: boolean}) => (props.darkmode ? '150' : null)};
+  font-color: ${(props: {darkmode: boolean}) => (props.darkmode ? 'grey' : 'white')};
+  border: 1px solid ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'grey'};
   padding: 25px 80px;
 `;
 const infoAnimation = {
