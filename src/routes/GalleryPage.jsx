@@ -6,8 +6,8 @@ import styled from 'styled-components';
 import { motion, useAnimation } from 'framer-motion';
 
 import Button from '../assets/buttons/Button.jsx';
-import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR.jsx';
-import P5_PLANE from '../components/p5/P5_PLANE.jsx';
+import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
+import P5_PLANE from '../components/p5/P5_PLANE';
 import P5_LOADER from '../components/p5/P5_LOADER.jsx';
 import P5_ANJA from '../components/p5/P5_ANJA.jsx';
 import P5_GEOSTORM from '../components/p5/P5_GEOSTORM.jsx';

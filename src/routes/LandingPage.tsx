@@ -3,10 +3,10 @@ import { FC, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-import AboutCard from '../components/molecules/AboutCard.js';
-import NameCard from '../components/molecules/NameCard.js';
-import LinkButton from '../assets/buttons/LinkButton.tsx';
-import P5_PLANE from '../components/p5/P5_PLANE.js';
+import AboutCard from '../components/molecules/AboutCard';
+import NameCard from '../components/molecules/NameCard';
+import LinkButton from '../assets/buttons/LinkButton';
+import P5_PLANE from '../components/p5/P5_PLANE';
 
 interface Props {
   setEnterClicked: (open: boolean) => void,
