@@ -48,11 +48,9 @@ const LinkButton: FC<Props> = ({
   );
 };
 
-interface LinkButtonProps {
-  padding: boolean,
-};
-const LinkStyle = styled(motion(Link))<LinkButtonProps>`
-  padding: ${props => props.padding ? '1vh' : '0'} ;
+
+const LinkStyle = styled(motion(Link))`
+  padding: ${(props: {padding: boolean}) => props.padding ? '1vh' : '0'} ;
   font-size: 2rem;
 `;
 interface ButtonProps {
@@ -60,18 +58,18 @@ interface ButtonProps {
   darkMode: boolean,
 };
 const Button = styled.button<ButtonProps>`
-  padding: ${props => props.buttonSize === 'large' ? '25px 80px' : '1em'};
+  padding: ${(props: {buttonSize: string}) => props.buttonSize === 'large' ? '25px 80px' : '1em'};
   font-family: var(--font-family-rubik);
-  font-size: ${props => props.buttonSize === 'large' ? '1.5rem' : '0.8rem'};
+  font-size: ${(props: {buttonSize: string}) => props.buttonSize === 'large' ? '1.5rem' : '0.8rem'};
   font-weight: 900;
   background: transparent;
   outline: none !important;
   cursor: pointer;
   position: relative;
   display: inline-block;
-  border: 1px solid ${props => props.darkMode ? 'white' : 'black'};
+  border: 1px solid ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
   z-index: 1;
-  color: ${props => props.darkMode ? 'white' : 'black'};
+  color: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
 
   &:after {
     position: absolute;
@@ -83,21 +81,21 @@ const Button = styled.button<ButtonProps>`
     direction: rtl;
     z-index: -1;
     background: black;
-    color:  ${props => props.darkMode ? 'black' : 'white'};
+    color:  ${(props: {darkmode: boolean}) => props.darkmode ? 'black' : 'white'};
     transition: all 0.15s ease;
   }
 
   &:hover {
-    background: ${props => props.darkMode ? 'white': 'black'};
-    color:  ${props => props.darkMode ? 'white' : 'white'};
-    border: 1px solid ${props => props.darkMode ? 'white' : 'black'};
+    background: ${(props: {darkmode: boolean}) => props.darkmode ? 'white': 'black'};
+    color:  ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'white'};
+    border: 1px solid ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
   }
 
   &:hover:after {
     left: auto;
     right: 0;
     width: 100%;
-    color: ${props => props.darkMode ? 'black' : 'white'};
+    color: ${(props: {darkmode: boolean}) => props.darkmode ? 'black' : 'white'};
   }
 `;
 

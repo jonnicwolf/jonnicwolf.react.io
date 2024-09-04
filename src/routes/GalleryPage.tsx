@@ -1,17 +1,17 @@
 import { FC, useState, useEffect, useMemo, useContext } from 'react';
-import { DarkmodeContext } from '../Darkmode.tsx';
+import { DarkmodeContext } from '../Darkmode';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSwipeable } from 'react-swipeable';
 // @ts-ignore
 import styled from 'styled-components';
 import { motion, useAnimation } from 'framer-motion';
 
-import Button from '../assets/buttons/Button.tsx';
+import Button from '../assets/buttons/Button';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
 import P5_PLANE from '../components/p5/P5_PLANE';
 import P5_LOADER from '../components/p5/P5_LOADER';
 import P5_ANJA from '../components/p5/P5_ANJA';
-import P5_GEOSTORM from '../components/p5/P5_GEOSTORM.tsx';
+import P5_GEOSTORM from '../components/p5/P5_GEOSTORM';
 
 interface P5Props {
   strokeColor: number,

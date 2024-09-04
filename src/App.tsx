@@ -1,6 +1,7 @@
 import { FC, lazy, Suspense, useState, useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { DarkmodeContext, DarkmodeProvider } from './Darkmode';
+// @ts-ignore
 import styled from 'styled-components';
 
 import ScrollToTop from './components/utils/ScrollToTop';
@@ -28,7 +29,7 @@ const App: FC = () => {
       {!isMobile && <NavBar />}
 
     <ScrollToTop />
-      <Suspense fallback={<Loader strokeColor={150}/>} >
+      <Suspense fallback={<Loader strokeColor={150} />} >
         <Routes>
           <Route path='/' element={<ProjectPage setEnterClicked={setEnterClicked} />} />
           <Route path='/gallery' element={<GalleryPage/>} />
@@ -42,7 +43,7 @@ const App: FC = () => {
 
 const Container = styled.div<StyleProps>`
   overflow-x: hidden;
-  background: ${props => props.darkmode ? '#5c5c5b' : '#fffcf5'};
+  background: ${(props: {darkmode: boolean}) => props.darkmode ? '#5c5c5b' : '#fffcf5'};
 `;
 
 export default function ContextApp (): JSX.Element {

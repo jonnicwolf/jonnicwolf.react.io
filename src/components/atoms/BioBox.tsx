@@ -1,9 +1,10 @@
-import React from 'react';
+import { FC } from 'react';
+// @ts-ignore
 import styled from 'styled-components';
 
 import Socials from './Socials';
 
-const BioBox = () => {
+const BioBox: FC = () => {
   return (
     <Container>
       <PermanentMarkerText>

@@ -1,6 +1,7 @@
 import React, { FC, useContext } from 'react';
 import { DarkmodeContext } from '../../Darkmode';
 import { Link, useLocation } from 'react-router-dom';
+// @ts-ignore
 import styled from 'styled-components';
 
 import LinkButton from '../../assets/buttons/LinkButton';
@@ -24,7 +25,11 @@ const NavBar: FC = () => {
       </Fezz>
 
       <DarkModeButton />
-      <LinkButton subDirectory={'/gallery'} textContent={'GALLERY'} fontSize padding />
+      <LinkButton 
+        subDirectory={'/gallery'}
+        textContent={'GALLERY'}
+        padding
+        onClick={function (): void | null { throw new Error('Function not implemented.'); } } buttonSize={''} isScaleAnimation={null} />
     </NavbarContainer>
   );
 };
@@ -54,12 +59,12 @@ const RampartOneText = styled.p`
   font-weight: var(--font-weight-normal);
   font-size: 2.5rem;
   margin: 0;
-  color: ${props => props.darkMode ? 'white' : 'black'};
+  color: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
 `;
 const PageMarker = styled.h3`
   font-family: Rubik;
   font-size: 1.2rem;
-  color: ${props => props.darkMode ? 'white' : 'black'};
+  color: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
 `;
 
 export default NavBar;
