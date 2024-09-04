@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import LandingPage from './LandingPage';
 import ProjectCard from '@/components/molecules/ProjectCard';
-import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
+import P5_LORENZ_ATTRACTOR from '@/components/p5/P5_LORENZ_ATTRACTOR';
 
 import EsperiCover from '../components/molecules/EsperiCover';
 import SCDCover from '../components/molecules/SCDCover';

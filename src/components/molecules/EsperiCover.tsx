@@ -1,9 +1,14 @@
-import React from 'react';
+import { FC } from 'react';
+// @ts-ignore
 import styled, { keyframes } from 'styled-components';
 
 import Eye from './Eye.jsx';
 
-export default function EsperiCover ({ setter }) {
+interface Props {
+  setter: (value: boolean) => void
+};
+
+const EsperiCover: FC<Props> = ({ setter }) => {
   function onMouseEnter () {
     setter(true);
   };
@@ -73,3 +78,5 @@ const Title = styled.h1`
     font-size: 4rem;
   }
 `;
+
+export default EsperiCover;
