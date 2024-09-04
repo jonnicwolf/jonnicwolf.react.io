@@ -1,8 +1,14 @@
-import React from 'react';
+import { FC } from 'react';
+// @ts-ignore
 import styled from 'styled-components';
 import LinkButton from '../../assets/buttons/LinkButton';
 
-export default function BioCard ({ viewSetter, darkmode }) {
+interface Props {
+  viewSetter: (value: string) => void,
+  darkmode: boolean,
+}
+
+const BioCard: FC<Props> = ({ viewSetter, darkmode }) => {
   const headshot = 'https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/kzdwwh2b4yepik7c5amm';
 
   return (
@@ -28,17 +34,17 @@ export default function BioCard ({ viewSetter, darkmode }) {
 
         <Buttons>
           <LinkButton
-            onClick={()=> viewSetter('contact')}
+            onClick={() => viewSetter('contact')}
             textContent='GET IN TOUCH'
-            isScaleAnimation />
+            isScaleAnimation padding={false} buttonSize={''} subDirectory={''} />
           <LinkButton
-            onClick={()=> viewSetter('exp')}
+            onClick={() => viewSetter('exp')}
             textContent='WORK HISTORY'
-            isScaleAnimation />
+            isScaleAnimation padding={false} buttonSize={''} subDirectory={''} />
           <LinkButton
-            onClick={()=> viewSetter('tech')}
+            onClick={() => viewSetter('tech')}
             textContent='TECH'
-            isScaleAnimation />
+            isScaleAnimation padding={false} buttonSize={''} subDirectory={''} />
         </Buttons>
       </BioContainer>
     </Wrap>
@@ -99,3 +105,5 @@ const Buttons = styled.div`
     display: none;
   }
 `;
+
+export default BioCard;

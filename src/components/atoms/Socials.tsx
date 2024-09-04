@@ -48,7 +48,6 @@ const items = {
     transition: { when: 'afterChildren' }
   },
   show: (i: number) => ({
-    
     y: 0,
     transition: {
       delay: i * 1.1,
