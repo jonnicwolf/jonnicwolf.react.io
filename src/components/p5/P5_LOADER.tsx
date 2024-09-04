@@ -1,5 +1,4 @@
-import { FC, useEffect, useRef, useCallback, useState, useContext } from 'react';
-import { DarkmodeContext } from '../../Darkmode';
+import { FC, useEffect, useRef, useCallback, useState } from 'react';
 // @ts-ignore
 import styled from 'styled-components';
 import p5 from 'p5';
@@ -9,12 +8,11 @@ import AfterImageControls from '../atoms/AfterImageControls';
 interface Props {
   strokeColor: number,
   controls: boolean,
-}
+};
 
 const P5_LOADER: FC<Props> = ({ strokeColor, controls }) => {
   const [mod, setMod] = useState<number>(0.1);
   const sketch_ref = useRef();
-  const { darkmode } = useContext(DarkmodeContext);
 
   // @ts-ignore
   const sketch = useCallback((p) => {
@@ -49,7 +47,7 @@ const P5_LOADER: FC<Props> = ({ strokeColor, controls }) => {
 
   return (
     <Container ref={sketch_ref}>
-      {controls && <AfterImageControls darkMode={darkmode} mod={mod} modSetter={setMod} />}
+      {controls && <AfterImageControls mod={mod} modSetter={setMod} />}
     </Container>
   );
 };

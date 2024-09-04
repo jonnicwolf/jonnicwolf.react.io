@@ -1,32 +1,39 @@
-import React, { useEffect, useRef, useCallback } from 'react';
+import { FC, useEffect, useRef, useCallback } from 'react';
+// @ts-ignore
 import styled, { keyframes } from 'styled-components';
 import p5 from 'p5';
 
-const P5_ANJA = ({ strokeColor, isMobile }) => {
+interface Props {
+  strokeColor: number,
+  isMobile: boolean,
+};
+
+const P5_ANJA: FC<Props> = ({ strokeColor, isMobile }) => {
   const sketch_ref = useRef();
 
+  // @ts-ignore
   const sketch = useCallback((p) => {
-    const width = 150;
-    const height = 800;
+    const width: number = 150;
+    const height: number = 800;
 
-    const lid_w = width / 12;
+    const lid_w: number = width / 12;
 
-    let angleA = 0;
-    let angleB = 0;
-    let angleC= 0;
-    let reverse = 0;
+    let angleA: number = 0;
+    let angleB: number = 0;
+    let angleC: number = 0;
+    let reverse: number = 0;
 
     p.setup = () => {
       p.createCanvas(width, height, p.WEBGL);
     };
 
     p.draw = () => {
-      const irisMode = isMobile
+      const irisMode: {x: number, y: number, mode: string} = isMobile
         ? {x: p.mouseX, y: p.mouseY, mode: 'mouse'}
         : {x: p.accelerationX, y: p.accelerationY, mode: 'tilt'};
       const {x,y} = irisMode;
-      const irisX = p.map(x, 0, p.width, (p.width / 60) * -1, p.width / 60);
-      const irisY = p.map(y, 0, p.height, (p.width / 24) * -1, p.height / 36);
+      const irisX: number = p.map(x, 0, p.width, (p.width / 60) * -1, p.width / 60);
+      const irisY: number = p.map(y, 0, p.height, (p.width / 24) * -1, p.height / 36);
       p.background(0, 0.9);
 
       p.push();

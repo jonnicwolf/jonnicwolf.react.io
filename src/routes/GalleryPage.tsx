@@ -9,12 +9,12 @@ import { motion, useAnimation } from 'framer-motion';
 import Button from '../assets/buttons/Button.tsx';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
 import P5_PLANE from '../components/p5/P5_PLANE';
-import P5_LOADER from '../components/p5/P5_LOADER.tsx';
+import P5_LOADER from '../components/p5/P5_LOADER';
 import P5_ANJA from '../components/p5/P5_ANJA';
-import P5_GEOSTORM from '../components/p5/P5_GEOSTORM';
+import P5_GEOSTORM from '../components/p5/P5_GEOSTORM.tsx';
 
 const GalleryPage: FC = () => {
-  const [index, setIndex] = useState<boolean>(0);
+  const [index, setIndex] = useState<number>(0);
   const { darkmode } = useContext(DarkmodeContext);
   const { projectName } = useParams();
   const navigate = useNavigate();
