@@ -1,9 +1,14 @@
-import React from 'react';
+import { FC } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 import P5_EYE from '../p5/P5_EYE';
 
-export default function Eye({ width, height }) {
+interface Props {
+  width: number,
+  height: number,
+};
+
+const Eye: FC<Props> = ({ width, height }) => {
   return (
     <EyeWrapper>
         <EyeLashContainer>
@@ -73,3 +78,5 @@ const EyeLash5 = styled(EyeLash)`
   transform: rotate(-50deg) translateX(-7px);
   width: 18px;
 `;
+
+export default Eye;
