@@ -1,9 +1,10 @@
-import React from 'react';
+import { FC } from 'react';
+// @ts-ignore
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import '../../assets/fonts/fonts.css';
 
-const NameCard = () => {
+const NameCard: FC = () => {
   return (
     <Container
       variants={fadeIn}
@@ -45,7 +46,7 @@ const items = {
   hidden: {
     y: -50,
   },
-  show: (i) => ({
+  show: (i: number) => ({
     y: 0,
     transition: {
       delay: i * 0.2,
@@ -78,7 +79,6 @@ const FSD = styled(motion.p)`
   font-family: Michroma;
   font-size: 1.5rem;
   font-weight: bold;
-  // letter-spacing: 0.10rem;
   @media (max-width: 530px) {
     font-size: 15px;
   }

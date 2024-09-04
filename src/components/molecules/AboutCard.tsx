@@ -9,10 +9,6 @@ import TechnologyCard from './TechnologyCard';
 import BioCard from './BioCard';
 import ExpCard from './ExpCard';
 
-interface ContainerProps {
-  darkmode: boolean,
-};
-
 const AboutCard: FC = () => {
   const [view, setView] = useState<string>('');
   const { darkmode } = useContext(DarkmodeContext);
@@ -44,7 +40,7 @@ const fadeIn = keyframes`
   to { opacity: 1; }
 `;
 
-const Container = styled(motion.div)<ContainerProps>`
+const Container = styled(motion.div)`
   align-items: center;
   display: flex;
   flex-direction: column;

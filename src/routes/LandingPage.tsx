@@ -1,23 +1,15 @@
 import { FC, useState, useEffect } from 'react';
+// @ts-ignore
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 import AboutCard from '../components/molecules/AboutCard.js';
-import NameCard from '../components/molecules/NameCard.jsx';
+import NameCard from '../components/molecules/NameCard.js';
 import LinkButton from '../assets/buttons/LinkButton.tsx';
 import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 
 interface Props {
   setEnterClicked: (open: boolean) => void,
-};
-
-interface BackgroundProps {
-  isClicked: boolean,
-  showAbout: boolean,
-};
-
-interface PProjectProps {
-  isClicked: boolean,
 };
 
 const LandingPage: FC<Props> = ({ setEnterClicked }) => {
@@ -74,7 +66,9 @@ const LandingPage: FC<Props> = ({ setEnterClicked }) => {
                 <LinkButton
                   textContent='ENTER'
                   buttonSize={'large'}
-                  isScaleAnimation={true} />
+                  isScaleAnimation={true} padding={false} onClick={function (): void | null {
+                throw new Error('Function not implemented.');
+              } } subDirectory={''} />
               </EnterButton>
 
               <PProject isclicked={isClicked}>
@@ -86,9 +80,9 @@ const LandingPage: FC<Props> = ({ setEnterClicked }) => {
   );
 };
 
-const Background = styled(motion.div)<BackgroundProps>`
-  background-image: radial-gradient(circle 750px, white, ${props => props.showAbout ? `rgb(255,255,255)`: `rgb(42, 191, 250)` });
-  transform: translateY(${props => props.isclicked ? '100px': '-100px'});
+const Background = styled(motion.div)`
+  background-image: radial-gradient(circle 750px, white, ${(props: { showAbout: boolean}) => props.showAbout ? `rgb(255,255,255)`: `rgb(42, 191, 250)` });
+  transform: translateY(${(props: { isclicked: boolean }) => props.isclicked ? '100px': '-100px'});
 `;
 const LandingPageContainer = styled.div`
   align-items: center;
@@ -102,11 +96,11 @@ const LandingPageContainer = styled.div`
 const LandingPageItem = styled.div`
   padding-bottom: 2em;
 `;
-const PProject = styled(LandingPageItem)<PProjectProps>`
+const PProject = styled(LandingPageItem)`
   height: 100vh;
   width: 100vw;
   z-index: 1;
-  opacity: ${props => props.isclicked ? 0 : 1};
+  opacity: ${(props: { isclicked: boolean }) => props.isclicked ? 0 : 1};
 `;
 const EnterButton = styled(LandingPageItem)`
   z-index: 3;
