@@ -2,7 +2,7 @@ import { FC, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-import AboutCard from '../components/molecules/AboutCard.jsx';
+import AboutCard from '../components/molecules/AboutCard.js';
 import NameCard from '../components/molecules/NameCard.jsx';
 import LinkButton from '../assets/buttons/LinkButton.tsx';
 import P5_PLANE from '../components/p5/P5_PLANE.jsx';
@@ -18,9 +18,7 @@ interface BackgroundProps {
 
 interface PProjectProps {
   isClicked: boolean,
-}
-
-
+};
 
 const LandingPage: FC<Props> = ({ setEnterClicked }) => {
   const [isClicked, setIsClicked] = useState<boolean>(false);

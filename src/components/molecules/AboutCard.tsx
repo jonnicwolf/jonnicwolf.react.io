@@ -1,18 +1,22 @@
-import React, { useState, useContext } from 'react';
+import { FC, useState, useContext } from 'react';
 import { DarkmodeContext } from '../../Darkmode';
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import ContactMe from '../molecules/ContactMe';
-import TechnologyCard from '../molecules/TechnologyCard';
-import BioCard from '../molecules/BioCard';
-import ExpCard from '../molecules/ExpCard';
+import ContactMe from './ContactMe';
+import TechnologyCard from './TechnologyCard';
+import BioCard from './BioCard';
+import ExpCard from './ExpCard';
 
-export default function AboutCard () {
-  const [view, setView] = useState(null);
+interface ContainerProps {
+  darkmode: boolean,
+};
+
+const AboutCard: FC = () => {
+  const [view, setView] = useState<string>('');
   const { darkmode } = useContext(DarkmodeContext);
 
-  function renderView (view) {
+  function renderView (view: string) {
     switch (view) {
       case 'bio':
         return <BioCard viewSetter={setView} />
@@ -39,7 +43,7 @@ const fadeIn = keyframes`
   to { opacity: 1; }
 `;
 
-const Container = styled(motion.div)`
+const Container = styled(motion.div)<ContainerProps>`
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -58,3 +62,5 @@ const Container = styled(motion.div)`
     width: 80vw;
   };
 `;
+
+export default AboutCard;
