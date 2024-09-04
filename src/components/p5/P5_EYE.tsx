@@ -1,23 +1,29 @@
-import React, { useEffect, useRef, useCallback } from 'react';
+import { FC, useEffect, useRef, useCallback } from 'react';
 import p5 from 'p5';
 
-const P5_EYE = ({ width, height, tracksMouse }) => {
+interface Props {
+  width: number,
+  height: number,
+  tracksMouse: boolean
+};
+
+const P5_EYE: FC<Props> = ({ width, height, tracksMouse }) => {
   const sketch_ref = useRef();
 
+  // @ts-ignore
   const sketch = useCallback((p) => {
-    let angleA = 0;
-    let angleB = 0;
-    let angleC = 0;
-    //let reverse = 0;
-    const lid_w = width / 12;
+    let angleA: number = 0;
+    let angleB: number = 0;
+    let angleC: number = 0;
+    const lid_w: number = width / 12;
 
     p.setup = () => {
       p.createCanvas(width, height, p.WEBGL);
     };
 
     p.draw = () => {
-      const irisX = p.map(tracksMouse ? p.mouseX : 50, 0, width, (width / 60)*-1, p.width / 60);
-      const irisY = p.map(tracksMouse ? p.mouseY : 60, 0, height, (width / 24)*-1, p.height / 36);
+      const irisX: number = p.map(tracksMouse ? p.mouseX : 50, 0, width, (width / 60)*-1, p.width / 60);
+      const irisY: number = p.map(tracksMouse ? p.mouseY : 60, 0, height, (width / 24)*-1, p.height / 36);
       p.background(0, 0.9);
 
       p.push();
@@ -73,7 +79,6 @@ const P5_EYE = ({ width, height, tracksMouse }) => {
       angleA += 0.1;
       angleB -= 0.1;
       angleC += 0.1;
-      //reverse -= 0.01;
 
       p.strokeWeight(1);
     };
@@ -84,6 +89,7 @@ const P5_EYE = ({ width, height, tracksMouse }) => {
     return () => p5Canvas.remove();
   }, [sketch]);
 
+  // @ts-ignore
   return <div ref={sketch_ref} />;
 };
 

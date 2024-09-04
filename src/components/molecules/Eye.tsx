@@ -1,4 +1,5 @@
 import { FC } from 'react';
+//@ts-ignore
 import styled, { keyframes } from 'styled-components';
 
 import P5_EYE from '../p5/P5_EYE';
@@ -20,7 +21,7 @@ const Eye: FC<Props> = ({ width, height }) => {
         </EyeLashContainer>
 
         <EyeContainer>
-          <P5_EYE width={width} height={height}/>
+          <P5_EYE width={width} height={height} tracksMouse={false} />
         </EyeContainer>
       </EyeWrapper>
   );
