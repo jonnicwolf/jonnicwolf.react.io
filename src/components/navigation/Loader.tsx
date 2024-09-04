@@ -1,13 +1,18 @@
-import React from 'react';
+import { FC } from 'react';
+// @ts-ignore
 import styled from 'styled-components';
 
 import P5_LOADER from '../p5/P5_LOADER';
 
-const Loader = ({ strokeColor }) => {
+interface Props {
+  strokeColor: number,
+};
+
+const Loader: FC<Props> = ({ strokeColor }) => {
   return (
     <Container>
       <P5Container>
-        <P5_LOADER strokeColor={strokeColor} />
+        <P5_LOADER strokeColor={strokeColor} controls={false} />
       </P5Container>
       <Loading>LOADING</Loading>
     </Container>
