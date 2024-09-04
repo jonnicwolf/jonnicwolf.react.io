@@ -1,23 +1,29 @@
-import React, { useEffect, useRef, useCallback, useState } from 'react';
+import { FC, useEffect, useRef, useCallback, useState } from 'react';
 import p5 from 'p5';
 import styled from 'styled-components';
 
 import ChaosTheoryForm from '../atoms/ChaosTheoryForm';
 
-const P5_LORENZ_ATTRACTOR = ({ strokeColor, showControls }) => {
-  const [sigma, setSigma] = useState(17);
-  const [rho, setRho] = useState(63);
-  const [beta, setBeta] = useState(9);
-  const [delta, setDelta] = useState(1);
+interface Props {
+  strokeColor: string,
+  showControls: boolean,
+};
+
+const P5_LORENZ_ATTRACTOR: FC<Props> = ({ strokeColor, showControls }) => {
+  const [sigma, setSigma] = useState<number>(17);
+  const [rho, setRho] = useState<number>(63);
+  const [beta, setBeta] = useState<number>(9);
+  const [delta, setDelta] = useState<number>(1);
 
   const vars = {sigma, rho, beta, delta};
   const setters = {setSigma, setRho, setBeta, setDelta};
 
   const sketch_ref = useRef();
+  // @ts-ignore
   const sketch = useCallback((p) => {
-    let x = 10;
-    let y = 0;
-    let z = 1;
+    let x: number = 10;
+    let y: number = 0;
+    let z: number = 1;
     let points = [];
 
     p.setup = () => {
@@ -27,14 +33,15 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor, showControls }) => {
     p.draw = () => {
       p.background(0, 0, 0, 0);
 
-      let dt = 0.005 * delta;
-      let dx = (sigma * (y - x)) * dt;
-      let dy = (x * (rho - z) - y) * dt;
-      let dz = (x * y - beta * z) * dt;
+      let dt: number = 0.005 * delta;
+      let dx: number = (sigma * (y - x)) * dt;
+      let dy: number = (x * (rho - z) - y) * dt;
+      let dz: number = (x * y - beta * z) * dt;
 
       x += dx;
       y += dy;
       z += dz;
+      // @ts-ignore
       points.push(new p5.Vector(x, y, z));
 
       p.scale(12);
@@ -50,7 +57,7 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor, showControls }) => {
 
       if (points.length > 1500) points.shift();
 
-      const rotationSpeed = 0.0019;
+      const rotationSpeed: number = 0.0019;
       p.rotateX(p.frameCount * rotationSpeed * 0.7);
       p.rotateY(p.frameCount * rotationSpeed);
       p.rotateZ(p.frameCount * rotationSpeed * 0.3);
@@ -76,7 +83,7 @@ const P5_LORENZ_ATTRACTOR = ({ strokeColor, showControls }) => {
 };
 
 const CT = styled.div`
-  transform: translateY(${props => props.showControls ? '20px' : 'none' });
+  transform: translateY(${(props: {showControls: boolean}) => props.showControls ? '20px' : 'none' });
   position: fixed;
   display: flex;
   flex-direction: column;

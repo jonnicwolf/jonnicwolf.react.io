@@ -46,6 +46,7 @@ const ProjectCard: FC<Props> = ({
           apis={apis}
           descriptions={descriptions}
           devicons={devicons} image={''} />
+          //@ts-ignore
         : <Cover setter={setShowMore} /> }
     </Container>
   ); 
