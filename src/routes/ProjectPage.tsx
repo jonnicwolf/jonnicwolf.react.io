@@ -3,15 +3,15 @@ import { FC } from 'react';
 import styled from 'styled-components';
 
 import LandingPage from './LandingPage';
-import ProjectCard from '@/components/molecules/ProjectCard';
-import P5_LORENZ_ATTRACTOR from '@/components/p5/P5_LORENZ_ATTRACTOR';
+import ProjectCard from '../components/molecules/ProjectCard';
+import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
 
 import EsperiCover from '../components/molecules/EsperiCover';
 import SCDCover from '../components/molecules/SCDCover';
 
 interface Props {
   setEnterClicked: (open: boolean) => void,
-}
+};
 
 const ProjectPage: FC<Props> = ({ setEnterClicked }) => {
   const [

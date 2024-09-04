@@ -1,7 +1,12 @@
-import React from 'react';
+import { FC } from 'react';
+// @ts-ignore
 import styled from 'styled-components';
 
-export default function SCDCover ({ setter }) {
+interface Props {
+  setter: (value: boolean) => void,
+}
+
+const SCDCover: FC<Props> = ({ setter }) => {
   function onMouseEnter () {
     setter(true);
   };
@@ -22,3 +27,5 @@ const Img = styled.img`
   height: 100%;
   width: 100%;
 `;
+
+export default SCDCover;

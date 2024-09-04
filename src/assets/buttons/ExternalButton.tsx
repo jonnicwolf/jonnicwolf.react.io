@@ -2,7 +2,7 @@ import { FC, useContext } from 'react';
 // @ts-ignore
 import styled from 'styled-components';
 
-import { DarkmodeContext } from '@/Darkmode'
+import { DarkmodeContext } from '../../Darkmode'
 
 interface Props {
   link: string,

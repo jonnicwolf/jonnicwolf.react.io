@@ -2,7 +2,7 @@ import { FC } from 'react';
 // @ts-ignore
 import styled, { keyframes } from 'styled-components';
 
-import Eye from './Eye.js';
+import Eye from './Eye';
 
 interface Props {
   setter: (value: boolean) => void
