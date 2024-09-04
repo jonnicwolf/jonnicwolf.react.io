@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import styled from 'styled-components';
 
 import LandingPage from './LandingPage';
@@ -8,7 +8,11 @@ import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
 import EsperiCover from '../components/molecules/EsperiCover';
 import SCDCover from '../components/molecules/SCDCover';
 
-export default function ProjectPage ({ setEnterClicked }) {
+interface Props {
+  setEnterClicked: (open: boolean) => void,
+}
+
+const ProjectPage: FC<Props> = ({ setEnterClicked }) => {
   const [
     javascript,
     typescript,
@@ -86,3 +90,5 @@ const ProjectList = styled.div`
     padding-top: 100px;
   }
 `;
+
+export default ProjectPage;

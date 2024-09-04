@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { FC, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -7,10 +7,25 @@ import NameCard from '../components/molecules/NameCard.jsx';
 import LinkButton from '../assets/buttons/LinkButton.tsx';
 import P5_PLANE from '../components/p5/P5_PLANE.jsx';
 
-export default function LandingPage ({ setEnterClicked }) {
-  const [isClicked, setIsClicked] = useState(false);
-  const [showAbout, setShowAbout] = useState(false);
-  const isMobile = window.innerWidth < 720;
+interface Props {
+  setEnterClicked: (open: boolean) => void,
+};
+
+interface BackgroundProps {
+  isClicked: boolean,
+  showAbout: boolean,
+};
+
+interface PProjectProps {
+  isClicked: boolean,
+}
+
+
+
+const LandingPage: FC<Props> = ({ setEnterClicked }) => {
+  const [isClicked, setIsClicked] = useState<boolean>(false);
+  const [showAbout, setShowAbout] = useState<boolean>(false);
+  const isMobile: boolean = window.innerWidth < 720;
 
   // Lock scroll when landing page is at full size
   useEffect(() => {
@@ -23,7 +38,7 @@ export default function LandingPage ({ setEnterClicked }) {
     };
   }, [isClicked]);
 
-  const handleClick = () => {
+  const handleClick = (): void => {
     setIsClicked(!isClicked);
     setEnterClicked(true);
     setTimeout(() => {
@@ -73,7 +88,7 @@ export default function LandingPage ({ setEnterClicked }) {
   );
 };
 
-const Background = styled(motion.div)`
+const Background = styled(motion.div)<BackgroundProps>`
   background-image: radial-gradient(circle 750px, white, ${props => props.showAbout ? `rgb(255,255,255)`: `rgb(42, 191, 250)` });
   transform: translateY(${props => props.isclicked ? '100px': '-100px'});
 `;
@@ -89,7 +104,7 @@ const LandingPageContainer = styled.div`
 const LandingPageItem = styled.div`
   padding-bottom: 2em;
 `;
-const PProject = styled(LandingPageItem)`
+const PProject = styled(LandingPageItem)<PProjectProps>`
   height: 100vh;
   width: 100vw;
   z-index: 1;
@@ -99,3 +114,5 @@ const EnterButton = styled(LandingPageItem)`
   z-index: 3;
   transform: translateY(5vh);
 `;
+
+export default LandingPage;
