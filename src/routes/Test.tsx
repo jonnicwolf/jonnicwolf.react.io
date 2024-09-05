@@ -2,10 +2,14 @@ import { FC } from 'react';
 // @ts-ignore
 import styled from 'styled-components';
 
+import TextField from '../components/atoms/TextField';
+
 const Test: FC = () => {
   return (
     <Container>
-      WELL HELLO MOTHERFUCKER, NOTHING TO SEE HERE
+      {/* WELL HELLO MOTHERFUCKER, NOTHING TO SEE HERE */}
+      <TextField />
+      <TextField />
     </Container>
   );
 };
