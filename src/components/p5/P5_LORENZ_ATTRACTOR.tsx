@@ -25,7 +25,7 @@ const P5_LORENZ_ATTRACTOR: FC<Props> = ({ strokeColor, showControls }) => {
     let x: number = 10;
     let y: number = 0;
     let z: number = 1;
-    let points = [];
+    let points: p5.Vector[] = [];
 
     p.setup = () => {
       p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
