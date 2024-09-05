@@ -1,4 +1,4 @@
-import { FC, ReactElement, cloneElement, useState } from 'react';
+import { FC, ReactElement, createElement, useState } from 'react';
 // @ts-ignore
 import styled, { keyframes } from 'styled-components';
 
@@ -46,7 +46,9 @@ const ProjectCard: FC<Props> = ({
           apis={apis}
           descriptions={descriptions}
           devicons={devicons} image={''} />
-        : cloneElement(Cover, { setter: setShowMore })}
+          // @ts-ignore !!!! FIX !!!!!
+        : createElement(Cover, {setter: setShowMore})
+        }
     </Container>
   );
 };

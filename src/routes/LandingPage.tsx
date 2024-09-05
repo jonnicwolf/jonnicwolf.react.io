@@ -66,13 +66,11 @@ const LandingPage: FC<Props> = ({ setEnterClicked }) => {
                 <LinkButton
                   textContent='ENTER'
                   buttonSize={'large'}
-                  isScaleAnimation={true} padding={false} onClick={function (): void | null {
-                throw new Error('Function not implemented.');
-              } } subDirectory={''} />
+                  isScaleAnimation={true} padding={false} onClick={handleClick} subDirectory={''} />
               </EnterButton>
 
               <PProject isclicked={isClicked}>
-                <P5_PLANE strokeColor={255} showSun={false}/>
+                <P5_PLANE strokeColor={255} showSun={false} />
               </PProject>
             </LandingPageContainer>
         }
