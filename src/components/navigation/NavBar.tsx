@@ -15,17 +15,17 @@ const NavBar: FC = () => {
     <NavbarContainer>
       <Fezz>
         <Link to='/' style={{textDecoration: 'none', color: 'black'}}>
-          <RampartOneText darkMode={darkmode}>
+          <RampartOneText darkmode={darkmode}>
             FEZZ
           </RampartOneText>
         </Link>
-        <PageMarker darkMode={darkmode}>
+        <PageMarker darkmode={darkmode}>
           | {location.toUpperCase()}
         </PageMarker>
       </Fezz>
 
       <DarkModeButton />
-      <LinkButton 
+      <LinkButton
         subDirectory={'/gallery'}
         textContent={'GALLERY'}
         padding

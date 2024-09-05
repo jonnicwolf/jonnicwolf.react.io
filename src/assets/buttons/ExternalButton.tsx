@@ -9,8 +9,8 @@ interface Props {
   text: string,
   buttonSize: string,
   buffer: boolean,
-  callback: () => void,
   fontSize: string,
+  overrideDarkmode: boolean,
 };
 
 const ExternalButton: FC<Props> = ({
@@ -18,8 +18,9 @@ const ExternalButton: FC<Props> = ({
   text,
   buttonSize,
   buffer,
-  callback,
-  fontSize }) => {
+  fontSize,
+  overrideDarkmode,
+}) => {
   const { darkmode } = useContext(DarkmodeContext);
 
   return (
@@ -27,10 +28,9 @@ const ExternalButton: FC<Props> = ({
       href={link}
       buttonSize={buttonSize}
       buffer={buffer}
-      onClick={callback}
       target='_blank'
       fontSize={fontSize}
-      darkmode={darkmode}
+      darkmode={overrideDarkmode ? false : darkmode}
       rel='noreferrer' >
       {text}
     </StyledButton>

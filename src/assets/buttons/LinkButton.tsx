@@ -1,4 +1,4 @@
-import React, { FC, useContext } from 'react';
+import { FC, useContext } from 'react';
 import { DarkmodeContext } from '../../Darkmode';
 
 import { Link } from 'react-router-dom';
@@ -37,11 +37,11 @@ const LinkButton: FC<Props> = ({
           animate={{ scaleX: 1, opacity: 1, }}
           transition={{ delay: 1, duration: 0.3 }}
           buttonSize={buttonSize}
-          darkMode={darkmode} >
+          darkmode={darkmode} >
             {textContent}</Button>
         : <Button
           buttonSize={buttonSize}
-          darkMode={darkmode} >
+          darkmode={darkmode} >
             {textContent}</Button>
       }
     </LinkStyle>

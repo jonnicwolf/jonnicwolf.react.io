@@ -51,16 +51,12 @@ const HoverCover: FC<Props> = ({
           <ExternalButton
             link={liveLink}
             text={'LIVE SITE'}
-            fontSize='1rem' buttonSize={''} buffer={false} callback={function (): void {
-              throw new Error('Function not implemented.');
-            } } />
+            fontSize='1rem' buttonSize={''} buffer={false} overrideDarkmode/>
           <ExternalButton
             link={githubLink}
             text={'GITHUB'}
             buffer={true}
-            fontSize='1rem' buttonSize={''} callback={function (): void {
-              throw new Error('Function not implemented.');
-            } } />
+            fontSize='1rem' buttonSize={''} overrideDarkmode/>
         </PaddingWrap>
       </HoverInfo>
     </Container>
@@ -89,10 +85,6 @@ const Container = styled.div`
     flex-direction: column;
     background-color: rgba(225,225,225,0.8);
     animation: ${fadeIn} 1s forwards;
-
-    @media screen and (max-width: 600px) {
-
-    }
   `;
   const PaddingWrap = styled.div`
     margin-left: -3rem;
