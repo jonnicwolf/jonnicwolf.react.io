@@ -9,7 +9,6 @@ interface Props {
   text: string,
   buttonSize: string,
   buffer: boolean,
-  callback: () => void,
   fontSize: string,
 };
 
@@ -18,7 +17,6 @@ const ExternalButton: FC<Props> = ({
   text,
   buttonSize,
   buffer,
-  callback,
   fontSize }) => {
   const { darkmode } = useContext(DarkmodeContext);
 
@@ -27,7 +25,6 @@ const ExternalButton: FC<Props> = ({
       href={link}
       buttonSize={buttonSize}
       buffer={buffer}
-      onClick={callback}
       target='_blank'
       fontSize={fontSize}
       darkmode={darkmode}
