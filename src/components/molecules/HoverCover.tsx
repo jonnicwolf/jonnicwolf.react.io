@@ -51,12 +51,12 @@ const HoverCover: FC<Props> = ({
           <ExternalButton
             link={liveLink}
             text={'LIVE SITE'}
-            fontSize='1rem' buttonSize={''} buffer={false} />
+            fontSize='1rem' buttonSize={''} buffer={false} overrideDarkmode/>
           <ExternalButton
             link={githubLink}
             text={'GITHUB'}
             buffer={true}
-            fontSize='1rem' buttonSize={''} />
+            fontSize='1rem' buttonSize={''} overrideDarkmode/>
         </PaddingWrap>
       </HoverInfo>
     </Container>
