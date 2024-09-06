@@ -45,7 +45,7 @@ const Container = styled.div`
   position: relative;
   justify-content: center;
   background-color: rgba(179, 179, 179, 0.8);
-  margin: 15px;
+  margin-top: auto;
   border-radius: 0 0 20px 20px;
 
   &::before {

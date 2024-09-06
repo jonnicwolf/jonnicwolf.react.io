@@ -74,9 +74,9 @@ const ProjectPage: FC<Props> = ({ setter, getter }) => {
 
 const Container = styled.div`
   display: flex;
-  margin-top: 5vh;
   justify-content: center;
-  height: 240vh;
+  height: 3500px;
+  padding-top: 100px;
 `;
 const Background = styled(P5_LORENZ_ATTRACTOR)`
   height: 100vh;
@@ -87,7 +87,7 @@ const ProjectList = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 20vh;
+  gap: 200px;
   position: absolute;
   z-index: ${(props: { getter: boolean }) => props.getter ? 2 : 3};
   transition: z-index 2s linear;

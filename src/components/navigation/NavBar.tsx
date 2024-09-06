@@ -43,7 +43,7 @@ const NavbarContainer = styled.div`
   justify-content: end;
   margin: 0 5vw 5vw;
   padding-inline-start: 0;
-  width: 90vw;
+  width: 97vw;
   border-bottom: 2px solid #a3a3a3;
   background-color: #fffcf5;
   position: fixed;
