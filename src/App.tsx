@@ -29,7 +29,7 @@ const App: FC = () => {
       { isMobile && <MobileNav enterClicked={enterClicked} />}
       {!isMobile && <NavBar />}
 
-    <ScrollToTop />
+      <ScrollToTop />
       <Suspense fallback={<Loader strokeColor={150} />} >
         <Routes>
           <Route path='/' element={<ProjectPage setEnterClicked={setEnterClicked} />} />
@@ -46,6 +46,9 @@ const App: FC = () => {
 const Container = styled.div<StyleProps>`
   overflow-x: hidden;
   background: ${(props: {darkmode: boolean}) => props.darkmode ? '#5c5c5b' : '#fffcf5'};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export default function ContextApp (): JSX.Element {
