@@ -5,14 +5,15 @@ import styled from 'styled-components';
 
 interface Props {
   text: string,
+  buttonSize?: string,
   onclick: () => void,
 };
 
-const Button: FC<Props> = ({ text, onclick }) => {
+const Button: FC<Props> = ({ text, buttonSize, onclick }) => {
   const { darkmode } = useContext(DarkmodeContext);
 
   return (
-    <StyledButton darkMode={darkmode} onClick={onclick}>
+    <StyledButton darkmode={darkmode} onClick={onclick} buttonSize={buttonSize}>
       {text}
     </StyledButton>
   );

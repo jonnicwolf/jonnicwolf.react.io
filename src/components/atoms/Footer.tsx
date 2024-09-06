@@ -30,6 +30,7 @@ const Footer: FC = () => {
 
         <Copyright darkmode={darkmode}>Copyright &#169; 2024 Jonathan Narine</Copyright>
       </Content>
+
       <ButtonWrap>
         <ToTopButton text='&#8593;' onclick={scrollToTop} />
       </ButtonWrap>
@@ -40,7 +41,7 @@ const Footer: FC = () => {
 const Container = styled.div`
   display: flex;
   height: 200px;
-  width: 98%;
+  width: 97%;
   position: relative;
   justify-content: center;
   background-color: rgba(179, 179, 179, 0.8);
