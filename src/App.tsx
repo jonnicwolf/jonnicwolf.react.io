@@ -8,6 +8,7 @@ import ScrollToTop from './components/utils/ScrollToTop';
 import Loader from './components/navigation/Loader';
 import NavBar from './components/navigation/NavBar';
 import MobileNav from './components/navigation/MobileNav';
+import Footer from './components/atoms/Footer';
 
 import Test from './routes/Test';
 const ProjectPage = lazy(() => import('./routes/ProjectPage'));
@@ -37,6 +38,7 @@ const App: FC = () => {
           <Route path='/test' element={<Test />} />
         </Routes>
       </Suspense>
+      {enterClicked && <Footer />}
     </Container>
   );
 };
