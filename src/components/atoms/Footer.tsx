@@ -4,9 +4,17 @@ import { DarkmodeContext } from '../../Darkmode';
 import styled from 'styled-components';
 
 import Socials from './Socials';
+import Button from '../../assets/buttons/Button';
 
 const Footer: FC = () => {
   const { darkmode } = useContext(DarkmodeContext);
+
+  function scrollToTop (): void {
+    document.documentElement.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
 
   return (
     <Container>
@@ -22,7 +30,9 @@ const Footer: FC = () => {
 
         <Copyright darkmode={darkmode}>Copyright &#169; 2024 Jonathan Narine</Copyright>
       </Content>
-      <ButtonWrap/>
+      <ButtonWrap>
+        <ToTopButton text='&#8593;' onclick={scrollToTop} />
+      </ButtonWrap>
     </Container>
   );
 };
@@ -34,7 +44,8 @@ const Container = styled.div`
   position: relative;
   justify-content: center;
   background-color: rgba(179, 179, 179, 0.8);
-  border-radius: 0 0 40px 40px;
+  margin: 15px;
+  border-radius: 0 0 20px 20px;
 
   &::before {
     content: '';
@@ -48,16 +59,13 @@ const Container = styled.div`
 `;
 const Dummy = styled.div`
   width: 30%;
-  border: 1px solid red;
-`
+`;
 const Content = styled.div`
-  margin: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
 `;
-const ButtonWrap = styled(Dummy)``;
   const SocialsWrap = styled.div`
     display: flex;
     align-items: center;
@@ -75,5 +83,12 @@ const Copyright = styled.div`
   font-size: 1rem;
   color: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
 `;
-
+const ButtonWrap = styled(Dummy)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const ToTopButton = styled(Button)`
+  align-self: end;
+`
 export default Footer;
