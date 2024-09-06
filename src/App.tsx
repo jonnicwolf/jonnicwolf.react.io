@@ -32,7 +32,7 @@ const App: FC = () => {
       <ScrollToTop />
       <Suspense fallback={<Loader strokeColor={150} />} >
         <Routes>
-          <Route path='/' element={<ProjectPage setEnterClicked={setEnterClicked} />} />
+          <Route path='/' element={<ProjectPage setter={setEnterClicked} getter={enterClicked} />} />
           <Route path='/gallery' element={<GalleryPage/>} />
           <Route path='/gallery/:projectName' element={<GalleryPage />} />
           <Route path='/test' element={<Test />} />

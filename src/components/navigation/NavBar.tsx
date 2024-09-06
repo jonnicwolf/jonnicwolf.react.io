@@ -41,11 +41,13 @@ const NavbarContainer = styled.div`
   list-style: none;
   column-gap: 10px;
   justify-content: end;
-  margin-right: 5vw;
-  margin-left: 5vw;
+  margin: 0 5vw 5vw;
   padding-inline-start: 0;
   width: 90vw;
   border-bottom: 2px solid #a3a3a3;
+  background-color: #fffcf5;
+  position: fixed;
+  z-index: 3;
 `;
 const Fezz = styled.div`
   margin-right: auto;

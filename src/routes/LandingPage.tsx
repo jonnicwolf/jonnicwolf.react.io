@@ -9,10 +9,10 @@ import LinkButton from '../assets/buttons/LinkButton';
 import P5_PLANE from '../components/p5/P5_PLANE';
 
 interface Props {
-  setEnterClicked: (open: boolean) => void,
+  setter: (open: boolean) => void,
 };
 
-const LandingPage: FC<Props> = ({ setEnterClicked }) => {
+const LandingPage: FC<Props> = ({ setter }) => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const [showAbout, setShowAbout] = useState<boolean>(false);
   const isMobile: boolean = window.innerWidth < 720;
@@ -30,7 +30,7 @@ const LandingPage: FC<Props> = ({ setEnterClicked }) => {
 
   const handleClick = (): void => {
     setIsClicked(!isClicked);
-    setEnterClicked(true);
+    setter(true);
     setTimeout(() => {
       setShowAbout(true);
     }, 2500);
