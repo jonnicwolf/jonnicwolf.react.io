@@ -76,6 +76,7 @@ const GalleryPage: FC = () => {
           <Title darkmode={darkmode}>{title}</Title>
           <Button text={'NEXT'} onclick={handleNext} />
         </ControlBox>
+
         {info && <Info
           darkmode={darkmode}
           variants={infoAnimation}
@@ -83,6 +84,7 @@ const GalleryPage: FC = () => {
           animate='show'>
             {info}
         </Info>}
+
         <RenderedProject
           strokeColor={200}
           showControls={true}
@@ -123,6 +125,7 @@ const ControlBox = styled.div`
   margin: 20px 10px 0 10px;
   width: 30%;
   text-wrap: wrap;
+  gap: 50px;
   color: ${(props: {darkmode: boolean}) => (props.darkmode ? 'white' : 'black')};
   background-color: ${(props: {darkmode: boolean}) => (props.darkmode ? '150' : null)};
   font-color: ${(props: {darkmode: boolean}) => (props.darkmode ? 'grey' : 'white')};
