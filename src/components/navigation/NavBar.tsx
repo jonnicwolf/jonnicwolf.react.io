@@ -12,7 +12,7 @@ const NavBar: FC = () => {
   const { darkmode } = useContext(DarkmodeContext);
 
   return (
-    <NavbarContainer>
+    <NavbarContainer darkmode={darkmode}>
       <Fezz>
         <Link to='/' style={{textDecoration: 'none', color: 'black'}}>
           <RampartOneText darkmode={darkmode}>
@@ -45,7 +45,7 @@ const NavbarContainer = styled.div`
   padding-inline-start: 0;
   width: 97vw;
   border-bottom: 2px solid #a3a3a3;
-  background-color: #fffcf5;
+  background-color: ${(props: {darkmode: boolean}) => props.darkmode ? '#5c5c5b' : '#fffcf5' };
   position: fixed;
   z-index: 3;
 `;
