@@ -32,11 +32,10 @@ const GalleryPage: FC = () => {
   const sw: boolean = window.innerWidth > 720;
   // @ts-ignore !!!! FIX !!!!
   const p5_projs: { component: P5Type, title: string, name: string, info?: string }[] = useMemo(() => [
-    { component: P5_PLANE, title: 'HORIZON', name: 'horizon', info: 'MOVE YOUR CURSOR'},
+    { component: P5_PLANE, title: 'HORIZON', name: 'horizon' },
     { component: P5_LORENZ_ATTRACTOR, title: 'CHAOS THEORY', name: 'chaos-theory' },
     { component: P5_LOADER, title: 'AFTERIMAGE', name: 'afterimage' },
-    { component: P5_ANJA, title: 'ANJA', name: 'anja', info: 'MOVE YOUR CURSOR' },
-    { component: P5_GEOSTORM, title: 'TRIGON SQUALL', name: 'trigon-squall' },
+    { component: P5_ANJA, title: 'ANJA', name: 'anja' },
   ], []);
 
   useEffect(() => {
