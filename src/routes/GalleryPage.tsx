@@ -97,9 +97,7 @@ const GalleryPage: FC = () => {
 };
 
 const Container = styled.div`
-  max-height: 100vh;
-  overflow: hidden;
-  height: 100vh;
+  margin-top: 60px;
 `;
 const Title = styled.h2`
   height: 100%;
@@ -110,13 +108,15 @@ const Title = styled.h2`
   font-family: 'Rubik', sans-serif;
 `;
 const DisplayBox = styled.div`
-  position: fixed;
-  height: 100vh;
   display: flex;
   width: 100vw;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
+  height: 100vh;
+  @media screen and (max-height: 950px) {
+    height: 90vh;
+    margin-bottom: 40vh;
+  }
 `;
 const ControlBox = styled.div`
   display: flex;
@@ -128,7 +128,7 @@ const ControlBox = styled.div`
   color: ${(props: {darkmode: boolean}) => (props.darkmode ? 'white' : 'black')};
   background-color: ${(props: {darkmode: boolean}) => (props.darkmode ? '150' : null)};
   font-color: ${(props: {darkmode: boolean}) => (props.darkmode ? 'grey' : 'white')};
-  z-index: 3;
+  z-index: 2;
   @media screen and (max-width: 1024px) {
     margin-top: 6vh;
     gap: 5vw;

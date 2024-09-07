@@ -24,6 +24,9 @@ const App: FC = () => {
   const { darkmode } = useContext(DarkmodeContext);
   const isMobile: boolean = window.innerWidth < 1025;
 
+
+  console.log(enterClicked)
+
   return (
     <Container darkmode={darkmode} isMobile={isMobile}>
       { isMobile && <MobileNav enterClicked={enterClicked} />}
@@ -38,7 +41,8 @@ const App: FC = () => {
           <Route path='/test' element={<Test />} />
         </Routes>
       </Suspense>
-      {enterClicked && <Footer />}
+
+      {<Footer />}
     </Container>
   );
 };
