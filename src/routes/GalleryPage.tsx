@@ -71,7 +71,7 @@ const GalleryPage: FC = () => {
   return (
     <Container {...handleSwipes}>
       <DisplayBox>
-        <ControlBox darkMode={darkmode}>
+        <ControlBox darkmode={darkmode}>
           <Button text={'LAST'} onclick={handleLast} />
           <Title darkmode={darkmode}>{title}</Title>
           <Button text={'NEXT'} onclick={handleNext} />

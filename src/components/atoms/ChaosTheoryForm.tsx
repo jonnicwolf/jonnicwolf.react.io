@@ -69,27 +69,27 @@ const ChaosTheoryForm: FC<Props> = ({ vars, setters }) => {
 
       <VarContainer>
         <VarWrap>
-          <Button onMouseDown={handleSigmaUp} darkMode={darkmode}>⬆</Button>
+          <Button onMouseDown={handleSigmaUp} darkMode={darkmode}>&#8593;</Button>
           <Var>𝛴{sigma}</Var>
-          <Button onMouseDown={handleSigmaDown} darkMode={darkmode}>⬇</Button>
+          <Button onMouseDown={handleSigmaDown} darkMode={darkmode}>&#8595;</Button>
         </VarWrap>
 
         <VarWrap>
-          <Button onMouseDown={handleRhoUp} darkMode={darkmode}>⬆</Button>
+          <Button onMouseDown={handleRhoUp} darkMode={darkmode}>&#8593;</Button>
           <Var>⍴{rho}</Var>
-          <Button onMouseDown={handleRhoDown} darkMode={darkmode}>⬇</Button>
+          <Button onMouseDown={handleRhoDown} darkMode={darkmode}>&#8595;</Button>
         </VarWrap>
 
         <VarWrap>
-          <Button onMouseDown={handleBetaUp} darkMode={darkmode}>⬆</Button>
+          <Button onMouseDown={handleBetaUp} darkMode={darkmode}>&#8593;</Button>
           <Var>β{Math.floor(beta)}</Var>
-          <Button onMouseDown={handleBetaDown} darkMode={darkmode}>⬇</Button>
+          <Button onMouseDown={handleBetaDown} darkMode={darkmode}>&#8595;</Button>
         </VarWrap>
 
         <VarWrap>
-          <Button onMouseDown={handleDeltaUp} darkMode={darkmode}>⬆</Button>
+          <Button onMouseDown={handleDeltaUp} darkMode={darkmode}>&#8593;</Button>
           <Var>𝚫{delta}</Var>
-          <Button onMouseDown={handleDeltaDown} darkMode={darkmode}>⬇</Button>
+          <Button onMouseDown={handleDeltaDown} darkMode={darkmode}>&#8595;</Button>
         </VarWrap>
       </VarContainer>
     </Container>
