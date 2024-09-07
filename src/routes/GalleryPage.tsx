@@ -75,11 +75,11 @@ const GalleryPage: FC = () => {
       <DisplayBox>
         <ControlBox darkMode={darkmode}>
           <Button text={'LAST'} onclick={handleLast} />
-          <Title>{title}</Title>
+          <Title darkmode={darkmode}>{title}</Title>
           <Button text={'NEXT'} onclick={handleNext} />
         </ControlBox>
         {info && <Info
-          darkMode={darkmode}
+          darkmode={darkmode}
           variants={infoAnimation}
           initial='hidden'
           animate='show'>
@@ -105,6 +105,7 @@ const Title = styled.h2`
   align-items: center;
   font-weight: bold;
   font-family: 'Rubik', sans-serif;
+  color: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
 `;
 const DisplayBox = styled.div`
   display: flex;
