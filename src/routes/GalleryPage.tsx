@@ -70,7 +70,6 @@ const GalleryPage: FC = () => {
   const { component: ActiveProject, title, info } = p5_projs[index];
   const RenderedProject = ActiveProject as React.ComponentType<P5Props>;
 
-
   return (
     <Container {...handleSwipes}>
       <DisplayBox>
