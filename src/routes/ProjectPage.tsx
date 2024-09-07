@@ -10,10 +10,11 @@ import EsperiCover from '../components/molecules/EsperiCover';
 import SCDCover from '../components/molecules/SCDCover';
 
 interface Props {
-  setEnterClicked: (open: boolean) => void,
+  getter: boolean,
+  setter: (open: boolean) => void,
 };
 
-const ProjectPage: FC<Props> = ({ setEnterClicked }) => {
+const ProjectPage: FC<Props> = ({ setter, getter }) => {
   const [
     javascript,
     typescript,
@@ -36,8 +37,8 @@ const ProjectPage: FC<Props> = ({ setEnterClicked }) => {
 
   return (
     <Container>
-      <ProjectList>
-        <LandingPage setEnterClicked={setEnterClicked}/>
+      <ProjectList getter={getter}>
+        <LandingPage setter={setter} />
 
         <ProjectCard
           title='Esperi'
@@ -74,7 +75,13 @@ const ProjectPage: FC<Props> = ({ setEnterClicked }) => {
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  height: 240vh;
+  height: 3500px;
+  padding-top: 100px;
+
+  @media screen and (max-width: 720px) {
+    height: 2200px;
+    padding-top: 0px;
+  }
 `;
 const Background = styled(P5_LORENZ_ATTRACTOR)`
   height: 100vh;
@@ -85,9 +92,10 @@ const ProjectList = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 20vh;
+  gap: 200px;
   position: absolute;
-  z-index: 2;
+  z-index: ${(props: { getter: boolean }) => props.getter ? 2 : 3};
+  transition: z-index 2s linear;
 
   @media screen and (max-width: 720px) {
     padding-top: 100px;

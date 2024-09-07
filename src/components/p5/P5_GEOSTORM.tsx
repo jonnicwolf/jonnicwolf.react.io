@@ -10,7 +10,8 @@ interface Props {
 
 const P5_GEOSTORM: FC<Props> = ({ strokeColor }) => {
   const { darkmode } = useContext(DarkmodeContext);
-  const sketch_ref: MutableRefObject<HTMLDivElement | null | undefined> = useRef();
+  // const sketch_ref: MutableRefObject<HTMLDivElement | null | undefined> = useRef();
+  const sketch_ref = useRef();
 
   // @ts-ignore
   const sketch = useCallback((p) => {
