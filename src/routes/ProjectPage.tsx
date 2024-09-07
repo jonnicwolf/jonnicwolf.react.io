@@ -101,7 +101,7 @@ const ProjectList = styled.div`
     padding-top: 100px;
   }
   @media screen and (max-height: 950px) {
-    gap: 600px;
+    gap: 400px;
     transform: ${(props: {getter: boolean}) => props.getter ? 'translateY(-300px)' : null};
     scale: ${(props: {getter: boolean}) => props.getter ? 0.85 : 1};
   }
