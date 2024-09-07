@@ -76,7 +76,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   height: 3500px;
-  padding-top: 100px;
+  padding-top: 75px;
 
   @media screen and (max-width: 720px) {
     height: 2200px;
