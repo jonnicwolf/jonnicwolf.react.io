@@ -77,6 +77,11 @@ const Container = styled.div`
   justify-content: center;
   height: 3500px;
   padding-top: 100px;
+
+  @media screen and (max-width: 720px) {
+    height: 2200px;
+    padding-top: 0px;
+  }
 `;
 const Background = styled(P5_LORENZ_ATTRACTOR)`
   height: 100vh;

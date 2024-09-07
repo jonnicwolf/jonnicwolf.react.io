@@ -83,6 +83,9 @@ const Content = styled.div`
 const Copyright = styled.div`
   font-size: 1rem;
   color: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
+  @media screen and (max-width: 720px) {
+    font-size: 0.7rem;
+  }
 `;
 const ButtonWrap = styled(Dummy)`
   display: flex;
@@ -91,5 +94,5 @@ const ButtonWrap = styled(Dummy)`
 `;
 const ToTopButton = styled(Button)`
   align-self: end;
-`
+`;
 export default Footer;
