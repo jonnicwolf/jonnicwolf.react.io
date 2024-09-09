@@ -1,5 +1,5 @@
 
-# Jon N W Narine Portfolio
+# Jon Fezz Narine Portfolio
 
 Welcome to my portfolio website! Here, you'll find a showcase of my projects, skills, and experience in software development and design. From web applications to mobile apps, I'm passionate about creating innovative solutions that make a difference.
 
