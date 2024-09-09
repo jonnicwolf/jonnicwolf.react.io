@@ -21,7 +21,7 @@ const Footer: FC = () => {
       <Dummy />
       <Content>
         <SocialsWrap>
-          <Socials gap='20px' />
+          <Socials gap='20px'  bgColor={''} fgColor={'black'} />
         </SocialsWrap>
 
         <RampartOneText darkmode={darkmode}>
@@ -73,8 +73,7 @@ const Content = styled.div`
     justify-content: center;
   `;
   const RampartOneText = styled.p`
-    font-family: var(--font-family-rampart-one);
-    font-weight: var(--font-weight-normal);
+    font-family: Rampart One;
     font-size: 3.5rem;
     margin: 0;
     color: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
