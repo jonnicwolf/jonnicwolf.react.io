@@ -15,13 +15,19 @@ const Footer: FC = () => {
       behavior: "smooth"
     });
   };
+  
+  const colors = {
+    white: '#ffffff',
+    black: '#000000',
+    grey: '#969696'
+  }
 
   return (
     <Container>
       <Dummy />
       <Content>
         <SocialsWrap>
-          <Socials gap='20px'  color1={''} color2={'black'} />
+          <Socials gap='20px'  colors={colors} />
         </SocialsWrap>
 
         <RampartOneText darkmode={darkmode}>

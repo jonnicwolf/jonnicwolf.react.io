@@ -13,12 +13,18 @@ interface Props {
 const ContactMe: FC<Props> = ({ viewSetter }) => {
   const { darkmode } = useContext(DarkmodeContext);
 
+  const colors = {
+    white: '#ffffff',
+    black: '#000000',
+    grey: '#969696'
+  }
+
   return (
     <Container>
       <Background darkmode={darkmode} />
       <FormWrap>
         <Title>Contact Me</Title>
-        <Socials gap={'40px'} color1='' color2='' />
+        <Socials gap={'40px'} colors={colors} />
         <ContactForm viewSetter={viewSetter} />
       </FormWrap>
     </Container>
