@@ -17,17 +17,17 @@ const Footer: FC = () => {
   };
   
   const colors = {
-    white: '#ffffff',
-    black: '#000000',
-    grey: '#969696'
-  }
+    primary: '#000000',
+    secondary: 'none',
+    tertiary: '#969696'
+  };
 
   return (
     <Container>
       <Dummy />
       <Content>
         <SocialsWrap>
-          <Socials gap='20px'  colors={colors} />
+          <Socials gap='10px'  colors={colors} />
         </SocialsWrap>
 
         <RampartOneText darkmode={darkmode}>

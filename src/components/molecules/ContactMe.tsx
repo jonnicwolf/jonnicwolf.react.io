@@ -14,10 +14,10 @@ const ContactMe: FC<Props> = ({ viewSetter }) => {
   const { darkmode } = useContext(DarkmodeContext);
 
   const colors = {
-    white: '#ffffff',
-    black: '#000000',
-    grey: '#969696'
-  }
+    primary: '#ffffff',
+    secondary: '#000000',
+    tertiary: '#969696'
+  };
 
   return (
     <Container>

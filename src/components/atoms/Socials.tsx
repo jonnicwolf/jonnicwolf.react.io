@@ -6,12 +6,14 @@ import { motion } from 'framer-motion';
 
 import { SocialIcon } from 'react-social-icons';
 
-type Colors = {
-  [key: string]: string;
+interface Colors {
+  primary: string,
+  secondary: string,
+  tertiary: string,
 };
 interface Props {
   gap: string,
-  colors: Colors,
+  colors: Colors
 };
 
 interface SocialsListProps {
@@ -20,29 +22,29 @@ interface SocialsListProps {
 
 const Socials: FC<Props> = ({ gap, colors }) => {
   const { darkmode } = useContext(DarkmodeContext);
-  const { white, black, grey } = colors;
+  const {primary, secondary, tertiary} = colors;
 
   return (
     <SocialsList gap={gap}>
       <SocialItem
         title='LinkedIn'
         variants={items} custom={0}
-        bgColor={darkmode ? white : black}
-        fgColor={darkmode ? grey : white}
+        bgColor={darkmode ? primary : secondary}
+        fgColor={darkmode ? tertiary : primary}
         url='https://www.linkedin.com/in/jonathannarine/'
         target='_blank' />
       <SocialItem
           title='GitHub'
           variants={items} custom={1}
-          bgColor={darkmode ? white : black}
-          fgColor={darkmode ? grey : white}
+          bgColor={darkmode ? primary : secondary}
+          fgColor={darkmode ? tertiary : primary}
           url='https://github.com/jonnicwolf'
           target='_blank' />
       <SocialItem
           title='Instagram'
           variants={items} custom={2}
-          bgColor={darkmode ? white : black}
-          fgColor={darkmode ? grey : white}
+          bgColor={darkmode ? primary : secondary}
+          fgColor={darkmode ? tertiary : primary}
           url='https://www.instagram.com/fezz_xiii/' target='_blank' />
     </SocialsList>
   );
@@ -63,7 +65,7 @@ const items = {
 
 const SocialItem = styled(motion(SocialIcon))`
   &: hover { 
-    transform: scale(1.2);
+    transform: scale(1.5);
   }
   transition: all 0.3s linear;
 `;
