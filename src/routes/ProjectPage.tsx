@@ -36,7 +36,7 @@ const ProjectPage: FC<Props> = ({ setter, getter }) => {
   const scd_devi= [javascript, react, postgresql, firebase];
 
   return (
-    <Container>
+    <Container getter={getter}>
       <ProjectList getter={getter}>
         <LandingPage setter={setter} />
 
@@ -80,7 +80,7 @@ const Container = styled.div`
 
   @media screen and (max-width: 720px) {
     height: 2200px;
-    padding-top: 0px;
+    padding-top: ${(props: { getter: boolean }) => props.getter ? '100px' : '0px'};
   }
 `;
 const Background = styled(P5_LORENZ_ATTRACTOR)`
