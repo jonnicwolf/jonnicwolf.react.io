@@ -21,7 +21,7 @@ const Button: FC<Props> = ({ text, buttonSize, onclick }) => {
 
 const StyledButton = styled.button`
   padding: ${(props: {buttonSize: string}) => props.buttonSize === 'large' ? '25px 80px' : '1em'};
-  font-family: var(--font-family-rubik);
+  font-family: Rubik;
   font-weight: 900;
   font-size: ${(props: {fontSize: string}) => props.fontSize};
   background: transparent;

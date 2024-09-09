@@ -2,7 +2,6 @@ import { FC } from 'react';
 // @ts-ignore
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import '../../assets/fonts/fonts.css';
 
 const NameCard: FC = () => {
   return (

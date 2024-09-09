@@ -59,7 +59,7 @@ interface ButtonProps {
 };
 const Button = styled.button<ButtonProps>`
   padding: ${(props: {buttonSize: string}) => props.buttonSize === 'large' ? '25px 80px' : '1em'};
-  font-family: var(--font-family-rubik);
+  font-family: Rubik;
   font-size: ${(props: {buttonSize: string}) => props.buttonSize === 'large' ? '1.5rem' : '0.8rem'};
   font-weight: 900;
   background: transparent;
