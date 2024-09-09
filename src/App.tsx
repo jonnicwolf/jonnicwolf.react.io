@@ -4,13 +4,12 @@ import { DarkmodeContext, DarkmodeProvider } from './Darkmode';
 // @ts-ignore
 import styled from 'styled-components';
 
-import ScrollToTop from './components/utils/ScrollToTop';
 import Loader from './components/navigation/Loader';
 import NavBar from './components/navigation/NavBar';
 import MobileNav from './components/navigation/MobileNav';
 import Footer from './components/atoms/Footer';
 
-import Test from './routes/Test';
+const Test        = lazy(() => import('./routes/Test'))
 const ProjectPage = lazy(() => import('./routes/ProjectPage'));
 const GalleryPage = lazy(() => import('./routes/GalleryPage'));
 
@@ -26,11 +25,9 @@ const App: FC = () => {
 
   return (
     <Container darkmode={darkmode} isMobile={isMobile}>
-      { isMobile && <MobileNav enterClicked={enterClicked} />}
-      {!isMobile && <NavBar />}
-
-      <ScrollToTop />
       <Suspense fallback={<Loader strokeColor={150} />} >
+        { isMobile && <MobileNav enterClicked={enterClicked} />}
+        {!isMobile && <NavBar />}
         <Routes>
           <Route path='/' element={<ProjectPage setter={setEnterClicked} getter={enterClicked} />} />
           <Route path='/gallery' element={<GalleryPage/>} />

@@ -57,8 +57,7 @@ const Fezz = styled.div`
   gap: 1vh;
 `;
 const RampartOneText = styled.p`
-  font-family: var(--font-family-rampart-one);
-  font-weight: var(--font-weight-normal);
+  font-family: 'Rampart One', cursive;
   font-size: 2.5rem;
   margin: 0;
   color: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};

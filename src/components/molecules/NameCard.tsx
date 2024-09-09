@@ -24,7 +24,7 @@ const NameCard: FC = () => {
         </Hometown>
         <br /><br />
     </Container>
-  )
+  );
 };
 
 const fadeIn = {
@@ -99,7 +99,7 @@ const Container = styled(motion.div)`
   flex-direction: column;
 `;
 const RampartOneText = styled(motion.p)`
-  font-family: var(--font-family-rampart-one);
+  font-family: Rampart One;
   font-size: 6vh;
   height: 10vh;
   margin: 0;

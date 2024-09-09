@@ -1,4 +1,11 @@
-import { FC, useState, useEffect, useMemo, useContext } from 'react';
+import {
+  FC,
+  useState,
+  useEffect,
+  useMemo,
+  useContext,
+  Suspense,
+  lazy } from 'react';
 import { DarkmodeContext } from '../Darkmode';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSwipeable } from 'react-swipeable';
@@ -7,10 +14,12 @@ import styled from 'styled-components';
 import { motion, useAnimation } from 'framer-motion';
 
 import Button from '../assets/buttons/Button';
-import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
-import P5_PLANE from '../components/p5/P5_PLANE';
-import P5_LOADER from '../components/p5/P5_LOADER';
-import P5_ANJA from '../components/p5/P5_ANJA';
+
+import Loader from '../components/navigation/Loader';
+const P5_LORENZ_ATTRACTOR = lazy(() => import('../components/p5/P5_LORENZ_ATTRACTOR'));
+const P5_PLANE            = lazy(() => import('../components/p5/P5_PLANE'));
+const P5_LOADER           = lazy(() => import('../components/p5/P5_LOADER'));
+const P5_ANJA             = lazy(() => import('../components/p5/P5_ANJA'));
 
 interface P5Props {
   strokeColor: number,
@@ -69,29 +78,32 @@ const GalleryPage: FC = () => {
   const RenderedProject = ActiveProject as React.ComponentType<P5Props>;
 
   return (
-    <Container {...handleSwipes}>
-      <DisplayBox>
-        <ControlBox darkmode={darkmode}>
-          <Button text={'LAST'} onclick={handleLast} />
-          <Title darkmode={darkmode}>{title}</Title>
-          <Button text={'NEXT'} onclick={handleNext} />
-        </ControlBox>
+    <Suspense fallback={<Loader strokeColor={150} />}>
 
-        {info && <Info
-          darkmode={darkmode}
-          variants={infoAnimation}
-          initial='hidden'
-          animate='show'>
-            {info}
-        </Info>}
+      <Container {...handleSwipes}>
+        <DisplayBox>
+          <ControlBox darkmode={darkmode}>
+            <Button text={'LAST'} onclick={handleLast} />
+            <Title darkmode={darkmode}>{title}</Title>
+            <Button text={'NEXT'} onclick={handleNext} />
+          </ControlBox>
 
-        <RenderedProject
-          strokeColor={200}
-          showControls={true}
-          showSun={true}
-          isMobile={sw} />
-      </DisplayBox>
-    </Container>
+          {info && <Info
+            darkmode={darkmode}
+            variants={infoAnimation}
+            initial='hidden'
+            animate='show'>
+              {info}
+          </Info>}
+
+          <RenderedProject
+            strokeColor={200}
+            showControls={true}
+            showSun={true}
+            isMobile={sw} />
+        </DisplayBox>
+      </Container>
+    </Suspense>
   );
 };
 
@@ -125,11 +137,12 @@ const ControlBox = styled.div`
   margin: 20px 10px 0 10px;
   width: 30%;
   text-wrap: wrap;
-  gap: 50px;
+  gap: 50px; v
   color: ${(props: {darkmode: boolean}) => (props.darkmode ? 'white' : 'black')};
   background-color: ${(props: {darkmode: boolean}) => (props.darkmode ? '150' : null)};
   font-color: ${(props: {darkmode: boolean}) => (props.darkmode ? 'grey' : 'white')};
   z-index: 2;
+
   @media screen and (max-width: 1024px) {
     margin-top: 6vh;
     gap: 5vw;
