@@ -16,10 +16,15 @@ const Footer: FC = () => {
     });
   };
   
+  // const colors = {
+  //   primary: '#000000',
+  //   secondary: 'none',
+  //   tertiary: '#969696'
+  // };
   const colors = {
-    primary: '#000000',
-    secondary: 'none',
-    tertiary: '#969696'
+    primary: '#969696',
+    secondary: '#ffffff',
+    tertiary: 'white',
   };
 
   return (
