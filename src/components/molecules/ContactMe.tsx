@@ -18,7 +18,7 @@ const ContactMe: FC<Props> = ({ viewSetter }) => {
       <Background darkmode={darkmode} />
       <FormWrap>
         <Title>Contact Me</Title>
-        <Socials gap={'40px'} />
+        <Socials gap={'40px'} color1='' color2='' />
         <ContactForm viewSetter={viewSetter} />
       </FormWrap>
     </Container>

@@ -25,7 +25,7 @@ const BioBox: FC = () => {
       </NotoSansDisplay>
 
       <SocialsContainer>
-        <Socials gap={'2vw'} />
+        <Socials gap={'2vw'} color1='black' color2='white'/>
       </SocialsContainer>
     </Container>
   );

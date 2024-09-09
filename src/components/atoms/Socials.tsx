@@ -8,15 +8,15 @@ import { SocialIcon } from 'react-social-icons';
 
 interface Props {
   gap: string,
-  bgColor: string,
-  fgColor: string,
+  color1: string,
+  color2: string,
 };
 
 interface SocialsListProps {
   gap: string,
 };
 
-const Socials: FC<Props> = ({ gap, bgColor, fgColor }) => {
+const Socials: FC<Props> = ({ gap, color1, color2 }) => {
   const { darkmode } = useContext(DarkmodeContext);
 
   return (

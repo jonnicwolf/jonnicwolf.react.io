@@ -21,7 +21,7 @@ const Footer: FC = () => {
       <Dummy />
       <Content>
         <SocialsWrap>
-          <Socials gap='20px'  bgColor={''} fgColor={'black'} />
+          <Socials gap='20px'  color1={''} color2={'black'} />
         </SocialsWrap>
 
         <RampartOneText darkmode={darkmode}>
