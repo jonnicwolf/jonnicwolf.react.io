@@ -5,6 +5,12 @@ import styled from 'styled-components';
 import Socials from './Socials';
 
 const BioBox: FC = () => {
+  const colors = {
+    primary: '#ffffff',
+    secondary: '#000000',
+    tertiary: '#969696'
+  };
+
   return (
     <Container>
       <PermanentMarkerText>
@@ -25,7 +31,7 @@ const BioBox: FC = () => {
       </NotoSansDisplay>
 
       <SocialsContainer>
-        <Socials gap={'2vw'} />
+        <Socials gap={'2vw'} colors={colors}/>
       </SocialsContainer>
     </Container>
   );

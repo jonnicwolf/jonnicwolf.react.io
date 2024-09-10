@@ -22,9 +22,9 @@ const P5_LORENZ_ATTRACTOR: FC<Props> = ({ strokeColor, showControls }) => {
   const sketch_ref = useRef();
   // @ts-ignore
   const sketch = useCallback((p) => {
-    let x: number = 10;
+    let x: number = -1;
     let y: number = 0;
-    let z: number = 1;
+    let z: number = -100;
     let points: p5.Vector[] = [];
 
     p.setup = () => {

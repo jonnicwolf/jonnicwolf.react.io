@@ -36,7 +36,7 @@ const ProjectPage: FC<Props> = ({ setter, getter }) => {
   const scd_devi= [javascript, react, postgresql, firebase];
 
   return (
-    <Container>
+    <Container getter={getter}>
       <ProjectList getter={getter}>
         <LandingPage setter={setter} />
 
@@ -76,11 +76,11 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   height: 3500px;
-  padding-top: 100px;
+  padding-top: 75px;
 
   @media screen and (max-width: 720px) {
     height: 2200px;
-    padding-top: 0px;
+    padding-top: ${(props: { getter: boolean }) => props.getter ? '100px' : '0px'};
   }
 `;
 const Background = styled(P5_LORENZ_ATTRACTOR)`
@@ -92,13 +92,18 @@ const ProjectList = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 200px;
+  gap: 300px;
   position: absolute;
   z-index: ${(props: { getter: boolean }) => props.getter ? 2 : 3};
   transition: z-index 2s linear;
 
   @media screen and (max-width: 720px) {
     padding-top: 100px;
+  }
+  @media screen and (max-height: 950px) {
+    gap: 400px;
+    transform: ${(props: {getter: boolean}) => props.getter ? 'translateY(-300px)' : null};
+    scale: ${(props: {getter: boolean}) => props.getter ? 0.85 : 1};
   }
 `;
 

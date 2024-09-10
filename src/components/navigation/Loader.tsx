@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState, useEffect } from 'react';
 // @ts-ignore
 import styled from 'styled-components';
 
@@ -9,17 +9,29 @@ interface Props {
 };
 
 const Loader: FC<Props> = ({ strokeColor }) => {
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 3000);
+
+    return () => clearTimeout(timer)
+  }, [isLoaded]);
+
   return (
-    <Container>
-      <P5Container>
-        <P5_LOADER strokeColor={strokeColor} controls={false} />
-      </P5Container>
-      <Loading>LOADING</Loading>
-    </Container>
+    <>
+      {!isLoaded &&
+        <Container>
+          <P5Container>
+            <P5_LOADER strokeColor={strokeColor} controls={false} />
+          </P5Container>
+          <Loading>LOADING</Loading>
+        </Container>}
+    </>
   );
 };
 
-// Define a styled component named LoadingAnimation
 const Container = styled.div`
   display: flex;
   position: relative;

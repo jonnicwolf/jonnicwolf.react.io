@@ -2,7 +2,6 @@ import { FC } from 'react';
 // @ts-ignore
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import '../../assets/fonts/fonts.css';
 
 const NameCard: FC = () => {
   return (
@@ -24,7 +23,7 @@ const NameCard: FC = () => {
         </Hometown>
         <br /><br />
     </Container>
-  )
+  );
 };
 
 const fadeIn = {
@@ -99,7 +98,7 @@ const Container = styled(motion.div)`
   flex-direction: column;
 `;
 const RampartOneText = styled(motion.p)`
-  font-family: var(--font-family-rampart-one);
+  font-family: Rampart One;
   font-size: 6vh;
   height: 10vh;
   margin: 0;
