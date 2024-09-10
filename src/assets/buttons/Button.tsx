@@ -7,13 +7,18 @@ interface Props {
   text: string,
   buttonSize?: string,
   onclick?: () => void,
+  rounded?: boolean,
 };
 
-const Button: FC<Props> = ({ text, buttonSize, onclick }) => {
+const Button: FC<Props> = ({ text, buttonSize, onclick, rounded }) => {
   const { darkmode } = useContext(DarkmodeContext);
 
   return (
-    <StyledButton darkmode={darkmode} onClick={onclick} buttonSize={buttonSize}>
+    <StyledButton
+      darkmode={darkmode}
+      onClick={onclick}
+      buttonSize={buttonSize}
+      rounded={rounded} >
       {text}
     </StyledButton>
   );
@@ -32,6 +37,7 @@ const StyledButton = styled.button`
   border: 1px solid ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
   z-index: 1;
   color: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
+  border-radius: ${(props: {rounded: boolean}) => props.rounded ? '50%' : null};
 
   &:after {
     position: absolute;
