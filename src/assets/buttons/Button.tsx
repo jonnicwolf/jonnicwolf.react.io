@@ -6,7 +6,7 @@ import styled from 'styled-components';
 interface Props {
   text: string,
   buttonSize?: string,
-  onclick: () => void,
+  onclick?: () => void,
 };
 
 const Button: FC<Props> = ({ text, buttonSize, onclick }) => {
