@@ -2,6 +2,8 @@ import { FC, useState } from 'react';
 // @ts-ignore 
 import styled from 'styled-components';
 
+import Button from '../../assets/buttons/Button';
+
 interface Props {
   children: React.ReactNode[];
 };
@@ -21,9 +23,11 @@ const Carousel: FC<Props> = ({ children }) => {
 
   return (
     <Container>
+      {/* <Button text='&#8678;' onclick={handlePrev} /> */}
       {children.map((Element, i)=>(
         <div key={i}>{Element}</div>
       ))}
+      {/* <Button text='&#8680;' onclick={handleNext} /> */}
     </Container>
   );
 };

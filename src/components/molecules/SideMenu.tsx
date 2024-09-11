@@ -2,18 +2,8 @@ import { FC } from 'react';
 // @ts-ignore
 import styled from 'styled-components';
 
-import Button from '../../assets/buttons/Button';
+import SideMenuButton from '../atoms/SideMenuButton';
 import Carousel from '../atoms/Carousel';
-
-interface Cprops {
-  text: string
-}
-
-const CarouselItem: FC<Cprops> = ({text}) => {
-  return (
-    <Button text={text} />
-  );
-};
 
 const SideMenu: FC = () => {
   return (
@@ -21,9 +11,9 @@ const SideMenu: FC = () => {
       <Current>WEB</Current>
       <Carousel
         children={[
-        <CarouselItem text='🤷🏽‍♂️' />,
-        <CarouselItem text='🍎' />,
-        <CarouselItem text='🔫' />] } />
+        <SideMenuButton img="devicon-blender-original" />,
+        <SideMenuButton img="devicon-apple-original" />,
+         ] } />
     </Container>
   );
 };

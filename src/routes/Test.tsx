@@ -6,7 +6,7 @@ import SideMenu from '../components/molecules/SideMenu';
 const Test: FC = () => {
   return (
     <Container>
-      {/* WELL HELLO MOTHERFUCKER, NOTHING TO SEE HERE */}
+      {/* TEST */}
       <SideMenu />
     </Container>
   );
