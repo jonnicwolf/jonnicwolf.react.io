@@ -35,36 +35,52 @@ const ProjectPage: FC<Props> = ({ setter, getter }) => {
   const hotc_devi = [typescript, react, p5, firebase];
   const scd_devi= [javascript, react, postgresql, firebase];
 
+  const web_projects = [
+    <LandingPage setter={setter} />,
+    <ProjectCard
+      title='Esperi'
+      bio='Tarot Interpreter'
+      liveLink='https://esperi.vercel.app'
+      githubLink='https://github.com/jonnicwolf/heart_of_the_cards'
+      // @ts-ignore
+      cover={EsperiCover}
+      gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/heicbedxhzwocfzxqzky'
+      apis={['TAROTAPI', 'OPENAI API']}
+      descriptions={['LIFESTYLE & ENTERTAINMENT', 'FULL STACK']}
+      devicons={hotc_devi}
+    />,
+    <ProjectCard
+      title='Stoned Cold Dreamery'
+      bio='Webstore'
+      liveLink='https://stoned-cold-dreamery.vercel.app'
+      githubLink='https://github.com/jonnicwolf/stoned_cold_dreamery'
+      // @ts-ignore
+      cover={SCDCover}
+      gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/r46imtohg1igqqknoqgp'
+      apis={[]}
+      descriptions={['E-COMMERCE', 'FULL STACK']}
+      devicons={scd_devi}
+    />
+  ];
+
+  const ios_projects = [
+    <ProjectCard
+      title='Pour Metronome'
+      bio='Bartender Tool'
+      githubLink='https://github.com/jonnicwolf/pour_metronome'
+      liveLink='https://esperi.vercel.app'
+      // @ts-ignore
+      cover={SCDCover}
+      gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/r46imtohg1igqqknoqgp'
+      apis={[]}
+      descriptions={['UTILITY', 'FRONT END']}
+      devicons={hotc_devi}
+    />
+  ]
+
   return (
     <Container getter={getter}>
       <ProjectList getter={getter}>
-        <LandingPage setter={setter} />
-
-        <ProjectCard
-          title='Esperi'
-          bio='Tarot Interpreter'
-          liveLink='https://esperi.vercel.app'
-          githubLink='https://github.com/jonnicwolf/heart_of_the_cards'
-          // @ts-ignore
-          cover={EsperiCover}
-          gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/heicbedxhzwocfzxqzky'
-          apis={['TAROTAPI', 'OPENAI API']}
-          descriptions={['LIFESTYLE & ENTERTAINMENT', 'FULL STACK']}
-          devicons={hotc_devi}
-        />
-
-        <ProjectCard
-          title='Stoned Cold Dreamery'
-          bio='Webstore'
-          liveLink='https://stoned-cold-dreamery.vercel.app'
-          githubLink='https://github.com/jonnicwolf/stoned_cold_dreamery'
-          // @ts-ignore
-          cover={SCDCover}
-          gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/r46imtohg1igqqknoqgp'
-          apis={[]}
-          descriptions={['E-COMMERCE', 'FULL STACK']}
-          devicons={scd_devi}
-        />
       </ProjectList>
 
       <Background strokeColor={150} showControls={false} />
