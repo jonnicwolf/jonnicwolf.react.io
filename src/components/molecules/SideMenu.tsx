@@ -1,4 +1,4 @@
-import { FC, useContext } from 'react';
+import { FC, useState, useContext } from 'react';
 import { DarkmodeContext } from '../../Darkmode';
 // @ts-ignore
 import styled from 'styled-components';
@@ -7,19 +7,20 @@ import SideMenuButton from '../atoms/SideMenuButton';
 import Carousel from '../atoms/Carousel';
 
 const SideMenu: FC = () => {
+  const [current, setCurrent] = useState<number>(0)
   const { darkmode } = useContext(DarkmodeContext);
 
   const children = [
-    <SideMenuButton img='devicon-react-original' />,
-    <SideMenuButton img="devicon-blender-original" />,
-    <SideMenuButton img="devicon-apple-original" />,
+    { name: 'WEB', component: <SideMenuButton img='devicon-react-original' /> },
+    { name: 'BLENDER', component: <SideMenuButton img='devicon-blender-original' /> },
+    { name: 'IOS', component: <SideMenuButton img='devicon-apple-original' /> },
   ];
 
   return (
     <Container darkmode={darkmode}>
-      <Current darkmode={darkmode}>WEB</Current>
+      <Current darkmode={darkmode}>{children[current].name}</Current>
       <Carousel
-        children={children} />
+        children={children} setter={setCurrent} getter={current}/>
     </Container>
   );
 };
