@@ -6,14 +6,19 @@ import SideMenuButton from '../atoms/SideMenuButton';
 import Carousel from '../atoms/Carousel';
 
 const SideMenu: FC = () => {
+
+  const children = [
+
+    <SideMenuButton img='devicon-react-original' />,
+    <SideMenuButton img="devicon-blender-original" />,
+    <SideMenuButton img="devicon-apple-original" />,
+  ];
+
   return (
     <Container>
       <Current>WEB</Current>
       <Carousel
-        children={[
-        <SideMenuButton img="devicon-blender-original" />,
-        <SideMenuButton img="devicon-apple-original" />,
-         ] } />
+        children={children} />
     </Container>
   );
 };
@@ -29,8 +34,7 @@ const Container = styled.div`
   height: 300px;
   `;
   const Current = styled.div`
-  padding: 25px 80px;
-  // padding: 1em;
+  padding: 15px 60px;
   border: 1px solid red;
   font-family: Michroma;
 `;
