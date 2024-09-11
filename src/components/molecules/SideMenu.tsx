@@ -10,10 +10,14 @@ const SideMenu: FC = () => {
   const [current, setCurrent] = useState<number>(0)
   const { darkmode } = useContext(DarkmodeContext);
 
+  function setter (i: number): void {
+    setCurrent(i);
+  };
+
   const children = [
-    { name: 'WEB', component: <SideMenuButton img='devicon-react-original' /> },
-    { name: 'BLENDER', component: <SideMenuButton img='devicon-blender-original' /> },
-    { name: 'IOS', component: <SideMenuButton img='devicon-apple-original' /> },
+    { name: 'WEB', component: <SideMenuButton img='devicon-react-original' onclick={()=> setter(0)}/> },
+    { name: 'BLENDER', component: <SideMenuButton img='devicon-blender-original' onclick={()=> setter(1)}/> },
+    { name: 'IOS', component: <SideMenuButton img='devicon-apple-original' onclick={()=> setter(2)} /> },
   ];
 
   return (
@@ -36,7 +40,12 @@ const Container = styled.div`
   color: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
   `;
   const Current = styled.div`
-  padding: 15px 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0 15px 0;
+  
+  width: 150px;
   border: 1px solid red;
   font-family: Michroma;
   border: 1px solid ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};

@@ -13,16 +13,7 @@ interface Props {
   getter: number
 };
 
-const Carousel: FC<Props> = ({ children, setter, getter }) => {
-  function handleNext (): void {
-    if (getter >= children.length) setter(0)
-      else setter(getter + 1);
-  };
-
-  function handlePrev (): void {
-    if (getter <= 0) setter(children.length)
-      else setter(getter - 1);
-  };
+const Carousel: FC<Props> = ({ children }) => {
 
   return (
     <Container>
@@ -38,8 +29,8 @@ const Carousel: FC<Props> = ({ children, setter, getter }) => {
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 15px;
   align-items: center;
+  gap: 15px;
 `;
 
 export default Carousel;

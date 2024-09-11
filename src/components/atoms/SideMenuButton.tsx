@@ -23,6 +23,7 @@ const StyledButton = styled.button`
   padding: 10px;
   font-size: 1rem;
   border: 1px solid ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
+  border-radius: 50%;
   color: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
   background: transparent;
 `;
