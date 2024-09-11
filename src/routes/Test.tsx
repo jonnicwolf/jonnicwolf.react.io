@@ -1,11 +1,13 @@
 import { FC } from 'react';
 // @ts-ignore
 import styled from 'styled-components';
+import SideMenu from '../components/molecules/SideMenu';
 
 const Test: FC = () => {
   return (
     <Container>
-      WELL HELLO MOTHERFUCKER, NOTHING TO SEE HERE
+      {/* TEST */}
+      <SideMenu />
     </Container>
   );
 };
