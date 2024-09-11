@@ -17,11 +17,9 @@ const Carousel: FC<Props> = ({ children }) => {
 
   return (
     <Container>
-      {/* <Button text='&#8678;' onclick={handlePrev} /> */}
       {children.map((Element, i)=>(
         <div key={i}>{Element.component}</div>
       ))}
-      {/* <Button text='&#8680;' onclick={handleNext} /> */}
     </Container>
   );
 };
