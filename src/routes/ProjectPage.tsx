@@ -7,7 +7,7 @@ import ProjectCard from '../components/molecules/ProjectCard';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
 
 import EsperiCover from '../components/molecules/EsperiCover';
-import SCDCover from '../components/molecules/SCDCover';
+import ProjectCover from '../components/molecules/ProjectCover';
 
 interface Props {
   getter: boolean,
@@ -57,8 +57,9 @@ const ProjectPage: FC<Props> = ({ setter, getter }) => {
       bio='Webstore'
       liveLink='https://stoned-cold-dreamery.vercel.app'
       githubLink='https://github.com/jonnicwolf/stoned_cold_dreamery'
+      coverLink='https://res.cloudinary.com/dhah4xjvr/image/upload/v1722178672/fezz.dev/photos/photos/z265st6zxzzcvahg9sca.jpg'
       // @ts-ignore
-      cover={SCDCover}
+      cover={ProjectCover}
       gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/r46imtohg1igqqknoqgp'
       apis={[]}
       descriptions={['E-COMMERCE', 'FULL STACK']}
@@ -71,9 +72,10 @@ const ProjectPage: FC<Props> = ({ setter, getter }) => {
       title='Pour Metronome'
       bio='Bartender Tool'
       githubLink='https://github.com/jonnicwolf/pour_metronome'
-      liveLink='https://esperi.vercel.app'
+      // liveLink='https://esperi.vercel.app'
+      coverLink='https://res.cloudinary.com/dhah4xjvr/image/upload/v1722178672/fezz.dev/photos/photos/z265st6zxzzcvahg9sca.jpg'
       // @ts-ignore
-      cover={SCDCover}
+      cover={ProjectCover}
       gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/r46imtohg1igqqknoqgp'
       apis={[]}
       descriptions={['UTILITY', 'FRONT END']}
@@ -84,7 +86,7 @@ const ProjectPage: FC<Props> = ({ setter, getter }) => {
   return (
     <Container getter={getter}>
       <ProjectList getter={getter}>
-        {/* {web_projects.map((project, i) => <div key={i}>{project}</div>)} */}
+        {web_projects.map((project, i) => <div key={i}>{project}</div>)}
         {ios_projects.map((project, i) => <div key={i}>{project}</div>)}
       </ProjectList>
 

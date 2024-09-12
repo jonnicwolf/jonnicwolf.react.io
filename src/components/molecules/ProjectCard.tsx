@@ -7,8 +7,9 @@ import HoverCover from './HoverCover';
 interface Props {
   bio: string,
   title: string,
-  liveLink: string,
+  liveLink?: string,
   githubLink: string,
+  coverLink?: string,
   image: string,
   cover: ReactElement,
   gifPath: string,
@@ -22,6 +23,7 @@ const ProjectCard: FC<Props> = ({
   title,
   liveLink,
   githubLink,
+  coverLink,
   cover: Cover,
   gifPath,
   apis,
@@ -47,7 +49,7 @@ const ProjectCard: FC<Props> = ({
           descriptions={descriptions}
           devicons={devicons} image={''} />
           // @ts-ignore !!!! FIX !!!!!
-        : createElement(Cover, {setter: setShowMore})
+        : createElement(Cover, {setter: setShowMore, link: coverLink})
         }
     </Container>
   );

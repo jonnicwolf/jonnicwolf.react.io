@@ -7,8 +7,8 @@ import ExternalButton from '../../assets/buttons/ExternalButton';
 interface Props {
   bio: string,
   title: string,
-  liveLink: string,
-  githubLink: string,
+  liveLink?: string,
+  githubLink?: string,
   image: string,
   gifPath: string,
   apis: string[],
@@ -48,15 +48,15 @@ const HoverCover: FC<Props> = ({
               ? <span key={index}>{` ${item} /`}</span>
               : <span key={index}>{` ${item} `}</span> )} ] </P>}
           </PContainer>
-          <ExternalButton
+          {liveLink && <ExternalButton
             link={liveLink}
             text={'LIVE SITE'}
-            fontSize='1rem' buttonSize={''} buffer={false} overrideDarkmode/>
-          <ExternalButton
+            fontSize='1rem' buttonSize={''} buffer={false} overrideDarkmode/>}
+          {githubLink && <ExternalButton
             link={githubLink}
             text={'GITHUB'}
             buffer={true}
-            fontSize='1rem' buttonSize={''} overrideDarkmode/>
+            fontSize='1rem' buttonSize={''} overrideDarkmode/>}
         </PaddingWrap>
       </HoverInfo>
     </Container>

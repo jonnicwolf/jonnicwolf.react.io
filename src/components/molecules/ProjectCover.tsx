@@ -1,19 +1,20 @@
-import { FC } from 'react';
+import { FC, SetStateAction } from 'react';
 // @ts-ignore
 import styled from 'styled-components';
 
 interface Props {
-  setter: (value: boolean) => void,
+  setter: React.Dispatch<SetStateAction<boolean>>,
+  link: string,
 }
 
-const SCDCover: FC<Props> = ({ setter }) => {
+const SCDCover: FC<Props> = ({ setter, link }) => {
   function onMouseEnter () {
     setter(true);
   };
 
   return (
     <Container onMouseEnter={onMouseEnter}>
-      <Img src="https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/photos/photos/z265st6zxzzcvahg9sca" alt="" />
+      <Img src={link} alt="Project Example" />
     </Container>
   );
 };
