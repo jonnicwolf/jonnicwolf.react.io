@@ -7,7 +7,7 @@ const Test: FC = () => {
   return (
     <Container>
       {/* TEST */}
-      <SideMenu />
+      
     </Container>
   );
 };

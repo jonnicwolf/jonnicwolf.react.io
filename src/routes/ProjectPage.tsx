@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 // @ts-ignore
 import styled from 'styled-components';
 
@@ -15,6 +15,7 @@ interface Props {
 };
 
 const ProjectPage: FC<Props> = ({ setter, getter }) => {
+  const [current, setCurrent] = useState<number>(0);
   const [
     javascript,
     typescript,
@@ -76,11 +77,13 @@ const ProjectPage: FC<Props> = ({ setter, getter }) => {
       descriptions={['UTILITY', 'FRONT END']}
       devicons={hotc_devi}
     />
-  ]
+  ];
 
   return (
     <Container getter={getter}>
       <ProjectList getter={getter}>
+        {web_projects.map((project, i) => <div key={i}>{project}</div>)}
+        {ios_projects.map((project, i) => <div key={i}>{project}</div>)}
       </ProjectList>
 
       <Background strokeColor={150} showControls={false} />
