@@ -10,8 +10,8 @@ import MobileNav from './components/navigation/MobileNav';
 import Footer from './components/atoms/Footer';
 
 const Test        = lazy(() => import('./routes/Test'))
-const ProjectPage = lazy(() => import('./routes/ProjectPage'));
-const GalleryPage = lazy(() => import('./routes/GalleryPage'));
+const WebProjects = lazy(() => import('./routes/WebProjects'));
+const Gallery = lazy(() => import('./routes/Gallery'));
 
 interface StyleProps {
   darkmode: boolean,
@@ -29,9 +29,9 @@ const App: FC = () => {
         { isMobile && <MobileNav enterClicked={enterClicked} />}
         {!isMobile && <NavBar />}
         <Routes>
-          <Route path='/' element={<ProjectPage setter={setEnterClicked} getter={enterClicked} />} />
-          <Route path='/gallery' element={<GalleryPage/>} />
-          <Route path='/gallery/:projectName' element={<GalleryPage />} />
+          <Route path='/' element={<WebProjects setter={setEnterClicked} getter={enterClicked} />} />
+          <Route path='/gallery' element={<Gallery/>} />
+          <Route path='/gallery/:projectName' element={<Gallery />} />
           <Route path='/test' element={<Test />} />
         </Routes>
       </Suspense>

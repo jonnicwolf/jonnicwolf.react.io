@@ -14,7 +14,7 @@ interface Props {
   setter: (open: boolean) => void,
 };
 
-const ProjectPage: FC<Props> = ({ setter, getter }) => {
+const WebProjects: FC<Props> = ({ setter, getter }) => {
   const [current, setCurrent] = useState<number>(0);
   const [
     javascript,
@@ -72,7 +72,6 @@ const ProjectPage: FC<Props> = ({ setter, getter }) => {
       title='Pour Metronome'
       bio='Bartender Tool'
       githubLink='https://github.com/jonnicwolf/pour_metronome'
-      // liveLink='https://esperi.vercel.app'
       coverLink='https://res.cloudinary.com/dhah4xjvr/image/upload/v1722178672/fezz.dev/photos/photos/z265st6zxzzcvahg9sca.jpg'
       // @ts-ignore
       cover={ProjectCover}
@@ -130,4 +129,4 @@ const ProjectList = styled.div`
   }
 `;
 
-export default ProjectPage;
+export default WebProjects;

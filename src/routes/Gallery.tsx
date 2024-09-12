@@ -30,7 +30,7 @@ interface P5Props {
 
 type P5Type = FC<P5Props>;
 
-const GalleryPage: FC = () => {
+const Gallery: FC = () => {
   const [index, setIndex] = useState<number>(0);
   const { darkmode } = useContext(DarkmodeContext);
   const { projectName } = useParams();
@@ -174,4 +174,4 @@ const infoAnimation = {
   },
 };
 
-export default GalleryPage;
+export default Gallery;
