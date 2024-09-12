@@ -23,6 +23,7 @@ const ProjectPage: FC<Props> = ({ setter, getter }) => {
     p5,
     firebase,
     postgresql,
+    swift
   ] = [
     'devicon-javascript-plain',
     'devicon-typescript-plain',
@@ -30,11 +31,12 @@ const ProjectPage: FC<Props> = ({ setter, getter }) => {
     'devicon-p5js-original',
     'devicon-firebase-plain',
     'devicon-postgresql-plain',
-    'devicon-css3-plain-wordmark',
+    'devicon-swift-plain'
   ];
 
-  const hotc_devi = [typescript, react, p5, firebase];
-  const scd_devi= [javascript, react, postgresql, firebase];
+  const hotc = [typescript, react, p5, firebase];
+  const scd = [javascript, react, postgresql, firebase];
+  const pour = [swift];
 
   const web_projects = [
     <LandingPage setter={setter} />,
@@ -48,7 +50,7 @@ const ProjectPage: FC<Props> = ({ setter, getter }) => {
       gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/heicbedxhzwocfzxqzky'
       apis={['TAROTAPI', 'OPENAI API']}
       descriptions={['LIFESTYLE & ENTERTAINMENT', 'FULL STACK']}
-      devicons={hotc_devi}
+      devicons={hotc}
     />,
     <ProjectCard
       title='Stoned Cold Dreamery'
@@ -60,7 +62,7 @@ const ProjectPage: FC<Props> = ({ setter, getter }) => {
       gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/r46imtohg1igqqknoqgp'
       apis={[]}
       descriptions={['E-COMMERCE', 'FULL STACK']}
-      devicons={scd_devi}
+      devicons={scd}
     />
   ];
 
@@ -75,14 +77,14 @@ const ProjectPage: FC<Props> = ({ setter, getter }) => {
       gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/r46imtohg1igqqknoqgp'
       apis={[]}
       descriptions={['UTILITY', 'FRONT END']}
-      devicons={hotc_devi}
+      devicons={pour}
     />
   ];
 
   return (
     <Container getter={getter}>
       <ProjectList getter={getter}>
-        {web_projects.map((project, i) => <div key={i}>{project}</div>)}
+        {/* {web_projects.map((project, i) => <div key={i}>{project}</div>)} */}
         {ios_projects.map((project, i) => <div key={i}>{project}</div>)}
       </ProjectList>
 
