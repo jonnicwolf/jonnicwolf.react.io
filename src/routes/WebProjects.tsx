@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, SetStateAction, useState } from 'react';
 // @ts-ignore
 import styled from 'styled-components';
 
@@ -7,14 +7,16 @@ import ProjectCard from '../components/molecules/ProjectCard';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
 
 import EsperiCover from '../components/molecules/EsperiCover';
-import SCDCover from '../components/molecules/SCDCover';
+import ProjectCover from '../components/molecules/ProjectCover';
 
 interface Props {
-  getter: boolean,
-  setter: (open: boolean) => void,
+  enterClicked: boolean,
+  setEnterClicked: React.Dispatch<SetStateAction<boolean>>,
+  projectType: number,
+  setProjectType: React.Dispatch<SetStateAction<number>>
 };
 
-const ProjectPage: FC<Props> = ({ setter, getter }) => {
+const WebProjects: FC<Props> = ({ enterClicked, setEnterClicked }) => {
   const [
     javascript,
     typescript,
@@ -29,16 +31,16 @@ const ProjectPage: FC<Props> = ({ setter, getter }) => {
     'devicon-p5js-original',
     'devicon-firebase-plain',
     'devicon-postgresql-plain',
-    'devicon-css3-plain-wordmark',
+    'devicon-swift-plain',
   ];
 
-  const hotc_devi = [typescript, react, p5, firebase];
-  const scd_devi= [javascript, react, postgresql, firebase];
+  const hotc = [typescript, react, p5, firebase];
+  const scd = [javascript, react, postgresql, firebase];
 
   return (
-    <Container getter={getter}>
-      <ProjectList getter={getter}>
-        <LandingPage setter={setter} />
+    <Container getter={enterClicked}>
+      <ProjectList getter={enterClicked}>
+        <LandingPage setter={setEnterClicked} />
 
         <ProjectCard
           title='Esperi'
@@ -50,7 +52,7 @@ const ProjectPage: FC<Props> = ({ setter, getter }) => {
           gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/heicbedxhzwocfzxqzky'
           apis={['TAROTAPI', 'OPENAI API']}
           descriptions={['LIFESTYLE & ENTERTAINMENT', 'FULL STACK']}
-          devicons={hotc_devi}
+          devicons={hotc}
         />
 
         <ProjectCard
@@ -58,12 +60,13 @@ const ProjectPage: FC<Props> = ({ setter, getter }) => {
           bio='Webstore'
           liveLink='https://stoned-cold-dreamery.vercel.app'
           githubLink='https://github.com/jonnicwolf/stoned_cold_dreamery'
+          coverLink='https://res.cloudinary.com/dhah4xjvr/image/upload/v1722178672/fezz.dev/photos/photos/z265st6zxzzcvahg9sca.jpg'
           // @ts-ignore
-          cover={SCDCover}
+          cover={ProjectCover}
           gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/r46imtohg1igqqknoqgp'
           apis={[]}
           descriptions={['E-COMMERCE', 'FULL STACK']}
-          devicons={scd_devi}
+          devicons={scd}
         />
       </ProjectList>
 
@@ -107,4 +110,4 @@ const ProjectList = styled.div`
   }
 `;
 
-export default ProjectPage;
+export default WebProjects;
