@@ -10,7 +10,6 @@ interface Props {
   liveLink?: string,
   githubLink: string,
   coverLink?: string,
-  image: string,
   cover: ReactElement,
   gifPath: string,
   apis: string[],
@@ -47,10 +46,9 @@ const ProjectCard: FC<Props> = ({
           gifPath={gifPath}
           apis={apis}
           descriptions={descriptions}
-          devicons={devicons} image={''} />
+          devicons={devicons}  />
           // @ts-ignore !!!! FIX !!!!!
-        : createElement(Cover, {setter: setShowMore, link: coverLink})
-        }
+        : createElement(Cover, {setter: setShowMore, link: coverLink}) }
     </Container>
   );
 };

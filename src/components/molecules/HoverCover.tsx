@@ -9,7 +9,6 @@ interface Props {
   title: string,
   liveLink?: string,
   githubLink?: string,
-  image: string,
   gifPath: string,
   apis: string[],
   descriptions: string[],
