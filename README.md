@@ -12,15 +12,10 @@ I'm Jon "Fezz" Narine, a dedicated software developer with a flair for creativit
 
 ## Portfolio Highlights
 
-### jonnickwolf.dev
+### fezz.vercel.dev
 - The showcase of my projects starts with this project! The interactive landing page is built using CanvasAPI and React.
 
-Technologies: JavaScript, React, Node.js, CanvasAPI, HTML/CSS3, Styled-Components
-
-### Tip Tally Pro
-- Developed an intuitive application to streamline tip distribution among employees and facilitate cash management for businesses. The app calculates each employee's share of tips based on credit card and cash transactions, and efficiently counts the bank's cash holdings.
-
-Technologies: JavaScript, React, Node.js, MongoDB, HTML/CSS
+Technologies: TypeScript, React, Node.js, CanvasAPI, p5.js, Styled-Components
 
 ### the Stoned Cold Dreamery
 - Your premier destination for cannabis-infused ice cream delights! Immerse yourself in a world of frozen wonders where each scoop is crafted with care and infused with the goodness of cannabis, offering a unique and unforgettable experience.
