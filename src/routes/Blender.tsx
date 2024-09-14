@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import ProjectCard from '../components/molecules/ProjectCard';
 import EsperiCover from '../components/molecules/EsperiCover';
+import BlenderCard from '../components/molecules/BlenderCard';
 
 const Blender: FC = () => {
   const swift = 'devicon-blender-original';
@@ -23,6 +24,14 @@ const Blender: FC = () => {
             apis={[]}
             descriptions={['UTILITY', 'FRONT END']}
             devicons={[swift, react]}
+        />
+
+        <BlenderCard
+          light={[0,0,0]}
+          color='#ffffff'
+          modelPath='/Portuguese_round.glb'
+          intensity={1}
+          orbitControls
         />
       </ProjectList>
     </Container>
@@ -47,9 +56,8 @@ const ProjectList = styled.div`
   flex-direction: column;
   gap: 300px;
   position: absolute;
-  z-index:3;
+  z-index: 1;
   transition: z-index 2s linear;
 `;
-
 
 export default Blender;

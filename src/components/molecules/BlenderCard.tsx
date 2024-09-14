@@ -24,14 +24,15 @@ const BlenderCard: FC<Props> = ({ light, color, modelPath, intensity, orbitContr
         <directionalLight intensity={intensity} color={color} />
 
         <primitive
-        object={scene}
-        scale={0.1}
-        position={light}
-        rotation={light}
+          object={scene}
+          scale={0.1}
+          position={light}
+          rotation={light}
         />
 
         {orbitControls && <OrbitControls />}
       </Canvas>
+      
     </Container>
   );
 };
@@ -39,6 +40,7 @@ const BlenderCard: FC<Props> = ({ light, color, modelPath, intensity, orbitContr
 const Container = styled.div`
   width: 800px;
   height: 800px;
+  border: 1px solid red;
 `;
 
 export default BlenderCard;
