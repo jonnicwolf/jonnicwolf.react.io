@@ -1,4 +1,4 @@
-import { FC, ReactElement } from 'react';
+import { FC, } from 'react';
 // @ts-ignore
 import styled from 'styled-components';
 import { Canvas, } from '@react-three/fiber';
@@ -10,18 +10,27 @@ import {
 interface Props {
   light: number[],
   color: string,
-  model: ,
+  modelPath: string,
   intensity: number,
   orbitControls: boolean,
 };
 
-const BlenderCard: FC<Props> = ({ light, color, model, intensity, orbitControls }) => {
-  const { scene } from useGLTF(modelPath)
+const BlenderCard: FC<Props> = ({ light, color, modelPath, intensity, orbitControls }) => {
+  const { scene } = useGLTF(modelPath);
+
   return (
     <Container>
       <Canvas>
-        <directionalLight position={light} color={color} />
+        <directionalLight intensity={intensity} color={color} />
 
+        <primitive
+        object={scene}
+        scale={0.1}
+        position={light}
+        rotation={light}
+        />
+
+        {orbitControls && <OrbitControls />}
       </Canvas>
     </Container>
   );
