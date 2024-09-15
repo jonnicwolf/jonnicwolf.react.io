@@ -2,36 +2,24 @@ import { FC }from 'react';
 // @ts-ignore
 import styled from 'styled-components';
 
-import ProjectCard from '../components/molecules/ProjectCard';
-import EsperiCover from '../components/molecules/EsperiCover';
 import BlenderCard from '../components/molecules/BlenderCard';
 
 const Blender: FC = () => {
-  const swift = 'devicon-blender-original';
+  const blender = 'devicon-blender-original';
   const react = 'devicon-react-plain'
 
   return (
     <Container>
       <ProjectList>
-        <ProjectCard
-            bio='Beverage pour measurement tool on WatchOS'
-            title='Shot Clock'
-            githubLink='https://github.com/jonnicwolf/pour_metronome'
-            coverLink='https://res.cloudinary.com/dhah4xjvr/image/upload/v1722178672/fezz.dev/photos/photos/z265st6zxzzcvahg9sca.jpg'
-            // @ts-ignore
-            cover={EsperiCover}
-            gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/r46imtohg1igqqknoqgp'
-            apis={[]}
-            descriptions={['UTILITY', 'FRONT END']}
-            devicons={[swift, react]}
-        />
-
         <BlenderCard
           light={[0,0,0]}
           color='#ffffff'
           modelPath='/Portuguese_round.glb'
           intensity={1}
-          orbitControls
+          orbitControls={true}
+          title='Portuguese Diamond'
+          descriptions={['LOW POLY', 'GLASS BSDF', '1MB', '.blend',]}
+          devicons={[react, blender]}
         />
       </ProjectList>
     </Container>

@@ -37,7 +37,7 @@ const App: FC = () => {
           <Route path='/gallery' element={<Gallery/>} />
           <Route path='/gallery/:projectName' element={<Gallery />} />
           <Route path='/ios' element={<IOSProjects />} />
-          <Route path='/blender' element={<Blender />} />
+          <Route path='/3D' element={<Blender />} />
           <Route path='/test' element={<Test />} />
         </Routes>
       </Suspense>
