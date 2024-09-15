@@ -35,16 +35,19 @@ const BlenderCard: FC<Props> = ({
   const [showMore, setShowMore] = useState<boolean>(false);
   const { scene } = useGLTF(modelPath);
 
-  
+  function handleShowMore (): void{
+    setShowMore(!showMore);
+  };
+
   return (
     <Container>
       {showMore
-      ?  <Canvas>
+      ?  <Canvas onMouseLeave={handleShowMore}>
           <directionalLight intensity={intensity} color={color} />
 
           <primitive
             object={scene}
-            scale={0.1}
+            scale={1}
             position={light}
             rotation={light}
           />
@@ -52,6 +55,7 @@ const BlenderCard: FC<Props> = ({
           {orbitControls && <OrbitControls />}
         </Canvas>
       : <HoverCover
+          onMouseEnter={handleShowMore}
           title={title}
           descriptions={descriptions}
           devicons={devicons}

@@ -13,6 +13,7 @@ interface Props {
   apis?: string[],
   descriptions?: string[],
   devicons: string[],
+  onMouseEnter?: () => void,
 };
 
 const HoverCover: FC<Props> = ({
@@ -24,10 +25,11 @@ const HoverCover: FC<Props> = ({
   apis,
   descriptions,
   devicons,
+  onMouseEnter,
 }) => {
 
   return (
-    <Container>
+    <Container onMouseEnter={onMouseEnter}>
       <Gif src={gifPath} />
       <HoverInfo>
         <PaddingWrap>
