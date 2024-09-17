@@ -6,7 +6,8 @@ import BlenderCard from '../components/molecules/BlenderCard';
 
 const Blender: FC = () => {
   const blender = 'devicon-blender-original';
-  const react = 'devicon-react-plain'
+  const react = 'devicon-react-plain';
+  const hdri = '/victoria_sunset_4k.hdr';
 
   return (
     <Container>
@@ -20,6 +21,7 @@ const Blender: FC = () => {
           title='Portuguese Diamond'
           descriptions={['LOW POLY', 'GLASS BSDF', '1MB', '.blend',]}
           devicons={[react, blender]}
+          hdri={hdri}
         />
       </ProjectList>
     </Container>

@@ -1,13 +1,16 @@
 import { FC, useState } from 'react';
 // @ts-ignore
 import styled from 'styled-components';
-import { Canvas, } from '@react-three/fiber';
+import { Canvas, useLoader } from '@react-three/fiber';
+import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader';
 import {
+  Environment,
   OrbitControls,
   useGLTF,
 } from '@react-three/drei';
 
 import HoverCover from './HoverCover';
+import { Texture } from 'three';
 
 interface Props {
   light: number[],
@@ -20,6 +23,7 @@ interface Props {
   apis?: string[],
   descriptions: string[],
   devicons: string[],
+  hdri?: string,
 };
 
 const BlenderCard: FC<Props> = ({
@@ -31,11 +35,13 @@ const BlenderCard: FC<Props> = ({
   title,
   descriptions,
   devicons,
+  hdri,
  }) => {
   const [showMore, setShowMore] = useState<boolean>(false);
   const { scene } = useGLTF(modelPath);
+  const background = hdri ? useLoader(RGBELoader, hdri) as Texture : null
 
-  function handleShowMore (): void{
+  function handleShowMore (): void {
     setShowMore(!showMore);
   };
 
@@ -43,15 +49,14 @@ const BlenderCard: FC<Props> = ({
     <Container>
       {showMore
       ?  <Canvas onMouseLeave={handleShowMore}>
+          {background && <Environment background={true} map={background} />}
           <directionalLight intensity={intensity} color={color} />
-
           <primitive
             object={scene}
             scale={1}
             position={light}
             rotation={light}
           />
-
           {orbitControls && <OrbitControls />}
         </Canvas>
       : <HoverCover
@@ -68,6 +73,7 @@ const BlenderCard: FC<Props> = ({
 const Container = styled.div`
   width: 800px;
   height: 800px;
+  border: 1px solid red;
 `;
 
 export default BlenderCard;
