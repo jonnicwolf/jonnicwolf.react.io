@@ -5,14 +5,15 @@ import styled, { keyframes } from 'styled-components';
 import ExternalButton from '../../assets/buttons/ExternalButton';
 
 interface Props {
-  bio: string,
-  title: string,
+  bio?: string,
+  title?: string,
   liveLink?: string,
   githubLink?: string,
-  gifPath: string,
-  apis: string[],
-  descriptions: string[],
+  gifPath?: string,
+  apis?: string[],
+  descriptions?: string[],
   devicons: string[],
+  onMouseEnter?: () => void,
 };
 
 const HoverCover: FC<Props> = ({
@@ -24,9 +25,11 @@ const HoverCover: FC<Props> = ({
   apis,
   descriptions,
   devicons,
+  onMouseEnter,
 }) => {
+
   return (
-    <Container>
+    <Container onMouseEnter={onMouseEnter}>
       <Gif src={gifPath} />
       <HoverInfo>
         <PaddingWrap>
@@ -36,12 +39,12 @@ const HoverCover: FC<Props> = ({
             {devicons.map( (icon, index) => ( <i className={icon} key={index} /> ))}
           </TechContainer>
           <PContainer>
-            {apis.length >= 1 && 
+            {apis && 
             <P> [ {apis.map(
               (item, index) => index !== apis.length-1
               ? <span key={index}>{` ${item} /`}</span>
               : <span key={index}>{` ${item} `}</span> )} ] </P>}
-            {descriptions.length >= 1 && 
+            {descriptions && 
             <P> [ {descriptions.map(
               (item, index) => index !== descriptions.length-1
               ? <span key={index}>{` ${item} /`}</span>

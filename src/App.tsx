@@ -11,8 +11,9 @@ import Footer from './components/atoms/Footer';
 
 const Test        = lazy(() => import('./routes/Test'))
 const WebProjects = lazy(() => import('./routes/WebProjects'));
-const Gallery = lazy(() => import('./routes/Gallery'));
+const Gallery     = lazy(() => import('./routes/Gallery'));
 const IOSProjects = lazy(() => import('./routes/IOSProjects'));
+const Blender = lazy(() => import('./routes/Blender'));
 
 interface StyleProps {
   darkmode: boolean,
@@ -36,6 +37,7 @@ const App: FC = () => {
           <Route path='/gallery' element={<Gallery/>} />
           <Route path='/gallery/:projectName' element={<Gallery />} />
           <Route path='/ios' element={<IOSProjects />} />
+          <Route path='/3D' element={<Blender />} />
           <Route path='/test' element={<Test />} />
         </Routes>
       </Suspense>
