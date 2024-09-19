@@ -11,7 +11,7 @@ const Blender: FC = () => {
   const hdri = '/victoria_sunset_4k.hdr';
   const light = new Vector3(0,-30,-50);
   
-  const modelPath = '/Portuguese_round.glb';
+  const modelPath = 'https://res.cloudinary.com/dhah4xjvr/raw/upload/Portuguese_round_hxnotk.blend';
 
   return (
     <Container>
