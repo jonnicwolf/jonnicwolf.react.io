@@ -3,27 +3,31 @@ import { FC }from 'react';
 import styled from 'styled-components';
 
 import BlenderCard from '../components/molecules/BlenderCard';
+import { Vector3 } from 'three';
 
 const Blender: FC = () => {
   const blender = 'devicon-blender-original';
   const react = 'devicon-react-plain';
   const hdri = '/victoria_sunset_4k.hdr';
+  const light = new Vector3(0,-30,-50);
+  
+  const modelPath = '/Portuguese_round.glb';
 
   return (
     <Container>
       <ProjectList>
         <BlenderCard
-          light={[0,0,0]}
+          light={light}
           color='#ffffff'
-          modelPath='/Portuguese_round.glb'
+          modelPath={modelPath}
           intensity={1}
           orbitControls={true}
           title='Portuguese Diamond'
-          descriptions={['LOW POLY', 'GLASS BSDF', '1MB', '.blend',]}
+          descriptions={['LOW POLY', 'GLASS BSDF', '1MB', '.blend']}
           devicons={[react, blender]}
           hdri={hdri}
         />
-      </ProjectList>
+      </ProjectList>''
     </Container>
   );
 };

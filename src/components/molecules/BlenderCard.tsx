@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 // @ts-ignore
 import styled from 'styled-components';
-import { Canvas, useLoader } from '@react-three/fiber';
+import { Canvas, useLoader, } from '@react-three/fiber';
 import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader';
 import {
   Environment,
@@ -10,10 +10,11 @@ import {
 } from '@react-three/drei';
 
 import HoverCover from './HoverCover';
-import { Texture } from 'three';
+import { Vector3, } from 'three';
 
 interface Props {
-  light: number[],
+  light: Vector3,
+  position?: Vector3,
   color: string,
   modelPath: string,
   intensity: number,
@@ -23,11 +24,12 @@ interface Props {
   apis?: string[],
   descriptions: string[],
   devicons: string[],
-  hdri?: string,
+  hdri: string,
 };
 
 const BlenderCard: FC<Props> = ({
   light,
+  position,
   color,
   modelPath,
   intensity,
@@ -39,7 +41,7 @@ const BlenderCard: FC<Props> = ({
  }) => {
   const [showMore, setShowMore] = useState<boolean>(false);
   const { scene } = useGLTF(modelPath);
-  const background = hdri ? useLoader(RGBELoader, hdri) as Texture : null
+  const background = useLoader(RGBELoader, hdri);
 
   function handleShowMore (): void {
     setShowMore(!showMore);
@@ -47,17 +49,23 @@ const BlenderCard: FC<Props> = ({
 
   return (
     <Container>
-      {showMore
-      ?  <Canvas onMouseLeave={handleShowMore}>
+      {showMore ?
+      <Canvas onMouseLeave={handleShowMore} camera={{position: position}}>
           {background && <Environment background={true} map={background} />}
-          <directionalLight intensity={intensity} color={color} />
+          <directionalLight intensity={intensity} color={color} position={light} />
           <primitive
             object={scene}
             scale={1}
-            position={light}
-            rotation={light}
+            position={[0,0,-100]}
+            rotation={[0,-100,0]}
           />
-          {orbitControls && <OrbitControls />}
+          {orbitControls && 
+            <OrbitControls
+              autoRotate
+              //autoRotateSpeed={20}
+              // enableRotate={false}
+              enableZoom={false}
+              />}
         </Canvas>
       : <HoverCover
           onMouseEnter={handleShowMore}
@@ -65,7 +73,7 @@ const BlenderCard: FC<Props> = ({
           descriptions={descriptions}
           devicons={devicons}
         />
-       }
+      }
     </Container>
   );
 };
@@ -73,7 +81,6 @@ const BlenderCard: FC<Props> = ({
 const Container = styled.div`
   width: 800px;
   height: 800px;
-  border: 1px solid red;
 `;
 
 export default BlenderCard;
