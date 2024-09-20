@@ -118,8 +118,8 @@ const P5_LORENZ_ATTRACTOR: FC<Props> = ({ strokeColor, showControls }) => {
   const sketch_ref = useRef();
   //@ts-ignore
   const sketch = useCallback((p) => {
-    const size: number = 20;
-    const max: number = 30;
+    const size: number = 15;
+    const max: number = 40;
     let paths: p5.Vector[][] = [];
     let initialPositions: p5.Vector[] = [];
 
