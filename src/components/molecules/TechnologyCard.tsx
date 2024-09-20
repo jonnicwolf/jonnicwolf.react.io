@@ -15,11 +15,11 @@ const TechnologyCard: FC<Props> = ({ viewSetter }) => {
 
   return (
     <Container>
-      <IntroText fontSize='2rem'>TECHS & TOOLS</IntroText>
+      <Title>TECHS & TOOLS</Title>
 
       <Content>
         <TechGroup darkmode={darkmode} >
-          <IntroText fontSize='1.3rem'>LANGUAGES</IntroText>
+          <IntroText>LANGUAGES</IntroText>
           <TechContent gap='10px' width='50%'>
             <SVG style={{height: '5rem'}} src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" title='JavaScript'/>
             <Icon className='devicon-typescript-plain colored' title='TypeScript' />
@@ -29,22 +29,21 @@ const TechnologyCard: FC<Props> = ({ viewSetter }) => {
         </TechGroup>
 
         <TechGroup darkmode={darkmode} >
-          <IntroText fontSize='1.3rem'>STYLING</IntroText>
+          <IntroText>STYLING</IntroText>
           <TechContent gap='10px' width='80%'>
             <StyledComponents title='Styled-Components'>
               <StyledIcon>{'<💅>'}</StyledIcon>
               <StyledName>STYLED COMPONENTS</StyledName>
             </StyledComponents>
             <Icon className='devicon-p5js-original colored' title='p5.js' />
-            <Icon className='devicon-css3-plain colored' title='CSS3' />
+            <Icon className='devicon-blender-original colored' title='Blender' />
             <Icon className='devicon-bootstrap-plain colored' title='Bootstrap' />
-            <Icon className='devicon-sass-plain colored' title='Sass' />
             <Icon className='devicon-framermotion-original colored' title='Framer Motion' />
           </TechContent>
         </TechGroup>
 
         <TechGroup darkmode={darkmode} >
-          <IntroText fontSize='1.3rem'>LIBRARIES</IntroText>
+          <IntroText>LIBRARIES</IntroText>
           <TechContent gap='10px'>
             <Icon className='devicon-react-original colored' title='React' />
             <Icon className='devicon-redux-original colored' title='Redux' />
@@ -52,33 +51,22 @@ const TechnologyCard: FC<Props> = ({ viewSetter }) => {
             <Icon className='devicon-nodejs-plain colored' title='Node.js' />
             <Icon className='devicon-express-original colored' title='Express.js' />
             <Icon className='devicon-firebase-plain colored' title='Firebase' />
-            <Icon className='devicon-sentry-plain colored' title='Sentry' />
             <Icon className='devicon-cypressio-plain colored' title='Cypress.io' />
             <Icon className='devicon-jest-plain colored' title='Jest' />
-            <Icon className='devicon-git-plain colored' title='Git' />
-            <Icon className='devicon-npm-original-wordmark colored' title='NPM Package Manager' />
           </TechContent>
         </TechGroup>
 
         <TechGroup darkmode={darkmode} >
-          <IntroText fontSize='1.3rem'>TOOLS</IntroText>
+          <IntroText>TOOLS</IntroText>
           <TechContent gap='9px'>
-            <Icon className='devicon-docker-plain colored' title='Docker' />
-            <Icon className='devicon-rabbitmq-plain colored' title='RabbitMQ' />
             <Icon className='devicon-terraform-plain colored' title='Terraform' />
             <Icon className='devicon-kubernetes-plain colored' title='Kubernetes' />
-            <Icon className='devicon-jenkins-plain colored' title='Jenkins' />
             <Icon className='devicon-postgresql-plain colored' title='PostgreSQL' />
             <Icon className='devicon-datagrip-plain colored' title='DataGrip' />
-            <Icon className='devicon-postman-plain colored' title='Postman' />
             <Icon className='devicon-github-plain colored' title='GitHub' />
-            <Icon className='devicon-gitlab-plain colored' title='Gitlab' />
             <Icon className='devicon-vscode-plain colored' title='Visual Studio Code' />
             <Icon className='devicon-jira-plain  colored' title='Jira' />
             <Icon className='devicon-curl-plain  colored' title='cURL' />
-            <SVG style={{ height: '5rem'}} src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/slack/slack-original.svg" title='Slack' />
-            <SVG style={{ height: '5rem'}} src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" title='Figma' />
-            <Icon className='devicon-trello-plain colored' title='Trello' />
           </TechContent>
         </TechGroup>
       </Content>
@@ -109,6 +97,7 @@ const fadeIn = keyframes`
 const Container = styled(motion.div)`
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   flex-direction: column;
   height: 900px;
   width: 800px;
@@ -117,9 +106,12 @@ const Container = styled(motion.div)`
 `;
   
   const IntroText = styled.h3`
-    font-size: ${(props: {fontSize: string}) => props.fontSize};
+    font-size: 2rem;
     margin: 0;
     font-family: Michroma;
+  `;
+  const Title = styled(IntroText)`
+    font-size: 2.3rem;
   `;
 
   const Content = styled.div`
@@ -182,6 +174,7 @@ const Container = styled(motion.div)`
     align-items: center;
     justify-content: center;
     gap: 10px;
+    scale: 1.1;
   `;
 
 export default TechnologyCard;
