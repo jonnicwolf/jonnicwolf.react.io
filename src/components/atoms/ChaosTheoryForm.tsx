@@ -70,7 +70,7 @@ const ChaosTheoryForm: FC<Props> = ({ vars, setters }) => {
       <VarContainer>
         <VarWrap>
           <Button onMouseDown={handleSigmaUp} darkmode={darkmode}>&#8593;</Button>
-          <Var>𝛴{sigma}</Var>
+          <Var>&sigma;{sigma}</Var>
           <Button onMouseDown={handleSigmaDown} darkmode={darkmode}>&#8595;</Button>
         </VarWrap>
 
