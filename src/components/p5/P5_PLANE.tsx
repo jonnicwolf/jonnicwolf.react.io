@@ -32,7 +32,7 @@ const P5_PLANE: FC<Props> = ({ strokeColor, showSun }) => {
     };
 
     p.draw = () => {
-      p.frameRate(120);
+      p.frameRate(60);
       waveSpeed -= 0.0041;
       let yoff = waveSpeed;
 
