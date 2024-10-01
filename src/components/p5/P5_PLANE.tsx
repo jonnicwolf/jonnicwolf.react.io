@@ -6,18 +6,19 @@ import p5 from "p5";
 interface Props {
   strokeColor: number,
   showSun: boolean,
-}
+};
 
 const P5_PLANE: FC<Props> = ({ strokeColor, showSun }) => {
   const sketch_ref = useRef();
 
   // @ts-ignore
   const sketch = useCallback((p) => {
-    const isMobile: boolean = window.innerWidth > 1200;
+    // const isMobile: boolean = window.innerWidth > 1200;
     let cols: number, rows: number;
-    let w: number = isMobile ? 2400 : 4800;
+    // let w: number = isMobile ? 2400 : 4800;
+    let w: number = 2400;
     let h: number = 2400;
-    let scl: number = isMobile ? 60 : 80; // scale of each grid square
+    let scl: number = 60; // scale of each grid square
     let flying: number = 0;
     let terrain: number[][] = [];
 
@@ -29,19 +30,20 @@ const P5_PLANE: FC<Props> = ({ strokeColor, showSun }) => {
     };
 
     p.draw = () => {
-      p.frameRate(240);
+      p.frameRate(120);
       flying -= 0.008;
       let yoff = flying;
       for (let y = 1; y < rows; y++) {
         let xoff = 1;
         for (let x = 1; x < cols; x++) {
-          let distance_x = Math.abs(x * scl - p.mouseX);
-          let distance_y = Math.abs(y * scl - p.mouseY);
+          // let distance_x = Math.abs(x * scl - p.mouseX);
+          let distance_x = Math.abs(x * scl);
+          let distance_y = Math.abs(y * scl);
           let d = Math.sqrt(distance_x * distance_x + distance_y * distance_y); // Distance from the mouse to the vertex
 
           // Use distance to influence noise
           let adjustedNoise = p.map(d, 0, 550, 0.5, 1);
-          terrain[x][y] = p.map(p.noise(xoff+10, yoff-1), 0, 1, -100, 100) * adjustedNoise;
+          terrain[x][y] = p.map(p.noise(xoff + 10, yoff - 1), 0, 1, -100, 100) * adjustedNoise;
 
           xoff += 0.2;
         };
@@ -60,19 +62,19 @@ const P5_PLANE: FC<Props> = ({ strokeColor, showSun }) => {
           // Calculate opacity based on row position
           let opacityTop = p.map(y, 0, rows / 4, 5, 255); // Fade from top
           let opacityBottom = p.map(y, rows - 1, rows * 3 / 4, 5, 255); // Fade from bottom
-          let opacity = p.min(opacityTop, opacityBottom); // Use the lower opacity value
 
+          let opacity = p.min(opacityTop, opacityBottom);
           p.stroke(strokeColor, strokeColor, strokeColor, opacity);
 
           p.vertex(x * scl, y * scl, terrain[x][y]);
           p.vertex(x * scl, (y) * scl, terrain[x][y]);
-        }
+        };
         p.endShape();
-      }
+      };
     };
 
     p.windowResized = () => p.resizeCanvas(p.windowWidth, 320);
-  },[strokeColor, showSun])
+  },[strokeColor, showSun]);
 
   useEffect(() => {
     const p5Canvas = new p5(sketch, sketch_ref.current);

@@ -22,8 +22,8 @@ const P5_LORENZ_ATTRACTOR: FC<Props> = ({ strokeColor, showControls }) => {
   const sketch_ref = useRef();
   //@ts-ignore
   const sketch = useCallback((p) => {
-    const size: number = 15;
-    const max: number = 40;
+    const size: number = 20;
+    const max: number = 20;
     let paths: p5.Vector[][] = [];
     let initialPositions: p5.Vector[] = [];
 
@@ -32,9 +32,9 @@ const P5_LORENZ_ATTRACTOR: FC<Props> = ({ strokeColor, showControls }) => {
       initialPositions.push(
         new p5.Vector(
           //@ts-ignore
-          p.random(-2, 2),
-          p.random(-3, 2),
-          p.random(-2, 4)
+          p.random(-100, 100),
+          p.random(-100, 100),
+          p.random(-100, 100)
         )
       );
     };
@@ -45,13 +45,13 @@ const P5_LORENZ_ATTRACTOR: FC<Props> = ({ strokeColor, showControls }) => {
 
     p.draw = () => {
       p.background(0, 0, 0, 0);
-      p.scale(12);
-      p.strokeWeight(1.5);
+      p.scale(3);
+      p.strokeWeight(1);
       p.noFill();
 
-      const rotationSpeed: number = 0.0019;
-      p.rotateX(p.frameCount * rotationSpeed * 0.7);
-      p.rotateY(p.frameCount * rotationSpeed);
+      const rotationSpeed: number = 0.005;
+      p.rotateX(p.frameCount * rotationSpeed * 0.3);
+      p.rotateY(p.frameCount * rotationSpeed * 0.3);
       p.rotateZ(p.frameCount * rotationSpeed * 0.3);
 
       paths.forEach((points, idx) => {
