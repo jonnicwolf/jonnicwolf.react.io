@@ -19,8 +19,10 @@ const P5_PLANE: FC<Props> = ({ strokeColor, showSun }) => {
     let w: number = 2400;
     let h: number = 2400;
     let scl: number = 60; // scale of each grid square
-    let flying: number = 0;
+    let waveSpeed: number = 0;
     let terrain: number[][] = [];
+    let limiter: number = 0;
+    let limitMet: boolean = false;
 
     p.setup = () => {
       p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
@@ -31,12 +33,12 @@ const P5_PLANE: FC<Props> = ({ strokeColor, showSun }) => {
 
     p.draw = () => {
       p.frameRate(120);
-      flying -= 0.008;
-      let yoff = flying;
+      waveSpeed -= 0.0041;
+      let yoff = waveSpeed;
+
       for (let y = 1; y < rows; y++) {
         let xoff = 1;
         for (let x = 1; x < cols; x++) {
-          // let distance_x = Math.abs(x * scl - p.mouseX);
           let distance_x = Math.abs(x * scl);
           let distance_y = Math.abs(y * scl);
           let d = Math.sqrt(distance_x * distance_x + distance_y * distance_y); // Distance from the mouse to the vertex
@@ -45,9 +47,14 @@ const P5_PLANE: FC<Props> = ({ strokeColor, showSun }) => {
           let adjustedNoise = p.map(d, 0, 550, 0.5, 1);
           terrain[x][y] = p.map(p.noise(xoff + 10, yoff - 1), 0, 1, -100, 100) * adjustedNoise;
 
-          xoff += 0.2;
+          if (terrain.length === limiter) {
+            limitMet = true;
+            break;
+          };
+
+          xoff += 0.11;
         };
-        yoff += 0.2;
+        yoff += 0.065;
       };
 
       p.background(0,0,0,0); // Invisible background
