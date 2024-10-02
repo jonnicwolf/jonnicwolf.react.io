@@ -29,10 +29,10 @@ const P5_PLANE: FC<Props> = ({ strokeColor, showSun }) => {
       cols = w / scl;
       rows = h / scl;
       terrain = Array.from(Array(cols), () => new Array(rows));
+      p.frameRate(60);
     };
 
     p.draw = () => {
-      p.frameRate(60);
       waveSpeed -= 0.0041;
       let yoff = waveSpeed;
 
@@ -60,9 +60,10 @@ const P5_PLANE: FC<Props> = ({ strokeColor, showSun }) => {
       p.background(0,0,0,0); // Invisible background
       p.blendMode(p.ADD); // Adds shimmer
       showSun ? p.fill('rgba(0, 0, 0, 0.4)') : p.noFill();
-      p.translate(w / 2 - w / 2, h / 2 - h / 2);
+//      p.translate(w / 2 - w / 2, h / 2 - h / 2);
       p.rotateX(p.PI / 2.5); // Adjust rotation here
       p.translate(-w / 2, -h / 2);
+
       for (let y = 0; y < rows - 1; y++) {
         p.beginShape(p.SQUARE_STRIP);
         for (let x = 0; x < cols; x++) {
