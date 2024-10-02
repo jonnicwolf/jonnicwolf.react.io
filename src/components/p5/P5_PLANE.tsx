@@ -13,9 +13,7 @@ const P5_PLANE: FC<Props> = ({ strokeColor, showSun }) => {
 
   // @ts-ignore
   const sketch = useCallback((p) => {
-    // const isMobile: boolean = window.innerWidth > 1200;
     let cols: number, rows: number;
-    // let w: number = isMobile ? 2400 : 4800;
     let w: number = 2400;
     let h: number = 2400;
     let scl: number = 60; // scale of each grid square
@@ -25,7 +23,7 @@ const P5_PLANE: FC<Props> = ({ strokeColor, showSun }) => {
     let limitMet: boolean = false;
 
     const buildTerrain = (): void => {
-      let yoff = waveSpeed;
+      let yoff = waveSpeed - 0.0041;
 
       for (let y = 1; y < rows; y++) {
         let xoff = 1;
@@ -36,7 +34,7 @@ const P5_PLANE: FC<Props> = ({ strokeColor, showSun }) => {
 
           // Use distance to influence noise
           let adjustedNoise = p.map(d, 0, 550, 0.5, 1);
-          terrain[x][y] = p.map(p.noise(xoff + 10, yoff - 1), 0, 1, -100, 100) * adjustedNoise;
+          terrain[x][y] = p.map(p.noise(xoff, yoff), 0, 1, -100, 100) * adjustedNoise;
 
           if (terrain.length === limiter) {
             limitMet = true;
@@ -55,10 +53,12 @@ const P5_PLANE: FC<Props> = ({ strokeColor, showSun }) => {
       rows = h / scl;
       terrain = Array.from(Array(cols), () => new Array(rows));
       p.frameRate(60);
+
     };
 
     p.draw = () => {
       waveSpeed -= 0.0041;
+      buildTerrain();
 
       p.background(0,0,0,0); // Invisible background
       p.blendMode(p.ADD); // Adds shimmer
