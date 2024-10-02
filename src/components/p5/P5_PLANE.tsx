@@ -24,16 +24,7 @@ const P5_PLANE: FC<Props> = ({ strokeColor, showSun }) => {
     let limiter: number = 0;
     let limitMet: boolean = false;
 
-    p.setup = () => {
-      p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
-      cols = w / scl;
-      rows = h / scl;
-      terrain = Array.from(Array(cols), () => new Array(rows));
-      p.frameRate(60);
-    };
-
-    p.draw = () => {
-      waveSpeed -= 0.0041;
+    const buildTerrain = (): void => {
       let yoff = waveSpeed;
 
       for (let y = 1; y < rows; y++) {
@@ -41,7 +32,7 @@ const P5_PLANE: FC<Props> = ({ strokeColor, showSun }) => {
         for (let x = 1; x < cols; x++) {
           let distance_x = Math.abs(x * scl);
           let distance_y = Math.abs(y * scl);
-          let d = Math.sqrt(distance_x * distance_x + distance_y * distance_y); // Distance from the mouse to the vertex
+          let d = Math.sqrt(distance_x * distance_x + distance_y * distance_y);
 
           // Use distance to influence noise
           let adjustedNoise = p.map(d, 0, 550, 0.5, 1);
@@ -56,6 +47,18 @@ const P5_PLANE: FC<Props> = ({ strokeColor, showSun }) => {
         };
         yoff += 0.065;
       };
+    };
+
+    p.setup = () => {
+      p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
+      cols = w / scl;
+      rows = h / scl;
+      terrain = Array.from(Array(cols), () => new Array(rows));
+      p.frameRate(60);
+    };
+
+    p.draw = () => {
+      waveSpeed -= 0.0041;
 
       p.background(0,0,0,0); // Invisible background
       p.blendMode(p.ADD); // Adds shimmer
