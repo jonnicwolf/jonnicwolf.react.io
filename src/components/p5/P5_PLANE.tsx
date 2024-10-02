@@ -14,13 +14,11 @@ const P5_PLANE: FC<Props> = ({ strokeColor, showSun }) => {
   // @ts-ignore
   const sketch = useCallback((p) => {
     let cols: number, rows: number;
-    let w: number = 2400;
+    let w: number = 3000;
     let h: number = 2400;
     let scl: number = 60; // scale of each grid square
     let waveSpeed: number = 0;
     let terrain: number[][] = [];
-    let limiter: number = 0;
-    let limitMet: boolean = false;
 
     const buildTerrain = (): void => {
       waveSpeed -= 0.0041;
@@ -36,11 +34,6 @@ const P5_PLANE: FC<Props> = ({ strokeColor, showSun }) => {
           // Use distance to influence noise
           let adjustedNoise = p.map(d, 0, 550, 0.5, 1);
           terrain[x][y] = p.map(p.noise(xoff, yoff), 0, 1, -100, 100) * adjustedNoise;
-
-          if (terrain.length === limiter) {
-            limitMet = true;
-            break;
-          };
 
           xoff += 0.11;
         };
@@ -111,7 +104,6 @@ const Sketch = styled.div`
     transform: translateY(300px);
   }
   @media only screen and (max-height: 900px) {
-    // transform: translateY(270px);
     transform: translateY(-100px);
   }
 `;
