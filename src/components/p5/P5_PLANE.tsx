@@ -78,7 +78,6 @@ const P5_PLANE: FC<Props> = ({ strokeColor, showSun }) => {
       buildTerrain();
 
       p.background(0,0,0,0); // Invisible background
-      // p.blendMode(p.ADD); // Adds shimmer
       showSun ? p.fill('rgba(0, 0, 0, 0.4)') : p.noFill();
       p.rotateX(p.PI / 2.5); // Adjust rotation here
       p.translate(-w / 2, -h / 4);
