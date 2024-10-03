@@ -56,7 +56,7 @@ const items = {
 
 const CurrentRole = styled(motion.p)`
   font-family: Julius Sans One;
-  font-size: 0.8rem;
+  font-size: 1.5rem;
   letter-spacing: 0.020em;
   margin: 0;
   @media (max-width: 850px) {
@@ -76,7 +76,7 @@ const CurrentRole = styled(motion.p)`
 const FSD = styled(motion.p)`
   font-family: Julius Sans One;
   font-family: Michroma;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   @media (max-width: 530px) {
     font-size: 15px;
