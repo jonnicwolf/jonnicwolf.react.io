@@ -27,7 +27,7 @@ const P5_PLANE: FC<Props> = ({ strokeColor, showSun }) => {
         for (let x = 1; x < cols; x++) {
           let distance_x = Math.abs(x * scl);
           let distance_y = Math.abs(y * scl);
-          let d = Math.sqrt(distance_x * distance_x + distance_y * distance_y); // Distance from the mouse to the vertex
+          let d = Math.sqrt(distance_x * distance_x + distance_y * distance_y);
 
           // Use distance to influence noise
           let adjustedNoise = p.map(d, 0, 550, 0.5, 1);
