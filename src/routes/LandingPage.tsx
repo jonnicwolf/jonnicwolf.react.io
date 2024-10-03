@@ -104,17 +104,28 @@ const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transform: translateY(30vh);
+  transform: translateY(20vh);
   z-index: 3;
+
+  @media onlyscreen and (max-width: 700px) {
+    transform: translateY(10vh);
+  }
 `;
 const PProject = styled(LandingPageItem)`
   height: 100vh;
   width: 100vw;
   z-index: 1;
   opacity: ${(props: { isclicked: boolean }) => props.isclicked ? 0 : 1};
+
+  @media only screen and (max-width: 700px) {
+    display: none;
+  }
 `;
 const EnterButton = styled(LandingPageItem)`
   z-index: 3;
+  @media only screen and (max-width: 700px) {
+    scale: 0.6;
+  }
 `;
 const Button = styled(LinkButton)`
   color: white !important;
