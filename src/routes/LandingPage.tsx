@@ -64,10 +64,14 @@ const LandingPage: FC<Props> = ({ setter }) => {
                 <NameCard />
 
                 <EnterButton onClick={handleClick}>
-                  <LinkButton
+                  <Button
+                    color='white'
                     textContent='ENTER'
                     buttonSize={'large'}
-                    isScaleAnimation={true} padding={false} onClick={handleClick} subDirectory={''} />
+                    isScaleAnimation={true}
+                    padding={false}
+                    onClick={handleClick}
+                    subDirectory={''} />
                 </EnterButton>
               </Content>
 
@@ -81,7 +85,7 @@ const LandingPage: FC<Props> = ({ setter }) => {
 };
 
 const Background = styled(motion.div)`
-  background-image: radial-gradient(circle 80vh, white, ${(props: { showAbout: boolean}) => props.showAbout ? `rgb(255,255,255)`: `rgb(17, 100, 102)` });
+  background-image: radial-gradient(circle 80vh, #62c2c4, ${(props: { showAbout: boolean}) => props.showAbout ? `rgb(255,255,255)`: `rgb(17, 100, 102)` });
   transform: translateY(${(props: { isclicked: boolean }) => props.isclicked ? '100px': '-100px'});
 `;
 const LandingPageContainer = styled.div`
@@ -101,6 +105,7 @@ const Content = styled.div`
   justify-content: center;
   align-items: center;
   transform: translateY(30vh);
+  z-index: 3;
 `;
 const PProject = styled(LandingPageItem)`
   height: 100vh;
@@ -110,7 +115,10 @@ const PProject = styled(LandingPageItem)`
 `;
 const EnterButton = styled(LandingPageItem)`
   z-index: 3;
-  // transform: translateY(5vh);
 `;
+const Button = styled(LinkButton)`
+  color: white !important;
+  border: 2px solid white !important;
+`
 
 export default LandingPage;

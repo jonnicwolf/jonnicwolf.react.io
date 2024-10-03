@@ -96,14 +96,14 @@ const Container = styled(motion.div)`
   display: flex;
   align-items: center;
   flex-direction: column;
-  color: #2c3531;
+  color: white;
 `;
 const RampartOneText = styled(motion.p)`
   font-family: Rampart One;
-  font-size: 6vh;
+  font-size: 7rem;
   margin: 0;
   @media (max-width: 400px) {
-    font-size: 40px;
+    font-size: 5rem;
   }
 `;
 
