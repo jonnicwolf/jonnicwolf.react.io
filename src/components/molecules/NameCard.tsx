@@ -93,16 +93,15 @@ const Hometown = styled(motion.p)`
   }
 `;
 const Container = styled(motion.div)`
-  align-items: center;
   display: flex;
+  align-items: center;
   flex-direction: column;
+  color: #2c3531;
 `;
 const RampartOneText = styled(motion.p)`
   font-family: Rampart One;
   font-size: 6vh;
-  height: 10vh;
   margin: 0;
-  margin-top: 10vh;
   @media (max-width: 400px) {
     font-size: 40px;
   }
