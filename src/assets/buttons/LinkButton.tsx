@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 interface Props {
+  color?: string,
   padding: boolean,
   onClick: () => void | null,
   buttonSize: string,
@@ -16,6 +17,7 @@ interface Props {
 };
 
 const LinkButton: FC<Props> = ({
+  color,
   padding,
   onClick,
   textContent,
@@ -32,6 +34,7 @@ const LinkButton: FC<Props> = ({
       padding={padding} >
       { isScaleAnimation
         ? <Button
+          color={color}
           as={motion.button}
           initial={{ scaleX: 0, opacity: 0, }}
           animate={{ scaleX: 1, opacity: 1, }}
@@ -67,9 +70,9 @@ const Button = styled.button<ButtonProps>`
   cursor: pointer;
   position: relative;
   display: inline-block;
-  border: 1px solid ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
+  border: 1px solid ${(props: {darkmode: boolean, color: string}) => props.color ? props.color : props.darkmode ? 'white' : 'black'};
   z-index: 1;
-  color: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
+  color: ${(props: {darkmode: boolean, color: string}) => props.color ? props.color : props.darkmode ? 'white' : 'black'};
 
   &:after {
     position: absolute;

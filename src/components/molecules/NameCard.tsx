@@ -56,7 +56,7 @@ const items = {
 
 const CurrentRole = styled(motion.p)`
   font-family: Julius Sans One;
-  font-size: 0.8rem;
+  font-size: 1.5rem;
   letter-spacing: 0.020em;
   margin: 0;
   @media (max-width: 850px) {
@@ -76,7 +76,7 @@ const CurrentRole = styled(motion.p)`
 const FSD = styled(motion.p)`
   font-family: Julius Sans One;
   font-family: Michroma;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   @media (max-width: 530px) {
     font-size: 15px;
@@ -93,18 +93,17 @@ const Hometown = styled(motion.p)`
   }
 `;
 const Container = styled(motion.div)`
-  align-items: center;
   display: flex;
+  align-items: center;
   flex-direction: column;
+  color: white;
 `;
 const RampartOneText = styled(motion.p)`
   font-family: Rampart One;
-  font-size: 6vh;
-  height: 10vh;
+  font-size: 7rem;
   margin: 0;
-  margin-top: 10vh;
   @media (max-width: 400px) {
-    font-size: 40px;
+    font-size: 5rem;
   }
 `;
 
