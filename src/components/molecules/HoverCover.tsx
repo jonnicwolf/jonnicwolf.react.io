@@ -40,15 +40,15 @@ const HoverCover: FC<Props> = ({
           </TechContainer>
           <PContainer>
             {apis && 
-            <P> [ {apis.map(
+            <P> {apis.length !== 0 && '['} {apis.map(
               (item, index) => index !== apis.length-1
               ? <span key={index}>{` ${item} /`}</span>
-              : <span key={index}>{` ${item} `}</span> )} ] </P>}
+              : <span key={index}>{` ${item} `}</span> )} {apis.length !== 0 && ']'} </P>}
             {descriptions && 
-            <P> [ {descriptions.map(
+            <P> {descriptions.length !== 0 && '['} {descriptions.map(
               (item, index) => index !== descriptions.length-1
               ? <span key={index}>{` ${item} /`}</span>
-              : <span key={index}>{` ${item} `}</span> )} ] </P>}
+              : <span key={index}>{` ${item} `}</span> )} {descriptions.length !== 0 && ']'} </P>}
           </PContainer>
           {liveLink && <ExternalButton
             link={liveLink}
@@ -85,8 +85,8 @@ const Container = styled.div`
     position: absolute;
     display: flex;
     flex-direction: column;
-    background-color: rgba(225,225,225,0.8);
-    animation: ${fadeIn} 1s forwards;
+    background-color: rgba(225,225,225,0.5);
+    animation: ${fadeIn} 0.5s forwards;
   `;
   const PaddingWrap = styled.div`
     margin-left: -3rem;
@@ -105,13 +105,13 @@ const Container = styled.div`
       animation-delay: 0.3s;
     }
     & > *:nth-child(2) {
-      animation-delay: 0.5s;
+      animation-delay: 0.4s;
     }
     & > *:nth-child(3) {
-      animation-delay: 0.8s;
+      animation-delay: 0.5s;
     }
     & > *:nth-child(4) {
-      animation-delay: 1.1s;
+      animation-delay: 0.1s;
     }
     & > *:nth-child(5) {
       animation-delay: 1.4s;

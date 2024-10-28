@@ -8,7 +8,7 @@ import LinkButton from '../../assets/buttons/LinkButton';
 import DarkModeButton from '../../assets/buttons/DarkModeButton';
 
 const NavBar: FC = () => {
-  const location = useLocation().pathname.split('/')[1] || 'HOME';
+  const location = useLocation().pathname.split('/')[1] || 'PROJECTS';
   const { darkmode } = useContext(DarkmodeContext);
 
   return (
