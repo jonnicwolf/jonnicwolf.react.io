@@ -85,7 +85,7 @@ const Container = styled.div`
     position: absolute;
     display: flex;
     flex-direction: column;
-    background-color: rgba(225,225,225,0.8);
+    background-color: rgba(225,225,225,0.5);
     animation: ${fadeIn} 1s forwards;
   `;
   const PaddingWrap = styled.div`
