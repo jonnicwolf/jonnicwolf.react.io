@@ -54,7 +54,7 @@ const Container = styled.div<StyleProps>`
   flex-direction: column;
   align-items: center;
   justify-content: space-apart;
-  height: 100%;
+  height: 350vh;
 `;
 
 export default function ContextApp (): JSX.Element {

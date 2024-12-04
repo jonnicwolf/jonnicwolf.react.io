@@ -162,11 +162,14 @@ const Container = styled.div`
   `;
   const TechContainer = styled.div`
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 15px;
     font-size: 2rem;
     font-weight: normal;
     margin-top: 10px;
+    max-width: 25%;
+    
 
     & > i {
       opacity: 0;
