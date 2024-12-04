@@ -57,7 +57,7 @@ const WebProjects: FC<Props> = ({ enterClicked, setEnterClicked }) => {
           title='Soirée'
           bio='Bar/Restaurant Reservation App'
           liveLink='https://soiree-drab.vercel.app'
-          githubLink='https://github.com/Soiree-NYC/Soiree'
+          githubLink='https://github.com/Soiree-NYC/Soiree_Public'
           coverLink='https://res.cloudinary.com/dl7ortwgk/image/upload/v1733318854/Screenshot_2024-12-04_at_8.25.45_AM_k3znts.png'
           // @ts-ignore
           cover={ProjectCover}
