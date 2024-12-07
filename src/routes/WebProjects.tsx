@@ -1,4 +1,4 @@
-import { FC, SetStateAction, useState } from 'react';
+import { FC, SetStateAction, } from 'react';
 // @ts-ignore
 import styled from 'styled-components';
 
@@ -36,7 +36,6 @@ const WebProjects: FC<Props> = ({ enterClicked, setEnterClicked }) => {
     'devicon-p5js-original',
     'devicon-firebase-plain',
     'devicon-postgresql-plain',
-    'devicon-swift-plain',
     'devicon-sequelize-plain',
     'devicon-express-original',
     'devicon-axios-plain',
@@ -46,7 +45,7 @@ const WebProjects: FC<Props> = ({ enterClicked, setEnterClicked }) => {
 
   const hotc = [typescript, react, p5, firebase];
   const scd = [javascript, react, postgresql, firebase];
-  const soiree = [typescript, react, sequelize, express, axios, tailwindcss, postgresql, heroku];
+  const soiree = [typescript, react, tailwindcss, axios, sequelize, express, postgresql, heroku];
 
   return (
     <Container getter={enterClicked}>

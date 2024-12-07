@@ -1,37 +1,31 @@
-import React, { createContext, useState, ReactNode } from 'react';
+import { createContext, useState, ReactNode, useContext } from 'react';
 
 interface DarkmodeContextType {
   darkmode: boolean;
   toggleDarkmode: () => void;
-};
+}
 
-interface DarkmodeProviderProps {
-  children: ReactNode;
-};
+const DarkmodeContext = createContext<DarkmodeContextType | undefined>(undefined);
 
-const defaultContext: DarkmodeContextType = {
-  darkmode: false,
-  toggleDarkmode: () => {},
-};
-
-export const DarkmodeContext = createContext<DarkmodeContextType>(defaultContext);
-
-export function DarkmodeProvider ({ children }: DarkmodeProviderProps): JSX.Element {
+export const DarkmodeProvider = ({ children }: { children: ReactNode }) => {
   const [darkmode, setDarkmode] = useState<boolean>(false);
 
-  const toggleDarkmode = (): void => {
-    setDarkmode(prevDarkmode => !prevDarkmode);
-  };
-
-  const contextValue: DarkmodeContextType = {
-    darkmode,
-    toggleDarkmode,
+  const toggleDarkmode = () => {
+    setDarkmode((prev) => !prev);
   };
 
   return (
-    // @ts-ignore
-    <DarkmodeContext.Provider value={contextValue}>
+    <DarkmodeContext.Provider value={{ darkmode, toggleDarkmode }}>
       {children}
     </DarkmodeContext.Provider>
   );
+};
+
+// Custom hook to access darkmode context
+export const useDarkmode = () => {
+  const context = useContext(DarkmodeContext);
+  if (!context) {
+    throw new Error('useDarkmode must be used within a DarkmodeProvider');
+  }
+  return context;
 };

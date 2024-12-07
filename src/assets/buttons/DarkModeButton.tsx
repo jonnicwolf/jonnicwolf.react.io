@@ -1,10 +1,10 @@
 import { FC, useContext } from 'react';
 // @ts-ignore
 import styled from 'styled-components'; 
-import { DarkmodeContext } from '../../Darkmode';
+import { useDarkmode } from '../../Darkmode';
 
 const DarkModeButton: FC = () => {
-  const { darkmode, toggleDarkmode } = useContext(DarkmodeContext);
+  const { darkmode, toggleDarkmode } = useDarkmode();
 
   return (
     <Container>

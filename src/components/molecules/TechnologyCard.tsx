@@ -1,5 +1,5 @@
 import { FC, useContext } from 'react';
-import { DarkmodeContext } from '../../Darkmode';
+import { useDarkmode } from '../../Darkmode';
 // @ts-ignore
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
@@ -11,7 +11,7 @@ interface Props {
 };
 
 const TechnologyCard: FC<Props> = ({ viewSetter }) => {
-  const { darkmode } = useContext(DarkmodeContext);
+  const { darkmode } = useDarkmode();
 
   return (
     <Container>

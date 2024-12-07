@@ -1,5 +1,5 @@
 import { FC, useContext } from 'react';
-import { DarkmodeContext } from '../../Darkmode';
+import { useDarkmode } from '../../Darkmode';
 // @ts-ignore
 import styled from 'styled-components';
 
@@ -9,7 +9,7 @@ interface Props {
 };
 
 const AfterImageControls: FC<Props> = ({ mod, modSetter }) => {
-  const { darkmode } = useContext(DarkmodeContext);
+  const { darkmode } = useDarkmode();
 
   // @ts-ignore
   const handleChange = (e) => {

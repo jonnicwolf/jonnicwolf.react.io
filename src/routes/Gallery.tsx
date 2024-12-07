@@ -3,15 +3,17 @@ import {
   useState,
   useEffect,
   useMemo,
-  useContext,
   Suspense,
-  lazy } from 'react';
-import { DarkmodeContext } from '../Darkmode';
-import { useNavigate, useParams } from 'react-router-dom';
+  lazy,
+  useContext,
+} from 'react';
+
+import { useNavigate, useParams, } from 'react-router-dom';
 import { useSwipeable } from 'react-swipeable';
 // @ts-ignore
 import styled from 'styled-components';
 import { motion, useAnimation } from 'framer-motion';
+import { useDarkmode } from '../Darkmode';
 
 import Button from '../assets/buttons/Button';
 
@@ -32,10 +34,10 @@ type P5Type = FC<P5Props>;
 
 const Gallery: FC = () => {
   const [index, setIndex] = useState<number>(0);
-  const { darkmode } = useContext(DarkmodeContext);
   const { projectName } = useParams();
   const navigate = useNavigate();
   const controls = useAnimation();
+  const { darkmode, toggleDarkmode } = useDarkmode();
 
   const sw: boolean = window.innerWidth > 720;
   // @ts-ignore !!!! FIX !!!!
@@ -117,7 +119,7 @@ const Title = styled.h2`
   align-items: center;
   font-weight: bold;
   font-family: 'Rubik', sans-serif;
-  color: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
+  color: ${(props: { darkmode: boolean }) => (props.darkmode ? 'white' : 'black')};
 `;
 const DisplayBox = styled.div`
   display: flex;

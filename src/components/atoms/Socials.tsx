@@ -1,5 +1,5 @@
 import { FC, useContext } from 'react';
-import { DarkmodeContext } from '../../Darkmode';
+import { useDarkmode } from '../../Darkmode';
 // @ts-ignore
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
@@ -21,7 +21,7 @@ interface SocialsListProps {
 };
 
 const Socials: FC<Props> = ({ gap, colors }) => {
-  const { darkmode } = useContext(DarkmodeContext);
+  const { darkmode } = useDarkmode();
   const {primary, secondary, tertiary} = colors;
 
   return (

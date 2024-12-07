@@ -1,5 +1,5 @@
-import { FC, useContext, } from 'react';
-import { DarkmodeContext } from '../../Darkmode';
+import { FC, } from 'react';
+import { useDarkmode } from '../../Darkmode';
 // @ts-ignore
 import styled from 'styled-components';
 
@@ -11,7 +11,7 @@ interface Props {
 };
 
 const Button: FC<Props> = ({ text, buttonSize, onclick, rounded }) => {
-  const { darkmode } = useContext(DarkmodeContext);
+  const { darkmode } = useDarkmode();
 
   return (
     <StyledButton

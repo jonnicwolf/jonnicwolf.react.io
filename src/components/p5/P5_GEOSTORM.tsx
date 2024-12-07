@@ -1,5 +1,5 @@
 import { FC, useEffect, useRef, useCallback, useContext, MutableRefObject } from 'react';
-import { DarkmodeContext } from '../../Darkmode';
+import { useDarkmode } from '../../Darkmode';
 // @ts-ignore
 import styled from 'styled-components';
 import p5 from 'p5';
@@ -9,7 +9,7 @@ interface Props {
 };
 
 const P5_GEOSTORM: FC<Props> = ({ strokeColor }) => {
-  const { darkmode } = useContext(DarkmodeContext);
+  const { darkmode } = useDarkmode();
   // const sketch_ref: MutableRefObject<HTMLDivElement | null | undefined> = useRef();
   const sketch_ref = useRef();
 

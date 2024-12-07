@@ -1,5 +1,5 @@
 import { FC, useState, useContext } from 'react';
-import { DarkmodeContext } from '../../Darkmode';
+import { useDarkmode } from '../../Darkmode';
 // @ts-ignore
 import styled from 'styled-components';
 import emailjs from '@emailjs/browser';
@@ -17,7 +17,7 @@ interface FormData {
 };
 
 const ContactForm: FC<Props> = ({ viewSetter }) => {
-  const { darkmode } = useContext(DarkmodeContext);
+  const { darkmode } = useDarkmode();
   const [formData, setFormData] = useState<FormData>({
     to_name: '',
     from_name: '',

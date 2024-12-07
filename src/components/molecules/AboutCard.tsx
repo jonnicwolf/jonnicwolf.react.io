@@ -1,5 +1,5 @@
 import { FC, useState, useContext } from 'react';
-import { DarkmodeContext } from '../../Darkmode';
+import { useDarkmode } from '../../Darkmode';
 // @ts-ignore
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
@@ -11,7 +11,7 @@ import ExpCard from './ExpCard';
 
 const AboutCard: FC = () => {
   const [view, setView] = useState<string>('');
-  const { darkmode } = useContext(DarkmodeContext);
+  const { darkmode } = useDarkmode();
 
   function renderView (view: string) {
     switch (view) {

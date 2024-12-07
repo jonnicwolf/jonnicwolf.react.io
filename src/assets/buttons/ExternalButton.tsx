@@ -2,7 +2,7 @@ import { FC, useContext } from 'react';
 // @ts-ignore
 import styled from 'styled-components';
 
-import { DarkmodeContext } from '../../Darkmode'
+import { useDarkmode } from '../../Darkmode'
 
 interface Props {
   link: string,
@@ -21,7 +21,7 @@ const ExternalButton: FC<Props> = ({
   fontSize,
   overrideDarkmode,
 }) => {
-  const { darkmode } = useContext(DarkmodeContext);
+  const { darkmode } = useDarkmode();
 
   return (
     <StyledButton
@@ -40,7 +40,7 @@ const ExternalButton: FC<Props> = ({
 const StyledButton = styled.a`
   margin-left:  ${(props: {buffer: boolean}) => props.buffer ? '1vw' : '0'};
   padding: ${(props: {buttonSize: string}) => props.buttonSize === 'large' ? '10px 60px' : '0.5em'};
-  font-family: var(--font-family-rubik);
+  font-family: Rubik;
   font-weight: 900;
   font-size: ${(props: {fontSize: string}) => props.fontSize};
   background: transparent;

@@ -1,5 +1,5 @@
 import React, { FC, useContext } from 'react';
-import { DarkmodeContext } from '../../Darkmode';
+import { useDarkmode } from '../../Darkmode';
 import { Link, useLocation } from 'react-router-dom';
 // @ts-ignore
 import styled from 'styled-components';
@@ -9,7 +9,7 @@ import DarkModeButton from '../../assets/buttons/DarkModeButton';
 
 const NavBar: FC = () => {
   const location = useLocation().pathname.split('/')[1] || 'PROJECTS';
-  const { darkmode } = useContext(DarkmodeContext);
+  const { darkmode } = useDarkmode();
 
   return (
     <NavbarContainer darkmode={darkmode}>

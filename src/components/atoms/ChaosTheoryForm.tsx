@@ -1,5 +1,5 @@
 import { FC, useContext } from 'react';
-import { DarkmodeContext } from '../../Darkmode';
+import { useDarkmode } from '../../Darkmode';
 // @ts-ignore
 import styled from 'styled-components';
 
@@ -19,7 +19,7 @@ interface Props {
 };
 
 const ChaosTheoryForm: FC<Props> = ({ vars, setters }) => {
-  const { darkmode } = useContext(DarkmodeContext);
+  const { darkmode } = useDarkmode();
   const { sigma, rho, beta, delta } = vars;
   const { setSigma, setRho, setBeta, setDelta } = setters;
 
