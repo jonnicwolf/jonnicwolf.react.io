@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { DarkmodeProvider } from './Darkmode';
 import './index.css';
 import ContextApp from './App.tsx';
 import reportWebVitals from './reportWebVitals';
@@ -9,11 +10,13 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <QueryClientProvider client={new QueryClient()}>
-        <ContextApp />
-      </QueryClientProvider>
-    </BrowserRouter>
+    <DarkmodeProvider>
+      <BrowserRouter>
+          <QueryClientProvider client={new QueryClient()}>
+            <ContextApp />
+          </QueryClientProvider>
+      </BrowserRouter>
+    </DarkmodeProvider>
   </React.StrictMode>
 );
 

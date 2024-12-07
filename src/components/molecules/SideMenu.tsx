@@ -1,5 +1,5 @@
 import { FC, useState, useContext } from 'react';
-import { DarkmodeContext } from '../../Darkmode';
+import { useDarkmode } from '../../Darkmode';
 // @ts-ignore
 import styled from 'styled-components';
 
@@ -12,7 +12,7 @@ interface Props {
 };
 
 const SideMenu: FC<Props> = ({ getter, setter }) => {
-  const { darkmode } = useContext(DarkmodeContext);
+  const { darkmode } = useDarkmode();
 
   function handleClick (i: number): void {
     setter(i);

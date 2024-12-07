@@ -1,5 +1,5 @@
 import { FC, useContext } from 'react';
-import { DarkmodeContext } from '../../Darkmode';
+import { useDarkmode } from '../../Darkmode';
 // @ts-ignore
 import styled from 'styled-components';
 
@@ -7,7 +7,7 @@ import Socials from './Socials';
 import Button from '../../assets/buttons/Button';
 
 const Footer: FC = () => {
-  const { darkmode } = useContext(DarkmodeContext);
+  const { darkmode } = useDarkmode();
 
   function scrollToTop (): void {
     document.documentElement.scrollTo({

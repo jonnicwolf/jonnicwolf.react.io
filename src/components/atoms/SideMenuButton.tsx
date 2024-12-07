@@ -1,5 +1,5 @@
 import { FC,useContext } from 'react';
-import { DarkmodeContext } from '../../Darkmode';
+import { useDarkmode } from '../../Darkmode';
 // @ts-ignore
 import styled from "styled-components";
 
@@ -10,7 +10,7 @@ interface Props {
 }
 
 const SideMenuButton: FC<Props> = ({ img, onclick, fontSize,  }) => {
-  const {darkmode} = useContext(DarkmodeContext);
+  const {darkmode} = useDarkmode();
 
   return (
     <StyledButton darkmode={darkmode} onClick={onclick} fontSize={fontSize}>

@@ -1,6 +1,6 @@
 import { FC, lazy, Suspense, useState, useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { DarkmodeContext, DarkmodeProvider } from './Darkmode';
+import {useDarkmode, } from './Darkmode';
 // @ts-ignore
 import styled from 'styled-components';
 
@@ -24,7 +24,7 @@ const App: FC = () => {
   const [enterClicked, setEnterClicked] = useState<boolean>(false);
   const [projectType, setProjectType] = useState<number>(0);
 
-  const { darkmode } = useContext(DarkmodeContext);
+  const { darkmode, toggleDarkmode } = useDarkmode();
   const isMobile: boolean = window.innerWidth < 1025;
 
   return (
@@ -34,8 +34,8 @@ const App: FC = () => {
         {!isMobile && <NavBar />}
         <Routes>
           <Route path='/' element={<WebProjects setEnterClicked={setEnterClicked} enterClicked={enterClicked} projectType={projectType} setProjectType={setProjectType} />} />
-          <Route path='/gallery' element={<Gallery/>} />
-          <Route path='/gallery/:projectName' element={<Gallery />} />
+          <Route path='/gallery' element={<Gallery />} />
+          <Route path='/gallery/:projectName' element={<Gallery  />} />
           <Route path='/ios' element={<IOSProjects />} />
           <Route path='/3D' element={<Blender />} />
           <Route path='/test' element={<Test />} />
@@ -59,8 +59,6 @@ const Container = styled.div<StyleProps>`
 
 export default function ContextApp (): JSX.Element {
   return (
-    <DarkmodeProvider>
-      <App />
-    </DarkmodeProvider>
+    <App />
   );
 };

@@ -1,5 +1,5 @@
 import { FC, useContext } from 'react';
-import { DarkmodeContext } from '../../Darkmode';
+import { useDarkmode } from '../../Darkmode';
 
 import { Link } from 'react-router-dom';
 // @ts-ignore
@@ -25,7 +25,7 @@ const LinkButton: FC<Props> = ({
   subDirectory,
   isScaleAnimation,
 }) => {
-  const { darkmode } = useContext(DarkmodeContext);
+  const { darkmode } = useDarkmode();
 
   return (
     <LinkStyle
