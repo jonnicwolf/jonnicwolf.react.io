@@ -15,12 +15,7 @@ const Footer: FC = () => {
       behavior: "smooth"
     });
   };
-  
-  // const colors = {
-  //   primary: '#000000',
-  //   secondary: 'none',
-  //   tertiary: '#969696'
-  // };
+
   const colors = {
     primary: '#969696',
     secondary: '#ffffff',

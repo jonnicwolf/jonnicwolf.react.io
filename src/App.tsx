@@ -24,26 +24,26 @@ const App: FC = () => {
   const [enterClicked, setEnterClicked] = useState<boolean>(false);
   const [projectType, setProjectType] = useState<number>(0);
 
-  const { darkmode, toggleDarkmode } = useDarkmode();
+  const { darkmode, } = useDarkmode();
   const isMobile: boolean = window.innerWidth < 1025;
 
   return (
-    <Container darkmode={darkmode} isMobile={isMobile}>
-      <Suspense fallback={<Loader strokeColor={150} />} >
-        { isMobile && <MobileNav enterClicked={enterClicked} />}
-        {!isMobile && <NavBar />}
-        <Routes>
-          <Route path='/' element={<WebProjects setEnterClicked={setEnterClicked} enterClicked={enterClicked} projectType={projectType} setProjectType={setProjectType} />} />
-          <Route path='/gallery' element={<Gallery />} />
-          <Route path='/gallery/:projectName' element={<Gallery  />} />
-          <Route path='/ios' element={<IOSProjects />} />
-          <Route path='/3D' element={<Blender />} />
-          <Route path='/test' element={<Test />} />
-        </Routes>
-      </Suspense>
+  <Container darkmode={darkmode} isMobile={isMobile}>
+    <Suspense fallback={<Loader strokeColor={150} />} >
+      { isMobile && <MobileNav enterClicked={enterClicked} />}
+      {!isMobile && <NavBar />}
+      <Routes>
+        <Route path='/' element={<WebProjects setEnterClicked={setEnterClicked} enterClicked={enterClicked} projectType={projectType} setProjectType={setProjectType} />} />
+        <Route path='/gallery' element={<Gallery />} />
+        <Route path='/gallery/:projectName' element={<Gallery  />} />
+        <Route path='/ios' element={<IOSProjects />} />
+        <Route path='/3D' element={<Blender />} />
+        <Route path='/test' element={<Test />} />
+      </Routes>
+    </Suspense>
 
-      <Footer />
-    </Container>
+    <Footer />
+  </Container>
   );
 };
 
@@ -53,8 +53,11 @@ const Container = styled.div<StyleProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-apart;
   height: 350vh;
+
+  @media screen and (max-height: 1600px) {
+    height: 4800px;
+  }
 `;
 
 export default function ContextApp (): JSX.Element {
