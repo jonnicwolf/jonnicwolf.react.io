@@ -92,7 +92,6 @@ const WebProjects: FC<Props> = ({ enterClicked, setEnterClicked }) => {
           descriptions={['E-COMMERCE', 'FULL STACK']}
           devicons={scd}
         />
-
       </ProjectList>
 
       <Background strokeColor={150} showControls={false} />
@@ -103,11 +102,10 @@ const WebProjects: FC<Props> = ({ enterClicked, setEnterClicked }) => {
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  height: 3500px;
   padding-top: 75px;
 
   @media screen and (max-width: 720px) {
-    height: 2200px;
+    height: 1200px;
     padding-top: ${(props: { getter: boolean }) => props.getter ? '100px' : '0px'};
   }
 `;

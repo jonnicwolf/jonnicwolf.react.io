@@ -169,6 +169,10 @@ const Container = styled.div`
     font-weight: normal;
     margin-top: 10px;
     max-width: 25%;
+
+    @media screen and (max-width: 750px) {
+      max-width: 50%;
+    }
     
 
     & > i {
