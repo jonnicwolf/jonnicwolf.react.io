@@ -11,7 +11,7 @@ interface Props {
 const ExpCard: FC<Props> = ({ viewSetter }) => {
   return (
     <Container>
-      <Iframe src="https://docs.google.com/document/d/1L--uuFkBDl2thpDIuyzyUWNqv5Q0BShsKrwGvy6DusU/pub?embedded=true" />
+      <Iframe src="https://docs.google.com/document/d/e/2PACX-1vRyXRd1lF-re6bNRig9bRmNPyA_p8Uhxz-PVDUN_4hGpU10bRk5kdDuMqFFUSh2y26EUbUuMgXzHa54/pub?embedded=true" />
 
       <Buttons>
         <LinkButton

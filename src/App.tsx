@@ -33,12 +33,17 @@ const App: FC = () => {
       { isMobile && <MobileNav enterClicked={enterClicked} />}
       {!isMobile && <NavBar />}
       <Routes>
-        <Route path='/' element={<WebProjects setEnterClicked={setEnterClicked} enterClicked={enterClicked} projectType={projectType} setProjectType={setProjectType} />} />
+        <Route path='/' element={
+          <WebProjects
+            setEnterClicked={setEnterClicked}
+            enterClicked={enterClicked}
+            projectType={projectType}
+            setProjectType={setProjectType} />} />
         <Route path='/gallery' element={<Gallery />} />
         <Route path='/gallery/:projectName' element={<Gallery  />} />
         <Route path='/ios' element={<IOSProjects />} />
         <Route path='/3D' element={<Blender />} />
-        <Route path='/test' element={<Test />} />
+        <Route path='/test' element={<Test />} /> 
       </Routes>
     </Suspense>
 
