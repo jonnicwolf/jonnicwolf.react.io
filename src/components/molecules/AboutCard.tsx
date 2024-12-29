@@ -50,9 +50,8 @@ const Container = styled(motion.div)`
   width: 800px;
   border: 1px solid ${(props: {darkmode: boolean}) => (props.darkmode ? 'white' : 'none')};
   animation: ${fadeIn} 1.5s forwards;
-  color: ${(props: {darkmode: boolean}) => (props.darkmode ? 'white' : 'black')};
-  background-color: ${(props: {darkmode: boolean}) => (props.darkmode ? '#969696' : null)};
-  font-color: ${(props: {darkmode: boolean}) => (props.darkmode ? 'grey' : 'white')};
+  background-color: ${(props: {darkmode: boolean}) => (props.darkmode ? '#969696' : 'none')};
+  color: ${(props: {darkmode: boolean}) => (props.darkmode ? 'grey' : 'white')};
 
   @media screen and (max-width: 600px) {
     height: 60vh;

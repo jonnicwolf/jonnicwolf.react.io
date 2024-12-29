@@ -123,11 +123,8 @@ const ProjectList = styled.div`
   z-index: ${(props: { getter: boolean }) => props.getter ? 2 : 3};
   transition: z-index 2s linear;
 
-  @media screen and (max-width: 720px) {
-    padding-top: 100px;
-  }
   @media screen and (max-height: 950px) {
-    gap: 400px;
+    gap: 200px;
     transform: ${(props: {getter: boolean}) => props.getter ? 'translateY(-300px)' : null};
     scale: ${(props: {getter: boolean}) => props.getter ? 0.85 : 1};
   }

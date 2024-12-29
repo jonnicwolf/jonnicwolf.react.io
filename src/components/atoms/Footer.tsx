@@ -47,12 +47,11 @@ const Footer: FC = () => {
 const Container = styled.div`
   display: flex;
   height: 200px;
-  width: 97%;
+  width: 100%;
   position: relative;
   justify-content: center;
   background-color: rgba(179, 179, 179, 0.8);
   margin-top: auto;
-  border-radius: 0 0 20px 20px;
 
   &::before {
     content: '';
@@ -65,7 +64,7 @@ const Container = styled.div`
   }
 `;
 const Dummy = styled.div`
-  width: 30%;
+  width: 20%;
 `;
 const Content = styled.div`
   display: flex;
