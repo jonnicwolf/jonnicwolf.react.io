@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { DarkmodeProvider } from './Darkmode';
 import './index.css';
 import ContextApp from './App.tsx';
+import Footer from './components/atoms/Footer.tsx';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,6 +15,7 @@ root.render(
       <BrowserRouter>
           <QueryClientProvider client={new QueryClient()}>
             <ContextApp />
+            <Footer />
           </QueryClientProvider>
       </BrowserRouter>
     </DarkmodeProvider>

@@ -7,7 +7,6 @@ import styled from 'styled-components';
 import Loader from './components/navigation/Loader';
 import NavBar from './components/navigation/NavBar';
 import MobileNav from './components/navigation/MobileNav';
-import Footer from './components/atoms/Footer';
 
 const Test        = lazy(() => import('./routes/Test'))
 const WebProjects = lazy(() => import('./routes/WebProjects'));
@@ -46,8 +45,6 @@ const App: FC = () => {
         <Route path='/test' element={<Test />} /> 
       </Routes>
     </Suspense>
-
-    <Footer />
   </Container>
   );
 };
@@ -60,8 +57,8 @@ const Container = styled.div<StyleProps>`
   align-items: center;
   height: 350vh;
 
-  @media screen and (max-height: 1600px) {
-    height: 4800px;
+  @media screen and (max-width: 600px) {
+    height: 300vh;
   }
 `;
 
