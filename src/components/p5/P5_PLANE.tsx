@@ -1,5 +1,5 @@
 import { FC, useCallback, useEffect, useRef } from 'react';
-// @ts-ignore
+
 import styled from 'styled-components';
 import p5 from "p5";
 
@@ -8,11 +8,14 @@ interface Props {
   showSun: boolean,
 };
 
+interface SketchProps {};
+
+interface SunProps {};
+
 const P5_PLANE: FC<Props> = ({ strokeColor, showSun }) => {
   const sketch_ref = useRef();
 
-  // @ts-ignore
-  const sketch = useCallback((p) => {
+  const sketch = useCallback((p: p5) => {
     const w: number = 3600;
     const h: number = 1800;
     let cols: number, rows: number;
@@ -35,13 +38,14 @@ const P5_PLANE: FC<Props> = ({ strokeColor, showSun }) => {
 
           xoff += 0.11;
         };
+
         yoff += 0.062;
       };
     };
 
     const renderTerrain = (): void => {
       for (let y = 0; y < rows - 1; y++) {
-        p.beginShape(p.SQUARE_STRIP);
+        p.beginShape(undefined); // <- !! This may be a potential bug
         for (let x = 0; x < cols; x++) {
           // Calculate opacity based on row position
           let opacityTop = p.map(y, 0, rows / 4, 5, 255); // Fade from top
@@ -87,12 +91,13 @@ const P5_PLANE: FC<Props> = ({ strokeColor, showSun }) => {
   return (
     <>
       {showSun && <Sun />}
+      {/* @ts-ignore */}
       <Sketch ref={sketch_ref} />
     </>
   );
 };
 
-const Sketch = styled.div`
+const Sketch = styled.div<SketchProps>`
   position: absolute;
   @media only screen and (max-width: 720px) {
     transform: translateY(300px);
@@ -101,7 +106,7 @@ const Sketch = styled.div`
     transform: translateY(270px);
   }
 `;
-const Sun = styled.div`
+const Sun = styled.div<SunProps>`
   background-image: radial-gradient(circle at 220px, orange 30%, rgba(0, 0, 0, 0) 60%);
   height: 390px;
   width: 300px;

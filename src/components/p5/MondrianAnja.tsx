@@ -4,6 +4,8 @@ import styled from 'styled-components';
 
 import { Rectangle, generateRectangles } from "../utils/mondrianGenerator";
 
+interface GridContainerProps {};
+
 interface RectangleContainerProps {
   zIndex: number,
 };
@@ -52,7 +54,7 @@ const MondrianAnja = ({ isMobile }: { isMobile: boolean }) => {
   );
 };
 
-const GridContainer = styled.div`
+const GridContainer = styled.div<GridContainerProps>`
   position: relative;
   width: 100vw;
   height: 100vh;

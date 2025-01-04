@@ -1,5 +1,5 @@
 import { FC, useEffect, useRef, useCallback } from 'react';
-// @ts-ignore
+
 import styled, { keyframes } from 'styled-components';
 import p5 from 'p5';
 
@@ -19,15 +19,10 @@ interface WrapperProps {
   isRotated?: boolean,
 };
 
-interface ContainerProps {
-  isRotated?: boolean,
-};
-
 const P5_ANJA: FC<Props> = ({ strokeColor, isMobile, w, h, blinkDelay, background = '#000', isRotated }) => {
   const sketch_ref = useRef();
 
-  // @ts-ignore
-  const sketch = useCallback((p) => {
+  const sketch = useCallback((p: p5) => {
     const width: number = w || 150;
     const height: number = 800;
 
@@ -55,8 +50,9 @@ const P5_ANJA: FC<Props> = ({ strokeColor, isMobile, w, h, blinkDelay, backgroun
       p.push();
       p.stroke(strokeColor);
       p.strokeWeight(3);
+      // @ts-ignore
       p.fill(209, 209, 209, 1);
-      p.ellipse(0, 0, lid_w * 8, height, 4);
+      p.ellipse(0, 0, lid_w * 8, height);
       p.pop();
 
       // Hexagon
@@ -113,15 +109,15 @@ const P5_ANJA: FC<Props> = ({ strokeColor, isMobile, w, h, blinkDelay, backgroun
       p.strokeWeight(1);
     };
   }, [strokeColor, isMobile]);
-
   useEffect(() => {
+    // @ts-ignore
     const p5Canvas = new p5(sketch, sketch_ref.current);
     return () => p5Canvas.remove();
   }, [sketch]);
 
   return (
     <Wrapper blinkDelay={blinkDelay} background={background} isRotated={isRotated}>
-      <Container isRotated={isRotated}>
+      <Container>
         {/* @ts-ignore */}
         <div ref={sketch_ref} />
       </Container>
@@ -147,7 +143,7 @@ const Wrapper = styled.div<WrapperProps>`
   transform: ${props => props.isRotated ? 'rotate(90deg)' : 'none'};
   background-color: #000;
 `;
-const Container = styled.div<ContainerProps>`
+const Container = styled.div`
   width: 150px;
   height: 800px;
 `;

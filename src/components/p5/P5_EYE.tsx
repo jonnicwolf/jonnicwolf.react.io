@@ -10,8 +10,7 @@ interface Props {
 const P5_EYE: FC<Props> = ({ width, height, tracksMouse }) => {
   const sketch_ref = useRef();
 
-  // @ts-ignore
-  const sketch = useCallback((p) => {
+  const sketch = useCallback((p: p5) => {
     let angleA: number = 0;
     let angleB: number = 0;
     let angleC: number = 0;
@@ -22,8 +21,8 @@ const P5_EYE: FC<Props> = ({ width, height, tracksMouse }) => {
     };
 
     p.draw = () => {
-      const irisX: number = p.map(tracksMouse ? p.mouseX : 50, 0, width, (width / 60)*-1, p.width / 60);
-      const irisY: number = p.map(tracksMouse ? p.mouseY : 60, 0, height, (width / 24)*-1, p.height / 36);
+      const irisX: number = p.map(tracksMouse ? p.mouseX : 50, 0, width, (width / 60)*-1, width / 60);
+      const irisY: number = p.map(tracksMouse ? p.mouseY : 60, 0, height, (width / 24)*-1, height / 36);
       p.background(0, 0.9);
 
       p.push();
@@ -88,7 +87,6 @@ const P5_EYE: FC<Props> = ({ width, height, tracksMouse }) => {
     const p5Canvas = new p5(sketch, sketch_ref.current);
     return () => p5Canvas.remove();
   }, [sketch]);
-
   // @ts-ignore
   return <div ref={sketch_ref} />;
 };

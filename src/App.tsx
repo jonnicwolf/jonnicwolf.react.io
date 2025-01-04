@@ -1,7 +1,6 @@
 import { FC, lazy, Suspense, useState, useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import {useDarkmode, } from './Darkmode';
-// @ts-ignore
 import styled from 'styled-components';
 
 import Loader from './components/navigation/Loader';
@@ -14,7 +13,7 @@ const Gallery     = lazy(() => import('./routes/Gallery'));
 const IOSProjects = lazy(() => import('./routes/IOSProjects'));
 const Blender = lazy(() => import('./routes/Blender'));
 
-interface StyleProps {
+interface WebProjectsProps {
   darkmode: boolean,
   isMobile: boolean,
 };
@@ -49,7 +48,7 @@ const App: FC = () => {
   );
 };
 
-const Container = styled.div<StyleProps>`
+const Container = styled.div<WebProjectsProps>`
   overflow-x: hidden;
   background: ${(props: {darkmode: boolean}) => props.darkmode ? '#5c5c5b' : '#fffcf5'};
   display: flex;

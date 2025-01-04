@@ -1,5 +1,5 @@
 import { FC, useEffect, useRef, useCallback, useState } from 'react';
-// @ts-ignore
+
 import styled from 'styled-components';
 import p5 from 'p5';
 
@@ -14,8 +14,7 @@ const P5_LOADER: FC<Props> = ({ strokeColor, controls }) => {
   const [mod, setMod] = useState<number>(0.1);
   const sketch_ref = useRef();
 
-  // @ts-ignore
-  const sketch = useCallback((p) => {
+  const sketch = useCallback((p: p5) => {
     p.setup = () => {
       p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
     };
@@ -46,6 +45,7 @@ const P5_LOADER: FC<Props> = ({ strokeColor, controls }) => {
   }, [sketch]);
 
   return (
+    // @ts-ignore
     <Container ref={sketch_ref}>
       {controls && <AfterImageControls mod={mod} modSetter={setMod} />}
     </Container>
