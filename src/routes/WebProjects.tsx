@@ -93,8 +93,8 @@ const WebProjects: FC<Props> = ({ enterClicked, setEnterClicked }) => {
           devicons={scd}
         />
       </ProjectList>
-
-      <Background strokeColor={150} showControls={false} />
+      {/* @ts-ignore */}
+      <Background  showControls={false} />
     </Container>
   );
 };
