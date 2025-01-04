@@ -1,5 +1,4 @@
-import { FC, useContext } from 'react';
-// @ts-ignore
+import { FC, } from 'react';
 import styled from 'styled-components';
 
 import { useDarkmode } from '../../Darkmode'
@@ -11,6 +10,13 @@ interface Props {
   buffer: boolean,
   fontSize: string,
   overrideDarkmode: boolean,
+};
+
+interface StyledButtonProps {
+  buttonSize: string | null,
+  buffer: boolean,
+  fontSize: string,
+  darkmode: boolean,
 };
 
 const ExternalButton: FC<Props> = ({
@@ -37,21 +43,21 @@ const ExternalButton: FC<Props> = ({
   );
 };
 
-const StyledButton = styled.a`
-  margin-left:  ${(props: {buffer: boolean}) => props.buffer ? '1vw' : '0'};
-  padding: ${(props: {buttonSize: string}) => props.buttonSize === 'large' ? '10px 60px' : '0.5em'};
+const StyledButton = styled.a<StyledButtonProps>`
+  margin-left:  ${props => props.buffer ? '1vw' : '0'};
+  padding: ${props => props.buttonSize === 'large' ? '10px 60px' : '0.5em'};
   font-family: Rubik;
   font-weight: 900;
-  font-size: ${(props: {fontSize: string}) => props.fontSize};
+  font-size: ${props => props.fontSize};
   background: transparent;
   outline: none !important;
   cursor: pointer;
   position: relative;
   display: inline-block;
-  border: 1px solid ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'} ;
+  border: 1px solid ${props => props.darkmode ? 'white' : 'black'} ;
   text-decoration: none;
   z-index: 1;
-  color: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
+  color: ${props => props.darkmode ? 'white' : 'black'};
 
   &:after {
     position: absolute;
@@ -62,14 +68,14 @@ const StyledButton = styled.a`
     left: 0;
     direction: rtl;
     z-index: -1;
-    background: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
-    color:  ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
+    background: ${props => props.darkmode ? 'white' : 'black'};
+    color:  ${props => props.darkmode ? 'white' : 'black'};
     transition: all 0.1s ease;
   }
 
   &:hover {
-    color:  ${(props: {darkmode: boolean}) => props.darkmode ? 'black' : 'white'};
-    border: 1px solid ${(props:{darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
+    color:  ${props => props.darkmode ? 'black' : 'white'};
+    border: 1px solid ${props => props.darkmode ? 'white' : 'black'};
     text-decoration: underline;
   }
 
@@ -77,7 +83,7 @@ const StyledButton = styled.a`
     left: auto;
     right: 0;
     width: 100%;
-    color: ${(props: {darkmode: boolean}) => props.darkmode ? 'black' : 'white'};
+    color: ${props => props.darkmode ? 'black' : 'white'};
   }
 `;
 
