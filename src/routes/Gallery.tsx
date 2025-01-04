@@ -22,6 +22,7 @@ const P5_LORENZ_ATTRACTOR = lazy(() => import('../components/p5/P5_LORENZ_ATTRAC
 const P5_PLANE            = lazy(() => import('../components/p5/P5_PLANE'));
 const P5_LOADER           = lazy(() => import('../components/p5/P5_LOADER'));
 const P5_ANJA             = lazy(() => import('../components/p5/P5_ANJA'));
+const MondrianAnja        = lazy(() => import('../components/p5/MondrianAnja'));
 
 interface P5Props {
   strokeColor: number,
@@ -46,6 +47,7 @@ const Gallery: FC = () => {
     { component: P5_LORENZ_ATTRACTOR, title: 'CHAOS THEORY', name: 'chaos-theory' },
     { component: P5_LOADER, title: 'AFTERIMAGE', name: 'afterimage' },
     { component: P5_ANJA, title: 'ANJA', name: 'anja' },
+    { component: MondrianAnja, title: 'ANJALEPH', name: 'anjaleph' },
   ], []);
 
   useEffect(() => {
