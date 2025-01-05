@@ -1,4 +1,4 @@
-import { FC, lazy, Suspense, useState, useContext } from 'react';
+import { FC, lazy, Suspense, useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import {useDarkmode, } from './Darkmode';
 import styled from 'styled-components';

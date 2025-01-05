@@ -1,6 +1,6 @@
-import { FC, useState, useContext } from 'react';
+import { FC, ChangeEvent, FormEvent, useState, useEffect } from 'react';
 import { useDarkmode } from '../../Darkmode';
-// @ts-ignore
+
 import styled from 'styled-components';
 import emailjs from '@emailjs/browser';
 
@@ -16,7 +16,25 @@ interface FormData {
   message: string,
 };
 
+interface Form {};
+
+interface Wrap {
+  darkmode: boolean,
+};
+
+interface Img {};
+interface Input {};
+
+interface Message {
+  darkmode: boolean,
+};
+
+const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY as string;
+
 const ContactForm: FC<Props> = ({ viewSetter }) => {
+  useEffect(() => {
+    emailjs.init(publicKey)
+  }, []);
   const { darkmode } = useDarkmode();
   const [formData, setFormData] = useState<FormData>({
     to_name: '',
@@ -24,29 +42,30 @@ const ContactForm: FC<Props> = ({ viewSetter }) => {
     message: ''
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
         ...formData,
         [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    emailjs.init('p1Pm1Q0_4BJ-G3HYU');
-    emailjs
-      // @ts-ignore
-      .send('service_dna0xvk', 'template_9zxn0jo', formData)
-      .then((response) => {
-          console.log('Email sent successfully!', response);
-          alert('Email sent successfully!');
-          setFormData({ to_name: '', from_name: '', message: '' });
-      })
-      .catch((error) => {
-          console.error('Error sending email:', error);
-          alert('Failed to send email.');
-      });
+    try {
+      await emailjs.send(
+        'service_dna0xvk',
+        'template_9zxn0jo',
+        // @ts-ignore
+        formData,
+        publicKey
+      );
+      alert('Email sent successfully!');
+      setFormData({ to_name: '', from_name: '', message: '' });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Failed to send email.');
+    };
   };
 
   return (
@@ -82,7 +101,8 @@ const ContactForm: FC<Props> = ({ viewSetter }) => {
       {formData.message && <LinkButton darkMode={darkmode} textContent='SUBMIT' isScaleAnimation={true} 
       // @ts-ignore
       onClick={handleSubmit} />}
-
+      
+      {/* @ts-ignore */}
       <ButtonWrap>
         <LinkButton
           onClick={() => viewSetter('bio')}
@@ -101,33 +121,33 @@ const ContactForm: FC<Props> = ({ viewSetter }) => {
   );
 };
 
-const Form = styled.form`
+const Form = styled.form<Form>`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
   margin-bottom: 15px;
 `;
-const Wrap = styled.div`
+const Wrap = styled.div<Wrap>`
   display: flex;
   border: 1px solid black;
   height: 2rem;
   padding: 10px;
-  color: ${(props: {darkmode: boolean}) => (props.darkmode ? 'white' : 'black')};
-  border: 1px solid ${(props: {darkmode: boolean}) => (props.darkmode ? 'white' : 'black')};
+  color: ${props => props.darkmode ? 'white' : 'black'};
+  border: 1px solid ${props => props.darkmode ? 'white' : 'black'};
 `;
-const ButtonWrap = styled(Wrap)`
+const ButtonWrap = styled(Wrap)<Wrap>`
   border: none;
   display: flex;
   justify-content: center;
   gap: 10px;
 `;
-const Img = styled.img`
+const Img = styled.img<Img>`
   height: 50%;
   align-self: center;
   color: inherit;
 `;
-const Input = styled.input`
+const Input = styled.input<Input>`
   border: none;
   width: 100%;
   font-size: 1.5rem;
@@ -135,13 +155,13 @@ const Input = styled.input`
   color: inherit;
   outline: none;
 `;
-const Message = styled.textarea`
+const Message = styled.textarea<{darkmode: boolean}>`
   height: 200px;
   width: 100%;
   background: none;
   outline: none;
-  border: 1px solid ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
-  color: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
+  border: 1px solid ${props => props.darkmode ? 'white' : 'black'};
+  color: ${props => props.darkmode ? 'white' : 'black'};
 `;
 
 export default ContactForm;
