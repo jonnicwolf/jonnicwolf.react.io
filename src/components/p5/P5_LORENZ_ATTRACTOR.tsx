@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import ChaosTheoryForm from '../atoms/ChaosTheoryForm';
 
 interface Props {
-  strokeColor: string;
+  strokeColor: number;
   showControls: boolean;
 };
 

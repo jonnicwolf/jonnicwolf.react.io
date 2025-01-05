@@ -1,10 +1,16 @@
 import { FC, } from 'react';
-// @ts-ignore
+
 import styled from 'styled-components';
 
 import ProjectCard from '../components/molecules/ProjectCard';
 import EsperiCover from '../components/molecules/EsperiCover';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
+
+interface Container {};
+interface Background {
+  strokeColor: number,
+};
+interface ProjectList {};
 
 const IOSProjects: FC = () => {
   const swift = 'devicon-swift-plain';
@@ -31,7 +37,7 @@ const IOSProjects: FC = () => {
   );
 };
 
-const Container = styled.div`
+const Container = styled.div<Container>`
   display: flex;
   justify-content: center;
   height: 3500px;
@@ -42,11 +48,13 @@ const Container = styled.div`
     padding-top: '100px';
   }
 `;
-const Background = styled(P5_LORENZ_ATTRACTOR)`
+const Background = styled(P5_LORENZ_ATTRACTOR).attrs<Background>((props) => ({
+  strokeColor: props.strokeColor,
+}))`
   height: 100vh;
-  z-index:
+  z-index: 1;
 `;
-const ProjectList = styled.div`
+const ProjectList = styled.div<ProjectList>`
   display: flex;
   justify-content: center;
   align-items: center;

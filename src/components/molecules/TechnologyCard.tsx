@@ -10,6 +10,25 @@ interface Props {
   viewSetter: (value: string) => void,
 };
 
+interface Container {};
+
+interface IntroText {};
+interface Title {};
+interface Content {};
+interface StyledComponents {};
+interface StyledIcon {};
+interface StyledName {};
+interface TechGroup {
+  darkmode: boolean
+};
+interface TechContent {
+  gap: string,
+  width: string,
+};
+interface Icon {};
+interface SVG {};
+interface Buttons{};
+
 const TechnologyCard: FC<Props> = ({ viewSetter }) => {
   const { darkmode } = useDarkmode();
 
@@ -44,7 +63,7 @@ const TechnologyCard: FC<Props> = ({ viewSetter }) => {
 
         <TechGroup darkmode={darkmode} >
           <IntroText>LIBRARIES</IntroText>
-          <TechContent gap='10px'>
+          <TechContent gap='10px' width='auto'>
             <Icon className='devicon-react-original colored' title='React' />
             <Icon className='devicon-redux-original colored' title='Redux' />
             <Icon className='devicon-axios-plain colored' title='Axios' />
@@ -58,7 +77,7 @@ const TechnologyCard: FC<Props> = ({ viewSetter }) => {
 
         <TechGroup darkmode={darkmode} >
           <IntroText>TOOLS</IntroText>
-          <TechContent gap='9px'>
+          <TechContent gap='9px' width="auto">
             <Icon className='devicon-terraform-plain colored' title='Terraform' />
             <Icon className='devicon-kubernetes-plain colored' title='Kubernetes' />
             <Icon className='devicon-postgresql-plain colored' title='PostgreSQL' />
@@ -94,7 +113,7 @@ const fadeIn = keyframes`
   to { opacity: 1; }
 `;
 
-const Container = styled(motion.div)`
+const Container = styled(motion.div)<Container>`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -105,7 +124,7 @@ const Container = styled(motion.div)`
   gap: 8px;
 `;
   
-  const IntroText = styled.h3`
+  const IntroText = styled.h3<IntroText>`
     font-size: 2rem;
     margin: 0;
     font-family: Michroma;
@@ -114,13 +133,13 @@ const Container = styled(motion.div)`
     font-size: 2.3rem;
   `;
 
-  const Content = styled.div`
+  const Content = styled.div<Content>`
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
   `;
-    const StyledComponents = styled.div`
+    const StyledComponents = styled.div<StyledComponents>`
       height: 5rem;
       width: 5rem;
       display: flex;
@@ -130,46 +149,46 @@ const Container = styled(motion.div)`
       transition: scale 0.3s linear;
       &: hover { scale: 1.1 };
       `;
-      const StyledIcon = styled.div`
+      const StyledIcon = styled.div<StyledIcon>`
       font-size: 2rem;
       transform: translateY(5px);
       align-self: center;
       margin-bottom: 10px;
     `;
-    const StyledName = styled.div`
+    const StyledName = styled.div<StyledName>`
       font-size: 0.6rem;
       margin: 0;
       padding: 5px;
       font-weight: bold;
       text-wrap: wrap;
     `;
-    const TechGroup = styled.div`
+    const TechGroup = styled.div<TechGroup>`
       font-size: 5rem;
       padding: 10px;
       width: 45%;
-      border: 1px solid ${(props: {darkmode: boolean}) => (props.darkmode ? 'white' : 'black')};
+      border: 1px solid ${props => props.darkmode ? 'white' : 'black'};
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 20px;
     `;
-    const TechContent = styled.div`
+    const TechContent = styled.div<TechContent>`
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      gap: ${(props: {gap: string}) => props.gap};
-      width: ${(props: {width: string}) => props.width};
+      gap: ${props => props.gap};
+      width: ${props => props.width};
     `;
-      const Icon = styled.i`
+      const Icon = styled.i<Icon>`
         transition: scale 0.3s linear;
         &: hover { scale: 1.1 };
       `;
-      const SVG = styled.img`
+      const SVG = styled.img<SVG>`
         transition: scale 0.2s linear;
         &: hover { scale: 1.1 };
       `;
-  const Buttons = styled.div`
+  const Buttons = styled.div<Buttons>`
     display: flex;
     align-items: center;
     justify-content: center;

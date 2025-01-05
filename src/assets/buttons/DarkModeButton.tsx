@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useDarkmode } from '../../Darkmode';
 
 interface DarkModeButtonProps {
-  buttonSize: string | null,
+  buttonSize?: string | null,
 };
 
 interface ContainerProps {};
