@@ -1,10 +1,9 @@
-import { FC, useContext } from 'react';
-import { useDarkmode } from '../../Darkmode';
-
+import { FC, } from 'react';
 import { Link } from 'react-router-dom';
-// @ts-ignore
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+
+import { useDarkmode } from '../../Darkmode';
 
 interface Props {
   color?: string,
@@ -14,6 +13,15 @@ interface Props {
   textContent: string,
   subDirectory: string,
   isScaleAnimation: boolean | null,
+};
+
+interface LinkStyleProps {
+  padding: boolean,
+};
+
+interface ButtonProps {
+  buttonSize: string,
+  darkmode: boolean,
 };
 
 const LinkButton: FC<Props> = ({
@@ -52,27 +60,23 @@ const LinkButton: FC<Props> = ({
 };
 
 
-const LinkStyle = styled(motion(Link))`
-  padding: ${(props: {padding: boolean}) => props.padding ? '1vh' : '0'} ;
+const LinkStyle = styled(motion(Link))<LinkStyleProps>`
+  padding: ${props => props.padding ? '1vh' : '0'};
   font-size: 2rem;
 `;
-interface ButtonProps {
-  buttonSize: boolean,
-  darkMode: boolean,
-};
 const Button = styled.button<ButtonProps>`
-  padding: ${(props: {buttonSize: string}) => props.buttonSize === 'large' ? '25px 80px' : '1em'};
+  padding: ${props => props.buttonSize === 'large' ? '25px 80px' : '1em'};
   font-family: Rubik;
-  font-size: ${(props: {buttonSize: string}) => props.buttonSize === 'large' ? '1.5rem' : '0.8rem'};
+  font-size: ${props => props.buttonSize === 'large' ? '1.5rem' : '0.8rem'};
   font-weight: 900;
   background: transparent;
   outline: none !important;
   cursor: pointer;
   position: relative;
   display: inline-block;
-  border: 1px solid ${(props: {darkmode: boolean, color: string}) => props.color ? props.color : props.darkmode ? 'white' : 'black'};
+  border: 1px solid ${props => props.color ? props.color : props.darkmode ? 'white' : 'black'};
   z-index: 1;
-  color: ${(props: {darkmode: boolean, color: string}) => props.color ? props.color : props.darkmode ? 'white' : 'black'};
+  color: ${props => props.color ? props.color : props.darkmode ? 'white' : 'black'};
 
   &:after {
     position: absolute;
@@ -84,21 +88,21 @@ const Button = styled.button<ButtonProps>`
     direction: rtl;
     z-index: -1;
     background: black;
-    color:  ${(props: {darkmode: boolean}) => props.darkmode ? 'black' : 'white'};
+    color:  ${props => props.darkmode ? 'black' : 'white'};
     transition: all 0.15s ease;
   }
 
   &:hover {
-    background: ${(props: {darkmode: boolean}) => props.darkmode ? 'white': 'black'};
-    color:  ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'white'};
-    border: 1px solid ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
+    background: ${props => props.darkmode ? 'white': 'black'};
+    color:  ${props => props.darkmode ? 'white' : 'white'};
+    border: 1px solid ${props => props.darkmode ? 'white' : 'black'};
   }
 
   &:hover:after {
     left: auto;
     right: 0;
     width: 100%;
-    color: ${(props: {darkmode: boolean}) => props.darkmode ? 'black' : 'white'};
+    color: ${props => props.darkmode ? 'black' : 'white'};
   }
 `;
 

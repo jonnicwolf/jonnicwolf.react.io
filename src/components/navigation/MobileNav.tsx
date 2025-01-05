@@ -1,13 +1,22 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
-// @ts-ignore
+
 import styled from 'styled-components';
 
 import Hamburger from '../../assets/icons/Hamburger';
 
 interface Props {
-  enterClicked: boolean
+  enterClicked: boolean,
 };
+
+interface Container {
+  isOpen: boolean,
+  enterClicked: boolean,
+};
+interface Nav {};
+interface Item {};
+interface ExternalItem {};
+interface Fezz {};
 
 const MobileNav: FC<Props> = ({ enterClicked }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -31,7 +40,7 @@ const MobileNav: FC<Props> = ({ enterClicked }) => {
   );
 };
 
-const Container = styled.div`
+const Container = styled.div<Container>`
   position: fixed;
   background-color: #fffcf5;
   display: flex;
@@ -43,13 +52,13 @@ const Container = styled.div`
   width: 100%;
   z-index: ${(props: {enterClicked: boolean}) => props.enterClicked ? '3' : '2'};
 `;
-const Nav = styled.div`
+const Nav = styled.div<Nav>`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 15px;
 `;
-const Item = styled(Link)`
+const Item = styled(Link)<Item>`
   border-bottom: 2px solid grey;
   color: black;
   font-family: Rubik;
@@ -58,7 +67,7 @@ const Item = styled(Link)`
   text-align: center;
   text-decoration: none;
 `;
-const ExternalItem = styled.a`
+const ExternalItem = styled.a<ExternalItem>`
   border-bottom: 2px solid grey;
   color: black;
   font-family: Rubik;
@@ -67,7 +76,7 @@ const ExternalItem = styled.a`
   text-align: center;
   text-decoration: none;
 `;
-const Fezz = styled.p`
+const Fezz = styled.p<Fezz>`
   padding: 0;
   margin: 0;
   font-family: var(--font-family-rampart-one);

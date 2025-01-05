@@ -1,13 +1,17 @@
 import { FC, useEffect, useRef, useCallback, useState } from 'react';
 import p5 from 'p5';
-// @ts-ignore
+
 import styled from 'styled-components';
 
 import ChaosTheoryForm from '../atoms/ChaosTheoryForm';
 
 interface Props {
-  strokeColor: string;
+  strokeColor: number;
   showControls: boolean;
+};
+
+interface CTProps {
+  showControls: boolean,
 };
 
 const P5_LORENZ_ATTRACTOR: FC<Props> = ({ strokeColor, showControls }) => {
@@ -20,8 +24,8 @@ const P5_LORENZ_ATTRACTOR: FC<Props> = ({ strokeColor, showControls }) => {
   const setters = { setSigma, setRho, setBeta, setDelta };
 
   const sketch_ref = useRef();
-  //@ts-ignore
-  const sketch = useCallback((p) => {
+
+  const sketch = useCallback((p: p5) => {
     const size: number = 20;
     const max: number = 20;
     let paths: p5.Vector[][] = [];
@@ -55,7 +59,9 @@ const P5_LORENZ_ATTRACTOR: FC<Props> = ({ strokeColor, showControls }) => {
       p.rotateZ(p.frameCount * rotationSpeed * 0.3);
 
       paths.forEach((points, idx) => {
-        let { x, y, z } = initialPositions[idx];
+        let x: number = initialPositions[idx].x;
+        let y: number = initialPositions[idx].y;
+        let z: number = initialPositions[idx].z;
 
         const dt: number = 0.005 * delta;
         const dx: number = (sigma * (y - x)) * dt;
@@ -66,7 +72,7 @@ const P5_LORENZ_ATTRACTOR: FC<Props> = ({ strokeColor, showControls }) => {
         y += dy;
         z += dz;
 
-        //@ts-ignore
+        // @ts-ignore
         points.push(new p5.Vector(x, y, z));
         if (points.length > max) points.shift();
 
@@ -92,12 +98,13 @@ const P5_LORENZ_ATTRACTOR: FC<Props> = ({ strokeColor, showControls }) => {
   return (
     <>
       {showControls && <ChaosTheoryForm vars={vars} setters={setters} />}
-      <CT ref={sketch_ref} />
+      {/* @ts-ignore */}
+      <CT showControls={showControls} ref={sketch_ref} />
     </>
   );
 };
 
-const CT = styled.div`
+const CT = styled.div<CTProps>`
   transform: translateY(${(props: { showControls: boolean }) =>
     props.showControls ? '20px' : 'none'});
   position: fixed;

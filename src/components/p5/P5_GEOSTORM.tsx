@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef, useCallback, useContext, MutableRefObject } from 'react';
 import { useDarkmode } from '../../Darkmode';
-// @ts-ignore
+
 import styled from 'styled-components';
 import p5 from 'p5';
 
@@ -10,11 +10,9 @@ interface Props {
 
 const P5_GEOSTORM: FC<Props> = ({ strokeColor }) => {
   const { darkmode } = useDarkmode();
-  // const sketch_ref: MutableRefObject<HTMLDivElement | null | undefined> = useRef();
   const sketch_ref = useRef();
 
-  // @ts-ignore
-  const sketch = useCallback((p) => {
+  const sketch = useCallback((p: p5) => {
     function drawMountains() {
       // Draw mountain bases
       p.fill(100, 100, 150, 150); // Add opacity to the mountains
@@ -178,8 +176,7 @@ const P5_GEOSTORM: FC<Props> = ({ strokeColor }) => {
   }, [strokeColor, darkmode]);
 
   useEffect(() => {
-    // @ts-ignore
-    const p5Canvas = new p5(sketch, sketch_ref);
+    const p5Canvas = new p5(sketch, sketch_ref.current);
     return () => p5Canvas.remove();
   }, [sketch]);
 

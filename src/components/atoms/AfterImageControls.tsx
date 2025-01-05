@@ -1,6 +1,6 @@
-import { FC, useContext } from 'react';
+import { FC,ChangeEvent, } from 'react';
 import { useDarkmode } from '../../Darkmode';
-// @ts-ignore
+
 import styled from 'styled-components';
 
 interface Props {
@@ -8,19 +8,26 @@ interface Props {
   modSetter: (value: number) => void,
 };
 
+interface ContainerProps {
+  darkmode: boolean,
+};
+
+interface SliderProps {
+  darkmode: boolean,
+};
+
 const AfterImageControls: FC<Props> = ({ mod, modSetter }) => {
   const { darkmode } = useDarkmode();
 
-  // @ts-ignore
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     modSetter(parseFloat(e.target.value));
   };
 
   return (
-    <Container darkMode={darkmode}>
+    <Container darkmode={darkmode}>
       <Info>REMEMBER, THERE IS ONLY ONE TRIANGLE</Info>
       <Slider
-        darkMode={darkmode}
+        darkmode={darkmode}
         type='range'
         min='0.1'
         max='5'
@@ -31,9 +38,9 @@ const AfterImageControls: FC<Props> = ({ mod, modSetter }) => {
   );
 };
 
-const Container = styled.div`
-  border: 1px solid ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
-  color: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
+const Container = styled.div<ContainerProps>`
+  border: 1px solid ${props => props.darkmode ? 'white' : 'black'};
+  color: ${props => props.darkmode ? 'white' : 'black'};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,10 +53,10 @@ const Container = styled.div`
     width: 60vw;
   }
 `;
-const Slider = styled.input`
+const Slider = styled.input<SliderProps>`
   -webkit-appearance: none;
   width: 80%;
-  border: 1px solid ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
+  border: 1px solid ${props => props.darkmode ? 'white' : 'black'};
   background: none;
   border-radius: 30px;
   &::-webkit-slider-thumb {
@@ -57,7 +64,7 @@ const Slider = styled.input`
     appearance: none;
     width: 30px;
     height: 30px;
-    background: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
+    background: ${props => props.darkmode ? 'white' : 'black'};
     cursor: pointer;
     border-radius: 50%;
   }
