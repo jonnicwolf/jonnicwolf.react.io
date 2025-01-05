@@ -1,5 +1,5 @@
 import { FC, useState, useEffect } from 'react';
-// @ts-ignore
+
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -11,6 +11,19 @@ import P5_PLANE from '../components/p5/P5_PLANE';
 interface Props {
   setter: (open: boolean) => void,
 };
+
+interface Background {
+  showAbout: boolean,
+  isclicked: boolean ,
+}
+interface LandingPageContainer{};
+interface LandingPageItem {};
+interface Content {};
+interface PProject {
+  isclicked: boolean,
+};
+interface EnterButton {};
+interface Button {};
 
 const LandingPage: FC<Props> = ({ setter }) => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
@@ -84,11 +97,11 @@ const LandingPage: FC<Props> = ({ setter }) => {
   );
 };
 
-const Background = styled(motion.div)`
+const Background = styled(motion.div)<Background>`
   background-image: radial-gradient(circle 80vh, #62c2c4, ${(props: { showAbout: boolean}) => props.showAbout ? `rgb(255,255,255)`: `rgb(17, 100, 102)` });
   transform: translateY(${(props: { isclicked: boolean }) => props.isclicked ? '100px': '-100px'});
 `;
-const LandingPageContainer = styled.div`
+const LandingPageContainer = styled.div<LandingPageContainer>`
   display: flex;
   height: 100%;
   align-items: center;
@@ -96,10 +109,10 @@ const LandingPageContainer = styled.div`
   flex-direction: column;
   overflow: hidden;
 `;
-const LandingPageItem = styled.div`
+const LandingPageItem = styled.div<LandingPageItem>`
   padding-bottom: 2em;
 `;
-const Content = styled.div`
+const Content = styled.div<Content>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -111,7 +124,7 @@ const Content = styled.div`
     transform: translateY(10vh);
   }
 `;
-const PProject = styled(LandingPageItem)`
+const PProject = styled(LandingPageItem)<PProject>`
   height: 100vh;
   width: 100vw;
   z-index: 1;
@@ -121,15 +134,15 @@ const PProject = styled(LandingPageItem)`
     display: none;
   }
 `;
-const EnterButton = styled(LandingPageItem)`
+const EnterButton = styled(LandingPageItem)<EnterButton>`
   z-index: 3;
   @media only screen and (max-width: 700px) {
     scale: 0.6;
   }
 `;
-const Button = styled(LinkButton)`
+const Button = styled(LinkButton)<Button>`
   color: white !important;
   border: 2px solid white !important;
-`
+`;
 
 export default LandingPage;
