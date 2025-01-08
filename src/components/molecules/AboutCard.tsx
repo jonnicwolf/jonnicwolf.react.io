@@ -41,8 +41,8 @@ const fadeIn = keyframes`
 `;
 
 const Container = styled(motion.div)`
-  align-items: center;
   display: flex;
+  align-items: center;
   flex-direction: column;
   list-style: none;
   overflow: scroll;
@@ -55,7 +55,7 @@ const Container = styled(motion.div)`
 
   @media screen and (max-width: 600px) {
     height: 60vh;
-    width: 80vw;
+    width: 100%;
   };
 `;
 
