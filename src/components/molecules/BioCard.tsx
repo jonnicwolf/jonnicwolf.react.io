@@ -93,6 +93,7 @@ const IntroText = styled.p`
   font-size: 1.2rem;
   margin: 0;
   font-family: Michroma;
+  
   @media screen and (max-width: 600px) {
     font-size: 2rem;
     text-align: center;
@@ -100,8 +101,10 @@ const IntroText = styled.p`
 `;
 const P = styled.p`
   font-size: 1rem;
-  margin: 0;
-  font-size: 1.5rem;
+
+  @media screen and (max-width: 600px) {
+    font-size: 1.5rem;
+  }
 `;
 const Buttons = styled.div`
   display: flex;
