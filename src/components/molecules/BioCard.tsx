@@ -70,7 +70,7 @@ const Headshot = styled.img`
 
   @media screen and (max-width: 600px) {
     width: 100%;
-    padding-top: 65vh;
+    padding-top: 70vh;
     box-shadow: none;
   }
 `;
