@@ -51,7 +51,7 @@ const ContentWrap = styled.div`
 
   @media screen and (max-width: 600px) {
     height: 86.5%;
-    width: 80.7%;
+    width: 85vw;
   };
 
   --s: 5px;

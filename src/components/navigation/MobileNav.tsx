@@ -31,7 +31,7 @@ const MobileNav: FC<Props> = ({ enterClicked }) => {
       <Item to='/' onClick={() =>setIsOpen(!isOpen)}>HOME</Item>
       <Item to='/gallery' onClick={() =>setIsOpen(!isOpen)}>GALLERY</Item>
       <ExternalItem onClick={()=> setIsOpen(!isOpen)} href='https://www.linkedin.com/in/jonathannarine/'>LINKEDIN</ExternalItem>
-      {/* borderBottom is 1px solid grey here to better define the menu bottom */}
+
       <ExternalItem
         onClick={() =>setIsOpen(!isOpen)}
         href='https://github.com/jonnicwolf'
@@ -46,11 +46,11 @@ const Container = styled.div<Container>`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  height: ${(props: {isOpen: boolean}) => props.isOpen ? 'auto' : '8vh'};
+  height: ${props => props.isOpen ? 'auto' : '8vh'};
   overflow: hidden;
   transition: height .3s linear;
   width: 100%;
-  z-index: ${(props: {enterClicked: boolean}) => props.enterClicked ? '3' : '2'};
+  z-index: ${props => props.enterClicked ? '3' : '2'};
 `;
 const Nav = styled.div<Nav>`
   display: flex;
@@ -79,8 +79,8 @@ const ExternalItem = styled.a<ExternalItem>`
 const Fezz = styled.p<Fezz>`
   padding: 0;
   margin: 0;
-  font-family: var(--font-family-rampart-one);
-  font-size: 1.5rem;
+  font-family: Rampart One;
+  font-size: 2rem;
 `;
 
 export default MobileNav;

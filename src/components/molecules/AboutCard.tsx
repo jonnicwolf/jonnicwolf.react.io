@@ -9,6 +9,10 @@ import TechnologyCard from './TechnologyCard';
 import BioCard from './BioCard';
 import ExpCard from './ExpCard';
 
+interface ContainerProps {
+  darkmode: boolean,
+}
+
 const AboutCard: FC = () => {
   const [view, setView] = useState<string>('');
   const { darkmode } = useDarkmode();
@@ -40,22 +44,22 @@ const fadeIn = keyframes`
   to { opacity: 1; }
 `;
 
-const Container = styled(motion.div)`
-  align-items: center;
+const Container = styled(motion.div)<ContainerProps>`
   display: flex;
+  align-items: center;
   flex-direction: column;
   list-style: none;
   overflow: scroll;
   height: 800px;
   width: 800px;
-  border: 1px solid ${(props: {darkmode: boolean}) => (props.darkmode ? 'white' : 'none')};
+  border: 1px solid ${props => props.darkmode ? 'white' : 'none'};
   animation: ${fadeIn} 1.5s forwards;
-  background-color: ${(props: {darkmode: boolean}) => (props.darkmode ? '#969696' : 'none')};
-  color: ${(props: {darkmode: boolean}) => (props.darkmode ? 'grey' : 'white')};
+  background-color: ${props => props.darkmode ? '#969696' : 'none'};
+  color: ${props => props.darkmode ? 'white' : 'black'};
 
   @media screen and (max-width: 600px) {
     height: 60vh;
-    width: 80vw;
+    width: 100%;
   };
 `;
 

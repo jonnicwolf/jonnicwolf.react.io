@@ -51,13 +51,13 @@ const LandingPage: FC<Props> = ({ setter }) => {
 
   const backgroundAnimation = {
     hidden: {
-      height: '102vh',
+      height: '120vh',
       width: '100vw',
       y: -100,
     },
     show: {
       height: isMobile ? '60vh' :'800px',
-      width: isMobile ? '80vw' :'800px',
+      width: isMobile ? '90vw' :'800px',
       y: 70,
       transition: { duration: 2 },
     }
@@ -98,12 +98,20 @@ const LandingPage: FC<Props> = ({ setter }) => {
 };
 
 const Background = styled(motion.div)<Background>`
-  background-image: radial-gradient(circle 80vh, #62c2c4, ${(props: { showAbout: boolean}) => props.showAbout ? `rgb(255,255,255)`: `rgb(17, 100, 102)` });
-  transform: translateY(${(props: { isclicked: boolean }) => props.isclicked ? '100px': '-100px'});
+  background-image: radial-gradient(circle 80vh, #62c2c4, ${props => props.showAbout ? `rgb(255,255,255)`: `rgb(17, 100, 102)` });
+  transform: translateY(${props => props.isclicked ? '100px': '-100px'});
+
+  @media screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5vw;
+  };
 `;
 const LandingPageContainer = styled.div<LandingPageContainer>`
   display: flex;
-  height: 100%;
+  height: 100vh;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
@@ -128,7 +136,7 @@ const PProject = styled(LandingPageItem)<PProject>`
   height: 100vh;
   width: 100vw;
   z-index: 1;
-  opacity: ${(props: { isclicked: boolean }) => props.isclicked ? 0 : 1};
+  opacity: ${props => props.isclicked ? 0 : 1};
 
   @media only screen and (max-width: 700px) {
     display: none;
