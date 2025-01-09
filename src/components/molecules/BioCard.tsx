@@ -70,7 +70,8 @@ const Headshot = styled.img`
 
   @media screen and (max-width: 600px) {
     width: 100%;
-    padding-top: 85vh;
+    padding-top: 65vh;
+    box-shadow: none;
   }
 `;
 const BioContainer = styled.div`
@@ -93,7 +94,7 @@ const IntroText = styled.p`
   font-size: 1.2rem;
   margin: 0;
   font-family: Michroma;
-  
+
   @media screen and (max-width: 600px) {
     font-size: 2rem;
     text-align: center;
@@ -102,9 +103,7 @@ const IntroText = styled.p`
 const P = styled.p`
   font-size: 1rem;
 
-  @media screen and (max-width: 600px) {
-    font-size: 1.5rem;
-  }
+  
 `;
 const Buttons = styled.div`
   display: flex;

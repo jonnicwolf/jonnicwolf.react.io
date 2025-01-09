@@ -52,10 +52,10 @@ const Container = styled(motion.div)<ContainerProps>`
   overflow: scroll;
   height: 800px;
   width: 800px;
-  border: 1px solid ${props => (props.darkmode ? 'white' : 'none')};
+  border: 1px solid ${props => props.darkmode ? 'white' : 'none'};
   animation: ${fadeIn} 1.5s forwards;
-  background-color: ${props => (props.darkmode ? '#969696' : 'none')};
-  color: ${props => (props.darkmode ? 'white' : 'black')};
+  background-color: ${props => props.darkmode ? '#969696' : 'none'};
+  color: ${props => props.darkmode ? 'white' : 'black'};
 
   @media screen and (max-width: 600px) {
     height: 60vh;
