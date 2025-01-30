@@ -76,7 +76,7 @@ const CurrentRole = styled(motion.p)`
 const FSD = styled(motion.p)`
   font-family: Julius Sans One;
   font-family: Michroma;
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: bold;
   @media (max-width: 530px) {
     font-size: 15px;

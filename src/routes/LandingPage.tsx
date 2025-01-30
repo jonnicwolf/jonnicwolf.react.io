@@ -57,7 +57,7 @@ const LandingPage: FC<Props> = ({ setter }) => {
     },
     show: {
       height: isMobile ? '60vh' :'800px',
-      width: isMobile ? '90vw' :'800px',
+      width: isMobile ? '90vw' :'900px',
       y: 70,
       transition: { duration: 2 },
     }

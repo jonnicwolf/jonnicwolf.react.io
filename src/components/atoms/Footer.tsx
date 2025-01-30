@@ -9,6 +9,8 @@ import Button from '../../assets/buttons/Button';
 const Footer: FC = () => {
   const { darkmode } = useDarkmode();
 
+  const nowYear = new Date().getFullYear();
+
   function scrollToTop (): void {
     document.documentElement.scrollTo({
       top: 0,
@@ -34,7 +36,7 @@ const Footer: FC = () => {
           FEZZ
         </RampartOneText>
 
-        <Copyright darkmode={darkmode}>Copyright &#169; 2024 Jonathan Narine</Copyright>
+        <Copyright darkmode={darkmode}>Copyright &#169; {nowYear} Jonathan Narine</Copyright>
       </Content>
 
       <ButtonWrap>
