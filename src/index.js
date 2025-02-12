@@ -15,7 +15,6 @@ root.render(
       <BrowserRouter>
           <QueryClientProvider client={new QueryClient()}>
             <ContextApp />
-            <Footer />
           </QueryClientProvider>
       </BrowserRouter>
     </DarkmodeProvider>

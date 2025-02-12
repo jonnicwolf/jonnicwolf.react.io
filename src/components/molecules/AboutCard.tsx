@@ -51,7 +51,7 @@ const Container = styled(motion.div)<ContainerProps>`
   list-style: none;
   overflow: scroll;
   height: 800px;
-  width: 800px;
+  width: 900px;
   border: 1px solid ${props => props.darkmode ? 'white' : 'none'};
   animation: ${fadeIn} 1.5s forwards;
   background-color: ${props => props.darkmode ? '#969696' : 'none'};
