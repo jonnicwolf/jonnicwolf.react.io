@@ -51,12 +51,12 @@ const LandingPage: FC<Props> = ({ setter }) => {
 
   const backgroundAnimation = {
     hidden: {
-      height: '120vh',
+      height: '100vh',
       width: '100vw',
-      y: -100,
+      y: 0,
     },
     show: {
-      height: isMobile ? '60vh' :'800px',
+      height: isMobile ? '125vh' :'800px',
       width: isMobile ? '90vw' :'900px',
       y: 70,
       transition: { duration: 2 },
@@ -99,14 +99,16 @@ const LandingPage: FC<Props> = ({ setter }) => {
 
 const Background = styled(motion.div)<Background>`
   background-image: radial-gradient(circle 80vh, #62c2c4, ${props => props.showAbout ? `rgb(255,255,255)`: `rgb(17, 100, 102)` });
-  transform: translateY(${props => props.isclicked ? '100px': '-100px'});
+  transform: translateY(${props => props.isclicked ? '100px': '-100px'}); 
+  
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 900px) {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 5vw;
+    padding: 0 5vw;
+    height: 50%;
   };
 `;
 const LandingPageContainer = styled.div<LandingPageContainer>`

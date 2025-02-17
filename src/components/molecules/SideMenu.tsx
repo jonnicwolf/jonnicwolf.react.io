@@ -51,7 +51,6 @@ const Current = styled.div`
   align-items: center;
   padding: 15px 0 15px 0;
   width: 150px;
-  border: 1px solid red;
   font-family: Michroma;
   border: 1px solid ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
   color: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
