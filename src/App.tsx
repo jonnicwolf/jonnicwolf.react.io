@@ -56,11 +56,12 @@ const Container = styled.div<WebProjectsProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 520vh;
+  gap: 20vh;
+  // height: 520vh;
 
-  @media screen and (max-width: 600px) {
-    height: 300vh;
-  }
+  // @media screen and (max-width: 600px) {
+  //   height: 300vh;
+  // }
 `;
 
 export default function ContextApp (): JSX.Element {

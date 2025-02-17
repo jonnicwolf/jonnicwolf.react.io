@@ -49,7 +49,7 @@ const Container = styled(motion.div)<ContainerProps>`
   align-items: center;
   flex-direction: column;
   list-style: none;
-  overflow: scroll;
+  // overflow: scroll;
   height: 800px;
   width: 900px;
   border: 1px solid ${props => props.darkmode ? 'white' : 'none'};
@@ -58,8 +58,8 @@ const Container = styled(motion.div)<ContainerProps>`
   color: ${props => props.darkmode ? 'white' : 'black'};
 
   @media screen and (max-width: 600px) {
-    height: 60vh;
-    width: 100%;
+    height: 100%;
+    width: 80%;
   };
 `;
 
