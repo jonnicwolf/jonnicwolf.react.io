@@ -53,13 +53,14 @@ const BioCard: FC<Props> = ({ viewSetter }) => {
 const Wrap = styled.div`
   display: flex;
   height: 100%;
-  border: 1px solid red;
 
   @media screen and (max-width: 700px) {
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 40px;
+    height: 100%;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
   }
 `;
 const Headshot = styled.img`
@@ -70,9 +71,8 @@ const Headshot = styled.img`
   box-shadow: -2rem 2rem 20rem;
 
   @media screen and (max-width: 900px) {
-    width: 100%;
     width: 100vw;
-    height: 80vh;
+    height: 55%;
     box-shadow: none;
   }
 `;
@@ -80,7 +80,7 @@ const BioContainer = styled.div`
   width: 40%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: start;
   align-items: center;
   padding: 30px;
   font-size: 1rem;
@@ -88,6 +88,7 @@ const BioContainer = styled.div`
 
   @media screen and (max-width: 600px) {
     width: 85vw;
+    height: 50%;
     justify-content: center;
     padding: 0;
   }

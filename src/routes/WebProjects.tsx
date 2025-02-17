@@ -101,9 +101,13 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   // padding-top: 70px;
-  // padding-top: ${(props: { getter: boolean }) => props.getter ? '10vh' : '0vh'};
+  padding-top: ${(props: { getter: boolean }) => props.getter ? '10vh' : '0vh'};
   // padding-top: ${(props: { getter: boolean }) => props.getter ? '5vh' : '0vh'};
   height: 100%;
+
+  @media screen and (max-width: 800px) {
+    padding-top: 0;
+  }
 `;
 
 const ProjectList = styled.div`
@@ -111,14 +115,14 @@ const ProjectList = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  // gap: 30vh;
+  gap: 30vh;
   // position: absolute;
   z-index: ${(props: { getter: boolean }) => props.getter ? 2 : 3};
   transition: z-index 2s linear;
   // transform: ${(props: {getter: boolean}) => props.getter ? 'translateY(-380px)' : null};
 
   @media screen and (max-height: 950px) {
-  
+    gap: 30vh;
   }
   // @media screen and (max-height: 950px) {
   //   gap: 200px;
