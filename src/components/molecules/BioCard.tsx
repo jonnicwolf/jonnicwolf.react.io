@@ -57,9 +57,8 @@ const Wrap = styled.div`
   @media screen and (max-width: 700px) {
     flex-direction: column;
     align-items: center;
-    height: 100%;
+    height: 110vh;
     gap: 40px;
-    gap: 10px;
     padding: 0;
     margin: 0;
   }
