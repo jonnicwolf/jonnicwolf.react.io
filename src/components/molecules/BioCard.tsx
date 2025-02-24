@@ -58,7 +58,8 @@ const Wrap = styled.div`
     flex-direction: column;
     align-items: center;
     height: 100%;
-    gap: 20px;
+    gap: 40px;
+    gap: 10px;
     padding: 0;
     margin: 0;
   }
