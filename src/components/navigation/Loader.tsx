@@ -40,6 +40,7 @@ const Container = styled.div`
   align-items: center;
   background-color: rgb(112, 110, 110);
   height: 100vh;
+  width: 100vw;
 `;
 const P5Container = styled.div`
   z-index: 1;
