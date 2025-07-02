@@ -112,7 +112,8 @@ const Sun = styled.div<SunProps>`
   width: 300px;
   transform: rotate(90deg) translateX(180px);
   @media only screen and (max-width: 720px) {
-    transform: rotate(90deg) translateX(200px);
+    transform: rotate(90deg) translateX(25vh);
+    // transform: rotate(90deg) translateX(200px);
   }
 `;
 
