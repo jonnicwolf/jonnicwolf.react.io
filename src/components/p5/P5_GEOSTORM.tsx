@@ -134,7 +134,7 @@ const P5_GEOSTORM: FC<Props> = ({ strokeColor }) => {
 
     p.draw = () => {
       p.background(background);
-      drawMountains();
+      // drawMountains();
 
       for (let i = bolts.length - 1; i >= 0; i--) {
         bolts[i].update();
