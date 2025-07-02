@@ -22,6 +22,7 @@ const P5_PLANE            = lazy(() => import('../components/p5/P5_PLANE'));
 const P5_LOADER           = lazy(() => import('../components/p5/P5_LOADER'));
 const P5_ANJA             = lazy(() => import('../components/p5/P5_ANJA'));
 const MondrianAnja        = lazy(() => import('../components/p5/MondrianAnja'));
+
 const P5_GEOSTORM         = lazy(() => import('../components/p5/P5_GEOSTORM'));
 
 interface P5Props {
