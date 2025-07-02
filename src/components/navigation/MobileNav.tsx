@@ -34,8 +34,8 @@ const MobileNav: FC<Props> = ({ enterClicked }) => {
 
       <ExternalItem
         onClick={() =>setIsOpen(!isOpen)}
-        href='https://github.com/jonnicwolf'
-        style={{borderBottom: '1px solid grey'}}>GITHUB</ExternalItem>
+        href='https://github.com/jonnicwolf'>
+          GITHUB</ExternalItem>
     </Container>
   );
 };
@@ -43,6 +43,7 @@ const MobileNav: FC<Props> = ({ enterClicked }) => {
 const Container = styled.div<Container>`
   position: fixed;
   background-color: #fffcf5;
+  opacity: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -50,7 +51,7 @@ const Container = styled.div<Container>`
   overflow: hidden;
   transition: height .3s linear;
   width: 100%;
-  z-index: ${props => props.enterClicked ? '3' : '2'};
+  z-index: ${props => props.enterClicked ? '2' : '3'};
 `;
 const Nav = styled.div<Nav>`
   display: flex;
