@@ -5,7 +5,6 @@ import {
   useMemo,
   Suspense,
   lazy,
-  useContext,
 } from 'react';
 
 import { useNavigate, useParams, } from 'react-router-dom';
@@ -23,6 +22,7 @@ const P5_PLANE            = lazy(() => import('../components/p5/P5_PLANE'));
 const P5_LOADER           = lazy(() => import('../components/p5/P5_LOADER'));
 const P5_ANJA             = lazy(() => import('../components/p5/P5_ANJA'));
 const MondrianAnja        = lazy(() => import('../components/p5/MondrianAnja'));
+const P5_GEOSTORM         = lazy(() => import('../components/p5/P5_GEOSTORM'));
 
 interface P5Props {
   strokeColor: number,
@@ -38,7 +38,7 @@ const Gallery: FC = () => {
   const { projectName } = useParams();
   const navigate = useNavigate();
   const controls = useAnimation();
-  const { darkmode, toggleDarkmode } = useDarkmode();
+  const { darkmode } = useDarkmode();
 
   const sw: boolean = window.innerWidth > 720;
   // @ts-ignore !!!! FIX !!!!
@@ -48,6 +48,7 @@ const Gallery: FC = () => {
     { component: P5_LOADER, title: 'AFTERIMAGE', name: 'afterimage' },
     { component: P5_ANJA, title: 'ANJA', name: 'anja' },
     { component: MondrianAnja, title: 'ANJALEPH', name: 'anjaleph' },
+    { component: P5_GEOSTORM, title: 'GEOSTORM', name: 'geostorm' },
   ], []);
 
   useEffect(() => {

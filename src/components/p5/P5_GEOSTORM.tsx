@@ -13,57 +13,6 @@ const P5_GEOSTORM: FC<Props> = ({ strokeColor }) => {
   const sketch_ref = useRef();
 
   const sketch = useCallback((p: p5) => {
-    function drawMountains() {
-      // Draw mountain bases
-      p.fill(100, 100, 150, 150); // Add opacity to the mountains
-      p.noStroke();
-
-      // Mountain 1
-      p.beginShape();
-      p.vertex(0, p.height);
-      p.vertex(100, 150);
-      p.vertex(200, p.height);
-      p.endShape(p.CLOSE);
-
-      // Mountain 2
-      p.beginShape();
-      p.vertex(150, p.height);
-      p.vertex(300, 100);
-      p.vertex(450, p.height);
-      p.endShape(p.CLOSE);
-
-      // Mountain 3
-      p.beginShape();
-      p.vertex(300, p.height);
-      p.vertex(400, 200);
-      p.vertex(500, p.height);
-      p.endShape(p.CLOSE);
-
-      // Draw mountain tops
-      p.fill(255, 255, 255, 200); // White color with some opacity
-
-      // Top of Mountain 1
-      p.beginShape();
-      p.vertex(95, 175);
-      p.vertex(100, 150);
-      p.vertex(105, 175);
-      p.endShape(p.CLOSE);
-
-      // Top of Mountain 2
-      p.beginShape();
-      p.vertex(293, 125);
-      p.vertex(300, 100);
-      p.vertex(307, 125);
-      p.endShape(p.CLOSE);
-
-      // Top of Mountain 3
-      p.beginShape();
-      p.vertex(395, 225);
-      p.vertex(400, 200);
-      p.vertex(405, 225);
-      p.endShape(p.CLOSE);
-    };
-
     class ForkedBolt {
       start: p5.Vector;
       thickness: number;
@@ -108,7 +57,8 @@ const P5_GEOSTORM: FC<Props> = ({ strokeColor }) => {
     const background = !darkmode ? '#5c5c5b' : '#fffcf5';
 
     p.setup = () => {
-      p.createCanvas(p.windowWidth / 12 * 10, p.windowHeight / 12 * 6);
+      // p.createCanvas(p.windowWidth / 12 * 10, p.windowHeight / 12 * 6);
+      p.createCanvas(p.windowWidth, p.windowHeight / 12 * 6);
       p.frameRate(60);
 
       triangles = [];
@@ -134,7 +84,6 @@ const P5_GEOSTORM: FC<Props> = ({ strokeColor }) => {
 
     p.draw = () => {
       p.background(background);
-      drawMountains();
 
       for (let i = bolts.length - 1; i >= 0; i--) {
         bolts[i].update();
