@@ -46,8 +46,8 @@ const ContentWrap = styled.div`
   align-items: center;
   justify-content: space-evenly;
   animation: ${fadeIn} 2s forwards;
-  height: 92.4%;
-  width: 91.4%;
+  height: 92.5%;
+  width: 92.5%;
 
   @media screen and (max-width: 600px) {
     height: 86.5%;

@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 import LandingPage from './LandingPage';
 import ProjectCard from '../components/molecules/ProjectCard';
-import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
 
 import EsperiCover from '../components/molecules/EsperiCover';
 import ProjectCover from '../components/molecules/ProjectCover';
@@ -53,14 +52,14 @@ const WebProjects: FC<Props> = ({ enterClicked, setEnterClicked }) => {
         <LandingPage setter={setEnterClicked} />
 
         <ProjectCard
-          title='Soirée'
+          title='Fiesta'
           bio='Bar/Restaurant Reservation App'
-          liveLink='https://soiree-drab.vercel.app'
+          liveLink='https://fiestaa.vercel.app'
           githubLink='https://github.com/Soiree-NYC/Soiree_Public'
-          coverLink='https://res.cloudinary.com/dl7ortwgk/image/upload/v1733318854/Screenshot_2024-12-04_at_8.25.45_AM_k3znts.png'
+          coverLink='https://res.cloudinary.com/dl7ortwgk/image/upload/v1751960710/Screenshot_2025-03-03_at_3.45.11_AM_c2yd0k.png'
           // @ts-ignore
           cover={ProjectCover}
-          gifPath='https://img-jonnicwolf.s3.us-east-2.amazonaws.com/soiree-ezgif.com-video-to-gif-converter+(1).gif'
+          gifPath='https://res.cloudinary.com/dl7ortwgk/image/upload/v1751969726/ezgif.com-video-to-gif-converter_1_nnz8ry.gif'
           apis={['BARBACKAPI']}
           descriptions={['E-COMMERCE', 'FULL STACK']}
           devicons={soiree}
