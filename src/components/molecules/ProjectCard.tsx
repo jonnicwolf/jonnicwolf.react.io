@@ -66,6 +66,13 @@ const Container = styled.div`
   align-items: center;
   position: relative;
   animation: ${fadeIn} 0.3s forwards;
+  box-shadow: -2rem 2rem 20rem;
+
+  @media screen and (max-width: 900px) {
+    width: 100vw;
+    height: 55%;
+    box-shadow: none;
+  }
 
   @media screen and (max-width: 600px) {
     height: 60vh;
