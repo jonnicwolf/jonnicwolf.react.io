@@ -19,16 +19,16 @@ interface PageMarker {
 };
 
 const NavBar: FC = () => {
-  const location = useLocation().pathname.split('/')[1] || 'PROJECTS';
+  const location = useLocation().pathname.split('/')[1] || 'WEB PROJECTS';
   const { darkmode } = useDarkmode();
 
   return (
     <NavbarContainer darkmode={darkmode}>
       <Fezz>
         <Link to='/' style={{textDecoration: 'none', color: 'black'}}>
-          <RampartOneText darkmode={darkmode}>
-            FEZZ
-          </RampartOneText>
+          <PermanentMarkerText darkmode={darkmode}>
+            JN
+          </PermanentMarkerText>
         </Link>
         <PageMarker darkmode={darkmode}>
           | {location.toUpperCase()}
@@ -67,8 +67,8 @@ const Fezz = styled.div<Fezz>`
   align-items: center;
   gap: 1vh;
 `;
-const RampartOneText = styled.p<RampartOneText>`
-  font-family: 'Rampart One', cursive;
+const PermanentMarkerText = styled.p<RampartOneText>`
+  font-family: Permanent Marker;
   font-size: 2.5rem;
   margin: 0;
   color: ${props => props.darkmode ? 'white' : 'black'};

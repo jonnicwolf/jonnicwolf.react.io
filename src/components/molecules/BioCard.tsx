@@ -16,7 +16,7 @@ const BioCard: FC<Props> = ({ viewSetter }) => {
 
       <BioContainer>
         <IntroText>
-          I'm Fezz, a Full-Stack Developer based in the heart of NYC.
+          I'm Jon, a Full-Stack Developer based in the heart of NYC.
         </IntroText>
 
         <P>
@@ -24,11 +24,11 @@ const BioCard: FC<Props> = ({ viewSetter }) => {
         </P>
 
         <P>
-        These days, my time is spent collaborating with talented teams to craft seamless interfaces. I also delve into cloud architecture, game engines, and generative art, which continuously inform and elevate my work.
+        These days, my time is spent collaborating with talented teams to craft seamless interfaces. I also delve into cloud architecture, and generative art, which continuously inform and elevate my work.
         </P>
 
         <P>
-          Outside of coding, you'll find me exploring new tech, diving into creative projects, and always on the lookout for inspiring collaborations.
+          Outside of coding, you'll find me playing my guitar, exploring new tech, diving into creative projects, and always on the lookout for inspiring collaborations.
         </P>
 
         <Buttons>
