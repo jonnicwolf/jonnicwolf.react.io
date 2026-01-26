@@ -26,28 +26,39 @@ interface EnterButton {};
 interface Button {};
 
 const LandingPage: FC<Props> = ({ setter }) => {
-  const [isClicked, setIsClicked] = useState<boolean>(false);
-  const [showAbout, setShowAbout] = useState<boolean>(false);
-  const isMobile: boolean = window.innerWidth < 720;
+  const [isClicked, setIsClicked] = useState(false);
+  const [showAbout, setShowAbout] = useState(false);
+  const isMobile = window.innerWidth < 720;
 
-  // Lock scroll when landing page is at full size
   useEffect(() => {
-    !isClicked
-      ? document.body.style.overflow = 'hidden'
-      : document.body.style.overflow = 'auto'
+    const hasEntered = sessionStorage.getItem('hasEntered');
+
+    if (hasEntered) {
+      setIsClicked(true);
+      setShowAbout(true);
+      setter(true);
+    }
+  }, [setter]);
+
+  useEffect(() => {
+    document.body.style.overflow = showAbout ? 'auto' : 'hidden';
 
     return () => {
       document.body.style.overflow = 'auto';
     };
-  }, [isClicked]);
+  }, [showAbout]);
 
-  const handleClick = (): void => {
-    setIsClicked(!isClicked);
+  const handleClick = () => {
+    sessionStorage.setItem('hasEntered', 'true');
+    setIsClicked(true);
     setter(true);
+
     setTimeout(() => {
       setShowAbout(true);
     }, 2500);
   };
+  
+  const hasEntered = Boolean(sessionStorage.getItem('hasEntered'));
 
   const backgroundAnimation = {
     hidden: {
@@ -63,13 +74,15 @@ const LandingPage: FC<Props> = ({ setter }) => {
     }
   };
 
+
+
   return (
     <Background
       isclicked={isClicked}
       variants={backgroundAnimation}
-      initial="hidden"
-      animate={isClicked ? 'show': 'hidden'}
-      showAbout={showAbout} >
+      initial={hasEntered? false : "hidden"}
+      animate={hasEntered? false: isClicked ? 'show': 'hidden'}
+      showAbout={showAbout}>
         {showAbout
           ? <AboutCard />
           : <LandingPageContainer>

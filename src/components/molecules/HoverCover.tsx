@@ -82,15 +82,32 @@ const Container = styled.div`
   const HoverInfo = styled.div`
     height: 100%;
     width: 100%;
+    // width: 50%;
     position: absolute;
     display: flex;
     flex-direction: column;
-    background-color: rgba(225,225,225,0.5);
+    // color: #a3a3a3;
+    // color: red;
+    background-color: rgba(225,225,225,0.6);
+    
     animation: ${fadeIn} 0.5s forwards;
   `;
   const PaddingWrap = styled.div`
+    // border: 2px solid #a3a3a3;
+    width: 50%;
+    border-radius: 10px;
+    // margin-left: 2rem;
+    // margin-top: 28rem;
     margin-left: -3rem;
     margin-top: 8rem;
+    padding: 2rem;
+    backdrop-filter: blur(100px);
+    background-color: rgba(225,225,225,0.6);
+    background: linear-gradient(
+     to right,
+     rgba(225,225,225,0.6) 10%,
+     white 90%
+    );
 
     @media screen  and (max-width: 600px) {
       margin-left: 1rem;
@@ -168,7 +185,7 @@ const Container = styled.div`
     font-size: 2rem;
     font-weight: normal;
     margin-top: 10px;
-    max-width: 25%;
+    max-width: 50%;
 
     @media screen and (max-width: 750px) {
       max-width: 50%;
