@@ -1,4 +1,4 @@
-import { FC, useState, useContext } from 'react';
+import { FC, useState, } from 'react';
 import { useDarkmode } from '../../Darkmode';
 // @ts-ignore
 import styled, { keyframes } from 'styled-components';

@@ -49,13 +49,17 @@ const LandingPage: FC<Props> = ({ setter }) => {
   }, [showAbout]);
 
   const handleClick = () => {
+    setTimeout(() => {
+      setShowAbout(true);
+    }, 2500);
+
     sessionStorage.setItem('hasEntered', 'true');
     setIsClicked(true);
     setter(true);
 
-    setTimeout(() => {
-      setShowAbout(true);
-    }, 2500);
+    // setTimeout(() => {
+    //   setShowAbout(true);
+    // }, 2500);
   };
   
   const hasEntered = Boolean(sessionStorage.getItem('hasEntered'));
@@ -73,8 +77,6 @@ const LandingPage: FC<Props> = ({ setter }) => {
       transition: { duration: 2 },
     }
   };
-
-
 
   return (
     <Background
