@@ -12,42 +12,49 @@ interface Props {
   setter: (open: boolean) => void,
 };
 
-interface Background {
+interface BackgroundProps {
   showAbout: boolean,
-  isclicked: boolean ,
-}
-interface LandingPageContainer{};
-interface LandingPageItem {};
-interface Content {};
-interface PProject {
-  isclicked: boolean,
+  hasEntered: boolean,
 };
-interface EnterButton {};
-interface Button {};
+interface LandingPageContainerProps {};
+interface LandingPageItemProps {};
+interface ContentProps {};
+interface PProjectProps {
+  hasEntered: boolean,
+};
+interface EnterButtonProps {};
+interface ButtonProps {};
 
 const LandingPage: FC<Props> = ({ setter }) => {
-  const [isClicked, setIsClicked] = useState<boolean>(false);
-  const [showAbout, setShowAbout] = useState<boolean>(false);
-  const isMobile: boolean = window.innerWidth < 720;
+  const [showAbout, setShowAbout] = useState(false);
+  const isMobile = window.innerWidth < 720;
 
-  // Lock scroll when landing page is at full size
   useEffect(() => {
-    !isClicked
-      ? document.body.style.overflow = 'hidden'
-      : document.body.style.overflow = 'auto'
+    const hasEntered = sessionStorage.getItem('hasEntered');
 
+    if (hasEntered) {
+      setShowAbout(true);
+      setter(true);
+    };
+  }, [setter]);
+
+  useEffect(() => {
+    document.body.style.overflow = showAbout ? 'auto' : 'hidden';
     return () => {
       document.body.style.overflow = 'auto';
     };
-  }, [isClicked]);
+  }, [showAbout]);
 
-  const handleClick = (): void => {
-    setIsClicked(!isClicked);
+  const handleClick = () => {
+    sessionStorage.setItem('hasEntered', 'true');
     setter(true);
+
     setTimeout(() => {
       setShowAbout(true);
     }, 2500);
   };
+  
+  const hasEntered = Boolean(sessionStorage.getItem('hasEntered'));
 
   const backgroundAnimation = {
     hidden: {
@@ -65,11 +72,11 @@ const LandingPage: FC<Props> = ({ setter }) => {
 
   return (
     <Background
-      isclicked={isClicked}
+      hasEntered={hasEntered}
       variants={backgroundAnimation}
-      initial="hidden"
-      animate={isClicked ? 'show': 'hidden'}
-      showAbout={showAbout} >
+      initial={hasEntered? false : "hidden"}
+      animate={hasEntered? 'show': 'hidden'}
+      showAbout={showAbout}>
         {showAbout
           ? <AboutCard />
           : <LandingPageContainer>
@@ -88,7 +95,7 @@ const LandingPage: FC<Props> = ({ setter }) => {
                 </EnterButton>
               </Content>
 
-              <PProject isclicked={isClicked}>
+              <PProject hasEntered={hasEntered}>
                 <P5_PLANE strokeColor={255} showSun={false} />
               </PProject>
             </LandingPageContainer>
@@ -97,9 +104,9 @@ const LandingPage: FC<Props> = ({ setter }) => {
   );
 };
 
-const Background = styled(motion.div)<Background>`
+const Background = styled(motion.div)<BackgroundProps>`
   background-image: radial-gradient(circle 80vh, #62c2c4, ${props => props.showAbout ? `rgb(255,255,255)`: `rgb(17, 100, 102)` });
-  transform: translateY(${props => props.isclicked ? '100px': '-100px'}); 
+  transform: translateY(${props => props.hasEntered ? '100px': '-100px'}); 
 
   @media screen and (max-width: 900px) {
     display: flex;
@@ -110,7 +117,7 @@ const Background = styled(motion.div)<Background>`
     height: 50%;
   };
 `;
-const LandingPageContainer = styled.div<LandingPageContainer>`
+const LandingPageContainer = styled.div<LandingPageContainerProps>`
   display: flex;
   height: 100vh;
   align-items: center;
@@ -118,10 +125,10 @@ const LandingPageContainer = styled.div<LandingPageContainer>`
   flex-direction: column;
   overflow: hidden;
 `;
-const LandingPageItem = styled.div<LandingPageItem>`
+const LandingPageItem = styled.div<LandingPageItemProps>`
   padding-bottom: 2em;
 `;
-const Content = styled.div<Content>`
+const Content = styled.div<ContentProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -133,23 +140,23 @@ const Content = styled.div<Content>`
     transform: translateY(10vh);
   }
 `;
-const PProject = styled(LandingPageItem)<PProject>`
+const PProject = styled(LandingPageItem)<PProjectProps>`
   height: 100vh;
   width: 100vw;
   z-index: 1;
-  opacity: ${props => props.isclicked ? 0 : 1};
+  opacity: ${props => props.hasEntered ? 0 : 1};
 
   @media only screen and (max-width: 700px) {
     display: none;
   }
 `;
-const EnterButton = styled(LandingPageItem)<EnterButton>`
+const EnterButton = styled(LandingPageItem)<EnterButtonProps>`
   z-index: 3;
   @media only screen and (max-width: 700px) {
     scale: 0.6;
   }
 `;
-const Button = styled(LinkButton)<Button>`
+const Button = styled(LinkButton)<ButtonProps>`
   color: white !important;
   border: 2px solid white !important;
 `;

@@ -7,28 +7,28 @@ import styled from 'styled-components';
 import LinkButton from '../../assets/buttons/LinkButton';
 import DarkModeButton from '../../assets/buttons/DarkModeButton';
 
-interface NavbarContainer {
+interface NavbarContainerProps {
   darkmode: boolean,
 };
-interface Fezz {};
-interface RampartOneText {
+interface FezzProps {};
+interface RampartOneTextProps {
   darkmode: boolean,
 };
-interface PageMarker {
+interface PageMarkerProps {
   darkmode: boolean,
 };
 
 const NavBar: FC = () => {
-  const location = useLocation().pathname.split('/')[1] || 'PROJECTS';
+  const location = useLocation().pathname.split('/')[1] || 'WEB PROJECTS';
   const { darkmode } = useDarkmode();
 
   return (
     <NavbarContainer darkmode={darkmode}>
       <Fezz>
         <Link to='/' style={{textDecoration: 'none', color: 'black'}}>
-          <RampartOneText darkmode={darkmode}>
-            FEZZ
-          </RampartOneText>
+          <PermanentMarkerText darkmode={darkmode}>
+            JN
+          </PermanentMarkerText>
         </Link>
         <PageMarker darkmode={darkmode}>
           | {location.toUpperCase()}
@@ -45,7 +45,7 @@ const NavBar: FC = () => {
   );
 };
 
-const NavbarContainer = styled.div<NavbarContainer>`
+const NavbarContainer = styled.div<NavbarContainerProps>`
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -60,20 +60,20 @@ const NavbarContainer = styled.div<NavbarContainer>`
   position: fixed;
   z-index: 3;
 `;
-const Fezz = styled.div<Fezz>`
+const Fezz = styled.div<FezzProps>`
   margin-right: auto;
   padding-left: 15px;
   display: flex;
   align-items: center;
   gap: 1vh;
 `;
-const RampartOneText = styled.p<RampartOneText>`
-  font-family: 'Rampart One', cursive;
+const PermanentMarkerText = styled.p<RampartOneTextProps>`
+  font-family: Permanent Marker;
   font-size: 2.5rem;
   margin: 0;
   color: ${props => props.darkmode ? 'white' : 'black'};
 `;
-const PageMarker = styled.h3<PageMarker>`
+const PageMarker = styled.h3<PageMarkerProps>`
   font-family: Rubik;
   font-size: 1.2rem;
   color: ${props => props.darkmode ? 'white' : 'black'};

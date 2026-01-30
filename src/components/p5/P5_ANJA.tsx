@@ -19,7 +19,7 @@ interface WrapperProps {
   isRotated?: boolean,
 };
 
-const P5_ANJA: FC<Props> = ({ strokeColor, isMobile, w, h, blinkDelay, background = '#000', isRotated }) => {
+const P5_ANJA: FC<Props> = ({ strokeColor, isMobile, w, blinkDelay, background = '#000', isRotated }) => {
   const sketch_ref = useRef();
 
   const sketch = useCallback((p: p5) => {
@@ -108,7 +108,7 @@ const P5_ANJA: FC<Props> = ({ strokeColor, isMobile, w, h, blinkDelay, backgroun
 
       p.strokeWeight(1);
     };
-  }, [strokeColor, isMobile]);
+  }, [strokeColor, isMobile, w]);
   useEffect(() => {
     // @ts-ignore
     const p5Canvas = new p5(sketch, sketch_ref.current);

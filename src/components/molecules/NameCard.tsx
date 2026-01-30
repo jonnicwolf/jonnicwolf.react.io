@@ -9,9 +9,9 @@ const NameCard: FC = () => {
       variants={fadeIn}
       initial="hidden"
       animate="show" >
-        <RampartOneText variants={items} custom={0} >
-          FEZZ
-        </RampartOneText>
+        <PermanentMarkerText variants={items} custom={0} >
+          JON NARINE
+        </PermanentMarkerText>
         <FSD variants={items} custom={1}>
           FULL STACK SWE & CREATIVE DEV
         </FSD>
@@ -98,8 +98,8 @@ const Container = styled(motion.div)`
   flex-direction: column;
   color: white;
 `;
-const RampartOneText = styled(motion.p)`
-  font-family: Rampart One;
+const PermanentMarkerText = styled(motion.p)`
+  font-family: Permanent Marker;
   font-size: 7rem;
   margin: 0;
   @media (max-width: 400px) {

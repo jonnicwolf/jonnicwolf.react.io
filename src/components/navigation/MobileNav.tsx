@@ -9,14 +9,14 @@ interface Props {
   enterClicked: boolean,
 };
 
-interface Container {
+interface ContainerProps {
   isOpen: boolean,
   enterClicked: boolean,
 };
-interface Nav {};
-interface Item {};
-interface ExternalItem {};
-interface Fezz {};
+interface NavProps {};
+interface ItemProps {};
+interface ExternalItemProps {};
+interface FezzProps {};
 
 const MobileNav: FC<Props> = ({ enterClicked }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -40,7 +40,7 @@ const MobileNav: FC<Props> = ({ enterClicked }) => {
   );
 };
 
-const Container = styled.div<Container>`
+const Container = styled.div<ContainerProps>`
   position: fixed;
   background-color: #fffcf5;
   opacity: 1;
@@ -53,13 +53,13 @@ const Container = styled.div<Container>`
   width: 100%;
   z-index: ${props => props.enterClicked ? '2' : '3'};
 `;
-const Nav = styled.div<Nav>`
+const Nav = styled.div<NavProps>`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 15px;
 `;
-const Item = styled(Link)<Item>`
+const Item = styled(Link)<ItemProps>`
   border-bottom: 2px solid grey;
   color: black;
   font-family: Rubik;
@@ -68,7 +68,7 @@ const Item = styled(Link)<Item>`
   text-align: center;
   text-decoration: none;
 `;
-const ExternalItem = styled.a<ExternalItem>`
+const ExternalItem = styled.a<ExternalItemProps>`
   border-bottom: 2px solid grey;
   color: black;
   font-family: Rubik;
@@ -77,7 +77,7 @@ const ExternalItem = styled.a<ExternalItem>`
   text-align: center;
   text-decoration: none;
 `;
-const Fezz = styled.p<Fezz>`
+const Fezz = styled.p<FezzProps>`
   padding: 0;
   margin: 0;
   font-family: Rampart One;

@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useCallback, useContext, MutableRefObject } from 'react';
+import { FC, useEffect, useRef, useCallback, } from 'react';
 import { useDarkmode } from '../../Darkmode';
 
 import styled from 'styled-components';

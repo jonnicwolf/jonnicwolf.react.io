@@ -1,4 +1,4 @@
-import { FC, useContext } from 'react';
+import { FC,  } from 'react';
 import { useDarkmode } from '../../Darkmode';
 // @ts-ignore
 import styled from 'styled-components';
@@ -28,13 +28,13 @@ const Footer: FC = () => {
     <Container>
       <Dummy />
       <Content>
+        <PermanentMarkerText darkmode={darkmode}>
+          Jon Narine
+        </PermanentMarkerText>
+
         <SocialsWrap>
           <Socials gap='10px'  colors={colors} />
         </SocialsWrap>
-
-        <RampartOneText darkmode={darkmode}>
-          FEZZ
-        </RampartOneText>
 
         <Copyright darkmode={darkmode}>Copyright &#169; {nowYear} Jonathan Narine</Copyright>
       </Content>
@@ -79,8 +79,8 @@ const Content = styled.div`
     align-items: center;
     justify-content: center;
   `;
-  const RampartOneText = styled.p`
-    font-family: Rampart One;
+  const PermanentMarkerText = styled.p`
+    font-family: Permanent Marker;
     font-size: 3.5rem;
     margin: 0;
     color: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
