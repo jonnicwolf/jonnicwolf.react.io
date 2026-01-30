@@ -129,7 +129,7 @@ const Container = styled(motion.div)<ContainerProps>`
     margin: 0;
     font-family: Michroma;
   `;
-  const Title = styled(IntroText)`
+  const Title = styled(IntroText)<TitleProps>`
     font-size: 2.3rem;
   `;
 
