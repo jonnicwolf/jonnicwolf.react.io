@@ -6,11 +6,11 @@ import ProjectCard from '../components/molecules/ProjectCard';
 import EsperiCover from '../components/molecules/EsperiCover';
 import P5_LORENZ_ATTRACTOR from '../components/p5/P5_LORENZ_ATTRACTOR';
 
-interface Container {};
-interface Background {
+interface ContainerProps {};
+interface BackgroundProps {
   strokeColor: number,
 };
-interface ProjectList {};
+interface ProjectListProps {};
 
 const IOSProjects: FC = () => {
   const swift = 'devicon-swift-plain';
@@ -37,7 +37,7 @@ const IOSProjects: FC = () => {
   );
 };
 
-const Container = styled.div<Container>`
+const Container = styled.div<ContainerProps>`
   display: flex;
   justify-content: center;
   height: 3500px;
@@ -48,13 +48,13 @@ const Container = styled.div<Container>`
     padding-top: '100px';
   }
 `;
-const Background = styled(P5_LORENZ_ATTRACTOR).attrs<Background>((props) => ({
+const Background = styled(P5_LORENZ_ATTRACTOR).attrs<BackgroundProps>((props) => ({
   strokeColor: props.strokeColor,
 }))`
   height: 100vh;
   z-index: 1;
 `;
-const ProjectList = styled.div<ProjectList>`
+const ProjectList = styled.div<ProjectListProps>`
   display: flex;
   justify-content: center;
   align-items: center;

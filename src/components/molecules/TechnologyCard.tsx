@@ -1,4 +1,4 @@
-import { FC, useContext } from 'react';
+import { FC, } from 'react';
 import { useDarkmode } from '../../Darkmode';
 // @ts-ignore
 import styled, { keyframes } from 'styled-components';
@@ -10,24 +10,24 @@ interface Props {
   viewSetter: (value: string) => void,
 };
 
-interface Container {};
+interface ContainerProps {};
 
-interface IntroText {};
-interface Title {};
-interface Content {};
-interface StyledComponents {};
-interface StyledIcon {};
-interface StyledName {};
-interface TechGroup {
+interface IntroTextProps {};
+interface TitleProps {};
+interface ContentProps {};
+interface StyledComponentsProps {};
+interface StyledIconProps {};
+interface StyledNameProps {};
+interface TechGroupProps {
   darkmode: boolean
 };
-interface TechContent {
+interface TechContentProps {
   gap: string,
   width: string,
 };
-interface Icon {};
-interface SVG {};
-interface Buttons{};
+interface IconProps {};
+interface SVGProps {};
+interface ButtonsProps {};
 
 const TechnologyCard: FC<Props> = ({ viewSetter }) => {
   const { darkmode } = useDarkmode();
@@ -113,7 +113,7 @@ const fadeIn = keyframes`
   to { opacity: 1; }
 `;
 
-const Container = styled(motion.div)<Container>`
+const Container = styled(motion.div)<ContainerProps>`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -124,7 +124,7 @@ const Container = styled(motion.div)<Container>`
   gap: 8px;
 `;
   
-  const IntroText = styled.h3<IntroText>`
+  const IntroText = styled.h3<IntroTextProps>`
     font-size: 2rem;
     margin: 0;
     font-family: Michroma;
@@ -133,13 +133,13 @@ const Container = styled(motion.div)<Container>`
     font-size: 2.3rem;
   `;
 
-  const Content = styled.div<Content>`
+  const Content = styled.div<ContentProps>`
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
   `;
-    const StyledComponents = styled.div<StyledComponents>`
+    const StyledComponents = styled.div<StyledComponentsProps>`
       height: 5rem;
       width: 5rem;
       display: flex;
@@ -149,20 +149,20 @@ const Container = styled(motion.div)<Container>`
       transition: scale 0.3s linear;
       &: hover { scale: 1.1 };
       `;
-      const StyledIcon = styled.div<StyledIcon>`
+      const StyledIcon = styled.div<StyledIconProps>`
       font-size: 2rem;
       transform: translateY(5px);
       align-self: center;
       margin-bottom: 10px;
     `;
-    const StyledName = styled.div<StyledName>`
+    const StyledName = styled.div<StyledNameProps>`
       font-size: 0.6rem;
       margin: 0;
       padding: 5px;
       font-weight: bold;
       text-wrap: wrap;
     `;
-    const TechGroup = styled.div<TechGroup>`
+    const TechGroup = styled.div<TechGroupProps>`
       font-size: 5rem;
       padding: 10px;
       width: 45%;
@@ -172,7 +172,7 @@ const Container = styled(motion.div)<Container>`
       align-items: center;
       gap: 20px;
     `;
-    const TechContent = styled.div<TechContent>`
+    const TechContent = styled.div<TechContentProps>`
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -180,15 +180,15 @@ const Container = styled(motion.div)<Container>`
       gap: ${props => props.gap};
       width: ${props => props.width};
     `;
-      const Icon = styled.i<Icon>`
+      const Icon = styled.i<IconProps>`
         transition: scale 0.3s linear;
         &: hover { scale: 1.1 };
       `;
-      const SVG = styled.img<SVG>`
+      const SVG = styled.img<SVGProps>`
         transition: scale 0.2s linear;
         &: hover { scale: 1.1 };
       `;
-  const Buttons = styled.div<Buttons>`
+  const Buttons = styled.div<ButtonsProps>`
     display: flex;
     align-items: center;
     justify-content: center;

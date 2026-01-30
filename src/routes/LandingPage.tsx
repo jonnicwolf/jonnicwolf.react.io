@@ -12,18 +12,18 @@ interface Props {
   setter: (open: boolean) => void,
 };
 
-interface Background {
+interface BackgroundProps {
   showAbout: boolean,
   hasEntered: boolean,
 };
-interface LandingPageContainer{};
-interface LandingPageItem {};
-interface Content {};
-interface PProject {
+interface LandingPageContainerProps {};
+interface LandingPageItemProps {};
+interface ContentProps {};
+interface PProjectProps {
   hasEntered: boolean,
 };
-interface EnterButton {};
-interface Button {};
+interface EnterButtonProps {};
+interface ButtonProps {};
 
 const LandingPage: FC<Props> = ({ setter }) => {
   const [showAbout, setShowAbout] = useState(false);
@@ -104,7 +104,7 @@ const LandingPage: FC<Props> = ({ setter }) => {
   );
 };
 
-const Background = styled(motion.div)<Background>`
+const Background = styled(motion.div)<BackgroundProps>`
   background-image: radial-gradient(circle 80vh, #62c2c4, ${props => props.showAbout ? `rgb(255,255,255)`: `rgb(17, 100, 102)` });
   transform: translateY(${props => props.hasEntered ? '100px': '-100px'}); 
 
@@ -117,7 +117,7 @@ const Background = styled(motion.div)<Background>`
     height: 50%;
   };
 `;
-const LandingPageContainer = styled.div<LandingPageContainer>`
+const LandingPageContainer = styled.div<LandingPageContainerProps>`
   display: flex;
   height: 100vh;
   align-items: center;
@@ -125,10 +125,10 @@ const LandingPageContainer = styled.div<LandingPageContainer>`
   flex-direction: column;
   overflow: hidden;
 `;
-const LandingPageItem = styled.div<LandingPageItem>`
+const LandingPageItem = styled.div<LandingPageItemProps>`
   padding-bottom: 2em;
 `;
-const Content = styled.div<Content>`
+const Content = styled.div<ContentProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -140,7 +140,7 @@ const Content = styled.div<Content>`
     transform: translateY(10vh);
   }
 `;
-const PProject = styled(LandingPageItem)<PProject>`
+const PProject = styled(LandingPageItem)<PProjectProps>`
   height: 100vh;
   width: 100vw;
   z-index: 1;
@@ -150,13 +150,13 @@ const PProject = styled(LandingPageItem)<PProject>`
     display: none;
   }
 `;
-const EnterButton = styled(LandingPageItem)<EnterButton>`
+const EnterButton = styled(LandingPageItem)<EnterButtonProps>`
   z-index: 3;
   @media only screen and (max-width: 700px) {
     scale: 0.6;
   }
 `;
-const Button = styled(LinkButton)<Button>`
+const Button = styled(LinkButton)<ButtonProps>`
   color: white !important;
   border: 2px solid white !important;
 `;

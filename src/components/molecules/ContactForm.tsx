@@ -25,10 +25,6 @@ interface WrapProps {
 interface ImgProps {};
 interface InputProps {};
 
-interface MessageProps {
-  darkmode: boolean,
-};
-
 const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY as string;
 
 const ContactForm: FC<Props> = ({ viewSetter }) => {
