@@ -10,22 +10,22 @@ interface Props {
   viewSetter: (value: string) => void,
 };
 
-interface FormData {
+interface FormDataProps {
   to_name: string,
   from_name: string,
   message: string,
 };
 
-interface Form {};
+interface FormProps {};
 
-interface Wrap {
+interface WrapProps {
   darkmode: boolean,
 };
 
-interface Img {};
-interface Input {};
+interface ImgProps {};
+interface InputProps {};
 
-interface Message {
+interface MessageProps {
   darkmode: boolean,
 };
 
@@ -36,7 +36,7 @@ const ContactForm: FC<Props> = ({ viewSetter }) => {
     emailjs.init(publicKey)
   }, []);
   const { darkmode } = useDarkmode();
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<FormDataProps>({
     to_name: '',
     from_name: '',
     message: ''
@@ -121,14 +121,14 @@ const ContactForm: FC<Props> = ({ viewSetter }) => {
   );
 };
 
-const Form = styled.form<Form>`
+const Form = styled.form<FormProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
   margin-bottom: 15px;
 `;
-const Wrap = styled.div<Wrap>`
+const Wrap = styled.div<WrapProps>`
   display: flex;
   border: 1px solid black;
   height: 2rem;
@@ -136,18 +136,18 @@ const Wrap = styled.div<Wrap>`
   color: ${props => props.darkmode ? 'white' : 'black'};
   border: 1px solid ${props => props.darkmode ? 'white' : 'black'};
 `;
-const ButtonWrap = styled(Wrap)<Wrap>`
+const ButtonWrap = styled(Wrap)<WrapProps>`
   border: none;
   display: flex;
   justify-content: center;
   gap: 10px;
 `;
-const Img = styled.img<Img>`
+const Img = styled.img<ImgProps>`
   height: 50%;
   align-self: center;
   color: inherit;
 `;
-const Input = styled.input<Input>`
+const Input = styled.input<InputProps>`
   border: none;
   width: 100%;
   font-size: 1.5rem;

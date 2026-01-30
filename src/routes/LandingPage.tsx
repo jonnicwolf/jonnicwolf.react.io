@@ -14,19 +14,18 @@ interface Props {
 
 interface Background {
   showAbout: boolean,
-  isclicked: boolean ,
-}
+  hasEntered: boolean,
+};
 interface LandingPageContainer{};
 interface LandingPageItem {};
 interface Content {};
 interface PProject {
-  isclicked: boolean,
+  hasEntered: boolean,
 };
 interface EnterButton {};
 interface Button {};
 
 const LandingPage: FC<Props> = ({ setter }) => {
-  const [isClicked, setIsClicked] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
   const isMobile = window.innerWidth < 720;
 
@@ -34,32 +33,25 @@ const LandingPage: FC<Props> = ({ setter }) => {
     const hasEntered = sessionStorage.getItem('hasEntered');
 
     if (hasEntered) {
-      setIsClicked(true);
       setShowAbout(true);
       setter(true);
-    }
+    };
   }, [setter]);
 
   useEffect(() => {
     document.body.style.overflow = showAbout ? 'auto' : 'hidden';
-
     return () => {
       document.body.style.overflow = 'auto';
     };
   }, [showAbout]);
 
   const handleClick = () => {
+    sessionStorage.setItem('hasEntered', 'true');
+    setter(true);
+
     setTimeout(() => {
       setShowAbout(true);
     }, 2500);
-
-    sessionStorage.setItem('hasEntered', 'true');
-    setIsClicked(true);
-    setter(true);
-
-    // setTimeout(() => {
-    //   setShowAbout(true);
-    // }, 2500);
   };
   
   const hasEntered = Boolean(sessionStorage.getItem('hasEntered'));
@@ -80,10 +72,10 @@ const LandingPage: FC<Props> = ({ setter }) => {
 
   return (
     <Background
-      isclicked={isClicked}
+      hasEntered={hasEntered}
       variants={backgroundAnimation}
       initial={hasEntered? false : "hidden"}
-      animate={hasEntered? false: isClicked ? 'show': 'hidden'}
+      animate={hasEntered? 'show': 'hidden'}
       showAbout={showAbout}>
         {showAbout
           ? <AboutCard />
@@ -103,7 +95,7 @@ const LandingPage: FC<Props> = ({ setter }) => {
                 </EnterButton>
               </Content>
 
-              <PProject isclicked={isClicked}>
+              <PProject hasEntered={hasEntered}>
                 <P5_PLANE strokeColor={255} showSun={false} />
               </PProject>
             </LandingPageContainer>
@@ -114,7 +106,7 @@ const LandingPage: FC<Props> = ({ setter }) => {
 
 const Background = styled(motion.div)<Background>`
   background-image: radial-gradient(circle 80vh, #62c2c4, ${props => props.showAbout ? `rgb(255,255,255)`: `rgb(17, 100, 102)` });
-  transform: translateY(${props => props.isclicked ? '100px': '-100px'}); 
+  transform: translateY(${props => props.hasEntered ? '100px': '-100px'}); 
 
   @media screen and (max-width: 900px) {
     display: flex;
@@ -152,7 +144,7 @@ const PProject = styled(LandingPageItem)<PProject>`
   height: 100vh;
   width: 100vw;
   z-index: 1;
-  opacity: ${props => props.isclicked ? 0 : 1};
+  opacity: ${props => props.hasEntered ? 0 : 1};
 
   @media only screen and (max-width: 700px) {
     display: none;
