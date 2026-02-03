@@ -32,15 +32,20 @@ const ExpCard: FC<Props> = ({ viewSetter }) => {
 };
 
 const Container = styled.div`
-  background-color: white;
+  // background-color: white;
   height: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-items: center;
 `;
 
 const Iframe = styled.iframe`
   width: 840px;
-  height: 740px;
+  // height: 740px;
+  height: 90%;
   border-bottom: none;
-  
+  // background-color: rgba(0,0,1,1);
   @media screen and (max-width: 600px) {
     height: 60vh;
     width: 95vw;
@@ -48,6 +53,8 @@ const Iframe = styled.iframe`
   }
 `;
 const Buttons = styled.div`
+  // margin-top: 10rem;
+  // outline: 1px solid red;
   display: flex;
   align-items: center;
   justify-content: center;
