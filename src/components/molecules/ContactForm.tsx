@@ -23,7 +23,9 @@ interface WrapProps {
 };
 
 interface ImgProps {};
-interface InputProps {};
+interface InputProps {
+  darkmode: boolean,
+};
 
 const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY as string;
 
@@ -73,7 +75,9 @@ const ContactForm: FC<Props> = ({ viewSetter }) => {
           name='to_name'
           value={formData.to_name}
           onChange={handleChange}
-          required />
+          required
+          darkmode={darkmode}
+          />
       </Wrap>
 
       <Wrap darkmode={darkmode} >
@@ -83,7 +87,9 @@ const ContactForm: FC<Props> = ({ viewSetter }) => {
           name='from_name'
           value={formData.from_name}
           onChange={handleChange}
-          required />
+          required
+          darkmode={darkmode}
+          />
       </Wrap>
 
       <Message
@@ -148,8 +154,11 @@ const Input = styled.input<InputProps>`
   width: 100%;
   font-size: 1.5rem;
   background: none;
-  color: inherit;
+  color: ${props => props.darkmode ? 'white' : 'black'};
   outline: none;
+  &::placeholder {
+    color: ${props => props.darkmode ? 'white' : 'black'};
+  }
 `;
 const Message = styled.textarea<{darkmode: boolean}>`
   height: 200px;
@@ -158,6 +167,9 @@ const Message = styled.textarea<{darkmode: boolean}>`
   outline: none;
   border: 1px solid ${props => props.darkmode ? 'white' : 'black'};
   color: ${props => props.darkmode ? 'white' : 'black'};
+  &::placeholder {
+    color: ${props => props.darkmode ? 'white' : 'black'};
+  }
 `;
 
 export default ContactForm;

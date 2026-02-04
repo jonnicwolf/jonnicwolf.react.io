@@ -82,27 +82,19 @@ const Container = styled.div`
   const HoverInfo = styled.div`
     height: 100%;
     width: 100%;
-    // width: 50%;
     position: absolute;
     display: flex;
     flex-direction: column;
-    // color: #a3a3a3;
-    // color: red;
     background-color: rgba(225,225,225,0.6);
-    
     animation: ${fadeIn} 0.5s forwards;
   `;
   const PaddingWrap = styled.div`
-    // border: 2px solid #a3a3a3;
     width: 50%;
-    border-radius: 10px;
-    // margin-left: 2rem;
-    // margin-top: 28rem;
-    margin-left: -3rem;
     margin-top: 8rem;
     padding: 2rem;
     backdrop-filter: blur(100px);
     background-color: rgba(225,225,225,0.6);
+    transform: translateX(-40px);
     background: linear-gradient(
      to right,
      rgba(225,225,225,0.6) 10%,
@@ -188,9 +180,8 @@ const Container = styled.div`
     max-width: 50%;
 
     @media screen and (max-width: 750px) {
-      max-width: 50%;
+      max-width: 100%;
     }
-    
 
     & > i {
       opacity: 0;

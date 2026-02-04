@@ -102,8 +102,8 @@ const PermanentMarkerText = styled(motion.p)`
   font-family: Permanent Marker;
   font-size: 7rem;
   margin: 0;
-  @media (max-width: 400px) {
-    font-size: 5rem;
+  @media screen and (max-width: 800px) {
+    font-size: 3rem;
   }
 `;
 
