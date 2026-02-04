@@ -48,13 +48,9 @@ const NavBar: FC = () => {
 const NavbarContainer = styled.div<NavbarContainerProps>`
   cursor: pointer;
   display: flex;
-  flex-direction: row;
-  list-style: none;
   column-gap: 10px;
   justify-content: end;
-  margin: 0 5vw 5vw;
-  padding-inline-start: 0;
-  width: 97vw;
+  width: 100vw;
   border-bottom: 2px solid #a3a3a3;
   background-color: ${props => props.darkmode ? '#5c5c5b' : '#fffcf5' };
   position: fixed;

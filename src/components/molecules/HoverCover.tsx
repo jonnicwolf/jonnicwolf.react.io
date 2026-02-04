@@ -93,8 +93,10 @@ const Container = styled.div`
     border-radius: 10px;
     margin-top: 8rem;
     padding: 2rem;
+    
     backdrop-filter: blur(100px);
     background-color: rgba(225,225,225,0.6);
+    transform: translateX(-40px);
     background: linear-gradient(
      to right,
      rgba(225,225,225,0.6) 10%,
@@ -104,6 +106,7 @@ const Container = styled.div`
     @media screen  and (max-width: 600px) {
       margin-left: 1rem;
       margin-top: 15rem;
+      transform: translateX(0);
     }
 
     & > * {
