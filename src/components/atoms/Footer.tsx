@@ -84,6 +84,10 @@ const Content = styled.div`
     font-size: 3.5rem;
     margin: 0;
     color: ${(props: {darkmode: boolean}) => props.darkmode ? 'white' : 'black'};
+
+    @media only screen and (max-width: 720px)  {
+      font-size: 2.8rem;
+    }
 `;
 
 const Copyright = styled.div`
