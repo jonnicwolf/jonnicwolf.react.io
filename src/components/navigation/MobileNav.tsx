@@ -24,7 +24,7 @@ const MobileNav: FC<Props> = ({ enterClicked }) => {
   return (
     <Container isOpen={isOpen} enterClicked={enterClicked}>
       <Nav>
-        <Fezz>FEZZ</Fezz>
+        <Fezz>JN</Fezz>
         <Hamburger isOpen={isOpen} isOpenSet={setIsOpen} />
       </Nav>
 
@@ -51,7 +51,7 @@ const Container = styled.div<ContainerProps>`
   overflow: hidden;
   transition: height .3s linear;
   width: 100%;
-  z-index: ${props => props.enterClicked ? '2' : '3'};
+  z-index: ${props => props.enterClicked ? '4' : '3'};
 `;
 const Nav = styled.div<NavProps>`
   display: flex;
@@ -80,7 +80,7 @@ const ExternalItem = styled.a<ExternalItemProps>`
 const Fezz = styled.p<FezzProps>`
   padding: 0;
   margin: 0;
-  font-family: Rampart One;
+  font-family: Permanent Marker;
   font-size: 2rem;
 `;
 

@@ -29,8 +29,7 @@ const App: FC = () => {
   return (
   <Container darkmode={darkmode} isMobile={isMobile}>
     <Suspense fallback={<Loader strokeColor={150} />} >
-      { isMobile && <MobileNav enterClicked={enterClicked} />}
-      {!isMobile && <NavBar />}
+      { isMobile ? <MobileNav enterClicked={enterClicked} /> : <NavBar/> }
       <Routes>
         <Route path='/' element={
           <WebProjects
@@ -56,12 +55,7 @@ const Container = styled.div<WebProjectsProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20vh;
-  // height: 520vh;
-
-  // @media screen and (max-width: 600px) {
-  //   height: 300vh;
-  // }
+  gap: 10vh;
 `;
 
 export default function ContextApp (): JSX.Element {
