@@ -1,4 +1,6 @@
 import React, {FC, useEffect, useRef, useCallback } from 'react';
+import { useDarkmode } from '../../Darkmode';
+
 import styled from 'styled-components';
 //@ts-ignore
 import p5 from 'p5';
@@ -23,14 +25,14 @@ const Starfield: FC<Props> = ({width, height}) => {
     }[] = [];
 
     p.setup = () => {
-      p.createCanvas(width,height);
+      p.createCanvas(width ? width : p.windowWidth, height ? height : p.windowHeight / 12 * 10);
       p.noStroke();
 
-      stars = Array.from({ length: 2000 }, (_, i) => ({
+      stars = Array.from({ length: 4000 }, (_, i) => ({
         id: i,
         x: Math.random() * p.width,
         y: Math.random() * p.height,
-        size: Math.random() * 2 + 0.5,
+        size: Math.random() * 3 + 0.5,
         opacity: Math.random() * 0.5 + 0.1,
         speed: Math.random() * 0.03 + 0.01,
         phase: Math.random() * Math.PI * 2,
@@ -38,7 +40,9 @@ const Starfield: FC<Props> = ({width, height}) => {
     };
 
     p.draw = () => {
+      
       p.clear();
+      p.background(0);
 
       stars.forEach((star) => {
         // pulse animation equivalent
@@ -70,16 +74,12 @@ const Starfield: FC<Props> = ({width, height}) => {
       {/* @ts-ignore */}
       <div ref={sketch_ref} />
     </Container>
-)
+  );
 };
 
 export default Starfield;
 
 const Container = styled.div`
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  pointer-events: none;
   z-index: 1;
+  margin-top: 1vh;
 `;
