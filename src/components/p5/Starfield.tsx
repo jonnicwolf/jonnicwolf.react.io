@@ -1,5 +1,4 @@
 import React, {FC, useEffect, useRef, useCallback } from 'react';
-import { useDarkmode } from '../../Darkmode';
 
 import styled from 'styled-components';
 //@ts-ignore
@@ -40,7 +39,6 @@ const Starfield: FC<Props> = ({width, height}) => {
     };
 
     p.draw = () => {
-      
       p.clear();
       p.background(0);
 
@@ -61,9 +59,8 @@ const Starfield: FC<Props> = ({width, height}) => {
     p.windowResized = () => {
       p.resizeCanvas(window.innerWidth, window.innerHeight);
     };
-  }, []);
+  }, [width, height]);
 
-    
   useEffect(() => {
     const p5canvas = new p5(sketch, sketch_ref.current);
     return () => p5canvas.remove()
