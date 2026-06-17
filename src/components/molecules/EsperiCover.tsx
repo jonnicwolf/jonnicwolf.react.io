@@ -1,81 +1,110 @@
 import { FC } from 'react';
-// @ts-ignore
-import styled, { keyframes } from 'styled-components';
-
-import Eye from './Eye';
+import styled from 'styled-components';
+import Starfield from '../p5/Starfield';
 
 interface Props {
-  setter: (value: boolean) => void
+  setter: (value: boolean) => void;
 };
 
 const EsperiCover: FC<Props> = ({ setter }) => {
-  function onMouseEnter () {
+  function onMouseEnter() {
     setter(true);
   };
 
   return (
     <Container onMouseEnter={onMouseEnter}>
-      <ContentWrap>
-        <EyeWrap>
-          <Eye width={100} height={280} />
-        </EyeWrap>
-        <Title>Esperi</Title>
-      </ContentWrap>
+      <StarfieldWrapper>
+        {/* @ts-ignore */}
+        <Starfield />
+      </StarfieldWrapper>
+
+      <OverlayContent>
+        <Divination>
+          <LeftSpike />
+          <Title>E<Sm>SPERI</Sm></Title>
+          <RightSpike />
+        </Divination>
+      </OverlayContent>
     </Container>
   );
 };
 
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
-
 const Container = styled.div`
+  position: relative;
   height: 100%;
   width: 100%;
+  background-color: #000;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
-
-const ContentWrap = styled.div`
-  background-color: rgb(252, 230, 197);
+const StarfieldWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+`;
+const OverlayContent = styled.div`
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  animation: ${fadeIn} 2s forwards;
-  height: 92.5%;
-  width: 92.5%;
-
-  @media screen and (max-width: 600px) {
-    height: 86.5%;
-    width: 85vw;
-  };
-
-  --s: 5px;
-  padding: var(--s);
-  border: calc(5*var(--s)) solid #0000;
-  outline: 1px solid #000;
-  outline-offset: calc(-3*var(--s));
-  background: conic-gradient(from 90deg at 1px 1px,#0000 25%,#000 0);
-  background-color: #fce6c5;
-`;
-const EyeWrap = styled.div`
-  transform: translateX(-20px);
-  @media screen and (max-width: 600px) {
-    transform: translate(-20px, -20px);
-    scale: 0.5;
-  }
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  color: #b57902;
+  pointer-events: none;
 `;
 const Title = styled.h1`
-  font-size: 8rem;
-  font-family: Bagnard;
+  font-size: 6rem;
+  font-family: Bagnard, serif;
+  margin: 0;
 
   @media screen and (max-width: 600px) {
-    transform: translateY(-50px);
-    font-size: 4rem;
+    font-size: 3.5rem;
+  }
+`;
+const LeftSpike = styled.div`
+  height: 120px;
+  width: 1px;
+  border: 1px solid #b57902;
+  background: linear-gradient(#b57902, #000);
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  transform: rotate(270deg);
+
+  @media (max-width: 768px) {
+    height: 60px;
+  }
+`;
+const RightSpike = styled(LeftSpike)`
+  transform: rotate(90deg);
+`;
+const Sm = styled.span`
+  display: inline-block;
+  font-size: 4rem;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+`;
+const Divination = styled.div`
+  font-family: Bagnard;
+  font-size: 2rem;
+  display: flex;
+  color: #b57902;
+  letter-spacing: 4px;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+
+  @media (max-width: 768px) {
+    gap: 30px;
+    font-size: 1.5rem;
+    margin-top: 8vh;
   }
 `;
 
