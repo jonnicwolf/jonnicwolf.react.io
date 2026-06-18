@@ -72,7 +72,7 @@ const WebProjects: FC<Props> = ({ enterClicked, setEnterClicked }) => {
           githubLink='https://github.com/jonnicwolf/heart_of_the_cards'
           // @ts-ignore
           cover={EsperiCover}
-          gifPath='https://res.cloudinary.com/dhah4xjvr/image/upload/f_auto,q_auto/v1/fezz.dev/heicbedxhzwocfzxqzky'
+          gifPath='https://res.cloudinary.com/dl7ortwgk/image/upload/v1781806399/Screen_Recording_2026-06-17_at_8.19.00_PM_hx325h.gif'
           apis={['TAROTAPI', 'OPENAI API']}
           descriptions={['LIFESTYLE & ENTERTAINMENT', 'FULL STACK']}
           devicons={hotc}
